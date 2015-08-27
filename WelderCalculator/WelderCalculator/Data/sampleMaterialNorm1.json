@@ -2,7 +2,7 @@
   "Name": "sampleMaterialNorm1",
   "Materials": [
     {
-      "Name": "material1",
+      "Name": "material2",
       "Number": "123",
       "Elements": [
         {
@@ -116,7 +116,7 @@
       "CeEq": 0.0
     },
     {
-      "Name": "material2",
+      "Name": "material3",
       "Number": "456",
       "Elements": [
         {
@@ -230,7 +230,7 @@
       "CeEq": 0.0
     },
     {
-      "Name": "material3",
+      "Name": "material1",
       "Number": "789",
       "Elements": [
         {

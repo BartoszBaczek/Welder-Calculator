@@ -12,7 +12,7 @@ namespace Tests
         {
             #region Create 3 sample materials
             //given
-            var material1 = new Material {Name = "material1", Number = "123"};
+            var material1 = new Material { Name = "material2", Number = "123" };
             foreach (var e in material1.Elements)
             {
                 e.Max = 0.5;
@@ -20,7 +20,7 @@ namespace Tests
                 e.RealValue = 0.47;
             }
 
-            var material2 = new Material {Name = "material2", Number = "456"};
+            var material2 = new Material { Name = "material3", Number = "456" };
             foreach (var e in material2.Elements)
             {
                 e.Max = 0.9;
@@ -28,7 +28,7 @@ namespace Tests
                 e.RealValue = 0.85;
             }
 
-            var material3 = new Material {Name = "material3", Number = "789"};
+            var material3 = new Material {Name = "material1", Number = "789"};
             foreach (var e in material3.Elements)
             {
                 e.Max = 0.2;

@@ -27,6 +27,7 @@ namespace WelderCalculator.Serialization
             _dataFolder = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\Welder-Calculator\Welder-Calculator\WelderCalculator\WelderCalculator\Data\";
 
         }
+        
         public void SaveToFile(MaterialNorm norm)
         {
             using (FileStream fs = File.Open(_dataFolder + norm.Name + ".json", FileMode.Create))

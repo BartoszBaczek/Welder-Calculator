@@ -11,19 +11,19 @@ namespace Tests
     public class RepositoryTests
     {
         private IRepository _repo;
-        private SampleDataCreator dataCreator;
+        private SampleDataCreator _dataCreator;
         [SetUp]
         public void Init()
         {
             _repo = new Repository("some fucking path");
-            dataCreator = new SampleDataCreator();
+            _dataCreator = new SampleDataCreator();
         }
 
         [Test]
         public void ShouldSerializeNewFileWhenMaterialNormSaved()
         {
             //given
-            var testMaterialNorm = dataCreator.GetSampleMaterialNorm();
+            var testMaterialNorm = _dataCreator.GetSampleMaterialNorm();
 
             //when
             _repo.SaveToFile(testMaterialNorm);
@@ -62,25 +62,23 @@ namespace Tests
         public void ShouldGetMaterialNormByName()
         {
             //given
-            MaterialNorm expectedMaterialNorm = dataCreator.GetSampleMaterialNorm();
+            MaterialNorm expectedNorm = _dataCreator.GetSampleMaterialNorm();
+            int expectedNumberOfMaterialsInNorm = expectedNorm.Materials.Count;
+            string expectedNormName = expectedNorm.Name;
+
+            string[] expectedMaterialName = {"material2", "material3", "material1"};
             
             //when
             MaterialNorm norm = _repo.GetNorm("sampleMaterialNorm1");
+
+            bool materials = (norm.Materials[0].Name == expectedMaterialName[0]
+                                        && norm.Materials[1].Name == expectedMaterialName[1]
+                                        && norm.Materials[2].Name == expectedMaterialName[2]
+
+                                        && norm.Materials.Count == expectedNumberOfMaterialsInNorm);
             
             //then
-            bool materialsAreTheSame = norm.Materials.All(expectedMaterialNorm.Materials.Contains);
-                //norm.Materials.All(expectedMaterialNorm.Materials.Contains);
-                
-                /*(norm.Materials[0].Name == expectedMaterialNorm.Materials[0].Name
-                                        && norm.Materials[1].Name == expectedMaterialNorm.Materials[1].Name
-                                        && norm.Materials[2].Name == expectedMaterialNorm.Materials[2].Name
-
-                                        && norm.Materials[0].Number == expectedMaterialNorm.Materials[0].Number
-                                        && norm.Materials[1].Number == expectedMaterialNorm.Materials[1].Number
-                                        && norm.Materials[2].Number == expectedMaterialNorm.Materials[2].Number
-                                        );
-                 */
-            Assert.IsTrue(norm.Name == expectedMaterialNorm.Name && materialsAreTheSame);
+            Assert.IsTrue(norm.Name == expectedNormName && materials);
         }
     }
 }

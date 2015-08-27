@@ -20,7 +20,7 @@ namespace Tests
         }
 
         [Test]
-        public void ShouldGetValueOfMateiralElement()
+        public void ShouldGetValuesOfMateiralElement()
         {
             //given
             Element expectedElement = new Element(Type.OfElement.C)

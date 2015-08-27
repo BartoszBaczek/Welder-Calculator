@@ -12,11 +12,13 @@ namespace Tests
     public class MaterialDataReaderTests
     {
         private MaterialDataReader _dataReader;
+        private SampleDataCreator _dataCreator;
 
         [SetUp]
         public void Init()
         {
             _dataReader = new MaterialDataReader("chuj");
+            _dataCreator = new SampleDataCreator();
         }
         
         [Test]
@@ -30,10 +32,27 @@ namespace Tests
             };
 
             //when
-            List<string> listOfNorms = _dataReader.GetSortedListOfMaterialsNorms();
+            List<string> listOfNorms = _dataReader.GetSortedListOfMaterialsNormsNames();
 
             //then
             CollectionAssert.AreEqual(listOfNorms, expectedListOfNames);
+        }
+
+        [Test]
+        public void ShouldReturnSortedListOfMaterialsInNorm()
+        {
+            //given
+            string[] expectedMaterialsNames = {"material1", "material2", "material3"};
+
+            //when
+            List<Material> materials = _dataReader.GetListOfMaterialsFromNorm("sampleMaterialNorm1");
+
+            bool materialsAreInAlphabeticalOrder = materials[0].Name == expectedMaterialsNames[0]
+                                                && materials[1].Name == expectedMaterialsNames[1]
+                                                && materials[2].Name == expectedMaterialsNames[2];
+
+            //then
+            Assert.That(materialsAreInAlphabeticalOrder);
         }
     }
 }

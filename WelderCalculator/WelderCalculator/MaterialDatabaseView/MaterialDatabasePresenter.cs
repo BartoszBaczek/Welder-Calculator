@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 using WelderCalculator.Model;
 using WelderCalculator.Serialization;
@@ -26,11 +27,12 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             LoadNormsComboBox();
             MakeAllCheckBoxesChecked();
+            BindDataSourceToDataGridView();
         }
 
         public void LoadNormsComboBox()  
         {
-            _view.NormsList = _materialDataReader.GetSortedListOfMaterialsNorms();
+            _view.NormsList = _materialDataReader.GetSortedListOfMaterialsNormsNames();
         }
 
         public void MakeAllCheckBoxesChecked()
@@ -57,7 +59,11 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public void BindDataSourceToDataGridView()
         {
-            _view.GridSource = new List<Material>();
+            List<string> listOfNormsNames = _materialDataReader.GetSortedListOfMaterialsNormsNames();
+            string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
+
+            _view.GridSource = _materialDataReader.GetListOfMaterialsFromNorm(desiredNameOfNorm);
+            
         }
     }
 }
