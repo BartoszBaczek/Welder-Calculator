@@ -32,8 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,19 +47,39 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="Tests">
+      <HintPath>..\Tests\bin\Debug\Tests.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="MaterialDatabaseView\IMaterialDatabaseView.cs" />
+    <Compile Include="MaterialDatabaseView\MaterialDatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MaterialDatabaseView\MaterialDatabaseForm.Designer.cs">
+      <DependentUpon>MaterialDatabaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaterialDatabaseView\MaterialDatabasePresenter.cs" />
     <Compile Include="Model\Element.cs" />
-    <Compile Include="Model\ElementException.cs" />
-    <Compile Include="Model\IElement.cs" />
+    <Compile Include="Model\Material.cs" />
+    <Compile Include="Model\MaterialDataReader.cs" />
+    <Compile Include="Model\MaterialNorm.cs" />
+    <Compile Include="Model\Type.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serialization\Repository.cs" />
+    <Compile Include="Serialization\IRepository.cs" />
+    <Compile Include="StartView\IStartFormView.cs" />
+    <Compile Include="StartView\StartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartView\StartForm.Designer.cs">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartView\StartFormPresenter.cs" />
+    <EmbeddedResource Include="MaterialDatabaseView\MaterialDatabaseForm.resx">
+      <DependentUpon>MaterialDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -64,6 +89,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StartView\StartForm.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

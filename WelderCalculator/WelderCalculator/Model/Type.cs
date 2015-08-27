@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace WelderCalculator.Model
 {
-    public class ElementException : Exception
+    public static class Type
     {
-        public ElementException() { }
-
-        public ElementException(string message) : base(message) { }
-
+        public enum OfElement
+        {
+            C, Si, Mn, P, S,
+            N, Cr, Mo, Nb, Ni,
+            Ti, Al, V, Cu
+        }
     }
 }

@@ -1,0 +1,9 @@
+Wyj¹tki do obs³u¿enia:
+1) Element.cs
+	Min > Max;
+	Min > 100 || Min < 0 || Max > 100 || Max < 0;
+	SetRange(null, 5);
+	SetRange(4, null);
+	new Element(99, 0.5);
+	typicalValue > Max || typicalValue < Min
+2) Elements.cs

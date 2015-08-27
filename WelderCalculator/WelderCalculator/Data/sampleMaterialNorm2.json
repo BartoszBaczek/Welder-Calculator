@@ -1,0 +1,347 @@
+{
+  "Name": "sampleMaterialNorm1",
+  "Materials": [
+    {
+      "Name": "material4",
+      "Number": "534",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Wêgiel",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 11,
+          "FullName": "Aluminium",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Max": 0.5,
+          "Min": 0.4,
+          "RealValue": 0.47
+        }
+      ],
+      "CEq": 0.0,
+      "NiEq": 0.0,
+      "CeEq": 0.0
+    },
+    {
+      "Name": "material5",
+      "Number": "645",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Wêgiel",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 11,
+          "FullName": "Aluminium",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Max": 0.9,
+          "Min": 0.8,
+          "RealValue": 0.85
+        }
+      ],
+      "CEq": 0.0,
+      "NiEq": 0.0,
+      "CeEq": 0.0
+    },
+    {
+      "Name": "material6",
+      "Number": "000",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Wêgiel",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 11,
+          "FullName": "Aluminium",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Max": 0.2,
+          "Min": 0.1,
+          "RealValue": 0.15
+        }
+      ],
+      "CEq": 0.0,
+      "NiEq": 0.0,
+      "CeEq": 0.0
+    }
+  ]
+}
