@@ -76,7 +76,6 @@ namespace Tests
                                         && norm.Materials[2].Name == expectedMaterialName[2]
 
                                         && norm.Materials.Count == expectedNumberOfMaterialsInNorm);
-            
             //then
             Assert.IsTrue(norm.Name == expectedNormName && materials);
         }

@@ -52,8 +52,8 @@ namespace WelderCalculator.Serialization
         public MaterialNorm GetNorm(string normName)
         {
             string pathToNormFile = _dataFolder + normName + ".json";
-            MaterialNorm norm = JsonConvert.DeserializeObject<MaterialNorm>(File.ReadAllText(pathToNormFile));
-
+            string jsonText = File.ReadAllText(pathToNormFile);
+            var norm = JsonConvert.DeserializeObject<MaterialNorm>(jsonText);
             return norm;
         }
     }

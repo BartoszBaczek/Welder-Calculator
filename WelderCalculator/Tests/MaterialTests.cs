@@ -23,7 +23,7 @@ namespace Tests
         public void ShouldGetValuesOfMateiralElement()
         {
             //given
-            Element expectedElement = new Element(Type.OfElement.C)
+            Element expectedElement = new Element(Category.OfElement.C)
             {
                 Min = 12.4d,
                 Max =  16.1d,
@@ -31,23 +31,23 @@ namespace Tests
             };
 
             //when
-            Element sampleMaterialElement = sampleMaterial.GetElement(Type.OfElement.C);
+            Element sampleMaterialElement = sampleMaterial.GetElement(Category.OfElement.C);
             sampleMaterialElement.Min = 12.4;
             sampleMaterialElement.Max = 16.1;
             sampleMaterialElement.RealValue = 14d;
 
             //then
             Assert.IsTrue(
-                   sampleMaterial.Elements.First(e => e.Name == Type.OfElement.C).Min == expectedElement.Min
-                && sampleMaterial.Elements.First(e => e.Name == Type.OfElement.C).Max == expectedElement.Max
-                && sampleMaterial.Elements.First(e => e.Name == Type.OfElement.C).RealValue == expectedElement.RealValue);
+                   sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Min == expectedElement.Min
+                && sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Max == expectedElement.Max
+                && sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).RealValue == expectedElement.RealValue);
         }
 
         [Test]
         public void ShouldChangeValueOfMaterialElement()
         {
             //given
-            Element expectedElement = new Element(Type.OfElement.C)
+            Element expectedElement = new Element(Category.OfElement.C)
             {
                 Min = 5.1d,
                 Max = 6.3d,
@@ -55,21 +55,20 @@ namespace Tests
             };
 
             //when
-            Element sampleMaterialElement = sampleMaterial.GetElement(Type.OfElement.C);
+            Element sampleMaterialElement = sampleMaterial.GetElement(Category.OfElement.C);
             sampleMaterialElement.Min = 12.4;
             sampleMaterialElement.Max = 16.1;
             sampleMaterialElement.RealValue = 14d;
 
-            sampleMaterial.GetElement(Type.OfElement.C).Min = 5.1d;
-            sampleMaterial.GetElement(Type.OfElement.C).Max = 6.3d;
-            sampleMaterial.GetElement(Type.OfElement.C).RealValue = 5.4d;
+            sampleMaterial.GetElement(Category.OfElement.C).Min = 5.1d;
+            sampleMaterial.GetElement(Category.OfElement.C).Max = 6.3d;
+            sampleMaterial.GetElement(Category.OfElement.C).RealValue = 5.4d;
 
             //then
             Assert.IsTrue(
-                   sampleMaterial.Elements.First(e => e.Name == Type.OfElement.C).Min == expectedElement.Min
-                && sampleMaterial.Elements.First(e => e.Name == Type.OfElement.C).Max == expectedElement.Max
-                && sampleMaterial.Elements.First(e => e.Name == Type.OfElement.C).RealValue == expectedElement.RealValue);
-
+                   sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Min == expectedElement.Min
+                && sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Max == expectedElement.Max
+                && sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).RealValue == expectedElement.RealValue);
         }
     }
 }

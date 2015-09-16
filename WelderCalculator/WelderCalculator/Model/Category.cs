@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WelderCalculator.Model
 {
-    public static class Type
+    public static class Category
     {
         public enum OfElement
         {

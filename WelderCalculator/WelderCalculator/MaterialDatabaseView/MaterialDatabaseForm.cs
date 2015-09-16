@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
-using WelderCalculator.Model;
 using WelderCalculator.Serialization;
 
 namespace WelderCalculator.MaterialDatabaseView
@@ -104,10 +102,20 @@ namespace WelderCalculator.MaterialDatabaseView
         }
         #endregion
 
-        public List<Material> GridSource
+
+        #region DataGridView
+        
+        public DataTable GridSource
         {
             set { this.materialsDataGridView.DataSource = value; }
         }
+
+        public DataGridView DataGridView
+        {
+            get { return this.materialsDataGridView; }
+        }
+
+        #endregion
 
     }
 }

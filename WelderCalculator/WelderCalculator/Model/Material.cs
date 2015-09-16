@@ -22,27 +22,30 @@ namespace WelderCalculator.Model
         {
             Name = string.Empty;
             Number = string.Empty;
-            Elements = new List<Element>()
-            {
-                new Element(Type.OfElement.C),
-                new Element(Type.OfElement.Si),
-                new Element(Type.OfElement.Mn),
-                new Element(Type.OfElement.P),
-                new Element(Type.OfElement.S),
-                new Element(Type.OfElement.N),
-                new Element(Type.OfElement.Cr),
-                new Element(Type.OfElement.Mo),
-                new Element(Type.OfElement.Nb),
-                new Element(Type.OfElement.Nb),
-                new Element(Type.OfElement.Ni),
-                new Element(Type.OfElement.Ti),
-                new Element(Type.OfElement.Al),
-                new Element(Type.OfElement.V),
-                new Element(Type.OfElement.Cu)
-            };
+            Elements = new List<Element>();
         }
 
-        public Element GetElement(Type.OfElement requestedElement)
+        public void CreateBasicListOfElements()
+        {
+            Elements.Add(new Element(Category.OfElement.C));
+            Elements.Add(new Element(Category.OfElement.Si));
+            Elements.Add(new Element(Category.OfElement.Mn));
+            Elements.Add(new Element(Category.OfElement.P));
+            Elements.Add(new Element(Category.OfElement.S));
+            Elements.Add(new Element(Category.OfElement.N));
+            Elements.Add(new Element(Category.OfElement.Cr));
+            Elements.Add(new Element(Category.OfElement.Mo));
+            Elements.Add(new Element(Category.OfElement.Nb));
+            Elements.Add(new Element(Category.OfElement.Nb));
+            Elements.Add(new Element(Category.OfElement.Ni));
+            Elements.Add(new Element(Category.OfElement.Ti));
+            Elements.Add(new Element(Category.OfElement.Al));
+            Elements.Add(new Element(Category.OfElement.V));
+            Elements.Add(new Element(Category.OfElement.Cu));
+
+        }
+
+        public Element GetElement(Category.OfElement requestedElement)
         {
             var singleElement = this.Elements.First(x => x.Name == requestedElement);
             return singleElement;

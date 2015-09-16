@@ -6,7 +6,7 @@ namespace WelderCalculator.Model
 {   
     public class Element
     {
-        public Type.OfElement Name { get; set; }
+        public Category.OfElement Name { get; set; }
 
         public string FullName { get; set; }
 
@@ -16,51 +16,51 @@ namespace WelderCalculator.Model
 
         public double? RealValue { get; set; }      //value must be 0 - 100%
 
-        public Element(Type.OfElement name)
+        public Element(Category.OfElement name)
         {
             Name = name;
             switch (name)
             {
-                case Type.OfElement.C :
+                case Category.OfElement.C :
                     FullName = "Węgiel";
                     break;
-                case Type.OfElement.Si :
+                case Category.OfElement.Si :
                     FullName = "Krzem";
                     break;
-                case Type.OfElement.Mn :
+                case Category.OfElement.Mn :
                     FullName = "Mangan";
                     break;
-                case Type.OfElement.P :
+                case Category.OfElement.P :
                     FullName = "Potas";
                     break;
-                case Type.OfElement.S :
+                case Category.OfElement.S :
                     FullName = "Siarka";
                     break;
-                case Type.OfElement.N :
+                case Category.OfElement.N :
                     FullName = "Azot";
                     break;
-                case Type.OfElement.Cr :
+                case Category.OfElement.Cr :
                     FullName = "Chrom";
                     break;
-                case Type.OfElement.Mo :
+                case Category.OfElement.Mo :
                     FullName = "Molibden";
                     break;
-                case Type.OfElement.Nb :
+                case Category.OfElement.Nb :
                     FullName = "Nb";
                     break;
-                case Type.OfElement.Ni :
+                case Category.OfElement.Ni :
                     FullName = "Nikiel";
                     break;
-                case Type.OfElement.Ti :
+                case Category.OfElement.Ti :
                     FullName = "Tytan";
                     break;
-                case Type.OfElement.Al :
+                case Category.OfElement.Al :
                     FullName = "Aluminium";
                     break;
-                case Type.OfElement.V :
+                case Category.OfElement.V :
                     FullName = "Wanad";
                     break;
-                case Type.OfElement.Cu :
+                case Category.OfElement.Cu :
                     FullName = "Cu";
                     break;
                 default :

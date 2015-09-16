@@ -31,13 +31,11 @@ namespace WelderCalculator.Model
 
         public List<Material> GetListOfMaterialsFromNorm(string normName)
         {
-            
             MaterialNorm norm = _repository.GetNorm(normName);
+
             List<Material> sortedListOfMaterials = norm.Materials.OrderBy(q => q.Name).ToList();
 
             return sortedListOfMaterials;
-             
-            return new List<Material>();
         }
     }
 }

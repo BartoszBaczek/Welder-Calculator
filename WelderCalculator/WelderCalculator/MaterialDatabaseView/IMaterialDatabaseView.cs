@@ -27,6 +27,8 @@ namespace WelderCalculator.MaterialDatabaseView
         bool TiCheckBox { get; set; }
         bool AlCheckBox { get; set; }
 
-        List<Material> GridSource { set; } 
+        DataTable GridSource { set; }
+
+        DataGridView DataGridView { get; }
     }
 }
