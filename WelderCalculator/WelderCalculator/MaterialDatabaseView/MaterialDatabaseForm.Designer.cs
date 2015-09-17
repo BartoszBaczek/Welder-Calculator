@@ -387,7 +387,7 @@
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button addButton;
 
-        //View controls
+        //Materials checkboxes
         private System.Windows.Forms.GroupBox ViewLayoutPanel;
         private System.Windows.Forms.CheckBox alCheckBox;
         private System.Windows.Forms.CheckBox tiCheckBox;

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Diagnostics;
 using System.Windows.Forms;
-using Newtonsoft.Json;
 using WelderCalculator.Model;
 using WelderCalculator.Serialization;
 
@@ -255,7 +253,7 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             foreach ( DataGridViewColumn column in _view.DataGridView.Columns)
             {
-                column.Width = 50;
+                column.Width = column.HeaderText.Length*12;
             }
         }
     
