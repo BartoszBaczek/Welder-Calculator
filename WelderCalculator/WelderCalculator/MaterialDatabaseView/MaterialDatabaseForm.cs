@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using WelderCalculator.Model;
 using WelderCalculator.Serialization;
 
 namespace WelderCalculator.MaterialDatabaseView
@@ -101,6 +100,30 @@ namespace WelderCalculator.MaterialDatabaseView
             get { return this.alCheckBox.Checked; }
             set { this.alCheckBox.Checked = value; }
         }
+
+        public bool NumberCheckBox
+        {
+            get { return this.numberCheckBox.Checked; }
+            set { this.numberCheckBox.Checked = value; }
+        }
+
+        public bool MinCheckBox
+        {
+            get { return this.minCheckBox.Checked; }
+            set { this.numberCheckBox.Checked = value; }
+        }
+
+        public bool MaxCheckBox
+        {
+            get { return this.maxCheckBox.Checked; }
+            set { this.maxCheckBox.Checked = value; }
+        }
+
+        public bool RealCheckBox
+        {
+            get { return this.realCheckBox.Checked; }
+            set { this.realCheckBox.Checked = value; }
+        }
         #endregion
 
 
@@ -123,55 +146,75 @@ namespace WelderCalculator.MaterialDatabaseView
             Presenter.OnSelectedIndexChanged();
         }
 
-        #region CheckBoxes CheckedChanged
+        #region Material checkboxes checks changed
         private void cCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void pCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void crCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void niCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void siCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void sCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void moCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void tiCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void mnCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void nCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void nbCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         private void alCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged();
         }
         #endregion
+
+        private void numberCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged();
+        }
+
+        private void minCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged();
+        }
+
+        private void maxCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged();
+        }
+
+        private void realCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged();
+        }
     }
 }

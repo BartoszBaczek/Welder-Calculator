@@ -55,10 +55,16 @@
             this.niLabel = new System.Windows.Forms.Label();
             this.cLabel = new System.Windows.Forms.Label();
             this.materialsDataGridView = new System.Windows.Forms.DataGridView();
+            this.ViewLayoutPanel_2 = new System.Windows.Forms.GroupBox();
+            this.realCheckBox = new System.Windows.Forms.CheckBox();
+            this.maxCheckBox = new System.Windows.Forms.CheckBox();
+            this.minCheckBox = new System.Windows.Forms.CheckBox();
+            this.numberCheckBox = new System.Windows.Forms.CheckBox();
             this.ViewLayoutPanel.SuspendLayout();
             this.DataModifLayoutPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsDataGridView)).BeginInit();
+            this.ViewLayoutPanel_2.SuspendLayout();
             this.SuspendLayout();
             // 
             // ViewLayoutPanel
@@ -77,7 +83,7 @@
             this.ViewLayoutPanel.Controls.Add(this.cCheckBox);
             this.ViewLayoutPanel.Location = new System.Drawing.Point(516, 12);
             this.ViewLayoutPanel.Name = "ViewLayoutPanel";
-            this.ViewLayoutPanel.Size = new System.Drawing.Size(260, 108);
+            this.ViewLayoutPanel.Size = new System.Drawing.Size(263, 108);
             this.ViewLayoutPanel.TabIndex = 13;
             this.ViewLayoutPanel.TabStop = false;
             this.ViewLayoutPanel.Text = "Opcje wyświetlania";
@@ -140,7 +146,7 @@
             // mnCheckBox
             // 
             this.mnCheckBox.AutoSize = true;
-            this.mnCheckBox.Location = new System.Drawing.Point(167, 20);
+            this.mnCheckBox.Location = new System.Drawing.Point(169, 19);
             this.mnCheckBox.Name = "mnCheckBox";
             this.mnCheckBox.Size = new System.Drawing.Size(89, 17);
             this.mnCheckBox.TabIndex = 8;
@@ -342,11 +348,69 @@
             this.materialsDataGridView.Size = new System.Drawing.Size(892, 252);
             this.materialsDataGridView.TabIndex = 14;
             // 
+            // ViewLayoutPanel_2
+            // 
+            this.ViewLayoutPanel_2.Controls.Add(this.realCheckBox);
+            this.ViewLayoutPanel_2.Controls.Add(this.maxCheckBox);
+            this.ViewLayoutPanel_2.Controls.Add(this.minCheckBox);
+            this.ViewLayoutPanel_2.Controls.Add(this.numberCheckBox);
+            this.ViewLayoutPanel_2.Location = new System.Drawing.Point(785, 17);
+            this.ViewLayoutPanel_2.Name = "ViewLayoutPanel_2";
+            this.ViewLayoutPanel_2.Size = new System.Drawing.Size(74, 103);
+            this.ViewLayoutPanel_2.TabIndex = 15;
+            this.ViewLayoutPanel_2.TabStop = false;
+            this.ViewLayoutPanel_2.Text = "Wyświetlaj";
+            // 
+            // realCheckBox
+            // 
+            this.realCheckBox.AutoSize = true;
+            this.realCheckBox.Location = new System.Drawing.Point(6, 80);
+            this.realCheckBox.Name = "realCheckBox";
+            this.realCheckBox.Size = new System.Drawing.Size(48, 17);
+            this.realCheckBox.TabIndex = 4;
+            this.realCheckBox.Text = "Real";
+            this.realCheckBox.UseVisualStyleBackColor = true;
+            this.realCheckBox.CheckedChanged += new System.EventHandler(this.realCheckBox_CheckedChanged);
+            // 
+            // maxCheckBox
+            // 
+            this.maxCheckBox.AutoSize = true;
+            this.maxCheckBox.Location = new System.Drawing.Point(6, 60);
+            this.maxCheckBox.Name = "maxCheckBox";
+            this.maxCheckBox.Size = new System.Drawing.Size(46, 17);
+            this.maxCheckBox.TabIndex = 3;
+            this.maxCheckBox.Text = "Max";
+            this.maxCheckBox.UseVisualStyleBackColor = true;
+            this.maxCheckBox.CheckedChanged += new System.EventHandler(this.maxCheckBox_CheckedChanged);
+            // 
+            // minCheckBox
+            // 
+            this.minCheckBox.AutoSize = true;
+            this.minCheckBox.Location = new System.Drawing.Point(6, 37);
+            this.minCheckBox.Name = "minCheckBox";
+            this.minCheckBox.Size = new System.Drawing.Size(43, 17);
+            this.minCheckBox.TabIndex = 2;
+            this.minCheckBox.Text = "Min";
+            this.minCheckBox.UseVisualStyleBackColor = true;
+            this.minCheckBox.CheckedChanged += new System.EventHandler(this.minCheckBox_CheckedChanged);
+            // 
+            // numberCheckBox
+            // 
+            this.numberCheckBox.AutoSize = true;
+            this.numberCheckBox.Location = new System.Drawing.Point(6, 14);
+            this.numberCheckBox.Name = "numberCheckBox";
+            this.numberCheckBox.Size = new System.Drawing.Size(57, 17);
+            this.numberCheckBox.TabIndex = 1;
+            this.numberCheckBox.Text = "Numer";
+            this.numberCheckBox.UseVisualStyleBackColor = true;
+            this.numberCheckBox.CheckedChanged += new System.EventHandler(this.numberCheckBox_CheckedChanged);
+            // 
             // MaterialDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 400);
+            this.Controls.Add(this.ViewLayoutPanel_2);
             this.Controls.Add(this.materialsDataGridView);
             this.Controls.Add(this.ViewLayoutPanel);
             this.Controls.Add(this.DataModifLayoutPanel);
@@ -361,6 +425,8 @@
             this.EqLayoutPanel.ResumeLayout(false);
             this.EqLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsDataGridView)).EndInit();
+            this.ViewLayoutPanel_2.ResumeLayout(false);
+            this.ViewLayoutPanel_2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,11 +443,11 @@
         private System.Windows.Forms.Label cLabel;
         private System.Windows.Forms.TextBox cTextBox;
 
-        //General controls
+        //NormComboBox controls
         private System.Windows.Forms.Label normLabel;
         private System.Windows.Forms.ComboBox normComboBox;
 
-        //DataModification controls
+        //Delete/edit/add button
         private System.Windows.Forms.GroupBox DataModifLayoutPanel;
         private System.Windows.Forms.Button deleteButton;
         private System.Windows.Forms.Button editButton;
@@ -404,6 +470,13 @@
 
         //DataGridView
         private System.Windows.Forms.DataGridView materialsDataGridView;
+        
+        //Real/min/max/name/number checkboxes
+        private System.Windows.Forms.GroupBox ViewLayoutPanel_2;
+        private System.Windows.Forms.CheckBox realCheckBox;
+        private System.Windows.Forms.CheckBox maxCheckBox;
+        private System.Windows.Forms.CheckBox minCheckBox;
+        private System.Windows.Forms.CheckBox numberCheckBox;
 
 
     }

@@ -25,12 +25,14 @@ namespace WelderCalculator.MaterialDatabaseView
         bool TiCheckBox { get; set; }
         bool AlCheckBox { get; set; }
 
+        bool NumberCheckBox { get; set; }
+        bool MinCheckBox { get; set; }
+        bool MaxCheckBox { get; set; }
+        bool RealCheckBox { get; set; }
+
         DataTable GridSource { set; }
 
         DataGridView DataGridView { get; }
-
-        //Event handlers//
-
 
     }
 }
