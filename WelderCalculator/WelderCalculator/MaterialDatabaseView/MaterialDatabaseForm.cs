@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using WelderCalculator.Model;
 using WelderCalculator.Serialization;
 
 namespace WelderCalculator.MaterialDatabaseView
@@ -104,7 +105,6 @@ namespace WelderCalculator.MaterialDatabaseView
 
 
         #region DataGridView
-        
         public DataTable GridSource
         {
             set { this.materialsDataGridView.DataSource = value; }
@@ -114,8 +114,64 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             get { return this.materialsDataGridView; }
         }
-
         #endregion
 
+
+        /*Event handling*/
+        private void normComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged();
+        }
+
+        #region CheckBoxes CheckedChanged
+        private void cCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void pCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void crCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void niCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void siCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void sCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void moCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void tiCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void mnCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void nCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void nbCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        private void alCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnCheckBoxChanged();
+        }
+        #endregion
     }
 }

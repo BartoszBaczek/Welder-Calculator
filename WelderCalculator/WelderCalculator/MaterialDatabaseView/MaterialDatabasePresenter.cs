@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
@@ -30,15 +29,15 @@ namespace WelderCalculator.MaterialDatabaseView
             LoadNormsComboBox();
             MakeAllCheckBoxesChecked();
             BindDataSourceToDataGridView();
-            SetDataGridViewDimensions();
+            SetDataGridViewColumnsWidth();
         }
 
-        public void LoadNormsComboBox()  
+        private void LoadNormsComboBox()  
         {
             _view.NormsList = _materialDataReader.GetSortedListOfMaterialsNormsNames();
         }
 
-        public void MakeAllCheckBoxesChecked()
+        private void MakeAllCheckBoxesChecked()
         {
             _view.CcheckBox = true;
             _view.SiCheckBox = true;
@@ -54,13 +53,7 @@ namespace WelderCalculator.MaterialDatabaseView
             _view.AlCheckBox = true;
         }
 
-        public void UpdateNormComboBoxSelection()
-        {
-            int selectedNorm = _view.SelectedNorm >= 0 ? _view.SelectedNorm : 0;
-            _view.SelectedNorm = selectedNorm;
-        }
-
-        public void BindDataSourceToDataGridView()
+        private void BindDataSourceToDataGridView()
         {
             //_view.GridSource = listofMaterialsFromNorm;
 
@@ -68,10 +61,10 @@ namespace WelderCalculator.MaterialDatabaseView
 
             _view.GridSource = table;
         }
-
+        
         private DataTable CreateTable()
         {
-            DataTable table = new DataTable();
+            var table = new DataTable();
 
             /* Create columns */
             table.Columns.Add("Nazwa", typeof(string));
@@ -176,12 +169,8 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void PutMaterialsInRows(DataTable table)
         {
-            /*TEST*/
-           // List<Material> myMaterials = GetCurrentListOfMaterialsFromNormComboBox();
             DataColumnCollection columns = table.Columns;
             List<Material> materials = GetCurrentListOfMaterialsFromNormComboBox();
-            string debuger = JsonConvert.SerializeObject(materials);
-            Debug.WriteLine(debuger);
             foreach (var material in materials)
             {
                 DataRow r = table.NewRow();
@@ -262,12 +251,26 @@ namespace WelderCalculator.MaterialDatabaseView
                 row[real] = materialElement.RealValue;
         }
 
-        private void SetDataGridViewDimensions()
+        private void SetDataGridViewColumnsWidth()
         {
             foreach ( DataGridViewColumn column in _view.DataGridView.Columns)
             {
                 column.Width = 50;
             }
+        }
+    
+        /*Event handling*/
+
+        public void OnSelectedIndexChanged()
+        {
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidth();
+        }
+
+        public void OnCheckBoxChanged()
+        {
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidth();
         }
     }
 }

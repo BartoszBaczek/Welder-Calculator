@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
-using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
@@ -30,5 +28,9 @@ namespace WelderCalculator.MaterialDatabaseView
         DataTable GridSource { set; }
 
         DataGridView DataGridView { get; }
+
+        //Event handlers//
+
+
     }
 }
