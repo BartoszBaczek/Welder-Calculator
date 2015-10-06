@@ -219,51 +219,51 @@ namespace WelderCalculator.MaterialDatabaseView
                     r["Nazwa"] = material.Name;
                 if (columns.Contains("Numer"))
                     r["Numer"] = material.Number;
-                if (columns.Contains("C min"))
+                if (_view.CcheckBox == true)
                 {
                     FillElementColumns(r, "C min", "C max", "C real", Category.OfElement.C, material);
                 }
-                if (columns.Contains("Si min"))
+                if (_view.SiCheckBox)
                 {
                     FillElementColumns(r, "Si min", "Si max", "Si real", Category.OfElement.Si, material);
                 }
-                if (columns.Contains("Mn min"))
+                if (_view.MnCheckBox)
                 {
                     FillElementColumns(r, "Mn min", "Mn max", "Mn real", Category.OfElement.Mn, material);
                 }
-                if (columns.Contains("P min"))
+                if (_view.PcheckBox)
                 {
                     FillElementColumns(r, "P min", "P max", "P real", Category.OfElement.P, material);
                 }
-                if (columns.Contains("S min"))
+                if (_view.ScheckBox)
                 {
                     FillElementColumns(r, "S min", "S max", "S real", Category.OfElement.S, material);
                 }
-                if (columns.Contains("N min"))
+                if (_view.NcheckBox)
                 {
                     FillElementColumns(r, "N min", "N max", "N real", Category.OfElement.N, material);
                 }
-                if (columns.Contains("Cr min"))
+                if (_view.CrCheckBox)
                 {
                     FillElementColumns(r, "Cr min", "Cr max", "Cr real", Category.OfElement.Cr, material);
                 }
-                if (columns.Contains("Mo min"))
+                if (_view.MoCheckBox)
                 {
                     FillElementColumns(r, "Mo min", "Mo max", "Mo real", Category.OfElement.Mo, material);
                 }
-                if (columns.Contains("Nb min"))
+                if (_view.NbCheckBox)
                 {
                     FillElementColumns(r, "Nb min", "Nb max", "Nb real", Category.OfElement.Nb, material);
                 }
-                if (columns.Contains("Ni min"))
+                if (_view.NiCheckBox)
                 {
                     FillElementColumns(r, "Ni min", "Ni max", "Ni real", Category.OfElement.Ni, material);
                 }
-                if (columns.Contains("Ti min"))
+                if (_view.TiCheckBox)
                 {
                     FillElementColumns(r, "Ti min", "Ti max", "Ti real", Category.OfElement.Ti, material);
                 }
-                if (columns.Contains("Al min"))
+                if (_view.AlCheckBox)
                 {
                     FillElementColumns(r, "Al min", "Al max", "Al real", Category.OfElement.Al, material);
                 }
@@ -276,20 +276,30 @@ namespace WelderCalculator.MaterialDatabaseView
         private void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element, Material material)
         {
             Element materialElement = material.GetElement(element);
-            if (material.GetElement(element).Min == null)
-                row[min] = DBNull.Value;
-            else
-                row[min] = materialElement.Min;
+            if (_view.MinCheckBox)
+            {
+                if (material.GetElement(element).Min == null)
+                    row[min] = DBNull.Value;
+                else
+                    row[min] = materialElement.Min;
+            }
 
-            if (material.GetElement(element).Max == null)
-                row[max] = DBNull.Value;
-            else
-                row[max] = materialElement.Max;
+            if (_view.MaxCheckBox)
+            {
+                if (material.GetElement(element).Max == null)
+                    row[max] = DBNull.Value;
+                else
+                    row[max] = materialElement.Max;
+            }
 
-            if (material.GetElement(element).RealValue == null)
-                row[real] = DBNull.Value;
-            else
-                row[real] = materialElement.RealValue;
+            if (_view.RealCheckBox)
+            {
+                if (material.GetElement(element).RealValue == null)
+                    row[real] = DBNull.Value;
+                else
+                    row[real] = materialElement.RealValue;
+            }
+            
         }
 
         private void SetDataGridViewColumnsWidth()
