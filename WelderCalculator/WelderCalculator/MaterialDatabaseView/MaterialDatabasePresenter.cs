@@ -58,8 +58,6 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void BindDataSourceToDataGridView()
         {
-            //_view.GridSource = listofMaterialsFromNorm;
-
             DataTable table = CreateTable();
 
             _view.GridSource = table;
@@ -68,18 +66,9 @@ namespace WelderCalculator.MaterialDatabaseView
         private DataTable CreateTable()
         {
             var table = new DataTable();
-
-            /* Create columns */
-            table.Columns.Add("Nazwa", typeof(string));
             
-            if (_view.NumberCheckBox == true)
-                table.Columns.Add("Numer", typeof(string));
-            
-            AddColumnsForEachElements(table);
-
-
-            /* Create rows */
-            PutMaterialsInRows(table);
+            CreateColumns(table);
+            CreateRows(table);
 
             return table;
         }
@@ -93,8 +82,13 @@ namespace WelderCalculator.MaterialDatabaseView
             return listofMaterialsFromNorm;
         }
         
-        private void AddColumnsForEachElements(DataTable table)
+        private void CreateColumns(DataTable table)
         {
+            table.Columns.Add("Nazwa", typeof(string));
+
+            if (_view.NumberCheckBox == true)
+                table.Columns.Add("Numer", typeof(string));
+
             if (_view.CcheckBox)
             {
                 if (_view.MinCheckBox)
@@ -208,7 +202,7 @@ namespace WelderCalculator.MaterialDatabaseView
                 column.AllowDBNull = true;
         }
 
-        private void PutMaterialsInRows(DataTable table)
+        private void CreateRows(DataTable table)
         {
             DataColumnCollection columns = table.Columns;
             List<Material> materials = GetCurrentListOfMaterialsFromNormComboBox();
