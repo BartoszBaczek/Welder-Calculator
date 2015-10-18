@@ -9,19 +9,19 @@ using WelderCalculator.Model;
 
 namespace WelderCalculator.Serialization
 {
-    public class Repository : IRepository
+    public class MaterialRepository : IMaterialRepository
     {
         private string _binPath;
         private readonly string _dataFolder;
 
-        public Repository()
+        public MaterialRepository()
         {
             _binPath = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
             _dataFolder = _binPath + @"\.." + @"\Data\";
         }
 
         /*Use this constructor ONLY for testing!!!*/
-        public Repository(string filePathForTestsOnly)
+        public MaterialRepository(string filePathForTestsOnly)
         {
             _binPath = string.Empty;
             _dataFolder = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\Welder-Calculator\Welder-Calculator\WelderCalculator\WelderCalculator\Data\";

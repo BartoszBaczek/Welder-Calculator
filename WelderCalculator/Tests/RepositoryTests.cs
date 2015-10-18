@@ -10,12 +10,12 @@ namespace Tests
     [TestFixture]
     public class RepositoryTests
     {
-        private IRepository _repo;
+        private IMaterialRepository _repo;
         private SampleDataCreator _dataCreator;
         [SetUp]
         public void Init()
         {
-            _repo = new Repository("some fucking path");
+            _repo = new MaterialRepository("some fucking path");
             _dataCreator = new SampleDataCreator();
         }
 

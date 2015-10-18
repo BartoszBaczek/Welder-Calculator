@@ -13,10 +13,10 @@ namespace WelderCalculator.MaterialDatabaseView
     {
         private readonly IMaterialDatabaseView _view;
 
-        private readonly IRepository _repository;
+        private readonly IMaterialRepository _repository;
         private readonly MaterialDataReader _materialDataReader;
 
-        public MaterialDatabasePresenter(IMaterialDatabaseView view,  IRepository repository)
+        public MaterialDatabasePresenter(IMaterialDatabaseView view,  IMaterialRepository repository)
         {
             _view = view;
             view.Presenter = this;
@@ -236,11 +236,7 @@ namespace WelderCalculator.MaterialDatabaseView
             }
         }
 
-        public void OpenMaterialOrderPropertiesWindow()
-        {
-            var orderPropertiesForm = new MaterialDatabasePropertiesForm();
-            orderPropertiesForm.ShowDialog();
-        }
+
 
         /*Event handling*/
 
@@ -260,6 +256,12 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidth();
+        }
+
+        public void OnElementsOrderPropertiesButtonClicked()
+        {
+            var orderPropertiesForm = new MaterialDatabasePropertiesForm();
+            orderPropertiesForm.ShowDialog();
         }
     }
 }

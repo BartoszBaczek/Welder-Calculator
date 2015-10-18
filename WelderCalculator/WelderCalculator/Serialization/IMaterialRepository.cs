@@ -3,7 +3,7 @@ using WelderCalculator.Model;
 
 namespace WelderCalculator.Serialization
 {
-    public interface IRepository
+    public interface IMaterialRepository
     {
         void SaveToFile(MaterialNorm norm);
 

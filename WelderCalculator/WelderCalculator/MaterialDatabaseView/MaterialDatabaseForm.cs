@@ -12,7 +12,7 @@ namespace WelderCalculator.MaterialDatabaseView
         public MaterialDatabaseForm()
         {
             InitializeComponent();
-            var repository = new Repository();
+            var repository = new MaterialRepository();
             new MaterialDatabasePresenter(this, repository);
             Presenter.Init();
         }
@@ -237,7 +237,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void orderElementsButton_Click(object sender, System.EventArgs e)
         {
-            Presenter.OpenMaterialOrderPropertiesWindow();
+            Presenter.OnElementsOrderPropertiesButtonClicked();
         }
      }
 }

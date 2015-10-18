@@ -8,17 +8,17 @@ namespace WelderCalculator.Model
 {
     public class MaterialDataReader
     {
-        private readonly IRepository _repository;
+        private readonly IMaterialRepository _repository;
 
         public MaterialDataReader()
         {
-            _repository = new Repository();
+            _repository = new MaterialRepository();
         }
 
         /*Use this constructor ONLY for testing!!!*/
         public MaterialDataReader(string filePathForTestsOnly)
         {
-            _repository = new Repository(filePathForTestsOnly);
+            _repository = new MaterialRepository(filePathForTestsOnly);
         }
 
         public List<string> GetSortedListOfMaterialsNormsNames()
