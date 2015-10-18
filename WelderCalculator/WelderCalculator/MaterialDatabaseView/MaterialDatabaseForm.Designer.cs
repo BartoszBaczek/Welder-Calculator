@@ -62,6 +62,7 @@
             this.numberCheckBox = new System.Windows.Forms.CheckBox();
             this.vCheckBox = new System.Windows.Forms.CheckBox();
             this.cuCheckBox = new System.Windows.Forms.CheckBox();
+            this.orderElementsButton = new System.Windows.Forms.Button();
             this.ViewLayoutPanel.SuspendLayout();
             this.DataModifLayoutPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
@@ -71,6 +72,7 @@
             // 
             // ViewLayoutPanel
             // 
+            this.ViewLayoutPanel.Controls.Add(this.orderElementsButton);
             this.ViewLayoutPanel.Controls.Add(this.cuCheckBox);
             this.ViewLayoutPanel.Controls.Add(this.vCheckBox);
             this.ViewLayoutPanel.Controls.Add(this.alCheckBox);
@@ -431,6 +433,16 @@
             this.cuCheckBox.UseVisualStyleBackColor = true;
             this.cuCheckBox.CheckedChanged += new System.EventHandler(this.cuCheckBox_CheckedChanged);
             // 
+            // orderElementsButton
+            // 
+            this.orderElementsButton.Location = new System.Drawing.Point(267, 79);
+            this.orderElementsButton.Name = "orderElementsButton";
+            this.orderElementsButton.Size = new System.Drawing.Size(75, 23);
+            this.orderElementsButton.TabIndex = 17;
+            this.orderElementsButton.Text = "Kolejność";
+            this.orderElementsButton.UseVisualStyleBackColor = true;
+            this.orderElementsButton.Click += new System.EventHandler(this.orderElementsButton_Click);
+            // 
             // MaterialDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,6 +517,7 @@
         private System.Windows.Forms.CheckBox numberCheckBox;
         private System.Windows.Forms.CheckBox cuCheckBox;
         private System.Windows.Forms.CheckBox vCheckBox;
+        private System.Windows.Forms.Button orderElementsButton;
 
 
     }

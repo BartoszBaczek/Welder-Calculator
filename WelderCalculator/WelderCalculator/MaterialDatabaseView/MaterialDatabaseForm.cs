@@ -138,7 +138,6 @@ namespace WelderCalculator.MaterialDatabaseView
         }
         #endregion
 
-
         #region DataGridView
         public DataTable GridSource
         {
@@ -150,7 +149,6 @@ namespace WelderCalculator.MaterialDatabaseView
             get { return this.materialsDataGridView; }
         }
         #endregion
-
 
         /*Event handling*/
         private void normComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -235,6 +233,11 @@ namespace WelderCalculator.MaterialDatabaseView
         private void realCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
             Presenter.OnViewOptionsCheckBoxChanged();
+        }
+
+        private void orderElementsButton_Click(object sender, System.EventArgs e)
+        {
+            Presenter.OpenMaterialOrderPropertiesWindow();
         }
      }
 }

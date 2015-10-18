@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.Model;
 using WelderCalculator.Serialization;
 
@@ -76,7 +77,7 @@ namespace WelderCalculator.MaterialDatabaseView
             return table;
         }
 
-        private List<Material> GetCurrentListOfMaterialsFromNormComboBox()
+        private IEnumerable<Material> GetCurrentListOfMaterialsFromNormComboBox()
         {
             List<string> listOfNormsNames = _materialDataReader.GetSortedListOfMaterialsNormsNames();
             string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
@@ -92,11 +93,12 @@ namespace WelderCalculator.MaterialDatabaseView
             listOfElements = Enum.GetValues(typeof (Category.OfElement))
                                  .Cast<Category.OfElement>()
                                  .ToList();
+            //should be var listOfElements = GetOrderOfElements() //
 
 
             table.Columns.Add("Nazwa", typeof(string));
 
-            if (_view.NumberCheckBox == true)
+            if (_view.NumberCheckBox)
                 table.Columns.Add("Numer", typeof(string));
 
             int i = 0;
@@ -108,7 +110,7 @@ namespace WelderCalculator.MaterialDatabaseView
                     (element == Category.OfElement.Cr && _view.CrCheckBox) || (element == Category.OfElement.Mo && _view.MoCheckBox) ||
                     (element == Category.OfElement.Nb && _view.NbCheckBox) || (element == Category.OfElement.Ni && _view.NiCheckBox) ||
                     (element == Category.OfElement.Ti && _view.TiCheckBox == true) || (element == Category.OfElement.Al && _view.AlCheckBox) ||
-                     (element == Category.OfElement.V && _view.VCheckBox) || (element == Category.OfElement.Cu && _view.CuCheckBox))
+                    (element == Category.OfElement.V && _view.VCheckBox) || (element == Category.OfElement.Cu && _view.CuCheckBox))
                 {
                     if (_view.MinCheckBox)
                         table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " min", typeof(double));
@@ -127,7 +129,7 @@ namespace WelderCalculator.MaterialDatabaseView
         private void CreateRows(DataTable table)
         {
             DataColumnCollection columns = table.Columns;
-            List<Material> materials = GetCurrentListOfMaterialsFromNormComboBox();
+            IEnumerable<Material> materials = GetCurrentListOfMaterialsFromNormComboBox();
             foreach (var material in materials)
             {
                 DataRow r = table.NewRow();
@@ -233,7 +235,13 @@ namespace WelderCalculator.MaterialDatabaseView
                 column.Width = column.HeaderText.Length*12;
             }
         }
-    
+
+        public void OpenMaterialOrderPropertiesWindow()
+        {
+            var orderPropertiesForm = new MaterialDatabasePropertiesForm();
+            orderPropertiesForm.ShowDialog();
+        }
+
         /*Event handling*/
 
         public void OnSelectedIndexChanged()
