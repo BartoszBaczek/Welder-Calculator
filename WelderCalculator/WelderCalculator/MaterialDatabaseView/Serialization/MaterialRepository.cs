@@ -25,7 +25,6 @@ namespace WelderCalculator.Serialization
         {
             _binPath = string.Empty;
             _dataFolder = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\Welder-Calculator\Welder-Calculator\WelderCalculator\WelderCalculator\Data\";
-
         }
         
         public void SaveToFile(MaterialNorm norm)

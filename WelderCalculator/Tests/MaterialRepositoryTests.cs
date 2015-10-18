@@ -8,7 +8,7 @@ using WelderCalculator.Serialization;
 namespace Tests
 {
     [TestFixture]
-    public class RepositoryTests
+    public class MaterialRepositoryTests
     {
         private IMaterialRepository _repo;
         private SampleDataCreator _dataCreator;

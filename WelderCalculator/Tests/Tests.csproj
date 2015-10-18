@@ -61,7 +61,7 @@
     <Compile Include="MaterialDataReaderTests.cs" />
     <Compile Include="MaterialTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepositoryTests.cs" />
+    <Compile Include="MaterialRepositoryTests.cs" />
     <Compile Include="SampleDataCreator.cs" />
   </ItemGroup>
   <ItemGroup>

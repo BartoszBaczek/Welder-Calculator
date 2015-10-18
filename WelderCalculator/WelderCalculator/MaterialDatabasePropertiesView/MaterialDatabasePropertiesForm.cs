@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json.Schema;
+using WelderCalculator.MaterialDatabasePropertiesView.Serialization;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
@@ -17,342 +19,152 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         public MaterialDatabasePropertiesForm()
         {
             InitializeComponent();
+            var repository = new ElementsOrderPropertiesRepository();
+            new MaterialDatabasePropertiesPresenter(this, repository);
+            Presenter.Init();
         }
 
+        #region ComboBoxes
         public List<string> ElementsList1st
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox1st.DataSource = value;  }
         }
-
         public int SelectedElement1st
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox1st.SelectedIndex; }
+            set { this.comboBox1st.SelectedIndex = value; }
         }
 
         public List<string> ElementsList2nd
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox2nd.DataSource = value; }
         }
-
         public int SelectedElement2nd
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox2nd.SelectedIndex; }
+            set { this.comboBox2nd.SelectedIndex = value; }
         }
 
         public List<string> ElementsList3rd
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox3rd.DataSource = value; }
         }
-
         public int SelectedElement3rd
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox3rd.SelectedIndex; }
+            set { this.comboBox3rd.SelectedIndex = value; }
         }
 
         public List<string> ElementsList4th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox4th.DataSource = value; }
         }
-
         public int SelectedElement4th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox4th.SelectedIndex; }
+            set { this.comboBox4th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList5th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox5th.DataSource = value; }
         }
-
         public int SelectedElement5th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox5th.SelectedIndex; }
+            set { this.comboBox5th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList6th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox6th.DataSource = value;  }
         }
-
         public int SelectedElement6th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox6th.SelectedIndex; }
+            set { this.comboBox6th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList7th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox7th.DataSource = value;  }
         }
-
         public int SelectedElement7th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox7th.SelectedIndex; }
+            set { this.comboBox7th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList8th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox8th.DataSource = value; }
         }
-
         public int SelectedElement8th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox8th.SelectedIndex; }
+            set { this.comboBox8th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList9th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox9th.DataSource = value; }
         }
-
         public int SelectedElement9th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox9th.SelectedIndex; }
+            set { this.comboBox9th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList10th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox10th.DataSource = value; }
         }
-
         public int SelectedElement10th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox10th.SelectedIndex; }
+            set { this.comboBox10th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList11th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox11th.DataSource = value; }
         }
-
         public int SelectedElement11th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox11th.SelectedIndex; }
+            set { this.comboBox11th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList12th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox12th.DataSource = value; }
         }
-
         public int SelectedElement12th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox12th.SelectedIndex; }
+            set { this.comboBox12th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList13th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox13th.DataSource = value;  }
         }
-
         public int SelectedElement13th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox13th.SelectedIndex; }
+            set { this.comboBox13th.SelectedIndex = value; }
         }
 
         public List<string> ElementsList14th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            set { this.comboBox14th.DataSource = value;  }
         }
-
         public int SelectedElement14th
         {
-            get
-            {
-                throw new NotImplementedException();
-            }
-            set
-            {
-                throw new NotImplementedException();
-            }
+            get { return this.comboBox14th.SelectedIndex; }
+            set { this.comboBox14th.SelectedIndex = value; }
         }
+        #endregion
+
     }
 }

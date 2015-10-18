@@ -30,7 +30,7 @@
         {
             this.comboBox1st = new System.Windows.Forms.ComboBox();
             this.comboBox2nd = new System.Windows.Forms.ComboBox();
-            this.comboBox3th = new System.Windows.Forms.ComboBox();
+            this.comboBox3rd = new System.Windows.Forms.ComboBox();
             this.comboBox4th = new System.Windows.Forms.ComboBox();
             this.comboBox5th = new System.Windows.Forms.ComboBox();
             this.comboBox6th = new System.Windows.Forms.ComboBox();
@@ -77,13 +77,13 @@
             this.comboBox2nd.Size = new System.Drawing.Size(121, 21);
             this.comboBox2nd.TabIndex = 1;
             // 
-            // comboBox3th
+            // comboBox3rd
             // 
-            this.comboBox3th.FormattingEnabled = true;
-            this.comboBox3th.Location = new System.Drawing.Point(40, 95);
-            this.comboBox3th.Name = "comboBox3th";
-            this.comboBox3th.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3th.TabIndex = 3;
+            this.comboBox3rd.FormattingEnabled = true;
+            this.comboBox3rd.Location = new System.Drawing.Point(40, 95);
+            this.comboBox3rd.Name = "comboBox3rd";
+            this.comboBox3rd.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3rd.TabIndex = 3;
             // 
             // comboBox4th
             // 
@@ -357,7 +357,7 @@
             this.Controls.Add(this.comboBox12th);
             this.Controls.Add(this.comboBox5th);
             this.Controls.Add(this.comboBox6th);
-            this.Controls.Add(this.comboBox3th);
+            this.Controls.Add(this.comboBox3rd);
             this.Controls.Add(this.comboBox4th);
             this.Controls.Add(this.comboBox2nd);
             this.Controls.Add(this.comboBox1st);
@@ -373,7 +373,7 @@
 
         private System.Windows.Forms.ComboBox comboBox1st;
         private System.Windows.Forms.ComboBox comboBox2nd;
-        private System.Windows.Forms.ComboBox comboBox3th;
+        private System.Windows.Forms.ComboBox comboBox3rd;
         private System.Windows.Forms.ComboBox comboBox4th;
         private System.Windows.Forms.ComboBox comboBox5th;
         private System.Windows.Forms.ComboBox comboBox6th;
