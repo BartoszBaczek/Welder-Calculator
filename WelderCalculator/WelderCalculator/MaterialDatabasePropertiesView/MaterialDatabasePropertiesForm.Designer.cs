@@ -57,6 +57,8 @@
             this.label14th = new System.Windows.Forms.Label();
             this.label13th = new System.Windows.Forms.Label();
             this.OrderLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.applyOrderButton = new System.Windows.Forms.Button();
+            this.cancelOrderButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox1st
@@ -306,11 +308,31 @@
             this.OrderLayoutPanel.TabStop = false;
             this.OrderLayoutPanel.Text = "Kolejność";
             // 
+            // applyOrderButton
+            // 
+            this.applyOrderButton.Location = new System.Drawing.Point(15, 434);
+            this.applyOrderButton.Name = "applyOrderButton";
+            this.applyOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.applyOrderButton.TabIndex = 29;
+            this.applyOrderButton.Text = "OK";
+            this.applyOrderButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelOrderButton
+            // 
+            this.cancelOrderButton.Location = new System.Drawing.Point(97, 434);
+            this.cancelOrderButton.Name = "cancelOrderButton";
+            this.cancelOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelOrderButton.TabIndex = 30;
+            this.cancelOrderButton.Text = "Anuluj";
+            this.cancelOrderButton.UseVisualStyleBackColor = true;
+            // 
             // MaterialDatabasePropertiesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(201, 469);
+            this.Controls.Add(this.cancelOrderButton);
+            this.Controls.Add(this.applyOrderButton);
             this.Controls.Add(this.label14th);
             this.Controls.Add(this.label13th);
             this.Controls.Add(this.label12th);
@@ -378,6 +400,8 @@
         private System.Windows.Forms.Label label14th;
         private System.Windows.Forms.Label label13th;
         private System.Windows.Forms.GroupBox OrderLayoutPanel;
+        private System.Windows.Forms.Button applyOrderButton;
+        private System.Windows.Forms.Button cancelOrderButton;
 
     }
 }

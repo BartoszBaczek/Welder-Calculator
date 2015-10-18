@@ -50,6 +50,8 @@ namespace WelderCalculator.MaterialDatabaseView
             _view.NiCheckBox = true;
             _view.TiCheckBox = true;
             _view.AlCheckBox = true;
+            _view.VCheckBox = true;
+            _view.CuCheckBox = true;
 
             _view.NumberCheckBox = true;
             _view.MinCheckBox = true;
@@ -100,126 +102,23 @@ namespace WelderCalculator.MaterialDatabaseView
             int i = 0;
             foreach (var element in listOfElements)
             {
-                if (_view.MinCheckBox)
-                    table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " min", typeof(double));
-                if (_view.MaxCheckBox)
-                    table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " max", typeof(double));
-                if (_view.RealCheckBox)
-                    table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " real", typeof(double));
-
+                if ((element == Category.OfElement.C && _view.CcheckBox) || (element == Category.OfElement.Si && _view.SiCheckBox) ||
+                    (element == Category.OfElement.Mn && _view.MnCheckBox) || (element == Category.OfElement.P && _view.PcheckBox) ||
+                    (element == Category.OfElement.S && _view.ScheckBox) || (element == Category.OfElement.N && _view.NcheckBox) ||
+                    (element == Category.OfElement.Cr && _view.CrCheckBox) || (element == Category.OfElement.Mo && _view.MoCheckBox) ||
+                    (element == Category.OfElement.Nb && _view.NbCheckBox) || (element == Category.OfElement.Ni && _view.NiCheckBox) ||
+                    (element == Category.OfElement.Ti && _view.TiCheckBox == true) || (element == Category.OfElement.Al && _view.AlCheckBox) ||
+                     (element == Category.OfElement.V && _view.VCheckBox) || (element == Category.OfElement.Cu && _view.CuCheckBox))
+                {
+                    if (_view.MinCheckBox)
+                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " min", typeof(double));
+                    if (_view.MaxCheckBox)
+                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " max", typeof(double));
+                    if (_view.RealCheckBox)
+                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " real", typeof(double));
+                }
                 i++;
             }
-
-            #region Old way of filling columns
-            //if (_view.CcheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("C min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("C max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("C real", typeof (double));
-            //}
-            //if (_view.SiCheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("Si min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("Si max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("Si real", typeof(double));
-            //}
-            //if (_view.MnCheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("Mn min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("Mn max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("Mn real", typeof(double));
-            //}
-            //if (_view.PcheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("P min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("P max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("P real", typeof(double));
-            //}
-            //if (_view.ScheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("S min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("S max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("S real", typeof(double));
-            //}
-            //if (_view.NcheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("N min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("N max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("N real", typeof(double));
-            //}
-            //if (_view.CrCheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("Cr min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("Cr max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("Cr real", typeof(double));
-            //}
-            //if (_view.MoCheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("Mo min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("Mo max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("Mo real", typeof(double));
-            //}
-            //if (_view.NbCheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("Nb min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("Nb max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("Nb real", typeof(double));
-            //} 
-            //if (_view.NiCheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("Ni min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("Ni max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("Ni real", typeof(double));
-            //}
-            //if (_view.TiCheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("Ti min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("Ti max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("Ti real", typeof(double));
-            //}
-            //if (_view.AlCheckBox)
-            //{
-            //    if (_view.MinCheckBox)
-            //        table.Columns.Add("Al min", typeof(double));
-            //    if (_view.MaxCheckBox)
-            //        table.Columns.Add("Al max", typeof(double));
-            //    if (_view.RealCheckBox)
-            //        table.Columns.Add("Al real", typeof(double));
-            //}
-            #endregion
 
             foreach (DataColumn column in table.Columns)
                 column.AllowDBNull = true;
@@ -283,6 +182,14 @@ namespace WelderCalculator.MaterialDatabaseView
                 if (_view.AlCheckBox)
                 {
                     FillElementColumns(r, "Al min", "Al max", "Al real", Category.OfElement.Al, material);
+                }
+                if (_view.VCheckBox)
+                {
+                    FillElementColumns(r, "V min", "V max", "V real", Category.OfElement.V, material);
+                }
+                if (_view.CuCheckBox)
+                {
+                    FillElementColumns(r, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
                 }
 
                 table.Rows.Add(r); 

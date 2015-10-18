@@ -101,6 +101,18 @@ namespace WelderCalculator.MaterialDatabaseView
             set { this.alCheckBox.Checked = value; }
         }
 
+        public bool VCheckBox
+        {
+            get { return this.vCheckBox.Checked; }
+            set { this.vCheckBox.Checked = value; }
+        }
+
+        public bool CuCheckBox
+        {
+            get { return this.cuCheckBox.Checked; }
+            set { this.cuCheckBox.Checked = value; }
+        }
+
         public bool NumberCheckBox
         {
             get { return this.numberCheckBox.Checked; }
@@ -195,6 +207,14 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             Presenter.OnMaterialCheckBoxChanged();
         }
+        private void cuCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged();
+        }
+        private void vCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged();
+        }
         #endregion
 
         private void numberCheckBox_CheckedChanged(object sender, System.EventArgs e)
@@ -216,5 +236,5 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             Presenter.OnViewOptionsCheckBoxChanged();
         }
-    }
+     }
 }

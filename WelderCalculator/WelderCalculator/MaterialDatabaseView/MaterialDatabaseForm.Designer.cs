@@ -60,6 +60,8 @@
             this.maxCheckBox = new System.Windows.Forms.CheckBox();
             this.minCheckBox = new System.Windows.Forms.CheckBox();
             this.numberCheckBox = new System.Windows.Forms.CheckBox();
+            this.vCheckBox = new System.Windows.Forms.CheckBox();
+            this.cuCheckBox = new System.Windows.Forms.CheckBox();
             this.ViewLayoutPanel.SuspendLayout();
             this.DataModifLayoutPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
@@ -69,6 +71,8 @@
             // 
             // ViewLayoutPanel
             // 
+            this.ViewLayoutPanel.Controls.Add(this.cuCheckBox);
+            this.ViewLayoutPanel.Controls.Add(this.vCheckBox);
             this.ViewLayoutPanel.Controls.Add(this.alCheckBox);
             this.ViewLayoutPanel.Controls.Add(this.tiCheckBox);
             this.ViewLayoutPanel.Controls.Add(this.niCheckBox);
@@ -83,7 +87,7 @@
             this.ViewLayoutPanel.Controls.Add(this.cCheckBox);
             this.ViewLayoutPanel.Location = new System.Drawing.Point(516, 12);
             this.ViewLayoutPanel.Name = "ViewLayoutPanel";
-            this.ViewLayoutPanel.Size = new System.Drawing.Size(263, 108);
+            this.ViewLayoutPanel.Size = new System.Drawing.Size(350, 108);
             this.ViewLayoutPanel.TabIndex = 13;
             this.ViewLayoutPanel.TabStop = false;
             this.ViewLayoutPanel.Text = "Opcje wyświetlania";
@@ -354,7 +358,7 @@
             this.ViewLayoutPanel_2.Controls.Add(this.maxCheckBox);
             this.ViewLayoutPanel_2.Controls.Add(this.minCheckBox);
             this.ViewLayoutPanel_2.Controls.Add(this.numberCheckBox);
-            this.ViewLayoutPanel_2.Location = new System.Drawing.Point(785, 17);
+            this.ViewLayoutPanel_2.Location = new System.Drawing.Point(872, 17);
             this.ViewLayoutPanel_2.Name = "ViewLayoutPanel_2";
             this.ViewLayoutPanel_2.Size = new System.Drawing.Size(74, 103);
             this.ViewLayoutPanel_2.TabIndex = 15;
@@ -404,6 +408,28 @@
             this.numberCheckBox.Text = "Numer";
             this.numberCheckBox.UseVisualStyleBackColor = true;
             this.numberCheckBox.CheckedChanged += new System.EventHandler(this.numberCheckBox_CheckedChanged);
+            // 
+            // vCheckBox
+            // 
+            this.vCheckBox.AutoSize = true;
+            this.vCheckBox.Location = new System.Drawing.Point(264, 19);
+            this.vCheckBox.Name = "vCheckBox";
+            this.vCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.vCheckBox.TabIndex = 15;
+            this.vCheckBox.Text = "Wanad (V)";
+            this.vCheckBox.UseVisualStyleBackColor = true;
+            this.vCheckBox.CheckedChanged += new System.EventHandler(this.vCheckBox_CheckedChanged);
+            // 
+            // cuCheckBox
+            // 
+            this.cuCheckBox.AutoSize = true;
+            this.cuCheckBox.Location = new System.Drawing.Point(264, 43);
+            this.cuCheckBox.Name = "cuCheckBox";
+            this.cuCheckBox.Size = new System.Drawing.Size(76, 17);
+            this.cuCheckBox.TabIndex = 16;
+            this.cuCheckBox.Text = "Miedź (Cu)";
+            this.cuCheckBox.UseVisualStyleBackColor = true;
+            this.cuCheckBox.CheckedChanged += new System.EventHandler(this.cuCheckBox_CheckedChanged);
             // 
             // MaterialDatabaseForm
             // 
@@ -477,6 +503,8 @@
         private System.Windows.Forms.CheckBox maxCheckBox;
         private System.Windows.Forms.CheckBox minCheckBox;
         private System.Windows.Forms.CheckBox numberCheckBox;
+        private System.Windows.Forms.CheckBox cuCheckBox;
+        private System.Windows.Forms.CheckBox vCheckBox;
 
 
     }

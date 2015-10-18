@@ -24,6 +24,8 @@ namespace WelderCalculator.MaterialDatabaseView
         bool NiCheckBox { get; set; }
         bool TiCheckBox { get; set; }
         bool AlCheckBox { get; set; }
+        bool VCheckBox { get; set;  }
+        bool CuCheckBox { get; set; }
 
         bool NumberCheckBox { get; set; }
         bool MinCheckBox { get; set; }
