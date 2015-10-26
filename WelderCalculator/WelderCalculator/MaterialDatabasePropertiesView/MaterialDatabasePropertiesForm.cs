@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using Newtonsoft.Json.Schema;
 using WelderCalculator.MaterialDatabasePropertiesView.Serialization;
+using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
@@ -16,155 +9,79 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
     {
         public MaterialDatabasePropertiesPresenter Presenter { private get; set; }
 
+        private List<ComboBox> _comboBoxes;
+        private List<FormComboBox> _tempComboBoxes; 
+
         public MaterialDatabasePropertiesForm()
         {
             InitializeComponent();
+
+            _comboBoxes = new List<ComboBox>()
+            {
+                comboBox1st, comboBox2nd, comboBox3rd, comboBox4th,
+                comboBox5th, comboBox6th, comboBox7th, comboBox8th,
+                comboBox9th, comboBox10th, comboBox11th, comboBox12th,
+                comboBox13th, comboBox14th
+            };
+            _tempComboBoxes = new List<FormComboBox>()
+            {
+                new FormComboBox(comboBox1st.DataSource as List<string>, comboBox1st.SelectedIndex),
+                new FormComboBox(comboBox2nd.DataSource as List<string>, comboBox2nd.SelectedIndex),
+                new FormComboBox(comboBox3rd.DataSource as List<string>, comboBox3rd.SelectedIndex),
+                new FormComboBox(comboBox4th.DataSource as List<string>, comboBox4th.SelectedIndex),
+                new FormComboBox(comboBox5th.DataSource as List<string>, comboBox5th.SelectedIndex),
+                new FormComboBox(comboBox6th.DataSource as List<string>, comboBox6th.SelectedIndex),
+                new FormComboBox(comboBox7th.DataSource as List<string>, comboBox7th.SelectedIndex),
+                new FormComboBox(comboBox8th.DataSource as List<string>, comboBox8th.SelectedIndex),
+                new FormComboBox(comboBox9th.DataSource as List<string>, comboBox9th.SelectedIndex),
+                new FormComboBox(comboBox10th.DataSource as List<string>, comboBox10th.SelectedIndex),
+                new FormComboBox(comboBox11th.DataSource as List<string>, comboBox11th.SelectedIndex),
+                new FormComboBox(comboBox12th.DataSource as List<string>, comboBox12th.SelectedIndex),
+                new FormComboBox(comboBox13th.DataSource as List<string>, comboBox13th.SelectedIndex),
+                new FormComboBox(comboBox14th.DataSource as List<string>, comboBox14th.SelectedIndex),
+            };
+
             var repository = new ElementsOrderPropertiesRepository();
             new MaterialDatabasePropertiesPresenter(this, repository);
-            Presenter.Init();
         }
 
-        #region ComboBoxes
-        public List<string> ElementsList1st
+
+
+        public List<FormComboBox> ElementsComboBoxes
         {
-            set { this.comboBox1st.DataSource = value;  }
-        }
-        public int SelectedElement1st
-        {
-            get { return this.comboBox1st.SelectedIndex; }
-            set { this.comboBox1st.SelectedIndex = value; }
+            get { return _tempComboBoxes; }
+            set { _tempComboBoxes = value; }
         }
 
-        public List<string> ElementsList2nd
+        public void ApplyChangesInComboBoxes()
         {
-            set { this.comboBox2nd.DataSource = value; }
-        }
-        public int SelectedElement2nd
-        {
-            get { return this.comboBox2nd.SelectedIndex; }
-            set { this.comboBox2nd.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList3rd
-        {
-            set { this.comboBox3rd.DataSource = value; }
-        }
-        public int SelectedElement3rd
-        {
-            get { return this.comboBox3rd.SelectedIndex; }
-            set { this.comboBox3rd.SelectedIndex = value; }
+            for (int i = 0; i < _comboBoxes.Count; i++)
+            {
+                _comboBoxes[i].DataSource = _tempComboBoxes[i].AvalibleElements;
+                _comboBoxes[i].SelectedIndex = _tempComboBoxes[i].CurrentIndex;
+            }
         }
 
-        public List<string> ElementsList4th
+        private List<FormComboBox> CurrentComboBoxes()
         {
-            set { this.comboBox4th.DataSource = value; }
+            return new List<FormComboBox>()
+                {
+                    new FormComboBox(comboBox1st.DataSource as List<string>, comboBox1st.SelectedIndex),
+                    new FormComboBox(comboBox2nd.DataSource as List<string>, comboBox2nd.SelectedIndex),
+                    new FormComboBox(comboBox3rd.DataSource as List<string>, comboBox3rd.SelectedIndex),
+                    new FormComboBox(comboBox4th.DataSource as List<string>, comboBox4th.SelectedIndex),
+                    new FormComboBox(comboBox5th.DataSource as List<string>, comboBox5th.SelectedIndex),
+                    new FormComboBox(comboBox6th.DataSource as List<string>, comboBox6th.SelectedIndex),
+                    new FormComboBox(comboBox7th.DataSource as List<string>, comboBox7th.SelectedIndex),
+                    new FormComboBox(comboBox8th.DataSource as List<string>, comboBox8th.SelectedIndex),
+                    new FormComboBox(comboBox9th.DataSource as List<string>, comboBox9th.SelectedIndex),
+                    new FormComboBox(comboBox10th.DataSource as List<string>, comboBox10th.SelectedIndex),
+                    new FormComboBox(comboBox11th.DataSource as List<string>, comboBox11th.SelectedIndex),
+                    new FormComboBox(comboBox12th.DataSource as List<string>, comboBox12th.SelectedIndex),
+                    new FormComboBox(comboBox13th.DataSource as List<string>, comboBox13th.SelectedIndex),
+                    new FormComboBox(comboBox14th.DataSource as List<string>, comboBox14th.SelectedIndex)
+                };
         }
-        public int SelectedElement4th
-        {
-            get { return this.comboBox4th.SelectedIndex; }
-            set { this.comboBox4th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList5th
-        {
-            set { this.comboBox5th.DataSource = value; }
-        }
-        public int SelectedElement5th
-        {
-            get { return this.comboBox5th.SelectedIndex; }
-            set { this.comboBox5th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList6th
-        {
-            set { this.comboBox6th.DataSource = value;  }
-        }
-        public int SelectedElement6th
-        {
-            get { return this.comboBox6th.SelectedIndex; }
-            set { this.comboBox6th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList7th
-        {
-            set { this.comboBox7th.DataSource = value;  }
-        }
-        public int SelectedElement7th
-        {
-            get { return this.comboBox7th.SelectedIndex; }
-            set { this.comboBox7th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList8th
-        {
-            set { this.comboBox8th.DataSource = value; }
-        }
-        public int SelectedElement8th
-        {
-            get { return this.comboBox8th.SelectedIndex; }
-            set { this.comboBox8th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList9th
-        {
-            set { this.comboBox9th.DataSource = value; }
-        }
-        public int SelectedElement9th
-        {
-            get { return this.comboBox9th.SelectedIndex; }
-            set { this.comboBox9th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList10th
-        {
-            set { this.comboBox10th.DataSource = value; }
-        }
-        public int SelectedElement10th
-        {
-            get { return this.comboBox10th.SelectedIndex; }
-            set { this.comboBox10th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList11th
-        {
-            set { this.comboBox11th.DataSource = value; }
-        }
-        public int SelectedElement11th
-        {
-            get { return this.comboBox11th.SelectedIndex; }
-            set { this.comboBox11th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList12th
-        {
-            set { this.comboBox12th.DataSource = value; }
-        }
-        public int SelectedElement12th
-        {
-            get { return this.comboBox12th.SelectedIndex; }
-            set { this.comboBox12th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList13th
-        {
-            set { this.comboBox13th.DataSource = value;  }
-        }
-        public int SelectedElement13th
-        {
-            get { return this.comboBox13th.SelectedIndex; }
-            set { this.comboBox13th.SelectedIndex = value; }
-        }
-
-        public List<string> ElementsList14th
-        {
-            set { this.comboBox14th.DataSource = value;  }
-        }
-        public int SelectedElement14th
-        {
-            get { return this.comboBox14th.SelectedIndex; }
-            set { this.comboBox14th.SelectedIndex = value; }
-        }
-        #endregion
 
     }
 }

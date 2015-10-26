@@ -71,6 +71,7 @@
     </Compile>
     <Compile Include="MaterialDatabaseView\MaterialDatabasePresenter.cs" />
     <Compile Include="Model\Element.cs" />
+    <Compile Include="ControlsModel\FormComboBox.cs" />
     <Compile Include="Model\Material.cs" />
     <Compile Include="Model\MaterialDataReader.cs" />
     <Compile Include="Model\MaterialNorm.cs" />
