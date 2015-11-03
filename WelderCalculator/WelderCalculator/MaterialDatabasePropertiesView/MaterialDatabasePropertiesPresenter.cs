@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using WelderCalculator.MaterialDatabasePropertiesView.Serialization;
 using WelderCalculator.Model;
@@ -31,25 +32,68 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         public void Init()
         {
-            FillComboBoxesWithCurrentOrder();
+            LoadComboBoxesWithCurrentOrder();
         }
 
-        private void FillComboBoxesWithCurrentOrder()
+        private void LoadComboBoxesWithCurrentOrder()
         {
-            List<string> listOfElementsAsString = new List<string>();
-            //convert listOfEnums to ListOfStrings
-            for (int i = 0; i < listOfElements.Count; i++)
+            List<string> testList = new List<string>()
             {
-                listOfElementsAsString.Add(listOfElements[i].ToString());
-            }
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N"
+            };
 
-            for (int i = 0; i < _view.ElementsComboBoxes.Count; i++)
+            for (int i = 0; i < testList.Count; i++)
             {
-                _view.ElementsComboBoxes[i].AvalibleElements = listOfElementsAsString;
-                _view.ElementsComboBoxes[i].CurrentIndex = i;
+                _view.SetAvalibleElementsForComboBoxes(testList, i+1);
+                _view.SetSelectedIndex(i+1, i+1);
             }
+        }
 
-            _view.ApplyChangesInComboBoxes();
+        public void DoTest()
+        {
+            List<string> testList1 = new List<string>()
+            {
+                "1st element",
+                "2nd element",
+                "3rd element"
+            };
+
+            List<string> testList2 = new List<string>()
+            {
+                "3rd element",
+                "1st element",
+                "2nd element",
+            };
+
+            List<string> testList3 = new List<string>()
+            {
+                "2nd element",
+                "1st element",
+                "3rd element"
+            };
+            
+            List<List<string>> lists = new List<List<string>>()
+            {
+                testList1,
+                testList2,
+                testList3
+            };
+            _view.SetAvalibleElementsForComboBoxes(lists);
+            Debug.WriteLine(_view.GetListOfAvalibleElementsForComboBoxes(1)[0]);
+            Debug.WriteLine(_view.GetListOfAvalibleElementsForComboBoxes()[1][2]);
         }
 
         

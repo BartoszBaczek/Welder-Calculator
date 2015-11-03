@@ -254,6 +254,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public void OnViewOptionsCheckBoxChanged()
         {
+            _view.GridSource = null;
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidth();
         }

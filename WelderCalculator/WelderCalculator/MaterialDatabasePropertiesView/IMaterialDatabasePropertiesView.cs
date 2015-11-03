@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
@@ -8,8 +7,15 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
     {
         MaterialDatabasePropertiesPresenter Presenter { set; }
 
-        List<FormComboBox> ElementsComboBoxes { get; set; }
+        void SetAvalibleElementsForComboBoxes(List<List<string>> listsOfAvalibleElements);
+        void SetAvalibleElementsForComboBoxes(List<string> listOfAvalibleElements, int comboBoxIndex);
 
-        void ApplyChangesInComboBoxes();
+        List<List<string>> GetListOfAvalibleElementsForComboBoxes();
+        List<string> GetListOfAvalibleElementsForComboBoxes(int comboBoxIndex);
+
+        int GetSelectedIndex(int numberOfComboBox);
+        void SetSelectedIndex(int numberOfComboBoxm, int indexToSet);
+
+
     }
 }
