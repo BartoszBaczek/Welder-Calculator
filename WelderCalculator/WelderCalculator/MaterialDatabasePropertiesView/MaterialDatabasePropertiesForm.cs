@@ -21,7 +21,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         }
 
         #region DataSourcesForComboBoxes
-        public void SetAvalibleElementsForComboBoxes(List<List<string>> listsOfAvalibleElements)
+        public void SetAvalibleElementsForComboBox(List<List<string>> listsOfAvalibleElements)
         {
             if (listsOfAvalibleElements.Count != NUMBER_OF_COMBOBOXES_IN_FORM)
                 throw new InvalidOperationException("Number of elements in listOfAvalibleElements must be the same as number of comboBoxes");
@@ -76,55 +76,57 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             }
         }
 
-        public void SetAvalibleElementsForComboBoxes(List<string> listOfAvalibleElements, int comboBoxIndex)
+        public void SetAvalibleElementsForComboBox(List<string> listOfAvalibleElements, int comboBoxIndex)
         {
-            if (comboBoxIndex < 1 || comboBoxIndex > NUMBER_OF_COMBOBOXES_IN_FORM)
+            if (comboBoxIndex < 0 || comboBoxIndex > NUMBER_OF_COMBOBOXES_IN_FORM)
                 throw new ArgumentException("There is no comboBox with that number");
 
             switch (comboBoxIndex)
             {
                 case 1:
-                    comboBox1st.DataSource = listOfAvalibleElements;
+                    comboBox1st.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 2:
-                    comboBox2nd.DataSource = listOfAvalibleElements;
+                    comboBox2nd.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 3:
-                    comboBox3rd.DataSource = listOfAvalibleElements;
+                    comboBox3rd.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 4:
-                    comboBox4th.DataSource = listOfAvalibleElements;
+                    comboBox4th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 5:
-                    comboBox5th.DataSource = listOfAvalibleElements;
+                    comboBox5th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 6:
-                    comboBox6th.DataSource = listOfAvalibleElements;
+                    comboBox6th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 7:
-                    comboBox7th.DataSource = listOfAvalibleElements;
+                    comboBox7th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 8:
-                    comboBox8th.DataSource = listOfAvalibleElements;
+                    comboBox8th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 9:
-                    comboBox9th.DataSource = listOfAvalibleElements;
+                    comboBox9th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 10:
-                    comboBox10th.DataSource = listOfAvalibleElements;
+                    comboBox10th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 11:
-                    comboBox11th.DataSource = listOfAvalibleElements;
+                    comboBox11th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 12:
-                    comboBox12th.DataSource = listOfAvalibleElements;
+                    comboBox12th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 13:
-                    comboBox13th.DataSource = listOfAvalibleElements;
+                    comboBox13th.DataSource = listOfAvalibleElements.ToList();
                     break;
                 case 14:
-                    comboBox14th.DataSource = listOfAvalibleElements;
+                    comboBox14th.DataSource = listOfAvalibleElements.ToList();
                     break;
+                default:
+                    throw new ArgumentException("There is no comboBox with requested number");
             }
         }
 
@@ -238,8 +240,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             switch (numberOfComboBox)
             {
                 case 1:
-                    if (comboBox1st.DataSource == null)
-                        throw new ArgumentException("BindDataSource to ComboBox at first");
                     comboBox1st.SelectedIndex = indexToSet;
                     break;
                 case 2:
@@ -287,7 +287,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         
         private void applyOrderButton_Click(object sender, EventArgs e)
         {
-            Presenter.DoTest();
+            //Presenter.DoTest();
         }
     }
 }

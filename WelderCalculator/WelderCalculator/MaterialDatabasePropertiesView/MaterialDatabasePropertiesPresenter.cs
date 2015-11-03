@@ -52,13 +52,13 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 "K",
                 "L",
                 "M",
-                "N"
+                "N",
             };
 
             for (int i = 0; i < testList.Count; i++)
             {
-                _view.SetAvalibleElementsForComboBoxes(testList, i+1);
-                _view.SetSelectedIndex(i+1, i+1);
+                _view.SetAvalibleElementsForComboBox(testList, i + 1);
+                _view.SetSelectedIndex(i+1, i);
             }
         }
 
@@ -91,7 +91,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 testList2,
                 testList3
             };
-            _view.SetAvalibleElementsForComboBoxes(lists);
+            _view.SetAvalibleElementsForComboBox(lists);
             Debug.WriteLine(_view.GetListOfAvalibleElementsForComboBoxes(1)[0]);
             Debug.WriteLine(_view.GetListOfAvalibleElementsForComboBoxes()[1][2]);
         }
