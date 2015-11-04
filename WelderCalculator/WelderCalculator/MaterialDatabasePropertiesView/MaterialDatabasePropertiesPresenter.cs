@@ -9,13 +9,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 {
     public class MaterialDatabasePropertiesPresenter
     {
-        #region Aa
-        //FOR TESTS - DELETE LATER
-        private List<Category.OfElement> listOfElements = Enum.GetValues(typeof(Category.OfElement))
-                                 .Cast<Category.OfElement>()
-                                 .ToList();
-        // END FOR TESTS
-        #endregion
+        
         
         private readonly IMaterialDatabasePropertiesView _view;
         private readonly IElementsOrderPropertiesRepository _repository;
@@ -35,29 +29,48 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             LoadComboBoxesWithCurrentOrder();
         }
 
-        private void LoadComboBoxesWithCurrentOrder()
+        private List<Category.OfElement> GetLastSavedOrderOfElements()
         {
-            List<string> testList = new List<string>()
+            #region All enums to List
+            //FOR TESTS - DELETE LATER
+            //List<Category.OfElement> listOfElements = Enum.GetValues(typeof(Category.OfElement))
+            //                        .Cast<Category.OfElement>()
+            //                        .ToList();
+            // END FOR TESTS
+            #endregion
+            List<Category.OfElement> listOfElements = new List<Category.OfElement>()
             {
-                "A",
-                "B",
-                "C",
-                "D",
-                "E",
-                "F",
-                "G",
-                "H",
-                "I",
-                "J",
-                "K",
-                "L",
-                "M",
-                "N",
+                Category.OfElement.Al,
+                Category.OfElement.C,
+                Category.OfElement.Cu,
+                Category.OfElement.Cr,
+                Category.OfElement.S,
+                Category.OfElement.Mn,
+                Category.OfElement.Mo,
+                Category.OfElement.N,
+                Category.OfElement.Nb,
+                Category.OfElement.Ni,
+                Category.OfElement.P,
+                Category.OfElement.V,
+                Category.OfElement.Si,
+                Category.OfElement.Ti
             };
 
-            for (int i = 0; i < testList.Count; i++)
+            return listOfElements;
+        }
+
+        private void LoadComboBoxesWithCurrentOrder()
+        {
+            List<Category.OfElement> currentOrderOfElements = GetLastSavedOrderOfElements();
+            List<string> transfromedOrderOfElementsToComboBox = new List<string>();
+
+            for (int i = 0; i < currentOrderOfElements.Count; i++)
             {
-                _view.SetAvalibleElementsForComboBox(testList, i + 1);
+                transfromedOrderOfElementsToComboBox.Add((currentOrderOfElements[i].ToString()));
+            }
+            for (int i = 0; i < transfromedOrderOfElementsToComboBox.Count; i++)
+            {
+                _view.SetAvalibleElementsForComboBox(transfromedOrderOfElementsToComboBox, i + 1);
                 _view.SetSelectedIndex(i+1, i);
             }
         }
