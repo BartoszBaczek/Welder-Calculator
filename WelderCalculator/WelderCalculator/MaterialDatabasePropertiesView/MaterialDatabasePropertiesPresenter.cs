@@ -9,8 +9,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 {
     public class MaterialDatabasePropertiesPresenter
     {
-        
-        
         private readonly IMaterialDatabasePropertiesView _view;
         private readonly IElementsOrderPropertiesRepository _repository;
 
@@ -24,12 +22,13 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             Init();
         }
 
-        public void Init()
+        private void Init()
         {
             LoadComboBoxesWithCurrentOrder();
+            //UpdateDataSourcesForComboBoxes();
         }
 
-        private List<Category.OfElement> GetLastSavedOrderOfElements()
+        private List<string> GetBasicDataSourceForComboBox()
         {
             #region All enums to List
             //FOR TESTS - DELETE LATER
@@ -55,60 +54,51 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 Category.OfElement.Si,
                 Category.OfElement.Ti
             };
+            List<string> listOfElementsForComboBox = new List<string>();
 
-            return listOfElements;
+
+            string emptyField = " ";
+            listOfElementsForComboBox.Add(emptyField);
+
+            foreach (var element in listOfElements)
+            {
+                listOfElementsForComboBox.Add(element.ToString());
+            }
+
+            return listOfElementsForComboBox;
         }
 
         private void LoadComboBoxesWithCurrentOrder()
         {
-            List<Category.OfElement> currentOrderOfElements = GetLastSavedOrderOfElements();
-            List<string> transfromedOrderOfElementsToComboBox = new List<string>();
+            List<string> currentOrderOfElements = GetBasicDataSourceForComboBox();
 
-            for (int i = 0; i < currentOrderOfElements.Count; i++)
+            for (int i = 1; i < currentOrderOfElements.Count; i++)
             {
-                transfromedOrderOfElementsToComboBox.Add((currentOrderOfElements[i].ToString()));
-            }
-            for (int i = 0; i < transfromedOrderOfElementsToComboBox.Count; i++)
-            {
-                _view.SetAvalibleElementsForComboBox(transfromedOrderOfElementsToComboBox, i + 1);
-                _view.SetSelectedIndex(i+1, i);
+                int comboBoxID = i;
+
+                _view.SetDataSourcesForComboBoxes(currentOrderOfElements, comboBoxID);
+                _view.SetSelectedIndex(comboBoxID, i - 1);
             }
         }
 
-        public void DoTest()
+        private void UpdateDataSourcesForComboBoxes()
         {
-            List<string> testList1 = new List<string>()
-            {
-                "1st element",
-                "2nd element",
-                "3rd element"
-            };
-
-            List<string> testList2 = new List<string>()
-            {
-                "3rd element",
-                "1st element",
-                "2nd element",
-            };
-
-            List<string> testList3 = new List<string>()
-            {
-                "2nd element",
-                "1st element",
-                "3rd element"
-            };
+            List<string> alreadyUsedElements = new List<string>();
+            List<List<string>> currentDataSources = _view.GetListOfAvalibleElementsForComboBoxes();
             
-            List<List<string>> lists = new List<List<string>>()
+            for (int i = 0; i < currentDataSources.Count; i++)
             {
-                testList1,
-                testList2,
-                testList3
-            };
-            _view.SetAvalibleElementsForComboBox(lists);
-            Debug.WriteLine(_view.GetListOfAvalibleElementsForComboBoxes(1)[0]);
-            Debug.WriteLine(_view.GetListOfAvalibleElementsForComboBoxes()[1][2]);
-        }
+                int comboBoxID = i + 1;
+                int selectedIndex = _view.GetSelectedIndex(comboBoxID);
 
-        
+                alreadyUsedElements.Add(currentDataSources[i][selectedIndex]);
+                
+                foreach (var usedElement in alreadyUsedElements)
+                {
+                    currentDataSources[i].Remove(usedElement);
+                }
+            }
+            _view.SetDataSourcesForComboBoxes(currentDataSources);
+        }
     }
 }
