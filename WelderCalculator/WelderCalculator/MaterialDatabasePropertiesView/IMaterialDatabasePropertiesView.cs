@@ -7,6 +7,8 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
     {
         MaterialDatabasePropertiesPresenter Presenter { set; }
 
+        int NumberOfComboBoxes { get; }
+
         void SetDataSourcesForComboBoxes(List<List<string>> listsOfDataSources);
         void SetDataSourcesForComboBoxes(List<string> listOfAvalibleElements, int comboBoxIndex);
 

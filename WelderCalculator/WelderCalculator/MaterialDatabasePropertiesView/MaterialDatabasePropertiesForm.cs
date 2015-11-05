@@ -12,7 +12,9 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         public MaterialDatabasePropertiesPresenter Presenter { private get; set; }
 
         private const int NUMBER_OF_COMBOBOXES_IN_FORM = 14;
-        private const int NUMBER_OF_MAX_AVALIBLE_FIELDS_IN_SINGLE_COMBO_BOX = 15;
+
+        public int NumberOfComboBoxes { get { return NUMBER_OF_COMBOBOXES_IN_FORM; } }
+
 
         public MaterialDatabasePropertiesForm()
         {

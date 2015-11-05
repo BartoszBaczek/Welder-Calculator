@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Collections.Generic;
 using WelderCalculator.MaterialDatabasePropertiesView.Serialization;
 using WelderCalculator.Model;
 
@@ -25,7 +22,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         private void Init()
         {
             LoadComboBoxesWithCurrentOrder();
-            //UpdateDataSourcesForComboBoxes();
+            UpdateDataSourcesForComboBoxes();
         }
 
         private List<string> GetBasicDataSourceForComboBox()
@@ -56,14 +53,13 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             };
             List<string> listOfElementsForComboBox = new List<string>();
 
-
-            string emptyField = " ";
-            listOfElementsForComboBox.Add(emptyField);
-
             foreach (var element in listOfElements)
             {
                 listOfElementsForComboBox.Add(element.ToString());
             }
+
+            string emptyField = "";
+            listOfElementsForComboBox.Add(emptyField);
 
             return listOfElementsForComboBox;
         }
@@ -72,7 +68,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
             List<string> currentOrderOfElements = GetBasicDataSourceForComboBox();
 
-            for (int i = 1; i < currentOrderOfElements.Count; i++)
+            for (int i = 1; i <= _view.NumberOfComboBoxes; i++)
             {
                 int comboBoxID = i;
 
@@ -84,21 +80,35 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         private void UpdateDataSourcesForComboBoxes()
         {
             List<string> alreadyUsedElements = new List<string>();
-            List<List<string>> currentDataSources = _view.GetListOfAvalibleElementsForComboBoxes();
-            
-            for (int i = 0; i < currentDataSources.Count; i++)
+
+            for (int i = 1; i <= _view.NumberOfComboBoxes; i++)
             {
-                int comboBoxID = i + 1;
+                int comboBoxID = i;
+                List<string> dataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxID);
                 int selectedIndex = _view.GetSelectedIndex(comboBoxID);
 
-                alreadyUsedElements.Add(currentDataSources[i][selectedIndex]);
-                
+                if (!(dataSource[selectedIndex] == string.Empty))
+                    alreadyUsedElements.Add(dataSource[selectedIndex]);
+            }
+
+            for (int i = 1; i <= _view.NumberOfComboBoxes; i++)
+            {
+                List<string> basicDataSourcesWithoutUsedElements = GetBasicDataSourceForComboBox();
+
                 foreach (var usedElement in alreadyUsedElements)
                 {
-                    currentDataSources[i].Remove(usedElement);
+                    basicDataSourcesWithoutUsedElements.Remove(usedElement);
                 }
+
+                int comboBoxID = i;
+
+                List<string> dataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxID);
+                int selectedIndex = _view.GetSelectedIndex(comboBoxID);
+                basicDataSourcesWithoutUsedElements.Add(dataSource[selectedIndex]);
+
+                _view.SetDataSourcesForComboBoxes(basicDataSourcesWithoutUsedElements, comboBoxID);
+                _view.SetSelectedIndex(comboBoxID, basicDataSourcesWithoutUsedElements.IndexOf(dataSource[selectedIndex]));
             }
-            _view.SetDataSourcesForComboBoxes(currentDataSources);
         }
     }
 }
