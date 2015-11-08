@@ -18,7 +18,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             _repository = repository;
             _dataReader = new MaterialDatabasePropertiesDataReader();
             Init();
-            _dataReader.SaveOrderOfElementsToFile(GetBasicDataSourceForComboBox());
         }
 
         private void Init()
@@ -29,41 +28,9 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         private List<string> GetBasicDataSourceForComboBox()
         {
-            #region All enums to List
-            //FOR TESTS - DELETE LATER
-            //List<Category.OfElement> listOfElements = Enum.GetValues(typeof(Category.OfElement))
-            //                        .Cast<Category.OfElement>()
-            //                        .ToList();
-            // END FOR TESTS
-            #endregion
-            List<Category.OfElement> listOfElements = new List<Category.OfElement>()
-            {
-                Category.OfElement.Al,
-                Category.OfElement.C,
-                Category.OfElement.Cu,
-                Category.OfElement.Cr,
-                Category.OfElement.S,
-                Category.OfElement.Mn,
-                Category.OfElement.Mo,
-                Category.OfElement.N,
-                Category.OfElement.Nb,
-                Category.OfElement.Ni,
-                Category.OfElement.P,
-                Category.OfElement.V,
-                Category.OfElement.Si,
-                Category.OfElement.Ti
-            };
-            List<string> listOfElementsForComboBox = new List<string>();
+            var savedOrderOfElements = _dataReader.GetOrderOfElementFromFile();
 
-            foreach (var element in listOfElements)
-            {
-                listOfElementsForComboBox.Add(element.ToString());
-            }
-
-            string emptyField = "";
-            listOfElementsForComboBox.Add(emptyField);
-
-            return listOfElementsForComboBox;
+            return savedOrderOfElements;
         }
 
         private void LoadComboBoxesWithCurrentOrder()

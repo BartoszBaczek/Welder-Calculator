@@ -34,5 +34,18 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
             _repository.SaveToFile(elementsToSave);
         }
+
+        public List<string> GetOrderOfElementFromFile()
+        {
+            var orderOfElementsFromFile = _repository.GetFromFile();
+            var orderOfElements = new List<string>();
+
+            foreach (var element in orderOfElementsFromFile)
+            {
+                orderOfElements.Add(element.ToString());
+            }
+
+            return orderOfElements;
+        }
     }
 }

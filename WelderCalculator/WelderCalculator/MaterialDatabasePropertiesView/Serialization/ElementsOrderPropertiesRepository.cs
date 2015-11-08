@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Reflection;
 using System.IO;
 using Newtonsoft.Json;
+using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView.Serialization
 {
@@ -27,7 +29,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView.Serialization
             _fileName = "OrderInDataGridView";
         }
 
-        public void SaveToFile(List<Model.Category.OfElement> norm)
+        public void SaveToFile(List<Category.OfElement> norm)
         {
             using (var fs = File.Open(_dataFolder + _fileName + ".json", FileMode.Create))
             using (var sw = new StreamWriter(fs))
@@ -38,6 +40,19 @@ namespace WelderCalculator.MaterialDatabasePropertiesView.Serialization
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(jw, norm);
             }
+        }
+
+        public List<Category.OfElement> GetFromFile()
+        {
+            string pathToFile = _dataFolder + _fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var orderOfelements =
+                JsonConvert.DeserializeObject<List<Category.OfElement>>(jsonText);
+
+            Debug.WriteLine(orderOfelements[7].ToString());
+
+            return orderOfelements;
         }
     }
 }

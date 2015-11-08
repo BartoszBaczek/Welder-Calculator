@@ -10,5 +10,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView.Serialization
     public interface IElementsOrderPropertiesRepository
     {
         void SaveToFile(List<Category.OfElement> norm);
+        List<Category.OfElement> GetFromFile();
     }
 }
