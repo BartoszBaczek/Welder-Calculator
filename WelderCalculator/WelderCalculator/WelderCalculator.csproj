@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
+    <Compile Include="MaterialDatabasePropertiesView\MaterialDatabasePropertiesDataReader.cs" />
     <Compile Include="MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,7 +73,7 @@
     <Compile Include="MaterialDatabaseView\MaterialDatabasePresenter.cs" />
     <Compile Include="Model\Element.cs" />
     <Compile Include="Model\Material.cs" />
-    <Compile Include="Model\MaterialDataReader.cs" />
+    <Compile Include="MaterialDatabaseView\MaterialDataReader.cs" />
     <Compile Include="Model\MaterialNorm.cs" />
     <Compile Include="Model\Category.cs" />
     <Compile Include="Program.cs" />

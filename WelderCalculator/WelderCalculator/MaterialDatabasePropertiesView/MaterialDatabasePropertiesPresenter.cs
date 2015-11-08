@@ -8,7 +8,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
     {
         private readonly IMaterialDatabasePropertiesView _view;
         private readonly IElementsOrderPropertiesRepository _repository;
-
+        private readonly MaterialDatabasePropertiesDataReader _dataReader;
 
         public MaterialDatabasePropertiesPresenter(IMaterialDatabasePropertiesView view,
             IElementsOrderPropertiesRepository repository)
@@ -16,7 +16,9 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             _view = view;
             view.Presenter = this;
             _repository = repository;
+            _dataReader = new MaterialDatabasePropertiesDataReader();
             Init();
+            _dataReader.SaveOrderOfElementsToFile(GetBasicDataSourceForComboBox());
         }
 
         private void Init()
@@ -87,7 +89,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 List<string> dataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxID);
                 int selectedIndex = _view.GetSelectedIndex(comboBoxID);
 
-                if (!(dataSource[selectedIndex] == string.Empty))
+                if (dataSource[selectedIndex] != string.Empty)
                     alreadyUsedElements.Add(dataSource[selectedIndex]);
             }
 
@@ -112,12 +114,3 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         }
     }
 }
-
-
-/*ZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHA
-ZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHA
-ZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHA
-ZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHA
-ZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHA
-ZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHA
-ZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHAZROBIS PUSHA*/

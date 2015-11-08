@@ -290,7 +290,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         
         private void applyOrderButton_Click(object sender, EventArgs e)
         {
-            //Presenter.DoTest();
+
         }
     }
 }
