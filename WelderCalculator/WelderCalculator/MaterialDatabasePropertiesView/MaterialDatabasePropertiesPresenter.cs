@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using WelderCalculator.MaterialDatabasePropertiesView.Serialization;
-using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
@@ -29,6 +28,9 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         private List<string> GetBasicDataSourceForComboBox()
         {
             var savedOrderOfElements = _dataReader.GetOrderOfElementFromFile();
+
+            //adds empty string as last option in comboBox
+            savedOrderOfElements.Add(" ");
 
             return savedOrderOfElements;
         }
