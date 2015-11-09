@@ -287,11 +287,71 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             }
         }
         #endregion
-        
+
+        #region OnSelectedIndexChanged
+        private void comboBox1st_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(1);
+        }
+        private void comboBox2nd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(2);
+        }
+        private void comboBox3rd_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(3);
+        }
+        private void comboBox4th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(4);
+        }
+        private void comboBox5th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(5);
+        }
+        private void comboBox6th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(6);
+        }
+        private void comboBox7th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(7);
+        }
+        private void comboBox8th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(8);
+        }
+        private void comboBox9th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(9);
+        }
+        private void comboBox10th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(10);
+        }
+        private void comboBox11th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(11);
+        }
+        private void comboBox12th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(12);
+        }
+        private void comboBox13th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(13);
+        }
+        private void comboBox14th_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged(14);
+        }
+        #endregion
+
         private void applyOrderButton_Click(object sender, EventArgs e)
         {
 
         }
+
     }
 }
 

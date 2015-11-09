@@ -74,12 +74,18 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 int comboBoxID = i;
 
                 List<string> dataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxID);
-                int selectedIndex = _view.GetSelectedIndex(comboBoxID);
-                basicDataSourcesWithoutUsedElements.Add(dataSource[selectedIndex]);
 
-                _view.SetDataSourcesForComboBoxes(basicDataSourcesWithoutUsedElements, comboBoxID);
-                _view.SetSelectedIndex(comboBoxID, basicDataSourcesWithoutUsedElements.IndexOf(dataSource[selectedIndex]));
+                    int selectedIndex = _view.GetSelectedIndex(comboBoxID);
+                    basicDataSourcesWithoutUsedElements.Add(dataSource[selectedIndex]);
+
+                    _view.SetDataSourcesForComboBoxes(basicDataSourcesWithoutUsedElements, comboBoxID);
+                    _view.SetSelectedIndex(comboBoxID, basicDataSourcesWithoutUsedElements.IndexOf(dataSource[selectedIndex]));
             }
+        }
+
+        public void OnSelectedIndexChanged(int comboBoxID)
+        {
+            UpdateDataSourcesForComboBoxes();
         }
     }
 }
