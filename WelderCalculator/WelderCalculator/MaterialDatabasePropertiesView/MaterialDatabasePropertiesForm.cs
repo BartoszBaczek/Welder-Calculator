@@ -291,59 +291,87 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         #region OnSelectedIndexChanged
         private void comboBox1st_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(1);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox2nd_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(2);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox3rd_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(3);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox4th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(4);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox5th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(5);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox6th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(6);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox7th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(7);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox8th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(8);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox9th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(9);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox10th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(10);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox11th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(11);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox12th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(12);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox13th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(13);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         private void comboBox14th_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged(14);
+            var cb = (ComboBox)sender;
+            if (cb.Focused)
+                Presenter.OnSelectedIndexChanged();
         }
         #endregion
 
