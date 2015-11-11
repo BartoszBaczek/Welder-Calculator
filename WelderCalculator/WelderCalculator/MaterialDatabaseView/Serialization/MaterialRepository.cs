@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -13,11 +14,13 @@ namespace WelderCalculator.Serialization
     {
         private string _binPath;
         private readonly string _dataFolder;
+        private readonly string _optionsDataFolder;
 
         public MaterialRepository()
         {
             _binPath = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
             _dataFolder = _binPath + @"\.." + @"\Data\";
+            _optionsDataFolder = _binPath + @"\.." + @"\Data\Properties\";
         }
 
         /*Use this constructor ONLY for testing!!!*/
@@ -25,6 +28,7 @@ namespace WelderCalculator.Serialization
         {
             _binPath = string.Empty;
             _dataFolder = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\Welder-Calculator\Welder-Calculator\WelderCalculator\WelderCalculator\Data\";
+            _optionsDataFolder = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\Welder-Calculator\Welder-Calculator\WelderCalculator\WelderCalculator\Data\Properties\";
         }
         
         public void SaveToFile(MaterialNorm norm)
@@ -54,6 +58,18 @@ namespace WelderCalculator.Serialization
             string jsonText = File.ReadAllText(pathToNormFile);
             var norm = JsonConvert.DeserializeObject<MaterialNorm>(jsonText);
             return norm;
+        }
+
+        public List<Category.OfElement> GetOrderOfElements()
+        {
+            string fileName = "OrderInDataGridView";
+            string pathToFile = _optionsDataFolder + fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var orderOfelements =
+                JsonConvert.DeserializeObject<List<Category.OfElement>>(jsonText);
+
+            return orderOfelements;
         }
     }
 }

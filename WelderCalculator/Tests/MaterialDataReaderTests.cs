@@ -11,13 +11,13 @@ namespace Tests
     [TestFixture]
     public class MaterialDataReaderTests
     {
-        private MaterialDataReader _dataReader;
+        private MaterialDataConnector _dataConnector;
         private SampleDataCreator _dataCreator;
 
         [SetUp]
         public void Init()
         {
-            _dataReader = new MaterialDataReader("chuj");
+            _dataConnector = new MaterialDataConnector("chuj");
             _dataCreator = new SampleDataCreator();
         }
         
@@ -32,7 +32,7 @@ namespace Tests
             };
 
             //when
-            List<string> listOfNorms = _dataReader.GetSortedListOfMaterialsNormsNames();
+            List<string> listOfNorms = _dataConnector.GetSortedListOfMaterialsNormsNames();
 
             //then
             CollectionAssert.AreEqual(listOfNorms, expectedListOfNames);
@@ -45,7 +45,7 @@ namespace Tests
             string[] expectedMaterialsNames = {"material1", "material2", "material3"};
 
             //when
-            List<Material> materials = _dataReader.GetListOfMaterialsFromNorm("sampleMaterialNorm1");
+            List<Material> materials = _dataConnector.GetListOfMaterialsFromNorm("sampleMaterialNorm1");
 
             bool materialsAreInAlphabeticalOrder = materials[0].Name == expectedMaterialsNames[0]
                                                 && materials[1].Name == expectedMaterialsNames[1]

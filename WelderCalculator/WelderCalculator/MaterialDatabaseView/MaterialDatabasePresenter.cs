@@ -12,16 +12,13 @@ namespace WelderCalculator.MaterialDatabaseView
     public class MaterialDatabasePresenter
     {
         private readonly IMaterialDatabaseView _view;
+        private readonly MaterialDataConnector _dataConnector;
 
-        private readonly IMaterialRepository _repository;
-        private readonly MaterialDataReader _materialDataReader;
-
-        public MaterialDatabasePresenter(IMaterialDatabaseView view,  IMaterialRepository repository)
+        public MaterialDatabasePresenter(IMaterialDatabaseView view)
         {
             _view = view;
             view.Presenter = this;
-            _repository = repository;
-            _materialDataReader = new MaterialDataReader();
+            _dataConnector = new MaterialDataConnector();
         }
 
         public void Init()
@@ -34,7 +31,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void LoadNormsComboBox()  
         {
-            _view.NormsList = _materialDataReader.GetSortedListOfMaterialsNormsNames();
+            _view.NormsList = _dataConnector.GetSortedListOfMaterialsNormsNames();
         }
 
         private void MakeAllCheckBoxesChecked()
@@ -79,22 +76,23 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private IEnumerable<Material> GetCurrentListOfMaterialsFromNormComboBox()
         {
-            List<string> listOfNormsNames = _materialDataReader.GetSortedListOfMaterialsNormsNames();
+            List<string> listOfNormsNames = _dataConnector.GetSortedListOfMaterialsNormsNames();
             string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
-            List<Material> listofMaterialsFromNorm = _materialDataReader.GetListOfMaterialsFromNorm(desiredNameOfNorm);
+            List<Material> listofMaterialsFromNorm = _dataConnector.GetListOfMaterialsFromNorm(desiredNameOfNorm);
 
             return listofMaterialsFromNorm;
         }
         
         private void CreateColumns(DataTable table)
         {
-            //For test purposes//
-            var listOfElements = new List<Category.OfElement>();
-            listOfElements = Enum.GetValues(typeof (Category.OfElement))
-                                 .Cast<Category.OfElement>()
-                                 .ToList();
-            //should be var listOfElements = GetOrderOfElements() //
+            ////For test purposes//
 
+            //var listOfElements = new List<Category.OfElement>();
+            //listOfElements = Enum.GetValues(typeof (Category.OfElement))
+            //                     .Cast<Category.OfElement>()
+            //                     .ToList();
+            ////should be var listOfElements = GetOrderOfElements() //
+            var listOfElements = _dataConnector.GetLastSavedOrderOfElements();
 
             table.Columns.Add("Nazwa", typeof(string));
 

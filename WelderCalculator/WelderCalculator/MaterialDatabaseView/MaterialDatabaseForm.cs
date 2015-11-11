@@ -12,7 +12,7 @@ namespace WelderCalculator.MaterialDatabaseView
         public MaterialDatabaseForm()
         {
             InitializeComponent();
-            new MaterialDatabasePresenter(this, new MaterialRepository());
+            new MaterialDatabasePresenter(this);
             Presenter.Init();
         }
 

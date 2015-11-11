@@ -1,22 +1,21 @@
 ﻿
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using WelderCalculator.Serialization;
 
 namespace WelderCalculator.Model
 {
-    public class MaterialDataReader
+    public class MaterialDataConnector
     {
         private readonly IMaterialRepository _repository;
 
-        public MaterialDataReader()
+        public MaterialDataConnector()
         {
             _repository = new MaterialRepository();
         }
 
         /*Use this constructor ONLY for testing!!!*/
-        public MaterialDataReader(string filePathForTestsOnly)
+        public MaterialDataConnector(string filePathForTestsOnly)
         {
             _repository = new MaterialRepository(filePathForTestsOnly);
         }
@@ -36,6 +35,11 @@ namespace WelderCalculator.Model
             List<Material> sortedListOfMaterials = norm.Materials.OrderBy(q => q.Name).ToList();
 
             return sortedListOfMaterials;
+        }
+
+        public List<Category.OfElement> GetLastSavedOrderOfElements()
+        {
+            return _repository.GetOrderOfElements();
         }
     }
 }

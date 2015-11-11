@@ -10,5 +10,7 @@ namespace WelderCalculator.Serialization
         string[] GetNamesOfFilesInDataFolder();
 
         MaterialNorm GetNorm(string normName);
+
+        List<Category.OfElement> GetOrderOfElements();
     }
 }

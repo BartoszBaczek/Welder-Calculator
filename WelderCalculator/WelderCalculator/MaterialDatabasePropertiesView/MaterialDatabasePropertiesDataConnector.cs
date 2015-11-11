@@ -10,17 +10,17 @@ using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
-    public class MaterialDatabasePropertiesDataReader
+    public class MaterialDatabasePropertiesDataConnector
     {
         private readonly IElementsOrderPropertiesRepository _repository;
 
-        public MaterialDatabasePropertiesDataReader()
+        public MaterialDatabasePropertiesDataConnector()
         {
             _repository = new ElementsOrderPropertiesRepository();
         }
 
         /*Use this constructor ONLY for testing!!!*/
-        public MaterialDatabasePropertiesDataReader(string filePathForTestsOnly)
+        public MaterialDatabasePropertiesDataConnector(string filePathForTestsOnly)
         {
             _repository = new ElementsOrderPropertiesRepository(filePathForTestsOnly);
         }
