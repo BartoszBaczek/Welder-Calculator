@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Windows.Forms;
-using WelderCalculator.MaterialDatabasePropertiesView.Serialization;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
@@ -24,6 +22,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
             var lastSavedOrderOfElements = _dataReader.GetOrderOfElementFromFile();
             BindDataToComboBoxes(lastSavedOrderOfElements);
+
             UpdateComboBoxes();
         }
 
@@ -51,9 +50,14 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 List<string> currentDataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxNumber);
                 int currentSelectedIndex = _view.GetSelectedIndex(comboBoxNumber);
 
-                usedElements.Add(currentDataSource[currentSelectedIndex]);
+                if (!string.IsNullOrEmpty(currentDataSource[currentSelectedIndex]))
+                    usedElements.Add(currentDataSource[currentSelectedIndex]);
+                else
+                {
+                    Debug.WriteLine("PUSTKA");
+                    Debug.WriteLine(" ");
+                }
             }
-
             for (int i = 0; i < _view.NumberOfComboBoxes; i++)
             {
                 int comboBoxNumber = i + 1;
@@ -65,11 +69,14 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 List<string> dataNotToBind = new List<string>(usedElements);
                 dataNotToBind.Remove(selectedElement);
 
-                currentDataSource = currentDataSource.Except(dataNotToBind).ToList();
+                List<string> maxPossibleDataSource = _dataReader.GetOrderOfElementFromFile();
+                maxPossibleDataSource.Add(string.Empty);
+
+                currentDataSource = maxPossibleDataSource.Except(dataNotToBind).ToList();
                 int indexToSelectedElement = currentDataSource.IndexOf(selectedElement);
                 _view.SetDataSourcesForComboBoxes(comboBoxNumber, currentDataSource);
-                _view.SetSelectedIndex(comboBoxNumber, indexToSelectedElement);
-            } 
+                _view.SetSelectedIndex(comboBoxNumber, indexToSelectedElement); 
+            }
         }
 
         #region Events
