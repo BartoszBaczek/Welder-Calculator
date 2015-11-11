@@ -78,7 +78,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             }
         }
 
-        public void SetDataSourcesForComboBoxes(List<string> listOfAvalibleElements, int comboBoxIndex)
+        public void SetDataSourcesForComboBoxes(int comboBoxIndex, List<string> listOfAvalibleElements)
         {
             if (comboBoxIndex < 1 || comboBoxIndex > NUMBER_OF_COMBOBOXES_IN_FORM)
                 throw new ArgumentException("There is no comboBox with that number");
@@ -383,7 +383,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
             Presenter.OnCancelButtonPressed();
         }
-
     }
 }
 

@@ -10,13 +10,13 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         int NumberOfComboBoxes { get; }
 
         void SetDataSourcesForComboBoxes(List<List<string>> listsOfDataSources);
-        void SetDataSourcesForComboBoxes(List<string> listOfAvalibleElements, int comboBoxIndex);
+        void SetDataSourcesForComboBoxes(int comboBoxIndex, List<string> listOfAvalibleElements);
 
         List<List<string>> GetListOfAvalibleElementsForComboBoxes();
         List<string> GetListOfAvalibleElementsForComboBoxes(int comboBoxIndex);
 
         int GetSelectedIndex(int numberOfComboBox);
-        void SetSelectedIndex(int numberOfComboBoxm, int indexToSet);
+        void SetSelectedIndex(int numberOfComboBox, int indexToSet);
 
 
     }

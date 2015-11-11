@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using WelderCalculator.MaterialDatabasePropertiesView.Serialization;
 
@@ -22,28 +24,58 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
             var lastSavedOrderOfElements = _dataReader.GetOrderOfElementFromFile();
             BindDataToComboBoxes(lastSavedOrderOfElements);
+            UpdateComboBoxes();
         }
 
-        private void BindDataToComboBoxes(List<string> comboBoxesData)
+        private void BindDataToComboBoxes(List<string> elementsInOrder)
         {
-            for (int i = 1; i <= _view.NumberOfComboBoxes; i++)
-            {
-                int comboBoxIndex = i;
+            var dataToBind = elementsInOrder;
+            dataToBind.Add(String.Empty);
 
-                _view.SetDataSourcesForComboBoxes(comboBoxesData, comboBoxIndex);
-                _view.SetSelectedIndex(comboBoxIndex,comboBoxesData.IndexOf(comboBoxesData[i-1]));
+            for (int i = 0; i < _view.NumberOfComboBoxes; i++)
+            {
+                int comboBoxNumber = i + 1;
+
+                _view.SetDataSourcesForComboBoxes(comboBoxNumber, dataToBind);
+                _view.SetSelectedIndex(comboBoxNumber, i);
             }
         }
 
+        private void UpdateComboBoxes()
+        {
+            var usedElements = new List<string>();
 
+            for (int i = 0; i < _view.NumberOfComboBoxes; i++)
+            {
+                int comboBoxNumber = i + 1;
+                List<string> currentDataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxNumber);
+                int currentSelectedIndex = _view.GetSelectedIndex(comboBoxNumber);
 
+                usedElements.Add(currentDataSource[currentSelectedIndex]);
+            }
 
+            for (int i = 0; i < _view.NumberOfComboBoxes; i++)
+            {
+                int comboBoxNumber = i + 1;
+                List<string> currentDataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxNumber);
+                int currentSelectedIndex = _view.GetSelectedIndex(comboBoxNumber);
 
+                string selectedElement = currentDataSource[currentSelectedIndex];
+
+                List<string> dataNotToBind = new List<string>(usedElements);
+                dataNotToBind.Remove(selectedElement);
+
+                currentDataSource = currentDataSource.Except(dataNotToBind).ToList();
+                int indexToSelectedElement = currentDataSource.IndexOf(selectedElement);
+                _view.SetDataSourcesForComboBoxes(comboBoxNumber, currentDataSource);
+                _view.SetSelectedIndex(comboBoxNumber, indexToSelectedElement);
+            } 
+        }
 
         #region Events
         public void OnSelectedIndexChanged()
         {
-
+            UpdateComboBoxes();
         }
 
         public void OnApplyButtonPressed()

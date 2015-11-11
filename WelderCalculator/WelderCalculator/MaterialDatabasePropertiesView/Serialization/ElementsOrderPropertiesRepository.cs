@@ -50,8 +50,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView.Serialization
             var orderOfelements =
                 JsonConvert.DeserializeObject<List<Category.OfElement>>(jsonText);
 
-            Debug.WriteLine(orderOfelements[7].ToString());
-
             return orderOfelements;
         }
     }
