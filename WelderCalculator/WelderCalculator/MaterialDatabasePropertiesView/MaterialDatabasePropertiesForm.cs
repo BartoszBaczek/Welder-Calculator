@@ -356,6 +356,12 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
             Presenter.OnCancelButtonPressed();
         }
+
+
+        public void CloseDialog()
+        {
+            this.Close();
+        }
     }
 }
 

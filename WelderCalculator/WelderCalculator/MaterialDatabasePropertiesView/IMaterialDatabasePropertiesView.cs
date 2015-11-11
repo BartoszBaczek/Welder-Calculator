@@ -18,6 +18,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         int GetSelectedIndex(int numberOfComboBox);
         void SetSelectedIndex(int numberOfComboBox, int indexToSet);
 
-
+        void CloseDialog();
     }
 }

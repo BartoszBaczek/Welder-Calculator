@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
@@ -87,11 +88,46 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         public void OnApplyButtonPressed()
         {
-            
+            var lastSavedOrder = _dataReader.GetOrderOfElementFromFile();
+            var newOrder = new List<string>();
+
+            for (int i = 0; i < _view.NumberOfComboBoxes; i++)
+            {
+                int comboBoxID = i + 1;
+
+                var comboBoxDataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxID);
+                var comboBoxSelectedIndex = _view.GetSelectedIndex(comboBoxID);
+
+                newOrder.Add(comboBoxDataSource[comboBoxSelectedIndex]);
+            }
+
+            if (newOrder.Contains(string.Empty))
+            {
+                var dialogResult = MessageBox.Show("Niektóre pola zawierają puste miejsca. Czy chcesz przywrócić ostatnią kolejność?", "AWARIA", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    var lastSavedOrderOfElements = _dataReader.GetOrderOfElementFromFile();
+                    BindDataToComboBoxes(lastSavedOrderOfElements);
+
+                    UpdateComboBoxes();
+                }
+            }
+            else if (!lastSavedOrder.SequenceEqual(newOrder))
+            {
+                var dialogResult = MessageBox.Show("Czy na pewno chcesz zapisać nową kolejność pierwiastków?", "POTWIERDZENIE", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    _dataReader.SaveOrderOfElementsToFile(newOrder);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kolejność nie zmieniła się");
+            }
         }
         public void OnCancelButtonPressed()
         {
-
+            _view.CloseDialog();
         }
         #endregion
     }
