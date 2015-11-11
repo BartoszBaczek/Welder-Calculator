@@ -20,9 +20,27 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         private void Init()
         {
-            
+            var lastSavedOrderOfElements = _dataReader.GetOrderOfElementFromFile();
+            BindDataToComboBoxes(lastSavedOrderOfElements);
         }
-        
+
+        private void BindDataToComboBoxes(List<string> comboBoxesData)
+        {
+            for (int i = 1; i <= _view.NumberOfComboBoxes; i++)
+            {
+                int comboBoxIndex = i;
+
+                _view.SetDataSourcesForComboBoxes(comboBoxesData, comboBoxIndex);
+                _view.SetSelectedIndex(comboBoxIndex,comboBoxesData.IndexOf(comboBoxesData[i-1]));
+            }
+        }
+
+
+
+
+
+
+        #region Events
         public void OnSelectedIndexChanged()
         {
 
@@ -36,5 +54,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
 
         }
+        #endregion
     }
 }
