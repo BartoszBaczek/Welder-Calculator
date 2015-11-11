@@ -105,6 +105,7 @@
             this.cancelOrderButton.TabIndex = 30;
             this.cancelOrderButton.Text = "Anuluj";
             this.cancelOrderButton.UseVisualStyleBackColor = true;
+            this.cancelOrderButton.Click += new System.EventHandler(this.cancelOrderButton_Click);
             // 
             // comboBox1st
             // 

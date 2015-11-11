@@ -19,8 +19,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         public MaterialDatabasePropertiesForm()
         {
             InitializeComponent();
-
-            new MaterialDatabasePropertiesPresenter(this, new ElementsOrderPropertiesRepository());
+            new MaterialDatabasePropertiesPresenter(this);
         }
 
         #region DataSourcesForComboBoxes
@@ -377,7 +376,12 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         private void applyOrderButton_Click(object sender, EventArgs e)
         {
+            Presenter.OnApplyButtonPressed();
+        }
 
+        private void cancelOrderButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnCancelButtonPressed();
         }
 
     }
