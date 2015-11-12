@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
 using System.Windows.Forms;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.Model;
-using WelderCalculator.Serialization;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
@@ -27,6 +25,7 @@ namespace WelderCalculator.MaterialDatabaseView
             MakeAllCheckBoxesChecked();
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidth();
+            UpdateEquivalents();
         }
 
         private void LoadNormsComboBox()  

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using WelderCalculator.Serialization;
@@ -238,5 +239,48 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             Presenter.OnElementsOrderPropertiesButtonClicked();
         }
-     }
+
+
+        public double? CEquivalentTextBox
+        {
+            get
+            {
+                string cEquivalentTextBox = this.cTextBox.Text;
+
+                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+            }
+            set { this.cTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+
+        public double? NiEquivalentTextBox
+        {
+            get
+            {
+                string nNiEquivalentTextBox = this.niTextBox.Text;
+
+                if (string.IsNullOrEmpty(nNiEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(nNiEquivalentTextBox, typeof(double));
+            }
+            set { this.niTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+
+        public double? CrEquivalentTextBox
+        {
+            get
+            {
+                string crEquivalentTextBox = this.niTextBox.Text;
+
+                if (string.IsNullOrEmpty(crEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(crEquivalentTextBox, typeof(double));
+            }
+            set { this.crTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+    }
 }
