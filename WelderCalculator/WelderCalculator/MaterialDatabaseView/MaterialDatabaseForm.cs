@@ -148,6 +148,11 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             get { return this.materialsDataGridView; }
         }
+
+        public object SelectedRow
+        {
+            get { return this.materialsDataGridView.CurrentRow.DataBoundItem; }
+        }
         #endregion
 
         /*Event handling*/

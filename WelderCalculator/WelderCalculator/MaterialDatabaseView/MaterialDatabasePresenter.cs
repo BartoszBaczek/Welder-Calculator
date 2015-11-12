@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.Model;
@@ -226,6 +227,16 @@ namespace WelderCalculator.MaterialDatabaseView
             }
         }
 
+        private void GetSelectedMaterial()
+        {
+            object selectedRow = _view.SelectedRow;
+            var selectedMaterial = selectedRow as Material;
+
+            Debug.WriteLine(selectedMaterial.CEq);
+        }
+        private void UpdateEquivalents()
+        {
+        }
 
 
         /*Event handling*/
