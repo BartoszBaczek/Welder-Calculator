@@ -60,18 +60,19 @@ namespace WelderCalculator.MaterialDatabaseView
         private void BindDataSourceToDataGridView()
         {
             DataTable table = CreateTable();
-
             _view.GridSource = table;
         }
         
         private DataTable CreateTable()
         {
-            var table = new DataTable();
-            
-            CreateColumns(table);
-            CreateRows(table);
+            #region MyRegion
+            //var table = new DataTable();
 
-            return table;
+            //CreateColumns(table);
+            //CreateRows(table);
+
+            //return table; 
+            #endregion
         }
 
         private IEnumerable<Material> GetCurrentListOfMaterialsFromNormComboBox()
@@ -85,13 +86,7 @@ namespace WelderCalculator.MaterialDatabaseView
         
         private void CreateColumns(DataTable table)
         {
-            ////For test purposes//
-
-            //var listOfElements = new List<Category.OfElement>();
-            //listOfElements = Enum.GetValues(typeof (Category.OfElement))
-            //                     .Cast<Category.OfElement>()
-            //                     .ToList();
-            ////should be var listOfElements = GetOrderOfElements() //
+            #region OldCode
             var listOfElements = _dataConnector.GetLastSavedOrderOfElements();
 
             table.Columns.Add("Nazwa", typeof(string));
@@ -121,11 +116,13 @@ namespace WelderCalculator.MaterialDatabaseView
             }
 
             foreach (DataColumn column in table.Columns)
-                column.AllowDBNull = true;
+                column.AllowDBNull = true; 
+            #endregion
         }
 
         private void CreateRows(DataTable table)
         {
+            #region OldCode
             DataColumnCollection columns = table.Columns;
             IEnumerable<Material> materials = GetCurrentListOfMaterialsFromNormComboBox();
             foreach (var material in materials)
@@ -192,13 +189,14 @@ namespace WelderCalculator.MaterialDatabaseView
                     FillElementColumns(r, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
                 }
 
-                table.Rows.Add(r); 
-            }
-            
+                table.Rows.Add(r);
+            } 
+            #endregion
         }
 
         private void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element, Material material)
         {
+            #region oldCode
             Element materialElement = material.GetElement(element);
             if (_view.MinCheckBox)
             {
@@ -222,7 +220,8 @@ namespace WelderCalculator.MaterialDatabaseView
                     row[real] = DBNull.Value;
                 else
                     row[real] = materialElement.RealValue;
-            }
+            } 
+            #endregion
             
         }
 
