@@ -65,13 +65,19 @@ namespace WelderCalculator.MaterialDatabaseView
         
         private DataTable CreateTable()
         {
+            var table = new DataTable();
+            CreateColumns(table);
+            return table;
+
             #region MyRegion
+
             //var table = new DataTable();
 
             //CreateColumns(table);
             //CreateRows(table);
 
             //return table; 
+
             #endregion
         }
 
@@ -86,38 +92,38 @@ namespace WelderCalculator.MaterialDatabaseView
         
         private void CreateColumns(DataTable table)
         {
-            #region OldCode
-            var listOfElements = _dataConnector.GetLastSavedOrderOfElements();
+            var orderOfElements = _dataConnector.GetLastSavedOrderOfElements();
 
-            table.Columns.Add("Nazwa", typeof(string));
+            table.Columns.Add("Nazwa", typeof (string));
 
             if (_view.NumberCheckBox)
-                table.Columns.Add("Numer", typeof(string));
+                table.Columns.Add("Numer", typeof (string));
 
-            int i = 0;
-            foreach (var element in listOfElements)
+            for (int i = 0; i < orderOfElements.Count; i++)
             {
-                if ((element == Category.OfElement.C && _view.CcheckBox) || (element == Category.OfElement.Si && _view.SiCheckBox) ||
-                    (element == Category.OfElement.Mn && _view.MnCheckBox) || (element == Category.OfElement.P && _view.PcheckBox) ||
-                    (element == Category.OfElement.S && _view.ScheckBox) || (element == Category.OfElement.N && _view.NcheckBox) ||
-                    (element == Category.OfElement.Cr && _view.CrCheckBox) || (element == Category.OfElement.Mo && _view.MoCheckBox) ||
-                    (element == Category.OfElement.Nb && _view.NbCheckBox) || (element == Category.OfElement.Ni && _view.NiCheckBox) ||
-                    (element == Category.OfElement.Ti && _view.TiCheckBox == true) || (element == Category.OfElement.Al && _view.AlCheckBox) ||
-                    (element == Category.OfElement.V && _view.VCheckBox) || (element == Category.OfElement.Cu && _view.CuCheckBox))
+                if ((orderOfElements[i]== Category.OfElement.C    &&    _view.CcheckBox)  ||
+                    (orderOfElements[i]== Category.OfElement.Si   &&    _view.SiCheckBox) ||
+                    (orderOfElements[i]== Category.OfElement.Mn   &&    _view.MnCheckBox) ||
+                    (orderOfElements[i]== Category.OfElement.P    &&    _view.PcheckBox)  ||
+                    (orderOfElements[i]== Category.OfElement.S    &&    _view.ScheckBox)  ||
+                    (orderOfElements[i]== Category.OfElement.N    &&    _view.NcheckBox)  ||
+                    (orderOfElements[i]== Category.OfElement.Cr   &&    _view.CrCheckBox) ||
+                    (orderOfElements[i]== Category.OfElement.Mo   &&    _view.MoCheckBox) ||
+                    (orderOfElements[i]== Category.OfElement.Nb   &&    _view.NbCheckBox) ||
+                    (orderOfElements[i]== Category.OfElement.Ni   &&    _view.NiCheckBox) ||
+                    (orderOfElements[i]== Category.OfElement.Ti   &&    _view.TiCheckBox) ||
+                    (orderOfElements[i]== Category.OfElement.Al   &&    _view.AlCheckBox) ||
+                    (orderOfElements[i]== Category.OfElement.V    &&    _view.VCheckBox)  ||
+                    (orderOfElements[i] == Category.OfElement.Cu   &&   _view.CuCheckBox))
                 {
                     if (_view.MinCheckBox)
-                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " min", typeof(double));
+                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " min", typeof(double));
                     if (_view.MaxCheckBox)
-                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " max", typeof(double));
+                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " max", typeof(double));
                     if (_view.RealCheckBox)
-                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), i) + " real", typeof(double));
+                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " real", typeof(double));
                 }
-                i++;
             }
-
-            foreach (DataColumn column in table.Columns)
-                column.AllowDBNull = true; 
-            #endregion
         }
 
         private void CreateRows(DataTable table)
@@ -245,6 +251,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public void OnMaterialCheckBoxChanged()
         {
+            _view.DataGridView.DataSource = null;
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidth();
         }
