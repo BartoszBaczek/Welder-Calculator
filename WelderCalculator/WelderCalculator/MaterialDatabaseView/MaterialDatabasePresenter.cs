@@ -67,18 +67,8 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             var table = new DataTable();
             CreateColumns(table);
+            CreateRows(table);
             return table;
-
-            #region MyRegion
-
-            //var table = new DataTable();
-
-            //CreateColumns(table);
-            //CreateRows(table);
-
-            //return table; 
-
-            #endregion
         }
 
         private IEnumerable<Material> GetCurrentListOfMaterialsFromNormComboBox()
@@ -128,82 +118,82 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void CreateRows(DataTable table)
         {
-            #region OldCode
-            DataColumnCollection columns = table.Columns;
-            IEnumerable<Material> materials = GetCurrentListOfMaterialsFromNormComboBox();
-            foreach (var material in materials)
+            var columns = table.Columns;
+            var materialsToBind = GetCurrentListOfMaterialsFromNormComboBox();
+
+            foreach (var material in materialsToBind)
             {
-                DataRow r = table.NewRow();
+                DataRow newRow = table.NewRow();
+
                 if (columns.Contains("Nazwa"))
-                    r["Nazwa"] = material.Name;
+                    newRow["Nazwa"] = material.Name;
                 if (columns.Contains("Numer"))
-                    r["Numer"] = material.Number;
-                if (_view.CcheckBox == true)
+                    newRow["Numer"] = material.Number;
+
+                if (_view.CcheckBox)
                 {
-                    FillElementColumns(r, "C min", "C max", "C real", Category.OfElement.C, material);
+                    FillElementColumns(newRow, "C min", "C max", "C real", Category.OfElement.C, material);
                 }
                 if (_view.SiCheckBox)
                 {
-                    FillElementColumns(r, "Si min", "Si max", "Si real", Category.OfElement.Si, material);
+                    FillElementColumns(newRow, "Si min", "Si max", "Si real", Category.OfElement.Si, material);
                 }
                 if (_view.MnCheckBox)
                 {
-                    FillElementColumns(r, "Mn min", "Mn max", "Mn real", Category.OfElement.Mn, material);
+                    FillElementColumns(newRow, "Mn min", "Mn max", "Mn real", Category.OfElement.Mn, material);
                 }
                 if (_view.PcheckBox)
                 {
-                    FillElementColumns(r, "P min", "P max", "P real", Category.OfElement.P, material);
+                    FillElementColumns(newRow, "P min", "P max", "P real", Category.OfElement.P, material);
                 }
                 if (_view.ScheckBox)
                 {
-                    FillElementColumns(r, "S min", "S max", "S real", Category.OfElement.S, material);
+                    FillElementColumns(newRow, "S min", "S max", "S real", Category.OfElement.S, material);
                 }
                 if (_view.NcheckBox)
                 {
-                    FillElementColumns(r, "N min", "N max", "N real", Category.OfElement.N, material);
+                    FillElementColumns(newRow, "N min", "N max", "N real", Category.OfElement.N, material);
                 }
                 if (_view.CrCheckBox)
                 {
-                    FillElementColumns(r, "Cr min", "Cr max", "Cr real", Category.OfElement.Cr, material);
+                    FillElementColumns(newRow, "Cr min", "Cr max", "Cr real", Category.OfElement.Cr, material);
                 }
                 if (_view.MoCheckBox)
                 {
-                    FillElementColumns(r, "Mo min", "Mo max", "Mo real", Category.OfElement.Mo, material);
+                    FillElementColumns(newRow, "Mo min", "Mo max", "Mo real", Category.OfElement.Mo, material);
                 }
                 if (_view.NbCheckBox)
                 {
-                    FillElementColumns(r, "Nb min", "Nb max", "Nb real", Category.OfElement.Nb, material);
+                    FillElementColumns(newRow, "Nb min", "Nb max", "Nb real", Category.OfElement.Nb, material);
                 }
                 if (_view.NiCheckBox)
                 {
-                    FillElementColumns(r, "Ni min", "Ni max", "Ni real", Category.OfElement.Ni, material);
+                    FillElementColumns(newRow, "Ni min", "Ni max", "Ni real", Category.OfElement.Ni, material);
                 }
                 if (_view.TiCheckBox)
                 {
-                    FillElementColumns(r, "Ti min", "Ti max", "Ti real", Category.OfElement.Ti, material);
+                    FillElementColumns(newRow, "Ti min", "Ti max", "Ti real", Category.OfElement.Ti, material);
                 }
                 if (_view.AlCheckBox)
                 {
-                    FillElementColumns(r, "Al min", "Al max", "Al real", Category.OfElement.Al, material);
+                    FillElementColumns(newRow, "Al min", "Al max", "Al real", Category.OfElement.Al, material);
                 }
                 if (_view.VCheckBox)
                 {
-                    FillElementColumns(r, "V min", "V max", "V real", Category.OfElement.V, material);
+                    FillElementColumns(newRow, "V min", "V max", "V real", Category.OfElement.V, material);
                 }
                 if (_view.CuCheckBox)
                 {
-                    FillElementColumns(r, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
+                    FillElementColumns(newRow, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
                 }
-
-                table.Rows.Add(r);
-            } 
-            #endregion
+                table.Rows.Add(newRow);
+            }
         }
 
         private void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element, Material material)
         {
-            #region oldCode
             Element materialElement = material.GetElement(element);
+
             if (_view.MinCheckBox)
             {
                 if (material.GetElement(element).Min == null)
@@ -227,8 +217,6 @@ namespace WelderCalculator.MaterialDatabaseView
                 else
                     row[real] = materialElement.RealValue;
             } 
-            #endregion
-            
         }
 
         private void SetDataGridViewColumnsWidth()
