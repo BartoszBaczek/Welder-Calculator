@@ -24,12 +24,12 @@ namespace WelderCalculator.Model
                 double? niReal = GetElement(Category.OfElement.Ni).RealValue;
                 double? cuReal = GetElement(Category.OfElement.Cu).RealValue;
 
-                double? CarbonEquivalent = cReal +
+                double? carbonEquivalent = cReal +
                                            mnReal/6.0 +
                                            (crReal + vReal + moReal)/5.0 +
                                            (niReal + cuReal)/15.0;
 
-                return CarbonEquivalent;
+                return carbonEquivalent;
             }
         }
 
@@ -42,15 +42,33 @@ namespace WelderCalculator.Model
                 double? nReal = GetElement(Category.OfElement.N).RealValue;
                 double? mnReal = GetElement(Category.OfElement.Mn).RealValue;
 
-                double? NickielEquivalent = niReal +
+                double? nickielEquivalent = niReal +
                                             (cReal + nReal)*30.0 +
-                                            mnReal*0.5f;
+                                            mnReal*0.5;
 
-                return NickielEquivalent;
+                return nickielEquivalent;
             }
         }
 
-        public double? CeEq { get { return 0; } }           //TODO dokonczyc
+        public double? CeEq
+        {
+            get
+            {
+                double? crReal = GetElement(Category.OfElement.Cr).RealValue;
+                double? moReal = GetElement(Category.OfElement.Mo).RealValue;
+                double? siReal = GetElement(Category.OfElement.Si).RealValue;
+                double? nbReal = GetElement(Category.OfElement.Nb).RealValue;
+                double? tiReal = GetElement(Category.OfElement.Ti).RealValue;
+
+                double? chromeEquivalent = crReal +
+                                           moReal +
+                                           siReal*1.5 +
+                                           nbReal*0.5 +
+                                           tiReal*2;
+
+                return chromeEquivalent;
+            }
+        }
 
         public Material()
         {
