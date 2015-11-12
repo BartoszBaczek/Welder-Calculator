@@ -12,7 +12,26 @@ namespace WelderCalculator.Model
 
         public List<Element> Elements { get; set; }
 
-        public double? CEq { get { return 0; }}             //TODO dokonczyc
+        public double? CEq 
+        {
+            get
+            {
+                double? cReal = GetElement(Category.OfElement.C).RealValue;
+                double? mnReal = GetElement(Category.OfElement.Mn).RealValue;
+                double? crReal = GetElement(Category.OfElement.Cr).RealValue;
+                double? vReal = GetElement(Category.OfElement.V).RealValue;
+                double? moReal = GetElement(Category.OfElement.Mo).RealValue;
+                double? niReal = GetElement(Category.OfElement.Ni).RealValue;
+                double? cuReal = GetElement(Category.OfElement.Cu).RealValue;
+
+                double? CarbonEquivalent = cReal +
+                                           mnReal/6.0 +
+                                           (crReal + vReal + moReal)/5.0 +
+                                           (niReal + cuReal)/15.0;
+
+                return CarbonEquivalent;
+            }
+        }
 
         public double? NiEq { get { return 0; } }           //TODO dokonczyc
 
