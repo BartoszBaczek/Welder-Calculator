@@ -1,4 +1,6 @@
-﻿namespace WelderCalculator.MaterialDatabaseView
+﻿using System.Windows.Forms;
+
+namespace WelderCalculator.MaterialDatabaseView
 {
     partial class MaterialDatabaseForm
     {
@@ -29,6 +31,9 @@
         private void InitializeComponent()
         {
             this.ViewLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.orderElementsButton = new System.Windows.Forms.Button();
+            this.cuCheckBox = new System.Windows.Forms.CheckBox();
+            this.vCheckBox = new System.Windows.Forms.CheckBox();
             this.alCheckBox = new System.Windows.Forms.CheckBox();
             this.tiCheckBox = new System.Windows.Forms.CheckBox();
             this.niCheckBox = new System.Windows.Forms.CheckBox();
@@ -60,9 +65,6 @@
             this.maxCheckBox = new System.Windows.Forms.CheckBox();
             this.minCheckBox = new System.Windows.Forms.CheckBox();
             this.numberCheckBox = new System.Windows.Forms.CheckBox();
-            this.vCheckBox = new System.Windows.Forms.CheckBox();
-            this.cuCheckBox = new System.Windows.Forms.CheckBox();
-            this.orderElementsButton = new System.Windows.Forms.Button();
             this.ViewLayoutPanel.SuspendLayout();
             this.DataModifLayoutPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
@@ -93,6 +95,38 @@
             this.ViewLayoutPanel.TabIndex = 13;
             this.ViewLayoutPanel.TabStop = false;
             this.ViewLayoutPanel.Text = "Opcje wyświetlania";
+            // 
+            // orderElementsButton
+            // 
+            this.orderElementsButton.Location = new System.Drawing.Point(267, 79);
+            this.orderElementsButton.Name = "orderElementsButton";
+            this.orderElementsButton.Size = new System.Drawing.Size(75, 23);
+            this.orderElementsButton.TabIndex = 17;
+            this.orderElementsButton.Text = "Kolejność";
+            this.orderElementsButton.UseVisualStyleBackColor = true;
+            this.orderElementsButton.Click += new System.EventHandler(this.orderElementsButton_Click);
+            // 
+            // cuCheckBox
+            // 
+            this.cuCheckBox.AutoSize = true;
+            this.cuCheckBox.Location = new System.Drawing.Point(264, 43);
+            this.cuCheckBox.Name = "cuCheckBox";
+            this.cuCheckBox.Size = new System.Drawing.Size(76, 17);
+            this.cuCheckBox.TabIndex = 16;
+            this.cuCheckBox.Text = "Miedź (Cu)";
+            this.cuCheckBox.UseVisualStyleBackColor = true;
+            this.cuCheckBox.CheckedChanged += new System.EventHandler(this.cuCheckBox_CheckedChanged);
+            // 
+            // vCheckBox
+            // 
+            this.vCheckBox.AutoSize = true;
+            this.vCheckBox.Location = new System.Drawing.Point(264, 19);
+            this.vCheckBox.Name = "vCheckBox";
+            this.vCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.vCheckBox.TabIndex = 15;
+            this.vCheckBox.Text = "Wanad (V)";
+            this.vCheckBox.UseVisualStyleBackColor = true;
+            this.vCheckBox.CheckedChanged += new System.EventHandler(this.vCheckBox_CheckedChanged);
             // 
             // alCheckBox
             // 
@@ -353,6 +387,7 @@
             this.materialsDataGridView.Name = "materialsDataGridView";
             this.materialsDataGridView.Size = new System.Drawing.Size(892, 252);
             this.materialsDataGridView.TabIndex = 14;
+            this.materialsDataGridView.SelectionChanged += new System.EventHandler(this.materialsDataGridView_SelectedRowChanged);
             // 
             // ViewLayoutPanel_2
             // 
@@ -410,38 +445,6 @@
             this.numberCheckBox.Text = "Numer";
             this.numberCheckBox.UseVisualStyleBackColor = true;
             this.numberCheckBox.CheckedChanged += new System.EventHandler(this.numberCheckBox_CheckedChanged);
-            // 
-            // vCheckBox
-            // 
-            this.vCheckBox.AutoSize = true;
-            this.vCheckBox.Location = new System.Drawing.Point(264, 19);
-            this.vCheckBox.Name = "vCheckBox";
-            this.vCheckBox.Size = new System.Drawing.Size(77, 17);
-            this.vCheckBox.TabIndex = 15;
-            this.vCheckBox.Text = "Wanad (V)";
-            this.vCheckBox.UseVisualStyleBackColor = true;
-            this.vCheckBox.CheckedChanged += new System.EventHandler(this.vCheckBox_CheckedChanged);
-            // 
-            // cuCheckBox
-            // 
-            this.cuCheckBox.AutoSize = true;
-            this.cuCheckBox.Location = new System.Drawing.Point(264, 43);
-            this.cuCheckBox.Name = "cuCheckBox";
-            this.cuCheckBox.Size = new System.Drawing.Size(76, 17);
-            this.cuCheckBox.TabIndex = 16;
-            this.cuCheckBox.Text = "Miedź (Cu)";
-            this.cuCheckBox.UseVisualStyleBackColor = true;
-            this.cuCheckBox.CheckedChanged += new System.EventHandler(this.cuCheckBox_CheckedChanged);
-            // 
-            // orderElementsButton
-            // 
-            this.orderElementsButton.Location = new System.Drawing.Point(267, 79);
-            this.orderElementsButton.Name = "orderElementsButton";
-            this.orderElementsButton.Size = new System.Drawing.Size(75, 23);
-            this.orderElementsButton.TabIndex = 17;
-            this.orderElementsButton.Text = "Kolejność";
-            this.orderElementsButton.UseVisualStyleBackColor = true;
-            this.orderElementsButton.Click += new System.EventHandler(this.orderElementsButton_Click);
             // 
             // MaterialDatabaseForm
             // 
