@@ -33,7 +33,22 @@ namespace WelderCalculator.Model
             }
         }
 
-        public double? NiEq { get { return 0; } }           //TODO dokonczyc
+        public double? NiEq
+        {
+            get
+            {
+                double? niReal = GetElement(Category.OfElement.Ni).RealValue;
+                double? cReal = GetElement(Category.OfElement.C).RealValue;
+                double? nReal = GetElement(Category.OfElement.N).RealValue;
+                double? mnReal = GetElement(Category.OfElement.Mn).RealValue;
+
+                double? NickielEquivalent = niReal +
+                                            (cReal + nReal)*30.0 +
+                                            mnReal*0.5f;
+
+                return NickielEquivalent;
+            }
+        }
 
         public double? CeEq { get { return 0; } }           //TODO dokonczyc
 
