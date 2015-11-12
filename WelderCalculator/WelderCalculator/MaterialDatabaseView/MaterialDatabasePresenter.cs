@@ -229,13 +229,11 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void GetSelectedMaterial()
         {
-            object selectedRow = _view.SelectedRow;
-            var selectedMaterial = selectedRow as Material;
-
-            Debug.WriteLine(selectedMaterial.CEq);
+            Debug.WriteLine(_view.SelectedRow);
         }
         private void UpdateEquivalents()
         {
+            GetSelectedMaterial();
         }
 
 
@@ -265,6 +263,11 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             var orderPropertiesForm = new MaterialDatabasePropertiesForm();
             orderPropertiesForm.ShowDialog();
+        }
+
+        public void OnSelectedDataGridViewRowChanged()
+        {
+            UpdateEquivalents();
         }
     }
 }

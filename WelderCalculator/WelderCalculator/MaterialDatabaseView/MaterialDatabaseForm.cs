@@ -150,9 +150,14 @@ namespace WelderCalculator.MaterialDatabaseView
             get { return this.materialsDataGridView; }
         }
 
-        public object SelectedRow
+        public string SelectedRow
         {
-            get { return this.materialsDataGridView.CurrentRow.DataBoundItem; }
+            get
+            {
+                if (this.materialsDataGridView.SelectedRows.Count >= 1)
+                    return materialsDataGridView.SelectedRows[0].Cells[0].Value.ToString();
+                else return "A";
+            }
         }
 
         public double? CEquivalentTextBox
@@ -291,7 +296,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void materialsDataGridView_SelectedRowChanged(object sender, EventArgs e)
         {
-            
+            Presenter.OnSelectedDataGridViewRowChanged();
         }
 
     }
