@@ -1,4 +1,5 @@
-﻿ using System.Collections.Generic;
+﻿ using System;
+ using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace WelderCalculator.Model
@@ -9,10 +10,13 @@ namespace WelderCalculator.Model
 
         public List<Material> Materials { get; set; }
 
+        public Guid GuidNumber { get; set; }
+
         public MaterialNorm()
         {
             Name = string.Empty;
             Materials = new List<Material>();
+            GuidNumber = Guid.NewGuid();
         }
     }
 }
