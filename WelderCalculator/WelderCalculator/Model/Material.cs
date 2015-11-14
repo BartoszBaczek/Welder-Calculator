@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms.VisualStyles;
 
@@ -70,11 +71,14 @@ namespace WelderCalculator.Model
             }
         }
 
+        public Guid GuidNumber { get; set; }
+
         public Material()
         {
             Name = string.Empty;
             Number = string.Empty;
             Elements = new List<Element>();
+            GuidNumber = Guid.NewGuid();
         }
 
         public void CreateBasicListOfElements()
