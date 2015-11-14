@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System.CodeDom;
+using System.Diagnostics;
 using System.Linq;
 using NUnit.Framework;
 using WelderCalculator.Model;
@@ -10,13 +11,13 @@ namespace Tests
     [TestFixture]
     public class MaterialTests
     {
-        private Material sampleMaterial;
-
+        private Material _sampleMaterial;
+        private SampleDataCreator _dataCreator;
         [SetUp]
         public void Init()
         {
-            var dataCreator = new SampleDataCreator();
-            sampleMaterial = dataCreator.GetSampleMaterial();
+            _dataCreator = new SampleDataCreator();
+            _sampleMaterial = _dataCreator.GetSampleMaterial();
         }
 
         [Test]
@@ -31,16 +32,16 @@ namespace Tests
             };
 
             //when
-            Element sampleMaterialElement = sampleMaterial.GetElement(Category.OfElement.C);
+            Element sampleMaterialElement = _sampleMaterial.GetElement(Category.OfElement.C);
             sampleMaterialElement.Min = 12.4;
             sampleMaterialElement.Max = 16.1;
             sampleMaterialElement.RealValue = 14d;
 
             //then
             Assert.IsTrue(
-                   sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Min == expectedElement.Min
-                && sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Max == expectedElement.Max
-                && sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).RealValue == expectedElement.RealValue);
+                   _sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Min == expectedElement.Min
+                && _sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Max == expectedElement.Max
+                && _sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).RealValue == expectedElement.RealValue);
         }
 
         [Test]
@@ -55,20 +56,37 @@ namespace Tests
             };
 
             //when
-            Element sampleMaterialElement = sampleMaterial.GetElement(Category.OfElement.C);
+            Element sampleMaterialElement = _sampleMaterial.GetElement(Category.OfElement.C);
             sampleMaterialElement.Min = 12.4;
             sampleMaterialElement.Max = 16.1;
             sampleMaterialElement.RealValue = 14d;
 
-            sampleMaterial.GetElement(Category.OfElement.C).Min = 5.1d;
-            sampleMaterial.GetElement(Category.OfElement.C).Max = 6.3d;
-            sampleMaterial.GetElement(Category.OfElement.C).RealValue = 5.4d;
+            _sampleMaterial.GetElement(Category.OfElement.C).Min = 5.1d;
+            _sampleMaterial.GetElement(Category.OfElement.C).Max = 6.3d;
+            _sampleMaterial.GetElement(Category.OfElement.C).RealValue = 5.4d;
 
             //then
             Assert.IsTrue(
-                   sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Min == expectedElement.Min
-                && sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Max == expectedElement.Max
-                && sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).RealValue == expectedElement.RealValue);
+                   _sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Min == expectedElement.Min
+                && _sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).Max == expectedElement.Max
+                && _sampleMaterial.Elements.First(e => e.Name == Category.OfElement.C).RealValue == expectedElement.RealValue);
+        }
+
+        [Test]
+        public void ShouldGenerateTwoDifferentGuidValues()
+        {
+            //given
+            var material1 = _dataCreator.GetSampleMaterial();
+            var material2 = _dataCreator.GetSampleMaterial();
+
+            var material1_GUID = material1.GuidNumber;
+            var material2_GUID = material2.GuidNumber;
+
+            //when
+            bool guidsAreDifferent = !(material1_GUID.Equals(material2_GUID));
+
+            //then
+            Assert.IsTrue(guidsAreDifferent);
         }
     }
 }
