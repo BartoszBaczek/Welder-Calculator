@@ -271,22 +271,22 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void numberCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnViewOptionsCheckBoxChanged();
+            Presenter.OnViewOptionsCheckBoxChanged("number");
         }
 
         private void minCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnViewOptionsCheckBoxChanged();
+            Presenter.OnViewOptionsCheckBoxChanged("min");
         }
 
         private void maxCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnViewOptionsCheckBoxChanged();
+            Presenter.OnViewOptionsCheckBoxChanged("max");
         }
 
         private void realCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnViewOptionsCheckBoxChanged();
+            Presenter.OnViewOptionsCheckBoxChanged("real");
         }
 
         private void orderElementsButton_Click(object sender, System.EventArgs e)

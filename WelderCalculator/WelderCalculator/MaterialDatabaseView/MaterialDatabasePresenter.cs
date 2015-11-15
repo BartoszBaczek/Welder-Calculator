@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.Model;
 
@@ -255,62 +256,76 @@ namespace WelderCalculator.MaterialDatabaseView
         public void OnMaterialCheckBoxChanged(string materialName)
         {
             if (materialName == "C")
-                    SetColumnsVisibility(materialName, _view.CcheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.CcheckBox);
             
             if (materialName == "Si")
-                    SetColumnsVisibility(materialName, _view.SiCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.SiCheckBox);
             
             if (materialName == "Mn")
-                    SetColumnsVisibility(materialName, _view.MnCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.MnCheckBox);
             
             if (materialName == "P")
-                    SetColumnsVisibility(materialName, _view.PcheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.PcheckBox);
             
             if (materialName == "S")
-                    SetColumnsVisibility(materialName, _view.ScheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.ScheckBox);
             
             if (materialName == "N")
-                    SetColumnsVisibility(materialName, _view.NcheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.NcheckBox);
             
             if (materialName == "Cr")
-                    SetColumnsVisibility(materialName, _view.CrCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.CrCheckBox);
             
             if (materialName == "Mo")
-                    SetColumnsVisibility(materialName, _view.MoCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.MoCheckBox);
             
             if (materialName == "Nb")
-                    SetColumnsVisibility(materialName, _view.NbCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.NbCheckBox);
             
             if (materialName == "Ni")
-                    SetColumnsVisibility(materialName, _view.NiCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.NiCheckBox);
             
             if (materialName == "Ti")
-                    SetColumnsVisibility(materialName, _view.TiCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.TiCheckBox);
             
             if (materialName == "Al")
-                    SetColumnsVisibility(materialName, _view.AlCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.AlCheckBox);
 
             if (materialName == "V")
-                    SetColumnsVisibility(materialName, _view.VCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.VCheckBox);
             
             if (materialName == "Cu")
-                    SetColumnsVisibility(materialName, _view.CuCheckBox);
+                    SetColumnsVisibiliyForElements(materialName, _view.CuCheckBox);
         }
 
-        private void SetColumnsVisibility(string materialName, bool visibility)
+        private void SetColumnsVisibiliyForElements(string materialName, bool visibility)
         {
             _view.DataGridView.Columns[materialName + " min"].Visible = visibility;
             _view.DataGridView.Columns[materialName + " max"].Visible = visibility;
             _view.DataGridView.Columns[materialName + " real"].Visible = visibility;
         }
 
-        public void OnViewOptionsCheckBoxChanged()
+        //zmienic argument na enum
+        public void OnViewOptionsCheckBoxChanged(string option)
         {
-            _view.GridSource = null;
-            BindDataSourceToDataGridView();
-            SetDataGridViewColumnsWidth();
+            if (option == "min")
+                SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
+            if (option == "max")
+                SetColumnsVisibilityForMinMaxReal(option, _view.MaxCheckBox);
+            if (option == "real")
+                SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
+            if (option == "number")
+                SetColumnsVisibilityForMinMaxReal(option, _view.NumberCheckBox);
         }
 
+        private void SetColumnsVisibilityForMinMaxReal(string option, bool visibility)
+        {
+            foreach (DataGridViewColumn column in _view.DataGridView.Columns)
+            {
+                if (column.Name.Contains(option))
+                    column.Visible = visibility;
+            }
+        }
         public void OnElementsOrderPropertiesButtonClicked()
         {
             var orderPropertiesForm = new MaterialDatabasePropertiesForm();
