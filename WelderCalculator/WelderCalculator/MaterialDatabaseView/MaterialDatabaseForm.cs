@@ -213,59 +213,59 @@ namespace WelderCalculator.MaterialDatabaseView
         #region Material checkboxes checks changed
         private void cCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("C");
         }
         private void pCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("P");
         }
         private void crCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Cr");
         }
         private void niCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Ni");
         }
         private void siCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Si");
         }
         private void sCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("S");
         }
         private void moCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Mo");
         }
         private void tiCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Ti");
         }
         private void mnCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Mn");
         }
         private void nCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("N");
         }
         private void nbCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Nb");
         }
         private void alCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Al");
         }
         private void cuCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("Cu");
         }
         private void vCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnMaterialCheckBoxChanged();
+            Presenter.OnMaterialCheckBoxChanged("V");
         }
         #endregion
 

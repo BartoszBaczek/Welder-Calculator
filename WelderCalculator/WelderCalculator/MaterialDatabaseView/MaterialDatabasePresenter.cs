@@ -86,10 +86,6 @@ namespace WelderCalculator.MaterialDatabaseView
 
             table.Columns.Add("Nazwa", typeof (string));
 
-            #region oldCode
-            //if (_view.NumberCheckBox)
-            //    table.Columns.Add("Numer", typeof(string)); 
-            #endregion
             table.Columns.Add("Numer", typeof(string));
             table.Columns.Add("GUID_doUsuniecia_guid", typeof (Guid));
             table.Columns.Add("GUID_doUsuniecia_string", typeof(string));
@@ -159,22 +155,22 @@ namespace WelderCalculator.MaterialDatabaseView
                 newRow["Numer"] = material.Number;
                 newRow["GUID_doUsuniecia_guid"] = material.GuidNumber;
                 newRow["GUID_doUsuniecia_string"] = material.GuidNumber.ToString();
-                 FillElementColumns(newRow, "C min", "C max", "C real", Category.OfElement.C, material);
-                 FillElementColumns(newRow, "Si min", "Si max", "Si real", Category.OfElement.Si, material);
-                 FillElementColumns(newRow, "Mn min", "Mn max", "Mn real", Category.OfElement.Mn, material);
-                 FillElementColumns(newRow, "P min", "P max", "P real", Category.OfElement.P, material);
-                 FillElementColumns(newRow, "S min", "S max", "S real", Category.OfElement.S, material);
-                 FillElementColumns(newRow, "N min", "N max", "N real", Category.OfElement.N, material);
-                 FillElementColumns(newRow, "Cr min", "Cr max", "Cr real", Category.OfElement.Cr, material);
-                 FillElementColumns(newRow, "Mo min", "Mo max", "Mo real", Category.OfElement.Mo, material);
-                 FillElementColumns(newRow, "Nb min", "Nb max", "Nb real", Category.OfElement.Nb, material);
-                 FillElementColumns(newRow, "Ni min", "Ni max", "Ni real", Category.OfElement.Ni, material);
-                 FillElementColumns(newRow, "Ti min", "Ti max", "Ti real", Category.OfElement.Ti, material);
-                 FillElementColumns(newRow, "Al min", "Al max", "Al real", Category.OfElement.Al, material);
-                 FillElementColumns(newRow, "V min", "V max", "V real", Category.OfElement.V, material);
-                 FillElementColumns(newRow, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
-                 FillElementColumns(newRow, "V min", "V max", "V real", Category.OfElement.V, material);
-                 FillElementColumns(newRow, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
+                FillElementColumns(newRow, "C min", "C max", "C real", Category.OfElement.C, material);
+                FillElementColumns(newRow, "Si min", "Si max", "Si real", Category.OfElement.Si, material);
+                FillElementColumns(newRow, "Mn min", "Mn max", "Mn real", Category.OfElement.Mn, material);
+                FillElementColumns(newRow, "P min", "P max", "P real", Category.OfElement.P, material);
+                FillElementColumns(newRow, "S min", "S max", "S real", Category.OfElement.S, material);
+                FillElementColumns(newRow, "N min", "N max", "N real", Category.OfElement.N, material);
+                FillElementColumns(newRow, "Cr min", "Cr max", "Cr real", Category.OfElement.Cr, material);
+                FillElementColumns(newRow, "Mo min", "Mo max", "Mo real", Category.OfElement.Mo, material);
+                FillElementColumns(newRow, "Nb min", "Nb max", "Nb real", Category.OfElement.Nb, material);
+                FillElementColumns(newRow, "Ni min", "Ni max", "Ni real", Category.OfElement.Ni, material);
+                FillElementColumns(newRow, "Ti min", "Ti max", "Ti real", Category.OfElement.Ti, material);
+                FillElementColumns(newRow, "Al min", "Al max", "Al real", Category.OfElement.Al, material);
+                FillElementColumns(newRow, "V min", "V max", "V real", Category.OfElement.V, material);
+                FillElementColumns(newRow, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
+                FillElementColumns(newRow, "V min", "V max", "V real", Category.OfElement.V, material);
+                FillElementColumns(newRow, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
                 #endregion
                 table.Rows.Add(newRow);
             }
@@ -255,11 +251,57 @@ namespace WelderCalculator.MaterialDatabaseView
             SetDataGridViewColumnsWidth();
         }
 
-        public void OnMaterialCheckBoxChanged()
+        //zmienic na enum
+        public void OnMaterialCheckBoxChanged(string materialName)
         {
-            _view.DataGridView.DataSource = null;
-            BindDataSourceToDataGridView();
-            SetDataGridViewColumnsWidth();
+            if (materialName == "C")
+                    SetColumnsVisibility(materialName, _view.CcheckBox);
+            
+            if (materialName == "Si")
+                    SetColumnsVisibility(materialName, _view.SiCheckBox);
+            
+            if (materialName == "Mn")
+                    SetColumnsVisibility(materialName, _view.MnCheckBox);
+            
+            if (materialName == "P")
+                    SetColumnsVisibility(materialName, _view.PcheckBox);
+            
+            if (materialName == "S")
+                    SetColumnsVisibility(materialName, _view.ScheckBox);
+            
+            if (materialName == "N")
+                    SetColumnsVisibility(materialName, _view.NcheckBox);
+            
+            if (materialName == "Cr")
+                    SetColumnsVisibility(materialName, _view.CrCheckBox);
+            
+            if (materialName == "Mo")
+                    SetColumnsVisibility(materialName, _view.MoCheckBox);
+            
+            if (materialName == "Nb")
+                    SetColumnsVisibility(materialName, _view.NbCheckBox);
+            
+            if (materialName == "Ni")
+                    SetColumnsVisibility(materialName, _view.NiCheckBox);
+            
+            if (materialName == "Ti")
+                    SetColumnsVisibility(materialName, _view.TiCheckBox);
+            
+            if (materialName == "Al")
+                    SetColumnsVisibility(materialName, _view.AlCheckBox);
+
+            if (materialName == "V")
+                    SetColumnsVisibility(materialName, _view.VCheckBox);
+            
+            if (materialName == "Cu")
+                    SetColumnsVisibility(materialName, _view.CuCheckBox);
+        }
+
+        private void SetColumnsVisibility(string materialName, bool visibility)
+        {
+            _view.DataGridView.Columns[materialName + " min"].Visible = visibility;
+            _view.DataGridView.Columns[materialName + " max"].Visible = visibility;
+            _view.DataGridView.Columns[materialName + " real"].Visible = visibility;
         }
 
         public void OnViewOptionsCheckBoxChanged()
