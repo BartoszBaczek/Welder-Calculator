@@ -111,10 +111,9 @@
           "RealValue": 0.47
         }
       ],
-      "CEq": 0.893,
-      "NiEq": 28.904999999999998,
-      "CeEq": 2.82,
-      "GuidNumber": "ccc1a3b3-ab84-44bb-80c3-b69819231b3c"
+      "CEq": 0.0,
+      "NiEq": 0.0,
+      "CeEq": 0.0
     },
     {
       "Name": "material3",
@@ -226,10 +225,9 @@
           "RealValue": 0.85
         }
       ],
-      "CEq": 1.615,
-      "NiEq": 52.275,
-      "CeEq": 5.1,
-      "GuidNumber": "0033523f-665c-47a6-935b-78e9e9beb93d"
+      "CEq": 0.0,
+      "NiEq": 0.0,
+      "CeEq": 0.0
     },
     {
       "Name": "material1",
@@ -341,11 +339,9 @@
           "RealValue": 0.15
         }
       ],
-      "CEq": 0.28500000000000003,
-      "NiEq": 9.225,
-      "CeEq": 0.89999999999999991,
-      "GuidNumber": "08336586-96ff-4b36-baf4-ea064ad689b8"
+      "CEq": 0.0,
+      "NiEq": 0.0,
+      "CeEq": 0.0
     }
-  ],
-  "GuidNumber": "fe736e0d-5c46-450a-8166-3171a2400b05"
+  ]
 }

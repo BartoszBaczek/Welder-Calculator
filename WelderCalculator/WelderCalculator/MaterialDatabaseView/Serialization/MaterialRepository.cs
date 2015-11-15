@@ -33,6 +33,11 @@ namespace WelderCalculator.Serialization
         
         public void SaveToFile(MaterialNorm norm)
         {
+            string pathToFile = _dataFolder + norm.Name + ".json";
+            if (! File.Exists(pathToFile))
+            {
+                File.Create(pathToFile).Dispose();
+            }
             using (FileStream fs = File.Open(_dataFolder + norm.Name + ".json", FileMode.Create))
             using (StreamWriter sw = new StreamWriter(fs))
             using (JsonWriter jw = new JsonTextWriter(sw))
