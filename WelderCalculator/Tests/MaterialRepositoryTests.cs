@@ -79,5 +79,29 @@ namespace Tests
             //then
             Assert.IsTrue(norm.Name == expectedNormName && materials);
         }
+
+        [Test]
+        public void ShouldNotChangeMaterialGUIDWhenDeserializingMaterial()
+        {
+            //given
+            Material material1 = _dataCreator.GetSampleMaterial();
+            Debug.WriteLine("Guid1:   " + material1.GuidNumber);
+
+            MaterialNorm materialNorm = new MaterialNorm();
+            materialNorm.Name = "allahuakbar";
+            materialNorm.Materials.Add(material1);
+
+            //when
+            _repo.SaveToFile(materialNorm);
+            MaterialNorm newMaterialNorm = _repo.GetNorm("allahuakbar");
+            Debug.WriteLine("Guid2:   " + newMaterialNorm.Materials[0].GuidNumber);
+
+
+            string guid1 = material1.GuidNumber.ToString();
+            string guid2 = materialNorm.Materials[0].GuidNumber.ToString();
+            //then
+
+            Assert.AreEqual(guid1, guid2);
+        }
     }
 }

@@ -1,0 +1,121 @@
+{
+  "Name": "allahuakbar",
+  "Materials": [
+    {
+      "Name": "material1",
+      "Number": "123",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Węgiel",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 11,
+          "FullName": "Aluminium",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Min": 0.4,
+          "Max": 0.5,
+          "RealValue": 0.47
+        }
+      ],
+      "CEq": 0.893,
+      "NiEq": 28.904999999999998,
+      "CeEq": 2.82,
+      "GuidNumber": "c95fabeb-9583-48c7-8e43-42ae886dc9ff"
+    }
+  ],
+  "GuidNumber": "c896df05-726e-4222-8b4a-2e1d6e0db8b5"
+}
