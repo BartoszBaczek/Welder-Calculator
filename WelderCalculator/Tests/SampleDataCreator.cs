@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using NUnit.Framework;
-using NUnit.Framework.Constraints;
-using WelderCalculator.Model;
-using WelderCalculator.Serialization;
+﻿using WelderCalculator.Model;
 
 namespace Tests
 {
