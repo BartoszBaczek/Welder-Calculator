@@ -27,8 +27,8 @@ namespace Tests
             //given
             List<string> expectedListOfNames = new List<string>()
             {
-                "sampleMaterialNorm1",
-                "sampleMaterialNorm2"
+                "allahuakbar",
+                "sampleMaterialNorm1"
             };
 
             //when
