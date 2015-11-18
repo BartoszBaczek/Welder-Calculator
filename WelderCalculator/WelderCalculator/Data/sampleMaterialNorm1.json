@@ -114,7 +114,7 @@
       "CEq": 0.893,
       "NiEq": 28.904999999999998,
       "CeEq": 2.82,
-      "GuidNumber": "11138ce6-e224-40cf-add3-d5549cdc67b1"
+      "GuidNumber": "3f3b6981-10b6-4360-898f-47815d8713a0"
     },
     {
       "Name": "material3",
@@ -229,7 +229,7 @@
       "CEq": 1.615,
       "NiEq": 52.275,
       "CeEq": 5.1,
-      "GuidNumber": "4b568fa1-0fc6-4d46-bdb9-6f29fa254ab6"
+      "GuidNumber": "f2a9ac25-e278-4245-b975-3fb90ba3f299"
     },
     {
       "Name": "material1",
@@ -344,8 +344,8 @@
       "CEq": 0.28500000000000003,
       "NiEq": 9.225,
       "CeEq": 0.89999999999999991,
-      "GuidNumber": "7bc3b12d-f279-4c86-bea8-653a3a9d6d8c"
+      "GuidNumber": "2ef90859-9167-4f99-b003-0ceaba5111ee"
     }
   ],
-  "GuidNumber": "9ca8e5e1-5ae9-4b4d-bfa5-14d72a55a6a8"
+  "GuidNumber": "010eed7c-caaa-40b5-9af7-3d569be0c785"
 }
