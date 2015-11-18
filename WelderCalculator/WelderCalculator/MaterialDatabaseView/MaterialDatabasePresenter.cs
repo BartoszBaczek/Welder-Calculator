@@ -207,7 +207,7 @@ namespace WelderCalculator.MaterialDatabaseView
             {
                 _view.CEquivalentTextBox = material.CEq;
                 _view.NiEquivalentTextBox = material.NiEq;
-                _view.CrEquivalentTextBox = material.CeEq;
+                _view.CrEquivalentTextBox = material.CrEq;
             }
         }
 

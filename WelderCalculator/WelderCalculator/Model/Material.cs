@@ -51,7 +51,7 @@ namespace WelderCalculator.Model
             }
         }
 
-        public double? CeEq
+        public double? CrEq
         {
             get
             {
