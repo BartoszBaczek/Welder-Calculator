@@ -20,6 +20,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public List<string> NormsList
         {
+            get { return this.normComboBox.DataSource as List<string>;  }
             set { this.normComboBox.DataSource = value; }
         }
 

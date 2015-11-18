@@ -26,7 +26,6 @@ namespace WelderCalculator.MaterialDatabaseView
             MakeAllCheckBoxesChecked();
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
-            UpdateEquivalents();
         }
 
         private void LoadNormsComboBox()  
@@ -203,7 +202,27 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void UpdateEquivalents()
         {
-            //GetSelectedMaterial();
+            var material = GetSelectedMaterial();
+            if (material != null)
+            {
+                _view.CEquivalentTextBox = material.CEq;
+                _view.NiEquivalentTextBox = material.NiEq;
+                _view.CrEquivalentTextBox = material.CeEq;
+            }
+        }
+
+        private Material GetSelectedMaterial()
+        {
+            var materialRow = _view.SelectedRow;
+
+            if (materialRow.Cells.Count <= 0) 
+                return null;
+
+            var materialGuid = Guid.Parse(materialRow.Cells[0].Value.ToString());
+            var currentNormName = _view.NormsList[_view.SelectedNorm];
+            var selectedMaterial = _dataConnector.GetMaterial(materialGuid, currentNormName);
+
+            return selectedMaterial;
         }
 
         public void OnSelectedIndexChanged()
@@ -303,11 +322,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public void OnSelectedDataGridViewRowChanged()
         {
-            DataGridViewRow materialRow = _view.SelectedRow;
-            if (materialRow.Cells.Count > 0)
-            {
-                Guid materialGuid = Guid.Parse(materialRow.Cells[0].Value.ToString());
-            }
+            UpdateEquivalents();
         }
     }
 }

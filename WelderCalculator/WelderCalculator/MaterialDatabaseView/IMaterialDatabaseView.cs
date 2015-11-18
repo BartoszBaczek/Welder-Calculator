@@ -8,7 +8,7 @@ namespace WelderCalculator.MaterialDatabaseView
     {
         MaterialDatabasePresenter Presenter { set; }
 
-        List<string> NormsList { set; }
+        List<string> NormsList { get; set; }
 
         int SelectedNorm { get; set; }
 
