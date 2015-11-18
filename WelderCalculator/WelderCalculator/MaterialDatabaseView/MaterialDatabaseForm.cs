@@ -150,13 +150,13 @@ namespace WelderCalculator.MaterialDatabaseView
             get { return this.materialsDataGridView; }
         }
 
-        public string SelectedRow
+        public DataGridViewRow SelectedRow
         {
             get
             {
                 if (this.materialsDataGridView.SelectedRows.Count >= 1)
-                    return materialsDataGridView.SelectedRows[0].Cells[0].Value.ToString();
-                else return "A";
+                    return materialsDataGridView.SelectedRows[0];
+                else return new DataGridViewRow();
             }
         }
 

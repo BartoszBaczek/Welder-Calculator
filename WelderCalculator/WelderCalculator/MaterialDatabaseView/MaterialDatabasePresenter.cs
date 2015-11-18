@@ -25,7 +25,7 @@ namespace WelderCalculator.MaterialDatabaseView
             LoadNormsComboBox();
             MakeAllCheckBoxesChecked();
             BindDataSourceToDataGridView();
-            SetDataGridViewColumnsWidth();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
             UpdateEquivalents();
         }
 
@@ -83,12 +83,10 @@ namespace WelderCalculator.MaterialDatabaseView
         private void CreateColumns(DataTable table)
         {
             var orderOfElements = _dataConnector.GetLastSavedOrderOfElements();
+            table.Columns.Add("GUID", typeof(Guid));
 
             table.Columns.Add("Nazwa", typeof (string));
-
             table.Columns.Add("Numer", typeof(string));
-            table.Columns.Add("GUID_doUsuniecia_guid", typeof (Guid));
-            table.Columns.Add("GUID_doUsuniecia_string", typeof(string));
 
             foreach (Category.OfElement type in orderOfElements)
             {
@@ -122,10 +120,9 @@ namespace WelderCalculator.MaterialDatabaseView
             {
                 DataRow newRow = table.NewRow();
 
+                newRow["GUID"] = material.GuidNumber;
                 newRow["Nazwa"] = material.Name;
                 newRow["Numer"] = material.Number;
-                newRow["GUID_doUsuniecia_guid"] = material.GuidNumber;
-                newRow["GUID_doUsuniecia_string"] = material.GuidNumber.ToString();
                 FillElementColumns(newRow, "C min", "C max", "C real", Category.OfElement.C, material);
                 FillElementColumns(newRow, "Si min", "Si max", "Si real", Category.OfElement.Si, material);
                 FillElementColumns(newRow, "Mn min", "Mn max", "Mn real", Category.OfElement.Mn, material);
@@ -195,27 +192,29 @@ namespace WelderCalculator.MaterialDatabaseView
             #endregion
         }
 
-        private void SetDataGridViewColumnsWidth()
+        private void SetDataGridViewColumnsWidthAndSetInitialVisibility()
         {
             foreach ( DataGridViewColumn column in _view.DataGridView.Columns)
             {
                 column.Width = 80;
             }
+            _view.DataGridView.Columns["GUID"].Visible = false;
+        }
+
+        private void UpdateEquivalents()
+        {
+            //GetSelectedMaterial();
         }
 
         private void GetSelectedMaterial()
         {
-            Debug.WriteLine(_view.SelectedRow);
-        }
-        private void UpdateEquivalents()
-        {
-            GetSelectedMaterial();
+            //Debug.WriteLine(_view.SelectedRow);
         }
 
         public void OnSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();
-            SetDataGridViewColumnsWidth();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
         public void OnMaterialCheckBoxChanged(string materialName)
@@ -309,7 +308,9 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public void OnSelectedDataGridViewRowChanged()
         {
-            UpdateEquivalents();
+            DataGridViewRow materialRow = _view.SelectedRow;
+            if (materialRow.Cells.Count > 0)
+                Debug.WriteLine(materialRow.Cells[0].Value);
         }
     }
 }
