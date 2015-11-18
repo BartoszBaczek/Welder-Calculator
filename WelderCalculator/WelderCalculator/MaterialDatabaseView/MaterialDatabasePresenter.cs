@@ -199,7 +199,7 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             foreach ( DataGridViewColumn column in _view.DataGridView.Columns)
             {
-                column.Width = column.HeaderText.Length*12;
+                column.Width = 80;
             }
         }
 
@@ -286,7 +286,7 @@ namespace WelderCalculator.MaterialDatabaseView
                 case "real":
                     SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
                     break;
-                case "number":
+                case "Numer":
                     SetColumnsVisibilityForMinMaxReal(option, _view.NumberCheckBox);
                     break;
             }

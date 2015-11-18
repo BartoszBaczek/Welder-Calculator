@@ -271,7 +271,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void numberCheckBox_CheckedChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnViewOptionsCheckBoxChanged("number");
+            Presenter.OnViewOptionsCheckBoxChanged("Numer");
         }
 
         private void minCheckBox_CheckedChanged(object sender, System.EventArgs e)
