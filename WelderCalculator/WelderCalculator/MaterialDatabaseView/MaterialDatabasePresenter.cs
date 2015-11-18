@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
-using System.Xml.Serialization;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.Model;
 
@@ -91,67 +90,38 @@ namespace WelderCalculator.MaterialDatabaseView
             table.Columns.Add("GUID_doUsuniecia_guid", typeof (Guid));
             table.Columns.Add("GUID_doUsuniecia_string", typeof(string));
 
-            for (int i = 0; i < orderOfElements.Count; i++)
+            foreach (Category.OfElement type in orderOfElements)
             {
-                if ((orderOfElements[i] == Category.OfElement.C ) ||
-                    (orderOfElements[i] == Category.OfElement.Si) ||
-                    (orderOfElements[i] == Category.OfElement.Mn) ||
-                    (orderOfElements[i] == Category.OfElement.P ) ||
-                    (orderOfElements[i] == Category.OfElement.S ) ||
-                    (orderOfElements[i] == Category.OfElement.N ) ||
-                    (orderOfElements[i] == Category.OfElement.Cr) ||
-                    (orderOfElements[i] == Category.OfElement.Mo) ||
-                    (orderOfElements[i] == Category.OfElement.Nb) ||
-                    (orderOfElements[i] == Category.OfElement.Ni) ||
-                    (orderOfElements[i] == Category.OfElement.Ti) ||
-                    (orderOfElements[i] == Category.OfElement.Al) ||
-                    (orderOfElements[i] == Category.OfElement.V ) ||
-                    (orderOfElements[i] == Category.OfElement.Cu))
+                if ((type == Category.OfElement.C ) ||
+                    (type == Category.OfElement.Si) ||
+                    (type == Category.OfElement.Mn) ||
+                    (type == Category.OfElement.P ) ||
+                    (type == Category.OfElement.S ) ||
+                    (type == Category.OfElement.N ) ||
+                    (type == Category.OfElement.Cr) ||
+                    (type == Category.OfElement.Mo) ||
+                    (type == Category.OfElement.Nb) ||
+                    (type == Category.OfElement.Ni) ||
+                    (type == Category.OfElement.Ti) ||
+                    (type == Category.OfElement.Al) ||
+                    (type == Category.OfElement.V ) ||
+                    (type == Category.OfElement.Cu))
                 {
-                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " min", typeof(double));
-                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " max", typeof(double));
-                        table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " real", typeof(double));
+                    table.Columns.Add(Enum.GetName(typeof(Category.OfElement), type) + " min", typeof(double));
+                    table.Columns.Add(Enum.GetName(typeof(Category.OfElement), type) + " max", typeof(double));
+                    table.Columns.Add(Enum.GetName(typeof(Category.OfElement), type) + " real", typeof(double));
                 }
-            } 
-            #region oldCode
-            //for (int i = 0; i < orderOfElements.Count; i++)
-            //{
-            //    if ((orderOfElements[i]== Category.OfElement.C    &&    _view.CcheckBox)  ||
-            //        (orderOfElements[i]== Category.OfElement.Si   &&    _view.SiCheckBox) ||
-            //        (orderOfElements[i]== Category.OfElement.Mn   &&    _view.MnCheckBox) ||
-            //        (orderOfElements[i]== Category.OfElement.P    &&    _view.PcheckBox)  ||
-            //        (orderOfElements[i]== Category.OfElement.S    &&    _view.ScheckBox)  ||
-            //        (orderOfElements[i]== Category.OfElement.N    &&    _view.NcheckBox)  ||
-            //        (orderOfElements[i]== Category.OfElement.Cr   &&    _view.CrCheckBox) ||
-            //        (orderOfElements[i]== Category.OfElement.Mo   &&    _view.MoCheckBox) ||
-            //        (orderOfElements[i]== Category.OfElement.Nb   &&    _view.NbCheckBox) ||
-            //        (orderOfElements[i]== Category.OfElement.Ni   &&    _view.NiCheckBox) ||
-            //        (orderOfElements[i]== Category.OfElement.Ti   &&    _view.TiCheckBox) ||
-            //        (orderOfElements[i]== Category.OfElement.Al   &&    _view.AlCheckBox) ||
-            //        (orderOfElements[i]== Category.OfElement.V    &&    _view.VCheckBox)  ||
-            //        (orderOfElements[i] == Category.OfElement.Cu   &&   _view.CuCheckBox))
-            //    {
-            //        if (_view.MinCheckBox)
-            //            table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " min", typeof(double));
-            //        if (_view.MaxCheckBox)
-            //            table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " max", typeof(double));
-            //        if (_view.RealCheckBox)
-            //            table.Columns.Add(Enum.GetName(typeof(Category.OfElement), orderOfElements[i]) + " real", typeof(double));
-            //    }
-            //} 
-            #endregion
+            }
         }
 
         private void CreateRows(DataTable table)
         {
-            var columns = table.Columns;
             var materialsToBind = GetCurrentListOfMaterialsFromNormComboBox();
 
             foreach (var material in materialsToBind)
             {
                 DataRow newRow = table.NewRow();
 
-                #region oldCode
                 newRow["Nazwa"] = material.Name;
                 newRow["Numer"] = material.Number;
                 newRow["GUID_doUsuniecia_guid"] = material.GuidNumber;
@@ -172,14 +142,13 @@ namespace WelderCalculator.MaterialDatabaseView
                 FillElementColumns(newRow, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
                 FillElementColumns(newRow, "V min", "V max", "V real", Category.OfElement.V, material);
                 FillElementColumns(newRow, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
-                #endregion
                 table.Rows.Add(newRow);
             }
         }
 
         private void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element, Material material)
         {
-            Element materialElement = material.GetElement(element);
+            var materialElement = material.GetElement(element);
 
             if (material.GetElement(element).Min == null)
                 row[min] = DBNull.Value;
@@ -244,8 +213,6 @@ namespace WelderCalculator.MaterialDatabaseView
         }
 
 
-        /*Event handling*/
-
         public void OnSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();
@@ -308,14 +275,21 @@ namespace WelderCalculator.MaterialDatabaseView
         //zmienic argument na enum
         public void OnViewOptionsCheckBoxChanged(string option)
         {
-            if (option == "min")
-                SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
-            if (option == "max")
-                SetColumnsVisibilityForMinMaxReal(option, _view.MaxCheckBox);
-            if (option == "real")
-                SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
-            if (option == "number")
-                SetColumnsVisibilityForMinMaxReal(option, _view.NumberCheckBox);
+            switch (option)
+            {
+                case "min":
+                    SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
+                    break;
+                case "max":
+                    SetColumnsVisibilityForMinMaxReal(option, _view.MaxCheckBox);
+                    break;
+                case "real":
+                    SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
+                    break;
+                case "number":
+                    SetColumnsVisibilityForMinMaxReal(option, _view.NumberCheckBox);
+                    break;
+            }
         }
 
         private void SetColumnsVisibilityForMinMaxReal(string option, bool visibility)
