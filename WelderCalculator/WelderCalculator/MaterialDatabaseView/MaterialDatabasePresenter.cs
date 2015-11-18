@@ -284,7 +284,7 @@ namespace WelderCalculator.MaterialDatabaseView
                     SetColumnsVisibilityForMinMaxReal(option, _view.MaxCheckBox);
                     break;
                 case "real":
-                    SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
+                    SetColumnsVisibilityForMinMaxReal(option, _view.RealCheckBox);
                     break;
                 case "Numer":
                     SetColumnsVisibilityForMinMaxReal(option, _view.NumberCheckBox);
