@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using WelderCalculator.Serialization;
@@ -37,11 +38,14 @@ namespace WelderCalculator.Model
             return sortedListOfMaterials;
         }
 
-
-
         public List<Category.OfElement> GetLastSavedOrderOfElements()
         {
             return _repository.GetOrderOfElements();
+        }
+
+        public Material GetMaterial(Guid guid, string materialNormName)
+        {
+            return _repository.GetMaterialByGUID(guid, materialNormName);
         }
     }
 }
