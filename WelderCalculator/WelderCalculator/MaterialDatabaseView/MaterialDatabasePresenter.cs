@@ -212,14 +212,12 @@ namespace WelderCalculator.MaterialDatabaseView
             GetSelectedMaterial();
         }
 
-
         public void OnSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidth();
         }
 
-        //zmienic na enum
         public void OnMaterialCheckBoxChanged(string materialName)
         {
             if (materialName == "C")
@@ -275,7 +273,6 @@ namespace WelderCalculator.MaterialDatabaseView
                 _view.DataGridView.Columns[materialName + " real"].Visible = visibility;
         }
 
-        //zmienic argument na enum
         public void OnViewOptionsCheckBoxChanged(string option)
         {
             switch (option)
@@ -303,6 +300,7 @@ namespace WelderCalculator.MaterialDatabaseView
                     column.Visible = visibility;
             }
         }
+        
         public void OnElementsOrderPropertiesButtonClicked()
         {
             var orderPropertiesForm = new MaterialDatabasePropertiesForm();
