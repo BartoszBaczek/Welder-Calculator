@@ -1,6 +1,6 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
-using NUnit.Core;
 using NUnit.Framework;
 using WelderCalculator.Model;
 using WelderCalculator.Serialization;
@@ -104,11 +104,18 @@ namespace Tests
 
             Assert.AreEqual(guid1, guid2);
         }
-
         [Test]
         public void ShouldGetMaterialByGuidAndNormName()
         {
-            
+            //given 
+            Material expectedMaterial = _repo.GetNorm("sampleMaterialNorm1").Materials[0];
+            Guid guidToFind = expectedMaterial.GuidNumber;
+
+            //when 
+            Material materialToFind = _repo.GetMaterialByGUID(guidToFind, "sampleMaterialNorm1");
+
+            //then
+            Assert.That(materialToFind.Name == expectedMaterial.Name);
         }
     }
 }
