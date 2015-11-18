@@ -60,7 +60,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.niLabel = new System.Windows.Forms.Label();
             this.cLabel = new System.Windows.Forms.Label();
             this.materialsDataGridView = new System.Windows.Forms.DataGridView();
-            this.ViewLayoutPanel_2 = new System.Windows.Forms.GroupBox();
+            this.carbonLabel = new System.Windows.Forms.GroupBox();
             this.realCheckBox = new System.Windows.Forms.CheckBox();
             this.maxCheckBox = new System.Windows.Forms.CheckBox();
             this.minCheckBox = new System.Windows.Forms.CheckBox();
@@ -69,7 +69,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.DataModifLayoutPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsDataGridView)).BeginInit();
-            this.ViewLayoutPanel_2.SuspendLayout();
+            this.carbonLabel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ViewLayoutPanel
@@ -395,18 +395,19 @@ namespace WelderCalculator.MaterialDatabaseView
             this.materialsDataGridView.TabIndex = 14;
             this.materialsDataGridView.SelectionChanged += new System.EventHandler(this.materialsDataGridView_SelectedRowChanged);
             // 
-            // ViewLayoutPanel_2
+            // carbonLabel
             // 
-            this.ViewLayoutPanel_2.Controls.Add(this.realCheckBox);
-            this.ViewLayoutPanel_2.Controls.Add(this.maxCheckBox);
-            this.ViewLayoutPanel_2.Controls.Add(this.minCheckBox);
-            this.ViewLayoutPanel_2.Controls.Add(this.numberCheckBox);
-            this.ViewLayoutPanel_2.Location = new System.Drawing.Point(872, 17);
-            this.ViewLayoutPanel_2.Name = "ViewLayoutPanel_2";
-            this.ViewLayoutPanel_2.Size = new System.Drawing.Size(74, 103);
-            this.ViewLayoutPanel_2.TabIndex = 15;
-            this.ViewLayoutPanel_2.TabStop = false;
-            this.ViewLayoutPanel_2.Text = "Wyświetlaj";
+            this.carbonLabel.CausesValidation = false;
+            this.carbonLabel.Controls.Add(this.realCheckBox);
+            this.carbonLabel.Controls.Add(this.maxCheckBox);
+            this.carbonLabel.Controls.Add(this.minCheckBox);
+            this.carbonLabel.Controls.Add(this.numberCheckBox);
+            this.carbonLabel.Location = new System.Drawing.Point(872, 17);
+            this.carbonLabel.Name = "carbonLabel";
+            this.carbonLabel.Size = new System.Drawing.Size(74, 103);
+            this.carbonLabel.TabIndex = 15;
+            this.carbonLabel.TabStop = false;
+            this.carbonLabel.Text = "Wyświetlaj";
             // 
             // realCheckBox
             // 
@@ -457,7 +458,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 400);
-            this.Controls.Add(this.ViewLayoutPanel_2);
+            this.Controls.Add(this.carbonLabel);
             this.Controls.Add(this.materialsDataGridView);
             this.Controls.Add(this.ViewLayoutPanel);
             this.Controls.Add(this.DataModifLayoutPanel);
@@ -472,8 +473,8 @@ namespace WelderCalculator.MaterialDatabaseView
             this.EqLayoutPanel.ResumeLayout(false);
             this.EqLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsDataGridView)).EndInit();
-            this.ViewLayoutPanel_2.ResumeLayout(false);
-            this.ViewLayoutPanel_2.PerformLayout();
+            this.carbonLabel.ResumeLayout(false);
+            this.carbonLabel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,7 +520,7 @@ namespace WelderCalculator.MaterialDatabaseView
         private System.Windows.Forms.DataGridView materialsDataGridView;
         
         //Real/min/max/name/number checkboxes
-        private System.Windows.Forms.GroupBox ViewLayoutPanel_2;
+        private System.Windows.Forms.GroupBox carbonLabel;
         private System.Windows.Forms.CheckBox realCheckBox;
         private System.Windows.Forms.CheckBox maxCheckBox;
         private System.Windows.Forms.CheckBox minCheckBox;
