@@ -76,5 +76,17 @@ namespace WelderCalculator.Serialization
 
             return orderOfelements;
         }
+
+        public Material GetMaterialByGUID(Guid guidToFind, string materialNormName)
+        {
+            MaterialNorm norm = GetNorm(materialNormName);
+            foreach (var material in norm.Materials)
+            {
+                if (material.GuidNumber.Equals(guidToFind))
+                    return material;
+            }
+
+            return null;
+        }
     }
 }

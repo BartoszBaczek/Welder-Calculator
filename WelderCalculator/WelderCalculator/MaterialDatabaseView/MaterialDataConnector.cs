@@ -37,6 +37,8 @@ namespace WelderCalculator.Model
             return sortedListOfMaterials;
         }
 
+
+
         public List<Category.OfElement> GetLastSavedOrderOfElements()
         {
             return _repository.GetOrderOfElements();

@@ -206,11 +206,6 @@ namespace WelderCalculator.MaterialDatabaseView
             //GetSelectedMaterial();
         }
 
-        private void GetSelectedMaterial()
-        {
-            //Debug.WriteLine(_view.SelectedRow);
-        }
-
         public void OnSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();
@@ -310,7 +305,9 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             DataGridViewRow materialRow = _view.SelectedRow;
             if (materialRow.Cells.Count > 0)
-                Debug.WriteLine(materialRow.Cells[0].Value);
+            {
+                Guid materialGuid = Guid.Parse(materialRow.Cells[0].Value.ToString());
+            }
         }
     }
 }

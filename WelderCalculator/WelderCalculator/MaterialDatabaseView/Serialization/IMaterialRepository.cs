@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using WelderCalculator.Model;
 
 namespace WelderCalculator.Serialization
@@ -12,5 +14,7 @@ namespace WelderCalculator.Serialization
         MaterialNorm GetNorm(string normName);
 
         List<Category.OfElement> GetOrderOfElements();
+
+        Material GetMaterialByGUID(Guid guidToFind, string materialNormName);
     }
 }

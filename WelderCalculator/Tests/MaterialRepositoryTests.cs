@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Linq;
+using NUnit.Core;
 using NUnit.Framework;
 using WelderCalculator.Model;
 using WelderCalculator.Serialization;
@@ -102,6 +103,12 @@ namespace Tests
             //then
 
             Assert.AreEqual(guid1, guid2);
+        }
+
+        [Test]
+        public void ShouldGetMaterialByGuidAndNormName()
+        {
+            
         }
     }
 }
