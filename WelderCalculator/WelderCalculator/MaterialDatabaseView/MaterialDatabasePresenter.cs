@@ -278,21 +278,21 @@ namespace WelderCalculator.MaterialDatabaseView
             switch (option)
             {
                 case "min":
-                    SetColumnsVisibilityForMinMaxReal(option, _view.MinCheckBox);
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.MinCheckBox);
                     break;
                 case "max":
-                    SetColumnsVisibilityForMinMaxReal(option, _view.MaxCheckBox);
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.MaxCheckBox);
                     break;
                 case "real":
-                    SetColumnsVisibilityForMinMaxReal(option, _view.RealCheckBox);
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.RealCheckBox);
                     break;
                 case "Numer":
-                    SetColumnsVisibilityForMinMaxReal(option, _view.NumberCheckBox);
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.NumberCheckBox);
                     break;
             }
         }
 
-        private void SetColumnsVisibilityForMinMaxReal(string option, bool visibility)
+        private void SetColumnsVisibilityForMinMaxRealNumber(string option, bool visibility)
         {
             foreach (DataGridViewColumn column in _view.DataGridView.Columns)
             {
