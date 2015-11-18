@@ -123,7 +123,7 @@ namespace WelderCalculator.MaterialDatabaseView
         public bool MinCheckBox
         {
             get { return this.minCheckBox.Checked; }
-            set { this.numberCheckBox.Checked = value; }
+            set { this.minCheckBox.Checked = value; }
         }
 
         public bool MaxCheckBox
