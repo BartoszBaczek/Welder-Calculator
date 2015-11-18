@@ -263,13 +263,16 @@ namespace WelderCalculator.MaterialDatabaseView
             
             if (materialName == "Cu")
                     SetColumnsVisibiliyForElements(materialName, _view.CuCheckBox);
-        }
+       }
 
         private void SetColumnsVisibiliyForElements(string materialName, bool visibility)
         {
-            _view.DataGridView.Columns[materialName + " min"].Visible = visibility;
-            _view.DataGridView.Columns[materialName + " max"].Visible = visibility;
-            _view.DataGridView.Columns[materialName + " real"].Visible = visibility;
+            if (_view.MinCheckBox)
+                _view.DataGridView.Columns[materialName + " min"].Visible = visibility;
+            if (_view.MaxCheckBox)
+                _view.DataGridView.Columns[materialName + " max"].Visible = visibility;
+            if (_view.RealCheckBox)
+                _view.DataGridView.Columns[materialName + " real"].Visible = visibility;
         }
 
         //zmienic argument na enum
