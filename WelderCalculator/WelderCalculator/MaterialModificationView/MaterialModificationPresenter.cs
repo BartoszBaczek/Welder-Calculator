@@ -33,9 +33,6 @@ namespace WelderCalculator.MaterialModificationView
             _view.NumberTextbox = material.Number;
             _view.GuidTextbox = material.GuidNumber.ToString();
 
-            _view.Ctextbox = material.GetElement(Category.OfElement.C);
-
-
         }
     }
 }
