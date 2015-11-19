@@ -56,84 +56,84 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cMinTextBox = new System.Windows.Forms.TextBox();
+            this.cMaxTextbox = new System.Windows.Forms.TextBox();
+            this.cRealTextbox = new System.Windows.Forms.TextBox();
+            this.siRealTextbox = new System.Windows.Forms.TextBox();
+            this.siMaxTextbox = new System.Windows.Forms.TextBox();
+            this.siMinTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.mnRealTextbox = new System.Windows.Forms.TextBox();
+            this.mnMaxTextbox = new System.Windows.Forms.TextBox();
+            this.mnMinTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.pRealTextbox = new System.Windows.Forms.TextBox();
+            this.pMaxTextbox = new System.Windows.Forms.TextBox();
+            this.pMinTextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.sRealTextbox = new System.Windows.Forms.TextBox();
+            this.sMaxTextbox = new System.Windows.Forms.TextBox();
+            this.sMinTextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.nRealTextbox = new System.Windows.Forms.TextBox();
+            this.nMaxTextbox = new System.Windows.Forms.TextBox();
+            this.nMinTextBox = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.crRealTextbox = new System.Windows.Forms.TextBox();
+            this.crMaxTextbox = new System.Windows.Forms.TextBox();
+            this.crMinTextBox = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
+            this.moRealTextbox = new System.Windows.Forms.TextBox();
+            this.moMaxTextbox = new System.Windows.Forms.TextBox();
+            this.moMinTextBox = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.nbRealTextbox = new System.Windows.Forms.TextBox();
+            this.nbMaxTextbox = new System.Windows.Forms.TextBox();
+            this.nbMinTextBox = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.niRealTextbox = new System.Windows.Forms.TextBox();
+            this.niMaxTextbox = new System.Windows.Forms.TextBox();
+            this.niMinTextBox = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
-            this.textBox31 = new System.Windows.Forms.TextBox();
-            this.textBox32 = new System.Windows.Forms.TextBox();
-            this.textBox33 = new System.Windows.Forms.TextBox();
+            this.tiRealTextbox = new System.Windows.Forms.TextBox();
+            this.tiMaxTextbox = new System.Windows.Forms.TextBox();
+            this.tiMinTextBox = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.textBox34 = new System.Windows.Forms.TextBox();
-            this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
+            this.alRealTextbox = new System.Windows.Forms.TextBox();
+            this.alMaxTextbox = new System.Windows.Forms.TextBox();
+            this.alMinTextBox = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.textBox38 = new System.Windows.Forms.TextBox();
-            this.textBox39 = new System.Windows.Forms.TextBox();
+            this.cuRealTextbox = new System.Windows.Forms.TextBox();
+            this.cuMaxTextbox = new System.Windows.Forms.TextBox();
+            this.cuMinTextBox = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.textBox40 = new System.Windows.Forms.TextBox();
-            this.textBox41 = new System.Windows.Forms.TextBox();
-            this.textBox42 = new System.Windows.Forms.TextBox();
+            this.vRealTextbox = new System.Windows.Forms.TextBox();
+            this.vMaxTextbox = new System.Windows.Forms.TextBox();
+            this.vMinTextBox = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
@@ -175,20 +175,20 @@
             this.elementsLayoutPanel.Controls.Add(this.sLayoutPanel);
             this.elementsLayoutPanel.Location = new System.Drawing.Point(12, 91);
             this.elementsLayoutPanel.Name = "elementsLayoutPanel";
-            this.elementsLayoutPanel.Size = new System.Drawing.Size(936, 342);
+            this.elementsLayoutPanel.Size = new System.Drawing.Size(890, 330);
             this.elementsLayoutPanel.TabIndex = 0;
             this.elementsLayoutPanel.TabStop = false;
             this.elementsLayoutPanel.Text = "Skład";
             // 
             // vLayoutPanel
             // 
-            this.vLayoutPanel.Controls.Add(this.textBox40);
-            this.vLayoutPanel.Controls.Add(this.textBox41);
-            this.vLayoutPanel.Controls.Add(this.textBox42);
+            this.vLayoutPanel.Controls.Add(this.vRealTextbox);
+            this.vLayoutPanel.Controls.Add(this.vMaxTextbox);
+            this.vLayoutPanel.Controls.Add(this.vMinTextBox);
             this.vLayoutPanel.Controls.Add(this.label40);
             this.vLayoutPanel.Controls.Add(this.label41);
             this.vLayoutPanel.Controls.Add(this.label42);
-            this.vLayoutPanel.Location = new System.Drawing.Point(171, 237);
+            this.vLayoutPanel.Location = new System.Drawing.Point(156, 230);
             this.vLayoutPanel.Name = "vLayoutPanel";
             this.vLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.vLayoutPanel.TabIndex = 15;
@@ -197,13 +197,13 @@
             // 
             // cuLayoutPanel
             // 
-            this.cuLayoutPanel.Controls.Add(this.textBox37);
-            this.cuLayoutPanel.Controls.Add(this.textBox38);
-            this.cuLayoutPanel.Controls.Add(this.textBox39);
+            this.cuLayoutPanel.Controls.Add(this.cuRealTextbox);
+            this.cuLayoutPanel.Controls.Add(this.cuMaxTextbox);
+            this.cuLayoutPanel.Controls.Add(this.cuMinTextBox);
             this.cuLayoutPanel.Controls.Add(this.label37);
             this.cuLayoutPanel.Controls.Add(this.label38);
             this.cuLayoutPanel.Controls.Add(this.label39);
-            this.cuLayoutPanel.Location = new System.Drawing.Point(21, 237);
+            this.cuLayoutPanel.Location = new System.Drawing.Point(6, 230);
             this.cuLayoutPanel.Name = "cuLayoutPanel";
             this.cuLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.cuLayoutPanel.TabIndex = 14;
@@ -275,7 +275,7 @@
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(474, 277);
+            this.applyButton.Location = new System.Drawing.Point(459, 270);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(100, 23);
             this.applyButton.TabIndex = 30;
@@ -284,7 +284,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(621, 277);
+            this.cancelButton.Location = new System.Drawing.Point(606, 270);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 23);
             this.cancelButton.TabIndex = 31;
@@ -293,13 +293,13 @@
             // 
             // moLayoutPanel
             // 
-            this.moLayoutPanel.Controls.Add(this.textBox22);
-            this.moLayoutPanel.Controls.Add(this.textBox23);
-            this.moLayoutPanel.Controls.Add(this.textBox24);
+            this.moLayoutPanel.Controls.Add(this.moRealTextbox);
+            this.moLayoutPanel.Controls.Add(this.moMaxTextbox);
+            this.moLayoutPanel.Controls.Add(this.moMinTextBox);
             this.moLayoutPanel.Controls.Add(this.label22);
             this.moLayoutPanel.Controls.Add(this.label23);
             this.moLayoutPanel.Controls.Add(this.label24);
-            this.moLayoutPanel.Location = new System.Drawing.Point(171, 136);
+            this.moLayoutPanel.Location = new System.Drawing.Point(156, 129);
             this.moLayoutPanel.Name = "moLayoutPanel";
             this.moLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.moLayoutPanel.TabIndex = 15;
@@ -308,13 +308,13 @@
             // 
             // crLayoutPanel
             // 
-            this.crLayoutPanel.Controls.Add(this.textBox19);
-            this.crLayoutPanel.Controls.Add(this.textBox20);
-            this.crLayoutPanel.Controls.Add(this.textBox21);
+            this.crLayoutPanel.Controls.Add(this.crRealTextbox);
+            this.crLayoutPanel.Controls.Add(this.crMaxTextbox);
+            this.crLayoutPanel.Controls.Add(this.crMinTextBox);
             this.crLayoutPanel.Controls.Add(this.label19);
             this.crLayoutPanel.Controls.Add(this.label20);
             this.crLayoutPanel.Controls.Add(this.label21);
-            this.crLayoutPanel.Location = new System.Drawing.Point(21, 136);
+            this.crLayoutPanel.Location = new System.Drawing.Point(6, 129);
             this.crLayoutPanel.Name = "crLayoutPanel";
             this.crLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.crLayoutPanel.TabIndex = 15;
@@ -323,13 +323,13 @@
             // 
             // nLayoutPanel
             // 
-            this.nLayoutPanel.Controls.Add(this.textBox16);
-            this.nLayoutPanel.Controls.Add(this.textBox17);
-            this.nLayoutPanel.Controls.Add(this.textBox18);
+            this.nLayoutPanel.Controls.Add(this.nRealTextbox);
+            this.nLayoutPanel.Controls.Add(this.nMaxTextbox);
+            this.nLayoutPanel.Controls.Add(this.nMinTextBox);
             this.nLayoutPanel.Controls.Add(this.label16);
             this.nLayoutPanel.Controls.Add(this.label17);
             this.nLayoutPanel.Controls.Add(this.label18);
-            this.nLayoutPanel.Location = new System.Drawing.Point(769, 35);
+            this.nLayoutPanel.Location = new System.Drawing.Point(754, 28);
             this.nLayoutPanel.Name = "nLayoutPanel";
             this.nLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.nLayoutPanel.TabIndex = 15;
@@ -338,13 +338,13 @@
             // 
             // sLayoutPanel
             // 
-            this.sLayoutPanel.Controls.Add(this.textBox13);
-            this.sLayoutPanel.Controls.Add(this.textBox14);
-            this.sLayoutPanel.Controls.Add(this.textBox15);
+            this.sLayoutPanel.Controls.Add(this.sRealTextbox);
+            this.sLayoutPanel.Controls.Add(this.sMaxTextbox);
+            this.sLayoutPanel.Controls.Add(this.sMinTextBox);
             this.sLayoutPanel.Controls.Add(this.label13);
             this.sLayoutPanel.Controls.Add(this.label14);
             this.sLayoutPanel.Controls.Add(this.label15);
-            this.sLayoutPanel.Location = new System.Drawing.Point(621, 35);
+            this.sLayoutPanel.Location = new System.Drawing.Point(606, 28);
             this.sLayoutPanel.Name = "sLayoutPanel";
             this.sLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.sLayoutPanel.TabIndex = 15;
@@ -353,13 +353,13 @@
             // 
             // siLayoutPanel
             // 
-            this.siLayoutPanel.Controls.Add(this.textBox4);
-            this.siLayoutPanel.Controls.Add(this.textBox5);
-            this.siLayoutPanel.Controls.Add(this.textBox6);
+            this.siLayoutPanel.Controls.Add(this.siRealTextbox);
+            this.siLayoutPanel.Controls.Add(this.siMaxTextbox);
+            this.siLayoutPanel.Controls.Add(this.siMinTextBox);
             this.siLayoutPanel.Controls.Add(this.label4);
             this.siLayoutPanel.Controls.Add(this.label5);
             this.siLayoutPanel.Controls.Add(this.label6);
-            this.siLayoutPanel.Location = new System.Drawing.Point(171, 35);
+            this.siLayoutPanel.Location = new System.Drawing.Point(156, 28);
             this.siLayoutPanel.Name = "siLayoutPanel";
             this.siLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.siLayoutPanel.TabIndex = 15;
@@ -368,13 +368,13 @@
             // 
             // pLayoutPanel
             // 
-            this.pLayoutPanel.Controls.Add(this.textBox10);
-            this.pLayoutPanel.Controls.Add(this.textBox11);
-            this.pLayoutPanel.Controls.Add(this.textBox12);
+            this.pLayoutPanel.Controls.Add(this.pRealTextbox);
+            this.pLayoutPanel.Controls.Add(this.pMaxTextbox);
+            this.pLayoutPanel.Controls.Add(this.pMinTextBox);
             this.pLayoutPanel.Controls.Add(this.label10);
             this.pLayoutPanel.Controls.Add(this.label11);
             this.pLayoutPanel.Controls.Add(this.label12);
-            this.pLayoutPanel.Location = new System.Drawing.Point(474, 35);
+            this.pLayoutPanel.Location = new System.Drawing.Point(459, 28);
             this.pLayoutPanel.Name = "pLayoutPanel";
             this.pLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.pLayoutPanel.TabIndex = 15;
@@ -383,13 +383,13 @@
             // 
             // mnLayoutPanel
             // 
-            this.mnLayoutPanel.Controls.Add(this.textBox7);
-            this.mnLayoutPanel.Controls.Add(this.textBox8);
+            this.mnLayoutPanel.Controls.Add(this.mnRealTextbox);
+            this.mnLayoutPanel.Controls.Add(this.mnMaxTextbox);
             this.mnLayoutPanel.Controls.Add(this.label9);
-            this.mnLayoutPanel.Controls.Add(this.textBox9);
+            this.mnLayoutPanel.Controls.Add(this.mnMinTextBox);
             this.mnLayoutPanel.Controls.Add(this.label8);
             this.mnLayoutPanel.Controls.Add(this.label7);
-            this.mnLayoutPanel.Location = new System.Drawing.Point(323, 35);
+            this.mnLayoutPanel.Location = new System.Drawing.Point(308, 28);
             this.mnLayoutPanel.Name = "mnLayoutPanel";
             this.mnLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.mnLayoutPanel.TabIndex = 15;
@@ -398,13 +398,13 @@
             // 
             // cLayoutPanel
             // 
-            this.cLayoutPanel.Controls.Add(this.textBox3);
-            this.cLayoutPanel.Controls.Add(this.textBox2);
-            this.cLayoutPanel.Controls.Add(this.textBox1);
+            this.cLayoutPanel.Controls.Add(this.cRealTextbox);
+            this.cLayoutPanel.Controls.Add(this.cMaxTextbox);
+            this.cLayoutPanel.Controls.Add(this.cMinTextBox);
             this.cLayoutPanel.Controls.Add(this.label3);
             this.cLayoutPanel.Controls.Add(this.label2);
             this.cLayoutPanel.Controls.Add(this.label1);
-            this.cLayoutPanel.Location = new System.Drawing.Point(21, 35);
+            this.cLayoutPanel.Location = new System.Drawing.Point(6, 28);
             this.cLayoutPanel.Name = "cLayoutPanel";
             this.cLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.cLayoutPanel.TabIndex = 15;
@@ -413,13 +413,13 @@
             // 
             // alLayoutPanel
             // 
-            this.alLayoutPanel.Controls.Add(this.textBox34);
-            this.alLayoutPanel.Controls.Add(this.textBox35);
-            this.alLayoutPanel.Controls.Add(this.textBox36);
+            this.alLayoutPanel.Controls.Add(this.alRealTextbox);
+            this.alLayoutPanel.Controls.Add(this.alMaxTextbox);
+            this.alLayoutPanel.Controls.Add(this.alMinTextBox);
             this.alLayoutPanel.Controls.Add(this.label34);
             this.alLayoutPanel.Controls.Add(this.label35);
             this.alLayoutPanel.Controls.Add(this.label36);
-            this.alLayoutPanel.Location = new System.Drawing.Point(769, 136);
+            this.alLayoutPanel.Location = new System.Drawing.Point(754, 129);
             this.alLayoutPanel.Name = "alLayoutPanel";
             this.alLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.alLayoutPanel.TabIndex = 15;
@@ -428,13 +428,13 @@
             // 
             // tiLayoutPanel
             // 
-            this.tiLayoutPanel.Controls.Add(this.textBox31);
-            this.tiLayoutPanel.Controls.Add(this.textBox32);
-            this.tiLayoutPanel.Controls.Add(this.textBox33);
+            this.tiLayoutPanel.Controls.Add(this.tiRealTextbox);
+            this.tiLayoutPanel.Controls.Add(this.tiMaxTextbox);
+            this.tiLayoutPanel.Controls.Add(this.tiMinTextBox);
             this.tiLayoutPanel.Controls.Add(this.label31);
             this.tiLayoutPanel.Controls.Add(this.label32);
             this.tiLayoutPanel.Controls.Add(this.label33);
-            this.tiLayoutPanel.Location = new System.Drawing.Point(621, 136);
+            this.tiLayoutPanel.Location = new System.Drawing.Point(606, 129);
             this.tiLayoutPanel.Name = "tiLayoutPanel";
             this.tiLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.tiLayoutPanel.TabIndex = 15;
@@ -443,13 +443,13 @@
             // 
             // nbLayoutPanel
             // 
-            this.nbLayoutPanel.Controls.Add(this.textBox25);
-            this.nbLayoutPanel.Controls.Add(this.textBox26);
-            this.nbLayoutPanel.Controls.Add(this.textBox27);
+            this.nbLayoutPanel.Controls.Add(this.nbRealTextbox);
+            this.nbLayoutPanel.Controls.Add(this.nbMaxTextbox);
+            this.nbLayoutPanel.Controls.Add(this.nbMinTextBox);
             this.nbLayoutPanel.Controls.Add(this.label25);
             this.nbLayoutPanel.Controls.Add(this.label26);
             this.nbLayoutPanel.Controls.Add(this.label27);
-            this.nbLayoutPanel.Location = new System.Drawing.Point(323, 136);
+            this.nbLayoutPanel.Location = new System.Drawing.Point(308, 129);
             this.nbLayoutPanel.Name = "nbLayoutPanel";
             this.nbLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.nbLayoutPanel.TabIndex = 15;
@@ -458,13 +458,13 @@
             // 
             // niLayoutPanel
             // 
-            this.niLayoutPanel.Controls.Add(this.textBox28);
-            this.niLayoutPanel.Controls.Add(this.textBox29);
-            this.niLayoutPanel.Controls.Add(this.textBox30);
+            this.niLayoutPanel.Controls.Add(this.niRealTextbox);
+            this.niLayoutPanel.Controls.Add(this.niMaxTextbox);
+            this.niLayoutPanel.Controls.Add(this.niMinTextBox);
             this.niLayoutPanel.Controls.Add(this.label28);
             this.niLayoutPanel.Controls.Add(this.label29);
             this.niLayoutPanel.Controls.Add(this.label30);
-            this.niLayoutPanel.Location = new System.Drawing.Point(474, 136);
+            this.niLayoutPanel.Location = new System.Drawing.Point(459, 129);
             this.niLayoutPanel.Name = "niLayoutPanel";
             this.niLayoutPanel.Size = new System.Drawing.Size(130, 95);
             this.niLayoutPanel.TabIndex = 15;
@@ -498,47 +498,47 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Min:";
             // 
-            // textBox1
+            // cMinTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(55, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(72, 20);
-            this.textBox1.TabIndex = 37;
+            this.cMinTextBox.Location = new System.Drawing.Point(55, 19);
+            this.cMinTextBox.Name = "cMinTextBox";
+            this.cMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.cMinTextBox.TabIndex = 37;
             // 
-            // textBox2
+            // cMaxTextbox
             // 
-            this.textBox2.Location = new System.Drawing.Point(55, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(72, 20);
-            this.textBox2.TabIndex = 38;
+            this.cMaxTextbox.Location = new System.Drawing.Point(55, 45);
+            this.cMaxTextbox.Name = "cMaxTextbox";
+            this.cMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.cMaxTextbox.TabIndex = 38;
             // 
-            // textBox3
+            // cRealTextbox
             // 
-            this.textBox3.Location = new System.Drawing.Point(55, 71);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(72, 20);
-            this.textBox3.TabIndex = 39;
+            this.cRealTextbox.Location = new System.Drawing.Point(55, 71);
+            this.cRealTextbox.Name = "cRealTextbox";
+            this.cRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.cRealTextbox.TabIndex = 39;
             // 
-            // textBox4
+            // siRealTextbox
             // 
-            this.textBox4.Location = new System.Drawing.Point(52, 71);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(72, 20);
-            this.textBox4.TabIndex = 45;
+            this.siRealTextbox.Location = new System.Drawing.Point(52, 71);
+            this.siRealTextbox.Name = "siRealTextbox";
+            this.siRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.siRealTextbox.TabIndex = 45;
             // 
-            // textBox5
+            // siMaxTextbox
             // 
-            this.textBox5.Location = new System.Drawing.Point(52, 45);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(72, 20);
-            this.textBox5.TabIndex = 44;
+            this.siMaxTextbox.Location = new System.Drawing.Point(52, 45);
+            this.siMaxTextbox.Name = "siMaxTextbox";
+            this.siMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.siMaxTextbox.TabIndex = 44;
             // 
-            // textBox6
+            // siMinTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(52, 19);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(72, 20);
-            this.textBox6.TabIndex = 43;
+            this.siMinTextBox.Location = new System.Drawing.Point(52, 19);
+            this.siMinTextBox.Name = "siMinTextBox";
+            this.siMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.siMinTextBox.TabIndex = 43;
             // 
             // label4
             // 
@@ -567,26 +567,26 @@
             this.label6.TabIndex = 40;
             this.label6.Text = "Rzecz:";
             // 
-            // textBox7
+            // mnRealTextbox
             // 
-            this.textBox7.Location = new System.Drawing.Point(52, 71);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(72, 20);
-            this.textBox7.TabIndex = 45;
+            this.mnRealTextbox.Location = new System.Drawing.Point(52, 71);
+            this.mnRealTextbox.Name = "mnRealTextbox";
+            this.mnRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.mnRealTextbox.TabIndex = 45;
             // 
-            // textBox8
+            // mnMaxTextbox
             // 
-            this.textBox8.Location = new System.Drawing.Point(52, 45);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(72, 20);
-            this.textBox8.TabIndex = 44;
+            this.mnMaxTextbox.Location = new System.Drawing.Point(52, 45);
+            this.mnMaxTextbox.Name = "mnMaxTextbox";
+            this.mnMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.mnMaxTextbox.TabIndex = 44;
             // 
-            // textBox9
+            // mnMinTextBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(52, 19);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(72, 20);
-            this.textBox9.TabIndex = 43;
+            this.mnMinTextBox.Location = new System.Drawing.Point(52, 19);
+            this.mnMinTextBox.Name = "mnMinTextBox";
+            this.mnMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.mnMinTextBox.TabIndex = 43;
             // 
             // label7
             // 
@@ -615,26 +615,26 @@
             this.label9.TabIndex = 40;
             this.label9.Text = "Rzecz:";
             // 
-            // textBox10
+            // pRealTextbox
             // 
-            this.textBox10.Location = new System.Drawing.Point(52, 71);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(72, 20);
-            this.textBox10.TabIndex = 45;
+            this.pRealTextbox.Location = new System.Drawing.Point(52, 71);
+            this.pRealTextbox.Name = "pRealTextbox";
+            this.pRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.pRealTextbox.TabIndex = 45;
             // 
-            // textBox11
+            // pMaxTextbox
             // 
-            this.textBox11.Location = new System.Drawing.Point(52, 45);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(72, 20);
-            this.textBox11.TabIndex = 44;
+            this.pMaxTextbox.Location = new System.Drawing.Point(52, 45);
+            this.pMaxTextbox.Name = "pMaxTextbox";
+            this.pMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.pMaxTextbox.TabIndex = 44;
             // 
-            // textBox12
+            // pMinTextBox
             // 
-            this.textBox12.Location = new System.Drawing.Point(52, 19);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(72, 20);
-            this.textBox12.TabIndex = 43;
+            this.pMinTextBox.Location = new System.Drawing.Point(52, 19);
+            this.pMinTextBox.Name = "pMinTextBox";
+            this.pMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.pMinTextBox.TabIndex = 43;
             // 
             // label10
             // 
@@ -663,26 +663,26 @@
             this.label12.TabIndex = 40;
             this.label12.Text = "Rzecz:";
             // 
-            // textBox13
+            // sRealTextbox
             // 
-            this.textBox13.Location = new System.Drawing.Point(52, 71);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(72, 20);
-            this.textBox13.TabIndex = 45;
+            this.sRealTextbox.Location = new System.Drawing.Point(52, 71);
+            this.sRealTextbox.Name = "sRealTextbox";
+            this.sRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.sRealTextbox.TabIndex = 45;
             // 
-            // textBox14
+            // sMaxTextbox
             // 
-            this.textBox14.Location = new System.Drawing.Point(52, 45);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(72, 20);
-            this.textBox14.TabIndex = 44;
+            this.sMaxTextbox.Location = new System.Drawing.Point(52, 45);
+            this.sMaxTextbox.Name = "sMaxTextbox";
+            this.sMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.sMaxTextbox.TabIndex = 44;
             // 
-            // textBox15
+            // sMinTextBox
             // 
-            this.textBox15.Location = new System.Drawing.Point(52, 19);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(72, 20);
-            this.textBox15.TabIndex = 43;
+            this.sMinTextBox.Location = new System.Drawing.Point(52, 19);
+            this.sMinTextBox.Name = "sMinTextBox";
+            this.sMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.sMinTextBox.TabIndex = 43;
             // 
             // label13
             // 
@@ -711,26 +711,26 @@
             this.label15.TabIndex = 40;
             this.label15.Text = "Rzecz:";
             // 
-            // textBox16
+            // nRealTextbox
             // 
-            this.textBox16.Location = new System.Drawing.Point(52, 71);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(72, 20);
-            this.textBox16.TabIndex = 45;
+            this.nRealTextbox.Location = new System.Drawing.Point(52, 71);
+            this.nRealTextbox.Name = "nRealTextbox";
+            this.nRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.nRealTextbox.TabIndex = 45;
             // 
-            // textBox17
+            // nMaxTextbox
             // 
-            this.textBox17.Location = new System.Drawing.Point(52, 45);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(72, 20);
-            this.textBox17.TabIndex = 44;
+            this.nMaxTextbox.Location = new System.Drawing.Point(52, 45);
+            this.nMaxTextbox.Name = "nMaxTextbox";
+            this.nMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.nMaxTextbox.TabIndex = 44;
             // 
-            // textBox18
+            // nMinTextBox
             // 
-            this.textBox18.Location = new System.Drawing.Point(52, 19);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(72, 20);
-            this.textBox18.TabIndex = 43;
+            this.nMinTextBox.Location = new System.Drawing.Point(52, 19);
+            this.nMinTextBox.Name = "nMinTextBox";
+            this.nMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.nMinTextBox.TabIndex = 43;
             // 
             // label16
             // 
@@ -759,26 +759,26 @@
             this.label18.TabIndex = 40;
             this.label18.Text = "Rzecz:";
             // 
-            // textBox19
+            // crRealTextbox
             // 
-            this.textBox19.Location = new System.Drawing.Point(55, 69);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(72, 20);
-            this.textBox19.TabIndex = 45;
+            this.crRealTextbox.Location = new System.Drawing.Point(55, 69);
+            this.crRealTextbox.Name = "crRealTextbox";
+            this.crRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.crRealTextbox.TabIndex = 45;
             // 
-            // textBox20
+            // crMaxTextbox
             // 
-            this.textBox20.Location = new System.Drawing.Point(55, 43);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(72, 20);
-            this.textBox20.TabIndex = 44;
+            this.crMaxTextbox.Location = new System.Drawing.Point(55, 43);
+            this.crMaxTextbox.Name = "crMaxTextbox";
+            this.crMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.crMaxTextbox.TabIndex = 44;
             // 
-            // textBox21
+            // crMinTextBox
             // 
-            this.textBox21.Location = new System.Drawing.Point(55, 17);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(72, 20);
-            this.textBox21.TabIndex = 43;
+            this.crMinTextBox.Location = new System.Drawing.Point(55, 17);
+            this.crMinTextBox.Name = "crMinTextBox";
+            this.crMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.crMinTextBox.TabIndex = 43;
             // 
             // label19
             // 
@@ -807,26 +807,26 @@
             this.label21.TabIndex = 40;
             this.label21.Text = "Rzecz:";
             // 
-            // textBox22
+            // moRealTextbox
             // 
-            this.textBox22.Location = new System.Drawing.Point(52, 69);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(72, 20);
-            this.textBox22.TabIndex = 45;
+            this.moRealTextbox.Location = new System.Drawing.Point(52, 69);
+            this.moRealTextbox.Name = "moRealTextbox";
+            this.moRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.moRealTextbox.TabIndex = 45;
             // 
-            // textBox23
+            // moMaxTextbox
             // 
-            this.textBox23.Location = new System.Drawing.Point(52, 43);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(72, 20);
-            this.textBox23.TabIndex = 44;
+            this.moMaxTextbox.Location = new System.Drawing.Point(52, 43);
+            this.moMaxTextbox.Name = "moMaxTextbox";
+            this.moMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.moMaxTextbox.TabIndex = 44;
             // 
-            // textBox24
+            // moMinTextBox
             // 
-            this.textBox24.Location = new System.Drawing.Point(52, 17);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(72, 20);
-            this.textBox24.TabIndex = 43;
+            this.moMinTextBox.Location = new System.Drawing.Point(52, 17);
+            this.moMinTextBox.Name = "moMinTextBox";
+            this.moMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.moMinTextBox.TabIndex = 43;
             // 
             // label22
             // 
@@ -855,26 +855,26 @@
             this.label24.TabIndex = 40;
             this.label24.Text = "Rzecz:";
             // 
-            // textBox25
+            // nbRealTextbox
             // 
-            this.textBox25.Location = new System.Drawing.Point(52, 69);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(72, 20);
-            this.textBox25.TabIndex = 45;
+            this.nbRealTextbox.Location = new System.Drawing.Point(52, 69);
+            this.nbRealTextbox.Name = "nbRealTextbox";
+            this.nbRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.nbRealTextbox.TabIndex = 45;
             // 
-            // textBox26
+            // nbMaxTextbox
             // 
-            this.textBox26.Location = new System.Drawing.Point(52, 43);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(72, 20);
-            this.textBox26.TabIndex = 44;
+            this.nbMaxTextbox.Location = new System.Drawing.Point(52, 43);
+            this.nbMaxTextbox.Name = "nbMaxTextbox";
+            this.nbMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.nbMaxTextbox.TabIndex = 44;
             // 
-            // textBox27
+            // nbMinTextBox
             // 
-            this.textBox27.Location = new System.Drawing.Point(52, 17);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(72, 20);
-            this.textBox27.TabIndex = 43;
+            this.nbMinTextBox.Location = new System.Drawing.Point(52, 17);
+            this.nbMinTextBox.Name = "nbMinTextBox";
+            this.nbMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.nbMinTextBox.TabIndex = 43;
             // 
             // label25
             // 
@@ -903,26 +903,26 @@
             this.label27.TabIndex = 40;
             this.label27.Text = "Rzecz:";
             // 
-            // textBox28
+            // niRealTextbox
             // 
-            this.textBox28.Location = new System.Drawing.Point(52, 69);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(72, 20);
-            this.textBox28.TabIndex = 45;
+            this.niRealTextbox.Location = new System.Drawing.Point(52, 69);
+            this.niRealTextbox.Name = "niRealTextbox";
+            this.niRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.niRealTextbox.TabIndex = 45;
             // 
-            // textBox29
+            // niMaxTextbox
             // 
-            this.textBox29.Location = new System.Drawing.Point(52, 43);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(72, 20);
-            this.textBox29.TabIndex = 44;
+            this.niMaxTextbox.Location = new System.Drawing.Point(52, 43);
+            this.niMaxTextbox.Name = "niMaxTextbox";
+            this.niMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.niMaxTextbox.TabIndex = 44;
             // 
-            // textBox30
+            // niMinTextBox
             // 
-            this.textBox30.Location = new System.Drawing.Point(52, 17);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(72, 20);
-            this.textBox30.TabIndex = 43;
+            this.niMinTextBox.Location = new System.Drawing.Point(52, 17);
+            this.niMinTextBox.Name = "niMinTextBox";
+            this.niMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.niMinTextBox.TabIndex = 43;
             // 
             // label28
             // 
@@ -951,26 +951,26 @@
             this.label30.TabIndex = 40;
             this.label30.Text = "Rzecz:";
             // 
-            // textBox31
+            // tiRealTextbox
             // 
-            this.textBox31.Location = new System.Drawing.Point(52, 69);
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Size = new System.Drawing.Size(72, 20);
-            this.textBox31.TabIndex = 45;
+            this.tiRealTextbox.Location = new System.Drawing.Point(52, 69);
+            this.tiRealTextbox.Name = "tiRealTextbox";
+            this.tiRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.tiRealTextbox.TabIndex = 45;
             // 
-            // textBox32
+            // tiMaxTextbox
             // 
-            this.textBox32.Location = new System.Drawing.Point(52, 43);
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Size = new System.Drawing.Size(72, 20);
-            this.textBox32.TabIndex = 44;
+            this.tiMaxTextbox.Location = new System.Drawing.Point(52, 43);
+            this.tiMaxTextbox.Name = "tiMaxTextbox";
+            this.tiMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.tiMaxTextbox.TabIndex = 44;
             // 
-            // textBox33
+            // tiMinTextBox
             // 
-            this.textBox33.Location = new System.Drawing.Point(52, 17);
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Size = new System.Drawing.Size(72, 20);
-            this.textBox33.TabIndex = 43;
+            this.tiMinTextBox.Location = new System.Drawing.Point(52, 17);
+            this.tiMinTextBox.Name = "tiMinTextBox";
+            this.tiMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.tiMinTextBox.TabIndex = 43;
             // 
             // label31
             // 
@@ -999,26 +999,26 @@
             this.label33.TabIndex = 40;
             this.label33.Text = "Rzecz:";
             // 
-            // textBox34
+            // alRealTextbox
             // 
-            this.textBox34.Location = new System.Drawing.Point(52, 69);
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Size = new System.Drawing.Size(72, 20);
-            this.textBox34.TabIndex = 45;
+            this.alRealTextbox.Location = new System.Drawing.Point(52, 69);
+            this.alRealTextbox.Name = "alRealTextbox";
+            this.alRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.alRealTextbox.TabIndex = 45;
             // 
-            // textBox35
+            // alMaxTextbox
             // 
-            this.textBox35.Location = new System.Drawing.Point(52, 43);
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Size = new System.Drawing.Size(72, 20);
-            this.textBox35.TabIndex = 44;
+            this.alMaxTextbox.Location = new System.Drawing.Point(52, 43);
+            this.alMaxTextbox.Name = "alMaxTextbox";
+            this.alMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.alMaxTextbox.TabIndex = 44;
             // 
-            // textBox36
+            // alMinTextBox
             // 
-            this.textBox36.Location = new System.Drawing.Point(52, 17);
-            this.textBox36.Name = "textBox36";
-            this.textBox36.Size = new System.Drawing.Size(72, 20);
-            this.textBox36.TabIndex = 43;
+            this.alMinTextBox.Location = new System.Drawing.Point(52, 17);
+            this.alMinTextBox.Name = "alMinTextBox";
+            this.alMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.alMinTextBox.TabIndex = 43;
             // 
             // label34
             // 
@@ -1047,26 +1047,26 @@
             this.label36.TabIndex = 40;
             this.label36.Text = "Rzecz:";
             // 
-            // textBox37
+            // cuRealTextbox
             // 
-            this.textBox37.Location = new System.Drawing.Point(55, 69);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(72, 20);
-            this.textBox37.TabIndex = 45;
+            this.cuRealTextbox.Location = new System.Drawing.Point(55, 69);
+            this.cuRealTextbox.Name = "cuRealTextbox";
+            this.cuRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.cuRealTextbox.TabIndex = 45;
             // 
-            // textBox38
+            // cuMaxTextbox
             // 
-            this.textBox38.Location = new System.Drawing.Point(55, 43);
-            this.textBox38.Name = "textBox38";
-            this.textBox38.Size = new System.Drawing.Size(72, 20);
-            this.textBox38.TabIndex = 44;
+            this.cuMaxTextbox.Location = new System.Drawing.Point(55, 43);
+            this.cuMaxTextbox.Name = "cuMaxTextbox";
+            this.cuMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.cuMaxTextbox.TabIndex = 44;
             // 
-            // textBox39
+            // cuMinTextBox
             // 
-            this.textBox39.Location = new System.Drawing.Point(55, 17);
-            this.textBox39.Name = "textBox39";
-            this.textBox39.Size = new System.Drawing.Size(72, 20);
-            this.textBox39.TabIndex = 43;
+            this.cuMinTextBox.Location = new System.Drawing.Point(55, 17);
+            this.cuMinTextBox.Name = "cuMinTextBox";
+            this.cuMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.cuMinTextBox.TabIndex = 43;
             // 
             // label37
             // 
@@ -1095,26 +1095,26 @@
             this.label39.TabIndex = 40;
             this.label39.Text = "Rzecz:";
             // 
-            // textBox40
+            // vRealTextbox
             // 
-            this.textBox40.Location = new System.Drawing.Point(52, 69);
-            this.textBox40.Name = "textBox40";
-            this.textBox40.Size = new System.Drawing.Size(72, 20);
-            this.textBox40.TabIndex = 45;
+            this.vRealTextbox.Location = new System.Drawing.Point(52, 69);
+            this.vRealTextbox.Name = "vRealTextbox";
+            this.vRealTextbox.Size = new System.Drawing.Size(72, 20);
+            this.vRealTextbox.TabIndex = 45;
             // 
-            // textBox41
+            // vMaxTextbox
             // 
-            this.textBox41.Location = new System.Drawing.Point(52, 43);
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Size = new System.Drawing.Size(72, 20);
-            this.textBox41.TabIndex = 44;
+            this.vMaxTextbox.Location = new System.Drawing.Point(52, 43);
+            this.vMaxTextbox.Name = "vMaxTextbox";
+            this.vMaxTextbox.Size = new System.Drawing.Size(72, 20);
+            this.vMaxTextbox.TabIndex = 44;
             // 
-            // textBox42
+            // vMinTextBox
             // 
-            this.textBox42.Location = new System.Drawing.Point(52, 17);
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Size = new System.Drawing.Size(72, 20);
-            this.textBox42.TabIndex = 43;
+            this.vMinTextBox.Location = new System.Drawing.Point(52, 17);
+            this.vMinTextBox.Name = "vMinTextBox";
+            this.vMinTextBox.Size = new System.Drawing.Size(72, 20);
+            this.vMinTextBox.TabIndex = 43;
             // 
             // label40
             // 
@@ -1217,84 +1217,84 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.TextBox textBox41;
-        private System.Windows.Forms.TextBox textBox42;
+        private System.Windows.Forms.TextBox cRealTextbox;
+        private System.Windows.Forms.TextBox cMaxTextbox;
+        private System.Windows.Forms.TextBox cMinTextBox;
+        private System.Windows.Forms.TextBox vRealTextbox;
+        private System.Windows.Forms.TextBox vMaxTextbox;
+        private System.Windows.Forms.TextBox vMinTextBox;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox37;
-        private System.Windows.Forms.TextBox textBox38;
-        private System.Windows.Forms.TextBox textBox39;
+        private System.Windows.Forms.TextBox cuRealTextbox;
+        private System.Windows.Forms.TextBox cuMaxTextbox;
+        private System.Windows.Forms.TextBox cuMinTextBox;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox siRealTextbox;
+        private System.Windows.Forms.TextBox siMaxTextbox;
+        private System.Windows.Forms.TextBox siMinTextBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox34;
-        private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox36;
+        private System.Windows.Forms.TextBox alRealTextbox;
+        private System.Windows.Forms.TextBox alMaxTextbox;
+        private System.Windows.Forms.TextBox alMinTextBox;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox niRealTextbox;
+        private System.Windows.Forms.TextBox niMaxTextbox;
+        private System.Windows.Forms.TextBox niMinTextBox;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox31;
-        private System.Windows.Forms.TextBox textBox32;
-        private System.Windows.Forms.TextBox textBox33;
+        private System.Windows.Forms.TextBox tiRealTextbox;
+        private System.Windows.Forms.TextBox tiMaxTextbox;
+        private System.Windows.Forms.TextBox tiMinTextBox;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox mnRealTextbox;
+        private System.Windows.Forms.TextBox mnMaxTextbox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox mnMinTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox nbRealTextbox;
+        private System.Windows.Forms.TextBox nbMaxTextbox;
+        private System.Windows.Forms.TextBox nbMinTextBox;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox pRealTextbox;
+        private System.Windows.Forms.TextBox pMaxTextbox;
+        private System.Windows.Forms.TextBox pMinTextBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox textBox23;
-        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.TextBox moRealTextbox;
+        private System.Windows.Forms.TextBox moMaxTextbox;
+        private System.Windows.Forms.TextBox moMinTextBox;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox nRealTextbox;
+        private System.Windows.Forms.TextBox nMaxTextbox;
+        private System.Windows.Forms.TextBox nMinTextBox;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox crRealTextbox;
+        private System.Windows.Forms.TextBox crMaxTextbox;
+        private System.Windows.Forms.TextBox crMinTextBox;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox sRealTextbox;
+        private System.Windows.Forms.TextBox sMaxTextbox;
+        private System.Windows.Forms.TextBox sMinTextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
