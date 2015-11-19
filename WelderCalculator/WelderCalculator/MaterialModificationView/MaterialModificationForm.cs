@@ -42,42 +42,42 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string cEquivalentTextBox = this.cMinTextBox.Text;
+                string text = cMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.cMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { cMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? SiMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.siMinTextBox.Text;
+                string text = siMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.siMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { siMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? MnMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.mnMinTextBox.Text;
+                string text = mnMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.mnMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { mnMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
             
         }
 
@@ -85,546 +85,546 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string cEquivalentTextBox = this.pMinTextBox.Text;
+                string text = pMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.pMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { pMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? SMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.sMinTextBox.Text;
+                string text = sMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.sMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { sMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NMintextbox
         {
            get
             {
-                string cEquivalentTextBox = this.nMinTextBox.Text;
+                string text = nMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.nMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { nMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? CrMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.crMinTextBox.Text;
+                string text = crMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.crMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { crMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? MoMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.moMinTextBox.Text;
+                string text = moMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.moMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { moMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NbMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.nbMinTextBox.Text;
+                string text = nbMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.nbMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { nbMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NiMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.niMinTextBox.Text;
+                string text = niMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.niMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { niMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? TiMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.tiMinTextBox.Text;
+                string text = tiMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.tiMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { tiMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? AlMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.alMinTextBox.Text;
+                string text = alMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.alMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { alMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? VMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.vMinTextBox.Text;
+                string text = vMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.vMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { vMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? CuMintextbox
         {
             get
             {
-                string cEquivalentTextBox = this.cuMinTextBox.Text;
+                string text = cuMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.cuMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { cuMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? CMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.cMaxTextbox.Text;
+                string text = cMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.cMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { cMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? SiMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.siMaxTextbox.Text;
+                string text = siMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.siMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { siMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? MnMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.mnMaxTextbox.Text;
+                string text = mnMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.mnMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { mnMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? PMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.pMaxTextbox.Text;
+                string text = pMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.pMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { pMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? SMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.sMaxTextbox.Text;
+                string text = sMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.sMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { sMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.cMaxTextbox.Text;
+                string text = cMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.nMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { nMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? CrMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.crMaxTextbox.Text;
+                string text = crMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.crMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { crMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? MoMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.moMaxTextbox.Text;
+                string text = moMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.moMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { moMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NbMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.nbMaxTextbox.Text;
+                string text = nbMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.nbMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { nbMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NiMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.niMaxTextbox.Text;
+                string text = niMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.niMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { niMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? TiMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.tiMaxTextbox.Text;
+                string text = tiMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.tiMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { tiMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? AlMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.alMaxTextbox.Text;
+                string text = alMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.alMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { alMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? VMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.vMaxTextbox.Text;
+                string text = vMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.vMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { vMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? CuMaxtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.cuMaxTextbox.Text;
+                string text = cuMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.cuMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { cuMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? CRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.cRealTextbox.Text;
+                string text = cRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.cRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { cRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? SiRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.siRealTextbox.Text;
+                string text = siRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.siRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { siRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? MnRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.mnRealTextbox.Text;
+                string text = mnRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.mnRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { mnRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? PRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.pRealTextbox.Text;
+                string text = pRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.pRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { pRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? SRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.sRealTextbox.Text;
+                string text = sRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.sRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { sRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.nRealTextbox.Text;
+                string text = nRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.nRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { nRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? CrRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.crRealTextbox.Text;
+                string text = crRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.crRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { crRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? MoRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.moRealTextbox.Text;
+                string text = moRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.moRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { moRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NbRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.nbRealTextbox.Text;
+                string text = nbRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.nbRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { nbRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? NiRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.niRealTextbox.Text;
+                string text = niRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.niRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { niRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? TiRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.tiRealTextbox.Text;
+                string text = tiRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.tiRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { tiRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? AlRealtextbox
         {
            get
             {
-                string cEquivalentTextBox = this.alRealTextbox.Text;
+                string text = alRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.alRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { alRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? VRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.vRealTextbox.Text;
+                string text = vRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.vRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { vRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
         public double? CuRealtextbox
         {
             get
             {
-                string cEquivalentTextBox = this.cuRealTextbox.Text;
+                string text = cuRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
+                if (string.IsNullOrEmpty(text))
                     return null;
                 return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
+                    (double)Convert.ChangeType(text, typeof(double));
             }
-            set { this.cuRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { cuRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
     }
 }
