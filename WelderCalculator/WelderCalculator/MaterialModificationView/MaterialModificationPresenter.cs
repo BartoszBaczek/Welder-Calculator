@@ -62,6 +62,46 @@ namespace WelderCalculator.MaterialModificationView
             _view.NMintextbox = e.Min;
             _view.NMaxtextbox = e.Max;
             _view.NRealtextbox = e.RealValue;
+
+            e = material.GetElement(Category.OfElement.Cr);
+            _view.CrMintextbox = e.Min;
+            _view.CrMaxtextbox = e.Max;
+            _view.CrRealtextbox = e.RealValue;
+
+            e = material.GetElement(Category.OfElement.Mo);
+            _view.MoMintextbox = e.Min;
+            _view.MoMaxtextbox = e.Max;
+            _view.MoRealtextbox = e.RealValue;
+
+            e = material.GetElement(Category.OfElement.Nb);
+            _view.NbMintextbox = e.Min;
+            _view.NbMaxtextbox = e.Max;
+            _view.NbRealtextbox = e.RealValue;
+
+            e = material.GetElement(Category.OfElement.Ni);
+            _view.NiMintextbox = e.Min;
+            _view.NiMaxtextbox = e.Min;
+            _view.NiRealtextbox = e.RealValue;
+
+            e = material.GetElement(Category.OfElement.Ti);
+            _view.TiMintextbox = e.Min;
+            _view.TiMaxtextbox = e.Max;
+            _view.TiRealtextbox = e.RealValue;
+
+            e = material.GetElement(Category.OfElement.Al);
+            _view.AlMintextbox = e.Min;
+            _view.AlMaxtextbox = e.Max;
+            _view.AlRealtextbox = e.RealValue;
+
+            e = material.GetElement(Category.OfElement.V);
+            _view.VMintextbox = e.Min;
+            _view.VMaxtextbox = e.Max;
+            _view.VRealtextbox = e.RealValue;
+
+            e = material.GetElement(Category.OfElement.Cu);
+            _view.CuMintextbox = e.Min;
+            _view.CuMaxtextbox = e.Max;
+            _view.CuRealtextbox = e.RealValue;
         }
     }
 }
