@@ -188,6 +188,7 @@
             this.cancelButton.TabIndex = 31;
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // vLayoutPanel
             // 
@@ -260,6 +261,7 @@
             this.applyButton.TabIndex = 30;
             this.applyButton.Text = "OK";
             this.applyButton.UseVisualStyleBackColor = true;
+            this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
             // 
             // cuLayoutPanel
             // 

@@ -11,7 +11,7 @@ namespace WelderCalculator.MaterialModificationView
 
         //connector to repo?
 
-        public MaterialModificationPresenter(IMaterialModificationView view)
+        public MaterialModificationPresenter(IMaterialModificationView view, object norm)
         {
             _workingMode = WindowMode.Mode.AddNew;
             _view = view;
@@ -19,7 +19,7 @@ namespace WelderCalculator.MaterialModificationView
             //_connector = new connector?
         }
 
-        public MaterialModificationPresenter(IMaterialModificationView view, object materialToModify)
+        public MaterialModificationPresenter(IMaterialModificationView view, object norm, object materialToModify)
         {
             _workingMode = WindowMode.Mode.ModifyCurrent;
             _view = view;
@@ -29,9 +29,9 @@ namespace WelderCalculator.MaterialModificationView
             var a = BuildMaterial();
         }
 
-        private void BindToControls(object asdas)
+        private void BindToControls(object materialToBind)
         {
-            var material = asdas as Material;
+            var material = materialToBind as Material;
             _view.NameTextbox = material.Name;
             _view.NumberTextbox = material.Number;
             _view.GuidTextbox = material.GuidNumber.ToString();
@@ -171,12 +171,25 @@ namespace WelderCalculator.MaterialModificationView
             material.GetElement(Category.OfElement.Cu).Max = _view.CuMaxtextbox;
             material.GetElement(Category.OfElement.Cu).RealValue = _view.CuRealtextbox;
 
-            if (_workingMode == WindowMode.Mode.AddNew)
-                material.GuidNumber = Guid.NewGuid();
-            else if (_workingMode == WindowMode.Mode.ModifyCurrent)
-                material.GuidNumber = Guid.Parse(_view.GuidTextbox);
+            switch (_workingMode)
+            {
+                case WindowMode.Mode.AddNew:
+                    material.GuidNumber = Guid.NewGuid();
+                    break;
+                case WindowMode.Mode.ModifyCurrent:
+                    material.GuidNumber = Guid.Parse(_view.GuidTextbox);
+                    break;
+            }
 
             return material;
+        }
+
+        public void OnApplyButtonClicked()
+        {
+            if (_workingMode == WindowMode.Mode.ModifyCurrent)
+            {
+                var changedMaterial = BuildMaterial();
+            }
         }
     
     

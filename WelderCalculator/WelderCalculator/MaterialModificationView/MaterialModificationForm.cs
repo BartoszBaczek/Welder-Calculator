@@ -7,18 +7,19 @@ namespace WelderCalculator.MaterialModificationView
     {
         public MaterialModificationPresenter Presenter { private get; set; }
 
-        public MaterialModificationForm()
+        public MaterialModificationForm(object norm)
         {
             InitializeComponent();
-            new MaterialModificationPresenter(this);
+            new MaterialModificationPresenter(this, norm);
         }
 
-        public MaterialModificationForm(object materialToBind)
+        public MaterialModificationForm(object norm, object materialToBind)
         {
             InitializeComponent();
-            new MaterialModificationPresenter(this, materialToBind);
+            new MaterialModificationPresenter(this, norm, materialToBind);
         }
 
+        #region Generals
         public string NameTextbox
         {
             get { return nameTextBox.Text; }
@@ -35,9 +36,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get { return guidTextBox.Text; }
             set { guidTextBox.Text = value; }
-        }
-
-
+        } 
+        #endregion
         #region Mins
         public double? CMintextbox
         {
@@ -630,5 +630,15 @@ namespace WelderCalculator.MaterialModificationView
             set { cuRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         } 
         #endregion
+
+        private void applyButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnApplyButtonClicked();
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

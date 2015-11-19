@@ -327,14 +327,16 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public void OnAddMaterialButtonClicked()
         {
-            var modifyMaterialForm = new MaterialModificationForm();
+            //gwtCurrentNorm
+            var modifyMaterialForm = new MaterialModificationForm(norm);
             modifyMaterialForm.ShowDialog();
         }
 
         public void OnEditMaterialButtonClicked()
         {
+            //getCurrentNorm
             var material = GetSelectedMaterial();
-            var modifyMaterialForm = new MaterialModificationForm(material);
+            var modifyMaterialForm = new MaterialModificationForm(norm, material);
             modifyMaterialForm.ShowDialog();
         }
     }
