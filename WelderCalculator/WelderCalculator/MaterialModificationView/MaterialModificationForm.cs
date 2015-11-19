@@ -6,19 +6,16 @@ namespace WelderCalculator.MaterialModificationView
     public partial class MaterialModificationForm : Form, IMaterialModificationView
     {
         public MaterialModificationPresenter Presenter { private get; set; }
-        private readonly WindowMode.Mode _workingMode;
 
         public MaterialModificationForm()
         {
             InitializeComponent();
-            _workingMode = WindowMode.Mode.AddNew;
             new MaterialModificationPresenter(this);
         }
 
         public MaterialModificationForm(object materialToBind)
         {
             InitializeComponent();
-            _workingMode = WindowMode.Mode.Modify;
             new MaterialModificationPresenter(this, materialToBind);
         }
 

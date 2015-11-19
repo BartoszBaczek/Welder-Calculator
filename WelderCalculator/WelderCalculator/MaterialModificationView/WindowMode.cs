@@ -5,7 +5,7 @@ namespace WelderCalculator.MaterialModificationView
     {
         public enum Mode
         {
-            Modify,
+            ModifyCurrent,
             AddNew
         }
     }
