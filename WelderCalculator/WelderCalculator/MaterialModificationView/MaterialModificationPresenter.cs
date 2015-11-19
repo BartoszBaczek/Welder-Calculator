@@ -19,7 +19,7 @@ namespace WelderCalculator.MaterialModificationView
             //_connector = new connector?
         }
 
-        public MaterialModificationPresenter(IMaterialModificationView view, Material materialToModify)
+        public MaterialModificationPresenter(IMaterialModificationView view, object materialToModify)
         {
             _view = view;
             view.Presenter = this;
@@ -27,8 +27,9 @@ namespace WelderCalculator.MaterialModificationView
             BindToControls(materialToModify);
         }
 
-        private void BindToControls(Material material)
+        private void BindToControls(object asdas)
         {
+            var material = asdas as Material;
             _view.NameTextbox = material.Name;
             _view.NumberTextbox = material.Number;
             _view.GuidTextbox = material.GuidNumber.ToString();
