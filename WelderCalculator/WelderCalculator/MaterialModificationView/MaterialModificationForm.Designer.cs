@@ -43,28 +43,28 @@
             this.mnLabel = new System.Windows.Forms.Label();
             this.siLabel = new System.Windows.Forms.Label();
             this.cLabel = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.alTextbox = new System.Windows.Forms.TextBox();
+            this.tiTextbox = new System.Windows.Forms.TextBox();
+            this.niTextbox = new System.Windows.Forms.TextBox();
+            this.nbTextbox = new System.Windows.Forms.TextBox();
+            this.moTextbox = new System.Windows.Forms.TextBox();
+            this.crTextbox = new System.Windows.Forms.TextBox();
+            this.cuTextbox = new System.Windows.Forms.TextBox();
+            this.nTextbox = new System.Windows.Forms.TextBox();
+            this.sTextbox = new System.Windows.Forms.TextBox();
+            this.pTextbox = new System.Windows.Forms.TextBox();
+            this.vTextbox = new System.Windows.Forms.TextBox();
+            this.mnTextBox = new System.Windows.Forms.TextBox();
+            this.siTextBox = new System.Windows.Forms.TextBox();
+            this.cTextbox = new System.Windows.Forms.TextBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.basicsLayoutPanel = new System.Windows.Forms.GroupBox();
             this.guidLayoutPanel = new System.Windows.Forms.Label();
+            this.numberTextBox = new System.Windows.Forms.TextBox();
             this.numberLabel = new System.Windows.Forms.Label();
+            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLayoutPanel = new System.Windows.Forms.Label();
             this.guidTextBox = new System.Windows.Forms.TextBox();
-            this.numberTextBox = new System.Windows.Forms.TextBox();
-            this.nameTextBox = new System.Windows.Forms.TextBox();
             this.applyButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.elementsLayoutPanel.SuspendLayout();
@@ -87,20 +87,20 @@
             this.elementsLayoutPanel.Controls.Add(this.mnLabel);
             this.elementsLayoutPanel.Controls.Add(this.siLabel);
             this.elementsLayoutPanel.Controls.Add(this.cLabel);
-            this.elementsLayoutPanel.Controls.Add(this.textBox13);
-            this.elementsLayoutPanel.Controls.Add(this.textBox14);
-            this.elementsLayoutPanel.Controls.Add(this.textBox9);
-            this.elementsLayoutPanel.Controls.Add(this.textBox10);
-            this.elementsLayoutPanel.Controls.Add(this.textBox11);
-            this.elementsLayoutPanel.Controls.Add(this.textBox12);
-            this.elementsLayoutPanel.Controls.Add(this.textBox5);
-            this.elementsLayoutPanel.Controls.Add(this.textBox6);
-            this.elementsLayoutPanel.Controls.Add(this.textBox7);
-            this.elementsLayoutPanel.Controls.Add(this.textBox8);
-            this.elementsLayoutPanel.Controls.Add(this.textBox4);
-            this.elementsLayoutPanel.Controls.Add(this.textBox3);
-            this.elementsLayoutPanel.Controls.Add(this.textBox2);
-            this.elementsLayoutPanel.Controls.Add(this.textBox1);
+            this.elementsLayoutPanel.Controls.Add(this.alTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.tiTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.niTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.nbTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.moTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.crTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.cuTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.nTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.sTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.pTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.vTextbox);
+            this.elementsLayoutPanel.Controls.Add(this.mnTextBox);
+            this.elementsLayoutPanel.Controls.Add(this.siTextBox);
+            this.elementsLayoutPanel.Controls.Add(this.cTextbox);
             this.elementsLayoutPanel.Location = new System.Drawing.Point(12, 91);
             this.elementsLayoutPanel.Name = "elementsLayoutPanel";
             this.elementsLayoutPanel.Size = new System.Drawing.Size(533, 213);
@@ -234,103 +234,103 @@
             this.cLabel.TabIndex = 14;
             this.cLabel.Text = "Węgiel (C)";
             // 
-            // textBox13
+            // alTextbox
             // 
-            this.textBox13.Location = new System.Drawing.Point(159, 174);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 13;
+            this.alTextbox.Location = new System.Drawing.Point(159, 174);
+            this.alTextbox.Name = "alTextbox";
+            this.alTextbox.Size = new System.Drawing.Size(100, 20);
+            this.alTextbox.TabIndex = 13;
             // 
-            // textBox14
+            // tiTextbox
             // 
-            this.textBox14.Location = new System.Drawing.Point(9, 174);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 20);
-            this.textBox14.TabIndex = 12;
+            this.tiTextbox.Location = new System.Drawing.Point(9, 174);
+            this.tiTextbox.Name = "tiTextbox";
+            this.tiTextbox.Size = new System.Drawing.Size(100, 20);
+            this.tiTextbox.TabIndex = 12;
             // 
-            // textBox9
+            // niTextbox
             // 
-            this.textBox9.Location = new System.Drawing.Point(426, 131);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 11;
+            this.niTextbox.Location = new System.Drawing.Point(426, 131);
+            this.niTextbox.Name = "niTextbox";
+            this.niTextbox.Size = new System.Drawing.Size(100, 20);
+            this.niTextbox.TabIndex = 11;
             // 
-            // textBox10
+            // nbTextbox
             // 
-            this.textBox10.Location = new System.Drawing.Point(299, 131);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 10;
+            this.nbTextbox.Location = new System.Drawing.Point(299, 131);
+            this.nbTextbox.Name = "nbTextbox";
+            this.nbTextbox.Size = new System.Drawing.Size(100, 20);
+            this.nbTextbox.TabIndex = 10;
             // 
-            // textBox11
+            // moTextbox
             // 
-            this.textBox11.Location = new System.Drawing.Point(156, 131);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 9;
+            this.moTextbox.Location = new System.Drawing.Point(156, 131);
+            this.moTextbox.Name = "moTextbox";
+            this.moTextbox.Size = new System.Drawing.Size(100, 20);
+            this.moTextbox.TabIndex = 9;
             // 
-            // textBox12
+            // crTextbox
             // 
-            this.textBox12.Location = new System.Drawing.Point(6, 131);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 8;
+            this.crTextbox.Location = new System.Drawing.Point(6, 131);
+            this.crTextbox.Name = "crTextbox";
+            this.crTextbox.Size = new System.Drawing.Size(100, 20);
+            this.crTextbox.TabIndex = 8;
             // 
-            // textBox5
+            // cuTextbox
             // 
-            this.textBox5.Location = new System.Drawing.Point(426, 83);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 7;
+            this.cuTextbox.Location = new System.Drawing.Point(426, 83);
+            this.cuTextbox.Name = "cuTextbox";
+            this.cuTextbox.Size = new System.Drawing.Size(100, 20);
+            this.cuTextbox.TabIndex = 7;
             // 
-            // textBox6
+            // nTextbox
             // 
-            this.textBox6.Location = new System.Drawing.Point(299, 83);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 6;
+            this.nTextbox.Location = new System.Drawing.Point(299, 83);
+            this.nTextbox.Name = "nTextbox";
+            this.nTextbox.Size = new System.Drawing.Size(100, 20);
+            this.nTextbox.TabIndex = 6;
             // 
-            // textBox7
+            // sTextbox
             // 
-            this.textBox7.Location = new System.Drawing.Point(156, 83);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 5;
+            this.sTextbox.Location = new System.Drawing.Point(156, 83);
+            this.sTextbox.Name = "sTextbox";
+            this.sTextbox.Size = new System.Drawing.Size(100, 20);
+            this.sTextbox.TabIndex = 5;
             // 
-            // textBox8
+            // pTextbox
             // 
-            this.textBox8.Location = new System.Drawing.Point(6, 83);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 4;
+            this.pTextbox.Location = new System.Drawing.Point(6, 83);
+            this.pTextbox.Name = "pTextbox";
+            this.pTextbox.Size = new System.Drawing.Size(100, 20);
+            this.pTextbox.TabIndex = 4;
             // 
-            // textBox4
+            // vTextbox
             // 
-            this.textBox4.Location = new System.Drawing.Point(426, 43);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
+            this.vTextbox.Location = new System.Drawing.Point(426, 43);
+            this.vTextbox.Name = "vTextbox";
+            this.vTextbox.Size = new System.Drawing.Size(100, 20);
+            this.vTextbox.TabIndex = 3;
             // 
-            // textBox3
+            // mnTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(299, 43);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.mnTextBox.Location = new System.Drawing.Point(299, 43);
+            this.mnTextBox.Name = "mnTextBox";
+            this.mnTextBox.Size = new System.Drawing.Size(100, 20);
+            this.mnTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // siTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(156, 43);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.siTextBox.Location = new System.Drawing.Point(156, 43);
+            this.siTextBox.Name = "siTextBox";
+            this.siTextBox.Size = new System.Drawing.Size(100, 20);
+            this.siTextBox.TabIndex = 1;
             // 
-            // textBox1
+            // cTextbox
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 43);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.cTextbox.Location = new System.Drawing.Point(6, 43);
+            this.cTextbox.Name = "cTextbox";
+            this.cTextbox.Size = new System.Drawing.Size(100, 20);
+            this.cTextbox.TabIndex = 0;
             // 
             // basicsLayoutPanel
             // 
@@ -356,6 +356,13 @@
             this.guidLayoutPanel.TabIndex = 35;
             this.guidLayoutPanel.Text = "ID";
             // 
+            // numberTextBox
+            // 
+            this.numberTextBox.Location = new System.Drawing.Point(156, 37);
+            this.numberTextBox.Name = "numberTextBox";
+            this.numberTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numberTextBox.TabIndex = 31;
+            // 
             // numberLabel
             // 
             this.numberLabel.AutoSize = true;
@@ -364,6 +371,13 @@
             this.numberLabel.Size = new System.Drawing.Size(38, 13);
             this.numberLabel.TabIndex = 34;
             this.numberLabel.Text = "Numer";
+            // 
+            // nameTextBox
+            // 
+            this.nameTextBox.Location = new System.Drawing.Point(6, 37);
+            this.nameTextBox.Name = "nameTextBox";
+            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nameTextBox.TabIndex = 30;
             // 
             // nameLayoutPanel
             // 
@@ -380,20 +394,6 @@
             this.guidTextBox.Name = "guidTextBox";
             this.guidTextBox.Size = new System.Drawing.Size(226, 20);
             this.guidTextBox.TabIndex = 32;
-            // 
-            // numberTextBox
-            // 
-            this.numberTextBox.Location = new System.Drawing.Point(156, 37);
-            this.numberTextBox.Name = "numberTextBox";
-            this.numberTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numberTextBox.TabIndex = 31;
-            // 
-            // nameTextBox
-            // 
-            this.nameTextBox.Location = new System.Drawing.Point(6, 37);
-            this.nameTextBox.Name = "nameTextBox";
-            this.nameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nameTextBox.TabIndex = 30;
             // 
             // applyButton
             // 
@@ -450,20 +450,20 @@
         private System.Windows.Forms.Label mnLabel;
         private System.Windows.Forms.Label siLabel;
         private System.Windows.Forms.Label cLabel;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox alTextbox;
+        private System.Windows.Forms.TextBox tiTextbox;
+        private System.Windows.Forms.TextBox niTextbox;
+        private System.Windows.Forms.TextBox nbTextbox;
+        private System.Windows.Forms.TextBox moTextbox;
+        private System.Windows.Forms.TextBox crTextbox;
+        private System.Windows.Forms.TextBox cuTextbox;
+        private System.Windows.Forms.TextBox nTextbox;
+        private System.Windows.Forms.TextBox sTextbox;
+        private System.Windows.Forms.TextBox pTextbox;
+        private System.Windows.Forms.TextBox vTextbox;
+        private System.Windows.Forms.TextBox mnTextBox;
+        private System.Windows.Forms.TextBox siTextBox;
+        private System.Windows.Forms.TextBox cTextbox;
         private System.Windows.Forms.GroupBox basicsLayoutPanel;
         private System.Windows.Forms.Label guidLayoutPanel;
         private System.Windows.Forms.TextBox numberTextBox;
