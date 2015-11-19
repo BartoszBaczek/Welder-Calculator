@@ -35,6 +35,7 @@ namespace WelderCalculator.MaterialModificationView
 
             _view.Ctextbox = material.GetElement(Category.OfElement.C);
 
+
         }
     }
 }
