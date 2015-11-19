@@ -69,13 +69,6 @@
           "RealValue": 0.47
         },
         {
-          "Name": 8,
-          "FullName": "Nb",
-          "Min": 0.4,
-          "Max": 0.5,
-          "RealValue": 0.47
-        },
-        {
           "Name": 9,
           "FullName": "Nikiel",
           "Min": 0.4,
@@ -113,9 +106,9 @@
       ],
       "CEq": 0.893,
       "NiEq": 28.904999999999998,
-      "CeEq": 2.82,
-      "GuidNumber": "0abde532-4cf7-425c-837f-9abec2f05f35"
+      "CrEq": 2.82,
+      "GuidNumber": "421061fb-528a-4cf9-a2d4-d242f2008f0d"
     }
   ],
-  "GuidNumber": "67753558-5ef6-4f82-896b-355af4fd0587"
+  "GuidNumber": "90465426-7436-4fea-860e-9659df79d036"
 }

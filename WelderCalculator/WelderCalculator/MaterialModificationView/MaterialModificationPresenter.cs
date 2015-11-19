@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialModificationView
@@ -25,6 +26,7 @@ namespace WelderCalculator.MaterialModificationView
             view.Presenter = this;
             //_connector = new connector?
             BindToControls(materialToModify);
+            var a = BuildMaterial();
         }
 
         private void BindToControls(object asdas)
@@ -108,6 +110,7 @@ namespace WelderCalculator.MaterialModificationView
         private Material BuildMaterial()
         {
             var material = new Material();
+            material.CreateBasicListOfElements();
 
             material.Name = _view.NameTextbox;
             material.Number = _view.NumberTextbox;
@@ -175,5 +178,7 @@ namespace WelderCalculator.MaterialModificationView
 
             return material;
         }
+    
+    
     }
 }

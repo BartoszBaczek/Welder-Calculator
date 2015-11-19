@@ -69,13 +69,6 @@
           "RealValue": 0.47
         },
         {
-          "Name": 8,
-          "FullName": "Nb",
-          "Min": 0.4,
-          "Max": 0.5,
-          "RealValue": 0.47
-        },
-        {
           "Name": 9,
           "FullName": "Nikiel",
           "Min": 0.4,
@@ -113,8 +106,8 @@
       ],
       "CEq": 0.893,
       "NiEq": 28.904999999999998,
-      "CeEq": 2.82,
-      "GuidNumber": "3f3b6981-10b6-4360-898f-47815d8713a0"
+      "CrEq": 2.82,
+      "GuidNumber": "2f609e63-ea2e-4035-804a-7e60be81ca54"
     },
     {
       "Name": "material3",
@@ -184,13 +177,6 @@
           "RealValue": 0.85
         },
         {
-          "Name": 8,
-          "FullName": "Nb",
-          "Min": 0.8,
-          "Max": 0.9,
-          "RealValue": 0.85
-        },
-        {
           "Name": 9,
           "FullName": "Nikiel",
           "Min": 0.8,
@@ -228,8 +214,8 @@
       ],
       "CEq": 1.615,
       "NiEq": 52.275,
-      "CeEq": 5.1,
-      "GuidNumber": "f2a9ac25-e278-4245-b975-3fb90ba3f299"
+      "CrEq": 5.1,
+      "GuidNumber": "004d92c2-b3d9-4c88-81e7-6960e7a62a5a"
     },
     {
       "Name": "material1",
@@ -299,13 +285,6 @@
           "RealValue": 0.15
         },
         {
-          "Name": 8,
-          "FullName": "Nb",
-          "Min": 0.1,
-          "Max": 0.2,
-          "RealValue": 0.15
-        },
-        {
           "Name": 9,
           "FullName": "Nikiel",
           "Min": 0.1,
@@ -343,9 +322,9 @@
       ],
       "CEq": 0.28500000000000003,
       "NiEq": 9.225,
-      "CeEq": 0.89999999999999991,
-      "GuidNumber": "2ef90859-9167-4f99-b003-0ceaba5111ee"
+      "CrEq": 0.89999999999999991,
+      "GuidNumber": "b6151519-2e98-48ef-b96d-acd279f117c2"
     }
   ],
-  "GuidNumber": "010eed7c-caaa-40b5-9af7-3d569be0c785"
+  "GuidNumber": "5832707c-0514-43a4-a6f7-2a93cd22f95c"
 }

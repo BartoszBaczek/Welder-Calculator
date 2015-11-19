@@ -92,7 +92,6 @@ namespace WelderCalculator.Model
             Elements.Add(new Element(Category.OfElement.Cr));
             Elements.Add(new Element(Category.OfElement.Mo));
             Elements.Add(new Element(Category.OfElement.Nb));
-            Elements.Add(new Element(Category.OfElement.Nb));
             Elements.Add(new Element(Category.OfElement.Ni));
             Elements.Add(new Element(Category.OfElement.Ti));
             Elements.Add(new Element(Category.OfElement.Al));
