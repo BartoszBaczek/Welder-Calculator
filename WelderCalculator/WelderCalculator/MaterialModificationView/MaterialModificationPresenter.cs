@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WelderCalculator.MaterialModificationView
 {
-    class MaterialModificationPresenter
+    public class MaterialModificationPresenter
     {
     }
 }
