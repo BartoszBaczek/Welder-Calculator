@@ -65,6 +65,8 @@
             this.guidTextBox = new System.Windows.Forms.TextBox();
             this.numberTextBox = new System.Windows.Forms.TextBox();
             this.nameTextBox = new System.Windows.Forms.TextBox();
+            this.applyButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             this.elementsLayoutPanel.SuspendLayout();
             this.basicsLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -393,11 +395,31 @@
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
             this.nameTextBox.TabIndex = 30;
             // 
+            // applyButton
+            // 
+            this.applyButton.Location = new System.Drawing.Point(171, 332);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(100, 23);
+            this.applyButton.TabIndex = 30;
+            this.applyButton.Text = "OK";
+            this.applyButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(311, 332);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(100, 23);
+            this.cancelButton.TabIndex = 31;
+            this.cancelButton.Text = "Anuluj";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
             // MaterialModificationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 316);
+            this.ClientSize = new System.Drawing.Size(557, 367);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.applyButton);
             this.Controls.Add(this.basicsLayoutPanel);
             this.Controls.Add(this.elementsLayoutPanel);
             this.Name = "MaterialModificationForm";
@@ -449,5 +471,7 @@
         private System.Windows.Forms.TextBox nameTextBox;
         private System.Windows.Forms.Label nameLayoutPanel;
         private System.Windows.Forms.TextBox guidTextBox;
+        private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
