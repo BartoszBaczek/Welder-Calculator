@@ -289,6 +289,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.editButton.TabIndex = 1;
             this.editButton.Text = "Edytuj";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // addButton
             // 
@@ -298,6 +299,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.addButton.TabIndex = 0;
             this.addButton.Text = "Dodaj";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // normLabel
             // 

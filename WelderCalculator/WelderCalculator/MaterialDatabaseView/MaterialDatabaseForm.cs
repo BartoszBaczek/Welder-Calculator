@@ -298,5 +298,15 @@ namespace WelderCalculator.MaterialDatabaseView
             Presenter.OnSelectedDataGridViewRowChanged();
         }
 
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnAddMaterialButtonClicked();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnEditMaterialButtonClicked();
+        }
+
     }
 }

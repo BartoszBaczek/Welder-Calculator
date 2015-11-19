@@ -4,6 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 using WelderCalculator.MaterialDatabasePropertiesView;
+using WelderCalculator.MaterialModificationView;
 using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabaseView
@@ -323,6 +324,19 @@ namespace WelderCalculator.MaterialDatabaseView
         public void OnSelectedDataGridViewRowChanged()
         {
             UpdateEquivalents();
+        }
+
+        public void OnAddMaterialButtonClicked()
+        {
+            var modifyMaterialForm = new MaterialModificationForm();
+            modifyMaterialForm.ShowDialog();
+        }
+
+        public void OnEditMaterialButtonClicked()
+        {
+            var material = GetSelectedMaterial();
+            var modifyMaterialForm = new MaterialModificationForm(material);
+            modifyMaterialForm.ShowDialog();
         }
     }
 }

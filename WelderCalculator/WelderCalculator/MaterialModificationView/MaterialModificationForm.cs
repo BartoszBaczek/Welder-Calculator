@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialModificationView
 {
@@ -11,6 +12,12 @@ namespace WelderCalculator.MaterialModificationView
         {
             InitializeComponent();
             new MaterialModificationPresenter(this);
+        }
+
+        public MaterialModificationForm(Material materialToBind)
+        {
+            InitializeComponent();
+            new MaterialModificationPresenter(this, materialToBind);
         }
 
         public string NameTextbox
