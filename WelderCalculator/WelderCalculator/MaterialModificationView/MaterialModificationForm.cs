@@ -6,16 +6,19 @@ namespace WelderCalculator.MaterialModificationView
     public partial class MaterialModificationForm : Form, IMaterialModificationView
     {
         public MaterialModificationPresenter Presenter { private get; set; }
+        private readonly WindowMode.Mode _workingMode;
 
         public MaterialModificationForm()
         {
             InitializeComponent();
+            _workingMode = WindowMode.Mode.AddNew;
             new MaterialModificationPresenter(this);
         }
 
         public MaterialModificationForm(object materialToBind)
         {
             InitializeComponent();
+            _workingMode = WindowMode.Mode.Modify;
             new MaterialModificationPresenter(this, materialToBind);
         }
 
@@ -38,6 +41,7 @@ namespace WelderCalculator.MaterialModificationView
         }
 
 
+        #region Mins
         public double? CMintextbox
         {
             get
@@ -78,7 +82,7 @@ namespace WelderCalculator.MaterialModificationView
                     (double)Convert.ChangeType(text, typeof(double));
             }
             set { mnMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
-            
+
         }
 
         public double? PMintextbox
@@ -111,7 +115,7 @@ namespace WelderCalculator.MaterialModificationView
 
         public double? NMintextbox
         {
-           get
+            get
             {
                 string text = nMinTextBox.Text;
 
@@ -233,8 +237,9 @@ namespace WelderCalculator.MaterialModificationView
                     (double)Convert.ChangeType(text, typeof(double));
             }
             set { cuMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
-        }
-
+        } 
+        #endregion
+        #region Maxs
         public double? CMaxtextbox
         {
             get
@@ -429,8 +434,9 @@ namespace WelderCalculator.MaterialModificationView
                     (double)Convert.ChangeType(text, typeof(double));
             }
             set { cuMaxTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
-        }
-
+        } 
+        #endregion
+        #region Reals
         public double? CRealtextbox
         {
             get
@@ -587,7 +593,7 @@ namespace WelderCalculator.MaterialModificationView
 
         public double? AlRealtextbox
         {
-           get
+            get
             {
                 string text = alRealTextbox.Text;
 
@@ -625,6 +631,7 @@ namespace WelderCalculator.MaterialModificationView
                     (double)Convert.ChangeType(text, typeof(double));
             }
             set { cuRealTextbox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
-        }
+        } 
+        #endregion
     }
 }
