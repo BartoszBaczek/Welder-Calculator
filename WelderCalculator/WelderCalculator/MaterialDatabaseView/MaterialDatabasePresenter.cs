@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView;
 using WelderCalculator.Model;
@@ -327,17 +328,26 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public void OnAddMaterialButtonClicked()
         {
-            //gwtCurrentNorm
-            var modifyMaterialForm = new MaterialModificationForm(norm);
+            var currentNorm = GetCurrentNorm();
+            var modifyMaterialForm = new MaterialModificationForm(currentNorm);
             modifyMaterialForm.ShowDialog();
         }
 
         public void OnEditMaterialButtonClicked()
         {
-            //getCurrentNorm
+            var currentNorm = GetCurrentNorm();
             var material = GetSelectedMaterial();
-            var modifyMaterialForm = new MaterialModificationForm(norm, material);
+
+            var modifyMaterialForm = new MaterialModificationForm(currentNorm, material);
             modifyMaterialForm.ShowDialog();
+        }
+
+        private MaterialNorm GetCurrentNorm()
+        {
+            string currentNormName = _view.NormsList[_view.SelectedNorm];
+            MaterialNorm norm = _dataConnector.GetNorm(currentNormName);
+
+            return norm;
         }
     }
 }

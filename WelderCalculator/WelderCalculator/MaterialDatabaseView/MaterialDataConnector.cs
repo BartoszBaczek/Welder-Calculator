@@ -47,5 +47,12 @@ namespace WelderCalculator.Model
         {
             return _repository.GetMaterialByGUID(guid, materialNormName);
         }
+
+        public MaterialNorm GetNorm(string normName)
+        {
+            MaterialNorm requestedNorm = _repository.GetNorm(normName);
+
+            return requestedNorm;
+        }
     }
 }
