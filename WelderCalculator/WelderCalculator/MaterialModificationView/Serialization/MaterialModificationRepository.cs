@@ -8,7 +8,7 @@ using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialModificationView.Serialization
 {
-    class MaterialModificationRepository
+    class MaterialModificationRepository : IMaterialModificationRepository
     {
         private string _binPath;
         private readonly string _dataFolder;

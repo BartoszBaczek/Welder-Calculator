@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialModificationView
@@ -8,8 +9,8 @@ namespace WelderCalculator.MaterialModificationView
     public class MaterialModificationPresenter
     {
         private readonly IMaterialModificationView _view;
-        private readonly 
         
+
         private readonly WindowMode.Mode _workingMode;
         private readonly MaterialNorm _normUnderConstruction;
 
