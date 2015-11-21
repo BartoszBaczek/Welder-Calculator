@@ -195,7 +195,7 @@ namespace WelderCalculator.MaterialModificationView
             if (_workingMode == WindowMode.Mode.ModifyCurrent)
             {
                 var changedMaterial = BuildMaterial();
-                //getMaterialFromWithTheSameGuid
+                //getMaterialFromWithTheSameGuid 
                 //Check if materials are the same
                 //if not: do
                 //else : do
