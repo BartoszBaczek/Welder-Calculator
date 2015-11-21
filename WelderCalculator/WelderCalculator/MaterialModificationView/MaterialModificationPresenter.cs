@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
 
@@ -9,33 +10,30 @@ namespace WelderCalculator.MaterialModificationView
     public class MaterialModificationPresenter
     {
         private readonly IMaterialModificationView _view;
-        
+        private readonly MaterialModificationDataConnector _dataConnector;
 
         private readonly WindowMode.Mode _workingMode;
         private readonly MaterialNorm _normUnderConstruction;
 
-        //connector to repo?
-
-        public MaterialModificationPresenter(IMaterialModificationView view, object norm)
+        public MaterialModificationPresenter(IMaterialModificationView view, object norm)                               //used when adding new material
         {
             _workingMode = WindowMode.Mode.AddNew;
             _normUnderConstruction = norm as MaterialNorm;
 
             _view = view;
+            _dataConnector = new MaterialModificationDataConnector();
             view.Presenter = this;
-            //_connector = new connector?
         }
 
-        public MaterialModificationPresenter(IMaterialModificationView view, object norm, object materialToModify)
+        public MaterialModificationPresenter(IMaterialModificationView view, object norm, object materialToModify)      //used when modifying material
         {
             _workingMode = WindowMode.Mode.ModifyCurrent;
             _normUnderConstruction = norm as MaterialNorm;
 
             _view = view;
+            _dataConnector = new MaterialModificationDataConnector();
             view.Presenter = this;
-            //_connector = new connector?
             BindToControls(materialToModify);
-            var a = BuildMaterial();
         }
 
         private void BindToControls(object materialToBind)
@@ -92,7 +90,7 @@ namespace WelderCalculator.MaterialModificationView
 
             e = material.GetElement(Category.OfElement.Ni);
             _view.NiMintextbox = e.Min;
-            _view.NiMaxtextbox = e.Min;
+            _view.NiMaxtextbox = e.Max;
             _view.NiRealtextbox = e.RealValue;
 
             e = material.GetElement(Category.OfElement.Ti);
@@ -197,11 +195,28 @@ namespace WelderCalculator.MaterialModificationView
         {
             if (_workingMode == WindowMode.Mode.ModifyCurrent)
             {
-                var changedMaterial = BuildMaterial();
-                //getMaterialFromWithTheSameGuid 
-                //Check if materials are the same
-                //if not: do
-                //else : do
+                var materialAfterModification = BuildMaterial();
+                var materialBeforeModification = _dataConnector.GetMaterial(Guid.Parse(_view.GuidTextbox),
+                    _normUnderConstruction.Name);
+
+                if (materialBeforeModification.Equals(materialAfterModification))
+                {
+                    MessageBox.Show("Dane materiału nie zostały zmienione.", "Brak zmian", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    var dialogResult = MessageBox.Show("Czy na pewno chcesz nadpisać dane materiału?", "plepleple",
+                        MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        var normToModify = _dataConnector.GetNorm(_normUnderConstruction.Name);
+                        var materialToModify =
+                            normToModify.Materials.Where(m => m.GuidNumber == Guid.Parse(_view.GuidTextbox));
+
+                        normToModify.Materials = normToModify.Materials.Except(materialToModify).ToList();
+                        normToModify.Materials.Add(materialAfterModification);
+                    }
+                }
             }
 
 
