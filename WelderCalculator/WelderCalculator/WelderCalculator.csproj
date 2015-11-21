@@ -79,6 +79,8 @@
       <DependentUpon>MaterialModificationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MaterialModificationView\MaterialModificationPresenter.cs" />
+    <Compile Include="MaterialModificationView\Serialization\IMaterialModificationRepository.cs" />
+    <Compile Include="MaterialModificationView\Serialization\MaterialModificationRepository.cs" />
     <Compile Include="MaterialModificationView\WindowMode.cs" />
     <Compile Include="Model\Element.cs" />
     <Compile Include="Model\Material.cs" />

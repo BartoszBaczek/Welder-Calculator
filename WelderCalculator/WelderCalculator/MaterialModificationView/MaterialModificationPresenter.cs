@@ -8,15 +8,17 @@ namespace WelderCalculator.MaterialModificationView
     public class MaterialModificationPresenter
     {
         private readonly IMaterialModificationView _view;
+        private readonly 
+        
         private readonly WindowMode.Mode _workingMode;
-        private readonly MaterialNorm _currentNorm;
+        private readonly MaterialNorm _normUnderConstruction;
 
         //connector to repo?
 
         public MaterialModificationPresenter(IMaterialModificationView view, object norm)
         {
             _workingMode = WindowMode.Mode.AddNew;
-            _currentNorm = norm as MaterialNorm;
+            _normUnderConstruction = norm as MaterialNorm;
 
             _view = view;
             view.Presenter = this;
@@ -26,7 +28,7 @@ namespace WelderCalculator.MaterialModificationView
         public MaterialModificationPresenter(IMaterialModificationView view, object norm, object materialToModify)
         {
             _workingMode = WindowMode.Mode.ModifyCurrent;
-            _currentNorm = norm as MaterialNorm;
+            _normUnderConstruction = norm as MaterialNorm;
 
             _view = view;
             view.Presenter = this;
