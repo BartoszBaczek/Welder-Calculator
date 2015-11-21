@@ -105,5 +105,22 @@ namespace WelderCalculator.Model
             var singleElement = this.Elements.First(x => x.Name == requestedElement);
             return singleElement;
         }
+
+        public bool Equals(Material material)
+        {
+            if (this.Name != material.Name)
+                return false;
+            if (this.Number != material.Number)
+                return false;
+
+            foreach (var thatElement in material.Elements)
+            {
+                var thisElement = this.Elements.First(x => x.Name == thatElement.Name);
+                if (thisElement.Min != thatElement.Min || thisElement.Max != thatElement.Max || thisElement.RealValue != thatElement.RealValue)
+                    return false;
+            }
+
+            return true;
+        }
     }
 }

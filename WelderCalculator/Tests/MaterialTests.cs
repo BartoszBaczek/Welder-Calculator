@@ -88,5 +88,34 @@ namespace Tests
             //then
             Assert.IsTrue(guidsAreDifferent);
         }
+
+        [Test]
+        public void ShouldReturnTrueAsTwoMaterialsAreTheSame()
+        {
+            //given
+            Material material1 = _dataCreator.GetSampleMaterial();
+            Material material2 = _dataCreator.GetSampleMaterial();
+
+            //when
+            bool materialsAreTheSame = material1.Equals(material2);
+
+            //then
+            Assert.IsTrue(materialsAreTheSame);
+        }
+
+        [Test]
+        public void ShouldReturnFalseAsTwoMaterialsAreDifferent()
+        {
+            //given
+            Material material1 = _dataCreator.GetSampleMaterial();
+            Material material2 = _dataCreator.GetSampleMaterial();
+            material2.GetElement(Category.OfElement.Si).Min = 0.99999;
+
+            //when
+            bool materialsAreTheSame = material1.Equals(material2);
+
+            //then
+            Assert.IsFalse(materialsAreTheSame);
+        }
     }
 }
