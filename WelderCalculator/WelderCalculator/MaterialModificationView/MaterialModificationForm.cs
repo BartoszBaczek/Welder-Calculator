@@ -45,12 +45,12 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = cMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
             }
-            set { cMinTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+            set { cMinTextBox.Text = value.HasValue ? value.ToString() : "   "; }
         }
 
         public double? SiMintextbox
@@ -59,7 +59,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = siMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -73,7 +73,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = mnMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -88,7 +88,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = pMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -102,7 +102,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = sMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -116,7 +116,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = nMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -130,7 +130,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = crMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -144,7 +144,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = moMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -158,7 +158,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = nbMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -172,7 +172,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = niMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -186,7 +186,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = tiMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -200,7 +200,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = alMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -214,7 +214,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = vMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -228,7 +228,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = cuMinTextBox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -243,7 +243,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = cMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -257,7 +257,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = siMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -271,7 +271,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = mnMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -285,7 +285,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = pMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -299,7 +299,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = sMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -313,7 +313,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = cMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -327,7 +327,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = crMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -341,7 +341,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = moMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -355,7 +355,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = nbMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -369,7 +369,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = niMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -383,7 +383,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = tiMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -397,7 +397,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = alMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -411,7 +411,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = vMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -425,7 +425,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = cuMaxTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -440,7 +440,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = cRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -454,7 +454,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = siRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -468,7 +468,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = mnRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -482,7 +482,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = pRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -496,7 +496,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = sRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -510,7 +510,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = nRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -524,7 +524,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = crRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -538,7 +538,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = moRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -552,7 +552,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = nbRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -566,7 +566,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = niRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -580,7 +580,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = tiRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -594,7 +594,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = alRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -608,7 +608,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = vRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -622,7 +622,7 @@ namespace WelderCalculator.MaterialModificationView
             {
                 string text = cuRealTextbox.Text;
 
-                if (string.IsNullOrEmpty(text))
+                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
                     return null;
                 return
                     (double)Convert.ChangeType(text, typeof(double));
@@ -638,7 +638,12 @@ namespace WelderCalculator.MaterialModificationView
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            Presenter.OnCancelButtonClicked();
+        }
 
+        public void CancelDialog()
+        {
+            this.Close();
         }
     }
 }

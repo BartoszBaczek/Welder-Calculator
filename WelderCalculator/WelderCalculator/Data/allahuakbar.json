@@ -8,16 +8,16 @@
         {
           "Name": 0,
           "FullName": "Węgiel",
-          "Min": 1.0,
-          "Max": 1.0,
-          "RealValue": 1.0
+          "Min": null,
+          "Max": 8.0,
+          "RealValue": 7.0
         },
         {
           "Name": 1,
           "FullName": "Krzem",
           "Min": 2.0,
           "Max": 2.0,
-          "RealValue": 2.0
+          "RealValue": 3.0
         },
         {
           "Name": 2,
@@ -44,7 +44,7 @@
           "Name": 5,
           "FullName": "Azot",
           "Min": 76245.0,
-          "Max": 1.0,
+          "Max": 8.0,
           "RealValue": 757.0
         },
         {
@@ -71,7 +71,7 @@
         {
           "Name": 9,
           "FullName": "Nikiel",
-          "Min": 0.4,
+          "Min": 6.0,
           "Max": 44.0,
           "RealValue": 4.0
         },
@@ -104,9 +104,9 @@
           "RealValue": 0.47
         }
       ],
-      "CEq": 14982.392000000002,
-      "NiEq": 22747.0,
-      "CrEq": 74956.5,
+      "CEq": 14988.392000000002,
+      "NiEq": 22927.0,
+      "CrEq": 74958.0,
       "GuidNumber": "3d59b30c-17a7-42cf-96fd-d1729daa7239"
     }
   ],

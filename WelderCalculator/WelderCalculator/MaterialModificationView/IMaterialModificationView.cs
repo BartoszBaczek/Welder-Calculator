@@ -53,5 +53,7 @@ namespace WelderCalculator.MaterialModificationView
         double? AlRealtextbox { get; set; }
         double?  VRealtextbox { get; set; }
         double? CuRealtextbox { get; set; }
+
+        void CancelDialog();
     }
 }

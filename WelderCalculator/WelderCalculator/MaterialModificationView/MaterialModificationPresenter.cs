@@ -219,53 +219,36 @@ namespace WelderCalculator.MaterialModificationView
 
                         _dataConnector.SaveNorm(_normUnderConstruction);
                     }
+                    else if (dialogResult == DialogResult.Cancel)
+                    {}
                 }
             }
-
-
-
-
-
-            /*
-             *  var lastSavedOrder = _dataConnector.GetOrderOfElementFromFile();
-            var newOrder = new List<string>();
-
-            for (int i = 0; i < _view.NumberOfComboBoxes; i++)
-            {
-                int comboBoxID = i + 1;
-
-                var comboBoxDataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxID);
-                var comboBoxSelectedIndex = _view.GetSelectedIndex(comboBoxID);
-
-                newOrder.Add(comboBoxDataSource[comboBoxSelectedIndex]);
-            }
-
-            if (newOrder.Contains(string.Empty))
-            {
-                var dialogResult = MessageBox.Show("Niektóre pola zawierają puste miejsca. Czy chcesz przywrócić ostatnią kolejność?", "AWARIA", MessageBoxButtons.OKCancel);
-                if (dialogResult == DialogResult.OK)
-                {
-                    var lastSavedOrderOfElements = _dataConnector.GetOrderOfElementFromFile();
-                    BindDataToComboBoxes(lastSavedOrderOfElements);
-
-                    UpdateComboBoxes();
-                }
-            }
-            else if (!lastSavedOrder.SequenceEqual(newOrder))
-            {
-                var dialogResult = MessageBox.Show("Czy na pewno chcesz zapisać nową kolejność pierwiastków?", "POTWIERDZENIE", MessageBoxButtons.OKCancel);
-                if (dialogResult == DialogResult.OK)
-                {
-                    _dataConnector.SaveOrderOfElementsToFile(newOrder);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Kolejność nie zmieniła się");
-            }
-             */
         }
-    
-    
+
+        public void OnCancelButtonClicked()
+        {
+            if (_workingMode == WindowMode.Mode.ModifyCurrent)
+            {
+                var materialAfterModification = BuildMaterial();
+                var materialBeforeModification = _dataConnector.GetMaterial(Guid.Parse(_view.GuidTextbox),
+                    _normUnderConstruction.Name);
+
+                if (materialBeforeModification.Equals(materialAfterModification))
+                {
+                    _view.CancelDialog();
+                }
+                else
+                {
+                    var dialogResult = MessageBox.Show("Dane materiału nie zostały zapisane. Czy chcesz wyjść?", "plepleple",
+                        MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        _view.CancelDialog();
+                    }
+                    else if (dialogResult == DialogResult.Cancel)
+                    { }
+                }
+            }
+        }
     }
 }
