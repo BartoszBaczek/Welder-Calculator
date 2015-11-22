@@ -55,5 +55,15 @@ namespace WelderCalculator.Model
 
             return requestedNorm;
         }
+
+        public void RemoveNorm(string normName)
+        {
+            _repository.DeleteNormFile(normName);
+        }
+
+        public void SaveNorm(MaterialNorm norm)
+        {
+            _repository.SaveToFile(norm);
+        }
     }
 }

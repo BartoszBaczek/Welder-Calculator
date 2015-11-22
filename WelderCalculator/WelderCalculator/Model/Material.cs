@@ -112,6 +112,8 @@ namespace WelderCalculator.Model
                 return false;
             if (this.Number != material.Number)
                 return false;
+            if (this.Elements.Count != material.Elements.Count)
+                return false;
 
             foreach (var thatElement in material.Elements)
             {

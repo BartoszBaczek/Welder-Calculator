@@ -209,12 +209,15 @@ namespace WelderCalculator.MaterialModificationView
                         MessageBoxButtons.OKCancel);
                     if (dialogResult == DialogResult.OK)
                     {
-                        var normToModify = _dataConnector.GetNorm(_normUnderConstruction.Name);
                         var materialToModify =
-                            normToModify.Materials.Where(m => m.GuidNumber == Guid.Parse(_view.GuidTextbox));
+                            _normUnderConstruction.Materials.Where(m => m.GuidNumber == Guid.Parse(_view.GuidTextbox));
 
-                        normToModify.Materials = normToModify.Materials.Except(materialToModify).ToList();
-                        normToModify.Materials.Add(materialAfterModification);
+                        _normUnderConstruction.Materials = _normUnderConstruction.Materials.Except(materialToModify).ToList();
+                        _normUnderConstruction.Materials.Add(materialAfterModification);
+
+                        _dataConnector.RemoveNorm(_normUnderConstruction.Name);
+
+                        _dataConnector.SaveNorm(_normUnderConstruction);
                     }
                 }
             }

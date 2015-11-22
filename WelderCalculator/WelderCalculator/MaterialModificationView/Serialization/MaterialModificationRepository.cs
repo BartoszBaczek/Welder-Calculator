@@ -86,5 +86,12 @@ namespace WelderCalculator.MaterialModificationView.Serialization
 
             return null;
         }
+
+
+        public void DeleteNormFile(string normName)
+        {
+            string pathToNormFile = _dataFolder + normName + ".json";
+            File.Delete(pathToNormFile);
+        }
     }
 }

@@ -15,5 +15,7 @@ namespace WelderCalculator.MaterialModificationView.Serialization
         List<Category.OfElement> GetOrderOfElements();
 
         Material GetMaterialByGUID(Guid guidToFind, string materialNormName);
+
+        void DeleteNormFile(string normName);
     }
 }
