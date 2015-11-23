@@ -47,7 +47,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(cMinTextBox);
                 return textBoxValue;
             }
-            set { cMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref cMinTextBox, value);}
         }
 
         
@@ -59,7 +59,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(siMinTextBox);
                 return textBoxValue;
             }
-            set { siMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref siMinTextBox, value); }
         }
 
         public double? MnMintextbox
@@ -69,7 +69,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(mnMinTextBox);
                 return textBoxValue;
             }
-            set { mnMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref mnMinTextBox, value); }
 
         }
 
@@ -80,7 +80,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(pMinTextBox);
                 return textBoxValue;
             }
-            set { pMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref pMinTextBox, value); }
         }
 
         public double? SMintextbox
@@ -90,7 +90,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(sMinTextBox);
                 return textBoxValue;
             }
-            set { sMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref sMinTextBox, value); }
         }
 
         public double? NMintextbox
@@ -100,7 +100,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(nMinTextBox);
                 return textBoxValue;
             }
-            set { nMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref nMinTextBox, value); }
         }
 
         public double? CrMintextbox
@@ -110,7 +110,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(crMinTextBox);
                 return textBoxValue;
             }
-            set { crMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref crMinTextBox, value); }
         }
 
         public double? MoMintextbox
@@ -120,7 +120,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(moMinTextBox);
                 return textBoxValue;
             }
-            set { moMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref moMinTextBox, value); }
         }
 
         public double? NbMintextbox
@@ -130,7 +130,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(nbMinTextBox);
                 return textBoxValue;
             }
-            set { nbMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref nbMinTextBox, value); }
         }
 
         public double? NiMintextbox
@@ -140,7 +140,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(niMinTextBox);
                 return textBoxValue;
             }
-            set { niMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref niMinTextBox, value); }
         }
 
         public double? TiMintextbox
@@ -150,7 +150,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(tiMinTextBox);
                 return textBoxValue;
             }
-            set { tiMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref tiMinTextBox, value); }
         }
 
         public double? AlMintextbox
@@ -160,7 +160,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(alMinTextBox);
                 return textBoxValue;
             }
-            set { alMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref alMinTextBox, value); }
         }
 
         public double? VMintextbox
@@ -170,7 +170,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(vMinTextBox);
                 return textBoxValue;
             }
-            set { vMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref vMinTextBox, value); }
         }
 
         public double? CuMintextbox
@@ -180,7 +180,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(cuMinTextBox);
                 return textBoxValue;
             }
-            set { cuMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref cuMinTextBox, value); }
         } 
         #endregion
         #region Maxs
@@ -191,7 +191,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(cMaxTextbox);
                 return textBoxValue;
             }
-            set { cMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref cMaxTextbox, value); }
         }
 
         public double? SiMaxtextbox
@@ -201,7 +201,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(siMaxTextbox);
                 return textBoxValue;
             }
-            set { siMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref siMaxTextbox, value); }
         }
 
         public double? MnMaxtextbox
@@ -211,7 +211,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(mnMaxTextbox);
                 return textBoxValue;
             }
-            set { mnMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref mnMaxTextbox, value); }
         }
 
         public double? PMaxtextbox
@@ -221,7 +221,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(pMaxTextbox);
                 return textBoxValue;
             }
-            set { pMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref pMaxTextbox, value); }
         }
 
         public double? SMaxtextbox
@@ -231,7 +231,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(sMaxTextbox);
                 return textBoxValue;
             }
-            set { sMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref sMaxTextbox, value); }
         }
 
         public double? NMaxtextbox
@@ -241,7 +241,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(nMaxTextbox);
                 return textBoxValue;
             }
-            set { nMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref nMaxTextbox, value); }
         }
 
         public double? CrMaxtextbox
@@ -251,7 +251,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(crMaxTextbox);
                 return textBoxValue;
             }
-            set { crMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref crMaxTextbox, value); }
         }
 
         public double? MoMaxtextbox
@@ -261,7 +261,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(moMaxTextbox);
                 return textBoxValue;
             }
-            set { moMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref moMaxTextbox, value); }
         }
 
         public double? NbMaxtextbox
@@ -271,7 +271,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(nbMaxTextbox);
                 return textBoxValue;
             }
-            set { nbMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref nbMaxTextbox, value); }
         }
 
         public double? NiMaxtextbox
@@ -281,7 +281,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(niMaxTextbox);
                 return textBoxValue;
             }
-            set { niMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref niMaxTextbox, value); }
         }
 
         public double? TiMaxtextbox
@@ -291,7 +291,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(tiMaxTextbox);
                 return textBoxValue;
             }
-            set { tiMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref tiMaxTextbox, value); }
         }
 
         public double? AlMaxtextbox
@@ -301,7 +301,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(alMaxTextbox);
                 return textBoxValue;
             }
-            set { alMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref alMaxTextbox, value); }
         }
 
         public double? VMaxtextbox
@@ -311,7 +311,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(vMaxTextbox);
                 return textBoxValue;
             }
-            set { vMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref vMaxTextbox, value); }
         }
 
         public double? CuMaxtextbox
@@ -321,7 +321,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(cuMaxTextbox);
                 return textBoxValue;
             }
-            set { cuMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref cuMaxTextbox, value); }
         } 
         #endregion
         #region Reals
@@ -332,7 +332,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(cRealTextbox);
                 return textBoxValue;
             }
-            set { cRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref cRealTextbox, value); }
         }
 
         public double? SiRealtextbox
@@ -342,7 +342,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(siRealTextbox);
                 return textBoxValue;
             }
-            set { siRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref siRealTextbox, value); }
         }
 
         public double? MnRealtextbox
@@ -352,7 +352,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(mnRealTextbox);
                 return textBoxValue;
             }
-            set { mnRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref mnRealTextbox, value); }
         }
 
         public double? PRealtextbox
@@ -362,7 +362,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(pRealTextbox);
                 return textBoxValue;
             }
-            set { pRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref pRealTextbox, value); }
         }
 
         public double? SRealtextbox
@@ -372,7 +372,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(sRealTextbox);
                 return textBoxValue;
             }
-            set { sRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref sRealTextbox, value); }
         }
 
         public double? NRealtextbox
@@ -382,7 +382,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(nRealTextbox);
                 return textBoxValue;
             }
-            set { nRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref nRealTextbox, value); }
         }
 
         public double? CrRealtextbox
@@ -392,7 +392,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(crRealTextbox);
                 return textBoxValue;
             }
-            set { crRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref cRealTextbox, value); }
         }
 
         public double? MoRealtextbox
@@ -402,7 +402,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(moRealTextbox);
                 return textBoxValue;
             }
-            set { moRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref moRealTextbox, value); }
         }
 
         public double? NbRealtextbox
@@ -412,7 +412,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(nbRealTextbox);
                 return textBoxValue;
             }
-            set { nbRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref nbRealTextbox, value); }
         }
 
         public double? NiRealtextbox
@@ -422,7 +422,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(niRealTextbox);
                 return textBoxValue;
             }
-            set { niRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref niRealTextbox, value); }
         }
 
         public double? TiRealtextbox
@@ -432,7 +432,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(tiRealTextbox);
                 return textBoxValue;
             }
-            set { tiRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref tiRealTextbox, value); }
         }
 
         public double? AlRealtextbox
@@ -442,7 +442,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(alRealTextbox);
                 return textBoxValue;
             }
-            set { alRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref alRealTextbox, value); }
         }
 
         public double? VRealtextbox
@@ -452,7 +452,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(vRealTextbox);
                 return textBoxValue;
             }
-            set { vRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref vRealTextbox, value); }
         }
 
         public double? CuRealtextbox
@@ -462,7 +462,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(cuRealTextbox);
                 return textBoxValue;
             }
-            set { cuRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
+            set { SetTextboxValue(ref cuRealTextbox, value); }
         } 
         #endregion
 
