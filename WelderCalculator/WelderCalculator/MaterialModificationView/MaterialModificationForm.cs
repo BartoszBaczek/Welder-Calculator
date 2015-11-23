@@ -475,6 +475,11 @@ namespace WelderCalculator.MaterialModificationView
             return Convert.ToDouble(text);
         }
 
+        private void SetTextboxValue(ref TextBox textbox, double? value)
+        {
+            textbox.Text = value.HasValue ? value.ToString() : string.Empty;
+        }
+
         private void applyButton_Click(object sender, EventArgs e)
         {
             Presenter.OnApplyButtonClicked();
