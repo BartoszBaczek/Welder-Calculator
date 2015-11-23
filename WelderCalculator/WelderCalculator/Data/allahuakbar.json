@@ -8,7 +8,7 @@
         {
           "Name": 0,
           "FullName": "Węgiel",
-          "Min": null,
+          "Min": 4.0,
           "Max": 8.0,
           "RealValue": 67576.0
         },
@@ -52,7 +52,7 @@
           "FullName": "Chrom",
           "Min": 6547.0,
           "Max": 623546.0,
-          "RealValue": null
+          "RealValue": 3.0
         },
         {
           "Name": 7,
@@ -104,10 +104,226 @@
           "RealValue": 0.47
         }
       ],
-      "CEq": null,
+      "CEq": 82048.792,
       "NiEq": 2049997.0,
-      "CrEq": null,
+      "CrEq": 73739.0,
       "GuidNumber": "3d59b30c-17a7-42cf-96fd-d1729daa7239"
+    },
+    {
+      "Name": "nowyMateiral",
+      "Number": "213",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Węgiel",
+          "Min": 89.0,
+          "Max": 8.0,
+          "RealValue": 97.0
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Min": 62576.0,
+          "Max": 587.0,
+          "RealValue": 687.0
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Min": 7.0,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Min": 79.0,
+          "Max": 66.0,
+          "RealValue": 876.0
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Min": 77.0,
+          "Max": 987.0,
+          "RealValue": 89.0
+        },
+        {
+          "Name": 11,
+          "FullName": "Aluminium",
+          "Min": 68.0,
+          "Max": 687.0,
+          "RealValue": 798.0
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Min": 89.0,
+          "Max": 89.0,
+          "RealValue": 89.0
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Min": 89.0,
+          "Max": 89.0,
+          "RealValue": 89.0
+        }
+      ],
+      "CEq": null,
+      "NiEq": null,
+      "CrEq": null,
+      "GuidNumber": "3ac49db3-12de-4009-9801-38f17f3688ff"
+    },
+    {
+      "Name": "jeszczeNowszyMaterial",
+      "Number": "123123",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Węgiel",
+          "Min": 5.0,
+          "Max": null,
+          "RealValue": 8.0
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Min": 7.0,
+          "Max": 8.0,
+          "RealValue": null
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 11,
+          "FullName": "Aluminium",
+          "Min": 76.0,
+          "Max": 76.0,
+          "RealValue": 87.0
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Min": 89.0,
+          "Max": null,
+          "RealValue": 76.0
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Min": 89.0,
+          "Max": 989.0,
+          "RealValue": 8.0
+        }
+      ],
+      "CEq": null,
+      "NiEq": null,
+      "CrEq": null,
+      "GuidNumber": "bd8c9bfc-833b-4f65-8a28-200476dea1e2"
     }
   ],
   "GuidNumber": "da7eb75b-8770-4aa9-a8b2-e9193aef8a1b"

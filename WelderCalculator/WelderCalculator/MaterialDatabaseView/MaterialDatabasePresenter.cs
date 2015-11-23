@@ -331,6 +331,7 @@ namespace WelderCalculator.MaterialDatabaseView
             var currentNorm = GetCurrentNorm();
             var modifyMaterialForm = new MaterialModificationForm(currentNorm);
             modifyMaterialForm.ShowDialog();
+            Init();
         }
 
         public void OnEditMaterialButtonClicked()
@@ -340,6 +341,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
             var modifyMaterialForm = new MaterialModificationForm(currentNorm, material);
             modifyMaterialForm.ShowDialog();
+            Init();
         }
 
         private MaterialNorm GetCurrentNorm()

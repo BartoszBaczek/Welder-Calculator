@@ -218,10 +218,25 @@ namespace WelderCalculator.MaterialModificationView
                         _dataConnector.RemoveNorm(_normUnderConstruction.Name);
 
                         _dataConnector.SaveNorm(_normUnderConstruction);
+
+                        _view.CancelDialog();
                     }
-                    else if (dialogResult == DialogResult.Cancel)
-                    {}
                 }
+            }
+            else if (_workingMode == WindowMode.Mode.AddNew)
+            {
+                var materialAfterModification = BuildMaterial();
+
+                var dialogResult = MessageBox.Show("Czy na pewno chcesz dodac nowy materiał?", "plepleple",
+                    MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    _dataConnector.RemoveNorm(_normUnderConstruction.Name);
+                    _normUnderConstruction.Materials.Add(materialAfterModification);
+                    _dataConnector.SaveNorm(_normUnderConstruction);
+                    _view.CancelDialog();
+                }
+                
             }
         }
 
