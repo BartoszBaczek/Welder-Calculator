@@ -392,7 +392,7 @@ namespace WelderCalculator.MaterialModificationView
                 double? textBoxValue = GetTextBoxValue(crRealTextbox);
                 return textBoxValue;
             }
-            set { SetTextboxValue(ref cRealTextbox, value); }
+            set { SetTextboxValue(ref crRealTextbox, value); }
         }
 
         public double? MoRealtextbox

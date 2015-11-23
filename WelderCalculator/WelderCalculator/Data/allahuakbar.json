@@ -10,7 +10,7 @@
           "FullName": "Węgiel",
           "Min": null,
           "Max": 8.0,
-          "RealValue": 7.0
+          "RealValue": 67576.0
         },
         {
           "Name": 1,
@@ -52,7 +52,7 @@
           "FullName": "Chrom",
           "Min": 6547.0,
           "Max": 623546.0,
-          "RealValue": 2546.0
+          "RealValue": null
         },
         {
           "Name": 7,
@@ -80,7 +80,7 @@
           "FullName": "Tytan",
           "Min": 5.0,
           "Max": 5.0,
-          "RealValue": 5.0
+          "RealValue": 667.0
         },
         {
           "Name": 11,
@@ -104,9 +104,9 @@
           "RealValue": 0.47
         }
       ],
-      "CEq": 14988.392000000002,
-      "NiEq": 22927.0,
-      "CrEq": 74958.0,
+      "CEq": null,
+      "NiEq": 2049997.0,
+      "CrEq": null,
       "GuidNumber": "3d59b30c-17a7-42cf-96fd-d1729daa7239"
     }
   ],

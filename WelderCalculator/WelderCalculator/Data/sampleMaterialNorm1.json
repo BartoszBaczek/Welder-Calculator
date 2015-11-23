@@ -226,7 +226,7 @@
           "FullName": "Węgiel",
           "Min": 0.1,
           "Max": 0.2,
-          "RealValue": 0.15
+          "RealValue": null
         },
         {
           "Name": 1,
@@ -268,7 +268,7 @@
           "FullName": "Chrom",
           "Min": 0.1,
           "Max": 0.2,
-          "RealValue": 0.15
+          "RealValue": null
         },
         {
           "Name": 7,
@@ -320,9 +320,9 @@
           "RealValue": 0.15
         }
       ],
-      "CEq": 0.28500000000000003,
-      "NiEq": 9.225,
-      "CrEq": 0.89999999999999991,
+      "CEq": null,
+      "NiEq": null,
+      "CrEq": null,
       "GuidNumber": "4587cc14-6856-4a27-96cf-abb517d99f7c"
     }
   ],
