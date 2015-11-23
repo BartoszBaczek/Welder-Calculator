@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace WelderCalculator.MaterialModificationView
@@ -43,26 +44,20 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = cMinTextBox.Text.Trim();
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(cMinTextBox);
+                return textBoxValue;
             }
             set { cMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
+
+        
 
         public double? SiMintextbox
         {
             get
             {
-                string text = siMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(siMinTextBox);
+                return textBoxValue;
             }
             set { siMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -71,12 +66,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = mnMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(mnMinTextBox);
+                return textBoxValue;
             }
             set { mnMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
 
@@ -86,12 +77,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = pMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(pMinTextBox);
+                return textBoxValue;
             }
             set { pMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -100,12 +87,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = sMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(sMinTextBox);
+                return textBoxValue;
             }
             set { sMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -114,12 +97,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = nMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(nMinTextBox);
+                return textBoxValue;
             }
             set { nMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -128,12 +107,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = crMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(crMinTextBox);
+                return textBoxValue;
             }
             set { crMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -142,12 +117,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = moMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(moMinTextBox);
+                return textBoxValue;
             }
             set { moMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -156,12 +127,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = nbMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(nbMinTextBox);
+                return textBoxValue;
             }
             set { nbMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -170,12 +137,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = niMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(niMinTextBox);
+                return textBoxValue;
             }
             set { niMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -184,12 +147,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = tiMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(tiMinTextBox);
+                return textBoxValue;
             }
             set { tiMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -198,12 +157,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = alMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(alMinTextBox);
+                return textBoxValue;
             }
             set { alMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -212,12 +167,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = vMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(vMinTextBox);
+                return textBoxValue;
             }
             set { vMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -226,12 +177,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = cuMinTextBox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(cuMinTextBox);
+                return textBoxValue;
             }
             set { cuMinTextBox.Text = value.HasValue ? value.ToString() : string.Empty; }
         } 
@@ -241,12 +188,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = cMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(cMaxTextbox);
+                return textBoxValue;
             }
             set { cMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -255,12 +198,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = siMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(siMaxTextbox);
+                return textBoxValue;
             }
             set { siMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -269,12 +208,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = mnMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(mnMaxTextbox);
+                return textBoxValue;
             }
             set { mnMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -283,12 +218,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = pMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(pMaxTextbox);
+                return textBoxValue;
             }
             set { pMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -297,12 +228,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = sMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(sMaxTextbox);
+                return textBoxValue;
             }
             set { sMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -311,12 +238,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = cMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(nMaxTextbox);
+                return textBoxValue;
             }
             set { nMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -325,12 +248,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = crMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(crMaxTextbox);
+                return textBoxValue;
             }
             set { crMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -339,12 +258,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = moMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(moMaxTextbox);
+                return textBoxValue;
             }
             set { moMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -353,12 +268,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = nbMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(nbMaxTextbox);
+                return textBoxValue;
             }
             set { nbMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -367,12 +278,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = niMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(niMaxTextbox);
+                return textBoxValue;
             }
             set { niMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -381,12 +288,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = tiMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(tiMaxTextbox);
+                return textBoxValue;
             }
             set { tiMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -395,12 +298,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = alMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(alMaxTextbox);
+                return textBoxValue;
             }
             set { alMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -409,12 +308,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = vMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(vMaxTextbox);
+                return textBoxValue;
             }
             set { vMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -423,12 +318,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = cuMaxTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(cuMaxTextbox);
+                return textBoxValue;
             }
             set { cuMaxTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         } 
@@ -438,12 +329,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = cRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(cRealTextbox);
+                return textBoxValue;
             }
             set { cRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -452,12 +339,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = siRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(siRealTextbox);
+                return textBoxValue;
             }
             set { siRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -466,12 +349,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = mnRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(mnRealTextbox);
+                return textBoxValue;
             }
             set { mnRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -480,12 +359,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = pRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(pRealTextbox);
+                return textBoxValue;
             }
             set { pRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -494,12 +369,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = sRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(sRealTextbox);
+                return textBoxValue;
             }
             set { sRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -508,12 +379,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = nRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(nRealTextbox);
+                return textBoxValue;
             }
             set { nRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -522,12 +389,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = crRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(crRealTextbox);
+                return textBoxValue;
             }
             set { crRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -536,12 +399,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = moRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(moRealTextbox);
+                return textBoxValue;
             }
             set { moRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -550,12 +409,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = nbRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(nbRealTextbox);
+                return textBoxValue;
             }
             set { nbRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -564,12 +419,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = niRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(niRealTextbox);
+                return textBoxValue;
             }
             set { niRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -578,12 +429,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = tiRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(tiRealTextbox);
+                return textBoxValue;
             }
             set { tiRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -592,12 +439,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = alRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(alRealTextbox);
+                return textBoxValue;
             }
             set { alRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -606,12 +449,8 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = vRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(vRealTextbox);
+                return textBoxValue;
             }
             set { vRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         }
@@ -620,16 +459,21 @@ namespace WelderCalculator.MaterialModificationView
         {
             get
             {
-                string text = cuRealTextbox.Text;
-
-                if (string.IsNullOrEmpty(text) || string.IsNullOrWhiteSpace(text))
-                    return null;
-                return
-                    (double)Convert.ChangeType(text, typeof(double));
+                double? textBoxValue = GetTextBoxValue(cuRealTextbox);
+                return textBoxValue;
             }
             set { cuRealTextbox.Text = value.HasValue ? value.ToString() : string.Empty; }
         } 
         #endregion
+
+        private double? GetTextBoxValue(TextBox textbox)
+        {
+            string text = textbox.Text.Trim();
+
+            if (string.IsNullOrEmpty(text))
+                return null;
+            return Convert.ToDouble(text);
+        }
 
         private void applyButton_Click(object sender, EventArgs e)
         {
