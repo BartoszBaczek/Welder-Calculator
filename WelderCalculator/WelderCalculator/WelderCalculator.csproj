@@ -52,36 +52,36 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
-    <Compile Include="MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
+    <Compile Include="Databases\MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
+    <Compile Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.Designer.cs">
+    <Compile Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.Designer.cs">
       <DependentUpon>MaterialDatabasePropertiesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaterialDatabasePropertiesView\MaterialDatabasePropertiesPresenter.cs" />
-    <Compile Include="MaterialDatabaseView\IMaterialDatabaseView.cs" />
-    <Compile Include="MaterialDatabaseView\MaterialDatabaseForm.cs">
+    <Compile Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesPresenter.cs" />
+    <Compile Include="Databases\MaterialDatabaseView\IMaterialDatabaseView.cs" />
+    <Compile Include="Databases\MaterialDatabaseView\MaterialDatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterialDatabaseView\MaterialDatabaseForm.Designer.cs">
+    <Compile Include="Databases\MaterialDatabaseView\MaterialDatabaseForm.Designer.cs">
       <DependentUpon>MaterialDatabaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaterialDatabaseView\MaterialDatabasePresenter.cs" />
-    <Compile Include="MaterialModificationView\IMaterialModificationView.cs" />
-    <Compile Include="MaterialModificationView\MaterialModificationForm.cs">
+    <Compile Include="Databases\MaterialDatabaseView\MaterialDatabasePresenter.cs" />
+    <Compile Include="Databases\MaterialModificationView\IMaterialModificationView.cs" />
+    <Compile Include="Databases\MaterialModificationView\MaterialModificationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterialModificationView\MaterialModificationForm.Designer.cs">
+    <Compile Include="Databases\MaterialModificationView\MaterialModificationForm.Designer.cs">
       <DependentUpon>MaterialModificationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaterialModificationView\MaterialModificationPresenter.cs" />
+    <Compile Include="Databases\MaterialModificationView\MaterialModificationPresenter.cs" />
     <Compile Include="Repositories\DataConnector.cs" />
-    <Compile Include="MaterialModificationView\WindowMode.cs" />
-    <Compile Include="Model\Element.cs" />
-    <Compile Include="Model\Material.cs" />
-    <Compile Include="Model\MaterialNorm.cs" />
-    <Compile Include="Model\Category.cs" />
+    <Compile Include="Databases\MaterialModificationView\WindowMode.cs" />
+    <Compile Include="Repositories\Model\Element.cs" />
+    <Compile Include="Repositories\Model\Material.cs" />
+    <Compile Include="Repositories\Model\MaterialNorm.cs" />
+    <Compile Include="Repositories\Model\Category.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BasicMaterialRepository.cs" />
@@ -95,14 +95,14 @@
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StartView\StartFormPresenter.cs" />
-    <EmbeddedResource Include="MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.resx">
+    <EmbeddedResource Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.resx">
       <DependentUpon>MaterialDatabasePropertiesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaterialDatabaseView\MaterialDatabaseForm.resx">
+    <EmbeddedResource Include="Databases\MaterialDatabaseView\MaterialDatabaseForm.resx">
       <DependentUpon>MaterialDatabaseForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaterialModificationView\MaterialModificationForm.resx">
+    <EmbeddedResource Include="Databases\MaterialModificationView\MaterialModificationForm.resx">
       <DependentUpon>MaterialModificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
