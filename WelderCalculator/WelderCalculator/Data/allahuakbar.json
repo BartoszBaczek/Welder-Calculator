@@ -324,6 +324,114 @@
       "NiEq": null,
       "CrEq": null,
       "GuidNumber": "bd8c9bfc-833b-4f65-8a28-200476dea1e2"
+    },
+    {
+      "Name": "amoniak",
+      "Number": "123",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Węgiel",
+          "Min": 5.0,
+          "Max": 5.0,
+          "RealValue": 5.0
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Min": 1.0,
+          "Max": 1.0,
+          "RealValue": 1.0
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Min": 2.0,
+          "Max": 2.0,
+          "RealValue": 2.0
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Min": 2.0,
+          "Max": null,
+          "RealValue": 3.0
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Min": 3.0,
+          "Max": 3.0,
+          "RealValue": 3.0
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Min": 3.0,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Min": 3.0,
+          "Max": 3.0,
+          "RealValue": 3.0
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Min": 2.0,
+          "Max": 2.0,
+          "RealValue": 2.0
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Min": 1.0,
+          "Max": 1.0,
+          "RealValue": 1.0
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Min": 1.0,
+          "Max": 2.0,
+          "RealValue": 2.0
+        },
+        {
+          "Name": 11,
+          "FullName": "Aluminium",
+          "Min": 1.0,
+          "Max": 1.0,
+          "RealValue": 1.0
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Min": 5.0,
+          "Max": 5.0,
+          "RealValue": 5.0
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        }
+      ],
+      "CEq": null,
+      "NiEq": 242.0,
+      "CrEq": null,
+      "GuidNumber": "9a3792d2-cc50-48cc-abfe-c226a1d6f579"
     }
   ],
   "GuidNumber": "da7eb75b-8770-4aa9-a8b2-e9193aef8a1b"
