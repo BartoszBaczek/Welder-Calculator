@@ -280,6 +280,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.deleteButton.TabIndex = 2;
             this.deleteButton.Text = "Usuń";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // editButton
             // 

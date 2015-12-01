@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using System.Xml.Serialization;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView;
@@ -343,6 +344,23 @@ namespace WelderCalculator.MaterialDatabaseView
             var modifyMaterialForm = new MaterialModificationForm(currentNorm, material);
             modifyMaterialForm.ShowDialog();
             Init();
+        }
+
+        public void OnDeleteMaterialButtonClicked()
+        {
+            var currentNorm = GetCurrentNorm();
+            var selectedMaterial = GetSelectedMaterial();
+
+            var dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć wybrany materiał?", "Usuń materiał",
+                MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                var normToChange = _dataConnector.GetNorm(currentNorm.Name);
+                normToChange.Materials.RemoveAll(m => m.GuidNumber == selectedMaterial.GuidNumber);
+                _dataConnector.RemoveNorm(normToChange.Name);
+                _dataConnector.SaveNorm(normToChange);
+                Init();
+            }
         }
 
         private MaterialNorm GetCurrentNorm()
