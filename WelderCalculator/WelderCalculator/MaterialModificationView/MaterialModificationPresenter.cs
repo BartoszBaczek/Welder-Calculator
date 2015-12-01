@@ -10,7 +10,7 @@ namespace WelderCalculator.MaterialModificationView
     public class MaterialModificationPresenter
     {
         private readonly IMaterialModificationView _view;
-        private readonly MaterialModificationDataConnector _dataConnector;
+        private readonly DataConnector _dataConnector;
 
         private readonly WindowMode.Mode _workingMode;
         private readonly MaterialNorm _normUnderConstruction;
@@ -21,7 +21,7 @@ namespace WelderCalculator.MaterialModificationView
             _normUnderConstruction = norm as MaterialNorm;
 
             _view = view;
-            _dataConnector = new MaterialModificationDataConnector();
+            _dataConnector = new DataConnector();
             view.Presenter = this;
         }
 
@@ -31,7 +31,7 @@ namespace WelderCalculator.MaterialModificationView
             _normUnderConstruction = norm as MaterialNorm;
 
             _view = view;
-            _dataConnector = new MaterialModificationDataConnector();
+            _dataConnector = new DataConnector();
             view.Presenter = this;
             BindToControls(materialToModify);
         }

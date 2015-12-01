@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using System.Xml.Serialization;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView;
+using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabaseView
@@ -12,13 +13,13 @@ namespace WelderCalculator.MaterialDatabaseView
     public class MaterialDatabasePresenter
     {
         private readonly IMaterialDatabaseView _view;
-        private readonly MaterialDataConnector _dataConnector;
+        private readonly DataConnector _dataConnector;
 
         public MaterialDatabasePresenter(IMaterialDatabaseView view)
         {
             _view = view;
             view.Presenter = this;
-            _dataConnector = new MaterialDataConnector();
+            _dataConnector = new DataConnector();
         }
 
         public void Init()
@@ -31,7 +32,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void LoadNormsComboBox()  
         {
-            _view.NormsList = _dataConnector.GetSortedListOfMaterialsNormsNames();
+            _view.NormsList = _dataConnector.GetNamesOfAllNorms();
         }
 
         private void MakeAllCheckBoxesChecked()
@@ -73,16 +74,16 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private IEnumerable<Material> GetCurrentListOfMaterialsFromNormComboBox()
         {
-            List<string> listOfNormsNames = _dataConnector.GetSortedListOfMaterialsNormsNames();
+            List<string> listOfNormsNames = _dataConnector.GetNamesOfAllNorms();
             string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
-            List<Material> listofMaterialsFromNorm = _dataConnector.GetListOfMaterialsFromNorm(desiredNameOfNorm);
+            List<Material> listofMaterialsFromNorm = _dataConnector.GetMaterialsFromNorm(desiredNameOfNorm);
 
             return listofMaterialsFromNorm;
         }
         
         private void CreateColumns(DataTable table)
         {
-            var orderOfElements = _dataConnector.GetLastSavedOrderOfElements();
+            var orderOfElements = _dataConnector.GetOrderOfElements();
             table.Columns.Add("GUID", typeof(Guid));
 
             table.Columns.Add("Nazwa", typeof (string));

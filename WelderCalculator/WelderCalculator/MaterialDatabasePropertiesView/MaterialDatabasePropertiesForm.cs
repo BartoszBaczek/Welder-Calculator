@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using WelderCalculator.MaterialDatabasePropertiesView.Serialization;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {

@@ -112,7 +112,7 @@ namespace Tests
             Guid guidToFind = expectedMaterial.GuidNumber;
 
             //when 
-            Material materialToFind = _repo.GetMaterialByGUID(guidToFind, "sampleMaterialNorm1");
+            MaterialNorm materialToFind = _repo.GetNorm("sampleMaterialNorm1");
 
             //then
             Assert.That(materialToFind.Name == expectedMaterial.Name);

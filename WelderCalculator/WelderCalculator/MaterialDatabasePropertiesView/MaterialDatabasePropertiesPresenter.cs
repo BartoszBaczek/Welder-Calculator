@@ -3,33 +3,36 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using WelderCalculator.MaterialModificationView.Serialization;
+using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
     public class MaterialDatabasePropertiesPresenter
     {
         private readonly IMaterialDatabasePropertiesView _view;
-        private readonly MaterialDatabasePropertiesDataConnector _dataConnector;
+        private readonly DataConnector _dataConnector;
 
         public MaterialDatabasePropertiesPresenter(IMaterialDatabasePropertiesView view)
         {
             _view = view;
             view.Presenter = this;
-            _dataConnector = new MaterialDatabasePropertiesDataConnector();
+            _dataConnector = new DataConnector();
             Init();
         }
 
         private void Init()
         {
-            var lastSavedOrderOfElements = _dataConnector.GetOrderOfElementFromFile();
+            var lastSavedOrderOfElements = _dataConnector.GetOrderOfElements();
             BindDataToComboBoxes(lastSavedOrderOfElements);
 
             UpdateComboBoxes();
         }
 
-        private void BindDataToComboBoxes(List<string> elementsInOrder)
+        private void BindDataToComboBoxes(List<Category.OfElement> elementsInOrder)
         {
-            var dataToBind = elementsInOrder;
+            List<string> dataToBind = elementsInOrder.Select(element => element.ToString()).ToList();
+
             dataToBind.Add(String.Empty);
 
             for (int i = 0; i < _view.NumberOfComboBoxes; i++)
@@ -70,7 +73,8 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 List<string> dataNotToBind = new List<string>(usedElements);
                 dataNotToBind.Remove(selectedElement);
 
-                List<string> maxPossibleDataSource = _dataConnector.GetOrderOfElementFromFile();
+                List<Category.OfElement> orderOfElements = _dataConnector.GetOrderOfElements();
+                List<string> maxPossibleDataSource = orderOfElements.Select(element => element.ToString()).ToList();
                 maxPossibleDataSource.Add(string.Empty);
 
                 currentDataSource = maxPossibleDataSource.Except(dataNotToBind).ToList();
@@ -88,8 +92,10 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         public void OnApplyButtonPressed()
         {
-            var lastSavedOrder = _dataConnector.GetOrderOfElementFromFile();
-            var newOrder = new List<string>();
+            bool someComboBoxIsEmpty = false;
+
+            var lastSavedOrder = _dataConnector.GetOrderOfElements();
+            var newOrder = new List<Category.OfElement>();
 
             for (int i = 0; i < _view.NumberOfComboBoxes; i++)
             {
@@ -98,16 +104,26 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 var comboBoxDataSource = _view.GetListOfAvalibleElementsForComboBoxes(comboBoxID);
                 var comboBoxSelectedIndex = _view.GetSelectedIndex(comboBoxID);
 
-                newOrder.Add(comboBoxDataSource[comboBoxSelectedIndex]);
+                string elementToAdd = comboBoxDataSource[comboBoxSelectedIndex];
+                try
+                {
+                    Category.OfElement element = (Category.OfElement) Enum.Parse(typeof (Category.OfElement), elementToAdd, true);
+                    newOrder.Add(element);
+                }
+                catch (ArgumentException)
+                {
+                    someComboBoxIsEmpty = true;
+                }
             }
 
-            if (newOrder.Contains(string.Empty))
+            if (someComboBoxIsEmpty)
             {
                 var dialogResult = MessageBox.Show("Niektóre pola zawierają puste miejsca. Czy chcesz przywrócić ostatnią kolejność?", "AWARIA", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    var lastSavedOrderOfElements = _dataConnector.GetOrderOfElementFromFile();
-                    BindDataToComboBoxes(lastSavedOrderOfElements);
+                    List<Category.OfElement> orderOfElements = _dataConnector.GetOrderOfElements();
+
+                    BindDataToComboBoxes(orderOfElements);
 
                     UpdateComboBoxes();
                 }
@@ -117,7 +133,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 var dialogResult = MessageBox.Show("Czy na pewno chcesz zapisać nową kolejność pierwiastków?", "POTWIERDZENIE", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    _dataConnector.SaveOrderOfElementsToFile(newOrder);
+                    _dataConnector.SaveProperties(newOrder);
                 }
             }
             else
