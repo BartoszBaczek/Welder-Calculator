@@ -37,6 +37,7 @@
             this.separatorStrip = new System.Windows.Forms.ToolStripSeparator();
             this.exitStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.helpStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.wykresSchaeffleraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,9 +67,10 @@
             // 
             this.openStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.materialBaseStrip,
-            this.additionalMaterialBaseStrip});
+            this.additionalMaterialBaseStrip,
+            this.wykresSchaeffleraToolStripMenuItem});
             this.openStrip.Name = "openStrip";
-            this.openStrip.Size = new System.Drawing.Size(114, 22);
+            this.openStrip.Size = new System.Drawing.Size(152, 22);
             this.openStrip.Text = "Otwórz";
             // 
             // materialBaseStrip
@@ -87,18 +89,18 @@
             // optionsStrip
             // 
             this.optionsStrip.Name = "optionsStrip";
-            this.optionsStrip.Size = new System.Drawing.Size(114, 22);
+            this.optionsStrip.Size = new System.Drawing.Size(152, 22);
             this.optionsStrip.Text = "Opcje";
             // 
             // separatorStrip
             // 
             this.separatorStrip.Name = "separatorStrip";
-            this.separatorStrip.Size = new System.Drawing.Size(111, 6);
+            this.separatorStrip.Size = new System.Drawing.Size(149, 6);
             // 
             // exitStrip
             // 
             this.exitStrip.Name = "exitStrip";
-            this.exitStrip.Size = new System.Drawing.Size(114, 22);
+            this.exitStrip.Size = new System.Drawing.Size(152, 22);
             this.exitStrip.Text = "Wyjście";
             this.exitStrip.Click += new System.EventHandler(this.exitStrip_Click);
             // 
@@ -108,6 +110,13 @@
             this.helpStrip.Size = new System.Drawing.Size(57, 20);
             this.helpStrip.Text = "Pomoc";
             this.helpStrip.Click += new System.EventHandler(this.helpStrip_Click);
+            // 
+            // wykresSchaeffleraToolStripMenuItem
+            // 
+            this.wykresSchaeffleraToolStripMenuItem.Name = "wykresSchaeffleraToolStripMenuItem";
+            this.wykresSchaeffleraToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.wykresSchaeffleraToolStripMenuItem.Text = "Wykres Schaefflera";
+            this.wykresSchaeffleraToolStripMenuItem.Click += new System.EventHandler(this.wykresSchaeffleraToolStripMenuItem_Click);
             // 
             // StartForm
             // 
@@ -136,5 +145,6 @@
         private System.Windows.Forms.ToolStripMenuItem helpStrip;
         private System.Windows.Forms.ToolStripMenuItem materialBaseStrip;
         private System.Windows.Forms.ToolStripMenuItem additionalMaterialBaseStrip;
+        private System.Windows.Forms.ToolStripMenuItem wykresSchaeffleraToolStripMenuItem;
     }
 }

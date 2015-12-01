@@ -25,6 +25,13 @@ namespace WelderCalculator.StartView
             Show();
         }
 
+        private void wykresSchaeffleraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Presenter.OpenSchaefflerChart();
+            Show();
+        }
+
         private void helpStrip_Click(object sender, EventArgs e)
         {
         }
