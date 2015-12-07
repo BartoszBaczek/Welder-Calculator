@@ -8,6 +8,8 @@ using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView;
 using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
+using WelderCalculator.Repositories.Model.temp;
+using WelderCalculator.Repositories.Model.temp2;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
@@ -73,11 +75,11 @@ namespace WelderCalculator.MaterialDatabaseView
             return table;
         }
 
-        private IEnumerable<Material> GetCurrentListOfMaterialsFromNormComboBox()
+        private IEnumerable<BaseMaterial> GetCurrentListOfMaterialsFromNormComboBox()
         {
             List<string> listOfNormsNames = _dataConnector.GetNamesOfAllNorms();
             string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
-            List<Material> listofMaterialsFromNorm = _dataConnector.GetMaterialsFromNorm(desiredNameOfNorm);
+            List<BaseMaterial> listofMaterialsFromNorm = _dataConnector.GetMaterialsFromNorm(desiredNameOfNorm);
 
             return listofMaterialsFromNorm;
         }
@@ -145,7 +147,7 @@ namespace WelderCalculator.MaterialDatabaseView
             }
         }
 
-        private void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element, Material material)
+        private void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element, BaseMaterial material)
         {
             var materialElement = material.GetElement(element);
 
@@ -214,7 +216,7 @@ namespace WelderCalculator.MaterialDatabaseView
             }
         }
 
-        private Material GetSelectedMaterial()
+        private BaseMaterial GetSelectedMaterial()
         {
             var materialRow = _view.SelectedRow;
 
@@ -363,10 +365,10 @@ namespace WelderCalculator.MaterialDatabaseView
             }
         }
 
-        private MaterialNorm GetCurrentNorm()
+        private BaseNorm GetCurrentNorm()
         {
             string currentNormName = _view.NormsList[_view.SelectedNorm];
-            MaterialNorm norm = _dataConnector.GetNorm(currentNormName);
+            BaseNorm norm = _dataConnector.GetNorm(currentNormName);
 
             return norm;
         }

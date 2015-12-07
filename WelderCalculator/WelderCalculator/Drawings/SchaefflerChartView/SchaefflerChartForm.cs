@@ -32,7 +32,6 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             var g = e.Graphics;
 
             g.FillRectangle(new SolidBrush(Color.FromArgb(0, Color.Black)), p.DisplayRectangle);
-
             Point[] points = new Point[5];
 
             points[0] = new Point(0, 0);

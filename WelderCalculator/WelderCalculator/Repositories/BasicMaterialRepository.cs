@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
 using WelderCalculator.Model;
+using WelderCalculator.Repositories.Model.temp2;
 
 namespace WelderCalculator.Repositories
 {
@@ -32,7 +33,7 @@ namespace WelderCalculator.Repositories
 
 
         #region NormsSerialization
-        public void SerializeNorm(MaterialNorm norm)
+        public void SerializeNorm(BaseNorm norm)
         {
             string pathToFile = _normsPath + norm.Name + ".json";
             if (!File.Exists(pathToFile))
@@ -50,11 +51,11 @@ namespace WelderCalculator.Repositories
             };
         }
 
-        public MaterialNorm DeserializeNorm(string normName)
+        public BaseNorm DeserializeNorm(string normName)
         {
             string pathToNormFile = _normsPath + normName + ".json";
             string jsonText = File.ReadAllText(pathToNormFile);
-            var norm = JsonConvert.DeserializeObject<MaterialNorm>(jsonText);
+            var norm = JsonConvert.DeserializeObject<BaseNorm>(jsonText);
             return norm;
         }
 

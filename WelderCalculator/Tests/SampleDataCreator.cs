@@ -4,7 +4,7 @@ namespace Tests
 {
     public class SampleDataCreator
     {
-        public MaterialNorm GetSampleMaterialNorm()
+        public Norm GetSampleMaterialNorm()
         {
             #region Create 3 sample materials
             //given
@@ -37,7 +37,7 @@ namespace Tests
             }
             #endregion
 
-            var sampleMaterialNorm1 = new MaterialNorm {Name = "sampleMaterialNorm1"};
+            var sampleMaterialNorm1 = new Norm {Name = "sampleMaterialNorm1"};
             sampleMaterialNorm1.Materials.Add(material1);
             sampleMaterialNorm1.Materials.Add(material2);
             sampleMaterialNorm1.Materials.Add((material3));

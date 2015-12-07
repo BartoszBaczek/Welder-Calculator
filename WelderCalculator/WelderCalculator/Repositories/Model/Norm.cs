@@ -4,18 +4,15 @@ using System.Runtime.Serialization;
 
 namespace WelderCalculator.Model
 {
-    public class MaterialNorm
+    public abstract class Norm
     {
         public string Name { get; set; }
 
-        public List<Material> Materials { get; set; }
-
         public Guid GuidNumber { get; set; }
 
-        public MaterialNorm()
+        protected Norm()
         {
             Name = string.Empty;
-            Materials = new List<Material>();
             GuidNumber = Guid.NewGuid();
         }
     }

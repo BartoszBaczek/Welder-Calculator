@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows.Forms.VisualStyles;
 
 namespace WelderCalculator.Model
 {
-    public class Material
+    public abstract class Material
     {
         public string Name { get; set; }
 
-        public string Number { get; set; }
+        public Guid GuidNumber { get; set; }
 
         public List<Element> Elements { get; set; }
 
-        public double? CEq 
+        public double? CEq
         {
             get
             {
@@ -26,9 +25,9 @@ namespace WelderCalculator.Model
                 double? cuReal = GetElement(Category.OfElement.Cu).RealValue;
 
                 double? carbonEquivalent = cReal +
-                                           mnReal/6.0 +
-                                           (crReal + vReal + moReal)/5.0 +
-                                           (niReal + cuReal)/15.0;
+                                           mnReal / 6.0 +
+                                           (crReal + vReal + moReal) / 5.0 +
+                                           (niReal + cuReal) / 15.0;
 
                 return carbonEquivalent;
             }
@@ -44,8 +43,8 @@ namespace WelderCalculator.Model
                 double? mnReal = GetElement(Category.OfElement.Mn).RealValue;
 
                 double? nickielEquivalent = niReal +
-                                            (cReal + nReal)*30.0 +
-                                            mnReal*0.5;
+                                            (cReal + nReal) * 30.0 +
+                                            mnReal * 0.5;
 
                 return nickielEquivalent;
             }
@@ -63,42 +62,22 @@ namespace WelderCalculator.Model
 
                 double? chromeEquivalent = crReal +
                                            moReal +
-                                           siReal*1.5 +
-                                           nbReal*0.5 +
-                                           tiReal*2;
+                                           siReal * 1.5 +
+                                           nbReal * 0.5 +
+                                           tiReal * 2;
 
                 return chromeEquivalent;
             }
         }
 
-        public Guid GuidNumber { get; set; }
 
-        public Material()
+        protected Material()
         {
             Name = string.Empty;
-            Number = string.Empty;
             Elements = new List<Element>();
             GuidNumber = Guid.NewGuid();
         }
 
-        public void CreateBasicListOfElements()
-        {
-            Elements.Add(new Element(Category.OfElement.C));
-            Elements.Add(new Element(Category.OfElement.Si));
-            Elements.Add(new Element(Category.OfElement.Mn));
-            Elements.Add(new Element(Category.OfElement.P));
-            Elements.Add(new Element(Category.OfElement.S));
-            Elements.Add(new Element(Category.OfElement.N));
-            Elements.Add(new Element(Category.OfElement.Cr));
-            Elements.Add(new Element(Category.OfElement.Mo));
-            Elements.Add(new Element(Category.OfElement.Nb));
-            Elements.Add(new Element(Category.OfElement.Ni));
-            Elements.Add(new Element(Category.OfElement.Ti));
-            Elements.Add(new Element(Category.OfElement.Al));
-            Elements.Add(new Element(Category.OfElement.V));
-            Elements.Add(new Element(Category.OfElement.Cu));
-
-        }
 
         public Element GetElement(Category.OfElement requestedElement)
         {
@@ -106,23 +85,8 @@ namespace WelderCalculator.Model
             return singleElement;
         }
 
-        public bool Equals(Material material)
-        {
-            if (this.Name != material.Name)
-                return false;
-            if (this.Number != material.Number)
-                return false;
-            if (this.Elements.Count != material.Elements.Count)
-                return false;
+        public abstract bool Equals(Material material);
+        public abstract void CreateBasicListOfElements();
 
-            foreach (var thatElement in material.Elements)
-            {
-                var thisElement = this.Elements.First(x => x.Name == thatElement.Name);
-                if (thisElement.Min != thatElement.Min || thisElement.Max != thatElement.Max || thisElement.RealValue != thatElement.RealValue)
-                    return false;
-            }
-
-            return true;
-        }
     }
 }

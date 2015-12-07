@@ -87,13 +87,15 @@
     <Compile Include="Repositories\DataConnector.cs" />
     <Compile Include="Databases\MaterialModificationView\WindowMode.cs" />
     <Compile Include="Repositories\Model\Element.cs" />
-    <Compile Include="Repositories\Model\Material.cs" />
-    <Compile Include="Repositories\Model\MaterialNorm.cs" />
+    <Compile Include="Repositories\Model\BaseNorm.cs" />
+    <Compile Include="Repositories\Model\Norm.cs" />
     <Compile Include="Repositories\Model\Category.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\BasicMaterialRepository.cs" />
     <Compile Include="Repositories\IBasicMaterialRepository.cs" />
+    <Compile Include="Repositories\Model\BaseMaterial.cs" />
+    <Compile Include="Repositories\Model\Material.cs" />
     <Compile Include="Repositories\SaveType.cs" />
     <Compile Include="StartView\IStartFormView.cs" />
     <Compile Include="StartView\StartForm.cs">

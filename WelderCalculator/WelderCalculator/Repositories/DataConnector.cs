@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
+using WelderCalculator.Repositories.Model.temp;
+using WelderCalculator.Repositories.Model.temp2;
 
 namespace WelderCalculator.MaterialModificationView.Serialization
 {
@@ -17,7 +19,7 @@ namespace WelderCalculator.MaterialModificationView.Serialization
             _repo = new BasicMaterialRepository();
         }
 
-        public Material GetMaterial(Guid guid, string normName)
+        public BaseMaterial GetMaterial(Guid guid, string normName)
         {
             var normWithMaterial = _repo.DeserializeNorm(normName);
             return normWithMaterial.Materials.FirstOrDefault(m => m.GuidNumber.Equals(guid));
@@ -28,12 +30,12 @@ namespace WelderCalculator.MaterialModificationView.Serialization
             _repo.DeleteNorm(normName);
         }
 
-        public void SaveNorm(MaterialNorm norm)
+        public void SaveNorm(BaseNorm norm)
         {
             _repo.SerializeNorm(norm);
         }
 
-        public MaterialNorm GetNorm(string normName)
+        public BaseNorm GetNorm(string normName)
         {
             return _repo.DeserializeNorm(normName);
         }
@@ -60,9 +62,9 @@ namespace WelderCalculator.MaterialModificationView.Serialization
             return _repo.GetNamesOfNorms();
         }
 
-        public List<Material> GetMaterialsFromNorm(string normName)
+        public List<BaseMaterial> GetMaterialsFromNorm(string normName)
         {
-            MaterialNorm norm = _repo.DeserializeNorm(normName);
+            BaseNorm norm = _repo.DeserializeNorm(normName);
             return norm.Materials.ToList();
         }
     }

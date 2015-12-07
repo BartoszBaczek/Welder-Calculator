@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
+using WelderCalculator.Repositories.Model.temp;
+using WelderCalculator.Repositories.Model.temp2;
 
 namespace WelderCalculator.MaterialModificationView
 {
@@ -13,12 +15,12 @@ namespace WelderCalculator.MaterialModificationView
         private readonly DataConnector _dataConnector;
 
         private readonly WindowMode.Mode _workingMode;
-        private readonly MaterialNorm _normUnderConstruction;
+        private readonly BaseNorm _normUnderConstruction;
 
         public MaterialModificationPresenter(IMaterialModificationView view, object norm)                               //used when adding new material
         {
             _workingMode = WindowMode.Mode.AddNew;
-            _normUnderConstruction = norm as MaterialNorm;
+            _normUnderConstruction = norm as BaseNorm;
 
             _view = view;
             _dataConnector = new DataConnector();
@@ -28,7 +30,7 @@ namespace WelderCalculator.MaterialModificationView
         public MaterialModificationPresenter(IMaterialModificationView view, object norm, object materialToModify)      //used when modifying material
         {
             _workingMode = WindowMode.Mode.ModifyCurrent;
-            _normUnderConstruction = norm as MaterialNorm;
+            _normUnderConstruction = norm as BaseNorm;
 
             _view = view;
             _dataConnector = new DataConnector();
@@ -38,7 +40,7 @@ namespace WelderCalculator.MaterialModificationView
 
         private void BindToControls(object materialToBind)
         {
-            var material = materialToBind as Material;
+            var material = materialToBind as BaseMaterial;
             _view.NameTextbox = material.Name;
             _view.NumberTextbox = material.Number;
             _view.GuidTextbox = material.GuidNumber.ToString();
@@ -114,9 +116,9 @@ namespace WelderCalculator.MaterialModificationView
             _view.CuRealtextbox = e.RealValue;
         }
 
-        private Material BuildMaterial()
+        private BaseMaterial BuildMaterial()
         {
-            var material = new Material();
+            var material = new BaseMaterial();
             material.CreateBasicListOfElements();
 
             material.Name = _view.NameTextbox;
