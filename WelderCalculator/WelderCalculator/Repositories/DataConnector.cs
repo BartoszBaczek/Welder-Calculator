@@ -19,6 +19,12 @@ namespace WelderCalculator.MaterialModificationView.Serialization
             _repo = new BasicMaterialRepository();
         }
 
+        //temp method for tests only
+        public DataConnector(string test)
+        {
+            _repo = new BasicMaterialRepository("dsf");
+        }
+
         public BaseMaterial GetMaterial(Guid guid, string normName)
         {
             var normWithMaterial = _repo.DeserializeNorm(normName);
@@ -65,7 +71,7 @@ namespace WelderCalculator.MaterialModificationView.Serialization
         public List<BaseMaterial> GetMaterialsFromNorm(string normName)
         {
             BaseNorm norm = _repo.DeserializeNorm(normName);
-            return norm.Materials.ToList();
+            return norm.Materials.OrderBy(m => m.Name).ToList();
         }
     }
 }

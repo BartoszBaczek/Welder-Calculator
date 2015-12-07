@@ -1,9 +1,6 @@
-﻿using System.CodeDom;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Linq;
 using NUnit.Framework;
 using WelderCalculator.Model;
-using WelderCalculator.Serialization;
 
 
 namespace Tests

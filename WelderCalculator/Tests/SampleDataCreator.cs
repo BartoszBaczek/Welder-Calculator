@@ -1,14 +1,16 @@
 ﻿using WelderCalculator.Model;
+using WelderCalculator.Repositories.Model.temp;
+using WelderCalculator.Repositories.Model.temp2;
 
 namespace Tests
 {
     public class SampleDataCreator
     {
-        public Norm GetSampleMaterialNorm()
+        public BaseNorm GetSampleMaterialNorm()
         {
             #region Create 3 sample materials
             //given
-            var material1 = new Material { Name = "material2", Number = "123" };
+            var material1 = new BaseMaterial() { Name = "material2", Number = "123" };
             material1.CreateBasicListOfElements();
 
             foreach (var e in material1.Elements)
@@ -18,7 +20,7 @@ namespace Tests
                 e.RealValue = 0.47;
             }
 
-            var material2 = new Material { Name = "material3", Number = "456" };
+            var material2 = new BaseMaterial { Name = "material3", Number = "456" };
             material2.CreateBasicListOfElements();
             foreach (var e in material2.Elements)
             {
@@ -27,7 +29,7 @@ namespace Tests
                 e.RealValue = 0.85;
             }
 
-            var material3 = new Material {Name = "material1", Number = "789"};
+            var material3 = new BaseMaterial {Name = "material1", Number = "789"};
             material3.CreateBasicListOfElements();
             foreach (var e in material3.Elements)
             {
@@ -37,7 +39,7 @@ namespace Tests
             }
             #endregion
 
-            var sampleMaterialNorm1 = new Norm {Name = "sampleMaterialNorm1"};
+            var sampleMaterialNorm1 = new BaseNorm() {Name = "sampleMaterialNorm1"};
             sampleMaterialNorm1.Materials.Add(material1);
             sampleMaterialNorm1.Materials.Add(material2);
             sampleMaterialNorm1.Materials.Add((material3));
@@ -45,9 +47,9 @@ namespace Tests
             return sampleMaterialNorm1;
         }
 
-        public Material GetSampleMaterial()
+        public BaseMaterial GetSampleMaterial()
         {
-            var material = new Material { Name = "material1", Number = "123" };
+            var material = new BaseMaterial() { Name = "material1", Number = "123" };
             material.CreateBasicListOfElements();
 
             foreach (var e in material.Elements)

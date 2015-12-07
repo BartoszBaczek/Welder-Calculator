@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using NUnit.Framework;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
+using WelderCalculator.Repositories.Model.temp;
+using WelderCalculator.Repositories.Model.temp2;
 
 
 namespace Tests
@@ -27,30 +30,30 @@ namespace Tests
             var testMaterialNorm = _dataCreator.GetSampleMaterialNorm();
 
             //when
-            _repo
+            _repo.SerializeNorm(testMaterialNorm);
 
             //then
             Assert.IsFalse(false);
         }
 
         [Test]
-        public void ShouldReturnArrayOfFilesInFolder()
+        public void ShouldReturnNormNames()
         {
             //given
-            string[] expectedResult = new[]
+            List<string> expectedResult = new List<string>()
             {
                 "sampleMaterialNorm1",
                 "sampleMaterialNorm2"
             };
 
-            string[] anotherExpectedResult = new[]
+            List<string> anotherExpectedResult = new List<string>()
             {
                 "sampleMaterialNorm2",
                 "sampleMaterialNorm1"
             };
 
             //when
-            string[] returnedListOfFiles = _repo.GetNamesOfFilesInDataFolder();
+            List<string> returnedListOfFiles = _repo.GetNamesOfNorms();
             
             //then
             if (returnedListOfFiles[0] == expectedResult[0])
@@ -63,14 +66,14 @@ namespace Tests
         public void ShouldGetMaterialNormByName()
         {
             //given
-            Norm expectedNorm = _dataCreator.GetSampleMaterialNorm();
+            BaseNorm expectedNorm = _dataCreator.GetSampleMaterialNorm();
             int expectedNumberOfMaterialsInNorm = expectedNorm.Materials.Count;
             string expectedNormName = expectedNorm.Name;
 
             string[] expectedMaterialName = {"material2", "material3", "material1"};
             
             //when
-            Norm norm = _repo.GetNorm("sampleMaterialNorm1");
+            BaseNorm norm = _repo.DeserializeNorm("sampleMaterialNorm1");
 
             bool materials = (norm.Materials[0].Name == expectedMaterialName[0]
                                         && norm.Materials[1].Name == expectedMaterialName[1]
@@ -85,37 +88,38 @@ namespace Tests
         public void ShouldNotChangeMaterialGUIDWhenDeserializingMaterial()
         {
             //given
-            Material material1 = _dataCreator.GetSampleMaterial();
+            BaseMaterial material1 = _dataCreator.GetSampleMaterial();
             Debug.WriteLine("Guid1:   " + material1.GuidNumber);
 
-            Norm norm = new Norm();
+            BaseNorm norm = new BaseNorm();
             norm.Name = "allahuakbar";
             norm.Materials.Add(material1);
 
             //when
-            _repo.SaveToFile(norm);
-            Norm newNorm = _repo.GetNorm("allahuakbar");
+            _repo.SerializeNorm(norm);
+            BaseNorm newNorm = _repo.DeserializeNorm("allahuakbar");
             Debug.WriteLine("Guid2:   " + newNorm.Materials[0].GuidNumber);
 
 
             string guid1 = material1.GuidNumber.ToString();
             string guid2 = norm.Materials[0].GuidNumber.ToString();
-            //then
 
+            //then
             Assert.AreEqual(guid1, guid2);
         }
         [Test]
         public void ShouldGetMaterialByGuidAndNormName()
         {
             //given 
-            Material expectedMaterial = _repo.GetNorm("sampleMaterialNorm1").Materials[0];
+            BaseMaterial expectedMaterial = _repo.DeserializeNorm("sampleMaterialNorm1").Materials[0];
             Guid guidToFind = expectedMaterial.GuidNumber;
 
             //when 
-            Norm toFind = _repo.GetNorm("sampleMaterialNorm1");
+            var normWithMaterial = _repo.DeserializeNorm("sampleMaterialNorm1");
+            BaseMaterial mat = normWithMaterial.Materials.FirstOrDefault(m => m.GuidNumber.Equals(guidToFind));
 
             //then
-            Assert.That(toFind.Name == expectedMaterial.Name);
+            Assert.That(mat.Name == expectedMaterial.Name);
         }
     }
 }

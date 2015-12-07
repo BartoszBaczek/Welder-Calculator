@@ -1,9 +1,9 @@
 {
-  "Name": "sampleMaterialNorm1",
   "Materials": [
     {
-      "Name": "material2",
       "Number": "123",
+      "Name": "material2",
+      "GuidNumber": "c4fbc57c-e657-4a00-ab48-011b8bf93a9d",
       "Elements": [
         {
           "Name": 0,
@@ -106,12 +106,12 @@
       ],
       "CEq": 0.893,
       "NiEq": 28.904999999999998,
-      "CrEq": 2.82,
-      "GuidNumber": "00a3d5fb-e004-498a-bbcb-e1f7357cabd3"
+      "CrEq": 2.82
     },
     {
-      "Name": "material3",
       "Number": "456",
+      "Name": "material3",
+      "GuidNumber": "af02c74d-29ad-43f0-8fb6-b23185c4a61a",
       "Elements": [
         {
           "Name": 0,
@@ -214,19 +214,19 @@
       ],
       "CEq": 1.615,
       "NiEq": 52.275,
-      "CrEq": 5.1,
-      "GuidNumber": "f73c747a-2f4a-4325-acb3-25f5f1626029"
+      "CrEq": 5.1
     },
     {
-      "Name": "material1",
       "Number": "789",
+      "Name": "material1",
+      "GuidNumber": "4a2ec43a-b271-44aa-a6e1-447d7251f188",
       "Elements": [
         {
           "Name": 0,
           "FullName": "Węgiel",
           "Min": 0.1,
           "Max": 0.2,
-          "RealValue": null
+          "RealValue": 0.15
         },
         {
           "Name": 1,
@@ -268,7 +268,7 @@
           "FullName": "Chrom",
           "Min": 0.1,
           "Max": 0.2,
-          "RealValue": null
+          "RealValue": 0.15
         },
         {
           "Name": 7,
@@ -320,11 +320,11 @@
           "RealValue": 0.15
         }
       ],
-      "CEq": null,
-      "NiEq": null,
-      "CrEq": null,
-      "GuidNumber": "4587cc14-6856-4a27-96cf-abb517d99f7c"
+      "CEq": 0.28500000000000003,
+      "NiEq": 9.225,
+      "CrEq": 0.89999999999999991
     }
   ],
-  "GuidNumber": "624112e8-f8e2-46ac-8fc9-7bd3e0b9768c"
+  "Name": "sampleMaterialNorm1",
+  "GuidNumber": "8c334a6f-03b9-4ce3-988b-75b7f64c5eda"
 }
