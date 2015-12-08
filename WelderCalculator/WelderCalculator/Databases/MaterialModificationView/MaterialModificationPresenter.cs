@@ -198,7 +198,7 @@ namespace WelderCalculator.MaterialModificationView
             if (_workingMode == WindowMode.Mode.ModifyCurrent)
             {
                 var materialAfterModification = BuildMaterial();
-                var materialBeforeModification = _dataConnector.GetMaterial(Guid.Parse(_view.GuidTextbox),
+                var materialBeforeModification = _dataConnector.GetBaseMaterial(Guid.Parse(_view.GuidTextbox),
                     _normUnderConstruction.Name);
 
                 if (materialBeforeModification.Equals(materialAfterModification))
@@ -217,9 +217,9 @@ namespace WelderCalculator.MaterialModificationView
                         _normUnderConstruction.Materials = _normUnderConstruction.Materials.Except(materialToModify).ToList();
                         _normUnderConstruction.Materials.Add(materialAfterModification);
 
-                        _dataConnector.RemoveNorm(_normUnderConstruction.Name);
+                        _dataConnector.RemoveBaseNorm(_normUnderConstruction.Name);
 
-                        _dataConnector.SaveNorm(_normUnderConstruction);
+                        _dataConnector.SaveBaseNorm(_normUnderConstruction);
 
                         _view.CancelDialog();
                     }
@@ -233,9 +233,9 @@ namespace WelderCalculator.MaterialModificationView
                     MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    _dataConnector.RemoveNorm(_normUnderConstruction.Name);
+                    _dataConnector.RemoveBaseNorm(_normUnderConstruction.Name);
                     _normUnderConstruction.Materials.Add(materialAfterModification);
-                    _dataConnector.SaveNorm(_normUnderConstruction);
+                    _dataConnector.SaveBaseNorm(_normUnderConstruction);
                     _view.CancelDialog();
                 }
                 
@@ -247,7 +247,7 @@ namespace WelderCalculator.MaterialModificationView
             if (_workingMode == WindowMode.Mode.ModifyCurrent)
             {
                 var materialAfterModification = BuildMaterial();
-                var materialBeforeModification = _dataConnector.GetMaterial(Guid.Parse(_view.GuidTextbox),
+                var materialBeforeModification = _dataConnector.GetBaseMaterial(Guid.Parse(_view.GuidTextbox),
                     _normUnderConstruction.Name);
 
                 if (materialBeforeModification.Equals(materialAfterModification))

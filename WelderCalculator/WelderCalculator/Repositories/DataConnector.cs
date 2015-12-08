@@ -10,65 +10,60 @@ namespace WelderCalculator.MaterialModificationView.Serialization
 {
     public class DataConnector
     {
-        private BasicMaterialRepository _repo;
+        private NormRepository _normRepo;
+
 
         public DataConnector()
         {
-            _repo = new BasicMaterialRepository();
+            _normRepo = new NormRepository();
         }
 
         //temp method for tests only
         public DataConnector(string test)
         {
-            _repo = new BasicMaterialRepository("dsf");
+            _normRepo = new NormRepository("dsf");
         }
 
-        public BaseMaterial GetMaterial(Guid guid, string normName)
+        public BaseMaterial GetBaseMaterial(Guid guid, string normName)
         {
-            var normWithMaterial = _repo.DeserializeNorm(normName);
+            var normWithMaterial = _normRepo.DeserializeBaseNorm(normName);
             return normWithMaterial.Materials.FirstOrDefault(m => m.GuidNumber.Equals(guid));
         }
 
-        public void RemoveNorm(string normName)
+        public void RemoveBaseNorm(string normName)
         {
-            _repo.DeleteNorm(normName);
+            _normRepo.DeleteBaseNorm(normName);
         }
 
-        public void SaveNorm(BaseNorm norm)
+        public void SaveBaseNorm(BaseNorm norm)
         {
-            _repo.SerializeNorm(norm);
+            _normRepo.SerializeBaseNorm(norm);
         }
 
-        public BaseNorm GetNorm(string normName)
+        public BaseNorm GetBaseNorm(string normName)
         {
-            return _repo.DeserializeNorm(normName);
+            return _normRepo.DeserializeBaseNorm(normName);
         }
 
-        //public List<string> GetOrderOfElements()
-        //{
-        //    List<Category.OfElement> order = _repo.DeserializeProperties();
-        //    return order.Select(obj => obj.ToString()).ToList();
-        //}
-
-        public List<Category.OfElement> GetOrderOfElements()
+        public List<Category.OfElement> GetOrderOfElementsForBaseMaterial()
         {
-            List<Category.OfElement> order = _repo.DeserializeProperties();
+            List<Category.OfElement> order = _normRepo.DeserializeBaseNormsProperties();
             return order;
         }
 
-        public void SaveProperties(List<Category.OfElement> orderOfElements)
+        public void SaveBaseNormProperties(List<Category.OfElement> orderOfElements)
         {
-            _repo.SerializeProperties(orderOfElements);
+            _normRepo.SerializeBaseNormsProperties(orderOfElements);
         }
 
-        public List<string> GetNamesOfAllNorms()
+        public List<string> GetNamesOfBaseNorms()
         {
-            return _repo.GetNamesOfNorms();
+            return _normRepo.GetNamesOfBaseNorms();
         }
 
-        public List<BaseMaterial> GetMaterialsFromNorm(string normName)
+        public List<BaseMaterial> GetBaseMaterials(string normName)
         {
-            BaseNorm norm = _repo.DeserializeNorm(normName);
+            BaseNorm norm = _normRepo.DeserializeBaseNorm(normName);
             return norm.Materials.OrderBy(m => m.Name).ToList();
         }
     }

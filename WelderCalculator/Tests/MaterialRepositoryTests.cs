@@ -14,12 +14,12 @@ namespace Tests
     [TestFixture]
     public class MaterialRepositoryTests
     {
-        private IBasicMaterialRepository _repo;
+        private IBasicNormRepository _repo;
         private SampleDataCreator _dataCreator;
         [SetUp]
         public void Init()
         {
-            _repo = new BasicMaterialRepository("some fucking path");
+            _repo = new NormRepository("some fucking path");
             _dataCreator = new SampleDataCreator();
         }
 
@@ -30,7 +30,7 @@ namespace Tests
             var testMaterialNorm = _dataCreator.GetSampleMaterialNorm();
 
             //when
-            _repo.SerializeNorm(testMaterialNorm);
+            _repo.SerializeBaseNorm(testMaterialNorm);
 
             //then
             Assert.IsFalse(false);
@@ -53,7 +53,7 @@ namespace Tests
             };
 
             //when
-            List<string> returnedListOfFiles = _repo.GetNamesOfNorms();
+            List<string> returnedListOfFiles = _repo.GetNamesOfBaseNorms();
             
             //then
             if (returnedListOfFiles[0] == expectedResult[0])
@@ -73,7 +73,7 @@ namespace Tests
             string[] expectedMaterialName = {"material2", "material3", "material1"};
             
             //when
-            BaseNorm norm = _repo.DeserializeNorm("sampleMaterialNorm1");
+            BaseNorm norm = _repo.DeserializeBaseNorm("sampleMaterialNorm1");
 
             bool materials = (norm.Materials[0].Name == expectedMaterialName[0]
                                         && norm.Materials[1].Name == expectedMaterialName[1]
@@ -96,8 +96,8 @@ namespace Tests
             norm.Materials.Add(material1);
 
             //when
-            _repo.SerializeNorm(norm);
-            BaseNorm newNorm = _repo.DeserializeNorm("allahuakbar");
+            _repo.SerializeBaseNorm(norm);
+            BaseNorm newNorm = _repo.DeserializeBaseNorm("allahuakbar");
             Debug.WriteLine("Guid2:   " + newNorm.Materials[0].GuidNumber);
 
 
@@ -111,11 +111,11 @@ namespace Tests
         public void ShouldGetMaterialByGuidAndNormName()
         {
             //given 
-            BaseMaterial expectedMaterial = _repo.DeserializeNorm("sampleMaterialNorm1").Materials[0];
+            BaseMaterial expectedMaterial = _repo.DeserializeBaseNorm("sampleMaterialNorm1").Materials[0];
             Guid guidToFind = expectedMaterial.GuidNumber;
 
             //when 
-            var normWithMaterial = _repo.DeserializeNorm("sampleMaterialNorm1");
+            var normWithMaterial = _repo.DeserializeBaseNorm("sampleMaterialNorm1");
             BaseMaterial mat = normWithMaterial.Materials.FirstOrDefault(m => m.GuidNumber.Equals(guidToFind));
 
             //then

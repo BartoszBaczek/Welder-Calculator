@@ -23,7 +23,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         private void Init()
         {
-            var lastSavedOrderOfElements = _dataConnector.GetOrderOfElements();
+            var lastSavedOrderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
             BindDataToComboBoxes(lastSavedOrderOfElements);
 
             UpdateComboBoxes();
@@ -73,7 +73,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 List<string> dataNotToBind = new List<string>(usedElements);
                 dataNotToBind.Remove(selectedElement);
 
-                List<Category.OfElement> orderOfElements = _dataConnector.GetOrderOfElements();
+                List<Category.OfElement> orderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
                 List<string> maxPossibleDataSource = orderOfElements.Select(element => element.ToString()).ToList();
                 maxPossibleDataSource.Add(string.Empty);
 
@@ -94,7 +94,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
             bool someComboBoxIsEmpty = false;
 
-            var lastSavedOrder = _dataConnector.GetOrderOfElements();
+            var lastSavedOrder = _dataConnector.GetOrderOfElementsForBaseMaterial();
             var newOrder = new List<Category.OfElement>();
 
             for (int i = 0; i < _view.NumberOfComboBoxes; i++)
@@ -121,7 +121,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 var dialogResult = MessageBox.Show("Niektóre pola zawierają puste miejsca. Czy chcesz przywrócić ostatnią kolejność?", "AWARIA", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    List<Category.OfElement> orderOfElements = _dataConnector.GetOrderOfElements();
+                    List<Category.OfElement> orderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
 
                     BindDataToComboBoxes(orderOfElements);
 
@@ -133,7 +133,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 var dialogResult = MessageBox.Show("Czy na pewno chcesz zapisać nową kolejność pierwiastków?", "POTWIERDZENIE", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    _dataConnector.SaveProperties(newOrder);
+                    _dataConnector.SaveBaseNormProperties(newOrder);
                 }
             }
             else

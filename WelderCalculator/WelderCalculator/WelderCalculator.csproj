@@ -94,7 +94,7 @@
     <Compile Include="Drawings\SchaefflerChartView\SchaefflerChartPresenter.cs" />
     <Compile Include="Repositories\DataConnector.cs" />
     <Compile Include="Databases\MaterialModificationView\WindowMode.cs" />
-    <Compile Include="Repositories\IAdditiveMaterialRepo.cs" />
+    <Compile Include="Repositories\IAdditiveNormRepository.cs" />
     <Compile Include="Repositories\Model\AdditiveMaterial.cs" />
     <Compile Include="Repositories\Model\AdditiveNorm.cs" />
     <Compile Include="Repositories\Model\Element.cs" />
@@ -103,8 +103,8 @@
     <Compile Include="Repositories\Model\Category.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\BasicMaterialRepository.cs" />
-    <Compile Include="Repositories\IBasicMaterialRepository.cs" />
+    <Compile Include="Repositories\NormRepository.cs" />
+    <Compile Include="Repositories\IBasicNormRepository.cs" />
     <Compile Include="Repositories\Model\BaseMaterial.cs" />
     <Compile Include="Repositories\Model\Material.cs" />
     <Compile Include="Repositories\SaveType.cs" />

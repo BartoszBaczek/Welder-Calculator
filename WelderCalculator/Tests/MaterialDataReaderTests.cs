@@ -31,7 +31,7 @@ namespace Tests
             };
 
             //when
-            List<string> listOfNorms = _dataConnector.GetNamesOfAllNorms();
+            List<string> listOfNorms = _dataConnector.GetNamesOfBaseNorms();
 
             //then
             CollectionAssert.AreEqual(listOfNorms, expectedListOfNames);
@@ -44,7 +44,7 @@ namespace Tests
             string[] expectedMaterialsNames = {"material1", "material2", "material3"};
 
             //when
-            List<BaseMaterial> materials = _dataConnector.GetMaterialsFromNorm("sampleMaterialNorm1");
+            List<BaseMaterial> materials = _dataConnector.GetBaseMaterials("sampleMaterialNorm1");
 
             bool materialsAreInAlphabeticalOrder = materials[0].Name == expectedMaterialsNames[0]
                                                 && materials[1].Name == expectedMaterialsNames[1]

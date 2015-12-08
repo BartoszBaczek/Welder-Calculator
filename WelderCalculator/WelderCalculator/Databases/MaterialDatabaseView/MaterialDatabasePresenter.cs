@@ -33,7 +33,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private void LoadNormsComboBox()  
         {
-            _view.NormsList = _dataConnector.GetNamesOfAllNorms();
+            _view.NormsList = _dataConnector.GetNamesOfBaseNorms();
         }
 
         private void MakeAllCheckBoxesChecked()
@@ -75,16 +75,16 @@ namespace WelderCalculator.MaterialDatabaseView
 
         private IEnumerable<BaseMaterial> GetCurrentListOfMaterialsFromNormComboBox()
         {
-            List<string> listOfNormsNames = _dataConnector.GetNamesOfAllNorms();
+            List<string> listOfNormsNames = _dataConnector.GetNamesOfBaseNorms();
             string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
-            List<BaseMaterial> listofMaterialsFromNorm = _dataConnector.GetMaterialsFromNorm(desiredNameOfNorm);
+            List<BaseMaterial> listofMaterialsFromNorm = _dataConnector.GetBaseMaterials(desiredNameOfNorm);
 
             return listofMaterialsFromNorm;
         }
         
         private void CreateColumns(DataTable table)
         {
-            var orderOfElements = _dataConnector.GetOrderOfElements();
+            var orderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
             table.Columns.Add("GUID", typeof(Guid));
 
             table.Columns.Add("Nazwa", typeof (string));
@@ -223,7 +223,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
             var materialGuid = Guid.Parse(materialRow.Cells[0].Value.ToString());
             var currentNormName = _view.NormsList[_view.SelectedNorm];
-            var selectedMaterial = _dataConnector.GetMaterial(materialGuid, currentNormName);
+            var selectedMaterial = _dataConnector.GetBaseMaterial(materialGuid, currentNormName);
 
             return selectedMaterial;
         }
@@ -355,10 +355,10 @@ namespace WelderCalculator.MaterialDatabaseView
                 MessageBoxButtons.OKCancel);
             if (dialogResult == DialogResult.OK)
             {
-                var normToChange = _dataConnector.GetNorm(currentNorm.Name);
+                var normToChange = _dataConnector.GetBaseNorm(currentNorm.Name);
                 normToChange.Materials.RemoveAll(m => m.GuidNumber == selectedMaterial.GuidNumber);
-                _dataConnector.RemoveNorm(normToChange.Name);
-                _dataConnector.SaveNorm(normToChange);
+                _dataConnector.RemoveBaseNorm(normToChange.Name);
+                _dataConnector.SaveBaseNorm(normToChange);
                 Init();
             }
         }
@@ -366,7 +366,7 @@ namespace WelderCalculator.MaterialDatabaseView
         private BaseNorm GetCurrentNorm()
         {
             string currentNormName = _view.NormsList[_view.SelectedNorm];
-            BaseNorm norm = _dataConnector.GetNorm(currentNormName);
+            BaseNorm norm = _dataConnector.GetBaseNorm(currentNormName);
 
             return norm;
         }
