@@ -5,6 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
 using WelderCalculator.Model;
+using WelderCalculator.Repositories.Model;
 using WelderCalculator.Repositories.Model.temp2;
 
 namespace WelderCalculator.Repositories
@@ -19,7 +20,7 @@ namespace WelderCalculator.Repositories
         public BasicMaterialRepository()
         {
             _binPath = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
-            _normsPath = _binPath + @"\.." + @"\Data\";
+            _normsPath = _binPath + @"\.." + @"\Data\BaseNorms\";
             _propertiesPath = _binPath + @"\.." + @"\Data\Properties\";
         }
 
@@ -27,13 +28,31 @@ namespace WelderCalculator.Repositories
         public BasicMaterialRepository(string filePathForTestsOnly)
         {
             _binPath = string.Empty;
-            _normsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\Welder-Calculator\Welder-Calculator\WelderCalculator\WelderCalculator\Data\";
+            _normsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\Welder-Calculator\Welder-Calculator\WelderCalculator\WelderCalculator\Data\BaseNorms\";
             _propertiesPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\Welder-Calculator\Welder-Calculator\WelderCalculator\WelderCalculator\Data\Properties\";
         }
 
 
         #region NormsSerialization
         public void SerializeNorm(BaseNorm norm)
+        {
+            string pathToFile = _normsPath + norm.Name + ".json";
+            if (!File.Exists(pathToFile))
+            {
+                File.Create(pathToFile).Dispose();
+            }
+            using (FileStream fs = File.Open(_normsPath + norm.Name + ".json", FileMode.Create))
+            using (StreamWriter sw = new StreamWriter(fs))
+            using (JsonWriter jw = new JsonTextWriter(sw))
+            {
+                jw.Formatting = Formatting.Indented;
+
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(jw, norm);
+            };
+        }
+
+        public void SerializeNorm(AdditiveNorm norm)
         {
             string pathToFile = _normsPath + norm.Name + ".json";
             if (!File.Exists(pathToFile))

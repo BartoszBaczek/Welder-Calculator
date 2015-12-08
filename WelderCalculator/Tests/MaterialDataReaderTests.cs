@@ -2,7 +2,6 @@
 using System.Diagnostics;
 using NUnit.Framework;
 using WelderCalculator.MaterialModificationView.Serialization;
-using WelderCalculator.Model;
 using WelderCalculator.Repositories.Model.temp;
 
 

@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
 using WelderCalculator.Repositories.Model.temp;

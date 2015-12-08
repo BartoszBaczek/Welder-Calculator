@@ -57,11 +57,11 @@
             this.cCheckBox = new System.Windows.Forms.CheckBox();
             this.materialsDataGridView = new System.Windows.Forms.DataGridView();
             this.carbonLabel = new System.Windows.Forms.GroupBox();
+            this.alloyTypeCheckBox = new System.Windows.Forms.CheckBox();
+            this.nominalContainmentNameCheckBox = new System.Windows.Forms.CheckBox();
             this.realCheckBox = new System.Windows.Forms.CheckBox();
             this.maxCheckBox = new System.Windows.Forms.CheckBox();
             this.minCheckBox = new System.Windows.Forms.CheckBox();
-            this.alloyTypeCheckBox = new System.Windows.Forms.CheckBox();
-            this.NominalContainmentNameCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
             this.ViewLayoutPanel.SuspendLayout();
@@ -357,7 +357,7 @@
             // 
             this.carbonLabel.CausesValidation = false;
             this.carbonLabel.Controls.Add(this.alloyTypeCheckBox);
-            this.carbonLabel.Controls.Add(this.NominalContainmentNameCheckBox);
+            this.carbonLabel.Controls.Add(this.nominalContainmentNameCheckBox);
             this.carbonLabel.Controls.Add(this.realCheckBox);
             this.carbonLabel.Controls.Add(this.maxCheckBox);
             this.carbonLabel.Controls.Add(this.minCheckBox);
@@ -367,6 +367,26 @@
             this.carbonLabel.TabIndex = 16;
             this.carbonLabel.TabStop = false;
             this.carbonLabel.Text = "Wyświetlaj";
+            // 
+            // alloyTypeCheckBox
+            // 
+            this.alloyTypeCheckBox.AutoSize = true;
+            this.alloyTypeCheckBox.Location = new System.Drawing.Point(6, 83);
+            this.alloyTypeCheckBox.Name = "alloyTypeCheckBox";
+            this.alloyTypeCheckBox.Size = new System.Drawing.Size(73, 17);
+            this.alloyTypeCheckBox.TabIndex = 6;
+            this.alloyTypeCheckBox.Text = "Typ stopu";
+            this.alloyTypeCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // nominalContainmentNameCheckBox
+            // 
+            this.nominalContainmentNameCheckBox.AutoSize = true;
+            this.nominalContainmentNameCheckBox.Location = new System.Drawing.Point(6, 63);
+            this.nominalContainmentNameCheckBox.Name = "nominalContainmentNameCheckBox";
+            this.nominalContainmentNameCheckBox.Size = new System.Drawing.Size(81, 17);
+            this.nominalContainmentNameCheckBox.TabIndex = 5;
+            this.nominalContainmentNameCheckBox.Text = "Skład nom.";
+            this.nominalContainmentNameCheckBox.UseVisualStyleBackColor = true;
             // 
             // realCheckBox
             // 
@@ -397,26 +417,6 @@
             this.minCheckBox.TabIndex = 2;
             this.minCheckBox.Text = "Min";
             this.minCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // alloyTypeCheckBox
-            // 
-            this.alloyTypeCheckBox.AutoSize = true;
-            this.alloyTypeCheckBox.Location = new System.Drawing.Point(6, 83);
-            this.alloyTypeCheckBox.Name = "alloyTypeCheckBox";
-            this.alloyTypeCheckBox.Size = new System.Drawing.Size(73, 17);
-            this.alloyTypeCheckBox.TabIndex = 6;
-            this.alloyTypeCheckBox.Text = "Typ stopu";
-            this.alloyTypeCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // NominalContainmentNameCheckBox
-            // 
-            this.NominalContainmentNameCheckBox.AutoSize = true;
-            this.NominalContainmentNameCheckBox.Location = new System.Drawing.Point(6, 63);
-            this.NominalContainmentNameCheckBox.Name = "NominalContainmentNameCheckBox";
-            this.NominalContainmentNameCheckBox.Size = new System.Drawing.Size(81, 17);
-            this.NominalContainmentNameCheckBox.TabIndex = 5;
-            this.NominalContainmentNameCheckBox.Text = "Skład nom.";
-            this.NominalContainmentNameCheckBox.UseVisualStyleBackColor = true;
             // 
             // AddMaterialDatabaseForm
             // 
@@ -480,6 +480,6 @@
         private System.Windows.Forms.CheckBox maxCheckBox;
         private System.Windows.Forms.CheckBox minCheckBox;
         private System.Windows.Forms.CheckBox alloyTypeCheckBox;
-        private System.Windows.Forms.CheckBox NominalContainmentNameCheckBox;
+        private System.Windows.Forms.CheckBox nominalContainmentNameCheckBox;
     }
 }
