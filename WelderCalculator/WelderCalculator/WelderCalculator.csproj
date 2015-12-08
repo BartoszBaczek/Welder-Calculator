@@ -52,6 +52,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Databases\AddMaterialDatabaseView\AddMaterialDatabaseView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Databases\AddMaterialDatabaseView\AddMaterialDatabaseView.Designer.cs">
+      <DependentUpon>AddMaterialDatabaseView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Databases\MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
     <Compile Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
       <SubType>Form</SubType>
@@ -107,6 +113,9 @@
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StartView\StartFormPresenter.cs" />
+    <EmbeddedResource Include="Databases\AddMaterialDatabaseView\AddMaterialDatabaseView.resx">
+      <DependentUpon>AddMaterialDatabaseView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.resx">
       <DependentUpon>MaterialDatabasePropertiesForm.cs</DependentUpon>
     </EmbeddedResource>

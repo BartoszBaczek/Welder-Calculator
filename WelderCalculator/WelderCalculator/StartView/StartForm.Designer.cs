@@ -33,11 +33,11 @@
             this.openStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.materialBaseStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.additionalMaterialBaseStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.wykresSchaeffleraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.separatorStrip = new System.Windows.Forms.ToolStripSeparator();
             this.exitStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.helpStrip = new System.Windows.Forms.ToolStripMenuItem();
-            this.wykresSchaeffleraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,6 +85,14 @@
             this.additionalMaterialBaseStrip.Name = "additionalMaterialBaseStrip";
             this.additionalMaterialBaseStrip.Size = new System.Drawing.Size(243, 22);
             this.additionalMaterialBaseStrip.Text = "Baza materiałów dodatkowych";
+            this.additionalMaterialBaseStrip.Click += new System.EventHandler(this.additionalMaterialBaseStrip_Click);
+            // 
+            // wykresSchaeffleraToolStripMenuItem
+            // 
+            this.wykresSchaeffleraToolStripMenuItem.Name = "wykresSchaeffleraToolStripMenuItem";
+            this.wykresSchaeffleraToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
+            this.wykresSchaeffleraToolStripMenuItem.Text = "Wykres Schaefflera";
+            this.wykresSchaeffleraToolStripMenuItem.Click += new System.EventHandler(this.wykresSchaeffleraToolStripMenuItem_Click);
             // 
             // optionsStrip
             // 
@@ -110,13 +118,6 @@
             this.helpStrip.Size = new System.Drawing.Size(57, 20);
             this.helpStrip.Text = "Pomoc";
             this.helpStrip.Click += new System.EventHandler(this.helpStrip_Click);
-            // 
-            // wykresSchaeffleraToolStripMenuItem
-            // 
-            this.wykresSchaeffleraToolStripMenuItem.Name = "wykresSchaeffleraToolStripMenuItem";
-            this.wykresSchaeffleraToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
-            this.wykresSchaeffleraToolStripMenuItem.Text = "Wykres Schaefflera";
-            this.wykresSchaeffleraToolStripMenuItem.Click += new System.EventHandler(this.wykresSchaeffleraToolStripMenuItem_Click);
             // 
             // StartForm
             // 

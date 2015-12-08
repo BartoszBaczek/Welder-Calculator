@@ -31,12 +31,16 @@ namespace WelderCalculator.Repositories.Model.temp
 
         public override bool Equals(Material material)
         {
-            if (this.Name != material.Name)
+            var newTypeMaterial = material as BaseMaterial;
+
+            if (this.Name != newTypeMaterial.Name)
                 return false;
-            if (this.Elements.Count != material.Elements.Count)
+            if (this.Number != newTypeMaterial.Number)
+                return false;
+            if (this.Elements.Count != newTypeMaterial.Elements.Count)
                 return false;
 
-            foreach (var thatElement in material.Elements)
+            foreach (var thatElement in newTypeMaterial.Elements)
             {
                 var thisElement = this.Elements.First(x => x.Name == thatElement.Name);
                 if (thisElement.Min != thatElement.Min || thisElement.Max != thatElement.Max || thisElement.RealValue != thatElement.RealValue)

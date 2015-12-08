@@ -35,5 +35,12 @@ namespace WelderCalculator.StartView
         private void helpStrip_Click(object sender, EventArgs e)
         {
         }
+
+        private void additionalMaterialBaseStrip_Click(object sender, EventArgs e)
+        {
+            Hide();
+            Presenter.OpenAdditiveMaterialDatabase();
+            Show();
+        }
     }
 }

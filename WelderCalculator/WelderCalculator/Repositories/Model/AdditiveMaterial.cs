@@ -7,36 +7,34 @@ using WelderCalculator.Model;
 
 namespace WelderCalculator.Repositories.Model
 {
-    class AdditiveMaterial : Material
+    public class AdditiveMaterial : Material
     {
-        public string NominalCompositionName        //przesłaniam Material.Name dla jasności - Kewin, moge tak zrobic?
-        {
-            get
-            {
-                return Name;
-            }
-            set
-            {
-                Name = value;
-            }
-        }
+        public string NominalCompositionName { get { return Name; } set { Name = value; } }
 
         public string AlloyTypeName { get; set; }
 
+        public AdditiveMaterial() : base()
+        {
+            NominalCompositionName = string.Empty;
+            AlloyTypeName = string.Empty;
+        }
+
         public override bool Equals(Material material)
         {
-            if (this.Name != material.Name)
+            var newTypeMaterial = material as AdditiveMaterial;
+            if (this.NominalCompositionName != newTypeMaterial.NominalCompositionName)
                 return false;
-            if (this.Elements.Count != material.Elements.Count)
+            if (this.AlloyTypeName != newTypeMaterial.AlloyTypeName)
+                return false;
+            if (this.Elements.Count != newTypeMaterial.Elements.Count)
                 return false;
 
-            foreach (var thatElement in material.Elements)
+            foreach (var thatElement in newTypeMaterial.Elements)
             {
                 var thisElement = this.Elements.First(x => x.Name == thatElement.Name);
                 if (thisElement.Min != thatElement.Min || thisElement.Max != thatElement.Max || thisElement.RealValue != thatElement.RealValue)
                     return false;
             }
-
             return true;
         }
 

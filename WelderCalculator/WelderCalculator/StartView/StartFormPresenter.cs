@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using WelderCalculator.Databases.AddMaterialDatabaseView;
 using WelderCalculator.Drawings.SchaefflerChartView;
 using WelderCalculator.MaterialDatabaseView;
 
@@ -29,6 +30,12 @@ namespace WelderCalculator.StartView
         {
             var schaefflerChartFOrm = new SchaefflerChartForm();
             schaefflerChartFOrm.ShowDialog();
+        }
+
+        public void OpenAdditiveMaterialDatabase()
+        {
+            var additiveMaterialDatabaseForm = new AddMaterialDatabaseForm();
+            additiveMaterialDatabaseForm.ShowDialog();
         }
     }
 }
