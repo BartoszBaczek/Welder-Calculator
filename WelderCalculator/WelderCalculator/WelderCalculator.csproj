@@ -86,6 +86,8 @@
     <Compile Include="Drawings\SchaefflerChartView\SchaefflerChartPresenter.cs" />
     <Compile Include="Repositories\DataConnector.cs" />
     <Compile Include="Databases\MaterialModificationView\WindowMode.cs" />
+    <Compile Include="Repositories\Model\AdditiveMaterial.cs" />
+    <Compile Include="Repositories\Model\AdditiveNorm.cs" />
     <Compile Include="Repositories\Model\Element.cs" />
     <Compile Include="Repositories\Model\BaseNorm.cs" />
     <Compile Include="Repositories\Model\Norm.cs" />
