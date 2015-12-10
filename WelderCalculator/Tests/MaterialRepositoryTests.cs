@@ -14,12 +14,12 @@ namespace Tests
     [TestFixture]
     public class MaterialRepositoryTests
     {
-        private IBasicNormRepository _repo;
+        private NormRepository _repo;
         private SampleDataCreator _dataCreator;
         [SetUp]
         public void Init()
         {
-            _repo = new NormRepository("some fucking path");
+            _repo = new NormRepository("some path");
             _dataCreator = new SampleDataCreator();
         }
 
@@ -31,6 +31,19 @@ namespace Tests
 
             //when
             _repo.SerializeBaseNorm(testMaterialNorm);
+
+            //then
+            Assert.IsFalse(false);
+        }
+
+        [Test]
+        public void ShouldSerializeAddNorm()
+        {
+            //given
+            var testMaterialNorm = _dataCreator.GetSampleAdditiveNorm();
+
+            //when
+            _repo.SerializeAdditiveNorm(testMaterialNorm);
 
             //then
             Assert.IsFalse(false);

@@ -1,4 +1,6 @@
-﻿namespace WelderCalculator.Databases.AddMaterialDatabaseView
+﻿using System.Security.AccessControl;
+
+namespace WelderCalculator.Databases.AddMaterialDatabaseView
 {
     partial class AddMaterialDatabaseForm
     {
@@ -218,6 +220,7 @@
             this.orderElementsButton.TabIndex = 17;
             this.orderElementsButton.Text = "Kolejność";
             this.orderElementsButton.UseVisualStyleBackColor = true;
+            this.orderElementsButton.Click += new System.EventHandler(this.orderElementsButton_Click);
             // 
             // cuCheckBox
             // 
@@ -228,6 +231,8 @@
             this.cuCheckBox.TabIndex = 16;
             this.cuCheckBox.Text = "Miedź (Cu)";
             this.cuCheckBox.UseVisualStyleBackColor = true;
+            this.cuCheckBox.CheckedChanged += new System.EventHandler(this.cuCheckBox_CheckedChanged);
+
             // 
             // tiCheckBox
             // 
@@ -238,6 +243,8 @@
             this.tiCheckBox.TabIndex = 13;
             this.tiCheckBox.Text = "Tytan (Ti)";
             this.tiCheckBox.UseVisualStyleBackColor = true;
+            this.tiCheckBox.CheckedChanged += new System.EventHandler(this.tiCheckBox_CheckedChanged);
+
             // 
             // niCheckBox
             // 
@@ -248,6 +255,8 @@
             this.niCheckBox.TabIndex = 14;
             this.niCheckBox.Text = "Nikiel (Ni)";
             this.niCheckBox.UseVisualStyleBackColor = true;
+            this.niCheckBox.CheckedChanged += new System.EventHandler(this.niCheckBox_CheckedChanged);
+
             // 
             // nbCheckBox
             // 
@@ -258,6 +267,8 @@
             this.nbCheckBox.TabIndex = 8;
             this.nbCheckBox.Text = "Niob (Nb)";
             this.nbCheckBox.UseVisualStyleBackColor = true;
+            this.nbCheckBox.CheckedChanged += new System.EventHandler(this.nbCheckBox_CheckedChanged);
+
             // 
             // nCheckBox
             // 
@@ -268,6 +279,8 @@
             this.nCheckBox.TabIndex = 8;
             this.nCheckBox.Text = "Azot (N)";
             this.nCheckBox.UseVisualStyleBackColor = true;
+            this.nCheckBox.CheckedChanged += new System.EventHandler(this.nCheckBox_CheckedChanged);
+
             // 
             // mnCheckBox
             // 
@@ -278,6 +291,8 @@
             this.mnCheckBox.TabIndex = 8;
             this.mnCheckBox.Text = "Mangan (Mn)";
             this.mnCheckBox.UseVisualStyleBackColor = true;
+            this.mnCheckBox.CheckedChanged += new System.EventHandler(this.mnCheckBox_CheckedChanged);
+
             // 
             // moCheckBox
             // 
@@ -288,6 +303,8 @@
             this.moCheckBox.TabIndex = 8;
             this.moCheckBox.Text = "Molibden (Mo)";
             this.moCheckBox.UseVisualStyleBackColor = true;
+            this.moCheckBox.CheckedChanged += new System.EventHandler(this.moCheckBox_CheckedChanged);
+
             // 
             // sCheckBox
             // 
@@ -298,6 +315,8 @@
             this.sCheckBox.TabIndex = 11;
             this.sCheckBox.Text = "Siarka (S)";
             this.sCheckBox.UseVisualStyleBackColor = true;
+            this.sCheckBox.CheckedChanged += new System.EventHandler(this.sCheckBox_CheckedChanged);
+
             // 
             // siCheckBox
             // 
@@ -308,6 +327,8 @@
             this.siCheckBox.TabIndex = 10;
             this.siCheckBox.Text = "Krzem (Si)";
             this.siCheckBox.UseVisualStyleBackColor = true;
+            this.siCheckBox.CheckedChanged += new System.EventHandler(this.siCheckBox_CheckedChanged);
+
             // 
             // crCheckBox
             // 
@@ -318,6 +339,8 @@
             this.crCheckBox.TabIndex = 9;
             this.crCheckBox.Text = "Chrom (Cr)";
             this.crCheckBox.UseVisualStyleBackColor = true;
+            this.crCheckBox.CheckedChanged += new System.EventHandler(this.crCheckBox_CheckedChanged);
+
             // 
             // pCheckBox
             // 
@@ -328,6 +351,8 @@
             this.pCheckBox.TabIndex = 8;
             this.pCheckBox.Text = "Potas (P)";
             this.pCheckBox.UseVisualStyleBackColor = true;
+            this.pCheckBox.CheckedChanged += new System.EventHandler(this.pCheckBox_CheckedChanged);
+
             // 
             // cCheckBox
             // 
@@ -338,6 +363,8 @@
             this.cCheckBox.TabIndex = 7;
             this.cCheckBox.Text = "Węgiel (C)";
             this.cCheckBox.UseVisualStyleBackColor = true;
+            this.cCheckBox.CheckedChanged += new System.EventHandler(this.cCheckBox_CheckedChanged);
+
             // 
             // materialsDataGridView
             // 

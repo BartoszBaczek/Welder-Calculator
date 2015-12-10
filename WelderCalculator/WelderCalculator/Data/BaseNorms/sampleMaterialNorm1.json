@@ -3,7 +3,7 @@
     {
       "Number": "123",
       "Name": "material2",
-      "GuidNumber": "9e677ef5-4761-4d2b-9dc6-4055ad378afe",
+      "GuidNumber": "5d574b27-5bf2-44b1-ab9d-eb9994a95451",
       "Elements": [
         {
           "Name": 0,
@@ -111,7 +111,7 @@
     {
       "Number": "456",
       "Name": "material3",
-      "GuidNumber": "b791ac8e-52b8-4442-b463-d264ae00935b",
+      "GuidNumber": "9a428b63-8ec1-4c31-80c2-ba18993ad749",
       "Elements": [
         {
           "Name": 0,
@@ -219,7 +219,7 @@
     {
       "Number": "789",
       "Name": "material1",
-      "GuidNumber": "70b01911-b7be-498d-9c96-02a2320efaa6",
+      "GuidNumber": "c2fe213b-08a9-4570-b12a-0f643cdb1268",
       "Elements": [
         {
           "Name": 0,
@@ -326,5 +326,5 @@
     }
   ],
   "Name": "sampleMaterialNorm1",
-  "GuidNumber": "7689a09e-9b5f-45c8-95a7-178f56419651"
+  "GuidNumber": "1dba131d-27f0-4752-aaca-941299a345e7"
 }

@@ -22,7 +22,7 @@ namespace WelderCalculator.Repositories
         {
             _binPath = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
             _baseNormsPath =     _binPath + @"\.." + @"\Data\BaseNorms\";
-            _additiveNormsPath = _binPath + @"\.." + @"\Data\AdditiveNorms";
+            _additiveNormsPath = _binPath + @"\.." + @"\Data\AdditiveNorms\";
             _propertiesPath =    _binPath + @"\.." + @"\Data\Properties\";
         }
 
@@ -57,7 +57,7 @@ namespace WelderCalculator.Repositories
 
         public void SerializeAdditiveNorm(AdditiveNorm norm)
         {
-            string pathToFile = _baseNormsPath + norm.Name + ".json";
+            string pathToFile = _additiveNormsPath + norm.Name + ".json";
             if (!File.Exists(pathToFile))
             {
                 File.Create(pathToFile).Dispose();

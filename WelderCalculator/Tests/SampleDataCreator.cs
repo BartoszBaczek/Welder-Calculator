@@ -83,8 +83,8 @@ namespace Tests
                 AlloyTypeName = "mat3",
                 NominalCompositionName = "_mat3"
             };
-            material1.CreateBasicListOfElements();
-            foreach (var e in material1.Elements)
+            material3.CreateBasicListOfElements();
+            foreach (var e in material3.Elements)
             {
                 e.Max = 0.9;
                 e.Min = 0.8;
@@ -92,7 +92,7 @@ namespace Tests
             }
             #endregion
 
-            var sampleMaterialNorm1 = new AdditiveNorm() { Name = "sampleMaterialNorm1" };
+            var sampleMaterialNorm1 = new AdditiveNorm() { Name = "kuraw2" };
             sampleMaterialNorm1.Materials.Add(material1);
             sampleMaterialNorm1.Materials.Add(material2);
             sampleMaterialNorm1.Materials.Add((material3));

@@ -52,38 +52,38 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Databases\AddMaterialDatabaseView\AddMaterialDatabasePresenter.cs" />
-    <Compile Include="Databases\AddMaterialDatabaseView\AddMaterialDatabaseView.cs">
+    <Compile Include="Databases\AddMaterialsView\AddMaterialDatabaseView\AddMaterialDatabasePresenter.cs" />
+    <Compile Include="Databases\AddMaterialsView\AddMaterialDatabaseView\AddMaterialDatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Databases\AddMaterialDatabaseView\AddMaterialDatabaseView.Designer.cs">
-      <DependentUpon>AddMaterialDatabaseView.cs</DependentUpon>
+    <Compile Include="Databases\AddMaterialsView\AddMaterialDatabaseView\AddMaterialDatabaseForm.Designer.cs">
+      <DependentUpon>AddMaterialDatabaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Databases\AddMaterialDatabaseView\IAdditiveMaterialView.cs" />
-    <Compile Include="Databases\MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
-    <Compile Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
+    <Compile Include="Databases\AddMaterialsView\AddMaterialDatabaseView\IAdditiveMaterialView.cs" />
+    <Compile Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
+    <Compile Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.Designer.cs">
+    <Compile Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.Designer.cs">
       <DependentUpon>MaterialDatabasePropertiesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesPresenter.cs" />
-    <Compile Include="Databases\MaterialDatabaseView\IMaterialDatabaseView.cs" />
-    <Compile Include="Databases\MaterialDatabaseView\MaterialDatabaseForm.cs">
+    <Compile Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\MaterialDatabasePropertiesPresenter.cs" />
+    <Compile Include="Databases\BaseMaterialsView\MaterialDatabaseView\IMaterialDatabaseView.cs" />
+    <Compile Include="Databases\BaseMaterialsView\MaterialDatabaseView\MaterialDatabaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Databases\MaterialDatabaseView\MaterialDatabaseForm.Designer.cs">
+    <Compile Include="Databases\BaseMaterialsView\MaterialDatabaseView\MaterialDatabaseForm.Designer.cs">
       <DependentUpon>MaterialDatabaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Databases\MaterialDatabaseView\MaterialDatabasePresenter.cs" />
-    <Compile Include="Databases\MaterialModificationView\IMaterialModificationView.cs" />
-    <Compile Include="Databases\MaterialModificationView\MaterialModificationForm.cs">
+    <Compile Include="Databases\BaseMaterialsView\MaterialDatabaseView\MaterialDatabasePresenter.cs" />
+    <Compile Include="Databases\BaseMaterialsView\MaterialModificationView\IMaterialModificationView.cs" />
+    <Compile Include="Databases\BaseMaterialsView\MaterialModificationView\MaterialModificationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Databases\MaterialModificationView\MaterialModificationForm.Designer.cs">
+    <Compile Include="Databases\BaseMaterialsView\MaterialModificationView\MaterialModificationForm.Designer.cs">
       <DependentUpon>MaterialModificationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Databases\MaterialModificationView\MaterialModificationPresenter.cs" />
+    <Compile Include="Databases\BaseMaterialsView\MaterialModificationView\MaterialModificationPresenter.cs" />
     <Compile Include="Drawings\SchaefflerChartView\ISchaefflerChartView.cs" />
     <Compile Include="Drawings\SchaefflerChartView\SchaefflerChartForm.cs">
       <SubType>Form</SubType>
@@ -93,7 +93,7 @@
     </Compile>
     <Compile Include="Drawings\SchaefflerChartView\SchaefflerChartPresenter.cs" />
     <Compile Include="Repositories\DataConnector.cs" />
-    <Compile Include="Databases\MaterialModificationView\WindowMode.cs" />
+    <Compile Include="Databases\BaseMaterialsView\MaterialModificationView\WindowMode.cs" />
     <Compile Include="Repositories\IAdditiveNormRepository.cs" />
     <Compile Include="Repositories\Model\AdditiveMaterial.cs" />
     <Compile Include="Repositories\Model\AdditiveNorm.cs" />
@@ -116,17 +116,17 @@
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StartView\StartFormPresenter.cs" />
-    <EmbeddedResource Include="Databases\AddMaterialDatabaseView\AddMaterialDatabaseView.resx">
-      <DependentUpon>AddMaterialDatabaseView.cs</DependentUpon>
+    <EmbeddedResource Include="Databases\AddMaterialsView\AddMaterialDatabaseView\AddMaterialDatabaseForm.resx">
+      <DependentUpon>AddMaterialDatabaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Databases\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.resx">
+    <EmbeddedResource Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.resx">
       <DependentUpon>MaterialDatabasePropertiesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Databases\MaterialDatabaseView\MaterialDatabaseForm.resx">
+    <EmbeddedResource Include="Databases\BaseMaterialsView\MaterialDatabaseView\MaterialDatabaseForm.resx">
       <DependentUpon>MaterialDatabaseForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Databases\MaterialModificationView\MaterialModificationForm.resx">
+    <EmbeddedResource Include="Databases\BaseMaterialsView\MaterialModificationView\MaterialModificationForm.resx">
       <DependentUpon>MaterialModificationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Drawings\SchaefflerChartView\SchaefflerChartForm.resx">

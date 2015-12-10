@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using WelderCalculator.MaterialDatabaseView;
 
 namespace WelderCalculator.Databases.AddMaterialDatabaseView
 {
@@ -19,6 +13,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
         {
             InitializeComponent();
             new AddMaterialDatabasePresenter(this);
+            Presenter.Init();
         }
 
         public List<string> NormsList
@@ -197,5 +192,61 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             }
             set { this.crTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
+
+        private void orderElementsButton_Click(object sender, EventArgs e)
+        {
+            //Presenter.OnElementsOrderPropertiesButtonClicked();
+        }
+
+        #region ElementCheckBoxes
+        private void cCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("C");
+        }
+        private void pCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("P");
+        }
+        private void crCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("Cr");
+        }
+        private void niCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("Ni");
+        }
+        private void siCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("Si");
+        }
+        private void sCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("S");
+        }
+        private void moCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("Mo");
+        }
+        private void tiCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("Ti");
+        }
+        private void mnCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("Mn");
+        }
+        private void nCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("N");
+        }
+        private void nbCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("Nb");
+        }
+        private void cuCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("Cu");
+        }
+        #endregion
     }
 }
