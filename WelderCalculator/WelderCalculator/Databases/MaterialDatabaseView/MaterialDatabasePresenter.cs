@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView;
@@ -234,59 +236,60 @@ namespace WelderCalculator.MaterialDatabaseView
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
-        public void OnMaterialCheckBoxChanged(string materialName)
+        public void OnMaterialCheckBoxChanged(string elementName)
         {
-            if (materialName == "C")
-                    SetColumnsVisibiliyForElements(materialName, _view.CcheckBox);
+            if (elementName == "C")
+                    SetColumnsVisibiliyForElements(elementName, _view.CcheckBox);
             
-            if (materialName == "Si")
-                    SetColumnsVisibiliyForElements(materialName, _view.SiCheckBox);
+            if (elementName == "Si")
+                    SetColumnsVisibiliyForElements(elementName, _view.SiCheckBox);
             
-            if (materialName == "Mn")
-                    SetColumnsVisibiliyForElements(materialName, _view.MnCheckBox);
+            if (elementName == "Mn")
+                    SetColumnsVisibiliyForElements(elementName, _view.MnCheckBox);
             
-            if (materialName == "P")
-                    SetColumnsVisibiliyForElements(materialName, _view.PcheckBox);
+            if (elementName == "P")
+                    SetColumnsVisibiliyForElements(elementName, _view.PcheckBox);
             
-            if (materialName == "S")
-                    SetColumnsVisibiliyForElements(materialName, _view.ScheckBox);
+            if (elementName == "S")
+                    SetColumnsVisibiliyForElements(elementName, _view.ScheckBox);
             
-            if (materialName == "N")
-                    SetColumnsVisibiliyForElements(materialName, _view.NcheckBox);
+            if (elementName == "N")
+                    SetColumnsVisibiliyForElements(elementName, _view.NcheckBox);
             
-            if (materialName == "Cr")
-                    SetColumnsVisibiliyForElements(materialName, _view.CrCheckBox);
+            if (elementName == "Cr")
+                    SetColumnsVisibiliyForElements(elementName, _view.CrCheckBox);
             
-            if (materialName == "Mo")
-                    SetColumnsVisibiliyForElements(materialName, _view.MoCheckBox);
+            if (elementName == "Mo")
+                    SetColumnsVisibiliyForElements(elementName, _view.MoCheckBox);
             
-            if (materialName == "Nb")
-                    SetColumnsVisibiliyForElements(materialName, _view.NbCheckBox);
+            if (elementName == "Nb")
+                    SetColumnsVisibiliyForElements(elementName, _view.NbCheckBox);
             
-            if (materialName == "Ni")
-                    SetColumnsVisibiliyForElements(materialName, _view.NiCheckBox);
+            if (elementName == "Ni")
+                    SetColumnsVisibiliyForElements(elementName, _view.NiCheckBox);
             
-            if (materialName == "Ti")
-                    SetColumnsVisibiliyForElements(materialName, _view.TiCheckBox);
+            if (elementName == "Ti")
+                    SetColumnsVisibiliyForElements(elementName, _view.TiCheckBox);
             
-            if (materialName == "Al")
-                    SetColumnsVisibiliyForElements(materialName, _view.AlCheckBox);
+            if (elementName == "Al")
+                    SetColumnsVisibiliyForElements(elementName, _view.AlCheckBox);
 
-            if (materialName == "V")
-                    SetColumnsVisibiliyForElements(materialName, _view.VCheckBox);
+            if (elementName == "V")
+                    SetColumnsVisibiliyForElements(elementName, _view.VCheckBox);
             
-            if (materialName == "Cu")
-                    SetColumnsVisibiliyForElements(materialName, _view.CuCheckBox);
+            if (elementName == "Cu")
+                    SetColumnsVisibiliyForElements(elementName, _view.CuCheckBox);
        }
 
-        private void SetColumnsVisibiliyForElements(string materialName, bool visibility)
+        private void SetColumnsVisibiliyForElements(string elementName, bool visibility)
         {
             if (_view.MinCheckBox)
-                _view.DataGridView.Columns[materialName + " min"].Visible = visibility;
+                _view.DataGridView.Columns[elementName + " min"].Visible = visibility;
             if (_view.MaxCheckBox)
-                _view.DataGridView.Columns[materialName + " max"].Visible = visibility;
+                _view.DataGridView.Columns[elementName + " max"].Visible = visibility;
             if (_view.RealCheckBox)
-                _view.DataGridView.Columns[materialName + " real"].Visible = visibility;
+                _view.DataGridView.Columns[elementName + " real"].Visible = visibility;
+
         }
 
         public void OnViewOptionsCheckBoxChanged(string option)

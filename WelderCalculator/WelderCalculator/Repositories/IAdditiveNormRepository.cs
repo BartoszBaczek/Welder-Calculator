@@ -13,6 +13,6 @@ namespace WelderCalculator.Repositories
 
 
         void SerializeAdditiveNormsProperties(List<Category.OfElement> properties);
-        List<Category.OfElement> DeserialzieAdditiveNormsProperties();
+        List<Category.OfElement> DeserializeAdditiveNormsProperties();
     }
 }

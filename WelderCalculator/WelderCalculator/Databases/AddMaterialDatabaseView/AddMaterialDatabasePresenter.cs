@@ -13,5 +13,18 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             _view.Presenter = this;
             _dataConnector = new DataConnector();
         }
+
+        public void Init()
+        {
+            LoadNormComboBoxes();
+        }
+
+        private void LoadNormComboBoxes()
+        {
+            _view.NormsList = _dataConnector.GetNamesOfAdditiveNorms();
+        }
+
+
+
     }
 }

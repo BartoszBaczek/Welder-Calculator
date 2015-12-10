@@ -159,7 +159,7 @@ namespace WelderCalculator.Repositories
             return orderOfelements;
         }
 
-        public List<Category.OfElement> DeserialzieAdditiveNormsProperties()
+        public List<Category.OfElement> DeserializeAdditiveNormsProperties()
         {
             string fileName = "OrderInAdditiveNormDataGridView";
             string pathToFile = _propertiesPath + fileName + ".json";

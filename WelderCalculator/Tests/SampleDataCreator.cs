@@ -1,4 +1,5 @@
 ﻿using WelderCalculator.Model;
+using WelderCalculator.Repositories.Model;
 using WelderCalculator.Repositories.Model.temp;
 using WelderCalculator.Repositories.Model.temp2;
 
@@ -47,6 +48,58 @@ namespace Tests
             return sampleMaterialNorm1;
         }
 
+        public AdditiveNorm GetSampleAdditiveNorm()
+        {
+            #region Create 3 sample materials
+            //given
+            var material1 = new AdditiveMaterial()
+            {
+                AlloyTypeName = "mat1",
+                NominalCompositionName = "_mat1"
+            };
+            material1.CreateBasicListOfElements();
+            foreach (var e in material1.Elements)
+            {
+                e.Max = 0.9;
+                e.Min = 0.8;
+                e.RealValue = 0.85;
+            }
+
+            var material2 = new AdditiveMaterial()
+            {
+                AlloyTypeName = "mat",
+                NominalCompositionName = "_mat2"
+            };
+            material2.CreateBasicListOfElements();
+            foreach (var e in material2.Elements)
+            {
+                e.Max = 0.9;
+                e.Min = 0.8;
+                e.RealValue = 0.85;
+            }
+
+            var material3 = new AdditiveMaterial()
+            {
+                AlloyTypeName = "mat3",
+                NominalCompositionName = "_mat3"
+            };
+            material1.CreateBasicListOfElements();
+            foreach (var e in material1.Elements)
+            {
+                e.Max = 0.9;
+                e.Min = 0.8;
+                e.RealValue = 0.85;
+            }
+            #endregion
+
+            var sampleMaterialNorm1 = new AdditiveNorm() { Name = "sampleMaterialNorm1" };
+            sampleMaterialNorm1.Materials.Add(material1);
+            sampleMaterialNorm1.Materials.Add(material2);
+            sampleMaterialNorm1.Materials.Add((material3));
+
+            return sampleMaterialNorm1;
+        }
+
         public BaseMaterial GetSampleMaterial()
         {
             var material = new BaseMaterial() { Name = "material1", Number = "123" };
@@ -59,6 +112,26 @@ namespace Tests
                 e.RealValue = 0.47;
             }
 
+            return material;
+        }
+
+        public AdditiveMaterial GetAdditiveMaterial()
+        {
+            var material = new AdditiveMaterial()
+            {
+                AlloyTypeName = "sadasd",
+                NominalCompositionName = "asdasd"
+            };
+    
+            material.CreateBasicListOfElements();
+    
+           foreach (var e in material.Elements)
+            {
+                 e.Max = 0.5;
+                 e.Min = 0.4;
+                 e.RealValue = 0.47;
+            }
+    
             return material;
         }
     }
