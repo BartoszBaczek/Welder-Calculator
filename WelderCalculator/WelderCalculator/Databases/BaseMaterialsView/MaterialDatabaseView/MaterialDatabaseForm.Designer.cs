@@ -65,6 +65,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.maxCheckBox = new System.Windows.Forms.CheckBox();
             this.minCheckBox = new System.Windows.Forms.CheckBox();
             this.numberCheckBox = new System.Windows.Forms.CheckBox();
+            this.addNewNormButton = new System.Windows.Forms.Button();
             this.ViewLayoutPanel.SuspendLayout();
             this.DataModifLayoutPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
@@ -456,11 +457,22 @@ namespace WelderCalculator.MaterialDatabaseView
             this.numberCheckBox.UseVisualStyleBackColor = true;
             this.numberCheckBox.CheckedChanged += new System.EventHandler(this.numberCheckBox_CheckedChanged);
             // 
+            // addNewNormButton
+            // 
+            this.addNewNormButton.Location = new System.Drawing.Point(49, 53);
+            this.addNewNormButton.Name = "addNewNormButton";
+            this.addNewNormButton.Size = new System.Drawing.Size(140, 23);
+            this.addNewNormButton.TabIndex = 16;
+            this.addNewNormButton.Text = "Dodaj nową normę";
+            this.addNewNormButton.UseVisualStyleBackColor = true;
+            this.addNewNormButton.Click += new System.EventHandler(this.addNewNormButton_Click);
+            // 
             // MaterialDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 400);
+            this.Controls.Add(this.addNewNormButton);
             this.Controls.Add(this.carbonLabel);
             this.Controls.Add(this.materialsDataGridView);
             this.Controls.Add(this.ViewLayoutPanel);
@@ -531,6 +543,7 @@ namespace WelderCalculator.MaterialDatabaseView
         private System.Windows.Forms.CheckBox cuCheckBox;
         private System.Windows.Forms.CheckBox vCheckBox;
         private System.Windows.Forms.Button orderElementsButton;
+        private Button addNewNormButton;
 
 
     }

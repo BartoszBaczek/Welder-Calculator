@@ -468,8 +468,7 @@ namespace WelderCalculator.MaterialModificationView
 
         private double? GetTextBoxValue(TextBox textbox)
         {
-            string text = textbox.Text.Trim();
-
+            string text = textbox.Text.Trim().Replace('.', ',');
             if (string.IsNullOrEmpty(text))
                 return null;
             return Convert.ToDouble(text);

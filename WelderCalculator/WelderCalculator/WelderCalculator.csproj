@@ -84,6 +84,14 @@
       <DependentUpon>MaterialModificationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Databases\BaseMaterialsView\MaterialModificationView\MaterialModificationPresenter.cs" />
+    <Compile Include="Databases\BaseMaterialsView\NormAdderView\INormAdderView.cs" />
+    <Compile Include="Databases\BaseMaterialsView\NormAdderView\NormAdderPresenter.cs" />
+    <Compile Include="Databases\BaseMaterialsView\NormAdderView\NormAdderView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Databases\BaseMaterialsView\NormAdderView\NormAdderView.Designer.cs">
+      <DependentUpon>NormAdderView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Drawings\SchaefflerChartView\ISchaefflerChartView.cs" />
     <Compile Include="Drawings\SchaefflerChartView\SchaefflerChartForm.cs">
       <SubType>Form</SubType>
@@ -129,6 +137,9 @@
     <EmbeddedResource Include="Databases\BaseMaterialsView\MaterialModificationView\MaterialModificationForm.resx">
       <DependentUpon>MaterialModificationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Databases\BaseMaterialsView\NormAdderView\NormAdderView.resx">
+      <DependentUpon>NormAdderView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Drawings\SchaefflerChartView\SchaefflerChartForm.resx">
       <DependentUpon>SchaefflerChartForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,9 +171,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Drawings\ImageSource\images.jpg" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

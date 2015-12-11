@@ -323,6 +323,114 @@
       "CEq": 0.28500000000000003,
       "NiEq": 9.225,
       "CrEq": 0.89999999999999991
+    },
+    {
+      "Number": "879",
+      "Name": "asd",
+      "GuidNumber": "97b3753d-c592-45e3-a318-bb945d074ecb",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Węgiel",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 11,
+          "FullName": "Aluminium",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Min": 432.0,
+          "Max": null,
+          "RealValue": null
+        }
+      ],
+      "CEq": null,
+      "NiEq": null,
+      "CrEq": null
     }
   ],
   "Name": "sampleMaterialNorm1",

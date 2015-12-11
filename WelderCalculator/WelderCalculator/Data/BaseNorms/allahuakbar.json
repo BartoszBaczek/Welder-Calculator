@@ -15,7 +15,7 @@
         {
           "Name": 1,
           "FullName": "Krzem",
-          "Min": 0.4,
+          "Min": 0.9,
           "Max": 0.5,
           "RealValue": 0.47
         },
@@ -29,7 +29,7 @@
         {
           "Name": 3,
           "FullName": "Potas",
-          "Min": 0.4,
+          "Min": 0.9,
           "Max": 0.5,
           "RealValue": 0.47
         },

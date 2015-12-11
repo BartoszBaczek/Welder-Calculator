@@ -4,6 +4,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
+using WelderCalculator.Databases.BaseMaterialsView;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView;
 using WelderCalculator.MaterialModificationView.Serialization;
@@ -316,8 +317,29 @@ namespace WelderCalculator.MaterialDatabaseView
             foreach (DataGridViewColumn column in _view.DataGridView.Columns)
             {
                 if (column.Name.Contains(option))
+                {
                     column.Visible = visibility;
+                    SetElementVisibilityForAllColumns();
+                }
             }
+        }
+
+        private void SetElementVisibilityForAllColumns()
+        {
+            SetColumnsVisibiliyForElements("C", _view.CcheckBox);
+            SetColumnsVisibiliyForElements("Si", _view.SiCheckBox);
+            SetColumnsVisibiliyForElements("Mn", _view.MnCheckBox);
+            SetColumnsVisibiliyForElements("P", _view.PcheckBox);
+            SetColumnsVisibiliyForElements("S", _view.ScheckBox);
+            SetColumnsVisibiliyForElements("N", _view.NcheckBox);
+            SetColumnsVisibiliyForElements("Cr", _view.CrCheckBox);
+            SetColumnsVisibiliyForElements("Mo", _view.MoCheckBox);
+            SetColumnsVisibiliyForElements("Nb", _view.NbCheckBox);
+            SetColumnsVisibiliyForElements("Ni", _view.NiCheckBox);
+            SetColumnsVisibiliyForElements("Ti", _view.TiCheckBox);
+            SetColumnsVisibiliyForElements("Al", _view.AlCheckBox);
+            SetColumnsVisibiliyForElements("V", _view.VCheckBox);
+            SetColumnsVisibiliyForElements("Cu", _view.CuCheckBox);
         }
         
         public void OnElementsOrderPropertiesButtonClicked()
@@ -343,6 +365,8 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             var currentNorm = GetCurrentNorm();
             var material = GetSelectedMaterial();
+            if (material == null)
+                return;
 
             var modifyMaterialForm = new MaterialModificationForm(currentNorm, material);
             modifyMaterialForm.ShowDialog();
@@ -353,6 +377,9 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             var currentNorm = GetCurrentNorm();
             var selectedMaterial = GetSelectedMaterial();
+
+            if (selectedMaterial == null)
+                return;
 
             var dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć wybrany materiał?", "Usuń materiał",
                 MessageBoxButtons.OKCancel);
@@ -372,6 +399,13 @@ namespace WelderCalculator.MaterialDatabaseView
             BaseNorm norm = _dataConnector.GetBaseNorm(currentNormName);
 
             return norm;
+        }
+
+        public void OnAddNormButtonClicked()
+        {
+            var addNormView = new NormAdderView();
+            addNormView.ShowDialog();
+            Init();
         }
     }
 }
