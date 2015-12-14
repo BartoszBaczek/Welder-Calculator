@@ -291,6 +291,7 @@ namespace WelderCalculator.MaterialDatabaseView
         private void orderElementsButton_Click(object sender, System.EventArgs e)
         {
             Presenter.OnElementsOrderPropertiesButtonClicked();
+            Presenter.Refresh();
         }
 
         private void materialsDataGridView_SelectedRowChanged(object sender, EventArgs e)

@@ -313,7 +313,7 @@ namespace WelderCalculator.MaterialDatabaseView
         
         public void OnElementsOrderPropertiesButtonClicked()
         {
-            var orderPropertiesForm = new MaterialDatabasePropertiesForm();
+            var orderPropertiesForm = new MaterialDatabasePropertiesForm(MaterialType.BaseMaterial);
             orderPropertiesForm.ShowDialog();
         }
 
@@ -375,6 +375,14 @@ namespace WelderCalculator.MaterialDatabaseView
             var addNormView = new NormAdderView();
             addNormView.ShowDialog();
             Init();
+        }
+
+        public void Refresh()
+        {
+            LoadNormsComboBox();
+            _view.GridSource = null;
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
     }
 }

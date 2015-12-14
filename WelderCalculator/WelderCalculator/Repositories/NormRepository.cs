@@ -123,7 +123,7 @@ namespace WelderCalculator.Repositories
         #region PropertiesSerialization
         public void SerializeBaseNormsProperties(List<Category.OfElement> properties)
         {
-            using (var fs = File.Open(_baseNormsPath + "OrderInBaseNormDataGridView.json", FileMode.Create))
+            using (var fs = File.Open(_propertiesPath + "OrderInBaseNormDataGridView.json", FileMode.Create))
             using (var sw = new StreamWriter(fs))
             using (JsonWriter jw = new JsonTextWriter(sw))
             {
@@ -136,7 +136,7 @@ namespace WelderCalculator.Repositories
 
         public void SerializeAdditiveNormsProperties(List<Category.OfElement> properties)
         {
-            using (var fs = File.Open(_additiveNormsPath + "OrderInAdditiveNormDataGridView.json", FileMode.Create))
+            using (var fs = File.Open(_propertiesPath + "OrderInAdditiveNormDataGridView.json", FileMode.Create))
             using (var sw = new StreamWriter(fs))
             using (JsonWriter jw = new JsonTextWriter(sw))
             {

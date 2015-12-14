@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 using WelderCalculator.MaterialModificationView.Serialization;
@@ -23,13 +22,22 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         private void Init()
         {
-            var lastSavedOrderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
-            BindDataToComboBoxes(lastSavedOrderOfElements);
-
-            UpdateComboBoxes();
+            if (_view.MaterialType == MaterialType.BaseMaterial)
+            {
+                var lastSavedOrderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
+                BindDataToComboBoxes(lastSavedOrderOfElements);
+                UpdateComboBoxes();
+            }
+            else
+            {
+                var lastSavedOrderOfElements = _dataConnector.GetOrderOfElementsForAdditiveMaterial();
+                BindDataToComboBoxes(lastSavedOrderOfElements);
+                UpdateComboBoxes();
+            }
+            
         }
 
-        private void BindDataToComboBoxes(List<Category.OfElement> elementsInOrder)
+        private void BindDataToComboBoxes(IEnumerable<Category.OfElement> elementsInOrder)
         {
             List<string> dataToBind = elementsInOrder.Select(element => element.ToString()).ToList();
 
@@ -56,11 +64,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
                 if (!string.IsNullOrEmpty(currentDataSource[currentSelectedIndex]))
                     usedElements.Add(currentDataSource[currentSelectedIndex]);
-                else
-                {
-                    Debug.WriteLine("PUSTKA");
-                    Debug.WriteLine(" ");
-                }
             }
             for (int i = 0; i < _view.NumberOfComboBoxes; i++)
             {
@@ -73,7 +76,11 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 List<string> dataNotToBind = new List<string>(usedElements);
                 dataNotToBind.Remove(selectedElement);
 
-                List<Category.OfElement> orderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
+                List<Category.OfElement> orderOfElements;
+                if (_view.MaterialType == MaterialType.BaseMaterial)
+                    orderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
+                else
+                    orderOfElements = _dataConnector.GetOrderOfElementsForAdditiveMaterial();
                 List<string> maxPossibleDataSource = orderOfElements.Select(element => element.ToString()).ToList();
                 maxPossibleDataSource.Add(string.Empty);
 
@@ -94,7 +101,11 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
             bool someComboBoxIsEmpty = false;
 
-            var lastSavedOrder = _dataConnector.GetOrderOfElementsForBaseMaterial();
+            List<Category.OfElement> lastSavedOrder;
+            if (_view.MaterialType == MaterialType.BaseMaterial)
+                lastSavedOrder = _dataConnector.GetOrderOfElementsForBaseMaterial();
+            else
+                lastSavedOrder = _dataConnector.GetOrderOfElementsForAdditiveMaterial();
             var newOrder = new List<Category.OfElement>();
 
             for (int i = 0; i < _view.NumberOfComboBoxes; i++)
@@ -121,7 +132,11 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 var dialogResult = MessageBox.Show("Niektóre pola zawierają puste miejsca. Czy chcesz przywrócić ostatnią kolejność?", "AWARIA", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    List<Category.OfElement> orderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
+                    List<Category.OfElement> orderOfElements;
+                    if (_view.MaterialType == MaterialType.BaseMaterial)
+                        orderOfElements = _dataConnector.GetOrderOfElementsForBaseMaterial();
+                    else
+                        orderOfElements = _dataConnector.GetOrderOfElementsForAdditiveMaterial();
 
                     BindDataToComboBoxes(orderOfElements);
 
@@ -133,7 +148,12 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
                 var dialogResult = MessageBox.Show("Czy na pewno chcesz zapisać nową kolejność pierwiastków?", "POTWIERDZENIE", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    _dataConnector.SaveBaseNormProperties(newOrder);
+                    if (_view.MaterialType == MaterialType.BaseMaterial)
+                        _dataConnector.SaveBaseNormProperties(newOrder);
+                    else
+                        _dataConnector.SaveAdditiveNormPRoperties(newOrder);
+
+                    _view.CloseDialog();
                 }
             }
             else

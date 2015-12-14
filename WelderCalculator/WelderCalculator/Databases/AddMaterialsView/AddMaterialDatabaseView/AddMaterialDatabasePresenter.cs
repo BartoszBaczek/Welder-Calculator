@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories.Model;
@@ -292,7 +293,16 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
 
         public void OnElementsOrderPropertiesButtonClicked()
         {
-            
+            var orderPropertiesForm = new MaterialDatabasePropertiesForm(MaterialType.AdditionalMaterial);
+            orderPropertiesForm.ShowDialog();
+        }
+
+        public void Refresh()
+        {
+            LoadNormComboBoxes();
+            _view.GridSource = null;
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
 

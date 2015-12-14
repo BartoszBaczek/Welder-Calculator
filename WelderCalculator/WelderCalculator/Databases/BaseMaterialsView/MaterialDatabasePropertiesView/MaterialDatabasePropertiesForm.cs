@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
@@ -15,76 +16,29 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
     {
         public MaterialDatabasePropertiesPresenter Presenter { private get; set; }
 
-        private const int NUMBER_OF_COMBOBOXES_IN_FORM = 14;
+        public MaterialType MaterialType { get; private set; }
 
-        public int NumberOfComboBoxes { get { return NUMBER_OF_COMBOBOXES_IN_FORM; } }
+        public int NumberOfComboBoxes { get { return MaterialType == MaterialType.BaseMaterial ? 14 : 12; } }
 
 
-        public MaterialDatabasePropertiesForm()
+        public MaterialDatabasePropertiesForm(MaterialType materialType)
         {
+            MaterialType = materialType;
             InitializeComponent();
             new MaterialDatabasePropertiesPresenter(this);
-        }
-
-        #region DataSourcesForComboBoxes
-        public void SetDataSourcesForComboBoxes(List<List<string>> listsOfDataSources)
-        {
-            if (listsOfDataSources.Count != NUMBER_OF_COMBOBOXES_IN_FORM)
-                throw new InvalidOperationException("Number of elements in listsOfDataSources must be the same as number of comboBoxes");
-
-            for (int i = 0; i < listsOfDataSources.Count; i++)
+            if (MaterialType == MaterialType.AdditionalMaterial)
             {
-                switch (i)
-                {
-                    case 0:
-                        comboBox1st.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 1:
-                        comboBox2nd.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 2:
-                        comboBox3rd.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 3:
-                        comboBox4th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 4:
-                        comboBox5th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 5:
-                        comboBox6th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 6:
-                        comboBox7th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 7:
-                        comboBox8th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 8:
-                        comboBox9th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 9:
-                        comboBox10th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 10:
-                        comboBox11th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 11:
-                        comboBox12th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 12:
-                        comboBox13th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                    case 13:
-                        comboBox14th.DataSource = listsOfDataSources[i].ToList();
-                        break;
-                }
+                label10.Visible = false;    //change name to label 13
+                label11.Visible = false;    //change name to label 14
+                comboBox13th.Visible = false;
+                comboBox14th.Visible = false;
             }
         }
 
+        #region DataSourcesForComboBoxes
         public void SetDataSourcesForComboBoxes(int comboBoxIndex, List<string> listOfAvalibleElements)
         {
-            if (comboBoxIndex < 1 || comboBoxIndex > NUMBER_OF_COMBOBOXES_IN_FORM)
+            if (comboBoxIndex < 1 || comboBoxIndex > NumberOfComboBoxes)
                 throw new ArgumentException("There is no comboBox with that number");
 
             switch (comboBoxIndex)
@@ -136,30 +90,9 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             }
         }
 
-        public List<List<string>> GetListOfAvalibleElementsForComboBoxes()
-        {
-            return new List<List<string>>()
-            {
-                comboBox1st.DataSource as List<string>,
-                comboBox2nd.DataSource as List<string>,
-                comboBox3rd.DataSource as List<string>,
-                comboBox4th.DataSource as List<string>,
-                comboBox5th.DataSource as List<string>,
-                comboBox6th.DataSource as List<string>,
-                comboBox7th.DataSource as List<string>,
-                comboBox8th.DataSource as List<string>,
-                comboBox9th.DataSource as List<string>,
-                comboBox10th.DataSource as List<string>,
-                comboBox11th.DataSource as List<string>,
-                comboBox12th.DataSource as List<string>,
-                comboBox13th.DataSource as List<string>,
-                comboBox14th.DataSource as List<string>,
-            };
-        }
-
         public List<string> GetListOfAvalibleElementsForComboBoxes(int comboBoxIndex)
         {
-            if (comboBoxIndex < 1 || comboBoxIndex > NUMBER_OF_COMBOBOXES_IN_FORM)
+            if (comboBoxIndex < 1 || comboBoxIndex > NumberOfComboBoxes)
                 throw new ArgumentException("There is no combo box with that number");
 
             switch (comboBoxIndex)
@@ -201,7 +134,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         #region SelectedIndexesForComboBoxes
         public int GetSelectedIndex(int numberOfComboBox)
         {
-            if (numberOfComboBox < 1 || numberOfComboBox > NUMBER_OF_COMBOBOXES_IN_FORM)
+            if (numberOfComboBox < 1 || numberOfComboBox > NumberOfComboBoxes)
                 throw new ArgumentException("Number of comboBox is out of range");
             switch (numberOfComboBox)
             {
@@ -240,7 +173,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         public void SetSelectedIndex(int numberOfComboBox, int indexToSet)
         {
-            if (numberOfComboBox < 1 || numberOfComboBox > NUMBER_OF_COMBOBOXES_IN_FORM)
+            if (numberOfComboBox < 1 || numberOfComboBox > NumberOfComboBoxes)
                 throw new ArgumentException("There is no comboBox with that number");
 
             switch (numberOfComboBox)
@@ -360,7 +293,6 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
         {
             Presenter.OnCancelButtonPressed();
         }
-
 
         public void CloseDialog()
         {
