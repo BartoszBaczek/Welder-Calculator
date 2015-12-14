@@ -83,8 +83,8 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             var orderOfElements = _dataConnector.GetOrderOfElementsForAdditiveMaterial();
             table.Columns.Add("GUID", typeof(Guid));
 
-            table.Columns.Add("NominalCompositeName", typeof(string));
-            table.Columns.Add("AlloyTypeName", typeof(string));
+            table.Columns.Add("nominalCompositeName", typeof(string));
+            table.Columns.Add("alloyTypeName", typeof(string));
 
             foreach (Category.OfElement type in orderOfElements)
             {
@@ -117,8 +117,8 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
                 DataRow newRow = table.NewRow();
 
                 newRow["GUID"] = material.GuidNumber;
-                newRow["NominalCompositeName"] = material.NominalCompositionName;
-                newRow["AlloyTypeName"] = material.AlloyTypeName;
+                newRow["nominalCompositeName"] = material.NominalCompositionName;
+                newRow["alloyTypeName"] = material.AlloyTypeName;
                 FillElementColumns(newRow, "C min", "C max", "C real", Category.OfElement.C, material);
                 FillElementColumns(newRow, "Si min", "Si max", "Si real", Category.OfElement.Si, material);
                 FillElementColumns(newRow, "Mn min", "Mn max", "Mn real", Category.OfElement.Mn, material);
@@ -239,5 +239,62 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
                 _view.DataGridView.Columns[elementName + " real"].Visible = visibility;
 
         }
+
+        public void OnViewOptionsCheckBoxChanged(string option)
+        {
+            switch (option)
+            {
+                case "min":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.MinCheckBox);
+                    break;
+                case "max":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.MaxCheckBox);
+                    break;
+                case "real":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.RealCheckBox);
+                    break;
+                case "nominalCompositeName":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.NominalContainmentNameCheckBox);
+                    break;
+                case "alloyTypeName":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.AlloyTypeNameCheckBox);
+                    break;
+            }
+        }
+
+        private void SetColumnsVisibilityForMinMaxRealNumber(string option, bool visibility)
+        {
+            foreach (DataGridViewColumn column in _view.DataGridView.Columns)
+            {
+                if (column.Name.Contains(option))
+                {
+                    column.Visible = visibility;
+                    SetElementVisibilityForAllColumns();
+                }
+            }
+        }
+
+        private void SetElementVisibilityForAllColumns()
+        {
+            SetColumnsVisibiliyForElements("C", _view.CcheckBox);
+            SetColumnsVisibiliyForElements("Si", _view.SiCheckBox);
+            SetColumnsVisibiliyForElements("Mn", _view.MnCheckBox);
+            SetColumnsVisibiliyForElements("P", _view.PcheckBox);
+            SetColumnsVisibiliyForElements("S", _view.ScheckBox);
+            SetColumnsVisibiliyForElements("N", _view.NcheckBox);
+            SetColumnsVisibiliyForElements("Cr", _view.CrCheckBox);
+            SetColumnsVisibiliyForElements("Mo", _view.MoCheckBox);
+            SetColumnsVisibiliyForElements("Nb", _view.NbCheckBox);
+            SetColumnsVisibiliyForElements("Ni", _view.NiCheckBox);
+            SetColumnsVisibiliyForElements("Ti", _view.TiCheckBox);
+            SetColumnsVisibiliyForElements("Cu", _view.CuCheckBox);
+        }
+
+        public void OnElementsOrderPropertiesButtonClicked()
+        {
+            
+        }
+
+
     }
 }

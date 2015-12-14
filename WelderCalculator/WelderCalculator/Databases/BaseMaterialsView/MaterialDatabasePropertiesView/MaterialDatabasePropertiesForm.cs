@@ -5,9 +5,14 @@ using System.Windows.Forms;
 
 namespace WelderCalculator.MaterialDatabasePropertiesView
 {
+    public enum MaterialType
+    {
+        AdditionalMaterial,
+        BaseMaterial
+    };
+
     public partial class MaterialDatabasePropertiesForm : Form, IMaterialDatabasePropertiesView
     {
-
         public MaterialDatabasePropertiesPresenter Presenter { private get; set; }
 
         private const int NUMBER_OF_COMBOBOXES_IN_FORM = 14;

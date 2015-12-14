@@ -193,10 +193,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             set { this.crTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
         }
 
-        private void orderElementsButton_Click(object sender, EventArgs e)
-        {
-            //Presenter.OnElementsOrderPropertiesButtonClicked();
-        }
 
         #region ElementCheckBoxes
         private void cCheckBox_CheckedChanged(object sender, System.EventArgs e)
@@ -248,5 +244,40 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             Presenter.OnMaterialCheckBoxChanged("Cu");
         }
         #endregion
+
+        private void numberCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged("Numer");
+        }
+
+        private void minCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged("min");
+        }
+
+        private void maxCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged("max");
+        }
+
+        private void realCheckBox_CheckedChanged(object sender, System.EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged("real");
+        }
+
+        private void nominalContainmentNameCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged("nominalCompositeName");
+        }
+
+        private void alloyTypeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnViewOptionsCheckBoxChanged("alloyTypeName");
+        }
+
+        private void orderElementsButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnElementsOrderPropertiesButtonClicked();
+        }
     }
 }

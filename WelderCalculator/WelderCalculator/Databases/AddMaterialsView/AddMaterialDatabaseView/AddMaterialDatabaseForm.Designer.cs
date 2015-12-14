@@ -232,7 +232,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.cuCheckBox.Text = "Miedź (Cu)";
             this.cuCheckBox.UseVisualStyleBackColor = true;
             this.cuCheckBox.CheckedChanged += new System.EventHandler(this.cuCheckBox_CheckedChanged);
-
             // 
             // tiCheckBox
             // 
@@ -244,7 +243,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.tiCheckBox.Text = "Tytan (Ti)";
             this.tiCheckBox.UseVisualStyleBackColor = true;
             this.tiCheckBox.CheckedChanged += new System.EventHandler(this.tiCheckBox_CheckedChanged);
-
             // 
             // niCheckBox
             // 
@@ -256,7 +254,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.niCheckBox.Text = "Nikiel (Ni)";
             this.niCheckBox.UseVisualStyleBackColor = true;
             this.niCheckBox.CheckedChanged += new System.EventHandler(this.niCheckBox_CheckedChanged);
-
             // 
             // nbCheckBox
             // 
@@ -268,7 +265,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.nbCheckBox.Text = "Niob (Nb)";
             this.nbCheckBox.UseVisualStyleBackColor = true;
             this.nbCheckBox.CheckedChanged += new System.EventHandler(this.nbCheckBox_CheckedChanged);
-
             // 
             // nCheckBox
             // 
@@ -280,7 +276,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.nCheckBox.Text = "Azot (N)";
             this.nCheckBox.UseVisualStyleBackColor = true;
             this.nCheckBox.CheckedChanged += new System.EventHandler(this.nCheckBox_CheckedChanged);
-
             // 
             // mnCheckBox
             // 
@@ -292,7 +287,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.mnCheckBox.Text = "Mangan (Mn)";
             this.mnCheckBox.UseVisualStyleBackColor = true;
             this.mnCheckBox.CheckedChanged += new System.EventHandler(this.mnCheckBox_CheckedChanged);
-
             // 
             // moCheckBox
             // 
@@ -304,7 +298,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.moCheckBox.Text = "Molibden (Mo)";
             this.moCheckBox.UseVisualStyleBackColor = true;
             this.moCheckBox.CheckedChanged += new System.EventHandler(this.moCheckBox_CheckedChanged);
-
             // 
             // sCheckBox
             // 
@@ -316,7 +309,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.sCheckBox.Text = "Siarka (S)";
             this.sCheckBox.UseVisualStyleBackColor = true;
             this.sCheckBox.CheckedChanged += new System.EventHandler(this.sCheckBox_CheckedChanged);
-
             // 
             // siCheckBox
             // 
@@ -328,7 +320,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.siCheckBox.Text = "Krzem (Si)";
             this.siCheckBox.UseVisualStyleBackColor = true;
             this.siCheckBox.CheckedChanged += new System.EventHandler(this.siCheckBox_CheckedChanged);
-
             // 
             // crCheckBox
             // 
@@ -340,7 +331,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.crCheckBox.Text = "Chrom (Cr)";
             this.crCheckBox.UseVisualStyleBackColor = true;
             this.crCheckBox.CheckedChanged += new System.EventHandler(this.crCheckBox_CheckedChanged);
-
             // 
             // pCheckBox
             // 
@@ -352,7 +342,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.pCheckBox.Text = "Potas (P)";
             this.pCheckBox.UseVisualStyleBackColor = true;
             this.pCheckBox.CheckedChanged += new System.EventHandler(this.pCheckBox_CheckedChanged);
-
             // 
             // cCheckBox
             // 
@@ -364,7 +353,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.cCheckBox.Text = "Węgiel (C)";
             this.cCheckBox.UseVisualStyleBackColor = true;
             this.cCheckBox.CheckedChanged += new System.EventHandler(this.cCheckBox_CheckedChanged);
-
             // 
             // materialsDataGridView
             // 
@@ -404,6 +392,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.alloyTypeCheckBox.TabIndex = 6;
             this.alloyTypeCheckBox.Text = "Typ stopu";
             this.alloyTypeCheckBox.UseVisualStyleBackColor = true;
+            this.alloyTypeCheckBox.CheckedChanged += new System.EventHandler(this.alloyTypeCheckBox_CheckedChanged);
             // 
             // nominalContainmentNameCheckBox
             // 
@@ -414,6 +403,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.nominalContainmentNameCheckBox.TabIndex = 5;
             this.nominalContainmentNameCheckBox.Text = "Skład nom.";
             this.nominalContainmentNameCheckBox.UseVisualStyleBackColor = true;
+            this.nominalContainmentNameCheckBox.CheckedChanged += new System.EventHandler(this.nominalContainmentNameCheckBox_CheckedChanged);
             // 
             // realCheckBox
             // 
@@ -424,6 +414,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.realCheckBox.TabIndex = 4;
             this.realCheckBox.Text = "Real";
             this.realCheckBox.UseVisualStyleBackColor = true;
+            this.realCheckBox.CheckedChanged += new System.EventHandler(this.realCheckBox_CheckedChanged);
             // 
             // maxCheckBox
             // 
@@ -434,6 +425,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.maxCheckBox.TabIndex = 3;
             this.maxCheckBox.Text = "Max";
             this.maxCheckBox.UseVisualStyleBackColor = true;
+            this.maxCheckBox.CheckedChanged += new System.EventHandler(this.maxCheckBox_CheckedChanged);
             // 
             // minCheckBox
             // 
@@ -444,6 +436,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.minCheckBox.TabIndex = 2;
             this.minCheckBox.Text = "Min";
             this.minCheckBox.UseVisualStyleBackColor = true;
+            this.minCheckBox.CheckedChanged += new System.EventHandler(this.minCheckBox_CheckedChanged);
             // 
             // AddMaterialDatabaseForm
             // 

@@ -164,35 +164,6 @@ namespace WelderCalculator.MaterialDatabaseView
                 row[real] = DBNull.Value;
             else
                 row[real] = materialElement.RealValue;
-            #region oldCode
-
-            //Element materialElement = material.GetElement(element);
-
-            //if (_view.MinCheckBox)
-            //{
-            //    if (material.GetElement(element).Min == null)
-            //        row[min] = DBNull.Value;
-            //    else
-            //        row[min] = materialElement.Min;
-            //}
-
-            //if (_view.MaxCheckBox)
-            //{
-            //    if (material.GetElement(element).Max == null)
-            //        row[max] = DBNull.Value;
-            //    else
-            //        row[max] = materialElement.Max;
-            //}
-
-            //if (_view.RealCheckBox)
-            //{
-            //    if (material.GetElement(element).RealValue == null)
-            //        row[real] = DBNull.Value;
-            //    else
-            //        row[real] = materialElement.RealValue;
-            //}  
-
-            #endregion
         }
 
         private void SetDataGridViewColumnsWidthAndSetInitialVisibility()
