@@ -60,14 +60,14 @@
       <DependentUpon>AddMaterialDatabaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Databases\AddMaterialsView\AddMaterialDatabaseView\IAdditiveMaterialView.cs" />
-    <Compile Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
-    <Compile Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
+    <Compile Include="Databases\General\MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
+    <Compile Include="Databases\General\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.Designer.cs">
+    <Compile Include="Databases\General\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.Designer.cs">
       <DependentUpon>MaterialDatabasePropertiesForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\MaterialDatabasePropertiesPresenter.cs" />
+    <Compile Include="Databases\General\MaterialDatabasePropertiesView\MaterialDatabasePropertiesPresenter.cs" />
     <Compile Include="Databases\BaseMaterialsView\MaterialDatabaseView\IMaterialDatabaseView.cs" />
     <Compile Include="Databases\BaseMaterialsView\MaterialDatabaseView\MaterialDatabaseForm.cs">
       <SubType>Form</SubType>
@@ -127,7 +127,7 @@
     <EmbeddedResource Include="Databases\AddMaterialsView\AddMaterialDatabaseView\AddMaterialDatabaseForm.resx">
       <DependentUpon>AddMaterialDatabaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Databases\BaseMaterialsView\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.resx">
+    <EmbeddedResource Include="Databases\General\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.resx">
       <DependentUpon>MaterialDatabasePropertiesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Databases\BaseMaterialsView\MaterialDatabaseView\MaterialDatabaseForm.resx">
