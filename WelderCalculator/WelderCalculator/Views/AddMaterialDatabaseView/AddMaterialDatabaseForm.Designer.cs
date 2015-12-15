@@ -44,6 +44,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.niLabel = new System.Windows.Forms.Label();
             this.cLabel = new System.Windows.Forms.Label();
             this.ViewLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.vCheckBox = new System.Windows.Forms.CheckBox();
             this.orderElementsButton = new System.Windows.Forms.Button();
             this.cuCheckBox = new System.Windows.Forms.CheckBox();
             this.tiCheckBox = new System.Windows.Forms.CheckBox();
@@ -59,11 +60,10 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.cCheckBox = new System.Windows.Forms.CheckBox();
             this.materialsDataGridView = new System.Windows.Forms.DataGridView();
             this.carbonLabel = new System.Windows.Forms.GroupBox();
-            this.alloyTypeCheckBox = new System.Windows.Forms.CheckBox();
-            this.nominalContainmentNameCheckBox = new System.Windows.Forms.CheckBox();
             this.realCheckBox = new System.Windows.Forms.CheckBox();
             this.maxCheckBox = new System.Windows.Forms.CheckBox();
             this.minCheckBox = new System.Windows.Forms.CheckBox();
+            this.addNewNormButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
             this.ViewLayoutPanel.SuspendLayout();
@@ -78,6 +78,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.normComboBox.Name = "normComboBox";
             this.normComboBox.Size = new System.Drawing.Size(140, 21);
             this.normComboBox.TabIndex = 0;
+            this.normComboBox.SelectedIndexChanged += new System.EventHandler(this.normComboBox_SelectedIndexChanged);
             // 
             // normNameLabel
             // 
@@ -194,6 +195,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             // 
             // ViewLayoutPanel
             // 
+            this.ViewLayoutPanel.Controls.Add(this.vCheckBox);
             this.ViewLayoutPanel.Controls.Add(this.orderElementsButton);
             this.ViewLayoutPanel.Controls.Add(this.cuCheckBox);
             this.ViewLayoutPanel.Controls.Add(this.tiCheckBox);
@@ -213,6 +215,17 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.ViewLayoutPanel.TabIndex = 14;
             this.ViewLayoutPanel.TabStop = false;
             this.ViewLayoutPanel.Text = "Opcje wyświetlania";
+            // 
+            // vCheckBox
+            // 
+            this.vCheckBox.AutoSize = true;
+            this.vCheckBox.Location = new System.Drawing.Point(267, 19);
+            this.vCheckBox.Name = "vCheckBox";
+            this.vCheckBox.Size = new System.Drawing.Size(77, 17);
+            this.vCheckBox.TabIndex = 18;
+            this.vCheckBox.Text = "Wanad (V)";
+            this.vCheckBox.UseVisualStyleBackColor = true;
+            this.vCheckBox.CheckedChanged += new System.EventHandler(this.vCheckBox_CheckedChanged);
             // 
             // orderElementsButton
             // 
@@ -369,12 +382,11 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.materialsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.materialsDataGridView.Size = new System.Drawing.Size(934, 252);
             this.materialsDataGridView.TabIndex = 15;
+            this.materialsDataGridView.SelectionChanged += new System.EventHandler(this.materialsDataGridView_SelectedRowChanged);
             // 
             // carbonLabel
             // 
             this.carbonLabel.CausesValidation = false;
-            this.carbonLabel.Controls.Add(this.alloyTypeCheckBox);
-            this.carbonLabel.Controls.Add(this.nominalContainmentNameCheckBox);
             this.carbonLabel.Controls.Add(this.realCheckBox);
             this.carbonLabel.Controls.Add(this.maxCheckBox);
             this.carbonLabel.Controls.Add(this.minCheckBox);
@@ -384,28 +396,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.carbonLabel.TabIndex = 16;
             this.carbonLabel.TabStop = false;
             this.carbonLabel.Text = "Wyświetlaj";
-            // 
-            // alloyTypeCheckBox
-            // 
-            this.alloyTypeCheckBox.AutoSize = true;
-            this.alloyTypeCheckBox.Location = new System.Drawing.Point(6, 83);
-            this.alloyTypeCheckBox.Name = "alloyTypeCheckBox";
-            this.alloyTypeCheckBox.Size = new System.Drawing.Size(73, 17);
-            this.alloyTypeCheckBox.TabIndex = 6;
-            this.alloyTypeCheckBox.Text = "Typ stopu";
-            this.alloyTypeCheckBox.UseVisualStyleBackColor = true;
-            this.alloyTypeCheckBox.CheckedChanged += new System.EventHandler(this.alloyTypeCheckBox_CheckedChanged);
-            // 
-            // nominalContainmentNameCheckBox
-            // 
-            this.nominalContainmentNameCheckBox.AutoSize = true;
-            this.nominalContainmentNameCheckBox.Location = new System.Drawing.Point(6, 63);
-            this.nominalContainmentNameCheckBox.Name = "nominalContainmentNameCheckBox";
-            this.nominalContainmentNameCheckBox.Size = new System.Drawing.Size(81, 17);
-            this.nominalContainmentNameCheckBox.TabIndex = 5;
-            this.nominalContainmentNameCheckBox.Text = "Skład nom.";
-            this.nominalContainmentNameCheckBox.UseVisualStyleBackColor = true;
-            this.nominalContainmentNameCheckBox.CheckedChanged += new System.EventHandler(this.nominalContainmentNameCheckBox_CheckedChanged);
             // 
             // realCheckBox
             // 
@@ -421,7 +411,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             // maxCheckBox
             // 
             this.maxCheckBox.AutoSize = true;
-            this.maxCheckBox.Location = new System.Drawing.Point(45, 18);
+            this.maxCheckBox.Location = new System.Drawing.Point(6, 60);
             this.maxCheckBox.Name = "maxCheckBox";
             this.maxCheckBox.Size = new System.Drawing.Size(46, 17);
             this.maxCheckBox.TabIndex = 3;
@@ -440,11 +430,22 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.minCheckBox.UseVisualStyleBackColor = true;
             this.minCheckBox.CheckedChanged += new System.EventHandler(this.minCheckBox_CheckedChanged);
             // 
+            // addNewNormButton
+            // 
+            this.addNewNormButton.Location = new System.Drawing.Point(49, 57);
+            this.addNewNormButton.Name = "addNewNormButton";
+            this.addNewNormButton.Size = new System.Drawing.Size(140, 23);
+            this.addNewNormButton.TabIndex = 17;
+            this.addNewNormButton.Text = "Dodaj nową normę";
+            this.addNewNormButton.UseVisualStyleBackColor = true;
+            this.addNewNormButton.Click += new System.EventHandler(this.addNewNormButton_Click);
+            // 
             // AddMaterialDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 400);
+            this.Controls.Add(this.addNewNormButton);
             this.Controls.Add(this.carbonLabel);
             this.Controls.Add(this.materialsDataGridView);
             this.Controls.Add(this.ViewLayoutPanel);
@@ -501,7 +502,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
         private System.Windows.Forms.CheckBox realCheckBox;
         private System.Windows.Forms.CheckBox maxCheckBox;
         private System.Windows.Forms.CheckBox minCheckBox;
-        private System.Windows.Forms.CheckBox alloyTypeCheckBox;
-        private System.Windows.Forms.CheckBox nominalContainmentNameCheckBox;
+        private System.Windows.Forms.Button addNewNormButton;
+        private System.Windows.Forms.CheckBox vCheckBox;
     }
 }

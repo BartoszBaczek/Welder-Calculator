@@ -18,7 +18,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
 
         public MaterialType MaterialType { get; private set; }
 
-        public int NumberOfComboBoxes { get { return MaterialType == MaterialType.BaseMaterial ? 14 : 12; } }
+        public int NumberOfComboBoxes { get { return MaterialType == MaterialType.BaseMaterial ? 14 : 13; } }
 
 
         public MaterialDatabasePropertiesForm(MaterialType materialType)
@@ -28,9 +28,7 @@ namespace WelderCalculator.MaterialDatabasePropertiesView
             new MaterialDatabasePropertiesPresenter(this);
             if (MaterialType == MaterialType.AdditionalMaterial)
             {
-                label10.Visible = false;    //change name to label 13
                 label11.Visible = false;    //change name to label 14
-                comboBox13th.Visible = false;
                 comboBox14th.Visible = false;
             }
         }

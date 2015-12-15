@@ -9,22 +9,10 @@ namespace WelderCalculator.Repositories.Model
 {
     public class AdditiveMaterial : Material
     {
-        public string NominalCompositionName { get { return Name; } set { Name = value; } }
-
-        public string AlloyTypeName { get; set; }
-
-        public AdditiveMaterial() : base()
-        {
-            NominalCompositionName = string.Empty;
-            AlloyTypeName = string.Empty;
-        }
-
         public override bool Equals(Material material)
         {
             var newTypeMaterial = material as AdditiveMaterial;
-            if (this.NominalCompositionName != newTypeMaterial.NominalCompositionName)
-                return false;
-            if (this.AlloyTypeName != newTypeMaterial.AlloyTypeName)
+            if (this.Name != newTypeMaterial.Name)
                 return false;
             if (this.Elements.Count != newTypeMaterial.Elements.Count)
                 return false;
@@ -52,6 +40,7 @@ namespace WelderCalculator.Repositories.Model
             Elements.Add(new Element(Category.OfElement.Cu));
             Elements.Add(new Element(Category.OfElement.Nb));
             Elements.Add(new Element(Category.OfElement.Ti));
+            Elements.Add(new Element(Category.OfElement.V));
             //ZMIENIC 
         }
     }

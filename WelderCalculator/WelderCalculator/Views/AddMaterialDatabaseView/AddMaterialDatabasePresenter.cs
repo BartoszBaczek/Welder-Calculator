@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using WelderCalculator.Databases.BaseMaterialsView;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView;
 using WelderCalculator.MaterialModificationView.Serialization;
@@ -49,12 +50,11 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             _view.NiCheckBox = true;
             _view.TiCheckBox = true;
             _view.CuCheckBox = true;
+            _view.VCheckBox = true;
 
             _view.MinCheckBox = true;
             _view.MaxCheckBox = true;
             _view.RealCheckBox = true;
-            _view.NominalContainmentNameCheckBox = true;
-            _view.AlloyTypeNameCheckBox = true;
         }
 
         private void BindDataSourceToDataGridView()
@@ -85,8 +85,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             var orderOfElements = _dataConnector.GetOrderOfElementsForAdditiveMaterial();
             table.Columns.Add("GUID", typeof(Guid));
 
-            table.Columns.Add("nominalCompositeName", typeof(string));
-            table.Columns.Add("alloyTypeName", typeof(string));
+            table.Columns.Add("Nazwa", typeof(string));
 
             foreach (Category.OfElement type in orderOfElements)
             {
@@ -101,7 +100,8 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
                     (type == Category.OfElement.Nb) ||
                     (type == Category.OfElement.Ni) ||
                     (type == Category.OfElement.Ti) ||
-                    (type == Category.OfElement.Cu))
+                    (type == Category.OfElement.Cu) ||
+                    (type == Category.OfElement.V))
                 {
                     table.Columns.Add(Enum.GetName(typeof(Category.OfElement), type) + " min", typeof(double));
                     table.Columns.Add(Enum.GetName(typeof(Category.OfElement), type) + " max", typeof(double));
@@ -119,8 +119,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
                 DataRow newRow = table.NewRow();
 
                 newRow["GUID"] = material.GuidNumber;
-                newRow["nominalCompositeName"] = material.NominalCompositionName;
-                newRow["alloyTypeName"] = material.AlloyTypeName;
+                newRow["Nazwa"] = material.Name;
                 FillElementColumns(newRow, "C min", "C max", "C real", Category.OfElement.C, material);
                 FillElementColumns(newRow, "Si min", "Si max", "Si real", Category.OfElement.Si, material);
                 FillElementColumns(newRow, "Mn min", "Mn max", "Mn real", Category.OfElement.Mn, material);
@@ -133,6 +132,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
                 FillElementColumns(newRow, "Ni min", "Ni max", "Ni real", Category.OfElement.Ni, material);
                 FillElementColumns(newRow, "Ti min", "Ti max", "Ti real", Category.OfElement.Ti, material);
                 FillElementColumns(newRow, "Cu min", "Cu max", "Cu real", Category.OfElement.Cu, material);
+                FillElementColumns(newRow, "V min", "V max", "V real", Category.OfElement.V, material);
                 table.Rows.Add(newRow);
             }
         }
@@ -229,6 +229,9 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
 
             if (elementName == "Cu")
                 SetColumnsVisibiliyForElements(elementName, _view.CuCheckBox);
+
+            if (elementName == "V")
+                SetColumnsVisibiliyForElements(elementName, _view.VCheckBox);
         }
 
         private void SetColumnsVisibiliyForElements(string elementName, bool visibility)
@@ -254,12 +257,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
                     break;
                 case "real":
                     SetColumnsVisibilityForMinMaxRealNumber(option, _view.RealCheckBox);
-                    break;
-                case "nominalCompositeName":
-                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.NominalContainmentNameCheckBox);
-                    break;
-                case "alloyTypeName":
-                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.AlloyTypeNameCheckBox);
                     break;
             }
         }
@@ -290,6 +287,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             SetColumnsVisibiliyForElements("Ni", _view.NiCheckBox);
             SetColumnsVisibiliyForElements("Ti", _view.TiCheckBox);
             SetColumnsVisibiliyForElements("Cu", _view.CuCheckBox);
+            SetColumnsVisibiliyForElements("V", _view.VCheckBox);
         }
 
         public void OnElementsOrderPropertiesButtonClicked()
@@ -333,6 +331,22 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             return norm;
         }
 
+        public void OnAddNormButtonClicked()
+        {
+            var addNormView = new NormAdderView(MaterialType.AdditionalMaterial);
+            addNormView.ShowDialog();
+            Init();
+        }
 
+        public void OnSelectedIndexChanged()
+        {
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
+        }
+
+        public void OnSelectedDataGridViewRowChanged()
+        {
+            UpdateEquivalents();
+        }
     }
 }

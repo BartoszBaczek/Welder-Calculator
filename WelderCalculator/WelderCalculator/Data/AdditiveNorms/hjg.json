@@ -1,0 +1,106 @@
+{
+  "Materials": [
+    {
+      "Name": "dua",
+      "GuidNumber": "39104a92-0a29-4ceb-8392-ee0ff28fda37",
+      "Elements": [
+        {
+          "Name": 0,
+          "FullName": "Węgiel",
+          "Min": 66.0,
+          "Max": 7.0,
+          "RealValue": 67.0
+        },
+        {
+          "Name": 1,
+          "FullName": "Krzem",
+          "Min": 56.0,
+          "Max": 8.0,
+          "RealValue": 78.0
+        },
+        {
+          "Name": 2,
+          "FullName": "Mangan",
+          "Min": 7.0,
+          "Max": 54.0,
+          "RealValue": 66.0
+        },
+        {
+          "Name": 3,
+          "FullName": "Potas",
+          "Min": 7.0,
+          "Max": 55.0,
+          "RealValue": 47.0
+        },
+        {
+          "Name": 4,
+          "FullName": "Siarka",
+          "Min": null,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 6,
+          "FullName": "Chrom",
+          "Min": 87.0,
+          "Max": null,
+          "RealValue": null
+        },
+        {
+          "Name": 9,
+          "FullName": "Nikiel",
+          "Min": 9.0,
+          "Max": null,
+          "RealValue": 866.0
+        },
+        {
+          "Name": 7,
+          "FullName": "Molibden",
+          "Min": 8.0,
+          "Max": 8.0,
+          "RealValue": 7.0
+        },
+        {
+          "Name": 5,
+          "FullName": "Azot",
+          "Min": 87.0,
+          "Max": 8.0,
+          "RealValue": 76.0
+        },
+        {
+          "Name": 13,
+          "FullName": "Cu",
+          "Min": 7.0,
+          "Max": 67.0,
+          "RealValue": 67.0
+        },
+        {
+          "Name": 8,
+          "FullName": "Nb",
+          "Min": 75.0,
+          "Max": 54.0,
+          "RealValue": 6.0
+        },
+        {
+          "Name": 10,
+          "FullName": "Tytan",
+          "Min": 5.0,
+          "Max": 5.0,
+          "RealValue": 76.0
+        },
+        {
+          "Name": 12,
+          "FullName": "Wanad",
+          "Min": 6.0,
+          "Max": 7.0,
+          "RealValue": 64.0
+        }
+      ],
+      "CEq": null,
+      "NiEq": 5189.0,
+      "CrEq": null
+    }
+  ],
+  "Name": "hjg",
+  "GuidNumber": "b90ed4f5-1e73-4fbb-b19d-cacf66e1b425"
+}

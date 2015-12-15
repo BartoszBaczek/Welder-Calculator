@@ -372,7 +372,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         public void OnAddNormButtonClicked()
         {
-            var addNormView = new NormAdderView();
+            var addNormView = new NormAdderView(MaterialType.BaseMaterial);
             addNormView.ShowDialog();
             Init();
         }

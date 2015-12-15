@@ -129,7 +129,9 @@ namespace WelderCalculator.MaterialModificationView
             else
             {
                 var material = materialToBind as AdditiveMaterial;
+
                 _view.GuidTextbox = material.GuidNumber.ToString();
+                _view.NameTextbox = material.Name;
 
                 var e = material.GetElement(Category.OfElement.C);
                 _view.CMintextbox = e.Min;
@@ -190,85 +192,90 @@ namespace WelderCalculator.MaterialModificationView
                 _view.CuMintextbox = e.Min;
                 _view.CuMaxtextbox = e.Max;
                 _view.CuRealtextbox = e.RealValue;
+
+                e = material.GetElement(Category.OfElement.V);
+                _view.VMintextbox = e.Min;
+                _view.VMaxtextbox = e.Max;
+                _view.VRealtextbox = e.RealValue;
             }
             
         }
 
         private BaseMaterial BuildBaseMaterial()
         {
-                var material = new BaseMaterial();
-                material.CreateBasicListOfElements();
+            var material = new BaseMaterial();
+            material.CreateBasicListOfElements();
 
-                material.Name = _view.NameTextbox;
-                material.Number = _view.NumberTextbox;
+            material.Name = _view.NameTextbox;
+            material.Number = _view.NumberTextbox;
 
-                material.GetElement(Category.OfElement.C).Min = _view.CMintextbox;
-                material.GetElement(Category.OfElement.C).Max = _view.CMaxtextbox;
-                material.GetElement(Category.OfElement.C).RealValue = _view.CRealtextbox;
+            material.GetElement(Category.OfElement.C).Min = _view.CMintextbox;
+            material.GetElement(Category.OfElement.C).Max = _view.CMaxtextbox;
+            material.GetElement(Category.OfElement.C).RealValue = _view.CRealtextbox;
 
-                material.GetElement(Category.OfElement.Si).Min = _view.SiMintextbox;
-                material.GetElement(Category.OfElement.Si).Max = _view.SiMaxtextbox;
-                material.GetElement(Category.OfElement.Si).RealValue = _view.SiRealtextbox;
+            material.GetElement(Category.OfElement.Si).Min = _view.SiMintextbox;
+            material.GetElement(Category.OfElement.Si).Max = _view.SiMaxtextbox;
+            material.GetElement(Category.OfElement.Si).RealValue = _view.SiRealtextbox;
 
-                material.GetElement(Category.OfElement.Mn).Min = _view.MnMintextbox;
-                material.GetElement(Category.OfElement.Mn).Max = _view.MnMaxtextbox;
-                material.GetElement(Category.OfElement.Mn).RealValue = _view.MnRealtextbox;
+            material.GetElement(Category.OfElement.Mn).Min = _view.MnMintextbox;
+            material.GetElement(Category.OfElement.Mn).Max = _view.MnMaxtextbox;
+            material.GetElement(Category.OfElement.Mn).RealValue = _view.MnRealtextbox;
 
-                material.GetElement(Category.OfElement.P).Min = _view.PMintextbox;
-                material.GetElement(Category.OfElement.P).Max = _view.PMaxtextbox;
-                material.GetElement(Category.OfElement.P).RealValue = _view.PRealtextbox;
+            material.GetElement(Category.OfElement.P).Min = _view.PMintextbox;
+            material.GetElement(Category.OfElement.P).Max = _view.PMaxtextbox;
+            material.GetElement(Category.OfElement.P).RealValue = _view.PRealtextbox;
 
-                material.GetElement(Category.OfElement.S).Min = _view.SMintextbox;
-                material.GetElement(Category.OfElement.S).Max = _view.SMaxtextbox;
-                material.GetElement(Category.OfElement.S).RealValue = _view.SRealtextbox;
+            material.GetElement(Category.OfElement.S).Min = _view.SMintextbox;
+            material.GetElement(Category.OfElement.S).Max = _view.SMaxtextbox;
+            material.GetElement(Category.OfElement.S).RealValue = _view.SRealtextbox;
 
-                material.GetElement(Category.OfElement.N).Min = _view.NMintextbox;
-                material.GetElement(Category.OfElement.N).Max = _view.NMaxtextbox;
-                material.GetElement(Category.OfElement.N).RealValue = _view.NRealtextbox;
+            material.GetElement(Category.OfElement.N).Min = _view.NMintextbox;
+            material.GetElement(Category.OfElement.N).Max = _view.NMaxtextbox;
+            material.GetElement(Category.OfElement.N).RealValue = _view.NRealtextbox;
 
-                material.GetElement(Category.OfElement.Cr).Min = _view.CrMintextbox;
-                material.GetElement(Category.OfElement.Cr).Max = _view.CrMaxtextbox;
-                material.GetElement(Category.OfElement.Cr).RealValue = _view.CrRealtextbox;
+            material.GetElement(Category.OfElement.Cr).Min = _view.CrMintextbox;
+            material.GetElement(Category.OfElement.Cr).Max = _view.CrMaxtextbox;
+            material.GetElement(Category.OfElement.Cr).RealValue = _view.CrRealtextbox;
 
-                material.GetElement(Category.OfElement.Mo).Min = _view.MoMintextbox;
-                material.GetElement(Category.OfElement.Mo).Max = _view.MoMaxtextbox;
-                material.GetElement(Category.OfElement.Mo).RealValue = _view.MoRealtextbox;
+            material.GetElement(Category.OfElement.Mo).Min = _view.MoMintextbox;
+            material.GetElement(Category.OfElement.Mo).Max = _view.MoMaxtextbox;
+            material.GetElement(Category.OfElement.Mo).RealValue = _view.MoRealtextbox;
 
-                material.GetElement(Category.OfElement.Nb).Min = _view.NbMintextbox;
-                material.GetElement(Category.OfElement.Nb).Max = _view.NbMaxtextbox;
-                material.GetElement(Category.OfElement.Nb).RealValue = _view.NbRealtextbox;
+            material.GetElement(Category.OfElement.Nb).Min = _view.NbMintextbox;
+            material.GetElement(Category.OfElement.Nb).Max = _view.NbMaxtextbox;
+            material.GetElement(Category.OfElement.Nb).RealValue = _view.NbRealtextbox;
 
-                material.GetElement(Category.OfElement.Ni).Min = _view.NiMintextbox;
-                material.GetElement(Category.OfElement.Ni).Max = _view.NiMaxtextbox;
-                material.GetElement(Category.OfElement.Ni).RealValue = _view.NiRealtextbox;
+            material.GetElement(Category.OfElement.Ni).Min = _view.NiMintextbox;
+            material.GetElement(Category.OfElement.Ni).Max = _view.NiMaxtextbox;
+            material.GetElement(Category.OfElement.Ni).RealValue = _view.NiRealtextbox;
 
-                material.GetElement(Category.OfElement.Ti).Min = _view.TiMintextbox;
-                material.GetElement(Category.OfElement.Ti).Max = _view.TiMaxtextbox;
-                material.GetElement(Category.OfElement.Ti).RealValue = _view.TiRealtextbox;
+            material.GetElement(Category.OfElement.Ti).Min = _view.TiMintextbox;
+            material.GetElement(Category.OfElement.Ti).Max = _view.TiMaxtextbox;
+            material.GetElement(Category.OfElement.Ti).RealValue = _view.TiRealtextbox;
 
-                material.GetElement(Category.OfElement.Al).Min = _view.AlMintextbox;
-                material.GetElement(Category.OfElement.Al).Max = _view.AlMaxtextbox;
-                material.GetElement(Category.OfElement.Al).RealValue = _view.AlRealtextbox;
+            material.GetElement(Category.OfElement.Al).Min = _view.AlMintextbox;
+            material.GetElement(Category.OfElement.Al).Max = _view.AlMaxtextbox;
+            material.GetElement(Category.OfElement.Al).RealValue = _view.AlRealtextbox;
 
-                material.GetElement(Category.OfElement.V).Min = _view.VMintextbox;
-                material.GetElement(Category.OfElement.V).Max = _view.VMaxtextbox;
-                material.GetElement(Category.OfElement.V).RealValue = _view.VRealtextbox;
+            material.GetElement(Category.OfElement.V).Min = _view.VMintextbox;
+            material.GetElement(Category.OfElement.V).Max = _view.VMaxtextbox;
+            material.GetElement(Category.OfElement.V).RealValue = _view.VRealtextbox;
 
-                material.GetElement(Category.OfElement.Cu).Min = _view.CuMintextbox;
-                material.GetElement(Category.OfElement.Cu).Max = _view.CuMaxtextbox;
-                material.GetElement(Category.OfElement.Cu).RealValue = _view.CuRealtextbox;
+            material.GetElement(Category.OfElement.Cu).Min = _view.CuMintextbox;
+            material.GetElement(Category.OfElement.Cu).Max = _view.CuMaxtextbox;
+            material.GetElement(Category.OfElement.Cu).RealValue = _view.CuRealtextbox;
 
-                switch (_workingMode)
-                {
-                    case WindowMode.Mode.AddNew:
-                        material.GuidNumber = Guid.NewGuid();
-                        break;
-                    case WindowMode.Mode.ModifyCurrent:
-                        material.GuidNumber = Guid.Parse(_view.GuidTextbox);
-                        break;
-                }
+            switch (_workingMode)
+            {
+                case WindowMode.Mode.AddNew:
+                    material.GuidNumber = Guid.NewGuid();
+                    break;
+                case WindowMode.Mode.ModifyCurrent:
+                    material.GuidNumber = Guid.Parse(_view.GuidTextbox);
+                    break;
+            }
 
-                return material;
+            return material;
         }
 
         private AdditiveMaterial BuildAdditiveMaterial()
@@ -276,6 +283,7 @@ namespace WelderCalculator.MaterialModificationView
             var material = new AdditiveMaterial();
             material.CreateBasicListOfElements();
 
+            material.Name = _view.NameTextbox;
             material.GetElement(Category.OfElement.C).Min = _view.CMintextbox;
             material.GetElement(Category.OfElement.C).Max = _view.CMaxtextbox;
             material.GetElement(Category.OfElement.C).RealValue = _view.CRealtextbox;
@@ -323,6 +331,10 @@ namespace WelderCalculator.MaterialModificationView
             material.GetElement(Category.OfElement.Cu).Min = _view.CuMintextbox;
             material.GetElement(Category.OfElement.Cu).Max = _view.CuMaxtextbox;
             material.GetElement(Category.OfElement.Cu).RealValue = _view.CuRealtextbox;
+
+            material.GetElement(Category.OfElement.V).Min = _view.VMintextbox;
+            material.GetElement(Category.OfElement.V).Max = _view.VMaxtextbox;
+            material.GetElement(Category.OfElement.V).RealValue = _view.VRealtextbox;
 
             switch (_workingMode)
             {

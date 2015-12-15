@@ -1,9 +1,9 @@
 {
   "Materials": [
     {
-      "Number": "123",
-      "Name": "material1",
-      "GuidNumber": "6a8d7e30-465c-4f75-905b-5943041d2b49",
+      "Number": "",
+      "Name": "123",
+      "GuidNumber": "eafd1488-c567-4018-a5d3-145b6fc5635b",
       "Elements": [
         {
           "Name": 0,
@@ -15,7 +15,7 @@
         {
           "Name": 1,
           "FullName": "Krzem",
-          "Min": 0.9,
+          "Min": null,
           "Max": 0.5,
           "RealValue": 0.47
         },
@@ -29,7 +29,7 @@
         {
           "Name": 3,
           "FullName": "Potas",
-          "Min": 0.9,
+          "Min": 0.4,
           "Max": 0.5,
           "RealValue": 0.47
         },
@@ -110,5 +110,5 @@
     }
   ],
   "Name": "allahuakbar",
-  "GuidNumber": "3bd9172f-37ad-4906-adda-1507eda2c2aa"
+  "GuidNumber": "c1140db8-c155-4cf4-b041-3be1ccf1eb26"
 }

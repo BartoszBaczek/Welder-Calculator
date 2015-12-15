@@ -3,7 +3,7 @@
     {
       "Number": "123",
       "Name": "material2",
-      "GuidNumber": "5d574b27-5bf2-44b1-ab9d-eb9994a95451",
+      "GuidNumber": "4df369d9-c55c-4c0f-85f6-3042a50d4df7",
       "Elements": [
         {
           "Name": 0,
@@ -111,7 +111,7 @@
     {
       "Number": "456",
       "Name": "material3",
-      "GuidNumber": "9a428b63-8ec1-4c31-80c2-ba18993ad749",
+      "GuidNumber": "eec3510a-4b78-4083-9c84-9bbae4fd7e6e",
       "Elements": [
         {
           "Name": 0,
@@ -219,7 +219,7 @@
     {
       "Number": "789",
       "Name": "material1",
-      "GuidNumber": "c2fe213b-08a9-4570-b12a-0f643cdb1268",
+      "GuidNumber": "c0252111-6571-43d4-ad89-3336cf52860e",
       "Elements": [
         {
           "Name": 0,
@@ -323,116 +323,8 @@
       "CEq": 0.28500000000000003,
       "NiEq": 9.225,
       "CrEq": 0.89999999999999991
-    },
-    {
-      "Number": "879",
-      "Name": "asd",
-      "GuidNumber": "97b3753d-c592-45e3-a318-bb945d074ecb",
-      "Elements": [
-        {
-          "Name": 0,
-          "FullName": "Węgiel",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 1,
-          "FullName": "Krzem",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 2,
-          "FullName": "Mangan",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 3,
-          "FullName": "Potas",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 4,
-          "FullName": "Siarka",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 5,
-          "FullName": "Azot",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 6,
-          "FullName": "Chrom",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 7,
-          "FullName": "Molibden",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 8,
-          "FullName": "Nb",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 9,
-          "FullName": "Nikiel",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 10,
-          "FullName": "Tytan",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 11,
-          "FullName": "Aluminium",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 12,
-          "FullName": "Wanad",
-          "Min": null,
-          "Max": null,
-          "RealValue": null
-        },
-        {
-          "Name": 13,
-          "FullName": "Cu",
-          "Min": 432.0,
-          "Max": null,
-          "RealValue": null
-        }
-      ],
-      "CEq": null,
-      "NiEq": null,
-      "CrEq": null
     }
   ],
   "Name": "sampleMaterialNorm1",
-  "GuidNumber": "1dba131d-27f0-4752-aaca-941299a345e7"
+  "GuidNumber": "2676b52a-a616-4fa3-99dd-7e87d2549acc"
 }

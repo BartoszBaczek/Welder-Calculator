@@ -16,12 +16,12 @@ namespace WelderCalculator.MaterialModificationView
             MaterialType = materialType;
             if (materialType == MaterialType.AdditionalMaterial)
             {
-                alMinTextBox.Visible = false;
-                alRealTextbox.Visible = false;
-                alMaxTextbox.Visible = false;
-                vMinTextBox.Visible = false;
-                vRealTextbox.Visible = false;
-                vMaxTextbox.Visible = false;
+                numberLabel.Visible = false;
+                numberTextBox.Visible = false;
+                guidLayoutPanel.Location = numberLabel.Location;
+                guidTextBox.Location = numberTextBox.Location;
+                alLayoutPanel.Visible = false;
+                vLayoutPanel.Location = alLayoutPanel.Location;
             }
             new MaterialModificationPresenter(this, norm);
         }
@@ -32,12 +32,12 @@ namespace WelderCalculator.MaterialModificationView
             MaterialType = materialType;
             if (materialType == MaterialType.AdditionalMaterial)
             {
-                alMinTextBox.Visible = false;
-                alRealTextbox.Visible = false;
-                alMaxTextbox.Visible = false;
-                vMinTextBox.Visible = false;
-                vRealTextbox.Visible = false;
-                vMaxTextbox.Visible = false;
+                numberLabel.Visible = false;
+                numberTextBox.Visible = false;
+                guidLayoutPanel.Location = numberLabel.Location;
+                guidTextBox.Location = numberTextBox.Location;
+                alLayoutPanel.Visible = false;
+                vLayoutPanel.Location = alLayoutPanel.Location;
             }
             new MaterialModificationPresenter(this, norm, materialToBind);
         }
@@ -488,10 +488,18 @@ namespace WelderCalculator.MaterialModificationView
 
         private double? GetTextBoxValue(TextBox textbox)
         {
-            string text = textbox.Text.Trim().Replace('.', ',');
-            if (string.IsNullOrEmpty(text))
+            try
+            {
+                string text = textbox.Text.Trim().Replace('.', ',');
+                if (string.IsNullOrEmpty(text))
+                    return null;
+                return Convert.ToDouble(text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Wartosć wpisana w polu " + textbox.Name + " nie jest liczbą");
                 return null;
-            return Convert.ToDouble(text);
+            }
         }
 
         private void SetTextboxValue(ref TextBox textbox, double? value)

@@ -101,15 +101,10 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             set { this.cuCheckBox.Checked = value; }
         }
 
-        public bool NominalContainmentNameCheckBox
+        public bool VCheckBox
         {
-            get { return this.nominalContainmentNameCheckBox.Checked; }
-            set { this.nominalContainmentNameCheckBox.Checked = value; }
-        }
-        public bool AlloyTypeNameCheckBox
-        {
-            get { return alloyTypeCheckBox.Checked; }
-            set { alloyTypeCheckBox.Checked = value; }
+            get { return vCheckBox.Checked; }
+            set { vCheckBox.Checked = value; }
         }
 
         public bool MinCheckBox
@@ -243,6 +238,10 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
         {
             Presenter.OnMaterialCheckBoxChanged("Cu");
         }
+        private void vCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnMaterialCheckBoxChanged("V");
+        }
         #endregion
 
         private void numberCheckBox_CheckedChanged(object sender, System.EventArgs e)
@@ -265,16 +264,6 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             Presenter.OnViewOptionsCheckBoxChanged("real");
         }
 
-        private void nominalContainmentNameCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            Presenter.OnViewOptionsCheckBoxChanged("nominalCompositeName");
-        }
-
-        private void alloyTypeCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-            Presenter.OnViewOptionsCheckBoxChanged("alloyTypeName");
-        }
-
         private void orderElementsButton_Click(object sender, EventArgs e)
         {
             Presenter.OnElementsOrderPropertiesButtonClicked();
@@ -290,6 +279,22 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
         {
             Presenter.OnEditMaterialButtonClicked();
         }
+
+        private void addNewNormButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnAddNormButtonClicked();
+        }
+
+        private void normComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedIndexChanged();
+        }
+
+        private void materialsDataGridView_SelectedRowChanged(object sender, EventArgs e)
+        {
+            Presenter.OnSelectedDataGridViewRowChanged();
+        }
+
 
         
     }

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using WelderCalculator.MaterialDatabasePropertiesView;
 
 namespace WelderCalculator.Databases.BaseMaterialsView
 {
@@ -14,8 +8,11 @@ namespace WelderCalculator.Databases.BaseMaterialsView
     {
         public NormAdderPresenter Presenter { private get; set; }
 
-        public NormAdderView()
+        public MaterialType MaterialType { private set; get; }
+
+        public NormAdderView(MaterialType materialType)
         {
+            MaterialType = materialType;
             InitializeComponent();
             new NormAdderPresenter(this);
         }
