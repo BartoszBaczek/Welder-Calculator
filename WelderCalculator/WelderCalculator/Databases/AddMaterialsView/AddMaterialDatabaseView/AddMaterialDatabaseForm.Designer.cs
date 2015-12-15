@@ -117,6 +117,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.addButton.TabIndex = 3;
             this.addButton.Text = "Dodaj";
             this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // editButton
             // 
@@ -126,6 +127,7 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             this.editButton.TabIndex = 4;
             this.editButton.Text = "Edytuj";
             this.editButton.UseVisualStyleBackColor = true;
+            this.editButton.Click += new System.EventHandler(this.editButton_Click);
             // 
             // EqLayoutPanel
             // 

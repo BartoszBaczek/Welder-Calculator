@@ -1,9 +1,11 @@
-﻿
+﻿using WelderCalculator.MaterialDatabasePropertiesView;
+
 namespace WelderCalculator.MaterialModificationView
 {
     public interface IMaterialModificationView
     {
         MaterialModificationPresenter Presenter { set; }
+        MaterialType MaterialType { get; }
 
         string NameTextbox { get; set; }
         string NumberTextbox { get; set; }

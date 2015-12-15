@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using WelderCalculator.MaterialDatabasePropertiesView;
 
 namespace WelderCalculator.MaterialModificationView
 {
@@ -8,15 +8,37 @@ namespace WelderCalculator.MaterialModificationView
     {
         public MaterialModificationPresenter Presenter { private get; set; }
 
-        public MaterialModificationForm(object norm)
+        public MaterialType MaterialType { private set; get; }
+
+        public MaterialModificationForm(object norm, MaterialType materialType)
         {
             InitializeComponent();
+            MaterialType = materialType;
+            if (materialType == MaterialType.AdditionalMaterial)
+            {
+                alMinTextBox.Visible = false;
+                alRealTextbox.Visible = false;
+                alMaxTextbox.Visible = false;
+                vMinTextBox.Visible = false;
+                vRealTextbox.Visible = false;
+                vMaxTextbox.Visible = false;
+            }
             new MaterialModificationPresenter(this, norm);
         }
 
-        public MaterialModificationForm(object norm, object materialToBind)
+        public MaterialModificationForm(object norm, object materialToBind, MaterialType materialType)
         {
             InitializeComponent();
+            MaterialType = materialType;
+            if (materialType == MaterialType.AdditionalMaterial)
+            {
+                alMinTextBox.Visible = false;
+                alRealTextbox.Visible = false;
+                alMaxTextbox.Visible = false;
+                vMinTextBox.Visible = false;
+                vRealTextbox.Visible = false;
+                vMaxTextbox.Visible = false;
+            }
             new MaterialModificationPresenter(this, norm, materialToBind);
         }
 
@@ -49,8 +71,6 @@ namespace WelderCalculator.MaterialModificationView
             }
             set { SetTextboxValue(ref cMinTextBox, value);}
         }
-
-        
 
         public double? SiMintextbox
         {

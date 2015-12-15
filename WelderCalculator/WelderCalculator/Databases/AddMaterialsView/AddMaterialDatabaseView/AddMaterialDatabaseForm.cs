@@ -280,5 +280,17 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             Presenter.OnElementsOrderPropertiesButtonClicked();
             Presenter.Refresh();
         }
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnAddMaterialButtonClicked();
+        }
+
+        private void editButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnEditMaterialButtonClicked();
+        }
+
+        
     }
 }

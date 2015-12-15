@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 using WelderCalculator.MaterialDatabasePropertiesView;
+using WelderCalculator.MaterialModificationView;
 using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories.Model;
@@ -303,6 +304,33 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             _view.GridSource = null;
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
+        }
+
+        public void OnAddMaterialButtonClicked()
+        {
+            var currentNorm = GetCurrentNorm();
+            var modifyMaterialForm = new MaterialModificationForm(currentNorm, MaterialType.AdditionalMaterial);
+            modifyMaterialForm.ShowDialog();
+            Init();
+        }
+
+        public void OnEditMaterialButtonClicked()
+        {
+            var currentNorm = GetCurrentNorm();
+            var material = GetSelectedMaterial();
+            if (material == null)
+                return;
+
+            var modifyMaterialForm = new MaterialModificationForm(currentNorm, material, MaterialType.AdditionalMaterial);
+            modifyMaterialForm.ShowDialog();
+            Init();
+        }
+
+        private AdditiveNorm GetCurrentNorm()
+        {
+            string currentNormName = _view.NormsList[_view.SelectedNorm];
+            AdditiveNorm norm = _dataConnector.GetAdditiveNorm(currentNormName);
+            return norm;
         }
 
 

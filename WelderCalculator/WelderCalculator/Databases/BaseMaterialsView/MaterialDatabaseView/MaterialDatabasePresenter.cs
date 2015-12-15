@@ -325,7 +325,7 @@ namespace WelderCalculator.MaterialDatabaseView
         public void OnAddMaterialButtonClicked()
         {
             var currentNorm = GetCurrentNorm();
-            var modifyMaterialForm = new MaterialModificationForm(currentNorm);
+            var modifyMaterialForm = new MaterialModificationForm(currentNorm, MaterialType.BaseMaterial);
             modifyMaterialForm.ShowDialog();
             Init();
         }
@@ -337,7 +337,7 @@ namespace WelderCalculator.MaterialDatabaseView
             if (material == null)
                 return;
 
-            var modifyMaterialForm = new MaterialModificationForm(currentNorm, material);
+            var modifyMaterialForm = new MaterialModificationForm(currentNorm, material, MaterialType.BaseMaterial);
             modifyMaterialForm.ShowDialog();
             Init();
         }
