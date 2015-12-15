@@ -319,5 +319,10 @@ namespace WelderCalculator.MaterialDatabaseView
             Presenter.OnAddNormButtonClicked();
         }
 
+        private void deleteNormButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnDeleteNormButtonClicked();
+        }
+
     }
 }

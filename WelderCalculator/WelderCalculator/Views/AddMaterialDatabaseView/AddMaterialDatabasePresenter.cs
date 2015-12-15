@@ -338,6 +338,13 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             Init();
         }
 
+        public void OnDeleteNormButtonClicked()
+        {
+            string selectedNormName = _view.NormsList[_view.SelectedNorm];
+            _dataConnector.RemoveAdditiveNorm(selectedNormName);
+            Init();
+        }
+
         public void OnSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();

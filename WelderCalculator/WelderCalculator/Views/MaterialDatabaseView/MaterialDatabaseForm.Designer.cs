@@ -66,6 +66,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.minCheckBox = new System.Windows.Forms.CheckBox();
             this.numberCheckBox = new System.Windows.Forms.CheckBox();
             this.addNewNormButton = new System.Windows.Forms.Button();
+            this.deleteNormButton = new System.Windows.Forms.Button();
             this.ViewLayoutPanel.SuspendLayout();
             this.DataModifLayoutPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
@@ -306,7 +307,7 @@ namespace WelderCalculator.MaterialDatabaseView
             // normLabel
             // 
             this.normLabel.AutoSize = true;
-            this.normLabel.Location = new System.Drawing.Point(2, 90);
+            this.normLabel.Location = new System.Drawing.Point(3, 96);
             this.normLabel.Name = "normLabel";
             this.normLabel.Size = new System.Drawing.Size(41, 13);
             this.normLabel.TabIndex = 10;
@@ -315,7 +316,7 @@ namespace WelderCalculator.MaterialDatabaseView
             // normComboBox
             // 
             this.normComboBox.FormattingEnabled = true;
-            this.normComboBox.Location = new System.Drawing.Point(49, 87);
+            this.normComboBox.Location = new System.Drawing.Point(50, 93);
             this.normComboBox.Name = "normComboBox";
             this.normComboBox.Size = new System.Drawing.Size(140, 21);
             this.normComboBox.TabIndex = 9;
@@ -459,7 +460,7 @@ namespace WelderCalculator.MaterialDatabaseView
             // 
             // addNewNormButton
             // 
-            this.addNewNormButton.Location = new System.Drawing.Point(49, 53);
+            this.addNewNormButton.Location = new System.Drawing.Point(50, 65);
             this.addNewNormButton.Name = "addNewNormButton";
             this.addNewNormButton.Size = new System.Drawing.Size(140, 23);
             this.addNewNormButton.TabIndex = 16;
@@ -467,11 +468,22 @@ namespace WelderCalculator.MaterialDatabaseView
             this.addNewNormButton.UseVisualStyleBackColor = true;
             this.addNewNormButton.Click += new System.EventHandler(this.addNewNormButton_Click);
             // 
+            // deleteNormButton
+            // 
+            this.deleteNormButton.Location = new System.Drawing.Point(50, 36);
+            this.deleteNormButton.Name = "deleteNormButton";
+            this.deleteNormButton.Size = new System.Drawing.Size(140, 23);
+            this.deleteNormButton.TabIndex = 17;
+            this.deleteNormButton.Text = "Usuń norme";
+            this.deleteNormButton.UseVisualStyleBackColor = true;
+            this.deleteNormButton.Click += new System.EventHandler(this.deleteNormButton_Click);
+            // 
             // MaterialDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 400);
+            this.Controls.Add(this.deleteNormButton);
             this.Controls.Add(this.addNewNormButton);
             this.Controls.Add(this.carbonLabel);
             this.Controls.Add(this.materialsDataGridView);
@@ -544,6 +556,7 @@ namespace WelderCalculator.MaterialDatabaseView
         private System.Windows.Forms.CheckBox vCheckBox;
         private System.Windows.Forms.Button orderElementsButton;
         private Button addNewNormButton;
+        private Button deleteNormButton;
 
 
     }

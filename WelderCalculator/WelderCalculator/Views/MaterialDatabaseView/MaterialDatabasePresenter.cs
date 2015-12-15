@@ -377,6 +377,13 @@ namespace WelderCalculator.MaterialDatabaseView
             Init();
         }
 
+        public void OnDeleteNormButtonClicked()
+        {
+            string selectedNormName = _view.NormsList[_view.SelectedNorm];
+            _dataConnector.RemoveBaseNorm(selectedNormName);
+            Init();
+        }
+
         public void Refresh()
         {
             LoadNormsComboBox();

@@ -295,6 +295,11 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
             Presenter.OnSelectedDataGridViewRowChanged();
         }
 
+        private void deleteNormButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnDeleteNormButtonClicked();
+        }
+
 
         
     }
