@@ -390,13 +390,16 @@ namespace WelderCalculator.MaterialDatabaseView
             this.materialsDataGridView.AllowUserToAddRows = false;
             this.materialsDataGridView.AllowUserToDeleteRows = false;
             this.materialsDataGridView.AllowUserToResizeRows = false;
+            this.materialsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.materialsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.materialsDataGridView.Location = new System.Drawing.Point(35, 136);
+            this.materialsDataGridView.Location = new System.Drawing.Point(12, 136);
             this.materialsDataGridView.MultiSelect = false;
             this.materialsDataGridView.Name = "materialsDataGridView";
             this.materialsDataGridView.ReadOnly = true;
             this.materialsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.materialsDataGridView.Size = new System.Drawing.Size(892, 252);
+            this.materialsDataGridView.Size = new System.Drawing.Size(949, 252);
             this.materialsDataGridView.TabIndex = 14;
             this.materialsDataGridView.SelectionChanged += new System.EventHandler(this.materialsDataGridView_SelectedRowChanged);
             // 
