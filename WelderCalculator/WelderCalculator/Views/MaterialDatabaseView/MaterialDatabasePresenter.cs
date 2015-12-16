@@ -380,8 +380,14 @@ namespace WelderCalculator.MaterialDatabaseView
         public void OnDeleteNormButtonClicked()
         {
             string selectedNormName = _view.NormsList[_view.SelectedNorm];
-            _dataConnector.RemoveBaseNorm(selectedNormName);
-            Init();
+
+            var dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć normę " + selectedNormName + "?", "Usuń normę",
+                            MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                _dataConnector.RemoveBaseNorm(selectedNormName);
+                Init();
+            }
         }
 
         public void Refresh()

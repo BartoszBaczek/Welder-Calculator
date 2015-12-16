@@ -322,6 +322,7 @@ namespace WelderCalculator.MaterialDatabaseView
         private void deleteNormButton_Click(object sender, EventArgs e)
         {
             Presenter.OnDeleteNormButtonClicked();
+            //Trzeba dodac potwierdzenie usunia normy - za duzo do stracenia
         }
 
     }

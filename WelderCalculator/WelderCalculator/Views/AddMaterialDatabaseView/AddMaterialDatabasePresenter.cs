@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using WelderCalculator.Databases.BaseMaterialsView;
 using WelderCalculator.MaterialDatabasePropertiesView;
@@ -74,10 +75,15 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
         private IEnumerable<AdditiveMaterial> GetCurrentListOfMaterialsFromNormComboBox()
         {
             List<string> listOfNormsNames = _dataConnector.GetNamesOfAdditiveNorms();
-            string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
-            List<AdditiveMaterial> listofMaterialsFromNorm = _dataConnector.GetAdditiveMaterials(desiredNameOfNorm);
 
-            return listofMaterialsFromNorm;
+            if (_view.SelectedNorm != -1)
+            {
+                string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
+                List<AdditiveMaterial> listofMaterialsFromNorm = _dataConnector.GetAdditiveMaterials(desiredNameOfNorm);
+                return listofMaterialsFromNorm;
+            }
+            return new List<AdditiveMaterial>();
+
         }
 
         private void CreateColumns(DataTable table)
@@ -341,8 +347,14 @@ namespace WelderCalculator.Databases.AddMaterialDatabaseView
         public void OnDeleteNormButtonClicked()
         {
             string selectedNormName = _view.NormsList[_view.SelectedNorm];
-            _dataConnector.RemoveAdditiveNorm(selectedNormName);
-            Init();
+
+            var dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć normę " + selectedNormName + "?", "Usuń normę",
+                            MessageBoxButtons.OKCancel);
+            if (dialogResult == DialogResult.OK)
+            {
+                _dataConnector.RemoveAdditiveNorm(selectedNormName);
+                Init();
+            }
         }
 
         public void OnSelectedIndexChanged()
