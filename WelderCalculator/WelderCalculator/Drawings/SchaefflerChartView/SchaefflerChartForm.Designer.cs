@@ -32,24 +32,31 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.AutoSize = true;
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(913, 512);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new PaintEventHandler(panel1_Paint);
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // SchaefflerChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 536);
+            this.ClientSize = new System.Drawing.Size(940, 536);
             this.Controls.Add(this.panel1);
             this.Name = "SchaefflerChartForm";
             this.Text = "SchaefflerChartForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

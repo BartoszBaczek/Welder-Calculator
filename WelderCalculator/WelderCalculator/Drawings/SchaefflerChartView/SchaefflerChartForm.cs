@@ -13,11 +13,21 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         {
             InitializeComponent();
             new SchaefflerChartPresenter(this);
+            EnableResizeRedraw();
         }
 
+        private void EnableResizeRedraw()
+        {
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+        }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             Presenter.Draw(e);
+        }
+
+        private void SchaefflerChartForm_Load(object sender, System.EventArgs e)
+        {
+
         }
 
 
