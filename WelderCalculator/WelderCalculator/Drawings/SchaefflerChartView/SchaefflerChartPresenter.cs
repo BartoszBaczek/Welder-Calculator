@@ -1,5 +1,8 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -21,31 +24,49 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         {
             string _binPath = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
 
-            string schaefflerBackfround = _binPath + @"\.." + @"\Data\I\s_background.png";
-            string schaefflerXAxis = _binPath + @"\.." + @"\Data\I\s_x.png";
-            string schaefflerYAxis = _binPath + @"\.." + @"\Data\I\s_y.png";
-            string schaefflerHash = _binPath + @"\.." + @"\Data\I\s_hash.png";
-            string schaefflerPhaseMarkers = _binPath + @"\.." + @"\Data\I\s_phase.png";
+            List<string> pathsToDrawables = new List<string>()
+            {
+                _binPath + @"\.." + @"\Data\I\s_background.png",
+                _binPath + @"\.." + @"\Data\I\s_x.png",
+                _binPath + @"\.." + @"\Data\I\s_y.png",
+                _binPath + @"\.." + @"\Data\I\s_hash.png",
+                _binPath + @"\.." + @"\Data\I\s_phase.png"
+            };
 
-            e.Graphics.InterpolationMode = InterpolationMode.High;
-            e.Graphics.CompositingQuality = CompositingQuality.HighQuality;
-            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            foreach (var path in pathsToDrawables)
+            {
+                Image image = Image.FromFile(path);
+                //Bitmap resizedImage = ResizeImage(image, _view.CanvasWidth, _view.CanvasHeight);
+                Bitmap resizedImage = ResizeImage(image, _view.CanvasWidth, _view.CanvasHeight);
+                Debug.WriteLine(_view.CanvasWidth);
+                e.Graphics.DrawImage(resizedImage,
+                    new Rectangle(new Point(0, 0), new Size(_view.CanvasWidth, _view.CanvasHeight)));
+            }
+        }
 
-            Image newImage = Image.FromFile(schaefflerBackfround);
-            e.Graphics.DrawImage(newImage, new Point(0, 0));
+        private Bitmap ResizeImage(Image image, int width, int height)
+        {
+            var destRect = new Rectangle(0, 0, width, height);
+            var destImage = new Bitmap(width, height);
 
-            newImage = Image.FromFile(schaefflerHash);
-            e.Graphics.DrawImage(newImage, new Point(0, 0));
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
 
-            newImage = Image.FromFile(schaefflerXAxis);
-            e.Graphics.DrawImage(newImage, new Point(0, 0));
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-            newImage = Image.FromFile(schaefflerYAxis);
-            e.Graphics.DrawImage(newImage, new Point(0, 0));
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
 
-            newImage = Image.FromFile(schaefflerPhaseMarkers);
-            e.Graphics.DrawImage(newImage, new Point(0, 0));
-            
+            return destImage;
         }
     }
 }
