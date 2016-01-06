@@ -6,33 +6,38 @@ namespace WelderCalculator.Drawings.Chart
 {
     public class Layers
     {
-        private List<Layer> chartLayers;
+        private readonly List<Layer> _activeLayers;
+        private readonly List<Layer> _allLayers;
 
         public Layers(List<Layer> layers)
         {
-            chartLayers = layers;
+            _allLayers = new List<Layer>();
+            foreach (var layer in layers)
+            {
+                _allLayers.Add(layer);
+            }
+
+            _activeLayers = layers;
         }
 
         public Layer Get(LayerType type)
         {
-            return chartLayers.First(l => l.Type == type);
+            return _activeLayers.First(l => l.Type == type);
         }
 
-        public List<Layer> GetAll()
+        public List<Layer> GetActive()
         {
-            return chartLayers;
+            return _activeLayers;
         }
 
         public void Remove(LayerType type)
         {
-            chartLayers.RemoveAll(l => l.Type == type);
+            _activeLayers.RemoveAll(l => l.Type == type);
         }
 
-        public void Add(Layer layer)
+        public void Add(LayerType type)
         {
-            chartLayers.Add(layer);
+                _activeLayers.Add(_allLayers.First(l => l.Type == type));
         }
-
-        
     }
 }

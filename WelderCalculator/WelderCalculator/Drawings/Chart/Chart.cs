@@ -8,24 +8,23 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 {
     public class Chart
     {
-        private Layers _currentLayers;
-        private readonly Layers _originalLayers; 
+        private Layers _layers;
         private Size _size;
 
         public Layers Layers
         {
-            get { return _currentLayers; }
+            get { return _layers; }
         }
 
         public Chart(Layers layers)
         {
-            _originalLayers = layers;
+            _layers = layers;
             SetLayersVisibility();
         }
 
         public void Resize(int width, int height)
         {
-            foreach (var layer in _currentLayers.GetAll())
+            foreach (var layer in _layers.GetActive())
             {
                 var destinationRectangle = new Rectangle(0, 0, width, height);
                 var destinationImage = new Bitmap(width, height);
@@ -52,7 +51,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public void Draw(Graphics graphics)
         {
-            foreach (var layer in _currentLayers.GetAll())
+            foreach (var layer in _layers.GetActive())
             {
                 graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(_size.Width, _size.Height)));
             }
@@ -60,10 +59,8 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         private void SetLayersVisibility()
         {
-            _currentLayers = _originalLayers;
-
-            int maxLayersWidth = _currentLayers.GetAll().Max(l => l.Image.Width);
-            int maxLayersHigth = _currentLayers.GetAll().Max(l => l.Image.Height);
+            int maxLayersWidth = _layers.GetActive().Max(l => l.Image.Width);
+            int maxLayersHigth = _layers.GetActive().Max(l => l.Image.Height);
             _size = new Size(maxLayersWidth, maxLayersHigth);
         }
     }

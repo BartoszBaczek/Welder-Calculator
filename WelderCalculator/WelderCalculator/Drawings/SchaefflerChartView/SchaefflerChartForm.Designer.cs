@@ -32,11 +32,11 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         {
             this.drawPanel = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.backgroundCheckBox = new System.Windows.Forms.CheckBox();
-            this.hashCheckBox = new System.Windows.Forms.CheckBox();
-            this.xAxisCheckBox = new System.Windows.Forms.CheckBox();
-            this.yAxisCheckBox = new System.Windows.Forms.CheckBox();
             this.phaseCheckBox = new System.Windows.Forms.CheckBox();
+            this.yAxisCheckBox = new System.Windows.Forms.CheckBox();
+            this.xAxisCheckBox = new System.Windows.Forms.CheckBox();
+            this.hashCheckBox = new System.Windows.Forms.CheckBox();
+            this.backgroundCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,35 +67,16 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Widoczność";
             // 
-            // backgroundCheckBox
+            // phaseCheckBox
             // 
-            this.backgroundCheckBox.AutoSize = true;
-            this.backgroundCheckBox.Location = new System.Drawing.Point(7, 20);
-            this.backgroundCheckBox.Name = "backgroundCheckBox";
-            this.backgroundCheckBox.Size = new System.Drawing.Size(43, 17);
-            this.backgroundCheckBox.TabIndex = 0;
-            this.backgroundCheckBox.Text = "Tło";
-            this.backgroundCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // hashCheckBox
-            // 
-            this.hashCheckBox.AutoSize = true;
-            this.hashCheckBox.Location = new System.Drawing.Point(7, 43);
-            this.hashCheckBox.Name = "hashCheckBox";
-            this.hashCheckBox.Size = new System.Drawing.Size(51, 17);
-            this.hashCheckBox.TabIndex = 1;
-            this.hashCheckBox.Text = "Krata";
-            this.hashCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // xAxisCheckBox
-            // 
-            this.xAxisCheckBox.AutoSize = true;
-            this.xAxisCheckBox.Location = new System.Drawing.Point(7, 66);
-            this.xAxisCheckBox.Name = "xAxisCheckBox";
-            this.xAxisCheckBox.Size = new System.Drawing.Size(49, 17);
-            this.xAxisCheckBox.TabIndex = 2;
-            this.xAxisCheckBox.Text = "Oś X";
-            this.xAxisCheckBox.UseVisualStyleBackColor = true;
+            this.phaseCheckBox.AutoSize = true;
+            this.phaseCheckBox.Location = new System.Drawing.Point(7, 112);
+            this.phaseCheckBox.Name = "phaseCheckBox";
+            this.phaseCheckBox.Size = new System.Drawing.Size(85, 17);
+            this.phaseCheckBox.TabIndex = 4;
+            this.phaseCheckBox.Text = "Linie fazowe";
+            this.phaseCheckBox.UseVisualStyleBackColor = true;
+            this.phaseCheckBox.CheckedChanged += new System.EventHandler(this.phaseCheckBox_CheckedChanged);
             // 
             // yAxisCheckBox
             // 
@@ -106,16 +87,40 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.yAxisCheckBox.TabIndex = 3;
             this.yAxisCheckBox.Text = "Oś Y";
             this.yAxisCheckBox.UseVisualStyleBackColor = true;
+            this.yAxisCheckBox.CheckedChanged += new System.EventHandler(this.yAxisCheckBox_CheckedChanged);
             // 
-            // phaseCheckBox
+            // xAxisCheckBox
             // 
-            this.phaseCheckBox.AutoSize = true;
-            this.phaseCheckBox.Location = new System.Drawing.Point(7, 112);
-            this.phaseCheckBox.Name = "phaseCheckBox";
-            this.phaseCheckBox.Size = new System.Drawing.Size(85, 17);
-            this.phaseCheckBox.TabIndex = 4;
-            this.phaseCheckBox.Text = "Linie fazowe";
-            this.phaseCheckBox.UseVisualStyleBackColor = true;
+            this.xAxisCheckBox.AutoSize = true;
+            this.xAxisCheckBox.Location = new System.Drawing.Point(7, 66);
+            this.xAxisCheckBox.Name = "xAxisCheckBox";
+            this.xAxisCheckBox.Size = new System.Drawing.Size(49, 17);
+            this.xAxisCheckBox.TabIndex = 2;
+            this.xAxisCheckBox.Text = "Oś X";
+            this.xAxisCheckBox.UseVisualStyleBackColor = true;
+            this.xAxisCheckBox.CheckedChanged += new System.EventHandler(this.xAxisCheckBox_CheckedChanged);
+            // 
+            // hashCheckBox
+            // 
+            this.hashCheckBox.AutoSize = true;
+            this.hashCheckBox.Location = new System.Drawing.Point(7, 43);
+            this.hashCheckBox.Name = "hashCheckBox";
+            this.hashCheckBox.Size = new System.Drawing.Size(51, 17);
+            this.hashCheckBox.TabIndex = 1;
+            this.hashCheckBox.Text = "Krata";
+            this.hashCheckBox.UseVisualStyleBackColor = true;
+            this.hashCheckBox.CheckedChanged += new System.EventHandler(this.hashCheckBox_CheckedChanged);
+            // 
+            // backgroundCheckBox
+            // 
+            this.backgroundCheckBox.AutoSize = true;
+            this.backgroundCheckBox.Location = new System.Drawing.Point(7, 20);
+            this.backgroundCheckBox.Name = "backgroundCheckBox";
+            this.backgroundCheckBox.Size = new System.Drawing.Size(43, 17);
+            this.backgroundCheckBox.TabIndex = 0;
+            this.backgroundCheckBox.Text = "Tło";
+            this.backgroundCheckBox.UseVisualStyleBackColor = true;
+            this.backgroundCheckBox.CheckedChanged += new System.EventHandler(this.backgroundCheckBox_CheckedChanged);
             // 
             // SchaefflerChartForm
             // 

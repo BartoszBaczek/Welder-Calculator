@@ -72,7 +72,32 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         {
             get { return phaseCheckBox.Checked; }
             set { phaseCheckBox.Checked = value; } 
-        } 
+        }
+
+        private void backgroundCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(LayerType.Background, BackgroundVisibleCheckBox);
+        }
+
+        private void hashCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(LayerType.Hash, HashVisibleCheckBox);
+        }
+
+        private void xAxisCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(LayerType.AxisX, XAxisVisibleCheckBox);
+        }
+
+        private void yAxisCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(LayerType.AxisY, YAxisVisibleCheckBox);
+        }
+
+        private void phaseCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(LayerType.Phase, PhaseLinesVisibleCheckBox);
+        }
         #endregion
     }
 }

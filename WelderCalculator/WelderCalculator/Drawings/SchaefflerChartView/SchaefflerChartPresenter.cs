@@ -13,9 +13,8 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
-
             _view = view;
-            _view.Presenter = this; 
+            _view.Presenter = this;
             _dataConnector = new DataConnector();
             _chart = new Chart(_dataConnector.GetSchaefflerImages());
 
@@ -28,6 +27,14 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
             Graphics graphics = Graphics.FromHwnd(_view.DrawPanelCanvas);
             _chart.Draw(graphics);
+        }
+
+        public void OnLayerVisibilityChanged(LayerType type, bool visibility)
+        {
+            if (!visibility)
+                _chart.Layers.Remove(type);
+            else
+                _chart.Layers.Add(type);
         }
 
         private void SetVisibilityCheckBoxesToTrue()
