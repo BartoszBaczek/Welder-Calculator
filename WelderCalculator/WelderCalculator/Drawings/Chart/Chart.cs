@@ -3,21 +3,22 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
+using WelderCalculator.Drawings.Chart;
 
 namespace WelderCalculator.Drawings.SchaefflerChartView
 {
     public class Chart
     {
-        private List<Layer> _currentLayers;
-        private readonly List<Layer> _originalLayers; 
+        private Layers _currentLayers;
+        private readonly Layers _originalLayers; 
         private Size _size;
 
-        public List<Layer> Layers
+        public Layers Layers
         {
             get { return _currentLayers; }
         }
 
-        public Chart(List<Layer> layers)
+        public Chart(Layers layers)
         {
             _originalLayers = layers;
             SetLayersVisibility();
@@ -25,7 +26,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public void Resize(int width, int height)
         {
-            foreach (var layer in _currentLayers)
+            foreach (var layer in _currentLayers.GetAll())
             {
                 var destinationRectangle = new Rectangle(0, 0, width, height);
                 var destinationImage = new Bitmap(width, height);
@@ -52,30 +53,18 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public void Draw(Graphics graphics)
         {
-            foreach (var layer in _currentLayers)
+            foreach (var layer in _currentLayers.GetAll())
             {
                 graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(_size.Width, _size.Height)));
             }
-        }
-
-        public void HideLayer(LayerType type)
-        {
-            _currentLayers.RemoveAll(l => l.Type == type);
-        }
-
-        public void RestoreLayer(LayerType type)
-        {
-            _currentLayers.Add(
-                _originalLayers
-                .First( l=> l.Type == type));
         }
 
         private void SetLayersVisibility()
         {
             _currentLayers = _originalLayers;
 
-            int maxLayersWidth = _currentLayers.Max(l => l.Image.Width);
-            int maxLayersHigth = _currentLayers.Max(l => l.Image.Height);
+            int maxLayersWidth = _currentLayers.GetAll().Max(l => l.Image.Width);
+            int maxLayersHigth = _currentLayers.GetAll().Max(l => l.Image.Height);
             _size = new Size(maxLayersWidth, maxLayersHigth);
         }
     }

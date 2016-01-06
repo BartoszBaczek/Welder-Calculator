@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Drawings\Chart\Chart.cs" />
     <Compile Include="Drawings\Chart\Layer.cs" />
+    <Compile Include="Drawings\Chart\Layers.cs" />
     <Compile Include="Repositories\IDrawingsRepository.cs" />
     <Compile Include="Views\AddMaterialDatabaseView\AddMaterialDatabasePresenter.cs" />
     <Compile Include="Views\AddMaterialDatabaseView\AddMaterialDatabaseForm.cs">
