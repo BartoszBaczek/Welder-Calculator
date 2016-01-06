@@ -43,7 +43,36 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             drawPanel.Refresh();
         }
 
+        #region Visibility checkboxes
+        public bool BackgroundVisibleCheckBox
+        {
+            get { return backgroundCheckBox.Checked; }
+            set { backgroundCheckBox.Checked = value; } 
+        }
 
-        
+        public bool HashVisibleCheckBox
+        {
+            get { return hashCheckBox.Checked; }
+            set { hashCheckBox.Checked = value; } 
+        }
+
+        public bool XAxisVisibleCheckBox
+        {
+            get { return xAxisCheckBox.Checked; }
+            set { xAxisCheckBox.Checked = value; } 
+        }
+
+        public bool YAxisVisibleCheckBox
+        {
+            get { return yAxisCheckBox.Checked; }
+            set { yAxisCheckBox.Checked = value; } 
+        }
+
+        public bool PhaseLinesVisibleCheckBox
+        {
+            get { return phaseCheckBox.Checked; }
+            set { phaseCheckBox.Checked = value; } 
+        } 
+        #endregion
     }
 }

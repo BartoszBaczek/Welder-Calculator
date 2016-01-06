@@ -13,11 +13,13 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
+
             _view = view;
             _view.Presenter = this; 
             _dataConnector = new DataConnector();
-
             _chart = new Chart(_dataConnector.GetSchaefflerImages());
+
+            SetVisibilityCheckBoxesToTrue();
         }
 
         public void OnPaintEvent(IntPtr panelHandle, PaintEventArgs e)
@@ -26,6 +28,15 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
             Graphics graphics = Graphics.FromHwnd(_view.DrawPanelCanvas);
             _chart.Draw(graphics);
+        }
+
+        private void SetVisibilityCheckBoxesToTrue()
+        {
+            _view.BackgroundVisibleCheckBox = true;
+            _view.HashVisibleCheckBox = true;
+            _view.XAxisVisibleCheckBox = true;
+            _view.YAxisVisibleCheckBox = true;
+            _view.PhaseLinesVisibleCheckBox = true;
         }
     }
 }
