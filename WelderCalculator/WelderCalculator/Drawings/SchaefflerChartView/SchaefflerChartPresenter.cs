@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -12,15 +13,16 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
     public class SchaefflerChartPresenter
     {
         private readonly ISchaefflerChartView _view;
-
-
+        private List<Image> imagesToDraw;
+ 
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
             _view = view;
             view.Presenter = this;
+            LoadImages();
         }
 
-        public void Draw(PaintEventArgs e)
+        private void LoadImages()
         {
             string _binPath = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
 
@@ -33,14 +35,23 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
                 _binPath + @"\.." + @"\Data\I\s_phase.png"
             };
 
+            imagesToDraw = new List<Image>();
+
             foreach (var path in pathsToDrawables)
+                imagesToDraw.Add(Image.FromFile(path));
+        }
+
+        public void Draw(IntPtr panelHandle, PaintEventArgs e)
+        {
+            foreach (var image in imagesToDraw)
             {
-                Image image = Image.FromFile(path);
-                //Bitmap resizedImage = ResizeImage(image, _view.CanvasWidth, _view.CanvasHeight);
                 Bitmap resizedImage = ResizeImage(image, _view.CanvasWidth, _view.CanvasHeight);
-                Debug.WriteLine(_view.CanvasWidth);
-                e.Graphics.DrawImage(resizedImage,
+
+                using (Graphics graphics = Graphics.FromHwnd(panelHandle))
+                {
+                    graphics.DrawImage(resizedImage,
                     new Rectangle(new Point(0, 0), new Size(_view.CanvasWidth, _view.CanvasHeight)));
+                }
             }
         }
 

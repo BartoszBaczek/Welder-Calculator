@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace WelderCalculator.Drawings.SchaefflerChartView
 {
     public interface ISchaefflerChartView

@@ -16,7 +16,6 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             InitializeComponent();
             new SchaefflerChartPresenter(this);
             EnableResizeRedraw();
-            
         }
 
         private void EnableResizeRedraw()
@@ -26,14 +25,16 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Presenter.Draw(e);
+            Presenter.Draw(panel1.Handle, e);
         }
+
 
         protected override void OnResizeBegin(EventArgs e)
         {
             SuspendLayout();
             base.OnResizeBegin(e);
         }
+
         protected override void OnResizeEnd(EventArgs e)
         {
             base.Refresh();
