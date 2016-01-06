@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -7,16 +6,18 @@ using Newtonsoft.Json;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories.Model;
 using WelderCalculator.Repositories.Model.temp2;
+using System.Drawing;
 
 namespace WelderCalculator.Repositories
 {
-    public class NormRepository : IBasicNormRepository, IAdditiveNormRepository
+    public class NormRepository : IBasicNormRepository, IAdditiveNormRepository, IDrawingsRepository
     {
 
         private string _binPath;
         private readonly string _baseNormsPath;
         private readonly string _additiveNormsPath;
         private readonly string _propertiesPath;
+        private readonly string _drawingsPath;
 
         public NormRepository()
         {
@@ -24,6 +25,7 @@ namespace WelderCalculator.Repositories
             _baseNormsPath =     _binPath + @"\.." + @"\Data\BaseNorms\";
             _additiveNormsPath = _binPath + @"\.." + @"\Data\AdditiveNorms\";
             _propertiesPath =    _binPath + @"\.." + @"\Data\Properties\";
+            _drawingsPath =      _binPath + @"\.." + @"\Data\I\";
         }
 
         /*Use this constructor ONLY for testing!!!*/
@@ -33,6 +35,7 @@ namespace WelderCalculator.Repositories
             _baseNormsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\BaseNorms\";
             _additiveNormsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\AdditiveNorms\";
             _propertiesPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\Properties\";
+            _drawingsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\I\";
         }
 
 
@@ -173,14 +176,18 @@ namespace WelderCalculator.Repositories
         #endregion
 
 
-        
+        public List<Image> GetSchaefflerChartImages()
+        {
+            var imagesNames = new List<string>()
+            {
+                "s_background.png",
+                "s_x.png",
+                "s_y.png",
+                "s_hash.png",
+                "s_phase.png"
+            };
 
-        
-
-        
-
-        
-
-        
+            return imagesNames.Select(i => Image.FromFile(_drawingsPath + i)).ToList();
+        } 
     }
 }

@@ -7,9 +7,9 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
     {
         public SchaefflerChartPresenter Presenter { private get; set; }
 
-        public int CanvasWidth { get { return panel1.Width; } }
+        public int DrawPanelWidth { get { return drawPanel.Width; } }
 
-        public int CanvasHeight { get { return panel1.Height; } }
+        public int DrawPanelHeight { get { return drawPanel.Height; } }
 
         public SchaefflerChartForm()
         {
@@ -23,11 +23,10 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             SetStyle(ControlStyles.ResizeRedraw, true);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void drawPanel_Paint(object sender, PaintEventArgs e)
         {
-            Presenter.Draw(panel1.Handle, e);
+            Presenter.Draw(drawPanel.Handle, e);
         }
-
 
         protected override void OnResizeBegin(EventArgs e)
         {
@@ -40,6 +39,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             base.Refresh();
             ResumeLayout();
             base.OnResizeEnd(e);
+            drawPanel.Refresh();
         }
     }
 }

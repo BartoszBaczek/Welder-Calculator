@@ -30,34 +30,38 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.drawPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // panel1
+            // drawPanel
             // 
-            this.panel1.AutoSize = true;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 536);
-            this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.drawPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.drawPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.drawPanel.Location = new System.Drawing.Point(12, 12);
+            this.drawPanel.Name = "drawPanel";
+            this.drawPanel.Size = new System.Drawing.Size(788, 512);
+            this.drawPanel.TabIndex = 0;
+            this.drawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPanel_Paint);
             // 
             // SchaefflerChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(950, 536);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.drawPanel);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
+            this.DoubleBuffered = true;
             this.Name = "SchaefflerChartForm";
             this.Text = "SchaefflerChartForm";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private Panel drawPanel;
+
     }
 }

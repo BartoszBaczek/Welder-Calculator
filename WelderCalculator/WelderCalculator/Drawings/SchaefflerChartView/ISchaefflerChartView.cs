@@ -7,7 +7,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
     {
         SchaefflerChartPresenter Presenter { set; }
 
-        int CanvasWidth { get; }
-        int CanvasHeight { get; }
+        int DrawPanelWidth { get; }
+        int DrawPanelHeight { get; }
     }
 }

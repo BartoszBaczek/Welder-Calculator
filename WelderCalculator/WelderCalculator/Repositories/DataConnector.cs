@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
@@ -99,6 +100,11 @@ namespace WelderCalculator.MaterialModificationView.Serialization
         {
             AdditiveNorm norm = _normRepo.DeserializeAdditiveNorm(normName);
             return norm.Materials.OrderBy(m => m.Name).ToList();
+        }
+
+        public List<Image> GetSchaefflerImages()
+        {
+            return _normRepo.GetSchaefflerChartImages();
         }
     }
 }

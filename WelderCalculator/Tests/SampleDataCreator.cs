@@ -54,8 +54,7 @@ namespace Tests
             //given
             var material1 = new AdditiveMaterial()
             {
-                AlloyTypeName = "mat1",
-                NominalCompositionName = "_mat1"
+                Name = "mat1",
             };
             material1.CreateBasicListOfElements();
             foreach (var e in material1.Elements)
@@ -67,8 +66,7 @@ namespace Tests
 
             var material2 = new AdditiveMaterial()
             {
-                AlloyTypeName = "mat",
-                NominalCompositionName = "_mat2"
+                Name = "mat",
             };
             material2.CreateBasicListOfElements();
             foreach (var e in material2.Elements)
@@ -80,8 +78,7 @@ namespace Tests
 
             var material3 = new AdditiveMaterial()
             {
-                AlloyTypeName = "mat3",
-                NominalCompositionName = "_mat3"
+                Name = "mat3",
             };
             material3.CreateBasicListOfElements();
             foreach (var e in material3.Elements)
@@ -119,8 +116,7 @@ namespace Tests
         {
             var material = new AdditiveMaterial()
             {
-                AlloyTypeName = "sadasd",
-                NominalCompositionName = "asdasd"
+                Name = "sadasd",
             };
     
             material.CreateBasicListOfElements();

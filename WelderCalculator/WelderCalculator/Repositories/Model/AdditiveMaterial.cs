@@ -41,7 +41,6 @@ namespace WelderCalculator.Repositories.Model
             Elements.Add(new Element(Category.OfElement.Nb));
             Elements.Add(new Element(Category.OfElement.Ti));
             Elements.Add(new Element(Category.OfElement.V));
-            //ZMIENIC 
         }
     }
 }

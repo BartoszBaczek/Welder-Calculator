@@ -52,6 +52,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Repositories\IDrawingsRepository.cs" />
     <Compile Include="Views\AddMaterialDatabaseView\AddMaterialDatabasePresenter.cs" />
     <Compile Include="Views\AddMaterialDatabaseView\AddMaterialDatabaseForm.cs">
       <SubType>Form</SubType>
