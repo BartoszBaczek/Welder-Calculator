@@ -27,11 +27,5 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             Graphics graphics = Graphics.FromHwnd(_view.DrawPanelCanvas);
             _chart.Draw(graphics);
         }
-
-        public void OnCheckBoxChecked()
-        {
-            
-        }
-
     }
 }

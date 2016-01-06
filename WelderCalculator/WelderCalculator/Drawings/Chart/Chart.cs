@@ -9,7 +9,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
     public class Chart
     {
         private List<Layer> _currentLayers;
-        private List<Layer> _originalLayers; 
+        private readonly List<Layer> _originalLayers; 
         private Size _size;
 
         public List<Layer> Layers
@@ -19,7 +19,8 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public Chart(List<Layer> layers)
         {
-            SetLayers(layers);
+            _originalLayers = layers;
+            SetLayersVisibility();
         }
 
         public void Resize(int width, int height)
@@ -57,10 +58,21 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             }
         }
 
-        private void SetLayers(List<Layer> layers)
+        public void HideLayer(LayerType type)
         {
-            _originalLayers = layers;
-            _currentLayers = layers;
+            _currentLayers.RemoveAll(l => l.Type == type);
+        }
+
+        public void RestoreLayer(LayerType type)
+        {
+            _currentLayers.Add(
+                _originalLayers
+                .First( l=> l.Type == type));
+        }
+
+        private void SetLayersVisibility()
+        {
+            _currentLayers = _originalLayers;
 
             int maxLayersWidth = _currentLayers.Max(l => l.Image.Width);
             int maxLayersHigth = _currentLayers.Max(l => l.Image.Height);
