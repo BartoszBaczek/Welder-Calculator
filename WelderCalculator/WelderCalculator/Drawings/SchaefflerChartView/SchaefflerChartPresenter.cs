@@ -35,12 +35,10 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         {
             foreach (var image in imagesToDraw)
             {
-                //Bitmap resizedImage = ResizeImage(image, _view.DrawPanelWidth, _view.DrawPanelHeight);
+                Bitmap resizedImage = ResizeImage(image, _view.DrawPanelWidth, _view.DrawPanelHeight);
 
                 using (Graphics graphics = Graphics.FromHwnd(panelHandle))
                 {
-                    Bitmap resizedImage = new Bitmap(image, _view.DrawPanelWidth, _view.DrawPanelHeight);
-
                     graphics.DrawImage(resizedImage,
                     new Rectangle(new Point(0, 0), new Size(_view.DrawPanelWidth, _view.DrawPanelHeight)));
                 }
