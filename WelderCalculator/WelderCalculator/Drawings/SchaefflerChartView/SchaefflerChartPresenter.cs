@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Reflection;
 using System.Windows.Forms;
 using WelderCalculator.MaterialModificationView.Serialization;
 
@@ -16,13 +11,14 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         private readonly ISchaefflerChartView _view;
         private List<Image> imagesToDraw;
         private readonly DataConnector _dataConnector;
- 
+        private readonly ChartManager _chartManager;
+
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
             _view = view;
-            view.Presenter = this; 
+            _view.Presenter = this; 
             _dataConnector = new DataConnector();
-
+            _chartManager = new ChartManager();
             LoadImages();
         }
 
@@ -35,7 +31,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         {
             foreach (var image in imagesToDraw)
             {
-                Bitmap resizedImage = ResizeImage(image, _view.DrawPanelWidth, _view.DrawPanelHeight);
+                Bitmap resizedImage = _chartManager.ResizeImage(image, _view.DrawPanelWidth, _view.DrawPanelHeight);
 
                 using (Graphics graphics = Graphics.FromHwnd(panelHandle))
                 {
@@ -45,29 +41,5 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             }
         }
 
-        private Bitmap ResizeImage(Image image, int width, int height)
-        {
-            var destRect = new Rectangle(0, 0, width, height);
-            var destImage = new Bitmap(width, height);
-
-            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
-
-            using (var graphics = Graphics.FromImage(destImage))
-            {
-                graphics.CompositingMode = CompositingMode.SourceCopy;
-                graphics.CompositingQuality = CompositingQuality.HighQuality;
-                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
-                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-                using (var wrapMode = new ImageAttributes())
-                {
-                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
-                }
-            }
-
-            return destImage;
-        }
     }
 }
