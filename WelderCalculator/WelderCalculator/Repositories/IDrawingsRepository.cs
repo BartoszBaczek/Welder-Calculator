@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
+using WelderCalculator.Drawings.SchaefflerChartView;
 
 namespace WelderCalculator.Repositories
 {
     public interface IDrawingsRepository
     {
-        List<Image> GetSchaefflerChartImages();
+        List<Layer> GetSchaefflerChartImages();
     }
 }

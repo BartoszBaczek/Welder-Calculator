@@ -3,6 +3,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
+using WelderCalculator.Drawings.SchaefflerChartView;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories.Model;
 using WelderCalculator.Repositories.Model.temp2;
@@ -176,18 +177,18 @@ namespace WelderCalculator.Repositories
         #endregion
 
 
-        public List<Image> GetSchaefflerChartImages()
+        public List<Layer> GetSchaefflerChartImages()
         {
-            var imagesNames = new List<string>()
+            var layers = new List<Layer>()
             {
-                "s_background.png",
-                "s_x.png",
-                "s_y.png",
-                "s_hash.png",
-                "s_phase.png"
+                new Layer(Image.FromFile(_drawingsPath + "s_background.png"), LayerType.Background),
+                new Layer(Image.FromFile(_drawingsPath + "s_x.png"), LayerType.AxisX),
+                new Layer(Image.FromFile(_drawingsPath + "s_y.png"), LayerType.AxisY),
+                new Layer(Image.FromFile(_drawingsPath + "s_hash.png"), LayerType.Hash),
+                new Layer(Image.FromFile(_drawingsPath + "s_phase.png"), LayerType.Phase),
             };
 
-            return imagesNames.Select(i => Image.FromFile(_drawingsPath + i)).ToList();
+            return layers;
         } 
     }
 }

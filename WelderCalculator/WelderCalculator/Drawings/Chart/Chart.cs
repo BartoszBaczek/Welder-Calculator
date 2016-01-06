@@ -8,28 +8,18 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 {
     public class Chart
     {
-        private List<Image> _originalLayers;
-        private List<Image> _currentLayers;
+        private List<Layer> _currentLayers;
+        private List<Layer> _originalLayers; 
         private Size _size;
 
-        public List<Image> Layers
+        public List<Layer> Layers
         {
             get { return _currentLayers; }
         }
 
-        public Chart(List<Image> layers)
+        public Chart(List<Layer> layers)
         {
             SetLayers(layers);
-        }
-
-        private void SetLayers(List<Image> layers)
-        {
-            _originalLayers = layers;
-            _currentLayers = layers;
-
-            int maxLayersWidth = _currentLayers.Max(l => l.Width);
-            int maxLayersHigth = _currentLayers.Max(l => l.Height);
-            _size = new Size(maxLayersWidth, maxLayersHigth);
         }
 
         public void Resize(int width, int height)
@@ -39,7 +29,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
                 var destinationRectangle = new Rectangle(0, 0, width, height);
                 var destinationImage = new Bitmap(width, height);
 
-                destinationImage.SetResolution(layer.HorizontalResolution, layer.VerticalResolution);
+                destinationImage.SetResolution(layer.Image.HorizontalResolution, layer.Image.VerticalResolution);
 
                 using (var graphics = Graphics.FromImage(destinationImage))
                 {
@@ -52,7 +42,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
                     using (var wrapMode = new ImageAttributes())
                     {
                         wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                        graphics.DrawImage(layer, destinationRectangle, 0, 0, layer.Width, layer.Height, GraphicsUnit.Pixel, wrapMode);
+                        graphics.DrawImage(layer.Image, destinationRectangle, 0, 0, layer.Image.Width, layer.Image.Height, GraphicsUnit.Pixel, wrapMode);
                     }
                 }
             }
@@ -63,8 +53,18 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         {
             foreach (var layer in _currentLayers)
             {
-                graphics.DrawImage(layer, new Rectangle(new Point(0, 0), new Size(_size.Width, _size.Height)));
+                graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(_size.Width, _size.Height)));
             }
+        }
+
+        private void SetLayers(List<Layer> layers)
+        {
+            _originalLayers = layers;
+            _currentLayers = layers;
+
+            int maxLayersWidth = _currentLayers.Max(l => l.Image.Width);
+            int maxLayersHigth = _currentLayers.Max(l => l.Image.Height);
+            _size = new Size(maxLayersWidth, maxLayersHigth);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using WelderCalculator.Drawings.SchaefflerChartView;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
 using WelderCalculator.Repositories.Model;
@@ -102,7 +103,7 @@ namespace WelderCalculator.MaterialModificationView.Serialization
             return norm.Materials.OrderBy(m => m.Name).ToList();
         }
 
-        public List<Image> GetSchaefflerImages()
+        public List<Layer> GetSchaefflerImages()
         {
             return _normRepo.GetSchaefflerChartImages();
         }

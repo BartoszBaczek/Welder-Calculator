@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using WelderCalculator.MaterialModificationView.Serialization;
@@ -27,6 +26,11 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
             Graphics graphics = Graphics.FromHwnd(_view.DrawPanelCanvas);
             _chart.Draw(graphics);
+        }
+
+        public void OnCheckBoxChecked()
+        {
+            
         }
 
     }
