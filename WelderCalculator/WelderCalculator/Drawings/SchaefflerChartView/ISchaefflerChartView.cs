@@ -1,5 +1,4 @@
-﻿
-using System.Windows.Forms;
+﻿using System;
 
 namespace WelderCalculator.Drawings.SchaefflerChartView
 {
@@ -9,5 +8,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         int DrawPanelWidth { get; }
         int DrawPanelHeight { get; }
+
+        IntPtr DrawPanelCanvas { get; }
     }
 }

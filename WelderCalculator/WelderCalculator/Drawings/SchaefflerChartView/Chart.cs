@@ -1,34 +1,70 @@
-﻿using System.Drawing;
+﻿using System.Collections.Generic;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Linq;
 
 namespace WelderCalculator.Drawings.SchaefflerChartView
 {
     public class Chart
     {
-        public Bitmap Resize(Image image, int width, int height)
+        private List<Image> _originalLayers;
+        private List<Image> _currentLayers;
+        private Size _size;
+
+        public List<Image> Layers
         {
-            var destinationRectangle = new Rectangle(0, 0, width, height);
-            var destinationImage = new Bitmap(width, height);
+            get { return _currentLayers; }
+        }
 
-            destinationImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+        public Chart(List<Image> layers)
+        {
+            SetLayers(layers);
+        }
 
-            using (var graphics = Graphics.FromImage(destinationImage))
+        private void SetLayers(List<Image> layers)
+        {
+            _originalLayers = layers;
+            _currentLayers = layers;
+
+            int maxLayersWidth = _currentLayers.Max(l => l.Width);
+            int maxLayersHigth = _currentLayers.Max(l => l.Height);
+            _size = new Size(maxLayersWidth, maxLayersHigth);
+        }
+
+        public void Resize(int width, int height)
+        {
+            foreach (var layer in _currentLayers)
             {
-                graphics.CompositingMode = CompositingMode.SourceCopy;
-                graphics.CompositingQuality = CompositingQuality.HighQuality;
-                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                graphics.SmoothingMode = SmoothingMode.HighQuality;
-                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                var destinationRectangle = new Rectangle(0, 0, width, height);
+                var destinationImage = new Bitmap(width, height);
 
-                using (var wrapMode = new ImageAttributes())
+                destinationImage.SetResolution(layer.HorizontalResolution, layer.VerticalResolution);
+
+                using (var graphics = Graphics.FromImage(destinationImage))
                 {
-                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                    graphics.DrawImage(image, destinationRectangle, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                    graphics.CompositingMode = CompositingMode.SourceCopy;
+                    graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    graphics.SmoothingMode = SmoothingMode.HighQuality;
+                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                    using (var wrapMode = new ImageAttributes())
+                    {
+                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                        graphics.DrawImage(layer, destinationRectangle, 0, 0, layer.Width, layer.Height, GraphicsUnit.Pixel, wrapMode);
+                    }
                 }
             }
+            _size = new Size(width, height);
+        }
 
-            return destinationImage;
+        public void Draw(Graphics graphics)
+        {
+            foreach (var layer in _currentLayers)
+            {
+                graphics.DrawImage(layer, new Rectangle(new Point(0, 0), new Size(_size.Width, _size.Height)));
+            }
         }
     }
 }
