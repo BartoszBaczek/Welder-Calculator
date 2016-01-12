@@ -6,7 +6,7 @@ namespace WelderCalculator.MaterialDatabaseView
 {
     public interface IMaterialDatabaseView
     {
-        MaterialDatabasePresenter Presenter { set; }
+        MaterialDatabaseFullAccesPresenter Presenter { set; }
 
         List<string> NormsList { get; set; }
 

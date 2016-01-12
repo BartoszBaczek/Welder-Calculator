@@ -7,12 +7,12 @@ namespace WelderCalculator.MaterialDatabaseView
 {
     public partial class MaterialDatabaseForm : Form, IMaterialDatabaseView
     {
-        public MaterialDatabasePresenter Presenter { private get; set; }
+        public MaterialDatabaseFullAccesPresenter Presenter { private get; set; }
 
         public MaterialDatabaseForm()
         {
             InitializeComponent();
-            new MaterialDatabasePresenter(this);
+            new MaterialDatabaseFullAccesPresenter(this);
             Presenter.Init();
         }
 

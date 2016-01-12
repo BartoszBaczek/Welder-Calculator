@@ -79,7 +79,7 @@
     <Compile Include="Views\MaterialDatabaseView\MaterialDatabaseForm.Designer.cs">
       <DependentUpon>MaterialDatabaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\MaterialDatabaseView\MaterialDatabasePresenter.cs" />
+    <Compile Include="Views\MaterialDatabaseView\MaterialDatabasePresenters\MaterialDatabaseFullAccesPresenter.cs" />
     <Compile Include="Views\General\MaterialModificationView\IMaterialModificationView.cs" />
     <Compile Include="Views\General\MaterialModificationView\MaterialModificationForm.cs">
       <SubType>Form</SubType>
