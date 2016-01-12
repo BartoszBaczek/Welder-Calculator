@@ -341,6 +341,7 @@ namespace WelderCalculator.MaterialDatabaseView
             // 
             this.niTextBox.Location = new System.Drawing.Point(28, 75);
             this.niTextBox.Name = "niTextBox";
+            this.niTextBox.ReadOnly = true;
             this.niTextBox.Size = new System.Drawing.Size(172, 20);
             this.niTextBox.TabIndex = 4;
             // 
@@ -348,6 +349,7 @@ namespace WelderCalculator.MaterialDatabaseView
             // 
             this.crTextBox.Location = new System.Drawing.Point(28, 49);
             this.crTextBox.Name = "crTextBox";
+            this.crTextBox.ReadOnly = true;
             this.crTextBox.Size = new System.Drawing.Size(172, 20);
             this.crTextBox.TabIndex = 3;
             // 
@@ -364,6 +366,7 @@ namespace WelderCalculator.MaterialDatabaseView
             // 
             this.cTextBox.Location = new System.Drawing.Point(29, 23);
             this.cTextBox.Name = "cTextBox";
+            this.cTextBox.ReadOnly = true;
             this.cTextBox.Size = new System.Drawing.Size(172, 20);
             this.cTextBox.TabIndex = 2;
             // 

@@ -134,22 +134,21 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         private void firstBaseMaterialButton_Click(object sender, EventArgs e)
         {
-
+            Presenter.OnFirstBaseMaterialButtonClicked();
         }
 
         private void secondBaseMaterialButton_Click(object sender, EventArgs e)
         {
-
+            Presenter.OnSecondBaseMaterialButtonClicked();
         }
 
         private void addititionalMaterialButton_Click(object sender, EventArgs e)
         {
-
+            Presenter.OnAdditionalMaterialButtonClicked();
         }
 
         private void countButton_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

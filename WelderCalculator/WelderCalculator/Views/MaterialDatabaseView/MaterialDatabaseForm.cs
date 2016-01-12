@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
     public partial class MaterialDatabaseForm : Form, IMaterialDatabaseView
     {
-        public MaterialDatabaseFullAccesPresenter Presenter { private get; set; }
+        public MaterialDatabasePresenter Presenter { private get; set; }
 
-        public MaterialDatabaseForm()
+        public MaterialDatabaseForm(Accesibility accesibility)
         {
             InitializeComponent();
-            new MaterialDatabaseFullAccesPresenter(this);
+            if (accesibility == Accesibility.Full)
+                Presenter = new MaterialDatabaseFullAccesPresenter(this);
+            else
+                Presenter = new MaterialDatabasePartialAccesPresenter(this);
+
             Presenter.Init();
         }
 

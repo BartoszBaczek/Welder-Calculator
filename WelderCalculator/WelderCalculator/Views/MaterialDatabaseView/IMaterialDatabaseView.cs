@@ -1,12 +1,19 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
+    public enum Accesibility
+    {
+        Full,
+        Partial
+    }
+
     public interface IMaterialDatabaseView
     {
-        MaterialDatabaseFullAccesPresenter Presenter { set; }
+        MaterialDatabasePresenter Presenter { set; }
 
         List<string> NormsList { get; set; }
 
