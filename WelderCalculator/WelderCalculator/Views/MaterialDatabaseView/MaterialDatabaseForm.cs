@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
     public partial class MaterialDatabaseForm : Form, IMaterialDatabaseView
     {
-        public MaterialDatabaseFullAccesPresenter Presenter { private get; set; }
+        public MaterialDatabasePresenter Presenter { private get; set; }
 
         public MaterialDatabaseForm()
         {
             InitializeComponent();
-            new MaterialDatabaseFullAccesPresenter(this);
-            Presenter.Init();
+            Presenter = new MaterialDatabaseFullAccesPresenter(this);
         }
 
         public List<string> NormsList

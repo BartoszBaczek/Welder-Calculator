@@ -9,10 +9,11 @@ using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories.Model.temp;
 using WelderCalculator.Repositories.Model.temp2;
+using WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
-    public class MaterialDatabaseFullAccesPresenter
+    public class MaterialDatabaseFullAccesPresenter : MaterialDatabasePresenter
     {
         private readonly IMaterialDatabaseView _view;
         private readonly DataConnector _dataConnector;
