@@ -42,10 +42,10 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.firstBaseMaterialButton = new System.Windows.Forms.Button();
             this.secondBaseMaterialButton = new System.Windows.Forms.Button();
             this.chooseMaterialsLayoutPanel = new System.Windows.Forms.GroupBox();
-            this.addititionalMaterialButton = new System.Windows.Forms.Button();
-            this.additionalMaterialButton = new System.Windows.Forms.TextBox();
-            this.additionalMaterialQuantityLabel = new System.Windows.Forms.Label();
             this.additionalMaterialQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.additionalMaterialQuantityLabel = new System.Windows.Forms.Label();
+            this.addititionalMaterialButton = new System.Windows.Forms.Button();
+            this.additionalMaterialTextBox = new System.Windows.Forms.TextBox();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -170,7 +170,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialQuantityTextBox);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialQuantityLabel);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.addititionalMaterialButton);
-            this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialButton);
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialTextBox);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.firstBaseMaterialButton);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialButton);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.firstBaseMaterialTextBox);
@@ -182,21 +182,12 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.chooseMaterialsLayoutPanel.TabStop = false;
             this.chooseMaterialsLayoutPanel.Text = "Dobór materiału";
             // 
-            // addititionalMaterialButton
+            // additionalMaterialQuantityTextBox
             // 
-            this.addititionalMaterialButton.Location = new System.Drawing.Point(7, 77);
-            this.addititionalMaterialButton.Name = "addititionalMaterialButton";
-            this.addititionalMaterialButton.Size = new System.Drawing.Size(75, 23);
-            this.addititionalMaterialButton.TabIndex = 7;
-            this.addititionalMaterialButton.Text = "Dodatkowy";
-            this.addititionalMaterialButton.UseVisualStyleBackColor = true;
-            // 
-            // additionalMaterialButton
-            // 
-            this.additionalMaterialButton.Location = new System.Drawing.Point(98, 77);
-            this.additionalMaterialButton.Name = "additionalMaterialButton";
-            this.additionalMaterialButton.Size = new System.Drawing.Size(272, 20);
-            this.additionalMaterialButton.TabIndex = 6;
+            this.additionalMaterialQuantityTextBox.Location = new System.Drawing.Point(98, 100);
+            this.additionalMaterialQuantityTextBox.Name = "additionalMaterialQuantityTextBox";
+            this.additionalMaterialQuantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.additionalMaterialQuantityTextBox.TabIndex = 9;
             // 
             // additionalMaterialQuantityLabel
             // 
@@ -207,12 +198,21 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.additionalMaterialQuantityLabel.TabIndex = 8;
             this.additionalMaterialQuantityLabel.Text = "Ilość stopiwa [%]";
             // 
-            // additionalMaterialQuantityTextBox
+            // addititionalMaterialButton
             // 
-            this.additionalMaterialQuantityTextBox.Location = new System.Drawing.Point(98, 100);
-            this.additionalMaterialQuantityTextBox.Name = "additionalMaterialQuantityTextBox";
-            this.additionalMaterialQuantityTextBox.Size = new System.Drawing.Size(100, 20);
-            this.additionalMaterialQuantityTextBox.TabIndex = 9;
+            this.addititionalMaterialButton.Location = new System.Drawing.Point(7, 77);
+            this.addititionalMaterialButton.Name = "addititionalMaterialButton";
+            this.addititionalMaterialButton.Size = new System.Drawing.Size(75, 23);
+            this.addititionalMaterialButton.TabIndex = 7;
+            this.addititionalMaterialButton.Text = "Dodatkowy";
+            this.addititionalMaterialButton.UseVisualStyleBackColor = true;
+            // 
+            // additionalMaterialTextBox
+            // 
+            this.additionalMaterialTextBox.Location = new System.Drawing.Point(98, 77);
+            this.additionalMaterialTextBox.Name = "additionalMaterialTextBox";
+            this.additionalMaterialTextBox.Size = new System.Drawing.Size(272, 20);
+            this.additionalMaterialTextBox.TabIndex = 6;
             // 
             // SchaefflerChartForm
             // 
@@ -249,7 +249,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         private Button secondBaseMaterialButton;
         private GroupBox chooseMaterialsLayoutPanel;
         private Button addititionalMaterialButton;
-        private TextBox additionalMaterialButton;
+        private TextBox additionalMaterialTextBox;
         private TextBox additionalMaterialQuantityTextBox;
         private Label additionalMaterialQuantityLabel;
 

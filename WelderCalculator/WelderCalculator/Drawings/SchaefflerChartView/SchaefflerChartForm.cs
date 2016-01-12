@@ -104,5 +104,32 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             drawPanel.Refresh();
         }
         #endregion
+
+
+        #region Controls setting parameters
+        public string FirstBaseMaterialTextBox
+        {
+            get { return firstBaseMaterialTextBox.Text; }
+            set { firstBaseMaterialTextBox.Text = value; }
+        }
+
+        public string SecondBaseMaterialTextBox
+        {
+            get { return secondBaseMaterialTextBox.Text; }
+            set { secondBaseMaterialTextBox.Text = value; }
+        }
+
+        public string AdditionalMaterialTextBox
+        {
+            get { return additionalMaterialTextBox.Text; }
+            set { additionalMaterialTextBox.Text = value; }
+        }
+
+        public string AdditionalMaterialQuantity
+        {
+            get { return additionalMaterialQuantityTextBox.Text; }
+            set { additionalMaterialQuantityTextBox.Text = value; }
+        } 
+        #endregion
     }
 }
