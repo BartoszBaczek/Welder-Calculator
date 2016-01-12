@@ -96,14 +96,14 @@
     <Compile Include="Views\General\NormAdderView\NormAdderView.Designer.cs">
       <DependentUpon>NormAdderView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Drawings\SchaefflerChartView\ISchaefflerChartView.cs" />
-    <Compile Include="Drawings\SchaefflerChartView\SchaefflerChartForm.cs">
+    <Compile Include="Views\SchaefflerChartView\ISchaefflerChartView.cs" />
+    <Compile Include="Views\SchaefflerChartView\SchaefflerChartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Drawings\SchaefflerChartView\SchaefflerChartForm.Designer.cs">
+    <Compile Include="Views\SchaefflerChartView\SchaefflerChartForm.Designer.cs">
       <DependentUpon>SchaefflerChartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Drawings\SchaefflerChartView\SchaefflerChartPresenter.cs" />
+    <Compile Include="Views\SchaefflerChartView\SchaefflerChartPresenter.cs" />
     <Compile Include="Repositories\DataConnector.cs" />
     <Compile Include="Views\General\MaterialModificationView\WindowMode.cs" />
     <Compile Include="Repositories\IAdditiveNormRepository.cs" />
@@ -144,7 +144,7 @@
     <EmbeddedResource Include="Views\General\NormAdderView\NormAdderView.resx">
       <DependentUpon>NormAdderView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Drawings\SchaefflerChartView\SchaefflerChartForm.resx">
+    <EmbeddedResource Include="Views\SchaefflerChartView\SchaefflerChartForm.resx">
       <DependentUpon>SchaefflerChartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
