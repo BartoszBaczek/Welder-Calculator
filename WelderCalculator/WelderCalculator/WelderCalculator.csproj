@@ -96,6 +96,7 @@
     <Compile Include="Views\General\NormAdderView\NormAdderView.Designer.cs">
       <DependentUpon>NormAdderView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\MaterialDatabaseView\MaterialDatabasePresenters\MaterialDatabasePartialAccesPresenter.cs" />
     <Compile Include="Views\MaterialDatabaseView\MaterialDatabasePresenters\MaterialDatabasePresenter.cs" />
     <Compile Include="Views\SchaefflerChartView\ISchaefflerChartView.cs" />
     <Compile Include="Views\SchaefflerChartView\SchaefflerChartForm.cs">

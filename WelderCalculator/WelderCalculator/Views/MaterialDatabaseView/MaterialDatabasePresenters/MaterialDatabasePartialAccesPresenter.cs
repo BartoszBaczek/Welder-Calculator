@@ -1,9 +1,18 @@
 ﻿using System.Windows.Forms;
+using WelderCalculator.MaterialDatabaseView;
+using WelderCalculator.MaterialModificationView.Serialization;
 
 namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
 {
     class MaterialDatabasePartialAccesPresenter : MaterialDatabasePresenter
     {
+        public MaterialDatabasePartialAccesPresenter(IMaterialDatabaseView view)
+        {
+            _view = view;
+            view.Presenter = this;
+            _dataConnector = new DataConnector();
+        }
+
         public override void Init()
         {
             LoadNormsComboBox();
@@ -94,6 +103,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
         {
             UpdateEquivalents();
         }
+
 
 
         //Unavalibles in Partial acces mode

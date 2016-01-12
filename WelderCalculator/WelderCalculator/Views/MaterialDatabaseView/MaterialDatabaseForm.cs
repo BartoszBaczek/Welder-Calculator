@@ -10,10 +10,14 @@ namespace WelderCalculator.MaterialDatabaseView
     {
         public MaterialDatabasePresenter Presenter { private get; set; }
 
-        public MaterialDatabaseForm()
+        public MaterialDatabaseForm(Accesibility accesibility)
         {
             InitializeComponent();
-            Presenter = new MaterialDatabaseFullAccesPresenter(this);
+            if (accesibility == Accesibility.Full)
+                Presenter = new MaterialDatabaseFullAccesPresenter(this);
+            else
+                Presenter = new MaterialDatabasePartialAccesPresenter(this);
+
             Presenter.Init();
         }
 

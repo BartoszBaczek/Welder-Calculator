@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using WelderCalculator.MaterialDatabaseView;
 using WelderCalculator.MaterialModificationView.Serialization;
 
 namespace WelderCalculator.Drawings.SchaefflerChartView
@@ -48,12 +49,14 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public void OnFirstBaseMaterialButtonClicked()
         {
-            
+            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.Partial);
+            materialDatabaseForm.ShowDialog();
         }
 
         public void OnSecondBaseMaterialButtonClicked()
         {
-            
+            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.Partial);
+            materialDatabaseForm.ShowDialog();
         }
 
         public void OnAdditionalMaterialButtonClicked()
