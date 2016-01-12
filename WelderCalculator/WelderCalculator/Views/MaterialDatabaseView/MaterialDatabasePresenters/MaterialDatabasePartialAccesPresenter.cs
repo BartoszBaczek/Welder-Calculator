@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Windows.Forms;
 
 namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
 {
@@ -10,62 +6,125 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
     {
         public override void Init()
         {
-            throw new NotImplementedException();
+            LoadNormsComboBox();
+            MakeAllCheckBoxesChecked();
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
         public override void OnSelectedIndexChanged()
         {
-            throw new NotImplementedException();
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
         public override void OnMaterialCheckBoxChanged(string elementName)
         {
-            throw new NotImplementedException();
+            if (elementName == "C")
+                SetColumnsVisibiliyForElements(elementName, _view.CcheckBox);
+
+            if (elementName == "Si")
+                SetColumnsVisibiliyForElements(elementName, _view.SiCheckBox);
+
+            if (elementName == "Mn")
+                SetColumnsVisibiliyForElements(elementName, _view.MnCheckBox);
+
+            if (elementName == "P")
+                SetColumnsVisibiliyForElements(elementName, _view.PcheckBox);
+
+            if (elementName == "S")
+                SetColumnsVisibiliyForElements(elementName, _view.ScheckBox);
+
+            if (elementName == "N")
+                SetColumnsVisibiliyForElements(elementName, _view.NcheckBox);
+
+            if (elementName == "Cr")
+                SetColumnsVisibiliyForElements(elementName, _view.CrCheckBox);
+
+            if (elementName == "Mo")
+                SetColumnsVisibiliyForElements(elementName, _view.MoCheckBox);
+
+            if (elementName == "Nb")
+                SetColumnsVisibiliyForElements(elementName, _view.NbCheckBox);
+
+            if (elementName == "Ni")
+                SetColumnsVisibiliyForElements(elementName, _view.NiCheckBox);
+
+            if (elementName == "Ti")
+                SetColumnsVisibiliyForElements(elementName, _view.TiCheckBox);
+
+            if (elementName == "Al")
+                SetColumnsVisibiliyForElements(elementName, _view.AlCheckBox);
+
+            if (elementName == "V")
+                SetColumnsVisibiliyForElements(elementName, _view.VCheckBox);
+
+            if (elementName == "Cu")
+                SetColumnsVisibiliyForElements(elementName, _view.CuCheckBox);
         }
 
         public override void OnViewOptionsCheckBoxChanged(string option)
         {
-            throw new NotImplementedException();
-        }
-
-        public override void OnElementsOrderPropertiesButtonClicked()
-        {
-            throw new NotImplementedException();
+            switch (option)
+            {
+                case "min":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.MinCheckBox);
+                    break;
+                case "max":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.MaxCheckBox);
+                    break;
+                case "real":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.RealCheckBox);
+                    break;
+                case "Numer":
+                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.NumberCheckBox);
+                    break;
+            }
         }
 
         public override void Refresh()
         {
-            throw new NotImplementedException();
+            LoadNormsComboBox();
+            _view.GridSource = null;
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
         public override void OnSelectedDataGridViewRowChanged()
         {
-            throw new NotImplementedException();
+            UpdateEquivalents();
+        }
+
+
+        //Unavalibles in Partial acces mode
+        public override void OnElementsOrderPropertiesButtonClicked()
+        {
+            MessageBox.Show("Niedostepne");
         }
 
         public override void OnAddMaterialButtonClicked()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Niedostepne");
         }
 
         public override void OnEditMaterialButtonClicked()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Niedostepne");
         }
 
         public override void OnDeleteMaterialButtonClicked()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Niedostepne");
         }
 
         public override void OnAddNormButtonClicked()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Niedostepne");
         }
 
         public override void OnDeleteNormButtonClicked()
         {
-            throw new NotImplementedException();
+            MessageBox.Show("Niedostepne");
         }
     }
 }
