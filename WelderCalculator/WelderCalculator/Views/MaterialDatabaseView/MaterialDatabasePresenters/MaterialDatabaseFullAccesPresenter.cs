@@ -15,9 +15,6 @@ namespace WelderCalculator.MaterialDatabaseView
 {
     public class MaterialDatabaseFullAccesPresenter : MaterialDatabasePresenter
     {
-        private readonly IMaterialDatabaseView _view;
-        private readonly DataConnector _dataConnector;
-
         public MaterialDatabaseFullAccesPresenter(IMaterialDatabaseView view)
         {
             _view = view;
@@ -25,7 +22,7 @@ namespace WelderCalculator.MaterialDatabaseView
             _dataConnector = new DataConnector();
         }
 
-        public void Init()
+        public override void Init()
         {
             LoadNormsComboBox();
             MakeAllCheckBoxesChecked();
@@ -201,13 +198,13 @@ namespace WelderCalculator.MaterialDatabaseView
             return selectedMaterial;
         }
 
-        public void OnSelectedIndexChanged()
+        public override void OnSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
-        public void OnMaterialCheckBoxChanged(string elementName)
+        public override void OnMaterialCheckBoxChanged(string elementName)
         {
             if (elementName == "C")
                     SetColumnsVisibiliyForElements(elementName, _view.CcheckBox);
@@ -263,7 +260,7 @@ namespace WelderCalculator.MaterialDatabaseView
 
         }
 
-        public void OnViewOptionsCheckBoxChanged(string option)
+        public override void OnViewOptionsCheckBoxChanged(string option)
         {
             switch (option)
             {
@@ -311,19 +308,19 @@ namespace WelderCalculator.MaterialDatabaseView
             SetColumnsVisibiliyForElements("V", _view.VCheckBox);
             SetColumnsVisibiliyForElements("Cu", _view.CuCheckBox);
         }
-        
-        public void OnElementsOrderPropertiesButtonClicked()
+
+        public override void OnElementsOrderPropertiesButtonClicked()
         {
             var orderPropertiesForm = new MaterialDatabasePropertiesForm(MaterialType.BaseMaterial);
             orderPropertiesForm.ShowDialog();
         }
 
-        public void OnSelectedDataGridViewRowChanged()
+        public override void OnSelectedDataGridViewRowChanged()
         {
             UpdateEquivalents();
         }
 
-        public void OnAddMaterialButtonClicked()
+        public override void OnAddMaterialButtonClicked()
         {
             var currentNorm = GetCurrentNorm();
             var modifyMaterialForm = new MaterialModificationForm(currentNorm, MaterialType.BaseMaterial);
@@ -331,7 +328,7 @@ namespace WelderCalculator.MaterialDatabaseView
             Init();
         }
 
-        public void OnEditMaterialButtonClicked()
+        public override void OnEditMaterialButtonClicked()
         {
             var currentNorm = GetCurrentNorm();
             var material = GetSelectedMaterial();
@@ -343,7 +340,7 @@ namespace WelderCalculator.MaterialDatabaseView
             Init();
         }
 
-        public void OnDeleteMaterialButtonClicked()
+        public override void OnDeleteMaterialButtonClicked()
         {
             var currentNorm = GetCurrentNorm();
             var selectedMaterial = GetSelectedMaterial();
@@ -371,14 +368,14 @@ namespace WelderCalculator.MaterialDatabaseView
             return norm;
         }
 
-        public void OnAddNormButtonClicked()
+        public override void OnAddNormButtonClicked()
         {
             var addNormView = new NormAdderView(MaterialType.BaseMaterial);
             addNormView.ShowDialog();
             Init();
         }
 
-        public void OnDeleteNormButtonClicked()
+        public override void OnDeleteNormButtonClicked()
         {
             string selectedNormName = _view.NormsList[_view.SelectedNorm];
 
@@ -391,7 +388,7 @@ namespace WelderCalculator.MaterialDatabaseView
             }
         }
 
-        public void Refresh()
+        public override void Refresh()
         {
             LoadNormsComboBox();
             _view.GridSource = null;

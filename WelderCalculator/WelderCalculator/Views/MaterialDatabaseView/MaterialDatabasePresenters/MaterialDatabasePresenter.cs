@@ -3,69 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WelderCalculator.MaterialDatabaseView;
+using WelderCalculator.MaterialModificationView.Serialization;
 
 namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
 {
     public abstract class MaterialDatabasePresenter
     {
-        public void Init()
-        {
-            
-        }
+        protected IMaterialDatabaseView _view;
+        protected DataConnector _dataConnector;
 
-        public void OnSelectedIndexChanged()
-        {
-            
-        }
+        public abstract void Init();
 
-        public void OnMaterialCheckBoxChanged(string elementName)
-        {
-            
-        }
+        public abstract void OnSelectedIndexChanged();
 
-        public void OnViewOptionsCheckBoxChanged(string option)
-        {
-            
-        }
+        public abstract void OnMaterialCheckBoxChanged(string elementName);
 
-        public void OnElementsOrderPropertiesButtonClicked()
-        {
-            
-        }
+        public abstract void OnViewOptionsCheckBoxChanged(string option);
 
-        public void Refresh()
-        {
-            
-        }
+        public abstract void OnElementsOrderPropertiesButtonClicked();
 
-        public void OnSelectedDataGridViewRowChanged()
-        {
-            
-        }
+        public abstract void Refresh();
 
-        public void OnAddMaterialButtonClicked()
-        {
-            
-        }
+        public abstract void OnSelectedDataGridViewRowChanged();
 
-        public void OnEditMaterialButtonClicked()
-        {
-            
-        }
+        public abstract void OnAddMaterialButtonClicked();
 
-        public void OnDeleteMaterialButtonClicked()
-        {
-            
-        }
+        public abstract void OnEditMaterialButtonClicked();
 
-        public void OnAddNormButtonClicked()
-        {
-            
-        }
+        public abstract void OnDeleteMaterialButtonClicked();
 
-        public void OnDeleteNormButtonClicked()
-        {
-            
-        }
+        public abstract void OnAddNormButtonClicked();
+
+        public abstract void OnDeleteNormButtonClicked();
     }
 }

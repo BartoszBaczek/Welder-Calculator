@@ -14,6 +14,7 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             InitializeComponent();
             Presenter = new MaterialDatabaseFullAccesPresenter(this);
+            Presenter.Init();
         }
 
         public List<string> NormsList
