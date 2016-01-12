@@ -46,6 +46,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.additionalMaterialQuantityLabel = new System.Windows.Forms.Label();
             this.addititionalMaterialButton = new System.Windows.Forms.Button();
             this.additionalMaterialTextBox = new System.Windows.Forms.TextBox();
+            this.countButton = new System.Windows.Forms.Button();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.SuspendLayout();
@@ -154,6 +155,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.firstBaseMaterialButton.TabIndex = 4;
             this.firstBaseMaterialButton.Text = "Podstawowy";
             this.firstBaseMaterialButton.UseVisualStyleBackColor = true;
+            this.firstBaseMaterialButton.Click += new System.EventHandler(this.firstBaseMaterialButton_Click);
             // 
             // secondBaseMaterialButton
             // 
@@ -163,10 +165,12 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.secondBaseMaterialButton.TabIndex = 5;
             this.secondBaseMaterialButton.Text = "Podstawowy";
             this.secondBaseMaterialButton.UseVisualStyleBackColor = true;
+            this.secondBaseMaterialButton.Click += new System.EventHandler(this.secondBaseMaterialButton_Click);
             // 
             // chooseMaterialsLayoutPanel
             // 
             this.chooseMaterialsLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.countButton);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialQuantityTextBox);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialQuantityLabel);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.addititionalMaterialButton);
@@ -184,7 +188,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             // 
             // additionalMaterialQuantityTextBox
             // 
-            this.additionalMaterialQuantityTextBox.Location = new System.Drawing.Point(98, 100);
+            this.additionalMaterialQuantityTextBox.Location = new System.Drawing.Point(98, 103);
             this.additionalMaterialQuantityTextBox.Name = "additionalMaterialQuantityTextBox";
             this.additionalMaterialQuantityTextBox.Size = new System.Drawing.Size(100, 20);
             this.additionalMaterialQuantityTextBox.TabIndex = 9;
@@ -192,7 +196,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             // additionalMaterialQuantityLabel
             // 
             this.additionalMaterialQuantityLabel.AutoSize = true;
-            this.additionalMaterialQuantityLabel.Location = new System.Drawing.Point(7, 107);
+            this.additionalMaterialQuantityLabel.Location = new System.Drawing.Point(7, 110);
             this.additionalMaterialQuantityLabel.Name = "additionalMaterialQuantityLabel";
             this.additionalMaterialQuantityLabel.Size = new System.Drawing.Size(85, 13);
             this.additionalMaterialQuantityLabel.TabIndex = 8;
@@ -206,6 +210,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.addititionalMaterialButton.TabIndex = 7;
             this.addititionalMaterialButton.Text = "Dodatkowy";
             this.addititionalMaterialButton.UseVisualStyleBackColor = true;
+            this.addititionalMaterialButton.Click += new System.EventHandler(this.addititionalMaterialButton_Click);
             // 
             // additionalMaterialTextBox
             // 
@@ -213,6 +218,16 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.additionalMaterialTextBox.Name = "additionalMaterialTextBox";
             this.additionalMaterialTextBox.Size = new System.Drawing.Size(272, 20);
             this.additionalMaterialTextBox.TabIndex = 6;
+            // 
+            // countButton
+            // 
+            this.countButton.Location = new System.Drawing.Point(214, 101);
+            this.countButton.Name = "countButton";
+            this.countButton.Size = new System.Drawing.Size(156, 23);
+            this.countButton.TabIndex = 7;
+            this.countButton.Text = "Oblicz";
+            this.countButton.UseVisualStyleBackColor = true;
+            this.countButton.Click += new System.EventHandler(this.countButton_Click);
             // 
             // SchaefflerChartForm
             // 
@@ -252,6 +267,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         private TextBox additionalMaterialTextBox;
         private TextBox additionalMaterialQuantityTextBox;
         private Label additionalMaterialQuantityLabel;
+        private Button countButton;
 
     }
 }

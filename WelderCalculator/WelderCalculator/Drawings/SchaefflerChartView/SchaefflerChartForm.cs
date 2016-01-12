@@ -131,5 +131,25 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             set { additionalMaterialQuantityTextBox.Text = value; }
         } 
         #endregion
+
+        private void firstBaseMaterialButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void secondBaseMaterialButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void addititionalMaterialButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void countButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
