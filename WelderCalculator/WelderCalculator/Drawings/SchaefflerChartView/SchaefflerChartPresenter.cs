@@ -13,7 +13,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
-            _view = view;
+            _view = view; 
             _view.Presenter = this;
             _dataConnector = new DataConnector();
             _chart = new Chart(_dataConnector.GetSchaefflerImages());

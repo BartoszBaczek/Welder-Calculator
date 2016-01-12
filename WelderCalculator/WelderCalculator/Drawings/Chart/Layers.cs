@@ -37,7 +37,7 @@ namespace WelderCalculator.Drawings.Chart
 
         public void Add(LayerType type)
         {
-                _activeLayers.Add(_allLayers.First(l => l.Type == type));
+            _activeLayers.Add(_allLayers.First(l => l.Type == type));
         }
     }
 }

@@ -15,5 +15,10 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         bool XAxisVisibleCheckBox { get; set; }
         bool YAxisVisibleCheckBox { get; set; }
         bool PhaseLinesVisibleCheckBox { get; set; }
+
+        string FirstBaseMaterialTextBox { get; set; }
+        string SecondBaseMaterialTextBox { get; set; }
+        string AdditionalMaterialTextBox { get; set; }
+        string AdditionalMaterialQuantity { get; set; }
     }
 }

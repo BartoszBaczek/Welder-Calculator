@@ -1,9 +1,9 @@
 {
   "Materials": [
     {
-      "Number": "",
-      "Name": "123",
-      "GuidNumber": "eafd1488-c567-4018-a5d3-145b6fc5635b",
+      "Number": "123",
+      "Name": "material1",
+      "GuidNumber": "c0bf3336-55ec-4232-9778-6e7fa2bfa6fb",
       "Elements": [
         {
           "Name": 0,
@@ -15,7 +15,7 @@
         {
           "Name": 1,
           "FullName": "Krzem",
-          "Min": null,
+          "Min": 0.4,
           "Max": 0.5,
           "RealValue": 0.47
         },
@@ -110,5 +110,5 @@
     }
   ],
   "Name": "allahuakbar",
-  "GuidNumber": "c1140db8-c155-4cf4-b041-3be1ccf1eb26"
+  "GuidNumber": "c60d5409-3f3c-4be9-9d83-371e89f24263"
 }

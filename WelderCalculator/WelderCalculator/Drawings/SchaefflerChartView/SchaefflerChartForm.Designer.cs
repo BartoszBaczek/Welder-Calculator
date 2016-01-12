@@ -31,13 +31,23 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         private void InitializeComponent()
         {
             this.drawPanel = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.visibilityLayoutPanel = new System.Windows.Forms.GroupBox();
             this.phaseCheckBox = new System.Windows.Forms.CheckBox();
             this.yAxisCheckBox = new System.Windows.Forms.CheckBox();
             this.xAxisCheckBox = new System.Windows.Forms.CheckBox();
             this.hashCheckBox = new System.Windows.Forms.CheckBox();
             this.backgroundCheckBox = new System.Windows.Forms.CheckBox();
-            this.groupBox1.SuspendLayout();
+            this.firstBaseMaterialTextBox = new System.Windows.Forms.TextBox();
+            this.secondBaseMaterialTextBox = new System.Windows.Forms.TextBox();
+            this.firstBaseMaterialButton = new System.Windows.Forms.Button();
+            this.secondBaseMaterialButton = new System.Windows.Forms.Button();
+            this.chooseMaterialsLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.addititionalMaterialButton = new System.Windows.Forms.Button();
+            this.additionalMaterialButton = new System.Windows.Forms.TextBox();
+            this.additionalMaterialQuantityLabel = new System.Windows.Forms.Label();
+            this.additionalMaterialQuantityTextBox = new System.Windows.Forms.TextBox();
+            this.visibilityLayoutPanel.SuspendLayout();
+            this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // drawPanel
@@ -52,20 +62,20 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.drawPanel.TabIndex = 0;
             this.drawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPanel_Paint);
             // 
-            // groupBox1
+            // visibilityLayoutPanel
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.phaseCheckBox);
-            this.groupBox1.Controls.Add(this.yAxisCheckBox);
-            this.groupBox1.Controls.Add(this.xAxisCheckBox);
-            this.groupBox1.Controls.Add(this.hashCheckBox);
-            this.groupBox1.Controls.Add(this.backgroundCheckBox);
-            this.groupBox1.Location = new System.Drawing.Point(807, 13);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(131, 137);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Widoczność";
+            this.visibilityLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.visibilityLayoutPanel.Controls.Add(this.phaseCheckBox);
+            this.visibilityLayoutPanel.Controls.Add(this.yAxisCheckBox);
+            this.visibilityLayoutPanel.Controls.Add(this.xAxisCheckBox);
+            this.visibilityLayoutPanel.Controls.Add(this.hashCheckBox);
+            this.visibilityLayoutPanel.Controls.Add(this.backgroundCheckBox);
+            this.visibilityLayoutPanel.Location = new System.Drawing.Point(815, 12);
+            this.visibilityLayoutPanel.Name = "visibilityLayoutPanel";
+            this.visibilityLayoutPanel.Size = new System.Drawing.Size(131, 137);
+            this.visibilityLayoutPanel.TabIndex = 1;
+            this.visibilityLayoutPanel.TabStop = false;
+            this.visibilityLayoutPanel.Text = "Widoczność";
             // 
             // phaseCheckBox
             // 
@@ -122,19 +132,104 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             this.backgroundCheckBox.UseVisualStyleBackColor = true;
             this.backgroundCheckBox.CheckedChanged += new System.EventHandler(this.backgroundCheckBox_CheckedChanged);
             // 
+            // firstBaseMaterialTextBox
+            // 
+            this.firstBaseMaterialTextBox.Location = new System.Drawing.Point(98, 22);
+            this.firstBaseMaterialTextBox.Name = "firstBaseMaterialTextBox";
+            this.firstBaseMaterialTextBox.Size = new System.Drawing.Size(272, 20);
+            this.firstBaseMaterialTextBox.TabIndex = 2;
+            // 
+            // secondBaseMaterialTextBox
+            // 
+            this.secondBaseMaterialTextBox.Location = new System.Drawing.Point(98, 48);
+            this.secondBaseMaterialTextBox.Name = "secondBaseMaterialTextBox";
+            this.secondBaseMaterialTextBox.Size = new System.Drawing.Size(272, 20);
+            this.secondBaseMaterialTextBox.TabIndex = 3;
+            // 
+            // firstBaseMaterialButton
+            // 
+            this.firstBaseMaterialButton.Location = new System.Drawing.Point(7, 19);
+            this.firstBaseMaterialButton.Name = "firstBaseMaterialButton";
+            this.firstBaseMaterialButton.Size = new System.Drawing.Size(75, 23);
+            this.firstBaseMaterialButton.TabIndex = 4;
+            this.firstBaseMaterialButton.Text = "Podstawowy";
+            this.firstBaseMaterialButton.UseVisualStyleBackColor = true;
+            // 
+            // secondBaseMaterialButton
+            // 
+            this.secondBaseMaterialButton.Location = new System.Drawing.Point(7, 48);
+            this.secondBaseMaterialButton.Name = "secondBaseMaterialButton";
+            this.secondBaseMaterialButton.Size = new System.Drawing.Size(75, 23);
+            this.secondBaseMaterialButton.TabIndex = 5;
+            this.secondBaseMaterialButton.Text = "Podstawowy";
+            this.secondBaseMaterialButton.UseVisualStyleBackColor = true;
+            // 
+            // chooseMaterialsLayoutPanel
+            // 
+            this.chooseMaterialsLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialQuantityTextBox);
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialQuantityLabel);
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.addititionalMaterialButton);
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.additionalMaterialButton);
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.firstBaseMaterialButton);
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialButton);
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.firstBaseMaterialTextBox);
+            this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialTextBox);
+            this.chooseMaterialsLayoutPanel.Location = new System.Drawing.Point(815, 155);
+            this.chooseMaterialsLayoutPanel.Name = "chooseMaterialsLayoutPanel";
+            this.chooseMaterialsLayoutPanel.Size = new System.Drawing.Size(376, 142);
+            this.chooseMaterialsLayoutPanel.TabIndex = 6;
+            this.chooseMaterialsLayoutPanel.TabStop = false;
+            this.chooseMaterialsLayoutPanel.Text = "Dobór materiału";
+            // 
+            // addititionalMaterialButton
+            // 
+            this.addititionalMaterialButton.Location = new System.Drawing.Point(7, 77);
+            this.addititionalMaterialButton.Name = "addititionalMaterialButton";
+            this.addititionalMaterialButton.Size = new System.Drawing.Size(75, 23);
+            this.addititionalMaterialButton.TabIndex = 7;
+            this.addititionalMaterialButton.Text = "Dodatkowy";
+            this.addititionalMaterialButton.UseVisualStyleBackColor = true;
+            // 
+            // additionalMaterialButton
+            // 
+            this.additionalMaterialButton.Location = new System.Drawing.Point(98, 77);
+            this.additionalMaterialButton.Name = "additionalMaterialButton";
+            this.additionalMaterialButton.Size = new System.Drawing.Size(272, 20);
+            this.additionalMaterialButton.TabIndex = 6;
+            // 
+            // additionalMaterialQuantityLabel
+            // 
+            this.additionalMaterialQuantityLabel.AutoSize = true;
+            this.additionalMaterialQuantityLabel.Location = new System.Drawing.Point(7, 107);
+            this.additionalMaterialQuantityLabel.Name = "additionalMaterialQuantityLabel";
+            this.additionalMaterialQuantityLabel.Size = new System.Drawing.Size(85, 13);
+            this.additionalMaterialQuantityLabel.TabIndex = 8;
+            this.additionalMaterialQuantityLabel.Text = "Ilość stopiwa [%]";
+            // 
+            // additionalMaterialQuantityTextBox
+            // 
+            this.additionalMaterialQuantityTextBox.Location = new System.Drawing.Point(98, 100);
+            this.additionalMaterialQuantityTextBox.Name = "additionalMaterialQuantityTextBox";
+            this.additionalMaterialQuantityTextBox.Size = new System.Drawing.Size(100, 20);
+            this.additionalMaterialQuantityTextBox.TabIndex = 9;
+            // 
             // SchaefflerChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 536);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1203, 536);
+            this.Controls.Add(this.chooseMaterialsLayoutPanel);
+            this.Controls.Add(this.visibilityLayoutPanel);
             this.Controls.Add(this.drawPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Name = "SchaefflerChartForm";
             this.Text = "SchaefflerChartForm";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.visibilityLayoutPanel.ResumeLayout(false);
+            this.visibilityLayoutPanel.PerformLayout();
+            this.chooseMaterialsLayoutPanel.ResumeLayout(false);
+            this.chooseMaterialsLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -142,12 +237,21 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
         #endregion
 
         private Panel drawPanel;
-        private GroupBox groupBox1;
+        private GroupBox visibilityLayoutPanel;
         private CheckBox phaseCheckBox;
         private CheckBox yAxisCheckBox;
         private CheckBox xAxisCheckBox;
         private CheckBox hashCheckBox;
         private CheckBox backgroundCheckBox;
+        private TextBox firstBaseMaterialTextBox;
+        private TextBox secondBaseMaterialTextBox;
+        private Button firstBaseMaterialButton;
+        private Button secondBaseMaterialButton;
+        private GroupBox chooseMaterialsLayoutPanel;
+        private Button addititionalMaterialButton;
+        private TextBox additionalMaterialButton;
+        private TextBox additionalMaterialQuantityTextBox;
+        private Label additionalMaterialQuantityLabel;
 
     }
 }
