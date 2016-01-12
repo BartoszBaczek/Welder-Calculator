@@ -5,6 +5,12 @@ using WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
+    public enum Accesibility
+    {
+        Full,
+        Partial
+    }
+
     public interface IMaterialDatabaseView
     {
         MaterialDatabasePresenter Presenter { set; }
