@@ -12,12 +12,12 @@ using WelderCalculator.Repositories.Model.temp2;
 
 namespace WelderCalculator.MaterialDatabaseView
 {
-    public class MaterialDatabasePresenter
+    public class MaterialDatabaseFullAccesPresenter
     {
         private readonly IMaterialDatabaseView _view;
         private readonly DataConnector _dataConnector;
 
-        public MaterialDatabasePresenter(IMaterialDatabaseView view)
+        public MaterialDatabaseFullAccesPresenter(IMaterialDatabaseView view)
         {
             _view = view;
             view.Presenter = this;
