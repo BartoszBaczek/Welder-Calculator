@@ -127,6 +127,17 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
             return norm;
         }
 
+        protected void SetFullAccesibilityControls()
+        {
+            _view.ChooseMaterialVisibityButton = false;
+        }
+
+        protected void SetPartialAccesibilityControls()
+        {
+            _view.ModifyMaterialVisibilityLayoutPanel = false;
+            _view.AddNormVisibilityButton = false;
+            _view.DeleteNormVisibilityButton = false;
+        }
 
 
         private DataTable CreateTable()

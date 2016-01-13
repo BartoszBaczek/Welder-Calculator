@@ -47,6 +47,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.pCheckBox = new System.Windows.Forms.CheckBox();
             this.cCheckBox = new System.Windows.Forms.CheckBox();
             this.DataModifLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.chooseMaterialButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
@@ -274,6 +275,15 @@ namespace WelderCalculator.MaterialDatabaseView
             this.DataModifLayoutPanel.TabStop = false;
             this.DataModifLayoutPanel.Text = "Modyfikacja";
             // 
+            // chooseMaterialButton
+            // 
+            this.chooseMaterialButton.Location = new System.Drawing.Point(50, 5);
+            this.chooseMaterialButton.Name = "chooseMaterialButton";
+            this.chooseMaterialButton.Size = new System.Drawing.Size(247, 83);
+            this.chooseMaterialButton.TabIndex = 18;
+            this.chooseMaterialButton.Text = "Wybierz materiał";
+            this.chooseMaterialButton.UseVisualStyleBackColor = true;
+            // 
             // deleteButton
             // 
             this.deleteButton.Location = new System.Drawing.Point(18, 79);
@@ -489,6 +499,7 @@ namespace WelderCalculator.MaterialDatabaseView
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 400);
+            this.Controls.Add(this.chooseMaterialButton);
             this.Controls.Add(this.deleteNormButton);
             this.Controls.Add(this.addNewNormButton);
             this.Controls.Add(this.carbonLabel);
@@ -563,6 +574,7 @@ namespace WelderCalculator.MaterialDatabaseView
         private System.Windows.Forms.Button orderElementsButton;
         private Button addNewNormButton;
         private Button deleteNormButton;
+        private Button chooseMaterialButton;
 
 
     }

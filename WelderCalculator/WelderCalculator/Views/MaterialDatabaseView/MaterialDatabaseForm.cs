@@ -207,6 +207,31 @@ namespace WelderCalculator.MaterialDatabaseView
         }
         #endregion
 
+        public bool ChooseMaterialVisibityButton
+        {
+            get { return chooseMaterialButton.Visible; }
+            set { chooseMaterialButton.Visible = value; }
+        }
+
+        public bool ModifyMaterialVisibilityLayoutPanel
+        {
+            get { return DataModifLayoutPanel.Visible; }
+            set { DataModifLayoutPanel.Visible = value; }
+        }
+
+        public bool AddNormVisibilityButton
+        {
+            get { return addNewNormButton.Visible; }
+            set { addNewNormButton.Visible = value; }
+        }
+
+        public bool DeleteNormVisibilityButton
+        {
+            get { return deleteNormButton.Visible; }
+            set { deleteNormButton.Visible = value; }
+        }
+
+
         /*Event handling*/
        
         private void normComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
@@ -329,6 +354,5 @@ namespace WelderCalculator.MaterialDatabaseView
             Presenter.OnDeleteNormButtonClicked();
             //Trzeba dodac potwierdzenie usunia normy - za duzo do stracenia
         }
-
     }
 }

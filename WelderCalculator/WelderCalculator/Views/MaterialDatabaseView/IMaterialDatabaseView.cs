@@ -47,5 +47,10 @@ namespace WelderCalculator.MaterialDatabaseView
         double? CEquivalentTextBox { get; set; }
         double? NiEquivalentTextBox { get; set; }
         double? CrEquivalentTextBox { get; set; }
+
+        bool ChooseMaterialVisibityButton { get; set; }
+        bool ModifyMaterialVisibilityLayoutPanel { get; set; }
+        bool AddNormVisibilityButton { get; set; }
+        bool DeleteNormVisibilityButton { get; set; }
     }
 }

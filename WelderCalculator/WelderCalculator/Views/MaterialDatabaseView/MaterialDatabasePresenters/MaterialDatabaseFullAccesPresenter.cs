@@ -22,6 +22,7 @@ namespace WelderCalculator.MaterialDatabaseView
             MakeAllCheckBoxesChecked();
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
+            SetFullAccesibilityControls();
         }
 
         public override void OnSelectedIndexChanged()
