@@ -47,10 +47,10 @@ namespace WelderCalculator.MaterialDatabaseView
             this.pCheckBox = new System.Windows.Forms.CheckBox();
             this.cCheckBox = new System.Windows.Forms.CheckBox();
             this.DataModifLayoutPanel = new System.Windows.Forms.GroupBox();
-            this.chooseMaterialButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
+            this.chooseMaterialButton = new System.Windows.Forms.Button();
             this.normLabel = new System.Windows.Forms.Label();
             this.normComboBox = new System.Windows.Forms.ComboBox();
             this.EqLayoutPanel = new System.Windows.Forms.GroupBox();
@@ -275,15 +275,6 @@ namespace WelderCalculator.MaterialDatabaseView
             this.DataModifLayoutPanel.TabStop = false;
             this.DataModifLayoutPanel.Text = "Modyfikacja";
             // 
-            // chooseMaterialButton
-            // 
-            this.chooseMaterialButton.Location = new System.Drawing.Point(50, 5);
-            this.chooseMaterialButton.Name = "chooseMaterialButton";
-            this.chooseMaterialButton.Size = new System.Drawing.Size(247, 83);
-            this.chooseMaterialButton.TabIndex = 18;
-            this.chooseMaterialButton.Text = "Wybierz materiał";
-            this.chooseMaterialButton.UseVisualStyleBackColor = true;
-            // 
             // deleteButton
             // 
             this.deleteButton.Location = new System.Drawing.Point(18, 79);
@@ -313,6 +304,16 @@ namespace WelderCalculator.MaterialDatabaseView
             this.addButton.Text = "Dodaj";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
+            // chooseMaterialButton
+            // 
+            this.chooseMaterialButton.Location = new System.Drawing.Point(50, 5);
+            this.chooseMaterialButton.Name = "chooseMaterialButton";
+            this.chooseMaterialButton.Size = new System.Drawing.Size(247, 83);
+            this.chooseMaterialButton.TabIndex = 18;
+            this.chooseMaterialButton.Text = "Wybierz materiał";
+            this.chooseMaterialButton.UseVisualStyleBackColor = true;
+            this.chooseMaterialButton.Click += new System.EventHandler(this.chooseMaterialButton_Click);
             // 
             // normLabel
             // 
