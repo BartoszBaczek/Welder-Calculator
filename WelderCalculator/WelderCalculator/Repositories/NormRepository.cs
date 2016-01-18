@@ -6,27 +6,27 @@ using Newtonsoft.Json;
 using WelderCalculator.Drawings.SchaefflerChartView;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories.Model;
-using WelderCalculator.Repositories.Model.temp2;
 using System.Drawing;
 
 namespace WelderCalculator.Repositories
 {
-    public class NormRepository : IBasicNormRepository, IAdditiveNormRepository, IDrawingsRepository
+    public class NormRepository : IBasicNormRepository, IAdditiveNormRepository, IDrawingsRepository, ISchefflerDiagramMaterials
     {
-
         private string _binPath;
         private readonly string _baseNormsPath;
         private readonly string _additiveNormsPath;
         private readonly string _propertiesPath;
         private readonly string _drawingsPath;
+        private readonly string _schaefflersMaterialsRepository;
 
         public NormRepository()
         {
             _binPath = Path.GetDirectoryName(Path.GetDirectoryName(Assembly.GetEntryAssembly().Location));
-            _baseNormsPath =     _binPath + @"\.." + @"\Data\BaseNorms\";
-            _additiveNormsPath = _binPath + @"\.." + @"\Data\AdditiveNorms\";
-            _propertiesPath =    _binPath + @"\.." + @"\Data\Properties\";
-            _drawingsPath =      _binPath + @"\.." + @"\Data\I\";
+            _baseNormsPath =                    _binPath + @"\.." + @"\Data\BaseNorms\";
+            _additiveNormsPath =                _binPath + @"\.." + @"\Data\AdditiveNorms\";
+            _propertiesPath =                   _binPath + @"\.." + @"\Data\Properties\";
+            _drawingsPath =                     _binPath + @"\.." + @"\Data\I\";
+            _schaefflersMaterialsRepository = _binPath + @"\.." + @"\Data\ScheffMaterials\";
         }
 
         /*Use this constructor ONLY for testing!!!*/
@@ -37,6 +37,7 @@ namespace WelderCalculator.Repositories
             _additiveNormsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\AdditiveNorms\";
             _propertiesPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\Properties\";
             _drawingsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\I\";
+            _schaefflersMaterialsRepository = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\ScheffMaterials\";
         }
 
 
@@ -176,7 +177,82 @@ namespace WelderCalculator.Repositories
         }
         #endregion
 
+        #region SchaefflerDiagramMaterials
+        public void SerializeFirstBaseMaterialForSchaeffler(BaseMaterial basicMaterial)
+        {
+            using (var fs = File.Open(_schaefflersMaterialsRepository + "FirstMaterialForSchaeffler.json", FileMode.Create))
+            using (var sw = new StreamWriter(fs))
+            using (JsonWriter jw = new JsonTextWriter(sw))
+            {
+                jw.Formatting = Formatting.Indented;
 
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(jw, basicMaterial);
+            }
+        }
+
+        public void SerializeSecondBaseMaterialForSchaeffler(BaseMaterial basicMateiral)
+        {
+            using (var fs = File.Open(_schaefflersMaterialsRepository + "SecondMaterialForSchaeffler.json", FileMode.Create))
+            using (var sw = new StreamWriter(fs))
+            using (JsonWriter jw = new JsonTextWriter(sw))
+            {
+                jw.Formatting = Formatting.Indented;
+
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(jw, basicMateiral);
+            }
+        }
+
+        public void SerializeAdditionalMaterialForSchaeffler(AdditiveMaterial additionalMaterial)
+        {
+            using (var fs = File.Open(_schaefflersMaterialsRepository + "AdditiveMaterialForSchaeffler.json", FileMode.Create))
+            using (var sw = new StreamWriter(fs))
+            using (JsonWriter jw = new JsonTextWriter(sw))
+            {
+                jw.Formatting = Formatting.Indented;
+
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(jw, additionalMaterial);
+            }
+        }
+
+        public BaseMaterial DeserializeFirstBaseMaterialForSchaeffler()
+        {
+            string fileName = "FirstMaterialForSchaeffler";
+            string pathToFile = _schaefflersMaterialsRepository + fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var firstBaseMateiral =
+                JsonConvert.DeserializeObject<BaseMaterial>(jsonText);
+
+            return firstBaseMateiral;
+        }
+
+        public BaseMaterial DeserializeSecondBaseMaterialForSchaeffler()
+        {
+            string fileName = "SecondMaterialForSchaeffler";
+            string pathToFile = _schaefflersMaterialsRepository + fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var secondBaseMaterial =
+                JsonConvert.DeserializeObject<BaseMaterial>(jsonText);
+
+            return secondBaseMaterial;
+        }
+
+        public AdditiveMaterial DeserializeAdditionalMaterialForSchaeffler()
+        {
+            string fileName = "AdditiveMaterialForSchaeffler";
+            string pathToFile = _schaefflersMaterialsRepository + fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var additiveMaterial =
+                JsonConvert.DeserializeObject<AdditiveMaterial>(jsonText);
+
+            return additiveMaterial;
+        }
+        #endregion
         public List<Layer> GetSchaefflerChartImages()
         {
             var layers = new List<Layer>()
@@ -189,6 +265,8 @@ namespace WelderCalculator.Repositories
             };
 
             return layers;
-        } 
+        }
+
+       
     }
 }

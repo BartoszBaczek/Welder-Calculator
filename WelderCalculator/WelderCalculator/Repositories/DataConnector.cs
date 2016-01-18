@@ -7,8 +7,6 @@ using WelderCalculator.Drawings.SchaefflerChartView;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
 using WelderCalculator.Repositories.Model;
-using WelderCalculator.Repositories.Model.temp;
-using WelderCalculator.Repositories.Model.temp2;
 
 namespace WelderCalculator.MaterialModificationView.Serialization
 {
@@ -117,6 +115,36 @@ namespace WelderCalculator.MaterialModificationView.Serialization
         {
             var layers = new Layers(_normRepo.GetSchaefflerChartImages());
             return layers;
+        }
+
+        public void SaveFirstBasisMarerialForSchaeffler(BaseMaterial baseMaterial)
+        {
+            _normRepo.SerializeFirstBaseMaterialForSchaeffler(baseMaterial);
+        }
+
+        public void SaveSecondBasisMarerialForSchaeffler(BaseMaterial baseMateiral)
+        {
+            _normRepo.SerializeSecondBaseMaterialForSchaeffler(baseMateiral);
+        }
+
+        public void SaveAdditionalMaterialForSchaeffler(AdditiveMaterial additionalMaterial)
+        {
+            _normRepo.SerializeAdditionalMaterialForSchaeffler(additionalMaterial);
+        }
+
+        public BaseMaterial GetFirstBasisMarerialForSchaeffler()
+        {
+            return _normRepo.DeserializeFirstBaseMaterialForSchaeffler();
+        }
+
+        public BaseMaterial GetSecondBasisMarerialForSchaeffler()
+        {
+            return _normRepo.DeserializeSecondBaseMaterialForSchaeffler();
+        }
+
+        public AdditiveMaterial GetAdditionalMaterialForSchaeffler()
+        {
+            return _normRepo.DeserializeAdditionalMaterialForSchaeffler();
         }
     }
 }
