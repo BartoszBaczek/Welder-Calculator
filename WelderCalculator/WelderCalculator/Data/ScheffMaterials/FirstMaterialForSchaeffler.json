@@ -1,0 +1,108 @@
+{
+  "Number": "34",
+  "Name": "pleple",
+  "GuidNumber": "009e809f-ca5a-4788-a7a5-8cb527a3a8fd",
+  "Elements": [
+    {
+      "Name": 0,
+      "FullName": "Węgiel",
+      "Min": 87.0,
+      "Max": 6.0,
+      "RealValue": 6.0
+    },
+    {
+      "Name": 1,
+      "FullName": "Krzem",
+      "Min": 77.0,
+      "Max": 8.0,
+      "RealValue": 98.0
+    },
+    {
+      "Name": 2,
+      "FullName": "Mangan",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 3,
+      "FullName": "Potas",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 4,
+      "FullName": "Siarka",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 5,
+      "FullName": "Azot",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 6,
+      "FullName": "Chrom",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 7,
+      "FullName": "Molibden",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 8,
+      "FullName": "Nb",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 9,
+      "FullName": "Nikiel",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 10,
+      "FullName": "Tytan",
+      "Min": null,
+      "Max": null,
+      "RealValue": null
+    },
+    {
+      "Name": 11,
+      "FullName": "Aluminium",
+      "Min": 9.0,
+      "Max": 0.0,
+      "RealValue": null
+    },
+    {
+      "Name": 12,
+      "FullName": "Wanad",
+      "Min": null,
+      "Max": 4.0,
+      "RealValue": 5.0
+    },
+    {
+      "Name": 13,
+      "FullName": "Cu",
+      "Min": null,
+      "Max": 6.0,
+      "RealValue": 7.0
+    }
+  ],
+  "CEq": null,
+  "NiEq": null,
+  "CrEq": null
+}
