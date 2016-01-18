@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using WelderCalculator.MaterialDatabaseView;
 using WelderCalculator.MaterialModificationView.Serialization;
+using WelderCalculator.Repositories.Model;
 
 namespace WelderCalculator.Drawings.SchaefflerChartView
 {
@@ -49,19 +50,30 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
         public void OnFirstBaseMaterialButtonClicked()
         {
-            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.Partial);
+            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.PartialForFirstMaterial);
             materialDatabaseForm.ShowDialog();
+            RefreshSelectedMaterials();
         }
 
         public void OnSecondBaseMaterialButtonClicked()
         {
-            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.Partial);
+            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.PartialForSecondMaterial);
             materialDatabaseForm.ShowDialog();
+            RefreshSelectedMaterials();
         }
 
         public void OnAdditionalMaterialButtonClicked()
         {
             
+        }
+
+        private void RefreshSelectedMaterials()
+        {
+            BaseMaterial firstBaseMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
+            _view.FirstBaseMaterialTextBox = firstBaseMaterial.Name;
+
+            BaseMaterial secondBaseMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
+            _view.SecondBaseMaterialTextBox = secondBaseMaterial.Name;
         }
     }
 }

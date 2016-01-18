@@ -1,6 +1,8 @@
 ﻿using System.Windows.Forms;
 using WelderCalculator.MaterialDatabaseView;
 using WelderCalculator.MaterialModificationView.Serialization;
+using WelderCalculator.Model;
+using WelderCalculator.Repositories.Model;
 
 namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
 {
@@ -136,6 +138,16 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
         public override void OnDeleteNormButtonClicked()
         {
             MessageBox.Show("Niedostepne");
+        }
+
+        public override void OnChooseMaterialButtonClicked()
+        {
+            BaseMaterial selectedMaterial = GetSelectedMaterial();
+
+            if (_view.Accesibility == Accesibility.PartialForFirstMaterial)
+                _dataConnector.SaveFirstBasisMarerialForSchaeffler(selectedMaterial);
+            else if (_view.Accesibility == Accesibility.PartialForSecondMaterial)
+                _dataConnector.SaveSecondBasisMarerialForSchaeffler(selectedMaterial);
         }
     }
 }

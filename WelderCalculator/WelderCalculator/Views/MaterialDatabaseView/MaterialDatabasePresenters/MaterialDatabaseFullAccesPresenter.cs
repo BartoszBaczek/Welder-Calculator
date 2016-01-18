@@ -173,5 +173,10 @@ namespace WelderCalculator.MaterialDatabaseView
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
+
+        public override void OnChooseMaterialButtonClicked()
+        {
+            MessageBox.Show("Niedostepne");
+        }
     }
 }

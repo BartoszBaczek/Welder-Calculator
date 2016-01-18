@@ -9,11 +9,14 @@ namespace WelderCalculator.MaterialDatabaseView
     public partial class MaterialDatabaseForm : Form, IMaterialDatabaseView
     {
         public MaterialDatabasePresenter Presenter { private get; set; }
+        public Accesibility Accesibility { get; private set; }
 
         public MaterialDatabaseForm(Accesibility accesibility)
         {
+            Accesibility = accesibility;
             InitializeComponent();
-            if (accesibility == Accesibility.Full)
+
+            if (Accesibility == Accesibility.Full)
                 Presenter = new MaterialDatabaseFullAccesPresenter(this);
             else
                 Presenter = new MaterialDatabasePartialAccesPresenter(this);
@@ -353,6 +356,11 @@ namespace WelderCalculator.MaterialDatabaseView
         {
             Presenter.OnDeleteNormButtonClicked();
             //Trzeba dodac potwierdzenie usunia normy - za duzo do stracenia
+        }
+
+        private void chooseMaterialButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnChooseMaterialButtonClicked();
         }
     }
 }

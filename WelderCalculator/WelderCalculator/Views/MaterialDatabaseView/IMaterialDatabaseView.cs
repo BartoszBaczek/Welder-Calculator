@@ -8,13 +8,14 @@ namespace WelderCalculator.MaterialDatabaseView
     public enum Accesibility
     {
         Full,
-        Partial
+        PartialForFirstMaterial,
+        PartialForSecondMaterial
     }
 
     public interface IMaterialDatabaseView
     {
         MaterialDatabasePresenter Presenter { set; }
-
+        Accesibility Accesibility { get; }
         List<string> NormsList { get; set; }
 
         int SelectedNorm { get; set; }
