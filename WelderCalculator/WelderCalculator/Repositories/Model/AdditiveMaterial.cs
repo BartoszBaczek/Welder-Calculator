@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WelderCalculator.Model;
 
-namespace WelderCalculator.Repositories.Model
+namespace WelderCalculator.Repositories
 {
     public class AdditiveMaterial : Material
     {

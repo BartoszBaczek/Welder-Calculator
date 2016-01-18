@@ -1,7 +1,6 @@
 ﻿using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Repositories.Model;
-using WelderCalculator.Repositories.Model.temp2;
 
 namespace WelderCalculator.Databases.BaseMaterialsView
 {

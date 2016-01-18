@@ -8,6 +8,7 @@ using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView;
 using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
+using WelderCalculator.Repositories;
 using WelderCalculator.Repositories.Model;
 
 namespace WelderCalculator.Databases.AddMaterialDatabaseView

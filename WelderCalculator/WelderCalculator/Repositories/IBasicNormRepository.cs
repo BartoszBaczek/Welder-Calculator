@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using WelderCalculator.Model;
-using WelderCalculator.Repositories.Model.temp2;
+using WelderCalculator.Repositories.Model;
 
 namespace WelderCalculator.Repositories
 {

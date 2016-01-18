@@ -4,10 +4,9 @@ using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using WelderCalculator.MaterialDatabasePropertiesView;
 using WelderCalculator.MaterialModificationView.Serialization;
-using WelderCalculator.Model;
+using WelderCalculator.Repositories;
 using WelderCalculator.Repositories.Model;
-using WelderCalculator.Repositories.Model.temp;
-using WelderCalculator.Repositories.Model.temp2;
+using WelderCalculator.Model;
 
 namespace WelderCalculator.MaterialModificationView
 {

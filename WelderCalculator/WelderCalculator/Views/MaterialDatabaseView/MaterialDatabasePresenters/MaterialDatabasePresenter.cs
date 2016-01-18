@@ -5,8 +5,7 @@ using System.Windows.Forms;
 using WelderCalculator.MaterialDatabaseView;
 using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
-using WelderCalculator.Repositories.Model.temp;
-using WelderCalculator.Repositories.Model.temp2;
+using WelderCalculator.Repositories.Model;
 
 namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
 {
@@ -27,6 +26,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
         public abstract void OnDeleteMaterialButtonClicked();
         public abstract void OnAddNormButtonClicked();
         public abstract void OnDeleteNormButtonClicked();
+        public abstract void OnChooseMaterialButtonClicked();
         
         protected void LoadNormsComboBox()  
         {
