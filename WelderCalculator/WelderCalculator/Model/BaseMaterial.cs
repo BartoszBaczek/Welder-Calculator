@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using WelderCalculator.Model;
 
-namespace WelderCalculator.Repositories.Model
+namespace WelderCalculator.Model
 {
     public class BaseMaterial : Material
     {

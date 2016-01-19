@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using WelderCalculator.Model;
 
-namespace WelderCalculator.Repositories.Model
+namespace WelderCalculator.Model
 {
     public class BaseNorm : Norm
     {
