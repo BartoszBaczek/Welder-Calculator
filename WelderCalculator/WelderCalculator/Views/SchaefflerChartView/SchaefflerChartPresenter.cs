@@ -21,6 +21,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
             _chart = new Chart(_dataConnector.GetSchaefflerImages());
 
             SetVisibilityCheckBoxesToTrue();
+            RefreshSelectedMaterials();
         }
 
         public void OnPaintEvent(IntPtr panelHandle, PaintEventArgs e)
@@ -74,6 +75,7 @@ namespace WelderCalculator.Drawings.SchaefflerChartView
 
             BaseMaterial secondBaseMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
             _view.SecondBaseMaterialTextBox = secondBaseMaterial.Name;
+
         }
     }
 }
