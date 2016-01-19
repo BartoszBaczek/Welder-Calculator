@@ -3,10 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using Newtonsoft.Json;
-using WelderCalculator.Drawings.SchaefflerChartView;
 using WelderCalculator.Model;
-using WelderCalculator.Repositories.Model;
 using System.Drawing;
+using WelderCalculator.Drawings.Chart;
 
 namespace WelderCalculator.Repositories
 {

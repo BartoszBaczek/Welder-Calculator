@@ -1,8 +1,8 @@
-﻿using WelderCalculator.MaterialDatabasePropertiesView;
-using WelderCalculator.MaterialModificationView.Serialization;
-using WelderCalculator.Repositories.Model;
+﻿using WelderCalculator.Model;
+using WelderCalculator.Repositories;
+using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
 
-namespace WelderCalculator.Databases.BaseMaterialsView
+namespace WelderCalculator.Views.General.NormAdderView
 {
     public class NormAdderPresenter
     {

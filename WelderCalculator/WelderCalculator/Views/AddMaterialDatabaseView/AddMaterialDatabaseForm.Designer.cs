@@ -1,6 +1,4 @@
-﻿using System.Security.AccessControl;
-
-namespace WelderCalculator.Databases.AddMaterialDatabaseView
+﻿namespace WelderCalculator.Views.AddMaterialDatabaseView
 {
     partial class AddMaterialDatabaseForm
     {

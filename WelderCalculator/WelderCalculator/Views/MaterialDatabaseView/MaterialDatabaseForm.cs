@@ -4,7 +4,7 @@ using System.Data;
 using System.Windows.Forms;
 using WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters;
 
-namespace WelderCalculator.MaterialDatabaseView
+namespace WelderCalculator.Views.MaterialDatabaseView
 {
     public partial class MaterialDatabaseForm : Form, IMaterialDatabaseView
     {

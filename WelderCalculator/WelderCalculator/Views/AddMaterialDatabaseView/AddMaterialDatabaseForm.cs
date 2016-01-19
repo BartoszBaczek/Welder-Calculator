@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
+using WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePresenters;
 
-namespace WelderCalculator.Databases.AddMaterialDatabaseView
+namespace WelderCalculator.Views.AddMaterialDatabaseView
 {
     public partial class AddMaterialDatabaseForm : Form, IAdditiveMaterialView
     {

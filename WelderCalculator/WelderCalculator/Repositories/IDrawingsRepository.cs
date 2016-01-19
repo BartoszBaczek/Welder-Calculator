@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using WelderCalculator.Drawings.SchaefflerChartView;
+using WelderCalculator.Drawings.Chart;
 
 namespace WelderCalculator.Repositories
 {

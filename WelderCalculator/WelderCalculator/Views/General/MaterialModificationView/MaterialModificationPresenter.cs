@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using WelderCalculator.MaterialDatabasePropertiesView;
-using WelderCalculator.MaterialModificationView.Serialization;
-using WelderCalculator.Repositories;
-using WelderCalculator.Repositories.Model;
 using WelderCalculator.Model;
+using WelderCalculator.Repositories;
+using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
 
-namespace WelderCalculator.MaterialModificationView
+namespace WelderCalculator.Views.General.MaterialModificationView
 {
     public class MaterialModificationPresenter
     {

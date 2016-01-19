@@ -1,7 +1,5 @@
 ﻿using WelderCalculator.Model;
-using WelderCalculator.Repositories.Model;
-using WelderCalculator.Repositories.Model.temp;
-using WelderCalculator.Repositories.Model.temp2;
+using WelderCalculator.Repositories;
 
 namespace Tests
 {

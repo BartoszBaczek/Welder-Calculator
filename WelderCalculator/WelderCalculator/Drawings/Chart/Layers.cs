@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using WelderCalculator.Drawings.SchaefflerChartView;
 
 namespace WelderCalculator.Drawings.Chart
 {

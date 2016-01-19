@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using WelderCalculator.MaterialDatabasePropertiesView;
+using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
 
-namespace WelderCalculator.MaterialModificationView
+namespace WelderCalculator.Views.General.MaterialModificationView
 {
     public partial class MaterialModificationForm : Form, IMaterialModificationView
     {

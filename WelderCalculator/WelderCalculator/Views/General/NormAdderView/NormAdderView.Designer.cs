@@ -1,4 +1,4 @@
-﻿namespace WelderCalculator.Databases.BaseMaterialsView
+﻿namespace WelderCalculator.Views.General.NormAdderView
 {
     partial class NormAdderView
     {

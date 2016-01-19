@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace WelderCalculator.MaterialDatabasePropertiesView
+namespace WelderCalculator.Views.General.MaterialDatabasePropertiesView
 {
 
     public interface IMaterialDatabasePropertiesView

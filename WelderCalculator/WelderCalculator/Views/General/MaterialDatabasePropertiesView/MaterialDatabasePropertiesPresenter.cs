@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
+using WelderCalculator.Repositories;
 
-namespace WelderCalculator.MaterialDatabasePropertiesView
+namespace WelderCalculator.Views.General.MaterialDatabasePropertiesView
 {
     public class MaterialDatabasePropertiesPresenter
     {

@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics;
 using NUnit.Framework;
-using WelderCalculator.MaterialModificationView.Serialization;
-using WelderCalculator.Repositories.Model.temp;
+using WelderCalculator.Repositories;
+using WelderCalculator.Model;
 
 
 namespace Tests

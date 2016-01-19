@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WelderCalculator.Drawings.SchaefflerChartView
+namespace WelderCalculator.Views.SchaefflerChartView
 {
     public interface ISchaefflerChartView
     {

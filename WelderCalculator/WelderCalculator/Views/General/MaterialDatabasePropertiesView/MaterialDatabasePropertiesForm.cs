@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using WelderCalculator.Model;
 
-namespace WelderCalculator.MaterialDatabasePropertiesView
+namespace WelderCalculator.Views.General.MaterialDatabasePropertiesView
 {
     public enum MaterialType
     {

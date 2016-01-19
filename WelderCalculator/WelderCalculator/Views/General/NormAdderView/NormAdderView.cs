@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using WelderCalculator.MaterialDatabasePropertiesView;
+using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
 
-namespace WelderCalculator.Databases.BaseMaterialsView
+namespace WelderCalculator.Views.General.NormAdderView
 {
     public partial class NormAdderView : Form, INormAdderView
     {

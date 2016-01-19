@@ -1,11 +1,10 @@
 ﻿using System.Windows.Forms;
-using WelderCalculator.Databases.BaseMaterialsView;
-using WelderCalculator.MaterialDatabasePropertiesView;
-using WelderCalculator.MaterialModificationView;
-using WelderCalculator.MaterialModificationView.Serialization;
-using WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters;
+using WelderCalculator.Repositories;
+using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
+using WelderCalculator.Views.General.MaterialModificationView;
+using WelderCalculator.Views.General.NormAdderView;
 
-namespace WelderCalculator.MaterialDatabaseView
+namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
 {
     public class MaterialDatabaseFullAccesPresenter : MaterialDatabasePresenter
     {

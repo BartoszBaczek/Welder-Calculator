@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using WelderCalculator.Databases.BaseMaterialsView;
-using WelderCalculator.MaterialDatabasePropertiesView;
-using WelderCalculator.MaterialModificationView;
-using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
-using WelderCalculator.Repositories.Model;
+using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
+using WelderCalculator.Views.General.MaterialModificationView;
+using WelderCalculator.Views.General.NormAdderView;
 
-namespace WelderCalculator.Databases.AddMaterialDatabaseView
+namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePresenters
 {
     public class AddMaterialDatabasePresenter
     {

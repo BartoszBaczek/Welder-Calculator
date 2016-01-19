@@ -5,8 +5,6 @@ using System.Linq;
 using NUnit.Framework;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
-using WelderCalculator.Repositories.Model.temp;
-using WelderCalculator.Repositories.Model.temp2;
 
 
 namespace Tests

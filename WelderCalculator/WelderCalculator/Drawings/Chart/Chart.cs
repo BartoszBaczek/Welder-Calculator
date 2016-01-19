@@ -2,9 +2,8 @@
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
-using WelderCalculator.Drawings.Chart;
 
-namespace WelderCalculator.Drawings.SchaefflerChartView
+namespace WelderCalculator.Drawings.Chart
 {
     public class Chart
     {

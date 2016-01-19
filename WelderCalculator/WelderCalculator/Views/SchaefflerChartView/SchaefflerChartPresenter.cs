@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using WelderCalculator.MaterialDatabaseView;
-using WelderCalculator.MaterialModificationView.Serialization;
-using WelderCalculator.Repositories.Model;
+using WelderCalculator.Drawings.Chart;
+using WelderCalculator.Model;
+using WelderCalculator.Repositories;
+using WelderCalculator.Views.MaterialDatabaseView;
 
-namespace WelderCalculator.Drawings.SchaefflerChartView
+namespace WelderCalculator.Views.SchaefflerChartView
 {
     public class SchaefflerChartPresenter
     {

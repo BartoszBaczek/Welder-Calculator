@@ -1,14 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using WelderCalculator.Drawings.Chart;
-using WelderCalculator.Drawings.SchaefflerChartView;
 using WelderCalculator.Model;
-using WelderCalculator.Repositories;
-using WelderCalculator.Repositories.Model;
 
-namespace WelderCalculator.MaterialModificationView.Serialization
+namespace WelderCalculator.Repositories
 {
     public class DataConnector
     {

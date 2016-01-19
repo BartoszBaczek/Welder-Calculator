@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WelderCalculator.MaterialDatabasePropertiesView;
+﻿using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
 
-namespace WelderCalculator.Databases.BaseMaterialsView
+namespace WelderCalculator.Views.General.NormAdderView
 {
     public interface INormAdderView
     {

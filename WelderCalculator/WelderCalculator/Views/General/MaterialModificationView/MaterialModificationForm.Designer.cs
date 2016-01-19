@@ -1,4 +1,4 @@
-﻿namespace WelderCalculator.MaterialModificationView
+﻿namespace WelderCalculator.Views.General.MaterialModificationView
 {
     partial class MaterialModificationForm
     {

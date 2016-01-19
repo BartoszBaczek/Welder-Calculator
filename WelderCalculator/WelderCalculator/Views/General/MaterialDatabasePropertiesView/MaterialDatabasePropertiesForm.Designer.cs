@@ -1,6 +1,4 @@
-﻿using System.Security.AccessControl;
-
-namespace WelderCalculator.MaterialDatabasePropertiesView
+﻿namespace WelderCalculator.Views.General.MaterialDatabasePropertiesView
 {
     partial class MaterialDatabasePropertiesForm
     {

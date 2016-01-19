@@ -1,8 +1,6 @@
 ﻿using System.Windows.Forms;
-using WelderCalculator.MaterialDatabaseView;
-using WelderCalculator.MaterialModificationView.Serialization;
 using WelderCalculator.Model;
-using WelderCalculator.Repositories.Model;
+using WelderCalculator.Repositories;
 
 namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
 {

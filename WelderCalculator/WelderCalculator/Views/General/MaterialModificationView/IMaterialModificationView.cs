@@ -1,6 +1,6 @@
-﻿using WelderCalculator.MaterialDatabasePropertiesView;
+﻿using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
 
-namespace WelderCalculator.MaterialModificationView
+namespace WelderCalculator.Views.General.MaterialModificationView
 {
     public interface IMaterialModificationView
     {

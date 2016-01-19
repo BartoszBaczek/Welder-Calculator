@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace WelderCalculator.Drawings.SchaefflerChartView
+namespace WelderCalculator.Views.SchaefflerChartView
 {
     partial class SchaefflerChartForm
     {

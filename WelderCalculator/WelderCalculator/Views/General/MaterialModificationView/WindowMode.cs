@@ -1,5 +1,5 @@
 ﻿
-namespace WelderCalculator.MaterialModificationView
+namespace WelderCalculator.Views.General.MaterialModificationView
 {
     public class WindowMode
     {

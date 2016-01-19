@@ -1,7 +1,7 @@
 ﻿using System.Windows.Forms;
-using WelderCalculator.Databases.AddMaterialDatabaseView;
-using WelderCalculator.Drawings.SchaefflerChartView;
-using WelderCalculator.MaterialDatabaseView;
+using WelderCalculator.Views.AddMaterialDatabaseView;
+using WelderCalculator.Views.MaterialDatabaseView;
+using WelderCalculator.Views.SchaefflerChartView;
 
 namespace WelderCalculator.StartView
 {

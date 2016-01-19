@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace WelderCalculator.Drawings.SchaefflerChartView
+namespace WelderCalculator.Drawings.Chart
 {
     public enum LayerType
     {
