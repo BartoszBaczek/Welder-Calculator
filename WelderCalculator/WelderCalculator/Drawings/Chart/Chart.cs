@@ -16,7 +16,6 @@ namespace WelderCalculator.Drawings.Chart
         {
             _graphics = graph;
             Layers = layers;
-            SetLayersVisibility();
         }
 
         public void Resize(int width, int height)
@@ -54,16 +53,9 @@ namespace WelderCalculator.Drawings.Chart
             }
         }
 
-        public void DrawPoint(Graphics graphics)
+        public void DrawPoint(Graphics graphics, Point point)
         {
-            
         }
 
-        private void SetLayersVisibility()
-        {
-            int maxLayersWidth = Layers.GetActive().Max(l => l.Image.Width);
-            int maxLayersHigth = Layers.GetActive().Max(l => l.Image.Height);
-            Size = new Size(maxLayersWidth, maxLayersHigth);
-        }
     }
 }
