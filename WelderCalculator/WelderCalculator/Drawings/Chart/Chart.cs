@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using System.Linq;
@@ -7,11 +8,13 @@ namespace WelderCalculator.Drawings.Chart
 {
     public class Chart
     {
+        private Graphics _graphics;
         public Layers Layers { get; private set; }
         public Size Size { get; private set; }
 
-        public Chart(Layers layers)
+        public Chart(Graphics graph, Layers layers)
         {
+            _graphics = graph;
             Layers = layers;
             SetLayersVisibility();
         }
@@ -43,12 +46,17 @@ namespace WelderCalculator.Drawings.Chart
             Size = new Size(width, height);
         }
 
-        public void Draw(Graphics graphics)
+        public void DrawLayers()
         {
             foreach (var layer in Layers.GetActive())
             {
-                graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(Size.Width, Size.Height)));
+                _graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(Size.Width, Size.Height)));
             }
+        }
+
+        public void DrawPoint(Graphics graphics)
+        {
+            
         }
 
         private void SetLayersVisibility()
