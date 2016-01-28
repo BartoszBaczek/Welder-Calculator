@@ -9,12 +9,19 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
     public partial class AddMaterialDatabaseForm : Form, IAdditiveMaterialView
     {
         public AddMaterialDatabasePresenter Presenter { private get; set; }
+        public AdditiveMaterialDatabaseAccesibility Accesibility { get; private set; }
 
-        public AddMaterialDatabaseForm()
+        public AddMaterialDatabaseForm(AdditiveMaterialDatabaseAccesibility accesibility)
         {
+            Accesibility = accesibility;
             InitializeComponent();
-            new AddMaterialDatabasePresenter(this);
-            Presenter.Init();
+
+            if (Accesibility == AdditiveMaterialDatabaseAccesibility.Full)
+                Presenter = new FullAccesAddMaterialDatabasePresenter(this);
+            else
+                Presenter = new PartialAccesAddMaterialPresenter(this);
+
+                Presenter.Init();
         }
 
         public List<string> NormsList
@@ -286,6 +293,11 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
             Presenter.OnAddNormButtonClicked();
         }
 
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnDeleteMaterialButtonClicked();
+        }
+
         private void normComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             Presenter.OnSelectedIndexChanged();
@@ -302,7 +314,33 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
             //Trzeba dodac potwierdzenie usunia normy - za duzo do stracenia
         }
 
+        private void chooseMaterialButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnChooseMaterialButtonClicked();
+        }
 
-        
+        public bool ChooseMaterialVisibityButton
+        {
+            get { return chooseMaterialButton.Visible; }
+            set { chooseMaterialButton.Visible = value; }
+        }
+
+        public bool ModifyMaterialVisibilityLayoutPanel
+        {
+            get { return modifyMaterialControlPanel.Visible; }
+            set { modifyMaterialControlPanel.Visible = value; }
+        }
+
+        public bool AddNormVisibilityButton
+        {
+            get { return addNewNormButton.Visible; }
+            set { addNewNormButton.Visible = value; }
+        }
+
+        public bool DeleteNormVisibilityButton
+        {
+            get { return deleteNormButton.Visible; }
+            set { deleteNormButton.Visible = value; }
+        }
     }
 }

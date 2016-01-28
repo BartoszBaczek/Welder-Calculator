@@ -5,10 +5,17 @@ using WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePresente
 
 namespace WelderCalculator.Views.AddMaterialDatabaseView
 {
+
+    public enum AdditiveMaterialDatabaseAccesibility
+    {
+        Full,
+        Partial
+    }
+
     public interface IAdditiveMaterialView
     {
         AddMaterialDatabasePresenter Presenter { set; }
-
+        AdditiveMaterialDatabaseAccesibility Accesibility { get; }
         List<string> NormsList { get; set; }
 
         int SelectedNorm { get; set; }
@@ -39,5 +46,10 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
         double? CEquivalentTextBox { get; set; }
         double? NiEquivalentTextBox { get; set; }
         double? CrEquivalentTextBox { get; set; }
+
+        bool ChooseMaterialVisibityButton { get; set; }
+        bool ModifyMaterialVisibilityLayoutPanel { get; set; }
+        bool AddNormVisibilityButton { get; set; }
+        bool DeleteNormVisibilityButton { get; set; }
     }
 }

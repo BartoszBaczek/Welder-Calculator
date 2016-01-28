@@ -30,7 +30,7 @@
         {
             this.normComboBox = new System.Windows.Forms.ComboBox();
             this.normNameLabel = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.modifyMaterialControlPanel = new System.Windows.Forms.GroupBox();
             this.deleteButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
@@ -63,7 +63,8 @@
             this.minCheckBox = new System.Windows.Forms.CheckBox();
             this.addNewNormButton = new System.Windows.Forms.Button();
             this.deleteNormButton = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.chooseMaterialButton = new System.Windows.Forms.Button();
+            this.modifyMaterialControlPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
             this.ViewLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.materialsDataGridView)).BeginInit();
@@ -88,17 +89,17 @@
             this.normNameLabel.TabIndex = 1;
             this.normNameLabel.Text = "Norma:";
             // 
-            // groupBox1
+            // modifyMaterialControlPanel
             // 
-            this.groupBox1.Controls.Add(this.deleteButton);
-            this.groupBox1.Controls.Add(this.addButton);
-            this.groupBox1.Controls.Add(this.editButton);
-            this.groupBox1.Location = new System.Drawing.Point(198, 12);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(99, 108);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Modyfikacja";
+            this.modifyMaterialControlPanel.Controls.Add(this.deleteButton);
+            this.modifyMaterialControlPanel.Controls.Add(this.addButton);
+            this.modifyMaterialControlPanel.Controls.Add(this.editButton);
+            this.modifyMaterialControlPanel.Location = new System.Drawing.Point(198, 12);
+            this.modifyMaterialControlPanel.Name = "modifyMaterialControlPanel";
+            this.modifyMaterialControlPanel.Size = new System.Drawing.Size(99, 108);
+            this.modifyMaterialControlPanel.TabIndex = 2;
+            this.modifyMaterialControlPanel.TabStop = false;
+            this.modifyMaterialControlPanel.Text = "Modyfikacja";
             // 
             // deleteButton
             // 
@@ -108,6 +109,7 @@
             this.deleteButton.TabIndex = 5;
             this.deleteButton.Text = "Usuń";
             this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // addButton
             // 
@@ -452,23 +454,34 @@
             this.deleteNormButton.UseVisualStyleBackColor = true;
             this.deleteNormButton.Click += new System.EventHandler(this.deleteNormButton_Click);
             // 
+            // chooseMaterialButton
+            // 
+            this.chooseMaterialButton.Location = new System.Drawing.Point(52, 4);
+            this.chooseMaterialButton.Name = "chooseMaterialButton";
+            this.chooseMaterialButton.Size = new System.Drawing.Size(247, 81);
+            this.chooseMaterialButton.TabIndex = 19;
+            this.chooseMaterialButton.Text = "Wybierz materiał";
+            this.chooseMaterialButton.UseVisualStyleBackColor = true;
+            this.chooseMaterialButton.Click += new System.EventHandler(this.chooseMaterialButton_Click);
+            // 
             // AddMaterialDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 400);
+            this.Controls.Add(this.chooseMaterialButton);
             this.Controls.Add(this.deleteNormButton);
             this.Controls.Add(this.addNewNormButton);
             this.Controls.Add(this.carbonLabel);
             this.Controls.Add(this.materialsDataGridView);
             this.Controls.Add(this.ViewLayoutPanel);
             this.Controls.Add(this.EqLayoutPanel);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.modifyMaterialControlPanel);
             this.Controls.Add(this.normNameLabel);
             this.Controls.Add(this.normComboBox);
             this.Name = "AddMaterialDatabaseForm";
             this.Text = "Materiał dodatkowy";
-            this.groupBox1.ResumeLayout(false);
+            this.modifyMaterialControlPanel.ResumeLayout(false);
             this.EqLayoutPanel.ResumeLayout(false);
             this.EqLayoutPanel.PerformLayout();
             this.ViewLayoutPanel.ResumeLayout(false);
@@ -485,7 +498,7 @@
 
         private System.Windows.Forms.ComboBox normComboBox;
         private System.Windows.Forms.Label normNameLabel;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox modifyMaterialControlPanel;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.Button editButton;
         private System.Windows.Forms.Button deleteButton;
@@ -518,5 +531,6 @@
         private System.Windows.Forms.Button addNewNormButton;
         private System.Windows.Forms.CheckBox vCheckBox;
         private System.Windows.Forms.Button deleteNormButton;
+        private System.Windows.Forms.Button chooseMaterialButton;
     }
 }

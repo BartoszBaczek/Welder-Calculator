@@ -5,7 +5,7 @@ using WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters;
 
 namespace WelderCalculator.Views.MaterialDatabaseView
 {
-    public enum Accesibility
+    public enum BaseMaterialDatabaseAccesibility
     {
         Full,
         PartialForFirstMaterial,
@@ -15,7 +15,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
     public interface IMaterialDatabaseView
     {
         MaterialDatabasePresenter Presenter { set; }
-        Accesibility Accesibility { get; }
+        BaseMaterialDatabaseAccesibility Accesibility { get; }
         List<string> NormsList { get; set; }
 
         int SelectedNorm { get; set; }

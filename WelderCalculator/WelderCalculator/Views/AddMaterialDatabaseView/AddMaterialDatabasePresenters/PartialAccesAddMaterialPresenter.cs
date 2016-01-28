@@ -1,31 +1,33 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
+using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
+using WelderCalculator.Views.General.MaterialModificationView;
+using WelderCalculator.Views.General.NormAdderView;
 
-namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
+namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePresenters
 {
-    class MaterialDatabasePartialAccesPresenter : MaterialDatabasePresenter
+    public class PartialAccesAddMaterialPresenter : AddMaterialDatabasePresenter
     {
-        public MaterialDatabasePartialAccesPresenter(IMaterialDatabaseView view)
+        public PartialAccesAddMaterialPresenter(IAdditiveMaterialView view)
         {
             _view = view;
-            view.Presenter = this;
+            _view.Presenter = this;
             _dataConnector = new DataConnector();
         }
 
         public override void Init()
         {
-            LoadNormsComboBox();
+            LoadNormComboBoxes();
             MakeAllCheckBoxesChecked();
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
             SetPartialAccesibilityControls();
-        }
-
-        public override void OnSelectedIndexChanged()
-        {
-            BindDataSourceToDataGridView();
-            SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
         public override void OnMaterialCheckBoxChanged(string elementName)
@@ -63,14 +65,11 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
             if (elementName == "Ti")
                 SetColumnsVisibiliyForElements(elementName, _view.TiCheckBox);
 
-            if (elementName == "Al")
-                SetColumnsVisibiliyForElements(elementName, _view.AlCheckBox);
+            if (elementName == "Cu")
+                SetColumnsVisibiliyForElements(elementName, _view.CuCheckBox);
 
             if (elementName == "V")
                 SetColumnsVisibiliyForElements(elementName, _view.VCheckBox);
-
-            if (elementName == "Cu")
-                SetColumnsVisibiliyForElements(elementName, _view.CuCheckBox);
         }
 
         public override void OnViewOptionsCheckBoxChanged(string option)
@@ -86,31 +85,21 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
                 case "real":
                     SetColumnsVisibilityForMinMaxRealNumber(option, _view.RealCheckBox);
                     break;
-                case "Numer":
-                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.NumberCheckBox);
-                    break;
             }
+        }
+
+        public override void OnElementsOrderPropertiesButtonClicked()
+        {
+            var orderPropertiesForm = new MaterialDatabasePropertiesForm(MaterialType.AdditionalMaterial);
+            orderPropertiesForm.ShowDialog();
         }
 
         public override void Refresh()
         {
-            LoadNormsComboBox();
+            LoadNormComboBoxes();
             _view.GridSource = null;
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
-        }
-
-        public override void OnSelectedDataGridViewRowChanged()
-        {
-            UpdateEquivalents();
-        }
-
-
-
-        //Unavalibles in Partial acces mode
-        public override void OnElementsOrderPropertiesButtonClicked()
-        {
-            MessageBox.Show("Niedostepne");
         }
 
         public override void OnAddMaterialButtonClicked()
@@ -127,7 +116,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
         {
             MessageBox.Show("Niedostepne");
         }
-
+        
         public override void OnAddNormButtonClicked()
         {
             MessageBox.Show("Niedostepne");
@@ -138,14 +127,21 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
             MessageBox.Show("Niedostepne");
         }
 
+        public override void OnSelectedIndexChanged()
+        {
+            BindDataSourceToDataGridView();
+            SetDataGridViewColumnsWidthAndSetInitialVisibility();
+        }
+
+        public override void OnSelectedDataGridViewRowChanged()
+        {
+            UpdateEquivalents();
+        }
+
         public override void OnChooseMaterialButtonClicked()
         {
-            BaseMaterial selectedMaterial = GetSelectedMaterial();
-
-            if (_view.Accesibility == BaseMaterialDatabaseAccesibility.PartialForFirstMaterial)
-                _dataConnector.SaveFirstBasisMarerialForSchaeffler(selectedMaterial);
-            else if (_view.Accesibility == BaseMaterialDatabaseAccesibility.PartialForSecondMaterial)
-                _dataConnector.SaveSecondBasisMarerialForSchaeffler(selectedMaterial);
+            AdditiveMaterial selectedMaterial = GetSelectedMaterial();
+            _dataConnector.SaveAdditionalMaterialForSchaeffler(selectedMaterial);
         }
     }
 }
