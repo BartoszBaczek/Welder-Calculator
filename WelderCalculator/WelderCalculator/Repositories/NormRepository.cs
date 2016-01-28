@@ -242,14 +242,23 @@ namespace WelderCalculator.Repositories
 
         public AdditiveMaterial DeserializeAdditionalMaterialForSchaeffler()
         {
-            string fileName = "AdditiveMaterialForSchaeffler";
-            string pathToFile = _schaefflersMaterialsRepository + fileName + ".json";
-            string jsonText = File.ReadAllText(pathToFile);
+            try
+            {
+                string fileName = "AdditiveMaterialForSchaeffler";
+                string pathToFile = _schaefflersMaterialsRepository + fileName + ".json";
+                string jsonText = File.ReadAllText(pathToFile);
 
-            var additiveMaterial =
-                JsonConvert.DeserializeObject<AdditiveMaterial>(jsonText);
+                var additiveMaterial =
+                    JsonConvert.DeserializeObject<AdditiveMaterial>(jsonText);
 
-            return additiveMaterial;
+                return additiveMaterial;
+            }
+            catch (IOException)
+            {
+                return null;
+            }
+
+
         }
         #endregion
         public List<Layer> GetSchaefflerChartImages()
