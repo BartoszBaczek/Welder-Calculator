@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using WelderCalculator.Drawings.Chart;
@@ -86,6 +87,15 @@ namespace WelderCalculator.Views.SchaefflerChartView
         public void OnCountButtonClicked()
         {
             var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
+            var points = new List<Point>()
+            {
+                new Point(0, 0),
+                new Point(10, 342),
+                new Point(54, 234),
+                new Point(500, 500)
+            };
+
+            _chart.DrawPoints(points);
         }
     }
 }

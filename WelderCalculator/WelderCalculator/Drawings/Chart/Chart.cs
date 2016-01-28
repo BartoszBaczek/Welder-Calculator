@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
@@ -48,14 +49,19 @@ namespace WelderCalculator.Drawings.Chart
         public void DrawLayers()
         {
             foreach (var layer in Layers.GetActive())
-            {
                 _graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(Size.Width, Size.Height)));
-            }
         }
 
-        public void DrawPoint(Graphics graphics, Point point)
+        public void DrawPoints(IEnumerable<Point> p)
         {
-        }
+            Point[] points = p.ToArray();
+            Rectangle[] rectangles = new Rectangle[points.Count()];
 
+            for (int i = 0; i < points.Count(); i++)
+                rectangles[i] = new Rectangle(points[i], new Size(5, 5));
+
+            foreach (var point in points)
+                _graphics.FillRectangles(new SolidBrush(Color.Red), rectangles);
+        }
     }
 }
