@@ -20,7 +20,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
             _view = view; 
             _view.Presenter = this;
             _dataConnector = new DataConnector();
-            _chart = new Chart(_dataConnector.GetSchaefflerImages());
+            _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas), _dataConnector.GetSchaefflerImages());
 
             SetVisibilityCheckBoxesToTrue();
             RefreshSelectedMaterials();
@@ -29,9 +29,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
         public void OnPaintEvent(IntPtr panelHandle, PaintEventArgs e)
         {
             _chart.Resize(_view.DrawPanelWidth, _view.DrawPanelHeight);
-
-            Graphics graphics = Graphics.FromHwnd(_view.DrawPanelCanvas);
-            _chart.Draw(graphics);
+            _chart.DrawLayers();
         }
 
         public void OnLayerVisibilityChanged(LayerType type, bool visibility)
