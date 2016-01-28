@@ -150,6 +150,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         private void countButton_Click(object sender, EventArgs e)
         {
+            Presenter.OnCountButtonClicked();
         }
     }
 }

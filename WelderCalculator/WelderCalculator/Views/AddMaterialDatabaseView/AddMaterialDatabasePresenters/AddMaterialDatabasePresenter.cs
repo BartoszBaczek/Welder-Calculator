@@ -4,38 +4,46 @@ using System.Data;
 using System.Windows.Forms;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
-using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
-using WelderCalculator.Views.General.MaterialModificationView;
-using WelderCalculator.Views.General.NormAdderView;
 
 namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePresenters
 {
-    public class AddMaterialDatabasePresenter
+    public abstract class AddMaterialDatabasePresenter
     {
-        private readonly IAdditiveMaterialView _view;
-        private readonly DataConnector _dataConnector;
+        protected IAdditiveMaterialView _view;
+        protected DataConnector _dataConnector;
 
-        public AddMaterialDatabasePresenter(IAdditiveMaterialView view)
+        public abstract void Init();
+        public abstract void OnMaterialCheckBoxChanged(string elementName);
+        public abstract void OnViewOptionsCheckBoxChanged(string option);
+        public abstract void OnElementsOrderPropertiesButtonClicked();
+        public abstract void Refresh();
+        public abstract void OnAddMaterialButtonClicked();
+        public abstract void OnEditMaterialButtonClicked();
+        public abstract void OnDeleteMaterialButtonClicked();
+        public abstract void OnSelectedIndexChanged();
+        public abstract void OnSelectedDataGridViewRowChanged();
+        public abstract void OnAddNormButtonClicked();
+        public abstract void OnDeleteNormButtonClicked();
+        public abstract void OnChooseMaterialButtonClicked();
+
+        protected void SetFullAccesibilityControls()
         {
-            _view = view;
-            _view.Presenter = this;
-            _dataConnector = new DataConnector();
+            _view.ChooseMaterialVisibityButton = false;
         }
 
-        public void Init()
+        protected void SetPartialAccesibilityControls()
         {
-            LoadNormComboBoxes();
-            MakeAllCheckBoxesChecked();
-            BindDataSourceToDataGridView();
-            SetDataGridViewColumnsWidthAndSetInitialVisibility();
+            _view.ModifyMaterialVisibilityLayoutPanel = false;
+            _view.AddNormVisibilityButton = false;
+            _view.DeleteNormVisibilityButton = false;
         }
 
-        private void LoadNormComboBoxes()
+        protected void LoadNormComboBoxes()
         {
             _view.NormsList = _dataConnector.GetNamesOfAdditiveNorms();
         }
 
-        private void MakeAllCheckBoxesChecked()
+        protected void MakeAllCheckBoxesChecked()
         {
             _view.CcheckBox = true;
             _view.SiCheckBox = true;
@@ -56,13 +64,13 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             _view.RealCheckBox = true;
         }
 
-        private void BindDataSourceToDataGridView()
+        protected void BindDataSourceToDataGridView()
         {
             DataTable table = CreateTable();
             _view.GridSource = table;
         }
 
-        private DataTable CreateTable()
+        protected DataTable CreateTable()
         {
             var table = new DataTable();
             CreateColumns(table);
@@ -70,7 +78,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             return table;
         }
 
-        private IEnumerable<AdditiveMaterial> GetCurrentListOfMaterialsFromNormComboBox()
+        protected IEnumerable<AdditiveMaterial> GetCurrentListOfMaterialsFromNormComboBox()
         {
             List<string> listOfNormsNames = _dataConnector.GetNamesOfAdditiveNorms();
 
@@ -81,10 +89,9 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
                 return listofMaterialsFromNorm;
             }
             return new List<AdditiveMaterial>();
-
         }
 
-        private void CreateColumns(DataTable table)
+        protected void CreateColumns(DataTable table)
         {
             var orderOfElements = _dataConnector.GetOrderOfElementsForAdditiveMaterial();
             table.Columns.Add("GUID", typeof(Guid));
@@ -114,7 +121,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             }
         }
 
-        private void CreateRows(DataTable table)
+        protected void CreateRows(DataTable table)
         {
             var materialsToBind = GetCurrentListOfMaterialsFromNormComboBox();
 
@@ -141,7 +148,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             }
         }
 
-        private void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element,
+        protected void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element,
             AdditiveMaterial material)
         {
             var materialElement = material.GetElement(element);
@@ -162,7 +169,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
                 row[real] = materialElement.RealValue;
         }
 
-        private void SetDataGridViewColumnsWidthAndSetInitialVisibility()
+        protected void SetDataGridViewColumnsWidthAndSetInitialVisibility()
         {
             foreach (DataGridViewColumn column in _view.DataGridView.Columns)
             {
@@ -171,7 +178,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             _view.DataGridView.Columns["GUID"].Visible = false;
         }
 
-        private void UpdateEquivalents()
+        protected void UpdateEquivalents()
         {
             var material = GetSelectedMaterial();
             if (material != null)
@@ -182,7 +189,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             }
         }
 
-        private AdditiveMaterial GetSelectedMaterial()
+        protected AdditiveMaterial GetSelectedMaterial()
         {
             var materialRow = _view.SelectedRow;
 
@@ -196,49 +203,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             return selectedMaterial;
         }
 
-        public void OnMaterialCheckBoxChanged(string elementName)
-        {
-            if (elementName == "C")
-                SetColumnsVisibiliyForElements(elementName, _view.CcheckBox);
-
-            if (elementName == "Si")
-                SetColumnsVisibiliyForElements(elementName, _view.SiCheckBox);
-
-            if (elementName == "Mn")
-                SetColumnsVisibiliyForElements(elementName, _view.MnCheckBox);
-
-            if (elementName == "P")
-                SetColumnsVisibiliyForElements(elementName, _view.PcheckBox);
-
-            if (elementName == "S")
-                SetColumnsVisibiliyForElements(elementName, _view.ScheckBox);
-
-            if (elementName == "N")
-                SetColumnsVisibiliyForElements(elementName, _view.NcheckBox);
-
-            if (elementName == "Cr")
-                SetColumnsVisibiliyForElements(elementName, _view.CrCheckBox);
-
-            if (elementName == "Mo")
-                SetColumnsVisibiliyForElements(elementName, _view.MoCheckBox);
-
-            if (elementName == "Nb")
-                SetColumnsVisibiliyForElements(elementName, _view.NbCheckBox);
-
-            if (elementName == "Ni")
-                SetColumnsVisibiliyForElements(elementName, _view.NiCheckBox);
-
-            if (elementName == "Ti")
-                SetColumnsVisibiliyForElements(elementName, _view.TiCheckBox);
-
-            if (elementName == "Cu")
-                SetColumnsVisibiliyForElements(elementName, _view.CuCheckBox);
-
-            if (elementName == "V")
-                SetColumnsVisibiliyForElements(elementName, _view.VCheckBox);
-        }
-
-        private void SetColumnsVisibiliyForElements(string elementName, bool visibility)
+        protected void SetColumnsVisibiliyForElements(string elementName, bool visibility)
         {
             if (_view.MinCheckBox)
                 _view.DataGridView.Columns[elementName + " min"].Visible = visibility;
@@ -249,23 +214,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
 
         }
 
-        public void OnViewOptionsCheckBoxChanged(string option)
-        {
-            switch (option)
-            {
-                case "min":
-                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.MinCheckBox);
-                    break;
-                case "max":
-                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.MaxCheckBox);
-                    break;
-                case "real":
-                    SetColumnsVisibilityForMinMaxRealNumber(option, _view.RealCheckBox);
-                    break;
-            }
-        }
-
-        private void SetColumnsVisibilityForMinMaxRealNumber(string option, bool visibility)
+        protected void SetColumnsVisibilityForMinMaxRealNumber(string option, bool visibility)
         {
             foreach (DataGridViewColumn column in _view.DataGridView.Columns)
             {
@@ -277,7 +226,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             }
         }
 
-        private void SetElementVisibilityForAllColumns()
+        protected void SetElementVisibilityForAllColumns()
         {
             SetColumnsVisibiliyForElements("C", _view.CcheckBox);
             SetColumnsVisibiliyForElements("Si", _view.SiCheckBox);
@@ -294,76 +243,11 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             SetColumnsVisibiliyForElements("V", _view.VCheckBox);
         }
 
-        public void OnElementsOrderPropertiesButtonClicked()
-        {
-            var orderPropertiesForm = new MaterialDatabasePropertiesForm(MaterialType.AdditionalMaterial);
-            orderPropertiesForm.ShowDialog();
-        }
-
-        public void Refresh()
-        {
-            LoadNormComboBoxes();
-            _view.GridSource = null;
-            BindDataSourceToDataGridView();
-            SetDataGridViewColumnsWidthAndSetInitialVisibility();
-        }
-
-        public void OnAddMaterialButtonClicked()
-        {
-            var currentNorm = GetCurrentNorm();
-            var modifyMaterialForm = new MaterialModificationForm(currentNorm, MaterialType.AdditionalMaterial);
-            modifyMaterialForm.ShowDialog();
-            Init();
-        }
-
-        public void OnEditMaterialButtonClicked()
-        {
-            var currentNorm = GetCurrentNorm();
-            var material = GetSelectedMaterial();
-            if (material == null)
-                return;
-
-            var modifyMaterialForm = new MaterialModificationForm(currentNorm, material, MaterialType.AdditionalMaterial);
-            modifyMaterialForm.ShowDialog();
-            Init();
-        }
-
-        private AdditiveNorm GetCurrentNorm()
+        protected AdditiveNorm GetCurrentNorm()
         {
             string currentNormName = _view.NormsList[_view.SelectedNorm];
             AdditiveNorm norm = _dataConnector.GetAdditiveNorm(currentNormName);
             return norm;
-        }
-
-        public void OnAddNormButtonClicked()
-        {
-            var addNormView = new NormAdderView(MaterialType.AdditionalMaterial);
-            addNormView.ShowDialog();
-            Init();
-        }
-
-        public void OnDeleteNormButtonClicked()
-        {
-            string selectedNormName = _view.NormsList[_view.SelectedNorm];
-
-            var dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć normę " + selectedNormName + "?", "Usuń normę",
-                            MessageBoxButtons.OKCancel);
-            if (dialogResult == DialogResult.OK)
-            {
-                _dataConnector.RemoveAdditiveNorm(selectedNormName);
-                Init();
-            }
-        }
-
-        public void OnSelectedIndexChanged()
-        {
-            BindDataSourceToDataGridView();
-            SetDataGridViewColumnsWidthAndSetInitialVisibility();
-        }
-
-        public void OnSelectedDataGridViewRowChanged()
-        {
-            UpdateEquivalents();
         }
     }
 }

@@ -7,23 +7,18 @@ namespace WelderCalculator.Drawings.Chart
 {
     public class Chart
     {
-        private Layers _layers;
-        private Size _size;
-
-        public Layers Layers
-        {
-            get { return _layers; }
-        }
+        public Layers Layers { get; private set; }
+        public Size Size { get; private set; }
 
         public Chart(Layers layers)
         {
-            _layers = layers;
+            Layers = layers;
             SetLayersVisibility();
         }
 
         public void Resize(int width, int height)
         {
-            foreach (var layer in _layers.GetActive())
+            foreach (var layer in Layers.GetActive())
             {
                 var destinationRectangle = new Rectangle(0, 0, width, height);
                 var destinationImage = new Bitmap(width, height);
@@ -45,22 +40,22 @@ namespace WelderCalculator.Drawings.Chart
                     }
                 }
             }
-            _size = new Size(width, height);
+            Size = new Size(width, height);
         }
 
         public void Draw(Graphics graphics)
         {
-            foreach (var layer in _layers.GetActive())
+            foreach (var layer in Layers.GetActive())
             {
-                graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(_size.Width, _size.Height)));
+                graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(Size.Width, Size.Height)));
             }
         }
 
         private void SetLayersVisibility()
         {
-            int maxLayersWidth = _layers.GetActive().Max(l => l.Image.Width);
-            int maxLayersHigth = _layers.GetActive().Max(l => l.Image.Height);
-            _size = new Size(maxLayersWidth, maxLayersHigth);
+            int maxLayersWidth = Layers.GetActive().Max(l => l.Image.Width);
+            int maxLayersHigth = Layers.GetActive().Max(l => l.Image.Height);
+            Size = new Size(maxLayersWidth, maxLayersHigth);
         }
     }
 }

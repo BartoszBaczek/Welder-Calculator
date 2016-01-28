@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using WelderCalculator.Drawings.Chart;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
+using WelderCalculator.Views.AddMaterialDatabaseView;
 using WelderCalculator.Views.MaterialDatabaseView;
 
 namespace WelderCalculator.Views.SchaefflerChartView
@@ -52,21 +53,23 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         public void OnFirstBaseMaterialButtonClicked()
         {
-            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.PartialForFirstMaterial);
+            var materialDatabaseForm = new MaterialDatabaseForm(BaseMaterialDatabaseAccesibility.PartialForFirstMaterial);
             materialDatabaseForm.ShowDialog();
             RefreshSelectedMaterials();
         }
 
         public void OnSecondBaseMaterialButtonClicked()
         {
-            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.PartialForSecondMaterial);
+            var materialDatabaseForm = new MaterialDatabaseForm(BaseMaterialDatabaseAccesibility.PartialForSecondMaterial);
             materialDatabaseForm.ShowDialog();
             RefreshSelectedMaterials();
         }
 
         public void OnAdditionalMaterialButtonClicked()
         {
-            
+            var addMaterialDatabaseForm = new AddMaterialDatabaseForm(AdditiveMaterialDatabaseAccesibility.Partial);
+            addMaterialDatabaseForm.ShowDialog();
+            RefreshSelectedMaterials();
         }
 
         private void RefreshSelectedMaterials()
@@ -77,6 +80,14 @@ namespace WelderCalculator.Views.SchaefflerChartView
             BaseMaterial secondBaseMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
             _view.SecondBaseMaterialTextBox = secondBaseMaterial.Name;
 
+            AdditiveMaterial additiveMaterial = _dataConnector.GetAdditionalMaterialForSchaeffler();
+            if (additiveMaterial != null)
+                _view.AdditionalMaterialTextBox = additiveMaterial.Name;
+        }
+
+        public void OnCountButtonClicked()
+        {
+            var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
         }
     }
 }

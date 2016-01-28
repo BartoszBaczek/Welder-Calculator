@@ -22,7 +22,7 @@ namespace WelderCalculator.StartView
 
         public void OpenMaterialDatabase()
         {
-            var materialDatabaseForm = new MaterialDatabaseForm(Accesibility.Full);
+            var materialDatabaseForm = new MaterialDatabaseForm(BaseMaterialDatabaseAccesibility.Full);
             materialDatabaseForm.ShowDialog();
         }
 
@@ -34,7 +34,7 @@ namespace WelderCalculator.StartView
 
         public void OpenAdditiveMaterialDatabase()
         {
-            var additiveMaterialDatabaseForm = new AddMaterialDatabaseForm();
+            var additiveMaterialDatabaseForm = new AddMaterialDatabaseForm(AdditiveMaterialDatabaseAccesibility.Full);
             additiveMaterialDatabaseForm.ShowDialog();
         }
     }
