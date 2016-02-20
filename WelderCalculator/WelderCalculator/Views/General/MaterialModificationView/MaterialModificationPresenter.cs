@@ -48,7 +48,7 @@ namespace WelderCalculator.Views.General.MaterialModificationView
             {
                 var material = materialToBind as BaseMaterial;
                 _view.NameTextbox = material.Name;
-                _view.NameTextbox = material.Number;
+                _view.NumberTextbox = material.Number;
 
                 _view.GuidTextbox = material.GuidNumber.ToString();
 
