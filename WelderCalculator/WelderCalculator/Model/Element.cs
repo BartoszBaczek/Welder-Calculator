@@ -14,7 +14,18 @@ namespace WelderCalculator.Model
 
         public double? Max { get; set; }            //value must be 0 - 100%
 
-        public double? RealValue { get; set; }      //value must be 0 - 100%
+        private double? _realValue;
+        public double? RealValue 
+        { 
+            get
+            {
+                if (_realValue.HasValue)
+                    return _realValue;
+                else
+                    return Min/2.0 + Max/2.0;
+            }
+            set { _realValue = value; }
+        }
 
         public Element(Category.OfElement name)
         {
