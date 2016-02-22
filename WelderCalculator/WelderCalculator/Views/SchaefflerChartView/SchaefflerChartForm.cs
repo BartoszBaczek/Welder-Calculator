@@ -126,11 +126,36 @@ namespace WelderCalculator.Views.SchaefflerChartView
             set { additionalMaterialTextBox.Text = value; }
         }
 
-        public string AdditionalMaterialQuantity
+        public double? AdditionalMaterialQuantity
         {
-            get { return additionalMaterialQuantityTextBox.Text; }
-            set { additionalMaterialQuantityTextBox.Text = value; }
-        } 
+            get
+            {
+                double? textBoxValue = GetTextBoxValue(additionalMaterialQuantityTextBox);
+                return textBoxValue;
+            }
+            set { SetTextboxValue(ref additionalMaterialQuantityTextBox, value); }
+        }
+
+        private double? GetTextBoxValue(TextBox textbox)
+        {
+            try
+            {
+                string text = textbox.Text.Trim().Replace('.', ',');
+                if (string.IsNullOrEmpty(text))
+                    return null;
+                return Convert.ToDouble(text);
+            }
+            catch (FormatException)
+            {
+                return null;
+            }
+        }
+
+        private void SetTextboxValue(ref TextBox textbox, double? value)
+        {
+            textbox.Text = value.HasValue ? value.ToString() : string.Empty;
+        }
+
         #endregion
 
         private void firstBaseMaterialButton_Click(object sender, EventArgs e)

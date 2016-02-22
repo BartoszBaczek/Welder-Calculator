@@ -30,7 +30,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
         public void OnPaintEvent(IntPtr panelHandle, PaintEventArgs e)
         {
             _chart.Resize(_view.DrawPanelWidth, _view.DrawPanelHeight);
-            _chart.DrawLayers();
+            _chart.Draw();
         }
 
         public void OnLayerVisibilityChanged(LayerType type, bool visibility)
@@ -86,16 +86,61 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         public void OnCountButtonClicked()
         {
-            var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
-            var points = new List<Point>()
-            {
-                new Point(0, 0),
-                new Point(10, 342),
-                new Point(54, 234),
-                new Point(500, 500)
-            };
+            _chart.Clean();
+            double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
 
-            _chart.DrawPoints(points);
+            bool additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100 = (additionalMaterialQuantity > 0 &&
+                                                                                    additionalMaterialQuantity < 100);
+            if (additionalMaterialQuantity.HasValue && additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100)
+            {
+                var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
+                PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEq, (float)firstMaterial.NiEq);
+                _chart.AddPoint(pointForFirstMaterial, Color.Crimson);
+
+                var secondMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
+                PointF pointForSecondMaterial = new PointF((float)secondMaterial.CrEq, (float)secondMaterial.NiEq);
+                _chart.AddPoint(pointForSecondMaterial, Color.Crimson);
+
+                var addMaterial = _dataConnector.GetAdditionalMaterialForSchaeffler();
+                PointF pointForAddMaterial = new PointF((float)addMaterial.CrEq, (float)addMaterial.NiEq);
+                _chart.AddPoint(pointForAddMaterial, Color.DarkMagenta);
+
+                //lineBetweenTwoBaseMaterials
+                _chart.AddLine(pointForFirstMaterial, pointForSecondMaterial, Color.SeaGreen);
+
+                //drawPointInTheMiddleOfLine
+                PointF pointInTheMiddleOfLine = GetPointBetweenTwoOthers(pointForFirstMaterial, pointForSecondMaterial);
+                _chart.AddPoint(pointInTheMiddleOfLine, Color.Blue);
+
+                //draw line between point in the middle of line and addmaterial
+                _chart.AddLine(pointInTheMiddleOfLine, pointForAddMaterial, Color.Purple);
+
+                //draw shit
+                PointF pointInTheMiddleOfLineWithTranslation = GetPointBetweenTwoOthersWithTranlation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
+                _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Blue);
+
+                _chart.Draw();
+            }
+            else
+            {
+                MessageBox.Show("Ilość materiału dodatkowego nie jest liczba z zakresu od 0 od 100");
+            }
+        }
+
+        private PointF GetPointBetweenTwoOthers(PointF point1, PointF point2)
+        {
+            return new PointF(0.5f * (point1.X + point2.X), 0.5f * (point1.Y + point2.Y));
+        }
+
+        private PointF GetPointBetweenTwoOthersWithTranlation(double translation, PointF point1, PointF point2)
+        {
+            //transaltion should be number from 0 - 1. Point1 should be at least down and left to point2.
+            PointF point = new PointF(
+                point1.X + (float) translation*(point2.X - point1.X),
+                point1.Y + (float) translation*(point2.Y - point1.Y)
+                );
+
+            return point;
         }
     }
 }

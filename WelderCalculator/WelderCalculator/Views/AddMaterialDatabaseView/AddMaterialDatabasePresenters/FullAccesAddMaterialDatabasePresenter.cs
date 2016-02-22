@@ -102,41 +102,51 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
 
         public override void OnAddMaterialButtonClicked()
         {
-            var currentNorm = GetCurrentNorm();
-            var modifyMaterialForm = new MaterialModificationForm(currentNorm, MaterialType.AdditionalMaterial);
-            modifyMaterialForm.ShowDialog();
-            Init();
+            if (_view.SelectedNorm != -1)
+            {
+                var currentNorm = GetCurrentNorm();
+                var modifyMaterialForm = new MaterialModificationForm(currentNorm, MaterialType.AdditionalMaterial);
+                modifyMaterialForm.ShowDialog();
+                Init();
+            }
+            
         }
 
         public override void OnEditMaterialButtonClicked()
         {
-            var currentNorm = GetCurrentNorm();
-            var material = GetSelectedMaterial();
-            if (material == null)
-                return;
+            if (_view.SelectedNorm != -1)
+            {
+                var currentNorm = GetCurrentNorm();
+                var material = GetSelectedMaterial();
+                if (material == null)
+                    return;
 
-            var modifyMaterialForm = new MaterialModificationForm(currentNorm, material, MaterialType.AdditionalMaterial);
-            modifyMaterialForm.ShowDialog();
-            Init();
+                var modifyMaterialForm = new MaterialModificationForm(currentNorm, material, MaterialType.AdditionalMaterial);
+                modifyMaterialForm.ShowDialog();
+                Init();
+            }
         }
 
         public override void OnDeleteMaterialButtonClicked()
         {
-            var currentNorm = GetCurrentNorm();
-            var selectedMaterial = GetSelectedMaterial();
-
-            if (selectedMaterial == null)
-                return;
-
-            var dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć wybrany materiał?", "Usuń materiał",
-                MessageBoxButtons.OKCancel);
-            if (dialogResult == DialogResult.OK)
+            if (_view.SelectedNorm != -1)
             {
-                var normToChange = _dataConnector.GetAdditiveNorm(currentNorm.Name);
-                normToChange.Materials.RemoveAll(m => m.GuidNumber == selectedMaterial.GuidNumber);
-                _dataConnector.RemoveAdditiveNorm(normToChange.Name);
-                _dataConnector.SaveAdditiveNorm(normToChange);
-                Init();
+                var currentNorm = GetCurrentNorm();
+                var selectedMaterial = GetSelectedMaterial();
+
+                if (selectedMaterial == null)
+                    return;
+
+                var dialogResult = MessageBox.Show("Czy na pewno chcesz usunąć wybrany materiał?", "Usuń materiał",
+                    MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    var normToChange = _dataConnector.GetAdditiveNorm(currentNorm.Name);
+                    normToChange.Materials.RemoveAll(m => m.GuidNumber == selectedMaterial.GuidNumber);
+                    _dataConnector.RemoveAdditiveNorm(normToChange.Name);
+                    _dataConnector.SaveAdditiveNorm(normToChange);
+                    Init();
+                }
             }
         }
         

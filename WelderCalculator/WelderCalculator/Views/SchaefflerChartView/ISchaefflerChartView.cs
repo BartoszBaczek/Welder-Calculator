@@ -19,6 +19,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
         string FirstBaseMaterialTextBox { get; set; }
         string SecondBaseMaterialTextBox { get; set; }
         string AdditionalMaterialTextBox { get; set; }
-        string AdditionalMaterialQuantity { get; set; }
+        double? AdditionalMaterialQuantity { get; set; }
     }
 }

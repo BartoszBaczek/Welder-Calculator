@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Security.AccessControl;
+using System.Windows.Forms;
 
 namespace WelderCalculator.Views.SchaefflerChartView
 {
@@ -30,7 +31,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
         /// </summary>
         private void InitializeComponent()
         {
-            this.drawPanel = new System.Windows.Forms.Panel();
             this.visibilityLayoutPanel = new System.Windows.Forms.GroupBox();
             this.phaseCheckBox = new System.Windows.Forms.CheckBox();
             this.yAxisCheckBox = new System.Windows.Forms.CheckBox();
@@ -42,26 +42,15 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.firstBaseMaterialButton = new System.Windows.Forms.Button();
             this.secondBaseMaterialButton = new System.Windows.Forms.Button();
             this.chooseMaterialsLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.countButton = new System.Windows.Forms.Button();
             this.additionalMaterialQuantityTextBox = new System.Windows.Forms.TextBox();
             this.additionalMaterialQuantityLabel = new System.Windows.Forms.Label();
             this.addititionalMaterialButton = new System.Windows.Forms.Button();
             this.additionalMaterialTextBox = new System.Windows.Forms.TextBox();
-            this.countButton = new System.Windows.Forms.Button();
+            this.drawPanel = new System.Windows.Forms.Panel();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // drawPanel
-            // 
-            this.drawPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.drawPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.drawPanel.Location = new System.Drawing.Point(12, 12);
-            this.drawPanel.Name = "drawPanel";
-            this.drawPanel.Size = new System.Drawing.Size(788, 512);
-            this.drawPanel.TabIndex = 0;
-            this.drawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPanel_Paint);
             // 
             // visibilityLayoutPanel
             // 
@@ -186,6 +175,16 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.chooseMaterialsLayoutPanel.TabStop = false;
             this.chooseMaterialsLayoutPanel.Text = "Dobór materiału";
             // 
+            // countButton
+            // 
+            this.countButton.Location = new System.Drawing.Point(214, 101);
+            this.countButton.Name = "countButton";
+            this.countButton.Size = new System.Drawing.Size(156, 23);
+            this.countButton.TabIndex = 7;
+            this.countButton.Text = "Oblicz";
+            this.countButton.UseVisualStyleBackColor = true;
+            this.countButton.Click += new System.EventHandler(this.countButton_Click);
+            // 
             // additionalMaterialQuantityTextBox
             // 
             this.additionalMaterialQuantityTextBox.Location = new System.Drawing.Point(98, 103);
@@ -219,24 +218,25 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.additionalMaterialTextBox.Size = new System.Drawing.Size(272, 20);
             this.additionalMaterialTextBox.TabIndex = 6;
             // 
-            // countButton
+            // drawPanel
             // 
-            this.countButton.Location = new System.Drawing.Point(214, 101);
-            this.countButton.Name = "countButton";
-            this.countButton.Size = new System.Drawing.Size(156, 23);
-            this.countButton.TabIndex = 7;
-            this.countButton.Text = "Oblicz";
-            this.countButton.UseVisualStyleBackColor = true;
-            this.countButton.Click += new System.EventHandler(this.countButton_Click);
+            this.drawPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.drawPanel.Location = new System.Drawing.Point(13, 13);
+            this.drawPanel.Name = "drawPanel";
+            this.drawPanel.Size = new System.Drawing.Size(417, 266);
+            this.drawPanel.TabIndex = 7;
+            this.drawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPanel_Paint);
             // 
             // SchaefflerChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 536);
+            this.Controls.Add(this.drawPanel);
             this.Controls.Add(this.chooseMaterialsLayoutPanel);
             this.Controls.Add(this.visibilityLayoutPanel);
-            this.Controls.Add(this.drawPanel);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.Name = "SchaefflerChartForm";
@@ -251,7 +251,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         #endregion
 
-        private Panel drawPanel;
         private GroupBox visibilityLayoutPanel;
         private CheckBox phaseCheckBox;
         private CheckBox yAxisCheckBox;
@@ -268,6 +267,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private TextBox additionalMaterialQuantityTextBox;
         private Label additionalMaterialQuantityLabel;
         private Button countButton;
+        private Panel drawPanel;
 
     }
 }

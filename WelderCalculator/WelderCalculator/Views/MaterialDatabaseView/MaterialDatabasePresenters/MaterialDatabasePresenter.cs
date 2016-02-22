@@ -212,10 +212,13 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
         private IEnumerable<BaseMaterial> GetCurrentListOfMaterialsFromNormComboBox()
         {
             List<string> listOfNormsNames = _dataConnector.GetNamesOfBaseNorms();
-            string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
-            List<BaseMaterial> listofMaterialsFromNorm = _dataConnector.GetBaseMaterials(desiredNameOfNorm);
-
-            return listofMaterialsFromNorm;
+            if (_view.SelectedNorm != -1)
+            {
+                string desiredNameOfNorm = listOfNormsNames[_view.SelectedNorm];
+                List<BaseMaterial> listofMaterialsFromNorm = _dataConnector.GetBaseMaterials(desiredNameOfNorm);
+                return listofMaterialsFromNorm;
+            }
+            return new List<BaseMaterial>();
         }
 
         private void FillElementColumns(DataRow row, string min, string max, string real, Category.OfElement element, BaseMaterial material)
