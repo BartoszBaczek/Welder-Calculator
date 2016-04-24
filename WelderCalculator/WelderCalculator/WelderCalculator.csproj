@@ -69,6 +69,14 @@
     </Compile>
     <Compile Include="Views\AddMaterialDatabaseView\AddMaterialDatabasePresenters\AddMaterialDatabasePresenter.cs" />
     <Compile Include="Views\AddMaterialDatabaseView\IAdditiveMaterialView.cs" />
+    <Compile Include="Views\FastMaterialFactoryView\FastMaterialFactoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FastMaterialFactoryView\FastMaterialFactoryForm.Designer.cs">
+      <DependentUpon>FastMaterialFactoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FastMaterialFactoryView\FastMaterialFactoryPresenter.cs" />
+    <Compile Include="Views\FastMaterialFactoryView\IFastMaterialFactoryView.cs" />
     <Compile Include="Views\General\MaterialDatabasePropertiesView\IMaterialDatabasePropertiesView.cs" />
     <Compile Include="Views\General\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.cs">
       <SubType>Form</SubType>
@@ -137,6 +145,9 @@
     <Compile Include="StartView\StartFormPresenter.cs" />
     <EmbeddedResource Include="Views\AddMaterialDatabaseView\AddMaterialDatabaseForm.resx">
       <DependentUpon>AddMaterialDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FastMaterialFactoryView\FastMaterialFactoryForm.resx">
+      <DependentUpon>FastMaterialFactoryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\General\MaterialDatabasePropertiesView\MaterialDatabasePropertiesForm.resx">
       <DependentUpon>MaterialDatabasePropertiesForm.cs</DependentUpon>

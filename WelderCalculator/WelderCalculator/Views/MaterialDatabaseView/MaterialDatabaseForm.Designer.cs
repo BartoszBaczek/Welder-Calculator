@@ -309,7 +309,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             // 
             this.chooseMaterialButton.Location = new System.Drawing.Point(50, 5);
             this.chooseMaterialButton.Name = "chooseMaterialButton";
-            this.chooseMaterialButton.Size = new System.Drawing.Size(247, 83);
+            this.chooseMaterialButton.Size = new System.Drawing.Size(250, 83);
             this.chooseMaterialButton.TabIndex = 18;
             this.chooseMaterialButton.Text = "Wybierz materiał";
             this.chooseMaterialButton.UseVisualStyleBackColor = true;
@@ -506,10 +506,10 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.Controls.Add(this.carbonLabel);
             this.Controls.Add(this.materialsDataGridView);
             this.Controls.Add(this.ViewLayoutPanel);
-            this.Controls.Add(this.DataModifLayoutPanel);
             this.Controls.Add(this.normLabel);
             this.Controls.Add(this.normComboBox);
             this.Controls.Add(this.EqLayoutPanel);
+            this.Controls.Add(this.DataModifLayoutPanel);
             this.Name = "MaterialDatabaseForm";
             this.Text = "MaterialDatabaseForm";
             this.ViewLayoutPanel.ResumeLayout(false);

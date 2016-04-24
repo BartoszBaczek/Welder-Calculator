@@ -446,9 +446,9 @@
             // 
             // deleteNormButton
             // 
-            this.deleteNormButton.Location = new System.Drawing.Point(52, 33);
+            this.deleteNormButton.Location = new System.Drawing.Point(49, 33);
             this.deleteNormButton.Name = "deleteNormButton";
-            this.deleteNormButton.Size = new System.Drawing.Size(140, 23);
+            this.deleteNormButton.Size = new System.Drawing.Size(143, 23);
             this.deleteNormButton.TabIndex = 18;
             this.deleteNormButton.Text = "Usuń norme";
             this.deleteNormButton.UseVisualStyleBackColor = true;
@@ -456,9 +456,9 @@
             // 
             // chooseMaterialButton
             // 
-            this.chooseMaterialButton.Location = new System.Drawing.Point(52, 4);
+            this.chooseMaterialButton.Location = new System.Drawing.Point(49, 4);
             this.chooseMaterialButton.Name = "chooseMaterialButton";
-            this.chooseMaterialButton.Size = new System.Drawing.Size(247, 81);
+            this.chooseMaterialButton.Size = new System.Drawing.Size(250, 81);
             this.chooseMaterialButton.TabIndex = 19;
             this.chooseMaterialButton.Text = "Wybierz materiał";
             this.chooseMaterialButton.UseVisualStyleBackColor = true;

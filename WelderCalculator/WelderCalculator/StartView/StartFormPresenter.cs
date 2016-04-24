@@ -37,5 +37,23 @@ namespace WelderCalculator.StartView
             var additiveMaterialDatabaseForm = new AddMaterialDatabaseForm(AdditiveMaterialDatabaseAccesibility.Full);
             additiveMaterialDatabaseForm.ShowDialog();
         }
+
+        public void OnBaseMaterialDatabaseButtonClick()
+        {
+            var materialDatabaseForm = new MaterialDatabaseForm(BaseMaterialDatabaseAccesibility.Full);
+            materialDatabaseForm.ShowDialog();
+        }
+
+        public void OnAddMaterialDatabaseButtonClick()
+        {
+            var additiveMaterialDatabaseForm = new AddMaterialDatabaseForm(AdditiveMaterialDatabaseAccesibility.Full);
+            additiveMaterialDatabaseForm.ShowDialog();
+        }
+
+        public void OnScahefflerCountingButtonClicked()
+        {
+            var schaefflerChartFOrm = new SchaefflerChartForm();
+            schaefflerChartFOrm.ShowDialog();
+        }
     }
 }

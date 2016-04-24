@@ -1,7 +1,7 @@
 {
-  "Number": "1.4520",
-  "Name": "X2CrTi17",
-  "GuidNumber": "66614285-e668-4343-b099-95fb4d5d8142",
+  "Number": "1.4592",
+  "Name": "X2CrMoTi29-4",
+  "GuidNumber": "9dc8484f-65ae-4ddd-89f6-a047d96ab48d",
   "Elements": [
     {
       "Name": 0,
@@ -14,50 +14,50 @@
       "Name": 1,
       "FullName": "Krzem",
       "Min": 0.0,
-      "Max": 0.5,
-      "RealValue": 0.25
+      "Max": 1.0,
+      "RealValue": 0.5
     },
     {
       "Name": 2,
       "FullName": "Mangan",
       "Min": 0.0,
-      "Max": 0.5,
-      "RealValue": 0.25
+      "Max": 1.0,
+      "RealValue": 0.5
     },
     {
       "Name": 3,
       "FullName": "Potas",
       "Min": 0.0,
-      "Max": 0.04,
-      "RealValue": 0.02
+      "Max": 0.03,
+      "RealValue": 0.015
     },
     {
       "Name": 4,
       "FullName": "Siarka",
       "Min": 0.0,
-      "Max": 0.015,
-      "RealValue": 0.0075
+      "Max": 0.01,
+      "RealValue": 0.005
     },
     {
       "Name": 5,
       "FullName": "Azot",
       "Min": 0.0,
-      "Max": 0.015,
-      "RealValue": 0.0075
+      "Max": 0.045,
+      "RealValue": 0.0225
     },
     {
       "Name": 6,
       "FullName": "Chrom",
-      "Min": 16.0,
-      "Max": 18.0,
-      "RealValue": 17.0
+      "Min": 28.0,
+      "Max": 30.0,
+      "RealValue": 29.0
     },
     {
       "Name": 7,
       "FullName": "Molibden",
-      "Min": 0.0,
-      "Max": 0.0,
-      "RealValue": 0.0
+      "Min": 3.5,
+      "Max": 4.5,
+      "RealValue": 4.0
     },
     {
       "Name": 8,
@@ -76,9 +76,9 @@
     {
       "Name": 10,
       "FullName": "Tytan",
-      "Min": 0.3,
-      "Max": 0.6,
-      "RealValue": 0.45
+      "Min": 0.4,
+      "Max": 0.8,
+      "RealValue": 0.6
     },
     {
       "Name": 11,
@@ -102,7 +102,7 @@
       "RealValue": 0.0
     }
   ],
-  "CEq": 3.4541666666666666,
-  "NiEq": 0.725,
-  "CrEq": 18.275
+  "CEq": 6.6958333333333329,
+  "NiEq": 1.3,
+  "CrEq": 34.95
 }

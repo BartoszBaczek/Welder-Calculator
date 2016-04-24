@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using WelderCalculator.Drawings.Chart;
 
@@ -17,6 +18,9 @@ namespace WelderCalculator.Views.SchaefflerChartView
         public SchaefflerChartForm()
         {
             InitializeComponent();
+            firstBaseMaterialTextBox.ForeColor = Color.Crimson;
+            secondBaseMaterialTextBox.ForeColor = Color.OrangeRed;
+            additionalMaterialTextBox.ForeColor = Color.DarkMagenta;
             new SchaefflerChartPresenter(this);
             EnableResizeRedraw();
         }
@@ -45,10 +49,10 @@ namespace WelderCalculator.Views.SchaefflerChartView
         }
 
         #region Visibility checkboxes
-        public bool BackgroundVisibleCheckBox
+        public bool PhaseVisibleCheckBox
         {
-            get { return backgroundCheckBox.Checked; }
-            set { backgroundCheckBox.Checked = value; } 
+            get { return phaseTextCheckBox.Checked; }
+            set { phaseTextCheckBox.Checked = value; } 
         }
 
         public bool HashVisibleCheckBox
@@ -75,9 +79,9 @@ namespace WelderCalculator.Views.SchaefflerChartView
             set { phaseCheckBox.Checked = value; } 
         }
 
-        private void backgroundCheckBox_CheckedChanged(object sender, EventArgs e)
+        private void phaseTextCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            Presenter.OnLayerVisibilityChanged(LayerType.Background, BackgroundVisibleCheckBox);
+            Presenter.OnLayerVisibilityChanged(LayerType.PhaseText, PhaseVisibleCheckBox);
             drawPanel.Refresh();
         }
 
@@ -176,6 +180,11 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private void countButton_Click(object sender, EventArgs e)
         {
             Presenter.OnCountButtonClicked();
+        }
+
+        private void fastMaterialButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnFastMaterialButtonClicked();
         }
     }
 }

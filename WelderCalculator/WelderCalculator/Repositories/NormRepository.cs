@@ -270,9 +270,15 @@ namespace WelderCalculator.Repositories
                 new Layer(Image.FromFile(_drawingsPath + "s_y.png"), LayerType.AxisY),
                 new Layer(Image.FromFile(_drawingsPath + "s_hash.png"), LayerType.Hash),
                 new Layer(Image.FromFile(_drawingsPath + "s_phase.png"), LayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + "s_haseText.png"), LayerType.PhaseText),
             };
 
             return layers;
+        }
+
+        public Image GetKsLogoImage()
+        {
+            return Image.FromFile(_drawingsPath + "jakosc.png");
         }
 
        

@@ -10,7 +10,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
         int DrawPanelHeight { get; }
         IntPtr DrawPanelCanvas { get; }
 
-        bool BackgroundVisibleCheckBox { get; set; }
+        bool PhaseVisibleCheckBox { get; set; }
         bool HashVisibleCheckBox { get; set; }
         bool XAxisVisibleCheckBox { get; set; }
         bool YAxisVisibleCheckBox { get; set; }

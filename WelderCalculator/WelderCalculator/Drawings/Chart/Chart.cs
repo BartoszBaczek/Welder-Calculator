@@ -88,16 +88,18 @@ namespace WelderCalculator.Drawings.Chart
             foreach (var layer in Layers.GetActive())
                 _graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size((int) Size.X, (int) Size.Y)));
 
+            
+            foreach (var line in _drawableLines)
+                _graphics.DrawLine(new Pen(line.Color, 3.0f), line.OriginalPoint1, line.OriginalPoint2);
+
             foreach (var rect in _drawableRectangles)
             {
                 Rectangle tempRect = rect.Rectangle;
-                tempRect.X -=  (int) ((float)tempRect.Width /2.0f);
-                tempRect.Y -= (int) ((float) tempRect.Height/2.0f);
+                tempRect.X -= (int)((float)tempRect.Width / 2.0f);
+                tempRect.Y -= (int)((float)tempRect.Height / 2.0f);
                 _graphics.FillRectangle(new SolidBrush(rect.Color), tempRect);
             }
 
-            foreach (var line in _drawableLines)
-                _graphics.DrawLine(new Pen(line.Color, 3.0f), line.OriginalPoint1, line.OriginalPoint2); 
         }
 
         public void Clean()

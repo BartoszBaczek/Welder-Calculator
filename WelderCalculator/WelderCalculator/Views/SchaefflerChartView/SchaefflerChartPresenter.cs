@@ -6,6 +6,7 @@ using WelderCalculator.Drawings.Chart;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
 using WelderCalculator.Views.AddMaterialDatabaseView;
+using WelderCalculator.Views.FastMaterialFactoryView;
 using WelderCalculator.Views.MaterialDatabaseView;
 
 namespace WelderCalculator.Views.SchaefflerChartView
@@ -43,11 +44,18 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         private void SetVisibilityCheckBoxesToTrue()
         {
-            _view.BackgroundVisibleCheckBox = true;
+            _view.PhaseVisibleCheckBox = true;
             _view.HashVisibleCheckBox = true;
             _view.XAxisVisibleCheckBox = true;
             _view.YAxisVisibleCheckBox = true;
             _view.PhaseLinesVisibleCheckBox = true;
+        }
+
+        public void OnFastMaterialButtonClicked()
+        {
+            var fastMaterialForm = new FastMaterialFactoryForm();
+            fastMaterialForm.ShowDialog();
+            RefreshSelectedMaterials();
         }
 
         public void OnFirstBaseMaterialButtonClicked()
@@ -99,25 +107,25 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
                 var secondMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
                 PointF pointForSecondMaterial = new PointF((float)secondMaterial.CrEq, (float)secondMaterial.NiEq);
-                _chart.AddPoint(pointForSecondMaterial, Color.Crimson);
+                _chart.AddPoint(pointForSecondMaterial, Color.OrangeRed);
 
                 var addMaterial = _dataConnector.GetAdditionalMaterialForSchaeffler();
                 PointF pointForAddMaterial = new PointF((float)addMaterial.CrEq, (float)addMaterial.NiEq);
                 _chart.AddPoint(pointForAddMaterial, Color.DarkMagenta);
 
                 //lineBetweenTwoBaseMaterials
-                _chart.AddLine(pointForFirstMaterial, pointForSecondMaterial, Color.SeaGreen);
+                _chart.AddLine(pointForFirstMaterial, pointForSecondMaterial, Color.GreenYellow);
 
                 //drawPointInTheMiddleOfLine
                 PointF pointInTheMiddleOfLine = GetPointBetweenTwoOthers(pointForFirstMaterial, pointForSecondMaterial);
                 _chart.AddPoint(pointInTheMiddleOfLine, Color.Blue);
 
                 //draw line between point in the middle of line and addmaterial
-                _chart.AddLine(pointInTheMiddleOfLine, pointForAddMaterial, Color.Purple);
+                _chart.AddLine(pointInTheMiddleOfLine, pointForAddMaterial, Color.GreenYellow);
 
                 //draw shit
                 PointF pointInTheMiddleOfLineWithTranslation = GetPointBetweenTwoOthersWithTranlation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
-                _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Blue);
+                _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Red);
 
                 _chart.Draw();
             }

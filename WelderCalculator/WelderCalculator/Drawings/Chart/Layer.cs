@@ -8,7 +8,8 @@ namespace WelderCalculator.Drawings.Chart
         AxisX,
         AxisY,
         Hash,
-        Phase
+        Phase,
+        PhaseText
     }
 
     public class Layer

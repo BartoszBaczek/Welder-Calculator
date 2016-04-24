@@ -317,6 +317,7 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
         private void chooseMaterialButton_Click(object sender, EventArgs e)
         {
             Presenter.OnChooseMaterialButtonClicked();
+            this.Close();
         }
 
         public bool ChooseMaterialVisibityButton

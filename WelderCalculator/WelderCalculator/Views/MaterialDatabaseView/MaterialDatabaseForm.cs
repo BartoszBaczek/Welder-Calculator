@@ -361,6 +361,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
         private void chooseMaterialButton_Click(object sender, EventArgs e)
         {
             Presenter.OnChooseMaterialButtonClicked();
+            this.Close();
         }
     }
 }
