@@ -254,6 +254,7 @@ namespace WelderCalculator.Repositories
         #endregion
 
         #region IDrawingsRepository
+
         public List<Layer> GetSchaefflerChartImages()
         {
             string schaeflerCatalog = "Schaeffler/";
@@ -270,10 +271,24 @@ namespace WelderCalculator.Repositories
             return layers;
         }
 
+        public ChartSizing DeserializeSchaefflerChartSizing()
+        {
+            string fileName = "Schaeffler/chartSizing";
+
+            string pathToFile = _drawingsPath + fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var chartSizing =
+                JsonConvert.DeserializeObject<ChartSizing>(jsonText);
+
+            return chartSizing;
+        }
+
         public Image GetKsLogoImage()
         {
             return Image.FromFile(_drawingsPath + "ks.png");
         }
+
         #endregion
     }
 }

@@ -144,6 +144,11 @@ namespace WelderCalculator.Repositories
             return _normRepo.DeserializeAdditionalMaterialForSchaeffler();
         }
 
+        public ChartSizing GetSchaefflerChartSizingData()
+        {
+            return _normRepo.DeserializeSchaefflerChartSizing();
+        }
+
         public Image GetKsLogo()
         {
             return _normRepo.GetKsLogoImage();

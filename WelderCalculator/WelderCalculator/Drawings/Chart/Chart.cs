@@ -2,16 +2,15 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using WelderCalculator.Model;
 
 namespace WelderCalculator.Drawings.Chart
 {
     public class Chart : IChart
     {
-        //TODO move to another class, or json file. Those data are valid only for schaeffler diagram
-        private PointF _imageSize = new PointF(963, 863);
-        private PointF _originPosition = new PointF(135.5f, 720);
+        private PointF _imageSize;
+        private PointF _originPosition;
 
-        //drawables
         private Graphics _graphics;
         private List<DrawableRectangle> _drawableRectangles;
         private List<DrawableLine> _drawableLines; 
@@ -25,8 +24,11 @@ namespace WelderCalculator.Drawings.Chart
             get { return new PointF(Size.X / _imageSize.X, Size.Y / _imageSize.Y); }
         }
 
-        public Chart(Graphics graph, Layers layers)
+        public Chart(Graphics graph, Layers layers, ChartSizing chartSizing)
         {
+            _imageSize = chartSizing.ImageWidthAndHeight;
+            _originPosition = chartSizing.OriginXandY;
+
             _graphics = graph;
             Layers = layers;
             _drawableRectangles = new List<DrawableRectangle>();

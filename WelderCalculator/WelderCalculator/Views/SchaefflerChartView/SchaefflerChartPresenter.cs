@@ -22,7 +22,9 @@ namespace WelderCalculator.Views.SchaefflerChartView
             _view = view; 
             _view.Presenter = this;
             _dataConnector = new DataConnector();
-            _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas), _dataConnector.GetSchaefflerImages());
+            _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
+                _dataConnector.GetSchaefflerImages(), 
+                _dataConnector.GetSchaefflerChartSizingData());
 
             SetVisibilityCheckBoxesToTrue();
             RefreshSelectedMaterials();
