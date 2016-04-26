@@ -1,108 +1,108 @@
 {
-  "Number": "34",
-  "Name": "pleple",
-  "GuidNumber": "009e809f-ca5a-4788-a7a5-8cb527a3a8fd",
+  "Number": "1.4521",
+  "Name": "X2CrMoTi18-2",
+  "GuidNumber": "8fd4db82-186c-44af-acbe-ae92c5b464a7",
   "Elements": [
     {
       "Name": 0,
       "FullName": "Węgiel",
-      "Min": 87.0,
-      "Max": 6.0,
-      "RealValue": 6.0
+      "Min": 0.0,
+      "Max": 0.025,
+      "RealValue": 0.0125
     },
     {
       "Name": 1,
       "FullName": "Krzem",
-      "Min": 77.0,
-      "Max": 8.0,
-      "RealValue": 98.0
+      "Min": 0.0,
+      "Max": 1.0,
+      "RealValue": 0.5
     },
     {
       "Name": 2,
       "FullName": "Mangan",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 0.0,
+      "Max": 1.0,
+      "RealValue": 0.5
     },
     {
       "Name": 3,
       "FullName": "Potas",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 0.0,
+      "Max": 0.04,
+      "RealValue": 0.02
     },
     {
       "Name": 4,
       "FullName": "Siarka",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 0.0,
+      "Max": 0.015,
+      "RealValue": 0.0075
     },
     {
       "Name": 5,
       "FullName": "Azot",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 0.0,
+      "Max": 0.03,
+      "RealValue": 0.015
     },
     {
       "Name": 6,
       "FullName": "Chrom",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 17.0,
+      "Max": 20.0,
+      "RealValue": 18.5
     },
     {
       "Name": 7,
       "FullName": "Molibden",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 1.8,
+      "Max": 2.5,
+      "RealValue": 2.15
     },
     {
       "Name": 8,
       "FullName": "Nb",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
     },
     {
       "Name": 9,
       "FullName": "Nikiel",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
     },
     {
       "Name": 10,
       "FullName": "Tytan",
-      "Min": null,
-      "Max": null,
-      "RealValue": null
+      "Min": 0.15,
+      "Max": 0.8,
+      "RealValue": 0.475
     },
     {
       "Name": 11,
       "FullName": "Aluminium",
-      "Min": 9.0,
+      "Min": 0.0,
       "Max": 0.0,
-      "RealValue": null
+      "RealValue": 0.0
     },
     {
       "Name": 12,
       "FullName": "Wanad",
-      "Min": null,
-      "Max": 4.0,
-      "RealValue": 5.0
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
     },
     {
       "Name": 13,
       "FullName": "Cu",
-      "Min": null,
-      "Max": 6.0,
-      "RealValue": 7.0
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
     }
   ],
-  "CEq": null,
-  "NiEq": null,
-  "CrEq": null
+  "CEq": 4.2258333333333331,
+  "NiEq": 1.075,
+  "CrEq": 22.349999999999998
 }

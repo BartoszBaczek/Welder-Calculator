@@ -265,11 +265,11 @@ namespace WelderCalculator.Repositories
         {
             var layers = new List<Layer>()
             {
-                new Layer(Image.FromFile(_drawingsPath + "s_background.png"), LayerType.Background),
-                new Layer(Image.FromFile(_drawingsPath + "s_x.png"), LayerType.AxisX),
-                new Layer(Image.FromFile(_drawingsPath + "s_y.png"), LayerType.AxisY),
-                new Layer(Image.FromFile(_drawingsPath + "s_hash.png"), LayerType.Hash),
-                new Layer(Image.FromFile(_drawingsPath + "s_phase.png"), LayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_background.png"), LayerType.Background),
+                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_x.png"), LayerType.AxisX),
+                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_y.png"), LayerType.AxisY),
+                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_hash.png"), LayerType.Hash),
+                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_phase.png"), LayerType.Phase),
             };
 
             return layers;

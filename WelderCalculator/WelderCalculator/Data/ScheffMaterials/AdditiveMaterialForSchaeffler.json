@@ -1,0 +1,100 @@
+{
+  "Name": "18 36",
+  "GuidNumber": "3092b451-3cc3-4907-a832-510f63b2e4b7",
+  "Elements": [
+    {
+      "Name": 0,
+      "FullName": "Węgiel",
+      "Min": null,
+      "Max": null,
+      "RealValue": 0.25
+    },
+    {
+      "Name": 1,
+      "FullName": "Krzem",
+      "Min": null,
+      "Max": null,
+      "RealValue": 1.2
+    },
+    {
+      "Name": 2,
+      "FullName": "Mangan",
+      "Min": null,
+      "Max": null,
+      "RealValue": 2.5
+    },
+    {
+      "Name": 3,
+      "FullName": "Potas",
+      "Min": 0.0,
+      "Max": 0.03,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 4,
+      "FullName": "Siarka",
+      "Min": 0.0,
+      "Max": 0.025,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 6,
+      "FullName": "Chrom",
+      "Min": 14.0,
+      "Max": 18.0,
+      "RealValue": 16.0
+    },
+    {
+      "Name": 9,
+      "FullName": "Nikiel",
+      "Min": 33.0,
+      "Max": 37.0,
+      "RealValue": 35.0
+    },
+    {
+      "Name": 7,
+      "FullName": "Molibden",
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 5,
+      "FullName": "Azot",
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 13,
+      "FullName": "Cu",
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 8,
+      "FullName": "Nb",
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 10,
+      "FullName": "Tytan",
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 12,
+      "FullName": "Wanad",
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
+    }
+  ],
+  "CEq": 6.2000000000000011,
+  "NiEq": 43.75,
+  "CrEq": 17.8
+}
