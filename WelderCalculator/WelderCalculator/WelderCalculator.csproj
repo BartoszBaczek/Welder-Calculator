@@ -55,6 +55,7 @@
     <Compile Include="Drawings\Chart\Chart.cs" />
     <Compile Include="Drawings\Chart\DrawableLine.cs" />
     <Compile Include="Drawings\Chart\DrawableRectangle.cs" />
+    <Compile Include="Drawings\Chart\IChart.cs" />
     <Compile Include="Drawings\Chart\Layer.cs" />
     <Compile Include="Drawings\Chart\Layers.cs" />
     <Compile Include="Repositories\IDrawingsRepository.cs" />
