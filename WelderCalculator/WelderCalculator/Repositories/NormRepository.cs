@@ -253,6 +253,7 @@ namespace WelderCalculator.Repositories
         }
         #endregion
 
+        #region IDrawingsRepository
         public List<Layer> GetSchaefflerChartImages()
         {
             var layers = new List<Layer>()
@@ -272,7 +273,6 @@ namespace WelderCalculator.Repositories
         {
             return Image.FromFile(_drawingsPath + "ks.png");
         }
-
-       
+        #endregion
     }
 }
