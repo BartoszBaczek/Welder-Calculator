@@ -134,14 +134,14 @@
     <Compile Include="Repositories\IBasicNormRepository.cs" />
     <Compile Include="Model\BaseMaterial.cs" />
     <Compile Include="Model\Material.cs" />
-    <Compile Include="StartView\IStartFormView.cs" />
-    <Compile Include="StartView\StartForm.cs">
+    <Compile Include="Views\StartView\IStartFormView.cs" />
+    <Compile Include="Views\StartView\StartForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StartView\StartForm.Designer.cs">
+    <Compile Include="Views\StartView\StartForm.Designer.cs">
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StartView\StartFormPresenter.cs" />
+    <Compile Include="Views\StartView\StartFormPresenter.cs" />
     <EmbeddedResource Include="Views\AddMaterialDatabaseView\AddMaterialDatabaseForm.resx">
       <DependentUpon>AddMaterialDatabaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,7 +174,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="StartView\StartForm.resx">
+    <EmbeddedResource Include="Views\StartView\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
