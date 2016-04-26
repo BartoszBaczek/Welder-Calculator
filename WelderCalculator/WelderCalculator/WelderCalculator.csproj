@@ -58,6 +58,7 @@
     <Compile Include="Drawings\Chart\IChart.cs" />
     <Compile Include="Drawings\Chart\Layer.cs" />
     <Compile Include="Drawings\Chart\Layers.cs" />
+    <Compile Include="Model\ChartSizing.cs" />
     <Compile Include="Repositories\IDrawingsRepository.cs" />
     <Compile Include="Repositories\ISchefflerDiagramMaterials.cs" />
     <Compile Include="Views\AddMaterialDatabaseView\AddMaterialDatabasePresenters\PartialAccesAddMaterialPresenter.cs" />
