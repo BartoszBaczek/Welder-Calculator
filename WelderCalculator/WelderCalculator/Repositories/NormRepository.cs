@@ -256,14 +256,15 @@ namespace WelderCalculator.Repositories
         #region IDrawingsRepository
         public List<Layer> GetSchaefflerChartImages()
         {
+            string schaeflerCatalog = "Schaeffler/";
             var layers = new List<Layer>()
             {
-                new Layer(Image.FromFile(_drawingsPath + "s_background.png"), LayerType.Background),
-                new Layer(Image.FromFile(_drawingsPath + "s_x.png"), LayerType.AxisX),
-                new Layer(Image.FromFile(_drawingsPath + "s_y.png"), LayerType.AxisY),
-                new Layer(Image.FromFile(_drawingsPath + "s_hash.png"), LayerType.Hash),
-                new Layer(Image.FromFile(_drawingsPath + "s_phase.png"), LayerType.Phase),
-                new Layer(Image.FromFile(_drawingsPath + "s_haseText.png"), LayerType.PhaseText),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_background.png"), LayerType.Background),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_x.png"), LayerType.AxisX),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_y.png"), LayerType.AxisY),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_hash.png"), LayerType.Hash),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_phase.png"), LayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_haseText.png"), LayerType.PhaseText),
             };
 
             return layers;
