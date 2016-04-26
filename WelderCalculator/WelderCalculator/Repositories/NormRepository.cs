@@ -40,7 +40,7 @@ namespace WelderCalculator.Repositories
         }
 
 
-        #region NormsSerialization
+        #region IBasicNormRepository && IAdditiveNormRepository
         public void SerializeBaseNorm(BaseNorm norm)
         {
             string pathToFile = _baseNormsPath + norm.Name + ".json";
@@ -123,8 +123,8 @@ namespace WelderCalculator.Repositories
         }
         #endregion
 
-
-        #region PropertiesSerialization
+        //TODO: Extract separate interface for those methods
+        #region PropertiesSerialization (Part of IBasicNormRepository && IAdditiveNormRepository 
         public void SerializeBaseNormsProperties(List<Category.OfElement> properties)
         {
             using (var fs = File.Open(_propertiesPath + "OrderInBaseNormDataGridView.json", FileMode.Create))
@@ -176,7 +176,7 @@ namespace WelderCalculator.Repositories
         }
         #endregion
 
-        #region SchaefflerDiagramMaterials
+        #region ISchaefflerDiagramMaterials
         public void SerializeFirstBaseMaterialForSchaeffler(BaseMaterial basicMaterial)
         {
             using (var fs = File.Open(_schaefflersMaterialsRepository + "FirstMaterialForSchaeffler.json", FileMode.Create))
@@ -242,8 +242,6 @@ namespace WelderCalculator.Repositories
 
         public AdditiveMaterial DeserializeAdditionalMaterialForSchaeffler()
         {
-            try
-            {
                 string fileName = "AdditiveMaterialForSchaeffler";
                 string pathToFile = _schaefflersMaterialsRepository + fileName + ".json";
                 string jsonText = File.ReadAllText(pathToFile);
@@ -252,15 +250,9 @@ namespace WelderCalculator.Repositories
                     JsonConvert.DeserializeObject<AdditiveMaterial>(jsonText);
 
                 return additiveMaterial;
-            }
-            catch (IOException)
-            {
-                return null;
-            }
-
-
         }
         #endregion
+
         public List<Layer> GetSchaefflerChartImages()
         {
             var layers = new List<Layer>()
