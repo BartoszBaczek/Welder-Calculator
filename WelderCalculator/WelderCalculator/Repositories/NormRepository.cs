@@ -270,7 +270,7 @@ namespace WelderCalculator.Repositories
 
         public Image GetKsLogoImage()
         {
-            return Image.FromFile(_drawingsPath + "jakosc.png");
+            return Image.FromFile(_drawingsPath + "ks.png");
         }
 
        
