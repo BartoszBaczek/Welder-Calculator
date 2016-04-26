@@ -134,7 +134,6 @@
     <Compile Include="Repositories\IBasicNormRepository.cs" />
     <Compile Include="Model\BaseMaterial.cs" />
     <Compile Include="Model\Material.cs" />
-    <Compile Include="Repositories\SaveType.cs" />
     <Compile Include="StartView\IStartFormView.cs" />
     <Compile Include="StartView\StartForm.cs">
       <SubType>Form</SubType>
