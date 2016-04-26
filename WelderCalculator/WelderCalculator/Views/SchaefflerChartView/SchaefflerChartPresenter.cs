@@ -30,7 +30,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         public void OnPaintEvent(IntPtr panelHandle, PaintEventArgs e)
         {
-            _chart.Resize(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
             _chart.Draw();
         }
 
