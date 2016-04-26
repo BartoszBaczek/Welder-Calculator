@@ -10,16 +10,14 @@ namespace WelderCalculator.Drawings.Chart
     {
         private PointF _imageSize;
         private PointF _originPosition;
-
-        private Graphics _graphics;
-        private List<DrawableRectangle> _drawableRectangles;
-        private List<DrawableLine> _drawableLines; 
+        private readonly Graphics _graphics;
+        private readonly List<DrawableRectangle> _drawableRectangles;
+        private readonly List<DrawableLine> _drawableLines; 
 
         public Layers Layers { get; private set; }
+        private PointF Size { get; set; }
 
-        public PointF Size { get; private set; }
-
-        public PointF Scale 
+        private PointF Scale 
         { 
             get { return new PointF(Size.X / _imageSize.X, Size.Y / _imageSize.Y); }
         }
@@ -36,50 +34,51 @@ namespace WelderCalculator.Drawings.Chart
         }
 
 
-        public void ResizeTo(int width, int height)
-        {
-            foreach (var layer in Layers.GetActive())
-            {
-                var destinationImage = new Bitmap(width, height);
+        //public void ResizeTo(int width, int height)
+        //{
+        //    foreach (var layer in Layers.GetActive())
+        //    {
+        //        var destinationImage = new Bitmap(width, height);
 
-                destinationImage.SetResolution(layer.Image.HorizontalResolution, layer.Image.VerticalResolution);
+        //        destinationImage.SetResolution(layer.Image.HorizontalResolution, layer.Image.VerticalResolution);
 
-                using (var graphics = Graphics.FromImage(destinationImage))
-                {
-                    graphics.CompositingMode = CompositingMode.SourceCopy;
-                    graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    graphics.SmoothingMode = SmoothingMode.HighQuality;
-                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+        //        using (var graphics = Graphics.FromImage(destinationImage))
+        //        {
+        //            graphics.CompositingMode = CompositingMode.SourceCopy;
+        //            graphics.CompositingQuality = CompositingQuality.HighQuality;
+        //            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+        //            graphics.SmoothingMode = SmoothingMode.HighQuality;
+        //            graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-                    using (var wrapMode = new ImageAttributes())
-                    {
-                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                    }
-                }
-            }
-            Size = new PointF(width, height);
-            ResizePoints();
-            ResizeLines();
-        }
+        //            using (var wrapMode = new ImageAttributes())
+        //            {
+        //                wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+        //            }
+        //        }
+        //    }
+        //    Size = new PointF(width, height);
 
-        private void ResizePoints()
-        {
-            List<DrawableRectangle> oldDrawableRectangles = new List<DrawableRectangle>(_drawableRectangles);
-            _drawableRectangles.Clear();
+        //    ResizePoints();
+        //    ResizeLines();
+        //}
 
-            foreach (var drawableRectangle in oldDrawableRectangles)
-                AddPoint(drawableRectangle.OriginalPoint, drawableRectangle.Color);
-        }
+        //private void ResizePoints()
+        //{
+        //    List<DrawableRectangle> oldDrawableRectangles = new List<DrawableRectangle>(_drawableRectangles);
+        //    _drawableRectangles.Clear();
 
-        private void ResizeLines()
-        {
-            List<DrawableLine> oldDrawableLines = new List<DrawableLine>(_drawableLines);
-            _drawableLines.Clear();
+        //    foreach (var drawableRectangle in oldDrawableRectangles)
+        //        AddPoint(drawableRectangle.OriginalPoint, drawableRectangle.Color);
+        //}
 
-            foreach (var drawableLine in oldDrawableLines)
-                AddLine(drawableLine.PointToDraw1, drawableLine.POintToDraw2, drawableLine.Color);
-        }
+        //private void ResizeLines()
+        //{
+        //    List<DrawableLine> oldDrawableLines = new List<DrawableLine>(_drawableLines);
+        //    _drawableLines.Clear();
+
+        //    foreach (var drawableLine in oldDrawableLines)
+        //        AddLine(drawableLine.PointToDraw1, drawableLine.POintToDraw2, drawableLine.Color);
+        //}
 
 
         public void Draw()
@@ -94,11 +93,11 @@ namespace WelderCalculator.Drawings.Chart
             foreach (var rect in _drawableRectangles)
             {
                 Rectangle tempRect = rect.Rectangle;
-                tempRect.X -= (int)((float)tempRect.Width / 2.0f);
-                tempRect.Y -= (int)((float)tempRect.Height / 2.0f);
+                tempRect.X -= (int)(tempRect.Width / 2.0f);
+                tempRect.Y -= (int)(tempRect.Height / 2.0f);
+
                 _graphics.FillRectangle(new SolidBrush(rect.Color), tempRect);
             }
-
         }
 
         public void Clean()
@@ -109,10 +108,9 @@ namespace WelderCalculator.Drawings.Chart
 
         public void AddPoint(PointF point, Color color)
         {
-            Point pointInCoorectCoordinatesSystem = ToBottomLeftOriginPoint(point);
-
             _drawableRectangles.Add(new DrawableRectangle(
-                new Rectangle(pointInCoorectCoordinatesSystem, new Size(7, 7)),
+                new Rectangle(ToBottomLeftOriginPoint(point), 
+                new Size(7, 7)),
                 color,
                 point));
         }
@@ -126,6 +124,7 @@ namespace WelderCalculator.Drawings.Chart
                 point2));
         }
 
+        //TODO TUTAJ JEST GÓWNO
         private Point ToBottomLeftOriginPoint(PointF point)
         {
             PointF schaefflerDiagramScale = new PointF((918f - 138f) / 32f, (720f - 38f) / 28f);    //changes scale 0-28 or - 38
