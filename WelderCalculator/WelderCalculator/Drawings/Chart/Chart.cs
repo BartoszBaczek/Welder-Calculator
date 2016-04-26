@@ -10,8 +10,6 @@ namespace WelderCalculator.Drawings.Chart
         //TODO move to another class, or json file. Those data are valid only for schaeffler diagram
         private PointF _imageSize = new PointF(963, 863);
         private PointF _originPosition = new PointF(135.5f, 720);
-        private PointF _maxPosition = new PointF(918, 38);
-        private PointF _maxPositionValue = new PointF(32, 28);
 
         //drawables
         private Graphics _graphics;
