@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
+using WelderCalculator.Repositories;
 
 namespace WelderCalculator.StartView
 {
@@ -41,6 +43,28 @@ namespace WelderCalculator.StartView
             Hide();
             Presenter.OpenAdditiveMaterialDatabase();
             Show();
+        }
+
+        private void paintEvent(object sender, PaintEventArgs e)
+        {
+            DataConnector a = new DataConnector();
+            Image newImage = a.GetKsLogo();
+            e.Graphics.DrawImage(newImage, new PointF(0, 30));
+        }
+
+        private void baseMaterialsDatabaseButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnBaseMaterialDatabaseButtonClick();
+        }
+
+        private void addMaterialDatabaseButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnAddMaterialDatabaseButtonClick();
+        }
+
+        private void schaefflerCountingButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnScahefflerCountingButtonClicked();
         }
     }
 }

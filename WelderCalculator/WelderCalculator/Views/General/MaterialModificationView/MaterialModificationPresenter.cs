@@ -494,5 +494,152 @@ namespace WelderCalculator.Views.General.MaterialModificationView
             }
             
         }
+
+        public void AutofillAllElementsData()
+        {
+            //c
+            double? minValue = _view.CMintextbox;
+            double? maxValue = _view.CMaxtextbox;
+            double? realValue = _view.CRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.CMintextbox = minValue;
+            _view.CMaxtextbox = maxValue;
+            _view.CRealtextbox = realValue;
+            //si
+            minValue = _view.SiMintextbox;
+            maxValue = _view.SiMaxtextbox;
+            realValue = _view.SiRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.SiMintextbox = minValue;
+            _view.SiMaxtextbox = maxValue;
+            _view.SiRealtextbox = realValue;
+            //mn
+            minValue = _view.MnMintextbox;
+            maxValue = _view.MnMaxtextbox;
+            realValue = _view.MnRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.MnMintextbox = minValue;
+            _view.MnMaxtextbox = maxValue;
+            _view.MnRealtextbox = realValue;
+            //p
+            minValue = _view.PMintextbox;
+            maxValue = _view.PMaxtextbox;
+            realValue = _view.PRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.PMintextbox = minValue;
+            _view.PMaxtextbox = maxValue;
+            _view.PRealtextbox = realValue;
+            //s
+            minValue = _view.SMintextbox;
+            maxValue = _view.SMaxtextbox;
+            realValue = _view.SRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.SMintextbox = minValue;
+            _view.SMaxtextbox = maxValue;
+            _view.SRealtextbox = realValue;
+            //n
+            minValue = _view.NMintextbox;
+            maxValue = _view.NMaxtextbox;
+            realValue = _view.NRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.NMintextbox = minValue;
+            _view.NMaxtextbox = maxValue;
+            _view.NRealtextbox = realValue;
+            //cr
+            minValue = _view.CrMintextbox;
+            maxValue = _view.CrMaxtextbox;
+            realValue = _view.CrRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.CrMintextbox = minValue;
+            _view.CrMaxtextbox = maxValue;
+            _view.CrRealtextbox = realValue;
+            //mo
+            minValue = _view.MoMintextbox;
+            maxValue = _view.MoMaxtextbox;
+            realValue = _view.MoRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.MoMintextbox = minValue;
+            _view.MoMaxtextbox = maxValue;
+            _view.MoRealtextbox = realValue;
+            //nb
+            minValue = _view.NbMintextbox;
+            maxValue = _view.NbMaxtextbox;
+            realValue = _view.NbRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.NbMintextbox = minValue;
+            _view.NbMaxtextbox = maxValue;
+            _view.NbRealtextbox = realValue;
+            //ni
+            minValue = _view.NiMintextbox;
+            maxValue = _view.NiMaxtextbox;
+            realValue = _view.NiRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.NiMintextbox = minValue;
+            _view.NiMaxtextbox = maxValue;
+            _view.NiRealtextbox = realValue;
+            //Ti
+            minValue = _view.TiMintextbox;
+            maxValue = _view.TiMaxtextbox;
+            realValue = _view.TiRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.TiMintextbox = minValue;
+            _view.TiMaxtextbox = maxValue;
+            _view.TiRealtextbox = realValue;
+            //Al
+            minValue = _view.AlMintextbox;
+            maxValue = _view.AlMaxtextbox;
+            realValue = _view.AlRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.AlMintextbox = minValue;
+            _view.AlMaxtextbox = maxValue;
+            _view.AlRealtextbox = realValue;
+            //Cu
+            minValue = _view.CuMintextbox;
+            maxValue = _view.CuMaxtextbox;
+            realValue = _view.CuRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.CuMintextbox = minValue;
+            _view.CuMaxtextbox = maxValue;
+            _view.CuRealtextbox = realValue;
+            //V
+            minValue = _view.VMintextbox;
+            maxValue = _view.VMaxtextbox;
+            realValue = _view.VRealtextbox;
+            AutoFillElementData(ref minValue, ref maxValue, ref realValue);
+            _view.VMintextbox = minValue;
+            _view.VMaxtextbox = maxValue;
+            _view.VRealtextbox = realValue;
+        }
+
+        private void AutoFillElementData(ref double? minValue, ref double? maxValue, ref double? realValue)
+        {
+            //no values given
+            if (!minValue.HasValue && !maxValue.HasValue && !realValue.HasValue)
+            {
+                minValue = 0;
+                maxValue = 0;
+                realValue = 0;
+            }
+            //min and max values given
+            else if (minValue.HasValue && maxValue.HasValue && !realValue.HasValue)
+            {
+                realValue = minValue / 2.0f + maxValue / 2.0f;
+            }
+            //maxValue given, but minValue not
+            else if (!minValue.HasValue && maxValue.HasValue && !realValue.HasValue)
+            {
+                minValue = 0;
+                realValue = minValue / 2.0f + maxValue / 2.0f;
+            }
+            //real value is not given
+            else if (!realValue.HasValue)
+            {
+                realValue = 0;
+                if (!minValue.HasValue)
+                    minValue = 0;
+                if (!maxValue.HasValue)
+                    maxValue = 0;
+            }
+        }
     }
 }

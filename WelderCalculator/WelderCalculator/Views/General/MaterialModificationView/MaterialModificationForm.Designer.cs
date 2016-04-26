@@ -1,4 +1,6 @@
-﻿namespace WelderCalculator.Views.General.MaterialModificationView
+﻿using System;
+
+namespace WelderCalculator.Views.General.MaterialModificationView
 {
     partial class MaterialModificationForm
     {
@@ -137,6 +139,7 @@
             this.nameTextBox = new System.Windows.Forms.TextBox();
             this.nameLayoutPanel = new System.Windows.Forms.Label();
             this.guidTextBox = new System.Windows.Forms.TextBox();
+            this.autoRefreshButton = new System.Windows.Forms.Button();
             this.elementsLayoutPanel.SuspendLayout();
             this.vLayoutPanel.SuspendLayout();
             this.cuLayoutPanel.SuspendLayout();
@@ -185,7 +188,7 @@
             this.cancelButton.Location = new System.Drawing.Point(606, 270);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(100, 23);
-            this.cancelButton.TabIndex = 31;
+            this.cancelButton.TabIndex = 17;
             this.cancelButton.Text = "Anuluj";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
@@ -210,21 +213,21 @@
             this.vRealTextbox.Location = new System.Drawing.Point(52, 69);
             this.vRealTextbox.Name = "vRealTextbox";
             this.vRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.vRealTextbox.TabIndex = 45;
+            this.vRealTextbox.TabIndex = 44;
             // 
             // vMaxTextbox
             // 
             this.vMaxTextbox.Location = new System.Drawing.Point(52, 43);
             this.vMaxTextbox.Name = "vMaxTextbox";
             this.vMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.vMaxTextbox.TabIndex = 44;
+            this.vMaxTextbox.TabIndex = 43;
             // 
             // vMinTextBox
             // 
             this.vMinTextBox.Location = new System.Drawing.Point(52, 17);
             this.vMinTextBox.Name = "vMinTextBox";
             this.vMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.vMinTextBox.TabIndex = 43;
+            this.vMinTextBox.TabIndex = 42;
             // 
             // label40
             // 
@@ -258,7 +261,7 @@
             this.applyButton.Location = new System.Drawing.Point(459, 270);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(100, 23);
-            this.applyButton.TabIndex = 30;
+            this.applyButton.TabIndex = 16;
             this.applyButton.Text = "OK";
             this.applyButton.UseVisualStyleBackColor = true;
             this.applyButton.Click += new System.EventHandler(this.applyButton_Click);
@@ -283,21 +286,21 @@
             this.cuRealTextbox.Location = new System.Drawing.Point(55, 69);
             this.cuRealTextbox.Name = "cuRealTextbox";
             this.cuRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.cuRealTextbox.TabIndex = 45;
+            this.cuRealTextbox.TabIndex = 41;
             // 
             // cuMaxTextbox
             // 
             this.cuMaxTextbox.Location = new System.Drawing.Point(55, 43);
             this.cuMaxTextbox.Name = "cuMaxTextbox";
             this.cuMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.cuMaxTextbox.TabIndex = 44;
+            this.cuMaxTextbox.TabIndex = 40;
             // 
             // cuMinTextBox
             // 
             this.cuMinTextBox.Location = new System.Drawing.Point(55, 17);
             this.cuMinTextBox.Name = "cuMinTextBox";
             this.cuMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.cuMinTextBox.TabIndex = 43;
+            this.cuMinTextBox.TabIndex = 39;
             // 
             // label37
             // 
@@ -337,7 +340,7 @@
             this.cLayoutPanel.Location = new System.Drawing.Point(6, 28);
             this.cLayoutPanel.Name = "cLayoutPanel";
             this.cLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.cLayoutPanel.TabIndex = 15;
+            this.cLayoutPanel.TabIndex = 2;
             this.cLayoutPanel.TabStop = false;
             this.cLayoutPanel.Text = "Węgiel (C)";
             // 
@@ -346,21 +349,21 @@
             this.cRealTextbox.Location = new System.Drawing.Point(55, 71);
             this.cRealTextbox.Name = "cRealTextbox";
             this.cRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.cRealTextbox.TabIndex = 39;
+            this.cRealTextbox.TabIndex = 4;
             // 
             // cMaxTextbox
             // 
             this.cMaxTextbox.Location = new System.Drawing.Point(55, 45);
             this.cMaxTextbox.Name = "cMaxTextbox";
             this.cMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.cMaxTextbox.TabIndex = 38;
+            this.cMaxTextbox.TabIndex = 3;
             // 
             // cMinTextBox
             // 
             this.cMinTextBox.Location = new System.Drawing.Point(55, 19);
             this.cMinTextBox.Name = "cMinTextBox";
             this.cMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.cMinTextBox.TabIndex = 37;
+            this.cMinTextBox.TabIndex = 2;
             // 
             // label3
             // 
@@ -400,7 +403,7 @@
             this.siLayoutPanel.Location = new System.Drawing.Point(156, 28);
             this.siLayoutPanel.Name = "siLayoutPanel";
             this.siLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.siLayoutPanel.TabIndex = 15;
+            this.siLayoutPanel.TabIndex = 3;
             this.siLayoutPanel.TabStop = false;
             this.siLayoutPanel.Text = "Krzem(Si)";
             // 
@@ -409,21 +412,21 @@
             this.siRealTextbox.Location = new System.Drawing.Point(52, 71);
             this.siRealTextbox.Name = "siRealTextbox";
             this.siRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.siRealTextbox.TabIndex = 45;
+            this.siRealTextbox.TabIndex = 7;
             // 
             // siMaxTextbox
             // 
             this.siMaxTextbox.Location = new System.Drawing.Point(52, 45);
             this.siMaxTextbox.Name = "siMaxTextbox";
             this.siMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.siMaxTextbox.TabIndex = 44;
+            this.siMaxTextbox.TabIndex = 6;
             // 
             // siMinTextBox
             // 
             this.siMinTextBox.Location = new System.Drawing.Point(52, 19);
             this.siMinTextBox.Name = "siMinTextBox";
             this.siMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.siMinTextBox.TabIndex = 43;
+            this.siMinTextBox.TabIndex = 5;
             // 
             // label4
             // 
@@ -463,7 +466,7 @@
             this.alLayoutPanel.Location = new System.Drawing.Point(754, 129);
             this.alLayoutPanel.Name = "alLayoutPanel";
             this.alLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.alLayoutPanel.TabIndex = 15;
+            this.alLayoutPanel.TabIndex = 13;
             this.alLayoutPanel.TabStop = false;
             this.alLayoutPanel.Text = "Aluminium (Al)";
             // 
@@ -472,21 +475,21 @@
             this.alRealTextbox.Location = new System.Drawing.Point(52, 69);
             this.alRealTextbox.Name = "alRealTextbox";
             this.alRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.alRealTextbox.TabIndex = 45;
+            this.alRealTextbox.TabIndex = 38;
             // 
             // alMaxTextbox
             // 
             this.alMaxTextbox.Location = new System.Drawing.Point(52, 43);
             this.alMaxTextbox.Name = "alMaxTextbox";
             this.alMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.alMaxTextbox.TabIndex = 44;
+            this.alMaxTextbox.TabIndex = 37;
             // 
             // alMinTextBox
             // 
             this.alMinTextBox.Location = new System.Drawing.Point(52, 17);
             this.alMinTextBox.Name = "alMinTextBox";
             this.alMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.alMinTextBox.TabIndex = 43;
+            this.alMinTextBox.TabIndex = 36;
             // 
             // label34
             // 
@@ -526,7 +529,7 @@
             this.niLayoutPanel.Location = new System.Drawing.Point(459, 129);
             this.niLayoutPanel.Name = "niLayoutPanel";
             this.niLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.niLayoutPanel.TabIndex = 15;
+            this.niLayoutPanel.TabIndex = 11;
             this.niLayoutPanel.TabStop = false;
             this.niLayoutPanel.Text = "Nikiel (Ni)";
             // 
@@ -535,21 +538,21 @@
             this.niRealTextbox.Location = new System.Drawing.Point(52, 69);
             this.niRealTextbox.Name = "niRealTextbox";
             this.niRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.niRealTextbox.TabIndex = 45;
+            this.niRealTextbox.TabIndex = 32;
             // 
             // niMaxTextbox
             // 
             this.niMaxTextbox.Location = new System.Drawing.Point(52, 43);
             this.niMaxTextbox.Name = "niMaxTextbox";
             this.niMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.niMaxTextbox.TabIndex = 44;
+            this.niMaxTextbox.TabIndex = 31;
             // 
             // niMinTextBox
             // 
             this.niMinTextBox.Location = new System.Drawing.Point(52, 17);
             this.niMinTextBox.Name = "niMinTextBox";
             this.niMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.niMinTextBox.TabIndex = 43;
+            this.niMinTextBox.TabIndex = 30;
             // 
             // label28
             // 
@@ -589,7 +592,7 @@
             this.tiLayoutPanel.Location = new System.Drawing.Point(606, 129);
             this.tiLayoutPanel.Name = "tiLayoutPanel";
             this.tiLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.tiLayoutPanel.TabIndex = 15;
+            this.tiLayoutPanel.TabIndex = 12;
             this.tiLayoutPanel.TabStop = false;
             this.tiLayoutPanel.Text = "Tytan (Ti)";
             // 
@@ -598,21 +601,21 @@
             this.tiRealTextbox.Location = new System.Drawing.Point(52, 69);
             this.tiRealTextbox.Name = "tiRealTextbox";
             this.tiRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.tiRealTextbox.TabIndex = 45;
+            this.tiRealTextbox.TabIndex = 35;
             // 
             // tiMaxTextbox
             // 
             this.tiMaxTextbox.Location = new System.Drawing.Point(52, 43);
             this.tiMaxTextbox.Name = "tiMaxTextbox";
             this.tiMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.tiMaxTextbox.TabIndex = 44;
+            this.tiMaxTextbox.TabIndex = 34;
             // 
             // tiMinTextBox
             // 
             this.tiMinTextBox.Location = new System.Drawing.Point(52, 17);
             this.tiMinTextBox.Name = "tiMinTextBox";
             this.tiMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.tiMinTextBox.TabIndex = 43;
+            this.tiMinTextBox.TabIndex = 33;
             // 
             // label31
             // 
@@ -652,7 +655,7 @@
             this.mnLayoutPanel.Location = new System.Drawing.Point(308, 28);
             this.mnLayoutPanel.Name = "mnLayoutPanel";
             this.mnLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.mnLayoutPanel.TabIndex = 15;
+            this.mnLayoutPanel.TabIndex = 4;
             this.mnLayoutPanel.TabStop = false;
             this.mnLayoutPanel.Text = "Mangan (Mn)";
             // 
@@ -661,14 +664,14 @@
             this.mnRealTextbox.Location = new System.Drawing.Point(52, 71);
             this.mnRealTextbox.Name = "mnRealTextbox";
             this.mnRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.mnRealTextbox.TabIndex = 45;
+            this.mnRealTextbox.TabIndex = 10;
             // 
             // mnMaxTextbox
             // 
             this.mnMaxTextbox.Location = new System.Drawing.Point(52, 45);
             this.mnMaxTextbox.Name = "mnMaxTextbox";
             this.mnMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.mnMaxTextbox.TabIndex = 44;
+            this.mnMaxTextbox.TabIndex = 9;
             // 
             // label9
             // 
@@ -684,7 +687,7 @@
             this.mnMinTextBox.Location = new System.Drawing.Point(52, 19);
             this.mnMinTextBox.Name = "mnMinTextBox";
             this.mnMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.mnMinTextBox.TabIndex = 43;
+            this.mnMinTextBox.TabIndex = 8;
             // 
             // label8
             // 
@@ -715,7 +718,7 @@
             this.nbLayoutPanel.Location = new System.Drawing.Point(308, 129);
             this.nbLayoutPanel.Name = "nbLayoutPanel";
             this.nbLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.nbLayoutPanel.TabIndex = 15;
+            this.nbLayoutPanel.TabIndex = 10;
             this.nbLayoutPanel.TabStop = false;
             this.nbLayoutPanel.Text = "Niob (Nb)";
             // 
@@ -724,21 +727,21 @@
             this.nbRealTextbox.Location = new System.Drawing.Point(52, 69);
             this.nbRealTextbox.Name = "nbRealTextbox";
             this.nbRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.nbRealTextbox.TabIndex = 45;
+            this.nbRealTextbox.TabIndex = 29;
             // 
             // nbMaxTextbox
             // 
             this.nbMaxTextbox.Location = new System.Drawing.Point(52, 43);
             this.nbMaxTextbox.Name = "nbMaxTextbox";
             this.nbMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.nbMaxTextbox.TabIndex = 44;
+            this.nbMaxTextbox.TabIndex = 28;
             // 
             // nbMinTextBox
             // 
             this.nbMinTextBox.Location = new System.Drawing.Point(52, 17);
             this.nbMinTextBox.Name = "nbMinTextBox";
             this.nbMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.nbMinTextBox.TabIndex = 43;
+            this.nbMinTextBox.TabIndex = 27;
             // 
             // label25
             // 
@@ -778,7 +781,7 @@
             this.pLayoutPanel.Location = new System.Drawing.Point(459, 28);
             this.pLayoutPanel.Name = "pLayoutPanel";
             this.pLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.pLayoutPanel.TabIndex = 15;
+            this.pLayoutPanel.TabIndex = 5;
             this.pLayoutPanel.TabStop = false;
             this.pLayoutPanel.Text = "Potas (P)";
             // 
@@ -787,21 +790,21 @@
             this.pRealTextbox.Location = new System.Drawing.Point(52, 71);
             this.pRealTextbox.Name = "pRealTextbox";
             this.pRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.pRealTextbox.TabIndex = 45;
+            this.pRealTextbox.TabIndex = 13;
             // 
             // pMaxTextbox
             // 
             this.pMaxTextbox.Location = new System.Drawing.Point(52, 45);
             this.pMaxTextbox.Name = "pMaxTextbox";
             this.pMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.pMaxTextbox.TabIndex = 44;
+            this.pMaxTextbox.TabIndex = 12;
             // 
             // pMinTextBox
             // 
             this.pMinTextBox.Location = new System.Drawing.Point(52, 19);
             this.pMinTextBox.Name = "pMinTextBox";
             this.pMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.pMinTextBox.TabIndex = 43;
+            this.pMinTextBox.TabIndex = 11;
             // 
             // label10
             // 
@@ -841,7 +844,7 @@
             this.moLayoutPanel.Location = new System.Drawing.Point(156, 129);
             this.moLayoutPanel.Name = "moLayoutPanel";
             this.moLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.moLayoutPanel.TabIndex = 15;
+            this.moLayoutPanel.TabIndex = 9;
             this.moLayoutPanel.TabStop = false;
             this.moLayoutPanel.Text = "Molibden (Mo)";
             // 
@@ -850,21 +853,21 @@
             this.moRealTextbox.Location = new System.Drawing.Point(52, 69);
             this.moRealTextbox.Name = "moRealTextbox";
             this.moRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.moRealTextbox.TabIndex = 45;
+            this.moRealTextbox.TabIndex = 26;
             // 
             // moMaxTextbox
             // 
             this.moMaxTextbox.Location = new System.Drawing.Point(52, 43);
             this.moMaxTextbox.Name = "moMaxTextbox";
             this.moMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.moMaxTextbox.TabIndex = 44;
+            this.moMaxTextbox.TabIndex = 25;
             // 
             // moMinTextBox
             // 
             this.moMinTextBox.Location = new System.Drawing.Point(52, 17);
             this.moMinTextBox.Name = "moMinTextBox";
             this.moMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.moMinTextBox.TabIndex = 43;
+            this.moMinTextBox.TabIndex = 24;
             // 
             // label22
             // 
@@ -904,7 +907,7 @@
             this.nLayoutPanel.Location = new System.Drawing.Point(754, 28);
             this.nLayoutPanel.Name = "nLayoutPanel";
             this.nLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.nLayoutPanel.TabIndex = 15;
+            this.nLayoutPanel.TabIndex = 7;
             this.nLayoutPanel.TabStop = false;
             this.nLayoutPanel.Text = "Azot (N)";
             // 
@@ -913,21 +916,21 @@
             this.nRealTextbox.Location = new System.Drawing.Point(52, 71);
             this.nRealTextbox.Name = "nRealTextbox";
             this.nRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.nRealTextbox.TabIndex = 45;
+            this.nRealTextbox.TabIndex = 20;
             // 
             // nMaxTextbox
             // 
             this.nMaxTextbox.Location = new System.Drawing.Point(52, 45);
             this.nMaxTextbox.Name = "nMaxTextbox";
             this.nMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.nMaxTextbox.TabIndex = 44;
+            this.nMaxTextbox.TabIndex = 19;
             // 
             // nMinTextBox
             // 
             this.nMinTextBox.Location = new System.Drawing.Point(52, 19);
             this.nMinTextBox.Name = "nMinTextBox";
             this.nMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.nMinTextBox.TabIndex = 43;
+            this.nMinTextBox.TabIndex = 18;
             // 
             // label16
             // 
@@ -967,7 +970,7 @@
             this.crLayoutPanel.Location = new System.Drawing.Point(6, 129);
             this.crLayoutPanel.Name = "crLayoutPanel";
             this.crLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.crLayoutPanel.TabIndex = 15;
+            this.crLayoutPanel.TabIndex = 8;
             this.crLayoutPanel.TabStop = false;
             this.crLayoutPanel.Text = "Chrom (Cr)";
             // 
@@ -976,21 +979,21 @@
             this.crRealTextbox.Location = new System.Drawing.Point(55, 69);
             this.crRealTextbox.Name = "crRealTextbox";
             this.crRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.crRealTextbox.TabIndex = 45;
+            this.crRealTextbox.TabIndex = 23;
             // 
             // crMaxTextbox
             // 
             this.crMaxTextbox.Location = new System.Drawing.Point(55, 43);
             this.crMaxTextbox.Name = "crMaxTextbox";
             this.crMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.crMaxTextbox.TabIndex = 44;
+            this.crMaxTextbox.TabIndex = 22;
             // 
             // crMinTextBox
             // 
             this.crMinTextBox.Location = new System.Drawing.Point(55, 17);
             this.crMinTextBox.Name = "crMinTextBox";
             this.crMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.crMinTextBox.TabIndex = 43;
+            this.crMinTextBox.TabIndex = 21;
             // 
             // label19
             // 
@@ -1030,7 +1033,7 @@
             this.sLayoutPanel.Location = new System.Drawing.Point(606, 28);
             this.sLayoutPanel.Name = "sLayoutPanel";
             this.sLayoutPanel.Size = new System.Drawing.Size(130, 95);
-            this.sLayoutPanel.TabIndex = 15;
+            this.sLayoutPanel.TabIndex = 6;
             this.sLayoutPanel.TabStop = false;
             this.sLayoutPanel.Text = "Siarka (S)";
             // 
@@ -1039,21 +1042,21 @@
             this.sRealTextbox.Location = new System.Drawing.Point(52, 71);
             this.sRealTextbox.Name = "sRealTextbox";
             this.sRealTextbox.Size = new System.Drawing.Size(72, 20);
-            this.sRealTextbox.TabIndex = 45;
+            this.sRealTextbox.TabIndex = 16;
             // 
             // sMaxTextbox
             // 
             this.sMaxTextbox.Location = new System.Drawing.Point(52, 45);
             this.sMaxTextbox.Name = "sMaxTextbox";
             this.sMaxTextbox.Size = new System.Drawing.Size(72, 20);
-            this.sMaxTextbox.TabIndex = 44;
+            this.sMaxTextbox.TabIndex = 15;
             // 
             // sMinTextBox
             // 
             this.sMinTextBox.Location = new System.Drawing.Point(52, 19);
             this.sMinTextBox.Name = "sMinTextBox";
             this.sMinTextBox.Size = new System.Drawing.Size(72, 20);
-            this.sMinTextBox.TabIndex = 43;
+            this.sMinTextBox.TabIndex = 14;
             // 
             // label13
             // 
@@ -1111,7 +1114,7 @@
             this.numberTextBox.Location = new System.Drawing.Point(156, 37);
             this.numberTextBox.Name = "numberTextBox";
             this.numberTextBox.Size = new System.Drawing.Size(100, 20);
-            this.numberTextBox.TabIndex = 31;
+            this.numberTextBox.TabIndex = 2;
             // 
             // numberLabel
             // 
@@ -1127,7 +1130,7 @@
             this.nameTextBox.Location = new System.Drawing.Point(6, 37);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nameTextBox.TabIndex = 30;
+            this.nameTextBox.TabIndex = 1;
             // 
             // nameLayoutPanel
             // 
@@ -1146,11 +1149,22 @@
             this.guidTextBox.Size = new System.Drawing.Size(226, 20);
             this.guidTextBox.TabIndex = 32;
             // 
+            // autoRefreshButton
+            // 
+            this.autoRefreshButton.Location = new System.Drawing.Point(562, 57);
+            this.autoRefreshButton.Name = "autoRefreshButton";
+            this.autoRefreshButton.Size = new System.Drawing.Size(99, 23);
+            this.autoRefreshButton.TabIndex = 2;
+            this.autoRefreshButton.Text = "Autowypełnienie";
+            this.autoRefreshButton.UseVisualStyleBackColor = true;
+            this.autoRefreshButton.Click += new System.EventHandler(this.autoRefreshButton_Click);
+            // 
             // MaterialModificationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1015, 480);
+            this.Controls.Add(this.autoRefreshButton);
             this.Controls.Add(this.basicsLayoutPanel);
             this.Controls.Add(this.elementsLayoutPanel);
             this.Name = "MaterialModificationForm";
@@ -1301,5 +1315,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button autoRefreshButton;
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using WelderCalculator.Drawings.Chart;
 using WelderCalculator.Model;
@@ -141,6 +142,16 @@ namespace WelderCalculator.Repositories
         public AdditiveMaterial GetAdditionalMaterialForSchaeffler()
         {
             return _normRepo.DeserializeAdditionalMaterialForSchaeffler();
+        }
+
+        public ChartSizing GetSchaefflerChartSizingData()
+        {
+            return _normRepo.DeserializeSchaefflerChartSizing();
+        }
+
+        public Image GetKsLogo()
+        {
+            return _normRepo.GetKsLogoImage();
         }
     }
 }

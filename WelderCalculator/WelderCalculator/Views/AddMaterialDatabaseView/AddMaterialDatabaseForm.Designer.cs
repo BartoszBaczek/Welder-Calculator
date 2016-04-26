@@ -448,7 +448,7 @@
             // 
             this.deleteNormButton.Location = new System.Drawing.Point(49, 33);
             this.deleteNormButton.Name = "deleteNormButton";
-            this.deleteNormButton.Size = new System.Drawing.Size(140, 23);
+            this.deleteNormButton.Size = new System.Drawing.Size(143, 23);
             this.deleteNormButton.TabIndex = 18;
             this.deleteNormButton.Text = "Usuń norme";
             this.deleteNormButton.UseVisualStyleBackColor = true;

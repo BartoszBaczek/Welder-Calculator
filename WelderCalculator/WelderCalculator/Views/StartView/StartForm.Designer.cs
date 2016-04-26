@@ -38,6 +38,9 @@
             this.separatorStrip = new System.Windows.Forms.ToolStripSeparator();
             this.exitStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.helpStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.baseMaterialsDatabaseButton = new System.Windows.Forms.Button();
+            this.addMaterialDatabaseButton = new System.Windows.Forms.Button();
+            this.schaefflerCountingButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +73,7 @@
             this.additionalMaterialBaseStrip,
             this.wykresSchaeffleraToolStripMenuItem});
             this.openStrip.Name = "openStrip";
-            this.openStrip.Size = new System.Drawing.Size(152, 22);
+            this.openStrip.Size = new System.Drawing.Size(114, 22);
             this.openStrip.Text = "Otwórz";
             // 
             // materialBaseStrip
@@ -97,18 +100,18 @@
             // optionsStrip
             // 
             this.optionsStrip.Name = "optionsStrip";
-            this.optionsStrip.Size = new System.Drawing.Size(152, 22);
+            this.optionsStrip.Size = new System.Drawing.Size(114, 22);
             this.optionsStrip.Text = "Opcje";
             // 
             // separatorStrip
             // 
             this.separatorStrip.Name = "separatorStrip";
-            this.separatorStrip.Size = new System.Drawing.Size(149, 6);
+            this.separatorStrip.Size = new System.Drawing.Size(111, 6);
             // 
             // exitStrip
             // 
             this.exitStrip.Name = "exitStrip";
-            this.exitStrip.Size = new System.Drawing.Size(152, 22);
+            this.exitStrip.Size = new System.Drawing.Size(114, 22);
             this.exitStrip.Text = "Wyjście";
             this.exitStrip.Click += new System.EventHandler(this.exitStrip_Click);
             // 
@@ -119,15 +122,51 @@
             this.helpStrip.Text = "Pomoc";
             this.helpStrip.Click += new System.EventHandler(this.helpStrip_Click);
             // 
+            // baseMaterialsDatabaseButton
+            // 
+            this.baseMaterialsDatabaseButton.Location = new System.Drawing.Point(183, 27);
+            this.baseMaterialsDatabaseButton.Name = "baseMaterialsDatabaseButton";
+            this.baseMaterialsDatabaseButton.Size = new System.Drawing.Size(93, 57);
+            this.baseMaterialsDatabaseButton.TabIndex = 1;
+            this.baseMaterialsDatabaseButton.Text = "Baza materiałów podstawowych";
+            this.baseMaterialsDatabaseButton.UseVisualStyleBackColor = true;
+            this.baseMaterialsDatabaseButton.Click += new System.EventHandler(this.baseMaterialsDatabaseButton_Click);
+            // 
+            // addMaterialDatabaseButton
+            // 
+            this.addMaterialDatabaseButton.Location = new System.Drawing.Point(183, 90);
+            this.addMaterialDatabaseButton.Name = "addMaterialDatabaseButton";
+            this.addMaterialDatabaseButton.Size = new System.Drawing.Size(93, 61);
+            this.addMaterialDatabaseButton.TabIndex = 2;
+            this.addMaterialDatabaseButton.Text = "Baza materiałów dodatkowych";
+            this.addMaterialDatabaseButton.UseVisualStyleBackColor = true;
+            this.addMaterialDatabaseButton.Click += new System.EventHandler(this.addMaterialDatabaseButton_Click);
+            // 
+            // schaefflerCountingButton
+            // 
+            this.schaefflerCountingButton.Location = new System.Drawing.Point(183, 157);
+            this.schaefflerCountingButton.Name = "schaefflerCountingButton";
+            this.schaefflerCountingButton.Size = new System.Drawing.Size(93, 23);
+            this.schaefflerCountingButton.TabIndex = 3;
+            this.schaefflerCountingButton.Text = "Obliczenia";
+            this.schaefflerCountingButton.UseVisualStyleBackColor = true;
+            this.schaefflerCountingButton.Click += new System.EventHandler(this.schaefflerCountingButton_Click);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 192);
+            this.Controls.Add(this.schaefflerCountingButton);
+            this.Controls.Add(this.addMaterialDatabaseButton);
+            this.Controls.Add(this.baseMaterialsDatabaseButton);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "StartForm";
             this.Text = "StartForm";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.paintEvent);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -147,5 +186,8 @@
         private System.Windows.Forms.ToolStripMenuItem materialBaseStrip;
         private System.Windows.Forms.ToolStripMenuItem additionalMaterialBaseStrip;
         private System.Windows.Forms.ToolStripMenuItem wykresSchaeffleraToolStripMenuItem;
+        private System.Windows.Forms.Button baseMaterialsDatabaseButton;
+        private System.Windows.Forms.Button addMaterialDatabaseButton;
+        private System.Windows.Forms.Button schaefflerCountingButton;
     }
 }

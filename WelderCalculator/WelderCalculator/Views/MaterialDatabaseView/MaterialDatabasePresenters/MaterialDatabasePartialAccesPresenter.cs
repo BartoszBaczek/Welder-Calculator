@@ -146,6 +146,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
                 _dataConnector.SaveFirstBasisMarerialForSchaeffler(selectedMaterial);
             else if (_view.Accesibility == BaseMaterialDatabaseAccesibility.PartialForSecondMaterial)
                 _dataConnector.SaveSecondBasisMarerialForSchaeffler(selectedMaterial);
+
         }
     }
 }

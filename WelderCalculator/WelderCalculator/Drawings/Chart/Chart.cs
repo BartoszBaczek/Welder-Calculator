@@ -1,29 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using System.Linq;
+using WelderCalculator.Model;
 
 namespace WelderCalculator.Drawings.Chart
 {
-    public class Chart
+    public class Chart : IChart
     {
-        private Graphics _graphics;
-        public Layers Layers { get; private set; }
-        public Size Size { get; private set; }
+        private readonly ChartSizing _chartSizing;
+        private readonly Graphics _graphics;
+        private readonly List<DrawableRectangle> _drawableRectangles;
+        private readonly List<DrawableLine> _drawableLines; 
 
-        public Chart(Graphics graph, Layers layers)
+        public Layers Layers { get; private set; }
+        private PointF Size { get; set; }
+
+        private PointF Scale 
         {
-            _graphics = graph;
-            Layers = layers;
+            get { return new PointF(Size.X / _chartSizing.ImageWidthAndHeight.X, Size.Y / _chartSizing.ImageWidthAndHeight.Y); }
         }
 
-        public void Resize(int width, int height)
+        public Chart(Graphics graph, Layers layers, ChartSizing chartSizing)
+        {
+            _chartSizing = chartSizing;
+
+            _graphics = graph;
+            Layers = layers;
+            _drawableRectangles = new List<DrawableRectangle>();
+            _drawableLines = new List<DrawableLine>();
+        }
+
+
+        public void ResizeTo(int width, int height)
         {
             foreach (var layer in Layers.GetActive())
             {
-                var destinationRectangle = new Rectangle(0, 0, width, height);
                 var destinationImage = new Bitmap(width, height);
 
                 destinationImage.SetResolution(layer.Image.HorizontalResolution, layer.Image.VerticalResolution);
@@ -39,29 +51,94 @@ namespace WelderCalculator.Drawings.Chart
                     using (var wrapMode = new ImageAttributes())
                     {
                         wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                        graphics.DrawImage(layer.Image, destinationRectangle, 0, 0, layer.Image.Width, layer.Image.Height, GraphicsUnit.Pixel, wrapMode);
                     }
                 }
             }
-            Size = new Size(width, height);
+            Size = new PointF(width, height);
+
+            ResizePoints();
+            ResizeLines();
         }
 
-        public void DrawLayers()
+        private void ResizePoints()
+        {
+            List<DrawableRectangle> oldDrawableRectangles = new List<DrawableRectangle>(_drawableRectangles);
+            _drawableRectangles.Clear();
+
+            foreach (var drawableRectangle in oldDrawableRectangles)
+                AddPoint(drawableRectangle.OriginalPoint, drawableRectangle.Color);
+        }
+
+        private void ResizeLines()
+        {
+            List<DrawableLine> oldDrawableLines = new List<DrawableLine>(_drawableLines);
+            _drawableLines.Clear();
+
+            foreach (var drawableLine in oldDrawableLines)
+                AddLine(drawableLine.PointToDraw1, drawableLine.POintToDraw2, drawableLine.Color);
+        }
+
+
+        public void Draw()
         {
             foreach (var layer in Layers.GetActive())
-                _graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size(Size.Width, Size.Height)));
+                _graphics.DrawImage(layer.Image, new Rectangle(new Point(0, 0), new Size((int) Size.X, (int) Size.Y)));
+
+            
+            foreach (var line in _drawableLines)
+                _graphics.DrawLine(new Pen(line.Color, 3.0f), line.OriginalPoint1, line.OriginalPoint2);
+
+            foreach (var rect in _drawableRectangles)
+            {
+                Rectangle tempRect = rect.Rectangle;
+                tempRect.X -= (int)(tempRect.Width / 2.0f);
+                tempRect.Y -= (int)(tempRect.Height / 2.0f);
+
+                _graphics.FillRectangle(new SolidBrush(rect.Color), tempRect);
+            }
         }
 
-        public void DrawPoints(IEnumerable<Point> p)
+        public void Clean()
         {
-            Point[] points = p.ToArray();
-            Rectangle[] rectangles = new Rectangle[points.Count()];
+            _drawableRectangles.Clear();
+            _drawableLines.Clear();
+        }
 
-            for (int i = 0; i < points.Count(); i++)
-                rectangles[i] = new Rectangle(points[i], new Size(5, 5));
+        public void AddPoint(PointF point, Color color)
+        {
+            _drawableRectangles.Add(new DrawableRectangle(
+                new Rectangle(ToBottomLeftOriginPoint(point), 
+                new Size(7, 7)),
+                color,
+                point));
+        }
 
-            foreach (var point in points)
-                _graphics.FillRectangles(new SolidBrush(Color.Red), rectangles);
+        public void AddLine(PointF point1, PointF point2, Color color)
+        {
+            _drawableLines.Add(new DrawableLine(color,
+                ToBottomLeftOriginPoint(point1),
+                ToBottomLeftOriginPoint(point2),
+                point1,
+                point2));
+        }
+
+        private Point ToBottomLeftOriginPoint(PointF point)
+        {
+            PointF diagramScale = new PointF( (_chartSizing.ChartEndPointXandY.X - _chartSizing.ChartOriginXandY.X) / _chartSizing.ChartEndInSpecialUnit.X, 
+                (_chartSizing.ChartOriginXandY.Y - _chartSizing.ChartEndPointXandY.Y) / _chartSizing.ChartEndInSpecialUnit.Y);
+
+            point.X *= diagramScale.X;
+            point.Y *= diagramScale.Y;
+
+            point = new PointF(
+                (_chartSizing.ChartOriginXandY.X + point.X),
+                (_chartSizing.ChartOriginXandY.Y - point.Y)
+                );
+
+            point.X *= Scale.X;
+            point.Y *= Scale.Y;
+
+            return new Point((int) point.X, (int) point.Y);
         }
     }
 }

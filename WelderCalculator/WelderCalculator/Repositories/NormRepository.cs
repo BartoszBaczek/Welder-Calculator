@@ -40,7 +40,7 @@ namespace WelderCalculator.Repositories
         }
 
 
-        #region NormsSerialization
+        #region IBasicNormRepository && IAdditiveNormRepository
         public void SerializeBaseNorm(BaseNorm norm)
         {
             string pathToFile = _baseNormsPath + norm.Name + ".json";
@@ -123,8 +123,8 @@ namespace WelderCalculator.Repositories
         }
         #endregion
 
-
-        #region PropertiesSerialization
+        //TODO: Extract separate interface for those methods
+        #region PropertiesSerialization (Part of IBasicNormRepository && IAdditiveNormRepository 
         public void SerializeBaseNormsProperties(List<Category.OfElement> properties)
         {
             using (var fs = File.Open(_propertiesPath + "OrderInBaseNormDataGridView.json", FileMode.Create))
@@ -176,7 +176,7 @@ namespace WelderCalculator.Repositories
         }
         #endregion
 
-        #region SchaefflerDiagramMaterials
+        #region ISchaefflerDiagramMaterials
         public void SerializeFirstBaseMaterialForSchaeffler(BaseMaterial basicMaterial)
         {
             using (var fs = File.Open(_schaefflersMaterialsRepository + "FirstMaterialForSchaeffler.json", FileMode.Create))
@@ -242,8 +242,6 @@ namespace WelderCalculator.Repositories
 
         public AdditiveMaterial DeserializeAdditionalMaterialForSchaeffler()
         {
-            try
-            {
                 string fileName = "AdditiveMaterialForSchaeffler";
                 string pathToFile = _schaefflersMaterialsRepository + fileName + ".json";
                 string jsonText = File.ReadAllText(pathToFile);
@@ -252,29 +250,45 @@ namespace WelderCalculator.Repositories
                     JsonConvert.DeserializeObject<AdditiveMaterial>(jsonText);
 
                 return additiveMaterial;
-            }
-            catch (IOException)
-            {
-                return null;
-            }
-
-
         }
         #endregion
+
+        #region IDrawingsRepository
+
         public List<Layer> GetSchaefflerChartImages()
         {
+            string schaeflerCatalog = "Schaeffler/";
             var layers = new List<Layer>()
             {
-                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_background.png"), LayerType.Background),
-                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_x.png"), LayerType.AxisX),
-                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_y.png"), LayerType.AxisY),
-                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_hash.png"), LayerType.Hash),
-                new Layer(Image.FromFile(_drawingsPath + @"Schaeffler\" + "s_phase.png"), LayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_background.png"), LayerType.Background),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_x.png"), LayerType.AxisX),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_y.png"), LayerType.AxisY),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_hash.png"), LayerType.Hash),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_phase.png"), LayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_haseText.png"), LayerType.PhaseText),
             };
 
             return layers;
         }
 
-       
+        public ChartSizing DeserializeSchaefflerChartSizing()
+        {
+            string fileName = "Schaeffler/chartSizing";
+
+            string pathToFile = _drawingsPath + fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var chartSizing =
+                JsonConvert.DeserializeObject<ChartSizing>(jsonText);
+
+            return chartSizing;
+        }
+
+        public Image GetKsLogoImage()
+        {
+            return Image.FromFile(_drawingsPath + "ks.png");
+        }
+
+        #endregion
     }
 }

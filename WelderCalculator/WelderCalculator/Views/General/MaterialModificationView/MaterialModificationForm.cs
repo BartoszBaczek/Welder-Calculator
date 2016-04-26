@@ -521,5 +521,10 @@ namespace WelderCalculator.Views.General.MaterialModificationView
         {
             this.Close();
         }
+
+        private void autoRefreshButton_Click(object sender, EventArgs e)
+        {
+            Presenter.AutofillAllElementsData();
+        }
     }
 }
