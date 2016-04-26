@@ -25,7 +25,7 @@ namespace WelderCalculator.Drawings.Chart
         public Chart(Graphics graph, Layers layers, ChartSizing chartSizing)
         {
             _imageSize = chartSizing.ImageWidthAndHeight;
-            _originPosition = chartSizing.OriginXandY;
+            _originPosition = chartSizing.ChartOriginXandY;
 
             _graphics = graph;
             Layers = layers;
@@ -34,51 +34,51 @@ namespace WelderCalculator.Drawings.Chart
         }
 
 
-        //public void ResizeTo(int width, int height)
-        //{
-        //    foreach (var layer in Layers.GetActive())
-        //    {
-        //        var destinationImage = new Bitmap(width, height);
+        public void ResizeTo(int width, int height)
+        {
+            foreach (var layer in Layers.GetActive())
+            {
+                var destinationImage = new Bitmap(width, height);
 
-        //        destinationImage.SetResolution(layer.Image.HorizontalResolution, layer.Image.VerticalResolution);
+                destinationImage.SetResolution(layer.Image.HorizontalResolution, layer.Image.VerticalResolution);
 
-        //        using (var graphics = Graphics.FromImage(destinationImage))
-        //        {
-        //            graphics.CompositingMode = CompositingMode.SourceCopy;
-        //            graphics.CompositingQuality = CompositingQuality.HighQuality;
-        //            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-        //            graphics.SmoothingMode = SmoothingMode.HighQuality;
-        //            graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                using (var graphics = Graphics.FromImage(destinationImage))
+                {
+                    graphics.CompositingMode = CompositingMode.SourceCopy;
+                    graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    graphics.SmoothingMode = SmoothingMode.HighQuality;
+                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
 
-        //            using (var wrapMode = new ImageAttributes())
-        //            {
-        //                wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-        //            }
-        //        }
-        //    }
-        //    Size = new PointF(width, height);
+                    using (var wrapMode = new ImageAttributes())
+                    {
+                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    }
+                }
+            }
+            Size = new PointF(width, height);
 
-        //    ResizePoints();
-        //    ResizeLines();
-        //}
+            ResizePoints();
+            ResizeLines();
+        }
 
-        //private void ResizePoints()
-        //{
-        //    List<DrawableRectangle> oldDrawableRectangles = new List<DrawableRectangle>(_drawableRectangles);
-        //    _drawableRectangles.Clear();
+        private void ResizePoints()
+        {
+            List<DrawableRectangle> oldDrawableRectangles = new List<DrawableRectangle>(_drawableRectangles);
+            _drawableRectangles.Clear();
 
-        //    foreach (var drawableRectangle in oldDrawableRectangles)
-        //        AddPoint(drawableRectangle.OriginalPoint, drawableRectangle.Color);
-        //}
+            foreach (var drawableRectangle in oldDrawableRectangles)
+                AddPoint(drawableRectangle.OriginalPoint, drawableRectangle.Color);
+        }
 
-        //private void ResizeLines()
-        //{
-        //    List<DrawableLine> oldDrawableLines = new List<DrawableLine>(_drawableLines);
-        //    _drawableLines.Clear();
+        private void ResizeLines()
+        {
+            List<DrawableLine> oldDrawableLines = new List<DrawableLine>(_drawableLines);
+            _drawableLines.Clear();
 
-        //    foreach (var drawableLine in oldDrawableLines)
-        //        AddLine(drawableLine.PointToDraw1, drawableLine.POintToDraw2, drawableLine.Color);
-        //}
+            foreach (var drawableLine in oldDrawableLines)
+                AddLine(drawableLine.PointToDraw1, drawableLine.POintToDraw2, drawableLine.Color);
+        }
 
 
         public void Draw()
