@@ -8,8 +8,7 @@ namespace WelderCalculator.Drawings.Chart
 {
     public class Chart : IChart
     {
-        private PointF _imageSize;
-        private PointF _originPosition;
+        private readonly ChartSizing _chartSizing;
         private readonly Graphics _graphics;
         private readonly List<DrawableRectangle> _drawableRectangles;
         private readonly List<DrawableLine> _drawableLines; 
@@ -18,14 +17,13 @@ namespace WelderCalculator.Drawings.Chart
         private PointF Size { get; set; }
 
         private PointF Scale 
-        { 
-            get { return new PointF(Size.X / _imageSize.X, Size.Y / _imageSize.Y); }
+        {
+            get { return new PointF(Size.X / _chartSizing.ImageWidthAndHeight.X, Size.Y / _chartSizing.ImageWidthAndHeight.Y); }
         }
 
         public Chart(Graphics graph, Layers layers, ChartSizing chartSizing)
         {
-            _imageSize = chartSizing.ImageWidthAndHeight;
-            _originPosition = chartSizing.ChartOriginXandY;
+            _chartSizing = chartSizing;
 
             _graphics = graph;
             Layers = layers;
@@ -124,17 +122,17 @@ namespace WelderCalculator.Drawings.Chart
                 point2));
         }
 
-        //TODO TUTAJ JEST GÓWNO
         private Point ToBottomLeftOriginPoint(PointF point)
         {
-            PointF schaefflerDiagramScale = new PointF((918f - 138f) / 32f, (720f - 38f) / 28f);    //changes scale 0-28 or - 38
+            PointF diagramScale = new PointF( (_chartSizing.ChartEndPointXandY.X - _chartSizing.ChartOriginXandY.X) / _chartSizing.ChartEndInSpecialUnit.X, 
+                (_chartSizing.ChartOriginXandY.Y - _chartSizing.ChartEndPointXandY.Y) / _chartSizing.ChartEndInSpecialUnit.Y);
 
-            point.X *= schaefflerDiagramScale.X;
-            point.Y *= schaefflerDiagramScale.Y;
+            point.X *= diagramScale.X;
+            point.Y *= diagramScale.Y;
 
             point = new PointF(
-                (_originPosition.X + point.X),
-                (_originPosition.Y - point.Y)
+                (_chartSizing.ChartOriginXandY.X + point.X),
+                (_chartSizing.ChartOriginXandY.Y - point.Y)
                 );
 
             point.X *= Scale.X;
