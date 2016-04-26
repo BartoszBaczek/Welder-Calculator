@@ -15,7 +15,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
     {
         private readonly ISchaefflerChartView _view;
         private readonly DataConnector _dataConnector;
-        private readonly Chart _chart;
+        private readonly IChart _chart;
 
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
