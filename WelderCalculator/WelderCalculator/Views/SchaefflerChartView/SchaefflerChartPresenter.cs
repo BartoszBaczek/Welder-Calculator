@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using WelderCalculator.Drawings.Chart;
+using WelderCalculator.Helpers;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
 using WelderCalculator.Views.AddMaterialDatabaseView;
@@ -119,14 +120,14 @@ namespace WelderCalculator.Views.SchaefflerChartView
                 _chart.AddLine(pointForFirstMaterial, pointForSecondMaterial, Color.GreenYellow);
 
                 //drawPointInTheMiddleOfLine
-                PointF pointInTheMiddleOfLine = GetPointBetweenTwoOthers(pointForFirstMaterial, pointForSecondMaterial);
+                PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
                 _chart.AddPoint(pointInTheMiddleOfLine, Color.Blue);
 
                 //draw line between point in the middle of line and addmaterial
                 _chart.AddLine(pointInTheMiddleOfLine, pointForAddMaterial, Color.GreenYellow);
 
                 //draw shit
-                PointF pointInTheMiddleOfLineWithTranslation = GetPointBetweenTwoOthersWithTranlation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
+                PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
                 _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Red);
 
                 _chart.Draw();
@@ -135,22 +136,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
             {
                 MessageBox.Show("Ilość materiału dodatkowego nie jest liczba z zakresu od 0 od 100");
             }
-        }
-
-        private PointF GetPointBetweenTwoOthers(PointF point1, PointF point2)
-        {
-            return new PointF(0.5f * (point1.X + point2.X), 0.5f * (point1.Y + point2.Y));
-        }
-
-        private PointF GetPointBetweenTwoOthersWithTranlation(double translation, PointF point1, PointF point2)
-        {
-            //transaltion should be number from 0 - 1. Point1 should be at least down and left to point2.
-            PointF point = new PointF(
-                point1.X + (float) translation*(point2.X - point1.X),
-                point1.Y + (float) translation*(point2.Y - point1.Y)
-                );
-
-            return point;
         }
     }
 }
