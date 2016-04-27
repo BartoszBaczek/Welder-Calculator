@@ -99,43 +99,41 @@ namespace WelderCalculator.Views.SchaefflerChartView
         {
             _chart.Clean();
             double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
-
             bool additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100 = (additionalMaterialQuantity > 0 &&
                                                                                     additionalMaterialQuantity < 100);
-            if (additionalMaterialQuantity.HasValue && additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100)
-            {
-                var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
-                PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEq, (float)firstMaterial.NiEq);
-                _chart.AddPoint(pointForFirstMaterial, Color.Crimson);
-
-                var secondMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
-                PointF pointForSecondMaterial = new PointF((float)secondMaterial.CrEq, (float)secondMaterial.NiEq);
-                _chart.AddPoint(pointForSecondMaterial, Color.OrangeRed);
-
-                var addMaterial = _dataConnector.GetAdditionalMaterialForSchaeffler();
-                PointF pointForAddMaterial = new PointF((float)addMaterial.CrEq, (float)addMaterial.NiEq);
-                _chart.AddPoint(pointForAddMaterial, Color.DarkMagenta);
-
-                //lineBetweenTwoBaseMaterials
-                _chart.AddLine(pointForFirstMaterial, pointForSecondMaterial, Color.GreenYellow);
-
-                //drawPointInTheMiddleOfLine
-                PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
-                _chart.AddPoint(pointInTheMiddleOfLine, Color.Blue);
-
-                //draw line between point in the middle of line and addmaterial
-                _chart.AddLine(pointInTheMiddleOfLine, pointForAddMaterial, Color.GreenYellow);
-
-                //draw shit
-                PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
-                _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Red);
-
-                _chart.Draw();
-            }
-            else
+            if (!(additionalMaterialQuantity.HasValue && additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100))
             {
                 MessageBox.Show("Ilość materiału dodatkowego nie jest liczba z zakresu od 0 od 100");
+                return;
             }
+
+            var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
+            PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEq, (float)firstMaterial.NiEq);
+            _chart.AddPoint(pointForFirstMaterial, Color.Crimson);
+
+            var secondMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
+            PointF pointForSecondMaterial = new PointF((float)secondMaterial.CrEq, (float)secondMaterial.NiEq);
+            _chart.AddPoint(pointForSecondMaterial, Color.OrangeRed);
+
+            var addMaterial = _dataConnector.GetAdditionalMaterialForSchaeffler();
+            PointF pointForAddMaterial = new PointF((float)addMaterial.CrEq, (float)addMaterial.NiEq);
+            _chart.AddPoint(pointForAddMaterial, Color.DarkMagenta);
+
+            //lineBetweenTwoBaseMaterials
+            _chart.AddLine(pointForFirstMaterial, pointForSecondMaterial, Color.GreenYellow);
+
+            //drawPointInTheMiddleOfLine
+            PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
+            _chart.AddPoint(pointInTheMiddleOfLine, Color.Blue);
+
+            //draw line between point in the middle of line and addmaterial
+            _chart.AddLine(pointInTheMiddleOfLine, pointForAddMaterial, Color.GreenYellow);
+
+            //draw shit
+            PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
+            _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Red);
+
+            _chart.Draw();
         }
     }
 }
