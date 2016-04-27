@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Windows.Forms;
-using WelderCalculator.Model;
+﻿using System.Windows.Forms;
 using WelderCalculator.Repositories;
 using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
 using WelderCalculator.Views.General.MaterialModificationView;

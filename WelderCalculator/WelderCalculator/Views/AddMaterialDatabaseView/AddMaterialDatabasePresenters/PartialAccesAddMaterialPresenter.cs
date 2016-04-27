@@ -1,14 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
 using WelderCalculator.Views.General.MaterialDatabasePropertiesView;
-using WelderCalculator.Views.General.MaterialModificationView;
-using WelderCalculator.Views.General.NormAdderView;
 
 namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePresenters
 {
