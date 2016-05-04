@@ -59,6 +59,7 @@
     <Compile Include="Drawings\Chart\Layer.cs" />
     <Compile Include="Drawings\Chart\Layers.cs" />
     <Compile Include="Helpers\GeometryHelper.cs" />
+    <Compile Include="Helpers\SchaefflerHelpers\SchaefflerMicrophaseHelper.cs" />
     <Compile Include="Model\ChartSizing.cs" />
     <Compile Include="Repositories\IDrawingsRepository.cs" />
     <Compile Include="Repositories\ISchefflerDiagramMaterials.cs" />
