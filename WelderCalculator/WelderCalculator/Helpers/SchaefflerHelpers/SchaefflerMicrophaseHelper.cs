@@ -9,7 +9,6 @@ namespace WelderCalculator.Helpers.SchaefflerHelpers
 {
     public class SchaefflerMicrophaseHelper
     {
-        // ferrite, martensite, austenite
         public bool FMContainst(PointF point)
         {
             return false;
@@ -41,6 +40,11 @@ namespace WelderCalculator.Helpers.SchaefflerHelpers
         }
 
         public bool AMFContains(PointF point)
+        {
+            return false;
+        }
+
+        public bool AFContains(PointF point)
         {
             return false;
         }
