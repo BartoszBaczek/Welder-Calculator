@@ -2,8 +2,43 @@
 
 namespace WelderCalculator.Helpers.SchaefflerHelpers
 {
+    public enum Microphase
+    {
+        FM, 
+        M,
+        AM,
+        A,
+        MF,
+        AMF,
+        AF,
+        F,
+        Unknown
+    }
+
     public class SchaefflerMicrophaseHelper
     {
+        public Microphase GetMicrophaseForPoint(PointF point)
+        {
+            if (FMContainst(point))
+                return Microphase.FM;
+            if (MContains(point))
+                return Microphase.M;
+            if (AMContains(point))
+                return Microphase.AM;
+            if (AContains(point))
+                return Microphase.A;
+            if (MFContains(point))
+                return Microphase.MF;
+            if (AMFContains(point))
+                return Microphase.AMF;
+            if (AFContains(point))
+                return Microphase.AF;
+            if (FContains(point))
+                return Microphase.F;
+            else
+                return Microphase.Unknown;
+        }
+
         public bool FMContainst(PointF point)
         {
             return point.X >= 0 && 
