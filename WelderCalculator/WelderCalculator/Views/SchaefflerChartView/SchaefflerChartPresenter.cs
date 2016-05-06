@@ -177,6 +177,36 @@ namespace WelderCalculator.Views.SchaefflerChartView
                     _view.NewMaterialMicrophaseTextBox = "Cos sie skopalo";
                     break;
             }
+
+            FerriteQuantity newMaterialFerriteQuantity = schaefflerMicrophaseHelper.GetFerriteQuantityForPoint(newMaterialPoint);
+
+            if (newMaterialFerriteQuantity == FerriteQuantity.Unknown)
+                _view.NewMaterialFerriteQuantityTextBox = "Nieznana";
+            else
+            {
+                switch (newMaterialFerriteQuantity)
+                {
+                    case FerriteQuantity._0to5:
+                        _view.NewMaterialFerriteQuantityTextBox = "0 - 5";
+                        break;
+                    case FerriteQuantity._5to10:
+                        _view.NewMaterialFerriteQuantityTextBox = "5 - 10";
+                        break;
+                    case FerriteQuantity._10to20:
+                        _view.NewMaterialFerriteQuantityTextBox = "10 - 20";
+                        break;
+                    case FerriteQuantity._20to40:
+                        _view.NewMaterialFerriteQuantityTextBox = "20 - 40";
+                        break;
+                    case FerriteQuantity._40to80:
+                        _view.NewMaterialFerriteQuantityTextBox = "40 - 80";
+                        break;
+                    case FerriteQuantity._80to100:
+                        _view.NewMaterialFerriteQuantityTextBox = "80 - 100";
+                        break;
+                }
+
+            }
         }
     }
 }

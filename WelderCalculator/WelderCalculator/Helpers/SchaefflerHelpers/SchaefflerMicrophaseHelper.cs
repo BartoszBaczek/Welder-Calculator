@@ -15,8 +15,37 @@ namespace WelderCalculator.Helpers.SchaefflerHelpers
         Unknown
     }
 
+    public enum FerriteQuantity
+    {
+        _0to5,
+        _5to10,
+        _10to20,
+        _20to40,
+        _40to80,
+        _80to100,
+        Unknown
+    }
+
     public class SchaefflerMicrophaseHelper
     {
+        public  FerriteQuantity GetFerriteQuantityForPoint(PointF point)
+        {
+            if (F0to5Contains(point))
+                return FerriteQuantity._0to5;
+            if (F5to10Contains(point))
+                return FerriteQuantity._5to10;
+            if (F10to20Contains(point))
+                return FerriteQuantity._10to20;
+            if (F20to40Contains(point))
+                return FerriteQuantity._20to40;
+            if (F40to80Contains(point))
+                return FerriteQuantity._40to80;
+            if (F80to100Contains(point))
+                return FerriteQuantity._80to100;
+            else
+                return FerriteQuantity.Unknown;
+        }
+
         public Microphase GetMicrophaseForPoint(PointF point)
         {
             if (FMContainst(point))
