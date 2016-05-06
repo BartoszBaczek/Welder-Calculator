@@ -160,6 +160,24 @@ namespace WelderCalculator.Views.SchaefflerChartView
             textbox.Text = value.HasValue ? value.ToString() : string.Empty;
         }
 
+        public string NewMaterialMicrophaseTextBox
+        {
+            get { return newMaterialMicrophaseTextBox.Text; }
+            set { newMaterialMicrophaseTextBox.Text = value; }
+        }
+
+        public string NewMaterialFerriteQuantityTextBox
+        {
+            get { return newMaterialFerriteQuantityTextbox.Text; }
+            set { newMaterialFerriteQuantityTextbox.Text = value; }
+        }
+
+        public string NewMaterialDangerousnessTextBox
+        {
+            get { return newMaterialBrittlenessTextbox.Text; }
+            set { newMaterialBrittlenessTextbox.Text = value; }
+        }
+
         #endregion
 
         private void firstBaseMaterialButton_Click(object sender, EventArgs e)

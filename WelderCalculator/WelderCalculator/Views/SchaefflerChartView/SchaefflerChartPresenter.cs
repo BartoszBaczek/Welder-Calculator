@@ -8,6 +8,7 @@ using WelderCalculator.Repositories;
 using WelderCalculator.Views.AddMaterialDatabaseView;
 using WelderCalculator.Views.FastMaterialFactoryView;
 using WelderCalculator.Views.MaterialDatabaseView;
+using WelderCalculator.Helpers.SchaefflerHelpers;
 
 namespace WelderCalculator.Views.SchaefflerChartView
 {
@@ -19,11 +20,11 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
-            _view = view; 
+            _view = view;
             _view.Presenter = this;
             _dataConnector = new DataConnector();
             _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
-                _dataConnector.GetSchaefflerImages(), 
+                _dataConnector.GetSchaefflerImages(),
                 _dataConnector.GetSchaefflerChartSizingData());
 
             SetVisibilityCheckBoxesToTrue();
@@ -96,7 +97,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         public void OnCountButtonClicked()
         {
-            _chart.Clean();
             double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
             bool additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100 = (additionalMaterialQuantity > 0 &&
                                                                                     additionalMaterialQuantity < 100);
@@ -108,31 +108,75 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
             var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
             PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEq, (float)firstMaterial.NiEq);
-            _chart.AddPoint(pointForFirstMaterial, Color.Crimson);
 
             var secondMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
             PointF pointForSecondMaterial = new PointF((float)secondMaterial.CrEq, (float)secondMaterial.NiEq);
-            _chart.AddPoint(pointForSecondMaterial, Color.OrangeRed);
 
             var addMaterial = _dataConnector.GetAdditionalMaterialForSchaeffler();
             PointF pointForAddMaterial = new PointF((float)addMaterial.CrEq, (float)addMaterial.NiEq);
+
+            PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
+
+            PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
+            RedrawChart(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
+            PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
+        }
+
+        private void RedrawChart(PointF pointForFirstMaterial, PointF pointForSecondMaterial, PointF pointForAddMaterial, PointF pointInTheMiddleOfLine, PointF pointInTheMiddleOfLineWithTranslation)
+        {
+            _chart.Clean();
+
+            // point for each material
+            _chart.AddPoint(pointForFirstMaterial, Color.Crimson);
+            _chart.AddPoint(pointForSecondMaterial, Color.OrangeRed);
             _chart.AddPoint(pointForAddMaterial, Color.DarkMagenta);
 
-            //lineBetweenTwoBaseMaterials
+            // line between base materials
             _chart.AddLine(pointForFirstMaterial, pointForSecondMaterial, Color.GreenYellow);
 
-            //drawPointInTheMiddleOfLine
-            PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
+            // all the rest
             _chart.AddPoint(pointInTheMiddleOfLine, Color.Blue);
-
-            //draw line between point in the middle of line and addmaterial
             _chart.AddLine(pointInTheMiddleOfLine, pointForAddMaterial, Color.GreenYellow);
-
-            //draw shit
-            PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
             _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Red);
 
             _chart.Draw();
+        }
+
+        private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)
+        {
+            var schaefflerMicrophaseHelper = new SchaefflerMicrophaseHelper();
+            Microphase newMaterialMicrophase = schaefflerMicrophaseHelper.GetMicrophaseForPoint(newMaterialPoint);
+
+            switch (newMaterialMicrophase)
+            {
+                case Microphase.FM:
+                    _view.NewMaterialMicrophaseTextBox = "Ferrytyczno - martenzytyczna";
+                    break;
+                case Microphase.M:
+                    _view.NewMaterialMicrophaseTextBox = "Martenzytyczna";
+                    break;
+                case Microphase.AM:
+                    _view.NewMaterialMicrophaseTextBox = "Austenityczno - martenzytyczna";
+                    break;
+                case Microphase.A:
+                    _view.NewMaterialMicrophaseTextBox = "Austenityczna";
+                    break;
+                case Microphase.MF:
+                    _view.NewMaterialMicrophaseTextBox = "Martenzytyczno - ferrytyczna";
+                    break;
+                case Microphase.AMF:
+                    _view.NewMaterialMicrophaseTextBox = "Austeniticzno - martenzytyczno - ferrytyczna";
+                    break;
+                case Microphase.AF:
+                    _view.NewMaterialMicrophaseTextBox = "Austenityczno - ferrytyczna";
+                    break;
+                case Microphase.F:
+                    _view.NewMaterialMicrophaseTextBox = "Ferrytyczna";
+                    break;
+                case Microphase.Unknown:
+                    _view.NewMaterialMicrophaseTextBox = "Cos sie skopalo";
+                    break;
+            }
         }
     }
 }
