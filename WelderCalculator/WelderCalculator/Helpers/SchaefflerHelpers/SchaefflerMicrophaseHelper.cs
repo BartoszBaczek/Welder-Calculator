@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Drawing;
 
 namespace WelderCalculator.Helpers.SchaefflerHelpers
 {
@@ -91,32 +86,50 @@ namespace WelderCalculator.Helpers.SchaefflerHelpers
 
         public bool F0to5Contains(PointF point)
         {
-            return false;
+            return point.Y >= (96f / 5f) - (4f / 5f) * point.X &&
+                   point.X <= 32f &&
+                   point.X > (153f / 160f) * point.Y + (1072f / 160f) &&
+                   point.X <= (1104f / 155f) + (160f / 155f) * point.Y;
         }
 
         public bool F5to10Contains(PointF point)
         {
-            return false;
+            return point.Y >= (96f / 5f) - (4f / 5f) * point.X &&
+                   point.X <= 32f &&
+                   point.X >= (1104f / 155f) + (160f / 155f) * point.Y &&
+                   point.Y >= (17f / 20f) * point.X - (122f / 20f);
         }
 
         public bool F10to20Contains(PointF point)
         {
-            return false;
+            return point.Y >= (96f / 5f) - (4f / 5f) * point.X &&
+                   point.X <= 32f &&
+                   point.Y < (17f / 20f) * point.X - (122f / 20f) &&
+                   point.X <= (70f / 51f) * point.Y + (442f / 51f);
         }
 
         public bool F20to40Contains(PointF point)
         {
-            return false;
+            return point.Y >= (96f / 5f) - (4f / 5f) * point.X &&
+                   point.X <= 32f &&
+                   point.X > (70f / 51f) * point.Y + (442f / 51f) &&
+                   point.Y >= (83f / 130f) * point.X - (797f / 130f);
         }
 
         public bool F40to80Contains(PointF point)
         {
-            return false;
+            return point.Y >= (96f / 5f) - (4f / 5f) * point.X &&
+                   point.X <= 32f &&
+                   point.Y < (83f / 130f) * point.X - (797f / 130f) &&
+                   point.X <= (10f / 5f) * point.Y + (51f / 5f);
         }
 
         public bool F80to100Contains(PointF point)
         {
-            return false;
+            return point.Y >= (96f / 5f) - (4f / 5f) * point.X &&
+                   point.X <= 32f &&
+                   point.X > (10f / 5f) * point.Y + (51f / 5f) && 
+                   point.X < (10f / 3f) * point.Y + (34f / 3f);
         }
     }
 }
