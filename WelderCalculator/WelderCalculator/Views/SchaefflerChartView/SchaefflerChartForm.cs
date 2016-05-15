@@ -49,6 +49,12 @@ namespace WelderCalculator.Views.SchaefflerChartView
         }
 
         #region Visibility checkboxes
+
+        public bool CrackingVisibleCheckBox
+        {
+            get { return crackingVisibleCheckBox.Checked; }
+            set { crackingVisibleCheckBox.Checked = value; }
+        }
         public bool PhaseVisibleCheckBox
         {
             get { return phaseTextCheckBox.Checked; }
@@ -77,6 +83,12 @@ namespace WelderCalculator.Views.SchaefflerChartView
         {
             get { return phaseCheckBox.Checked; }
             set { phaseCheckBox.Checked = value; } 
+        }
+
+        private void crackingVisibleCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(LayerType.Cracking, CrackingVisibleCheckBox);
+            drawPanel.Refresh();
         }
 
         private void phaseTextCheckBox_CheckedChanged(object sender, EventArgs e)

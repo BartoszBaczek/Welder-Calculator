@@ -32,6 +32,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private void InitializeComponent()
         {
             this.visibilityLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.crackingVisibleCheckBox = new System.Windows.Forms.CheckBox();
             this.phaseCheckBox = new System.Windows.Forms.CheckBox();
             this.yAxisCheckBox = new System.Windows.Forms.CheckBox();
             this.xAxisCheckBox = new System.Windows.Forms.CheckBox();
@@ -50,12 +51,12 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.additionalMaterialTextBox = new System.Windows.Forms.TextBox();
             this.drawPanel = new System.Windows.Forms.Panel();
             this.newMaterialDataLayoutPanel = new System.Windows.Forms.GroupBox();
-            this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
-            this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
-            this.newMaterialFerriteQuantityTextbox = new System.Windows.Forms.TextBox();
-            this.newMaterialFerriteQunatityLabel = new System.Windows.Forms.Label();
             this.newMaterialBrittlenessTextbox = new System.Windows.Forms.TextBox();
             this.newMaterialBrittlenessLabel = new System.Windows.Forms.Label();
+            this.newMaterialFerriteQuantityTextbox = new System.Windows.Forms.TextBox();
+            this.newMaterialFerriteQunatityLabel = new System.Windows.Forms.Label();
+            this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
+            this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
@@ -64,6 +65,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
             // visibilityLayoutPanel
             // 
             this.visibilityLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.visibilityLayoutPanel.Controls.Add(this.crackingVisibleCheckBox);
             this.visibilityLayoutPanel.Controls.Add(this.phaseCheckBox);
             this.visibilityLayoutPanel.Controls.Add(this.yAxisCheckBox);
             this.visibilityLayoutPanel.Controls.Add(this.xAxisCheckBox);
@@ -71,10 +73,21 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.visibilityLayoutPanel.Controls.Add(this.hashCheckBox);
             this.visibilityLayoutPanel.Location = new System.Drawing.Point(815, 12);
             this.visibilityLayoutPanel.Name = "visibilityLayoutPanel";
-            this.visibilityLayoutPanel.Size = new System.Drawing.Size(131, 137);
+            this.visibilityLayoutPanel.Size = new System.Drawing.Size(131, 155);
             this.visibilityLayoutPanel.TabIndex = 1;
             this.visibilityLayoutPanel.TabStop = false;
             this.visibilityLayoutPanel.Text = "Widoczność";
+            // 
+            // crackingVisibleCheckBox
+            // 
+            this.crackingVisibleCheckBox.AutoSize = true;
+            this.crackingVisibleCheckBox.Location = new System.Drawing.Point(10, 132);
+            this.crackingVisibleCheckBox.Name = "crackingVisibleCheckBox";
+            this.crackingVisibleCheckBox.Size = new System.Drawing.Size(79, 17);
+            this.crackingVisibleCheckBox.TabIndex = 5;
+            this.crackingVisibleCheckBox.Text = "Zagrożenia";
+            this.crackingVisibleCheckBox.UseVisualStyleBackColor = true;
+            this.crackingVisibleCheckBox.CheckedChanged += new System.EventHandler(this.crackingVisibleCheckBox_CheckedChanged);
             // 
             // phaseCheckBox
             // 
@@ -179,7 +192,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialButton);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.firstBaseMaterialTextBox);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialTextBox);
-            this.chooseMaterialsLayoutPanel.Location = new System.Drawing.Point(815, 155);
+            this.chooseMaterialsLayoutPanel.Location = new System.Drawing.Point(815, 173);
             this.chooseMaterialsLayoutPanel.Name = "chooseMaterialsLayoutPanel";
             this.chooseMaterialsLayoutPanel.Size = new System.Drawing.Size(376, 142);
             this.chooseMaterialsLayoutPanel.TabIndex = 6;
@@ -259,29 +272,29 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialFerriteQunatityLabel);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialMicrophaseTextBox);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialMicrophaseLabel);
-            this.newMaterialDataLayoutPanel.Location = new System.Drawing.Point(815, 303);
+            this.newMaterialDataLayoutPanel.Location = new System.Drawing.Point(815, 321);
             this.newMaterialDataLayoutPanel.Name = "newMaterialDataLayoutPanel";
             this.newMaterialDataLayoutPanel.Size = new System.Drawing.Size(376, 107);
             this.newMaterialDataLayoutPanel.TabIndex = 11;
             this.newMaterialDataLayoutPanel.TabStop = false;
             this.newMaterialDataLayoutPanel.Text = "Dobór materiału";
             // 
-            // newMaterialMicrophaseTextBox
+            // newMaterialBrittlenessTextbox
             // 
-            this.newMaterialMicrophaseTextBox.Location = new System.Drawing.Point(127, 24);
-            this.newMaterialMicrophaseTextBox.Name = "newMaterialMicrophaseTextBox";
-            this.newMaterialMicrophaseTextBox.ReadOnly = true;
-            this.newMaterialMicrophaseTextBox.Size = new System.Drawing.Size(243, 20);
-            this.newMaterialMicrophaseTextBox.TabIndex = 9;
+            this.newMaterialBrittlenessTextbox.Location = new System.Drawing.Point(127, 79);
+            this.newMaterialBrittlenessTextbox.Name = "newMaterialBrittlenessTextbox";
+            this.newMaterialBrittlenessTextbox.ReadOnly = true;
+            this.newMaterialBrittlenessTextbox.Size = new System.Drawing.Size(243, 20);
+            this.newMaterialBrittlenessTextbox.TabIndex = 13;
             // 
-            // newMaterialMicrophaseLabel
+            // newMaterialBrittlenessLabel
             // 
-            this.newMaterialMicrophaseLabel.AutoSize = true;
-            this.newMaterialMicrophaseLabel.Location = new System.Drawing.Point(7, 27);
-            this.newMaterialMicrophaseLabel.Name = "newMaterialMicrophaseLabel";
-            this.newMaterialMicrophaseLabel.Size = new System.Drawing.Size(30, 13);
-            this.newMaterialMicrophaseLabel.TabIndex = 8;
-            this.newMaterialMicrophaseLabel.Text = "Faza";
+            this.newMaterialBrittlenessLabel.AutoSize = true;
+            this.newMaterialBrittlenessLabel.Location = new System.Drawing.Point(7, 82);
+            this.newMaterialBrittlenessLabel.Name = "newMaterialBrittlenessLabel";
+            this.newMaterialBrittlenessLabel.Size = new System.Drawing.Size(60, 13);
+            this.newMaterialBrittlenessLabel.TabIndex = 12;
+            this.newMaterialBrittlenessLabel.Text = "Zagrożenia";
             // 
             // newMaterialFerriteQuantityTextbox
             // 
@@ -300,22 +313,22 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.newMaterialFerriteQunatityLabel.TabIndex = 10;
             this.newMaterialFerriteQunatityLabel.Text = "Zawartość ferrytu [%]";
             // 
-            // newMaterialBrittlenessTextbox
+            // newMaterialMicrophaseTextBox
             // 
-            this.newMaterialBrittlenessTextbox.Location = new System.Drawing.Point(127, 79);
-            this.newMaterialBrittlenessTextbox.Name = "newMaterialBrittlenessTextbox";
-            this.newMaterialBrittlenessTextbox.ReadOnly = true;
-            this.newMaterialBrittlenessTextbox.Size = new System.Drawing.Size(243, 20);
-            this.newMaterialBrittlenessTextbox.TabIndex = 13;
+            this.newMaterialMicrophaseTextBox.Location = new System.Drawing.Point(127, 24);
+            this.newMaterialMicrophaseTextBox.Name = "newMaterialMicrophaseTextBox";
+            this.newMaterialMicrophaseTextBox.ReadOnly = true;
+            this.newMaterialMicrophaseTextBox.Size = new System.Drawing.Size(243, 20);
+            this.newMaterialMicrophaseTextBox.TabIndex = 9;
             // 
-            // newMaterialBrittlenessLabel
+            // newMaterialMicrophaseLabel
             // 
-            this.newMaterialBrittlenessLabel.AutoSize = true;
-            this.newMaterialBrittlenessLabel.Location = new System.Drawing.Point(7, 82);
-            this.newMaterialBrittlenessLabel.Name = "newMaterialBrittlenessLabel";
-            this.newMaterialBrittlenessLabel.Size = new System.Drawing.Size(60, 13);
-            this.newMaterialBrittlenessLabel.TabIndex = 12;
-            this.newMaterialBrittlenessLabel.Text = "Zagrożenia";
+            this.newMaterialMicrophaseLabel.AutoSize = true;
+            this.newMaterialMicrophaseLabel.Location = new System.Drawing.Point(7, 27);
+            this.newMaterialMicrophaseLabel.Name = "newMaterialMicrophaseLabel";
+            this.newMaterialMicrophaseLabel.Size = new System.Drawing.Size(30, 13);
+            this.newMaterialMicrophaseLabel.TabIndex = 8;
+            this.newMaterialMicrophaseLabel.Text = "Faza";
             // 
             // SchaefflerChartForm
             // 
@@ -369,5 +382,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private Label newMaterialFerriteQunatityLabel;
         private TextBox newMaterialMicrophaseTextBox;
         private Label newMaterialMicrophaseLabel;
+        private CheckBox crackingVisibleCheckBox;
     }
 }

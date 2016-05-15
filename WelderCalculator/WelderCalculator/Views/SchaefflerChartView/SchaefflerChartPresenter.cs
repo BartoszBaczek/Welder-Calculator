@@ -52,6 +52,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
             _view.XAxisVisibleCheckBox = true;
             _view.YAxisVisibleCheckBox = true;
             _view.PhaseLinesVisibleCheckBox = true;
+            _view.CrackingVisibleCheckBox = true;
         }
 
         public void OnFastMaterialButtonClicked()

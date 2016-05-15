@@ -266,6 +266,7 @@ namespace WelderCalculator.Repositories
                 new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_hash.png"), LayerType.Hash),
                 new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_phase.png"), LayerType.Phase),
                 new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_haseText.png"), LayerType.PhaseText),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_cracking.png"), LayerType.Cracking)
             };
 
             return layers;
