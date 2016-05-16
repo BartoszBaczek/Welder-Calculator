@@ -19,11 +19,6 @@ namespace WelderCalculator.Drawings.Chart
             _activeLayers = layers;
         }
 
-        public Layer Get(LayerType type)
-        {
-            return _activeLayers.First(l => l.Type == type);
-        }
-
         public List<Layer> GetActive()
         {
             return _activeLayers;
