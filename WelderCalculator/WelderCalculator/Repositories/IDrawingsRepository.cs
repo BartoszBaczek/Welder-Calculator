@@ -9,6 +9,10 @@ namespace WelderCalculator.Repositories
     {
         List<Layer> GetSchaefflerChartImages();
         ChartSizing DeserializeSchaefflerChartSizing();
+
+        List<Layer> GetDeLongChartImages();
+        ChartSizing DeserializeDeLongChartSizing();
+
         Image GetKsLogoImage();
     }
 }
