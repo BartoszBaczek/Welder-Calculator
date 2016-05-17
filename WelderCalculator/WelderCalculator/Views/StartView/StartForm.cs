@@ -66,5 +66,10 @@ namespace WelderCalculator.StartView
         {
             Presenter.OnScahefflerCountingButtonClicked();
         }
+
+        private void deLongCountingButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnDeLongCountingButtonClicked();
+        }
     }
 }

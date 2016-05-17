@@ -41,6 +41,7 @@
             this.baseMaterialsDatabaseButton = new System.Windows.Forms.Button();
             this.addMaterialDatabaseButton = new System.Windows.Forms.Button();
             this.schaefflerCountingButton = new System.Windows.Forms.Button();
+            this.deLongCountingButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -146,17 +147,28 @@
             // 
             this.schaefflerCountingButton.Location = new System.Drawing.Point(183, 157);
             this.schaefflerCountingButton.Name = "schaefflerCountingButton";
-            this.schaefflerCountingButton.Size = new System.Drawing.Size(93, 23);
+            this.schaefflerCountingButton.Size = new System.Drawing.Size(93, 42);
             this.schaefflerCountingButton.TabIndex = 3;
-            this.schaefflerCountingButton.Text = "Obliczenia";
+            this.schaefflerCountingButton.Text = "Obliczenia (Schaeffler)";
             this.schaefflerCountingButton.UseVisualStyleBackColor = true;
             this.schaefflerCountingButton.Click += new System.EventHandler(this.schaefflerCountingButton_Click);
+            // 
+            // deLongCountingButton
+            // 
+            this.deLongCountingButton.Location = new System.Drawing.Point(183, 205);
+            this.deLongCountingButton.Name = "deLongCountingButton";
+            this.deLongCountingButton.Size = new System.Drawing.Size(93, 42);
+            this.deLongCountingButton.TabIndex = 4;
+            this.deLongCountingButton.Text = "Obliczenia (DeLong)";
+            this.deLongCountingButton.UseVisualStyleBackColor = true;
+            this.deLongCountingButton.Click += new System.EventHandler(this.deLongCountingButton_Click);
             // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 192);
+            this.ClientSize = new System.Drawing.Size(284, 254);
+            this.Controls.Add(this.deLongCountingButton);
             this.Controls.Add(this.schaefflerCountingButton);
             this.Controls.Add(this.addMaterialDatabaseButton);
             this.Controls.Add(this.baseMaterialsDatabaseButton);
@@ -189,5 +201,6 @@
         private System.Windows.Forms.Button baseMaterialsDatabaseButton;
         private System.Windows.Forms.Button addMaterialDatabaseButton;
         private System.Windows.Forms.Button schaefflerCountingButton;
+        private System.Windows.Forms.Button deLongCountingButton;
     }
 }

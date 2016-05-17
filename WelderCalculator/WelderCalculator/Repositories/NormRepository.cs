@@ -285,7 +285,7 @@ namespace WelderCalculator.Repositories
             return chartSizing;
         }
 
-        List<Layer> GetDeLongChartImages()
+        public List<Layer> GetDeLongChartImages()
         {
             string deLongCatalog = "DeLong/";
             var layers = new List<Layer>()
@@ -303,7 +303,7 @@ namespace WelderCalculator.Repositories
             return layers;
         }
 
-        ChartSizing DeserializeDeLongChartSizing()
+        public ChartSizing DeserializeDeLongChartSizing()
         {
             string fileName = "DeLong/chartSizing";
 

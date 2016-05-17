@@ -114,6 +114,12 @@ namespace WelderCalculator.Repositories
             return layers;
         }
 
+        public Layers GetDeLongImages()
+        {
+            var layers = new Layers(_normRepo.GetDeLongChartImages());
+            return layers;
+        }
+
         public void SaveFirstBasisMarerialForSchaeffler(BaseMaterial baseMaterial)
         {
             _normRepo.SerializeFirstBaseMaterialForSchaeffler(baseMaterial);
@@ -147,6 +153,11 @@ namespace WelderCalculator.Repositories
         public ChartSizing GetSchaefflerChartSizingData()
         {
             return _normRepo.DeserializeSchaefflerChartSizing();
+        }
+
+        public ChartSizing GetDeLongChartSizingData()
+        {
+            return _normRepo.DeserializeDeLongChartSizing();
         }
 
         public Image GetKsLogo()

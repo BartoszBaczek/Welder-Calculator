@@ -73,6 +73,14 @@
     </Compile>
     <Compile Include="Views\AddMaterialDatabaseView\AddMaterialDatabasePresenters\AddMaterialDatabasePresenter.cs" />
     <Compile Include="Views\AddMaterialDatabaseView\IAdditiveMaterialView.cs" />
+    <Compile Include="Views\DeLongChartView\DeLongChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\DeLongChartView\DeLongChartForm.Designer.cs">
+      <DependentUpon>DeLongChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeLongChartView\DeLongChartPresenter.cs" />
+    <Compile Include="Views\DeLongChartView\IDeLongChartView.cs" />
     <Compile Include="Views\FastMaterialFactoryView\FastMaterialFactoryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +156,9 @@
     <Compile Include="Views\StartView\StartFormPresenter.cs" />
     <EmbeddedResource Include="Views\AddMaterialDatabaseView\AddMaterialDatabaseForm.resx">
       <DependentUpon>AddMaterialDatabaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DeLongChartView\DeLongChartForm.resx">
+      <DependentUpon>DeLongChartForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FastMaterialFactoryView\FastMaterialFactoryForm.resx">
       <DependentUpon>FastMaterialFactoryForm.cs</DependentUpon>
