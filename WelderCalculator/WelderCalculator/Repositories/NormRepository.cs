@@ -260,13 +260,13 @@ namespace WelderCalculator.Repositories
             string schaeflerCatalog = "Schaeffler/";
             var layers = new List<Layer>()
             {
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_background.png"), LayerType.Background),
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_x.png"), LayerType.AxisX),
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_y.png"), LayerType.AxisY),
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_hash.png"), LayerType.Hash),
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_phase.png"), LayerType.Phase),
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_haseText.png"), LayerType.PhaseText),
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_cracking.png"), LayerType.Cracking)
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_background.png"), SchaefflerLayerType.Background),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_x.png"), SchaefflerLayerType.AxisX),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_y.png"), SchaefflerLayerType.AxisY),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_hash.png"), SchaefflerLayerType.Hash),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_phase.png"), SchaefflerLayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_haseText.png"), SchaefflerLayerType.PhaseText),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_cracking.png"), SchaefflerLayerType.Cracking)
             };
 
             return layers;

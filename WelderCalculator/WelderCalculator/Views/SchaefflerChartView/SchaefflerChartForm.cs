@@ -87,37 +87,37 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         private void crackingVisibleCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            Presenter.OnLayerVisibilityChanged(LayerType.Cracking, CrackingVisibleCheckBox);
+            Presenter.OnLayerVisibilityChanged(SchaefflerLayerType.Cracking, CrackingVisibleCheckBox);
             drawPanel.Refresh();
         }
 
         private void phaseTextCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            Presenter.OnLayerVisibilityChanged(LayerType.PhaseText, PhaseVisibleCheckBox);
+            Presenter.OnLayerVisibilityChanged(SchaefflerLayerType.PhaseText, PhaseVisibleCheckBox);
             drawPanel.Refresh();
         }
 
         private void hashCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            Presenter.OnLayerVisibilityChanged(LayerType.Hash, HashVisibleCheckBox);
+            Presenter.OnLayerVisibilityChanged(SchaefflerLayerType.Hash, HashVisibleCheckBox);
             drawPanel.Refresh();
         }
 
         private void xAxisCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            Presenter.OnLayerVisibilityChanged(LayerType.AxisX, XAxisVisibleCheckBox);
+            Presenter.OnLayerVisibilityChanged(SchaefflerLayerType.AxisX, XAxisVisibleCheckBox);
             drawPanel.Refresh();
         }
 
         private void yAxisCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            Presenter.OnLayerVisibilityChanged(LayerType.AxisY, YAxisVisibleCheckBox);
+            Presenter.OnLayerVisibilityChanged(SchaefflerLayerType.AxisY, YAxisVisibleCheckBox);
             drawPanel.Refresh();
         }
 
         private void phaseCheckBox_CheckedChanged(object sender, EventArgs e)
         {
-            Presenter.OnLayerVisibilityChanged(LayerType.Phase, PhaseLinesVisibleCheckBox);
+            Presenter.OnLayerVisibilityChanged(SchaefflerLayerType.Phase, PhaseLinesVisibleCheckBox);
             drawPanel.Refresh();
         }
         #endregion

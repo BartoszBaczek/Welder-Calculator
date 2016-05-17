@@ -24,14 +24,14 @@ namespace WelderCalculator.Drawings.Chart
             return _activeLayers;
         }
 
-        public void Remove(LayerType type)
+        public void Remove(string layerType)
         {
-            _activeLayers.RemoveAll(l => l.Type == type);
+            _activeLayers.RemoveAll(l => l.Type == layerType);
         }
 
-        public void Add(LayerType type)
+        public void Add(string layerType)
         {
-            _activeLayers.Add(_allLayers.First(l => l.Type == type));
+            _activeLayers.Add(_allLayers.First(l => l.Type == layerType));
         }
     }
 }

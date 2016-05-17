@@ -37,12 +37,12 @@ namespace WelderCalculator.Views.SchaefflerChartView
             _chart.Draw();
         }
 
-        public void OnLayerVisibilityChanged(LayerType type, bool visibility)
+        public void OnLayerVisibilityChanged(string layerType, bool visibility)
         {
             if (!visibility)
-                _chart.Layers.Remove(type);
+                _chart.Layers.Remove(layerType);
             else
-                _chart.Layers.Add(type);
+                _chart.Layers.Add(layerType);
         }
 
         private void SetVisibilityCheckBoxesToTrue()
