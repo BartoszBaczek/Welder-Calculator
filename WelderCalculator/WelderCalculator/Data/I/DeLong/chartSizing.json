@@ -1,0 +1,22 @@
+{
+  "ImageWidthAndHeight": {
+    "IsEmpty": false,
+    "X": 1291.0,
+    "Y": 863.0
+  },
+  "ChartOriginXandY": {
+    "IsEmpty": false,
+    "X": 86.0,
+    "Y": 752.0
+  },
+  "ChartEndPointXandY": {
+    "IsEmpty": false,
+    "X": 1249.0,
+    "Y": 45.0
+  },
+  "ChartEndInSpecialUnit": {
+    "IsEmpty": false,
+    "X": 21.0,
+    "Y": 27.0
+  },
+}

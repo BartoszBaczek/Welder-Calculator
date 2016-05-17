@@ -13,6 +13,18 @@ namespace WelderCalculator.Drawings.Chart
         public static readonly string Cracking = "schaefflerCracking";
     }
 
+    public class DeLongLayerType
+    {
+        public static readonly string Background = "deLongBackground";
+        public static readonly string AxisX = "deLongAxisX";
+        public static readonly string AxisY = "deLongAxisY";
+        public static readonly string Hash = "deLongHash";
+        public static readonly string Phase = "deLongPhase";
+        public static readonly string PhaseText = "deLongPhaseText";
+        public static readonly string FerriteContent = "deLongFerriteContent";
+        public static readonly string FerriteNumber = "deLongFerriteNumber";
+    }
+
     public class Layer
     {
         public Image Image;

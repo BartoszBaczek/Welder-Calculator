@@ -285,6 +285,38 @@ namespace WelderCalculator.Repositories
             return chartSizing;
         }
 
+        List<Layer> GetDeLongChartImages()
+        {
+            string deLongCatalog = "DeLong/";
+            var layers = new List<Layer>()
+            {
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_background.png"), DeLongLayerType.Background),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_x.png"), DeLongLayerType.AxisX),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_y.png"), DeLongLayerType.AxisY),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_hash.png"), DeLongLayerType.Hash),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_phase.png"), DeLongLayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_phaseText.png"), DeLongLayerType.PhaseText),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_ferriteNumber.png"), DeLongLayerType.FerriteNumber),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_ferriteContent.png"), DeLongLayerType.FerriteContent)
+            };
+
+            return layers;
+        }
+
+        ChartSizing DeserializeDeLongChartSizing()
+        {
+            string fileName = "DeLong/chartSizing";
+
+            string pathToFile = _drawingsPath + fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var chartSizing =
+                JsonConvert.DeserializeObject<ChartSizing>(jsonText);
+
+            return chartSizing;
+        }
+
+
         public Image GetKsLogoImage()
         {
             return Image.FromFile(_drawingsPath + "ks.png");
