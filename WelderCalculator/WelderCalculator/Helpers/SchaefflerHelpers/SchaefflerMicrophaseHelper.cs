@@ -2,7 +2,7 @@
 
 namespace WelderCalculator.Helpers.SchaefflerHelpers
 {
-    public enum Microphase
+    public enum SchaefflerMicrophase
     {
         FM, 
         M,
@@ -15,7 +15,7 @@ namespace WelderCalculator.Helpers.SchaefflerHelpers
         Unknown
     }
 
-    public enum FerriteQuantity
+    public enum SchaefflerFerriteQuantity
     {
         _0to5,
         _5to10,
@@ -28,44 +28,44 @@ namespace WelderCalculator.Helpers.SchaefflerHelpers
 
     public class SchaefflerMicrophaseHelper
     {
-        public  FerriteQuantity GetFerriteQuantityForPoint(PointF point)
+        public  SchaefflerFerriteQuantity GetFerriteQuantityForPoint(PointF point)
         {
             if (F0to5Contains(point))
-                return FerriteQuantity._0to5;
+                return SchaefflerFerriteQuantity._0to5;
             if (F5to10Contains(point))
-                return FerriteQuantity._5to10;
+                return SchaefflerFerriteQuantity._5to10;
             if (F10to20Contains(point))
-                return FerriteQuantity._10to20;
+                return SchaefflerFerriteQuantity._10to20;
             if (F20to40Contains(point))
-                return FerriteQuantity._20to40;
+                return SchaefflerFerriteQuantity._20to40;
             if (F40to80Contains(point))
-                return FerriteQuantity._40to80;
+                return SchaefflerFerriteQuantity._40to80;
             if (F80to100Contains(point))
-                return FerriteQuantity._80to100;
+                return SchaefflerFerriteQuantity._80to100;
             else
-                return FerriteQuantity.Unknown;
+                return SchaefflerFerriteQuantity.Unknown;
         }
 
-        public Microphase GetMicrophaseForPoint(PointF point)
+        public SchaefflerMicrophase GetMicrophaseForPoint(PointF point)
         {
             if (FMContainst(point))
-                return Microphase.FM;
+                return SchaefflerMicrophase.FM;
             if (MContains(point))
-                return Microphase.M;
+                return SchaefflerMicrophase.M;
             if (AMContains(point))
-                return Microphase.AM;
+                return SchaefflerMicrophase.AM;
             if (AContains(point))
-                return Microphase.A;
+                return SchaefflerMicrophase.A;
             if (MFContains(point))
-                return Microphase.MF;
+                return SchaefflerMicrophase.MF;
             if (AMFContains(point))
-                return Microphase.AMF;
+                return SchaefflerMicrophase.AMF;
             if (AFContains(point))
-                return Microphase.AF;
+                return SchaefflerMicrophase.AF;
             if (FContains(point))
-                return Microphase.F;
+                return SchaefflerMicrophase.F;
             else
-                return Microphase.Unknown;
+                return SchaefflerMicrophase.Unknown;
         }
 
         public bool FMContainst(PointF point)
