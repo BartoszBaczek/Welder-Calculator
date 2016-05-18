@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeLongMicrophaseHelperTests.cs" />
     <Compile Include="MaterialDataReaderTests.cs" />
     <Compile Include="MaterialTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

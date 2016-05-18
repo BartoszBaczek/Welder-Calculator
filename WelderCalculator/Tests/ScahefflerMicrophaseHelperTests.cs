@@ -105,7 +105,7 @@ namespace Tests
             Assert.IsFalse(_microphaseHelper.AFContains(inFMArea_1) &&
                           _microphaseHelper.AFContains(inFMArea_2) &&
                           _microphaseHelper.AFContains(inFMArea_3));
-
+                
             Assert.IsFalse(_microphaseHelper.F0to5Contains(inFMArea_1) ||
                           _microphaseHelper.F0to5Contains(inFMArea_2) ||
                           _microphaseHelper.F0to5Contains(inFMArea_3));

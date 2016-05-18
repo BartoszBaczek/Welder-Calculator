@@ -58,6 +58,8 @@
     <Compile Include="Drawings\Chart\IChart.cs" />
     <Compile Include="Drawings\Chart\Layer.cs" />
     <Compile Include="Drawings\Chart\Layers.cs" />
+    <Compile Include="Helpers\DeLongHelpers\DeLongMicrophaseBorders.cs" />
+    <Compile Include="Helpers\DeLongHelpers\DeLongMicrophaseHelper.cs" />
     <Compile Include="Helpers\GeometryHelper.cs" />
     <Compile Include="Helpers\SchaefflerHelpers\SchaefflerMicrophaseHelper.cs" />
     <Compile Include="Model\ChartSizing.cs" />

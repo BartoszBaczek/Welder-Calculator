@@ -4,7 +4,7 @@
     {
         public float yInAmBorder(float x)
         {
-            return (-46f / 55f) * x - (1539f / 55f);
+            return (-46f / 55f) * x + (1539f / 55f);
         }
 
         public float yIn0to2FBorder(float x)
@@ -12,7 +12,7 @@
             return (104f / 75f) * x - (1813f / 150f);
         }
 
-        public float yIn2t42FBorder(float x)
+        public float yIn2to4FBorder(float x)
         {
             return (110f / 79f) * x - (1036f / 79f);
         }
