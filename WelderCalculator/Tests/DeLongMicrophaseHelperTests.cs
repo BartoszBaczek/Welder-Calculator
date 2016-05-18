@@ -56,5 +56,83 @@ namespace Tests
         private readonly PointF F18Up_1 = new PointF(21.5f, 11f);
         private readonly PointF F18Up_2 = new PointF(23f, 13f);
         private readonly PointF F18Up_3 = new PointF(27f, 10f);
+
+        [SetUp]
+        public void Init()
+        {
+            _microphaseHelper = new DeLongMicrophaseHelper();
+        }
+
+        [Test]
+        public void IsInAMArea()
+        {
+
+        }
+
+        [Test]
+        public void IsInAArea()
+        {
+
+        }
+
+        [Test]
+        public void IsInF0to2Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF2to4Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF4to6Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF6to8Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF8to10Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF10to12Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF12to14Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF14to16Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF16to18Area()
+        {
+
+        }
+
+        [Test]
+        public void IsInF18UpArea()
+        {
+
+        }
     }
 }
