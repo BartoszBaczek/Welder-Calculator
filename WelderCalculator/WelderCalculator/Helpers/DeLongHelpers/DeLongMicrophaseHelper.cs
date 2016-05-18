@@ -2,65 +2,64 @@
 {
     public class DeLongMicrophaseHelper
     {
-
-        private bool yInAmArea(float x, float y)
+        private float yInAmArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yInAArea(float x, float y)
+        private float yInAArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn0to2FArea(float x, float y)
+        private float yIn0to2FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn2t42FArea(float x, float y)
+        private float yIn2t42FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn4to6FArea(float x, float y)
+        private float yIn4to6FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn6to8FArea(float x, float y)
+        private float yIn6to8FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn8to10FArea(float x, float y)
+        private float yIn8to10FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn10to12FArea(float x, float y)
+        private float yIn10to12FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn12to14FArea(float x, float y)
+        private float yIn12to14FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn14to16FArea(float x, float y)
+        private float yIn14to16FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn16to18FArea(float x, float y)
+        private float yIn16to18FArea(float x, float y)
         {
-            return false;
+            return 0;
         }
 
-        private bool yIn18PlusFArea(float x, float y)
+        private float yIn18PlusFArea(float x, float y)
         {
-            return false;
+            return 0;
         }
     }
 }
