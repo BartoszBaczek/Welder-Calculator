@@ -8,6 +8,9 @@ namespace WelderCalculator.Drawings.Chart
 {
     public class Chart : IChart
     {
+        //drawing tools
+        private Pen _pen;
+        private SolidBrush _solidBursh;
         private readonly ChartSizing _chartSizing;
         private readonly Graphics _graphics;
         private readonly List<DrawableRectangle> _drawableRectangles;
@@ -16,6 +19,8 @@ namespace WelderCalculator.Drawings.Chart
         public Layers Layers { get; private set; }
         private PointF Size { get; set; }
 
+        private bool _alreadyResized = false;
+
         private PointF Scale 
         {
             get { return new PointF(Size.X / _chartSizing.ImageWidthAndHeight.X, Size.Y / _chartSizing.ImageWidthAndHeight.Y); }
@@ -23,6 +28,10 @@ namespace WelderCalculator.Drawings.Chart
 
         public Chart(Graphics graph, Layers layers, ChartSizing chartSizing)
         {
+            _pen = new Pen(Color.White);
+            _pen.Width = 3.0f;
+            _solidBursh = new SolidBrush(Color.White);
+
             _chartSizing = chartSizing;
 
             _graphics = graph;
@@ -34,30 +43,35 @@ namespace WelderCalculator.Drawings.Chart
 
         public void ResizeTo(int width, int height)
         {
-            foreach (var layer in Layers.GetActive())
+            if (!(_alreadyResized))
             {
-                var destinationImage = new Bitmap(width, height);
-
-                destinationImage.SetResolution(layer.Image.HorizontalResolution, layer.Image.VerticalResolution);
-
-                using (var graphics = Graphics.FromImage(destinationImage))
+                foreach (var layer in Layers.GetActive())
                 {
-                    graphics.CompositingMode = CompositingMode.SourceCopy;
-                    graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    graphics.SmoothingMode = SmoothingMode.HighQuality;
-                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    var destinationImage = new Bitmap(width, height);
 
-                    using (var wrapMode = new ImageAttributes())
+                    destinationImage.SetResolution(layer.Image.HorizontalResolution, layer.Image.VerticalResolution);
+
+                    using (var graphics = Graphics.FromImage(destinationImage))
                     {
-                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                        graphics.CompositingMode = CompositingMode.SourceCopy;
+                        graphics.CompositingQuality = CompositingQuality.HighQuality;
+                        graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                        graphics.SmoothingMode = SmoothingMode.HighQuality;
+                        graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                        using (var wrapMode = new ImageAttributes())
+                        {
+                            wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                        }
                     }
                 }
-            }
-            Size = new PointF(width, height);
+                Size = new PointF(width, height);
 
-            ResizePoints();
-            ResizeLines();
+                ResizePoints();
+                ResizeLines();
+            }
+
+            _alreadyResized = true;
         }
 
         private void ResizePoints()
@@ -86,7 +100,10 @@ namespace WelderCalculator.Drawings.Chart
 
             
             foreach (var line in _drawableLines)
-                _graphics.DrawLine(new Pen(line.Color, 3.0f), line.OriginalPoint1, line.OriginalPoint2);
+            {
+                _pen.Color = line.Color;
+                _graphics.DrawLine(_pen, line.OriginalPoint1, line.OriginalPoint2);
+            }
 
             foreach (var rect in _drawableRectangles)
             {
@@ -94,7 +111,8 @@ namespace WelderCalculator.Drawings.Chart
                 tempRect.X -= (int)(tempRect.Width / 2.0f);
                 tempRect.Y -= (int)(tempRect.Height / 2.0f);
 
-                _graphics.FillRectangle(new SolidBrush(rect.Color), tempRect);
+                _solidBursh.Color = rect.Color;
+                _graphics.FillRectangle(_solidBursh, tempRect);
             }
         }
 
