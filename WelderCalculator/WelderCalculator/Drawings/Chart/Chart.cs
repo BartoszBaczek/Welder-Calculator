@@ -69,6 +69,8 @@ namespace WelderCalculator.Drawings.Chart
 
                 ResizePoints();
                 ResizeLines();
+
+                _graphics.InterpolationMode = InterpolationMode.Bilinear;
             }
 
             _alreadyResized = true;

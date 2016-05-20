@@ -1,0 +1,379 @@
+[33mcommit f4abeaee013e2e8edec0416ac04ea3fb133b229d[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 20 15:36:10 2016 +0200
+
+    dummy performance optimalization in chart
+
+[33mcommit de1a535121069a4a2579fe9dd779a57e5af57591[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 20 15:24:37 2016 +0200
+
+    DeLong chart form shows now new image of safe ferrite quantity
+
+[33mcommit 6f98dd429fe87d24057b49818ecdd261bd8d4143[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 20 15:23:42 2016 +0200
+
+    added colorized map of safe ferrite quantity
+
+[33mcommit 17844279367046fef4b352f32b0217c4d453df7d[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 20 13:37:28 2016 +0200
+
+    fixed Chart.ToBottomLeftOriginPoint() method, to handle non zero origin
+
+[33mcommit 8b217dcdfaedc0be574200a2798ed5201fa178f5[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 20 12:57:48 2016 +0200
+
+    fixed typo in delonh chart sizing
+
+[33mcommit 7f8411955ce32dac15cdfd740a33e89ef491bfc2[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 20 11:39:41 2016 +0200
+
+    changed last used materials for calculations to more suitable for deLong diagram
+
+[33mcommit a646559efab5261bcf71dde320ced87745d58f7f[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 20 11:22:54 2016 +0200
+
+    added new field to chart sizing (origin coords in diagram unit
+
+[33mcommit 9fc11aeb15a494ac31972e5cb1dbb27b08f72165[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Wed May 18 16:27:58 2016 +0200
+
+    Added DeLongMicrophaseHelper methods with tests
+
+[33mcommit 42d098b4324b1be1a3e3d4c1f6a0650099fc9b51[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Wed May 18 15:11:25 2016 +0200
+
+    Moved DeLongHelper methods to separate class
+
+[33mcommit 2bd92600799f22b96bbd78adc5deadbaceea96ea[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Wed May 18 15:03:33 2016 +0200
+
+    Imlemented few methods in DeLongMicrophaseHelper
+
+[33mcommit 603c0f13ae23d0cab27ff879f7acd9e855d18d66[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Wed May 18 14:50:33 2016 +0200
+
+    changed DeLongMicrophaseHelperMethods to more universal
+
+[33mcommit 6e1f47a9621f6986a8572c3252e7cb2cad265681[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Wed May 18 14:47:50 2016 +0200
+
+    Added methods skeletons for deLongHelper
+
+[33mcommit 6bd03646208d1f070157b7b4c13b163783ef95ae[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Wed May 18 14:31:09 2016 +0200
+
+    Added data for DeLongMicrophaseHelper tests
+
+[33mcommit 7d4f42170fd4871250b47ae841466f8f30c6ee67[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Wed May 18 14:30:06 2016 +0200
+
+    refactor due to changes in SchaefflerHelper
+
+[33mcommit 22b2c81ecd1e966fbc790e195ca6faaf284eee43[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Wed May 18 13:42:02 2016 +0200
+
+    refactor in SchaefflerMicrophaseHelper
+
+[33mcommit fe3bd223ed9039407c33c6f694f93f27925f1bab[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Tue May 17 13:31:36 2016 +0200
+
+    added new view with deLong diagram
+
+[33mcommit 38156f0fa72f015aa24ff488c14e840f601e0678[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Tue May 17 10:49:22 2016 +0200
+
+    renamed deLong axis layers images and added chartSizing file. Implemented serialization of deLong image
+
+[33mcommit 5ab52520d3d7ae4fc073caf752a438ee2f32bb5c[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Tue May 17 10:34:33 2016 +0200
+
+    added definitions for deserialization DeLong diagram images
+
+[33mcommit 2b5eeb2ad4378d5c84e30b48003f6e552fd1136e[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Tue May 17 10:32:26 2016 +0200
+
+    Added DeLong diagram axis description
+
+[33mcommit 9a1a499e3645a5beaa0c5fdc9f1aa7a5b93af45d[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Tue May 17 09:11:02 2016 +0200
+
+    Changed LayerType form enum to class. Will implement IDiagramLayer soon
+
+[33mcommit 2f40cd9d7dba262217b9d5f7f0941e9db4fd8187[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Mon May 16 13:17:16 2016 +0200
+
+    deleted unused method
+
+[33mcommit a9f2519e2baec6a6b136431c1720d6f1b9013aa2[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Mon May 16 13:03:31 2016 +0200
+
+    added DeLong diagram images
+
+[33mcommit 522026c8d69014311ffc806afa5d2e8628467d24[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Sun May 15 14:25:38 2016 +0200
+
+    layer with cracking colors is now drawable
+
+[33mcommit 0b9e962294ed4fec1b1850622ee92705c3837166[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Sun May 15 14:12:49 2016 +0200
+
+    added schaeffler chart layer, with different colors for cracking
+
+[33mcommit 4fb2e7e67647b6c3d6c50cd82aacfb8c09cfe58c[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Sat May 14 19:51:33 2016 +0200
+
+    refactor
+
+[33mcommit 2caf8629343988e0bba2d790cf03a68de2ded999[m
+Merge: c20a864 f738edd
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 6 17:51:45 2016 +0200
+
+    Merge branch 'master' of https://github.com/BartoszBaczek/Welder-Calculator
+
+[33mcommit c20a86459086b54d090df69575cbe7406d3cc77d[m
+Author: bartoszbaczek <bartosz.baczek@gmail.com>
+Date:   Fri May 6 17:50:46 2016 +0200
+
+    Data about new material ferrite content are printed to UI
+
+[33mcommit f738edd9c9663f951e6f702fd571a6e0d70ead69[m
+Author: Bartosz Bączek <Bartosz Bączek>
+Date:   Fri May 6 17:49:42 2016 +0200
+
+    Data about new material ferrite content are printed to UI
+
+[33mcommit 7cd5546b11595d182d4bc3c57bab069592dddbaa[m
+Author: Bartosz Bączek <Bartosz Bączek>
+Date:   Fri May 6 17:33:55 2016 +0200
+
+    Data about new material phase are printed to UI
+
+[33mcommit e08363fd597b23fc324d105e8dcc6a52d75ea79c[m
+Author: Bartosz Bączek <Bartosz Bączek>
+Date:   Fri May 6 17:33:21 2016 +0200
+
+    added enum and new method detecting microphase
+
+[33mcommit e44eae2c49f17358c6f77e733b68b69a5db05214[m
+Author: Bartosz Bączek <Bartosz Bączek>
+Date:   Fri May 6 16:23:38 2016 +0200
+
+    Added microphase area detection methods for certain ammounts of ferrite (with testing)
+
+[33mcommit eb42645e10b89cc38b0217cb4a16d346fb582668[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Mon May 16 00:57:34 2016 +0200
+
+    Added microphase area detection methods with tests
+
+[33mcommit f8528a42c1eee7499ea02bf3508f4865ad115495[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Wed May 4 10:12:56 2016 +0200
+
+    Added test class for scahefflerMicrophaseHelper
+
+[33mcommit ce38c2a6a8d8b46ee6e62886ac247c7d2eb43e17[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Wed May 4 10:12:16 2016 +0200
+
+    added AFcontains(point) method
+
+[33mcommit 44c975fc67f1717fdbabf5dba836023094939efd[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Wed May 4 09:55:13 2016 +0200
+
+    added class checking if point is in given microphase area on schaeffler diagram
+
+[33mcommit 0da9d30a8dbb10b975f454327ae4c2929cbb4f8b[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Wed Apr 27 09:24:16 2016 +0200
+
+    Deleted non-microphase data from schaeffler_phase drawing
+
+[33mcommit 7b29ff2734bb4ce35b46e521cfa6d376b97df106[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Wed Apr 27 09:00:29 2016 +0200
+
+    Refactor - deleted all redundant using statements
+
+[33mcommit 97033d56f27e48ba347f203faeb2cc0b1c575cb9[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Wed Apr 27 08:56:02 2016 +0200
+
+    Refactor in SchaefflerChartPresenter
+
+[33mcommit af9c09baf9346b558e019fe6c51584631d031871[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Wed Apr 27 08:50:10 2016 +0200
+
+    Moved geometry counting methods to new class
+
+[33mcommit b410ef902019cc711bd0c8697b10adc5a87436ab[m
+Merge: 96b7f13 02d895d
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 13:09:05 2016 +0200
+
+    Refactored messed up code from previous commits
+
+[33mcommit 02d895d9e07bce282ead943342a97d2b489d6d62[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 13:00:30 2016 +0200
+
+    Seems, that everything is fixed now
+
+[33mcommit 540a0fd706874e4e037712ae403747694956c41f[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 12:53:14 2016 +0200
+
+    Modified ToBottomLeftOriginPoint, so it wouldnt use only schaeffler diagram data only
+
+[33mcommit dc628d22ca6c1d5f94df65623cf9fda1481c9e92[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 12:44:27 2016 +0200
+
+    extended ChartSizing data
+
+[33mcommit 60fbc0aaa6c341e023a347018e5aa931a36d1408[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 12:43:54 2016 +0200
+
+    ResizeTo method is back temporary
+
+[33mcommit 29fe480173bc4b9ead6df68dc8e5a47e88d1af45[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 11:10:00 2016 +0200
+
+    Trying to remove unneded code (since schaeffler chart window cannot be resized anymore) from Chart class. TODO
+
+[33mcommit 6ee96a10356efaf9ecde381d7a37a421454fdfd4[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 11:09:01 2016 +0200
+
+    SchaefflerCahrtView presenter has IChart instead of Chart
+
+[33mcommit 27873dc1ddae53937f7e0d867c7c00e64f201ff8[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 10:45:49 2016 +0200
+
+    Chart in now independendent to chart size (data are taken from json file)
+
+[33mcommit 65bb4d4632b3a85c9e1ea4baa23298e1063d3134[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:56:21 2016 +0200
+
+    Moving charts size data to separate file
+
+[33mcommit 43a110c612bf4af2330349d5c0becaf3b64ab2be[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:55:26 2016 +0200
+
+    Removed unused fields in Chart
+
+[33mcommit f7aa7bfb3c27d7676f5f91c58a5df599571dc520[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:47:32 2016 +0200
+
+    moved schaeffler images from I/ to I/Schaeffler/
+
+[33mcommit 6b7ba3d3bbeb189e0ee2138d9796ff2bdd0ed2fd[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:46:47 2016 +0200
+
+    changed Resize to ResizeTo
+
+[33mcommit 512c119261ff77da7ff94fab77ecec8054364d7a[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:45:44 2016 +0200
+
+    changed schaeffler images folder
+
+[33mcommit f77b7c812ef3f6455abc15a0758dfbbb8999572d[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:44:47 2016 +0200
+
+    removed unused usages from DrawableLine
+
+[33mcommit c917b85f8dff8b074c1b5747ea18b4457391aa8f[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:44:10 2016 +0200
+
+    Chart implements IChart interface
+
+[33mcommit 3dcc2a988208897eefe1a9f7cc810ea21bbead25[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:23:14 2016 +0200
+
+    Moved StartView to Views foder
+
+[33mcommit 7485e506bb3de3f77f4a634358bcdc5c54800836[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:21:27 2016 +0200
+
+    removed unused class SaveType
+
+[33mcommit 03291754c4a25ba59f207c3c9211579d76250f16[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:20:17 2016 +0200
+
+    added missing regions
+
+[33mcommit 7e93ea3b6639549f07677da929f85c74f6952c63[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:19:18 2016 +0200
+
+    renamed ks logo file
+
+[33mcommit c9d468e670e929a1f2c5e2c51a3e980fffdf7605[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:16:48 2016 +0200
+
+    added *.db files to gitignore
+
+[33mcommit f2c15498571641b417a59db2873bc127db5ee68c[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:12:30 2016 +0200
+
+    added GetLogoImage() to IDrawings
+
+[33mcommit 5c514db97199da5694499f571780d7044c110094[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 09:09:20 2016 +0200
+
+    Added more helpful regions (to be deleted later) and fixed unused code
+
+[33mcommit 96b7f1303ca19ea3387491016596ba04def3e0d0[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Tue Apr 26 08:37:31 2016 +0200
+
+    removed old materials data and fixed UI positionioning
+
+[33mcommit 2e1ff63a74514898f05f97c0a511a49a0fc25929[m
+Author: Bartek <bartosz.baczek@gmail.com>
+Date:   Sun Apr 24 14:26:58 2016 +0200
+
+    Massive commit of bad changes to code. The must be organized before commiting to master
