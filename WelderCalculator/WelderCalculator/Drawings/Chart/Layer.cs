@@ -23,6 +23,7 @@ namespace WelderCalculator.Drawings.Chart
         public static readonly string PhaseText = "deLongPhaseText";
         public static readonly string FerriteContent = "deLongFerriteContent";
         public static readonly string FerriteNumber = "deLongFerriteNumber";
+        public static readonly string ReccomendedFerriteContent = "deLongReccomendedFerriteContent";
     }
 
     public class Layer

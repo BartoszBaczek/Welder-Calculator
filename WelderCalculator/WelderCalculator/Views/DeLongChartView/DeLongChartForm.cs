@@ -98,6 +98,12 @@ namespace WelderCalculator.Views.DeLongChartView
             set { ferriteContentCheckBox.Checked = value; }
         }
 
+        public bool RecomendedFerriteContentVisibleCheckBox
+        {
+            get { return reccomendedFerriteContentCheckBox.Checked; }
+            set { reccomendedFerriteContentCheckBox.Checked = value; }
+        }
+
         private void phaseTextCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             Presenter.OnLayerVisibilityChanged(DeLongLayerType.PhaseText, PhaseVisibleCheckBox);
@@ -138,6 +144,12 @@ namespace WelderCalculator.Views.DeLongChartView
         private void ferriteNumberCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             Presenter.OnLayerVisibilityChanged(DeLongLayerType.FerriteNumber, FerriteNumberVisibleCheckBox);
+            drawPanel.Refresh();
+        }
+
+        private void reccomendedFerriteContentCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(DeLongLayerType.ReccomendedFerriteContent, RecomendedFerriteContentVisibleCheckBox);
             drawPanel.Refresh();
         }
         #endregion

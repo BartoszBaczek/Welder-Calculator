@@ -297,7 +297,8 @@ namespace WelderCalculator.Repositories
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_phase.png"), DeLongLayerType.Phase),
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_phaseText.png"), DeLongLayerType.PhaseText),
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_ferriteNumber.png"), DeLongLayerType.FerriteNumber),
-                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_ferriteContent.png"), DeLongLayerType.FerriteContent)
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_ferriteContent.png"), DeLongLayerType.FerriteContent),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_recomendedFerriteQuantity.png"), DeLongLayerType.ReccomendedFerriteContent)
             };
 
             return layers;

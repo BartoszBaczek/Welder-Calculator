@@ -54,6 +54,7 @@ namespace WelderCalculator.Views.DeLongChartView
             _view.PhaseLinesVisibleCheckBox = true;
             _view.FerriteContentVisibleCheckBox = true;
             _view.FerriteNumberVisibleCheckBox = true;
+            _view.RecomendedFerriteContentVisibleCheckBox = true;
         }
 
         public void OnFastMaterialButtonClicked()

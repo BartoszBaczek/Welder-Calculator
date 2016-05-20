@@ -21,6 +21,7 @@ namespace WelderCalculator.Views.DeLongChartView
             bool XAxisVisibleCheckBox { get; set; }
             bool YAxisVisibleCheckBox { get; set; }
             bool PhaseLinesVisibleCheckBox { get; set; }
+            bool RecomendedFerriteContentVisibleCheckBox { get; set; }
 
             string FirstBaseMaterialTextBox { get; set; }
             string SecondBaseMaterialTextBox { get; set; }

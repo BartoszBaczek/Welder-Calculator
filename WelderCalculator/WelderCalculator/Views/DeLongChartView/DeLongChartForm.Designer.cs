@@ -57,6 +57,7 @@ namespace WelderCalculator.Views.DeLongChartView
             this.newMaterialFerriteQunatityLabel = new System.Windows.Forms.Label();
             this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
             this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
+            this.reccomendedFerriteContentCheckBox = new System.Windows.Forms.CheckBox();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
@@ -65,6 +66,7 @@ namespace WelderCalculator.Views.DeLongChartView
             // visibilityLayoutPanel
             // 
             this.visibilityLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.visibilityLayoutPanel.Controls.Add(this.reccomendedFerriteContentCheckBox);
             this.visibilityLayoutPanel.Controls.Add(this.ferriteContentCheckBox);
             this.visibilityLayoutPanel.Controls.Add(this.ferriteNumberCheckBox);
             this.visibilityLayoutPanel.Controls.Add(this.phaseCheckBox);
@@ -74,7 +76,7 @@ namespace WelderCalculator.Views.DeLongChartView
             this.visibilityLayoutPanel.Controls.Add(this.hashCheckBox);
             this.visibilityLayoutPanel.Location = new System.Drawing.Point(815, 12);
             this.visibilityLayoutPanel.Name = "visibilityLayoutPanel";
-            this.visibilityLayoutPanel.Size = new System.Drawing.Size(131, 187);
+            this.visibilityLayoutPanel.Size = new System.Drawing.Size(131, 208);
             this.visibilityLayoutPanel.TabIndex = 1;
             this.visibilityLayoutPanel.TabStop = false;
             this.visibilityLayoutPanel.Text = "Widoczność";
@@ -204,7 +206,7 @@ namespace WelderCalculator.Views.DeLongChartView
             this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialButton);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.firstBaseMaterialTextBox);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialTextBox);
-            this.chooseMaterialsLayoutPanel.Location = new System.Drawing.Point(815, 205);
+            this.chooseMaterialsLayoutPanel.Location = new System.Drawing.Point(815, 226);
             this.chooseMaterialsLayoutPanel.Name = "chooseMaterialsLayoutPanel";
             this.chooseMaterialsLayoutPanel.Size = new System.Drawing.Size(376, 142);
             this.chooseMaterialsLayoutPanel.TabIndex = 6;
@@ -282,7 +284,7 @@ namespace WelderCalculator.Views.DeLongChartView
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialFerriteQunatityLabel);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialMicrophaseTextBox);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialMicrophaseLabel);
-            this.newMaterialDataLayoutPanel.Location = new System.Drawing.Point(815, 353);
+            this.newMaterialDataLayoutPanel.Location = new System.Drawing.Point(815, 374);
             this.newMaterialDataLayoutPanel.Name = "newMaterialDataLayoutPanel";
             this.newMaterialDataLayoutPanel.Size = new System.Drawing.Size(376, 107);
             this.newMaterialDataLayoutPanel.TabIndex = 11;
@@ -340,6 +342,17 @@ namespace WelderCalculator.Views.DeLongChartView
             this.newMaterialMicrophaseLabel.TabIndex = 8;
             this.newMaterialMicrophaseLabel.Text = "Faza";
             // 
+            // reccomendedFerriteContentCheckBox
+            // 
+            this.reccomendedFerriteContentCheckBox.AutoSize = true;
+            this.reccomendedFerriteContentCheckBox.Location = new System.Drawing.Point(10, 180);
+            this.reccomendedFerriteContentCheckBox.Name = "reccomendedFerriteContentCheckBox";
+            this.reccomendedFerriteContentCheckBox.Size = new System.Drawing.Size(127, 17);
+            this.reccomendedFerriteContentCheckBox.TabIndex = 7;
+            this.reccomendedFerriteContentCheckBox.Text = "Zalecana ilość ferrytu";
+            this.reccomendedFerriteContentCheckBox.UseVisualStyleBackColor = true;
+            this.reccomendedFerriteContentCheckBox.CheckedChanged += new System.EventHandler(this.reccomendedFerriteContentCheckBox_CheckedChanged);
+            // 
             // DeLongChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,5 +407,6 @@ namespace WelderCalculator.Views.DeLongChartView
         private Label newMaterialMicrophaseLabel;
         private CheckBox ferriteContentCheckBox;
         private CheckBox ferriteNumberCheckBox;
+        private CheckBox reccomendedFerriteContentCheckBox;
     }
 }
