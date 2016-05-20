@@ -8,7 +8,7 @@ using WelderCalculator.Repositories;
 using WelderCalculator.Views.AddMaterialDatabaseView;
 using WelderCalculator.Views.FastMaterialFactoryView;
 using WelderCalculator.Views.MaterialDatabaseView;
-using WelderCalculator.Helpers.SchaefflerHelpers;
+using WelderCalculator.Helpers.DeLongHelpers;
 
 namespace WelderCalculator.Views.DeLongChartView
 {
@@ -147,65 +147,65 @@ namespace WelderCalculator.Views.DeLongChartView
 
         private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)
         {
-            var schaefflerMicrophaseHelper = new SchaefflerMicrophaseHelper();
-            SchaefflerMicrophase newMaterialMicrophase = schaefflerMicrophaseHelper.GetMicrophaseForPoint(newMaterialPoint);
+            var deLongMicrophaseHelper = new DeLongMicrophaseHelper();
+            DeLongMicrophase newMaterialMicrophase = deLongMicrophaseHelper.GetMicrophaseForPoint(newMaterialPoint);
 
             switch (newMaterialMicrophase)
             {
-                case SchaefflerMicrophase.FM:
-                    _view.NewMaterialMicrophaseTextBox = "Ferrytyczno - martenzytyczna";
-                    break;
-                case SchaefflerMicrophase.M:
-                    _view.NewMaterialMicrophaseTextBox = "Martenzytyczna";
-                    break;
-                case SchaefflerMicrophase.AM:
-                    _view.NewMaterialMicrophaseTextBox = "Austenityczno - martenzytyczna";
-                    break;
-                case SchaefflerMicrophase.A:
+                case DeLongMicrophase.A:
                     _view.NewMaterialMicrophaseTextBox = "Austenityczna";
                     break;
-                case SchaefflerMicrophase.MF:
-                    _view.NewMaterialMicrophaseTextBox = "Martenzytyczno - ferrytyczna";
-                    break;
-                case SchaefflerMicrophase.AMF:
-                    _view.NewMaterialMicrophaseTextBox = "Austeniticzno - martenzytyczno - ferrytyczna";
-                    break;
-                case SchaefflerMicrophase.AF:
+                case DeLongMicrophase.AF:
                     _view.NewMaterialMicrophaseTextBox = "Austenityczno - ferrytyczna";
                     break;
-                case SchaefflerMicrophase.F:
-                    _view.NewMaterialMicrophaseTextBox = "Ferrytyczna";
+                case DeLongMicrophase.AM:
+                    _view.NewMaterialMicrophaseTextBox = "Austenityczno - martenzytyczna";
                     break;
-                case SchaefflerMicrophase.Unknown:
-                    _view.NewMaterialMicrophaseTextBox = "Cos sie skopalo";
+                case DeLongMicrophase.AMF:
+                    _view.NewMaterialMicrophaseTextBox = "Austeniticzno - martenzytyczno - ferrytyczna";
+                    break;
+                case DeLongMicrophase.Unknown:
+                    _view.NewMaterialMicrophaseTextBox = "Poza wykresem";
                     break;
             }
 
-            SchaefflerFerriteQuantity newMaterialFerriteQuantity = schaefflerMicrophaseHelper.GetFerriteQuantityForPoint(newMaterialPoint);
+            DeLongFerriteQuantity newMaterialFerriteQuantity = deLongMicrophaseHelper.GetFerriteQuantityForPoint(newMaterialPoint);
 
-            if (newMaterialFerriteQuantity == SchaefflerFerriteQuantity.Unknown)
+            if (newMaterialFerriteQuantity == DeLongFerriteQuantity.Unknown)
                 _view.NewMaterialFerriteQuantityTextBox = "Nieznana";
             else
             {
                 switch (newMaterialFerriteQuantity)
                 {
-                    case SchaefflerFerriteQuantity._0to5:
-                        _view.NewMaterialFerriteQuantityTextBox = "0 - 5";
+                    case DeLongFerriteQuantity._0to2:
+                        _view.NewMaterialFerriteQuantityTextBox = "0 - 2";
                         break;
-                    case SchaefflerFerriteQuantity._5to10:
-                        _view.NewMaterialFerriteQuantityTextBox = "5 - 10";
+                    case DeLongFerriteQuantity._2to4:
+                        _view.NewMaterialFerriteQuantityTextBox = "2 - 4";
                         break;
-                    case SchaefflerFerriteQuantity._10to20:
-                        _view.NewMaterialFerriteQuantityTextBox = "10 - 20";
+                    case DeLongFerriteQuantity._4to6:
+                        _view.NewMaterialFerriteQuantityTextBox = "4 - 6";
                         break;
-                    case SchaefflerFerriteQuantity._20to40:
-                        _view.NewMaterialFerriteQuantityTextBox = "20 - 40";
+                    case DeLongFerriteQuantity._6to8:
+                        _view.NewMaterialFerriteQuantityTextBox = "6 - 8";
                         break;
-                    case SchaefflerFerriteQuantity._40to80:
-                        _view.NewMaterialFerriteQuantityTextBox = "40 - 80";
+                    case DeLongFerriteQuantity._8to10:
+                        _view.NewMaterialFerriteQuantityTextBox = "8 - 10";
                         break;
-                    case SchaefflerFerriteQuantity._80to100:
-                        _view.NewMaterialFerriteQuantityTextBox = "80 - 100";
+                    case DeLongFerriteQuantity._10to12:
+                        _view.NewMaterialFerriteQuantityTextBox = "10 - 12";
+                        break;
+                    case DeLongFerriteQuantity._12to14:
+                        _view.NewMaterialFerriteQuantityTextBox = "12 - 14";
+                        break;
+                    case DeLongFerriteQuantity._14to16:
+                        _view.NewMaterialFerriteQuantityTextBox = "14 - 16";
+                        break;
+                    case DeLongFerriteQuantity._16to18:
+                        _view.NewMaterialFerriteQuantityTextBox = "16 - 18";
+                        break;
+                    case DeLongFerriteQuantity._18Plus:
+                        _view.NewMaterialFerriteQuantityTextBox = "18 +";
                         break;
                 }
 

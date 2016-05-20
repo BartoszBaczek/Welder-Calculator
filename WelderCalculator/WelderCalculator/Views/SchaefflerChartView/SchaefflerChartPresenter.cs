@@ -175,7 +175,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
                     _view.NewMaterialMicrophaseTextBox = "Ferrytyczna";
                     break;
                 case SchaefflerMicrophase.Unknown:
-                    _view.NewMaterialMicrophaseTextBox = "Cos sie skopalo";
+                    _view.NewMaterialMicrophaseTextBox = "Poza wykresem";
                     break;
             }
 

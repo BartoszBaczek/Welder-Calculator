@@ -73,7 +73,7 @@ namespace WelderCalculator.Helpers.DeLongHelpers
             if (!(AMContains(point)) && GetFerriteQuantityForPoint(point) != DeLongFerriteQuantity.Unknown)
                 return DeLongMicrophase.AF;
             else
-                return DeLongMicrophase.Unknown
+                return DeLongMicrophase.Unknown;
         }
 
         public bool AMContains(PointF point)
