@@ -12,7 +12,7 @@ namespace WelderCalculator.Model
          | |                           | |
          | |     Only diagram here     | |
          | |                           | |
-         | |(2)________________________| |
+         | |(2, 5)_____________________| |
          |_______________________________|
          
          
@@ -29,8 +29,7 @@ namespace WelderCalculator.Model
         // end point of diagram in diagram unit (4)
         public PointF ChartEndInSpecialUnit { get; set; }
 
-        //TODO there is assumption, that all diagrams
-        //TODO start with (0, 0), which is not true for
-        //TODO all diagrams.
+        // position of diagram origin in diagram unit (5)
+        public PointF ChartOriginInSpecialUnit { get; set; }
     }
 }

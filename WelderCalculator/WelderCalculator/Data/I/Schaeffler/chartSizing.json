@@ -19,4 +19,9 @@
     "X": 32.0,
     "Y": 28.0
   },
+  "ChartOriginInSpecialUnit": {
+    "IsEmpty": false,
+    "X": 0.0,
+    "Y": 0.0
+  },
 }
