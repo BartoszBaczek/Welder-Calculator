@@ -1,13 +1,13 @@
 {
-  "Name": "18 36",
-  "GuidNumber": "3092b451-3cc3-4907-a832-510f63b2e4b7",
+  "Name": "25 22 2 N L",
+  "GuidNumber": "283b5c63-2d96-411a-8f9c-66a5c3819aad",
   "Elements": [
     {
       "Name": 0,
       "FullName": "Węgiel",
       "Min": null,
       "Max": null,
-      "RealValue": 0.25
+      "RealValue": 0.04
     },
     {
       "Name": 1,
@@ -19,9 +19,9 @@
     {
       "Name": 2,
       "FullName": "Mangan",
-      "Min": null,
-      "Max": null,
-      "RealValue": 2.5
+      "Min": 1.0,
+      "Max": 5.0,
+      "RealValue": 3.0
     },
     {
       "Name": 3,
@@ -40,29 +40,29 @@
     {
       "Name": 6,
       "FullName": "Chrom",
-      "Min": 14.0,
-      "Max": 18.0,
-      "RealValue": 16.0
+      "Min": 24.0,
+      "Max": 27.0,
+      "RealValue": 25.5
     },
     {
       "Name": 9,
       "FullName": "Nikiel",
-      "Min": 33.0,
-      "Max": 37.0,
-      "RealValue": 35.0
+      "Min": 20.0,
+      "Max": 23.0,
+      "RealValue": 21.5
     },
     {
       "Name": 7,
       "FullName": "Molibden",
-      "Min": 0.0,
-      "Max": 0.0,
-      "RealValue": 0.0
+      "Min": 2.0,
+      "Max": 3.0,
+      "RealValue": 2.5
     },
     {
       "Name": 5,
       "FullName": "Azot",
       "Min": 0.0,
-      "Max": 0.0,
+      "Max": 0.2,
       "RealValue": 0.0
     },
     {
@@ -94,7 +94,7 @@
       "RealValue": 0.0
     }
   ],
-  "CEq": 6.2000000000000011,
-  "NiEq": 43.75,
-  "CrEq": 17.8
+  "CEq": 7.5733333333333333,
+  "NiEq": 24.2,
+  "CrEq": 29.8
 }

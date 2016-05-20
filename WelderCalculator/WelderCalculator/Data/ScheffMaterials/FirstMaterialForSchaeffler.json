@@ -1,63 +1,63 @@
 {
-  "Number": "1.4521",
-  "Name": "X2CrMoTi18-2",
-  "GuidNumber": "8fd4db82-186c-44af-acbe-ae92c5b464a7",
+  "Number": "1.4003",
+  "Name": "X2CrNi12",
+  "GuidNumber": "4e0bf3a5-660d-413a-92b5-865c650d933d",
   "Elements": [
     {
       "Name": 0,
       "FullName": "Węgiel",
       "Min": 0.0,
-      "Max": 0.025,
-      "RealValue": 0.0125
+      "Max": 0.03,
+      "RealValue": 0.0
     },
     {
       "Name": 1,
       "FullName": "Krzem",
       "Min": 0.0,
       "Max": 1.0,
-      "RealValue": 0.5
+      "RealValue": 0.0
     },
     {
       "Name": 2,
       "FullName": "Mangan",
       "Min": 0.0,
-      "Max": 1.0,
-      "RealValue": 0.5
+      "Max": 1.5,
+      "RealValue": 0.0
     },
     {
       "Name": 3,
       "FullName": "Potas",
       "Min": 0.0,
       "Max": 0.04,
-      "RealValue": 0.02
+      "RealValue": 0.0
     },
     {
       "Name": 4,
       "FullName": "Siarka",
       "Min": 0.0,
       "Max": 0.015,
-      "RealValue": 0.0075
+      "RealValue": 0.0
     },
     {
       "Name": 5,
       "FullName": "Azot",
       "Min": 0.0,
       "Max": 0.03,
-      "RealValue": 0.015
+      "RealValue": 0.0
     },
     {
       "Name": 6,
       "FullName": "Chrom",
-      "Min": 17.0,
-      "Max": 20.0,
-      "RealValue": 18.5
+      "Min": 10.5,
+      "Max": 12.5,
+      "RealValue": 11.5
     },
     {
       "Name": 7,
       "FullName": "Molibden",
-      "Min": 1.8,
-      "Max": 2.5,
-      "RealValue": 2.15
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
     },
     {
       "Name": 8,
@@ -69,16 +69,16 @@
     {
       "Name": 9,
       "FullName": "Nikiel",
-      "Min": 0.0,
-      "Max": 0.0,
-      "RealValue": 0.0
+      "Min": 0.3,
+      "Max": 1.0,
+      "RealValue": 0.65
     },
     {
       "Name": 10,
       "FullName": "Tytan",
-      "Min": 0.15,
-      "Max": 0.8,
-      "RealValue": 0.475
+      "Min": 0.0,
+      "Max": 0.0,
+      "RealValue": 0.0
     },
     {
       "Name": 11,
@@ -102,7 +102,7 @@
       "RealValue": 0.0
     }
   ],
-  "CEq": 4.2258333333333331,
-  "NiEq": 1.075,
-  "CrEq": 22.349999999999998
+  "CEq": 2.3433333333333333,
+  "NiEq": 0.65,
+  "CrEq": 11.5
 }
