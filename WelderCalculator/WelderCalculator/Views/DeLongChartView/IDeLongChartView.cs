@@ -30,5 +30,6 @@ namespace WelderCalculator.Views.DeLongChartView
 
             string NewMaterialMicrophaseTextBox { get; set; }
             string NewMaterialFerriteQuantityTextBox { get; set; }
+            string NewMaterialFerriteNumberTextBox { get; set; }
     }
 }

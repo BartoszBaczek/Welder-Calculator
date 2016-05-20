@@ -172,40 +172,53 @@ namespace WelderCalculator.Views.DeLongChartView
             DeLongFerriteQuantity newMaterialFerriteQuantity = deLongMicrophaseHelper.GetFerriteQuantityForPoint(newMaterialPoint);
 
             if (newMaterialFerriteQuantity == DeLongFerriteQuantity.Unknown)
+            {
+                _view.NewMaterialFerriteNumberTextBox = "Nieznana";
                 _view.NewMaterialFerriteQuantityTextBox = "Nieznana";
+            }
             else
             {
                 switch (newMaterialFerriteQuantity)
                 {
                     case DeLongFerriteQuantity._0to2:
+                        _view.NewMaterialFerriteNumberTextBox = "0 - 2";
                         _view.NewMaterialFerriteQuantityTextBox = "0 - 2";
                         break;
                     case DeLongFerriteQuantity._2to4:
+                        _view.NewMaterialFerriteNumberTextBox = "2 - 4";
                         _view.NewMaterialFerriteQuantityTextBox = "2 - 4";
                         break;
                     case DeLongFerriteQuantity._4to6:
+                        _view.NewMaterialFerriteNumberTextBox = "4 - 6";
                         _view.NewMaterialFerriteQuantityTextBox = "4 - 6";
                         break;
                     case DeLongFerriteQuantity._6to8:
-                        _view.NewMaterialFerriteQuantityTextBox = "6 - 8";
+                        _view.NewMaterialFerriteNumberTextBox = "6 - 8";
+                        _view.NewMaterialFerriteQuantityTextBox = "6 - 7.6";
                         break;
                     case DeLongFerriteQuantity._8to10:
-                        _view.NewMaterialFerriteQuantityTextBox = "8 - 10";
+                        _view.NewMaterialFerriteNumberTextBox = "8 - 10";
+                        _view.NewMaterialFerriteQuantityTextBox = "7.6 - 9.2";
                         break;
                     case DeLongFerriteQuantity._10to12:
-                        _view.NewMaterialFerriteQuantityTextBox = "10 - 12";
+                        _view.NewMaterialFerriteNumberTextBox = "10 - 12";
+                        _view.NewMaterialFerriteQuantityTextBox = "9.2 - 10.7";
                         break;
                     case DeLongFerriteQuantity._12to14:
-                        _view.NewMaterialFerriteQuantityTextBox = "12 - 14";
+                        _view.NewMaterialFerriteNumberTextBox = "12 - 14";
+                        _view.NewMaterialFerriteQuantityTextBox = "10.7 - 12.3";
                         break;
                     case DeLongFerriteQuantity._14to16:
-                        _view.NewMaterialFerriteQuantityTextBox = "14 - 16";
+                        _view.NewMaterialFerriteNumberTextBox = "14 - 16";
+                        _view.NewMaterialFerriteQuantityTextBox = "12.3 - 13.8";
                         break;
                     case DeLongFerriteQuantity._16to18:
-                        _view.NewMaterialFerriteQuantityTextBox = "16 - 18";
+                        _view.NewMaterialFerriteNumberTextBox = "16 - 18";
+                        _view.NewMaterialFerriteQuantityTextBox = "13.8 +";
                         break;
                     case DeLongFerriteQuantity._18Plus:
-                        _view.NewMaterialFerriteQuantityTextBox = "18 +";
+                        _view.NewMaterialFerriteNumberTextBox = "18 +";
+                        _view.NewMaterialFerriteQuantityTextBox = "13.8 +";
                         break;
                 }
 

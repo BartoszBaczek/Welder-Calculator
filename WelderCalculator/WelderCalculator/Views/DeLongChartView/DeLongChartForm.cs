@@ -216,10 +216,10 @@ namespace WelderCalculator.Views.DeLongChartView
             set { newMaterialFerriteQuantityTextbox.Text = value; }
         }
 
-        public string NewMaterialDangerousnessTextBox
+        public string NewMaterialFerriteNumberTextBox
         {
-            get { return newMaterialBrittlenessTextbox.Text; }
-            set { newMaterialBrittlenessTextbox.Text = value; }
+            get { return newMaterialFerriteNumberTextBox.Text; }
+            set { newMaterialFerriteNumberTextBox.Text = value; }
         }
 
         #endregion
