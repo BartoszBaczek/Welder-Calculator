@@ -124,15 +124,15 @@ namespace WelderCalculator.Drawings.Chart
 
         private Point ToBottomLeftOriginPoint(PointF point)
         {
-            PointF diagramScale = new PointF( (_chartSizing.ChartEndPointXandY.X - _chartSizing.ChartOriginXandY.X) / _chartSizing.ChartEndInSpecialUnit.X, 
-                (_chartSizing.ChartOriginXandY.Y - _chartSizing.ChartEndPointXandY.Y) / _chartSizing.ChartEndInSpecialUnit.Y);
+            PointF diagramScale = new PointF( (_chartSizing.ChartEndPointXandY.X - _chartSizing.ChartOriginXandY.X) / (_chartSizing.ChartEndInSpecialUnit.X - _chartSizing.ChartOriginInSpecialUnit.X), 
+                (_chartSizing.ChartOriginXandY.Y - _chartSizing.ChartEndPointXandY.Y) / (_chartSizing.ChartEndInSpecialUnit.Y - _chartSizing.ChartOriginInSpecialUnit.Y));
 
             point.X *= diagramScale.X;
             point.Y *= diagramScale.Y;
 
             point = new PointF(
-                (_chartSizing.ChartOriginXandY.X + point.X),
-                (_chartSizing.ChartOriginXandY.Y - point.Y)
+                (_chartSizing.ChartOriginXandY.X + point.X - _chartSizing.ChartOriginInSpecialUnit.X * diagramScale.X),
+                (_chartSizing.ChartOriginXandY.Y - point.Y + _chartSizing.ChartOriginInSpecialUnit.Y * diagramScale.Y)
                 );
 
             point.X *= Scale.X;
