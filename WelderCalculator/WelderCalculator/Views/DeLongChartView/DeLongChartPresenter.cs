@@ -9,6 +9,7 @@ using WelderCalculator.Views.AddMaterialDatabaseView;
 using WelderCalculator.Views.FastMaterialFactoryView;
 using WelderCalculator.Views.MaterialDatabaseView;
 using WelderCalculator.Helpers.DeLongHelpers;
+using WelderCalculator.Views.SchaefflerMinimapView;
 
 namespace WelderCalculator.Views.DeLongChartView
 {
@@ -17,6 +18,7 @@ namespace WelderCalculator.Views.DeLongChartView
         private readonly IDeLongChartView _view;
         private readonly DataConnector _dataConnector;
         private readonly IChart _chart;
+        private bool _someCountingsFinished = false;
 
         public DeLongChartPresenter(IDeLongChartView view)
         {
@@ -98,6 +100,23 @@ namespace WelderCalculator.Views.DeLongChartView
                 _view.AdditionalMaterialTextBox = additiveMaterial.Name;
         }
 
+        public void OnShowMinimapButtonClicked()
+        {
+            bool additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100 = (_view.AdditionalMaterialQuantity > 0 &&
+                                                                                    _view.AdditionalMaterialQuantity < 100);
+            if ((!(_view.AdditionalMaterialQuantity.HasValue && 
+                additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100))
+                                ||
+                !_someCountingsFinished)
+            {
+                MessageBox.Show("Ilość materiału dodatkowego nie jest liczba z zakresu od 0 od 100.\nUpewnij się że przeprowadzono obliczenia.");
+                return;
+            }
+
+            var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerDeLong, _view.AdditionalMaterialQuantity.Value);
+            schaefflerDeLongMinimapForm.ShowDialog();
+        }
+
         public void OnCountButtonClicked()
         {
             double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
@@ -123,6 +142,8 @@ namespace WelderCalculator.Views.DeLongChartView
             PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
             RedrawChart(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
             PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
+
+            _someCountingsFinished = true;
         }
 
         private void RedrawChart(PointF pointForFirstMaterial, PointF pointForSecondMaterial, PointF pointForAddMaterial, PointF pointInTheMiddleOfLine, PointF pointInTheMiddleOfLineWithTranslation)

@@ -148,6 +148,14 @@
     <Compile Include="Repositories\IBasicNormRepository.cs" />
     <Compile Include="Model\BaseMaterial.cs" />
     <Compile Include="Model\Material.cs" />
+    <Compile Include="Views\SchaefflerMinimapView\ISchaefflerMinimapView.cs" />
+    <Compile Include="Views\SchaefflerMinimapView\SchaefflerMinimapPresenter.cs" />
+    <Compile Include="Views\SchaefflerMinimapView\SchaefflerMinimapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SchaefflerMinimapView\SchaefflerMinimapForm.Designer.cs">
+      <DependentUpon>SchaefflerMinimapForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\StartView\IStartFormView.cs" />
     <Compile Include="Views\StartView\StartForm.cs">
       <SubType>Form</SubType>
@@ -191,6 +199,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\SchaefflerMinimapView\SchaefflerMinimapForm.resx">
+      <DependentUpon>SchaefflerMinimapForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\StartView\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>

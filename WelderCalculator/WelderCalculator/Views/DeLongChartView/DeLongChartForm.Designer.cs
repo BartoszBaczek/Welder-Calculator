@@ -58,6 +58,7 @@ namespace WelderCalculator.Views.DeLongChartView
             this.newMaterialFerriteQunatityLabel = new System.Windows.Forms.Label();
             this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
             this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
+            this.showMinimapButton = new System.Windows.Forms.Button();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
@@ -353,11 +354,22 @@ namespace WelderCalculator.Views.DeLongChartView
             this.newMaterialMicrophaseLabel.TabIndex = 8;
             this.newMaterialMicrophaseLabel.Text = "Faza";
             // 
+            // showMinimapButton
+            // 
+            this.showMinimapButton.Location = new System.Drawing.Point(815, 487);
+            this.showMinimapButton.Name = "showMinimapButton";
+            this.showMinimapButton.Size = new System.Drawing.Size(376, 57);
+            this.showMinimapButton.TabIndex = 11;
+            this.showMinimapButton.Text = "Pokaż minimapę";
+            this.showMinimapButton.UseVisualStyleBackColor = true;
+            this.showMinimapButton.Click += new System.EventHandler(this.showMinimapButton_Click);
+            // 
             // DeLongChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 560);
+            this.Controls.Add(this.showMinimapButton);
             this.Controls.Add(this.newMaterialDataLayoutPanel);
             this.Controls.Add(this.drawPanel);
             this.Controls.Add(this.chooseMaterialsLayoutPanel);
@@ -408,5 +420,6 @@ namespace WelderCalculator.Views.DeLongChartView
         private CheckBox ferriteContentCheckBox;
         private CheckBox ferriteNumberCheckBox;
         private CheckBox reccomendedFerriteContentCheckBox;
+        private Button showMinimapButton;
     }
 }
