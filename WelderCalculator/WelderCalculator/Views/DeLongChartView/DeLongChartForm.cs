@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using WelderCalculator.Drawings.Chart;
 
@@ -15,11 +9,11 @@ namespace WelderCalculator.Views.DeLongChartView
     {
         public DeLongChartPresenter Presenter { private get; set; }
 
+        public IntPtr DrawPanelCanvas { get { return drawPanel.Handle; } }
+
         public int DrawPanelWidth { get { return drawPanel.Width; } }
 
         public int DrawPanelHeight { get { return drawPanel.Height; } }
-
-        public IntPtr DrawPanelCanvas { get { return drawPanel.Handle; } }
 
         public DeLongChartForm()
         {
@@ -39,19 +33,6 @@ namespace WelderCalculator.Views.DeLongChartView
         private void drawPanel_Paint(object sender, PaintEventArgs e)
         {
             Presenter.OnPaintEvent(drawPanel.Handle, e);
-        }
-
-        protected override void OnResizeBegin(EventArgs e)
-        {
-            SuspendLayout();
-            base.OnResizeBegin(e);
-        }
-
-        protected override void OnResizeEnd(EventArgs e)
-        {
-            ResumeLayout();
-            base.OnResizeEnd(e);
-            drawPanel.Refresh();
         }
 
         #region Visibility checkboxes
@@ -247,6 +228,11 @@ namespace WelderCalculator.Views.DeLongChartView
         private void fastMaterialButton_Click(object sender, EventArgs e)
         {
             Presenter.OnFastMaterialButtonClicked();
+        }
+
+        private void showMinimapButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnShowMinimapButtonClicked();
         }
     }
 }

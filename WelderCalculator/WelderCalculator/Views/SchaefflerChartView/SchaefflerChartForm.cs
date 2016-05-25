@@ -35,19 +35,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
             Presenter.OnPaintEvent(drawPanel.Handle, e);
         }
 
-        protected override void OnResizeBegin(EventArgs e)
-        {
-            SuspendLayout();
-            base.OnResizeBegin(e);
-        }
-
-        protected override void OnResizeEnd(EventArgs e)
-        {
-            ResumeLayout();
-            base.OnResizeEnd(e);
-            drawPanel.Refresh();
-        }
-
         #region Visibility checkboxes
 
         public bool CrackingVisibleCheckBox
