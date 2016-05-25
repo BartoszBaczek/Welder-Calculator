@@ -26,6 +26,11 @@ namespace WelderCalculator.Drawings.Chart
         public static readonly string ReccomendedFerriteContent = "deLongReccomendedFerriteContent";
     }
 
+    public class SchaefflerDeLongMinimapLayerType
+    {
+        public static readonly string Only = "schaefflerDeLongOnly";
+    }
+
     public class Layer
     {
         public Image Image;
