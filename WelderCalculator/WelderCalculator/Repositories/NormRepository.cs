@@ -304,6 +304,17 @@ namespace WelderCalculator.Repositories
             return layers;
         }
 
+        public List<Layer> GetSchaefflerDeLongMinimapImages()
+        {
+            string schaefflerDeLongCatalog = "SchaefflerDeLongMinimap/";
+            var layers = new List<Layer>()
+            {
+                new Layer(Image.FromFile(_drawingsPath + schaefflerDeLongCatalog + "sdl_all.png"), SchaefflerDeLongMinimapLayerType.Only)
+            };
+
+            return layers;
+        }
+
         public ChartSizing DeserializeDeLongChartSizing()
         {
             string fileName = "DeLong/chartSizing";
