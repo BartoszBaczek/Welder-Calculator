@@ -33,7 +33,7 @@ namespace WelderCalculator.Model
             }
         }
 
-        public double? NiEq
+        public double? NiEqSchaeffler
         {
             get
             {
@@ -50,7 +50,7 @@ namespace WelderCalculator.Model
             }
         }
 
-        public double? CrEq
+        public double? CrEqSchaeffler
         {
             get
             {

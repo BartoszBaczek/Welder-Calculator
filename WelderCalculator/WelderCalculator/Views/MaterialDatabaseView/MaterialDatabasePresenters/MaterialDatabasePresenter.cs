@@ -75,8 +75,8 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
             if (material != null)
             {
                 _view.CEquivalentTextBox = material.CEq;
-                _view.NiEquivalentTextBox = material.NiEq;
-                _view.CrEquivalentTextBox = material.CrEq;
+                _view.NiEquivalentTextBox = material.NiEqSchaeffler;
+                _view.CrEquivalentTextBox = material.CrEqSchaeffler;
             }
         }
 
