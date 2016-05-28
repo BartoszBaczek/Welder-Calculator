@@ -11,6 +11,10 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
         {
             InitializeComponent();
             Presenter = new FastMaterialFactoryPresenter(this);
+
+            ChangeBaseMaterial1Checked = true;
+            ChangeBaseMaterial2Checked = true;
+            ChangeAdditionalMaterialChecked = true;
         }
 
         private double? GetTextBoxValue(TextBox textbox)
@@ -304,6 +308,24 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
             set { SetTextboxValue(ref tiAddMaterialTextBox, value); }
         }
 
+        public bool ChangeBaseMaterial1Checked
+        {
+            get { return baseMaterial1ChangeCheckBox.Checked; }
+            set {  baseMaterial1ChangeCheckBox.Checked = value; }
+        }
+
+        public bool ChangeBaseMaterial2Checked
+        {
+            get { return baseMaterial2ChangeCheckBox.Checked;  }
+            set { baseMaterial2ChangeCheckBox.Checked = value; }
+        }
+
+        public bool ChangeAdditionalMaterialChecked
+        {
+            get {  return addMaterialChangeCheckBox.Checked; }
+            set { addMaterialChangeCheckBox.Checked = value; }
+        }
+
         #endregion
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -315,6 +337,21 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
         {
             Presenter.OnApplyButtonClicked();
             this.Close();
+        }
+
+        private void baseMaterial1ChangeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            baseMaterial1GroupBox.Enabled = ChangeBaseMaterial1Checked;
+        }
+
+        private void baseMaterial2ChangeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            baseMaterial2GroupBox.Enabled = ChangeBaseMaterial2Checked;
+        }
+
+        private void addMaterialChangeCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            addMaterialGroupBox.Enabled = ChangeAdditionalMaterialChecked;
         }
     }
 }

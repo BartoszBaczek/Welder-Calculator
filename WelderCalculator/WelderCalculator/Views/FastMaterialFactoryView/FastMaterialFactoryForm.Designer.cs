@@ -87,6 +87,9 @@
             this.niAddMaterialTextBox = new System.Windows.Forms.TextBox();
             this.applyButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
+            this.baseMaterial1ChangeCheckBox = new System.Windows.Forms.CheckBox();
+            this.baseMaterial2ChangeCheckBox = new System.Windows.Forms.CheckBox();
+            this.addMaterialChangeCheckBox = new System.Windows.Forms.CheckBox();
             this.baseMaterial1GroupBox.SuspendLayout();
             this.baseMaterial2GroupBox.SuspendLayout();
             this.addMaterialGroupBox.SuspendLayout();
@@ -114,7 +117,7 @@
             this.baseMaterial1GroupBox.Controls.Add(this.label1);
             this.baseMaterial1GroupBox.Location = new System.Drawing.Point(12, 13);
             this.baseMaterial1GroupBox.Name = "baseMaterial1GroupBox";
-            this.baseMaterial1GroupBox.Size = new System.Drawing.Size(89, 258);
+            this.baseMaterial1GroupBox.Size = new System.Drawing.Size(89, 254);
             this.baseMaterial1GroupBox.TabIndex = 0;
             this.baseMaterial1GroupBox.TabStop = false;
             this.baseMaterial1GroupBox.Text = "Mat. bazowy";
@@ -285,7 +288,7 @@
             this.baseMaterial2GroupBox.Controls.Add(this.niBaseMaterial2TextBox);
             this.baseMaterial2GroupBox.Location = new System.Drawing.Point(107, 13);
             this.baseMaterial2GroupBox.Name = "baseMaterial2GroupBox";
-            this.baseMaterial2GroupBox.Size = new System.Drawing.Size(91, 258);
+            this.baseMaterial2GroupBox.Size = new System.Drawing.Size(91, 254);
             this.baseMaterial2GroupBox.TabIndex = 1;
             this.baseMaterial2GroupBox.TabStop = false;
             this.baseMaterial2GroupBox.Text = "Mat. bazowy";
@@ -456,7 +459,7 @@
             this.addMaterialGroupBox.Controls.Add(this.niAddMaterialTextBox);
             this.addMaterialGroupBox.Location = new System.Drawing.Point(204, 12);
             this.addMaterialGroupBox.Name = "addMaterialGroupBox";
-            this.addMaterialGroupBox.Size = new System.Drawing.Size(98, 258);
+            this.addMaterialGroupBox.Size = new System.Drawing.Size(98, 255);
             this.addMaterialGroupBox.TabIndex = 2;
             this.addMaterialGroupBox.TabStop = false;
             this.addMaterialGroupBox.Text = "Mat. dodatkowy";
@@ -607,7 +610,7 @@
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(26, 277);
+            this.applyButton.Location = new System.Drawing.Point(21, 296);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
             this.applyButton.TabIndex = 2;
@@ -617,7 +620,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(213, 277);
+            this.cancelButton.Location = new System.Drawing.Point(213, 296);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 3;
@@ -625,11 +628,47 @@
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
+            // baseMaterial1ChangeCheckBox
+            // 
+            this.baseMaterial1ChangeCheckBox.AutoSize = true;
+            this.baseMaterial1ChangeCheckBox.Location = new System.Drawing.Point(33, 273);
+            this.baseMaterial1ChangeCheckBox.Name = "baseMaterial1ChangeCheckBox";
+            this.baseMaterial1ChangeCheckBox.Size = new System.Drawing.Size(55, 17);
+            this.baseMaterial1ChangeCheckBox.TabIndex = 18;
+            this.baseMaterial1ChangeCheckBox.Text = "Zmień";
+            this.baseMaterial1ChangeCheckBox.UseVisualStyleBackColor = true;
+            this.baseMaterial1ChangeCheckBox.CheckedChanged += new System.EventHandler(this.baseMaterial1ChangeCheckBox_CheckedChanged);
+            // 
+            // baseMaterial2ChangeCheckBox
+            // 
+            this.baseMaterial2ChangeCheckBox.AutoSize = true;
+            this.baseMaterial2ChangeCheckBox.Location = new System.Drawing.Point(131, 273);
+            this.baseMaterial2ChangeCheckBox.Name = "baseMaterial2ChangeCheckBox";
+            this.baseMaterial2ChangeCheckBox.Size = new System.Drawing.Size(55, 17);
+            this.baseMaterial2ChangeCheckBox.TabIndex = 19;
+            this.baseMaterial2ChangeCheckBox.Text = "Zmień";
+            this.baseMaterial2ChangeCheckBox.UseVisualStyleBackColor = true;
+            this.baseMaterial2ChangeCheckBox.CheckedChanged += new System.EventHandler(this.baseMaterial2ChangeCheckBox_CheckedChanged);
+            // 
+            // addMaterialChangeCheckBox
+            // 
+            this.addMaterialChangeCheckBox.AutoSize = true;
+            this.addMaterialChangeCheckBox.Location = new System.Drawing.Point(226, 273);
+            this.addMaterialChangeCheckBox.Name = "addMaterialChangeCheckBox";
+            this.addMaterialChangeCheckBox.Size = new System.Drawing.Size(55, 17);
+            this.addMaterialChangeCheckBox.TabIndex = 63;
+            this.addMaterialChangeCheckBox.Text = "Zmień";
+            this.addMaterialChangeCheckBox.UseVisualStyleBackColor = true;
+            this.addMaterialChangeCheckBox.CheckedChanged += new System.EventHandler(this.addMaterialChangeCheckBox_CheckedChanged);
+            // 
             // FastMaterialFactoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 311);
+            this.ClientSize = new System.Drawing.Size(309, 331);
+            this.Controls.Add(this.addMaterialChangeCheckBox);
+            this.Controls.Add(this.baseMaterial2ChangeCheckBox);
+            this.Controls.Add(this.baseMaterial1ChangeCheckBox);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.applyButton);
             this.Controls.Add(this.addMaterialGroupBox);
@@ -646,6 +685,7 @@
             this.addMaterialGroupBox.ResumeLayout(false);
             this.addMaterialGroupBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -710,5 +750,8 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.CheckBox baseMaterial1ChangeCheckBox;
+        private System.Windows.Forms.CheckBox baseMaterial2ChangeCheckBox;
+        private System.Windows.Forms.CheckBox addMaterialChangeCheckBox;
     }
 }
