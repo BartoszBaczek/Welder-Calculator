@@ -57,9 +57,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.niTextBox = new System.Windows.Forms.TextBox();
             this.crTextBox = new System.Windows.Forms.TextBox();
             this.crLabel = new System.Windows.Forms.Label();
-            this.cTextBox = new System.Windows.Forms.TextBox();
             this.niLabel = new System.Windows.Forms.Label();
-            this.cLabel = new System.Windows.Forms.Label();
             this.materialsDataGridView = new System.Windows.Forms.DataGridView();
             this.carbonLabel = new System.Windows.Forms.GroupBox();
             this.realCheckBox = new System.Windows.Forms.CheckBox();
@@ -338,9 +336,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.EqLayoutPanel.Controls.Add(this.niTextBox);
             this.EqLayoutPanel.Controls.Add(this.crTextBox);
             this.EqLayoutPanel.Controls.Add(this.crLabel);
-            this.EqLayoutPanel.Controls.Add(this.cTextBox);
             this.EqLayoutPanel.Controls.Add(this.niLabel);
-            this.EqLayoutPanel.Controls.Add(this.cLabel);
             this.EqLayoutPanel.Location = new System.Drawing.Point(303, 12);
             this.EqLayoutPanel.Name = "EqLayoutPanel";
             this.EqLayoutPanel.Size = new System.Drawing.Size(207, 108);
@@ -373,14 +369,6 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.crLabel.TabIndex = 1;
             this.crLabel.Text = "Cr:";
             // 
-            // cTextBox
-            // 
-            this.cTextBox.Location = new System.Drawing.Point(29, 23);
-            this.cTextBox.Name = "cTextBox";
-            this.cTextBox.ReadOnly = true;
-            this.cTextBox.Size = new System.Drawing.Size(172, 20);
-            this.cTextBox.TabIndex = 2;
-            // 
             // niLabel
             // 
             this.niLabel.AutoSize = true;
@@ -389,15 +377,6 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.niLabel.Size = new System.Drawing.Size(20, 13);
             this.niLabel.TabIndex = 2;
             this.niLabel.Text = "Ni:";
-            // 
-            // cLabel
-            // 
-            this.cLabel.AutoSize = true;
-            this.cLabel.Location = new System.Drawing.Point(6, 26);
-            this.cLabel.Name = "cLabel";
-            this.cLabel.Size = new System.Drawing.Size(17, 13);
-            this.cLabel.TabIndex = 0;
-            this.cLabel.Text = "C:";
             // 
             // materialsDataGridView
             // 
@@ -533,8 +512,6 @@ namespace WelderCalculator.Views.MaterialDatabaseView
         private System.Windows.Forms.TextBox niTextBox;
         private System.Windows.Forms.Label crLabel;
         private System.Windows.Forms.TextBox crTextBox;
-        private System.Windows.Forms.Label cLabel;
-        private System.Windows.Forms.TextBox cTextBox;
 
         //NormComboBox controls
         private System.Windows.Forms.Label normLabel;

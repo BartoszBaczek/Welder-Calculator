@@ -43,7 +43,6 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
         DataGridView DataGridView { get; }
         DataGridViewRow SelectedRow { get; }
 
-        double? CEquivalentTextBox { get; set; }
         double? NiEquivalentTextBox { get; set; }
         double? CrEquivalentTextBox { get; set; }
 

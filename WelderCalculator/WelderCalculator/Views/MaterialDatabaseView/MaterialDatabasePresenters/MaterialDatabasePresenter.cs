@@ -74,7 +74,6 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
             var material = GetSelectedMaterial();
             if (material != null)
             {
-                _view.CEquivalentTextBox = material.CEq;
                 _view.NiEquivalentTextBox = material.NiEqSchaeffler;
                 _view.CrEquivalentTextBox = material.CrEqSchaefflerAndDeLong;
             }

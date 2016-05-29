@@ -154,20 +154,6 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
             }
         }
 
-        public double? CEquivalentTextBox
-        {
-            get
-            {
-                string cEquivalentTextBox = this.cTextBox.Text;
-
-                if (string.IsNullOrEmpty(cEquivalentTextBox))
-                    return null;
-                return
-                    (double)Convert.ChangeType(cEquivalentTextBox, typeof(double));
-            }
-            set { this.cTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
-        }
-
         public double? NiEquivalentTextBox
         {
             get
