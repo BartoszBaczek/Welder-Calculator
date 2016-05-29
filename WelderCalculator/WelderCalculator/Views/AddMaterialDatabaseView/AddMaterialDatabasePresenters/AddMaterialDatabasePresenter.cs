@@ -194,8 +194,21 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             var material = GetSelectedMaterial();
             if (material != null)
             {
-                _view.NiEquivalentTextBox = material.NiEqSchaeffler;
-                _view.CrEquivalentTextBox = material.CrEqSchaefflerAndDeLong;
+                if (_view.EquivalentsList[_view.SelectedEquivalent] == "Schaeffler")
+                {
+                    _view.NiEquivalentTextBox = material.NiEqSchaeffler;
+                    _view.CrEquivalentTextBox = material.CrEqSchaefflerAndDeLong;
+                }
+                if (_view.EquivalentsList[_view.SelectedEquivalent] == "DeLong")
+                {
+                    _view.NiEquivalentTextBox = material.NiEqDeLong;
+                    _view.CrEquivalentTextBox = material.CrEqSchaefflerAndDeLong;
+                }
+                if (_view.EquivalentsList[_view.SelectedEquivalent] == "WRC1992")
+                {
+                    _view.NiEquivalentTextBox = material.NiEqWRC1992;
+                    _view.CrEquivalentTextBox = material.CrEqWRC1992;
+                }
             }
         }
 
