@@ -66,6 +66,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.numberCheckBox = new System.Windows.Forms.CheckBox();
             this.addNewNormButton = new System.Windows.Forms.Button();
             this.deleteNormButton = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.ViewLayoutPanel.SuspendLayout();
             this.DataModifLayoutPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
@@ -333,6 +334,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             // 
             // EqLayoutPanel
             // 
+            this.EqLayoutPanel.Controls.Add(this.comboBox1);
             this.EqLayoutPanel.Controls.Add(this.niTextBox);
             this.EqLayoutPanel.Controls.Add(this.crTextBox);
             this.EqLayoutPanel.Controls.Add(this.crLabel);
@@ -474,6 +476,14 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.deleteNormButton.UseVisualStyleBackColor = true;
             this.deleteNormButton.Click += new System.EventHandler(this.deleteNormButton_Click);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(28, 22);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(172, 21);
+            this.comboBox1.TabIndex = 5;
+            // 
             // MaterialDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,7 +563,6 @@ namespace WelderCalculator.Views.MaterialDatabaseView
         private Button addNewNormButton;
         private Button deleteNormButton;
         private Button chooseMaterialButton;
-
-
+        private ComboBox comboBox1;
     }
 }
