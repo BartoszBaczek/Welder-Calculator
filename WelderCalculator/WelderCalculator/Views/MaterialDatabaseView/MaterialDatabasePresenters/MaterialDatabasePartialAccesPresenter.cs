@@ -23,10 +23,15 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
             SetPartialAccesibilityControls();
         }
 
-        public override void OnSelectedIndexChanged()
+        public override void OnNormSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
+        }
+
+        public override void OnEquivalentsSelectedIndexChanged()
+        {
+            UpdateEquivalents();
         }
 
         public override void OnMaterialCheckBoxChanged(string elementName)

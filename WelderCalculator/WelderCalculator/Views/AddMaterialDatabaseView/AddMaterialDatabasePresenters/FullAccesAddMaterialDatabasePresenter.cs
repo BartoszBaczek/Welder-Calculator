@@ -167,13 +167,18 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             }
         }
 
-        public override void OnSelectedIndexChanged()
+        public override void OnNormSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
         }
 
         public override void OnSelectedDataGridViewRowChanged()
+        {
+            UpdateEquivalents();
+        }
+
+        public override void OnEquivalentSelectedIndexChanged()
         {
             UpdateEquivalents();
         }

@@ -298,7 +298,12 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
 
         private void normComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged();
+            Presenter.OnNormSelectedIndexChanged();
+        }
+
+        private void equivalentTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnEquivalentSelectedIndexChanged();
         }
 
         private void materialsDataGridView_SelectedRowChanged(object sender, EventArgs e)

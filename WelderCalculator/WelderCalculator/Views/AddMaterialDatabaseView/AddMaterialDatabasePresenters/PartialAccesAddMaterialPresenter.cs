@@ -122,10 +122,15 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             MessageBox.Show("Niedostepne");
         }
 
-        public override void OnSelectedIndexChanged()
+        public override void OnNormSelectedIndexChanged()
         {
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();
+        }
+
+        public override void OnEquivalentSelectedIndexChanged()
+        {
+            UpdateEquivalents();
         }
 
         public override void OnSelectedDataGridViewRowChanged()

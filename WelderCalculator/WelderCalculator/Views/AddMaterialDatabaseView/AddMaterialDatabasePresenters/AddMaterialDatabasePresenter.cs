@@ -20,7 +20,8 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
         public abstract void OnAddMaterialButtonClicked();
         public abstract void OnEditMaterialButtonClicked();
         public abstract void OnDeleteMaterialButtonClicked();
-        public abstract void OnSelectedIndexChanged();
+        public abstract void OnNormSelectedIndexChanged();
+        public abstract void OnEquivalentSelectedIndexChanged();
         public abstract void OnSelectedDataGridViewRowChanged();
         public abstract void OnAddNormButtonClicked();
         public abstract void OnDeleteNormButtonClicked();

@@ -353,6 +353,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.equivalentTypeComboBox.Name = "equivalentTypeComboBox";
             this.equivalentTypeComboBox.Size = new System.Drawing.Size(172, 21);
             this.equivalentTypeComboBox.TabIndex = 5;
+            this.equivalentTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.equivalentTypeComboBox_SelectedIndexChanged);
             // 
             // niTextBox
             // 

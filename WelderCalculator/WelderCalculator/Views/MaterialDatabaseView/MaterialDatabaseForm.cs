@@ -237,7 +237,12 @@ namespace WelderCalculator.Views.MaterialDatabaseView
        
         private void normComboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            Presenter.OnSelectedIndexChanged();
+            Presenter.OnNormSelectedIndexChanged();
+        }
+
+        private void equivalentTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnEquivalentsSelectedIndexChanged();
         }
 
         #region Material checkboxes checks changed
