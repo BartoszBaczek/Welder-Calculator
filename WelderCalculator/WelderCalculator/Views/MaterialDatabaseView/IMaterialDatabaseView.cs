@@ -16,9 +16,12 @@ namespace WelderCalculator.Views.MaterialDatabaseView
     {
         MaterialDatabasePresenter Presenter { set; }
         BaseMaterialDatabaseAccesibility Accesibility { get; }
-        List<string> NormsList { get; set; }
 
+        List<string> NormsList { get; set; }
         int SelectedNorm { get; set; }
+
+        List<string> EquivalentsList { get; set; }
+        int SelectedEquivalent { get; set; }
 
         bool CcheckBox { get; set; }
         bool SiCheckBox { get; set; }

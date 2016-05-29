@@ -35,6 +35,7 @@
             this.addButton = new System.Windows.Forms.Button();
             this.editButton = new System.Windows.Forms.Button();
             this.EqLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.equivalentTypeComboBox = new System.Windows.Forms.ComboBox();
             this.niTextBox = new System.Windows.Forms.TextBox();
             this.crTextBox = new System.Windows.Forms.TextBox();
             this.crLabel = new System.Windows.Forms.Label();
@@ -62,7 +63,6 @@
             this.addNewNormButton = new System.Windows.Forms.Button();
             this.deleteNormButton = new System.Windows.Forms.Button();
             this.chooseMaterialButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.modifyMaterialControlPanel.SuspendLayout();
             this.EqLayoutPanel.SuspendLayout();
             this.ViewLayoutPanel.SuspendLayout();
@@ -132,7 +132,7 @@
             // 
             // EqLayoutPanel
             // 
-            this.EqLayoutPanel.Controls.Add(this.comboBox1);
+            this.EqLayoutPanel.Controls.Add(this.equivalentTypeComboBox);
             this.EqLayoutPanel.Controls.Add(this.niTextBox);
             this.EqLayoutPanel.Controls.Add(this.crTextBox);
             this.EqLayoutPanel.Controls.Add(this.crLabel);
@@ -143,6 +143,14 @@
             this.EqLayoutPanel.TabIndex = 9;
             this.EqLayoutPanel.TabStop = false;
             this.EqLayoutPanel.Text = "Równoważniki";
+            // 
+            // equivalentTypeComboBox
+            // 
+            this.equivalentTypeComboBox.FormattingEnabled = true;
+            this.equivalentTypeComboBox.Location = new System.Drawing.Point(28, 19);
+            this.equivalentTypeComboBox.Name = "equivalentTypeComboBox";
+            this.equivalentTypeComboBox.Size = new System.Drawing.Size(172, 21);
+            this.equivalentTypeComboBox.TabIndex = 5;
             // 
             // niTextBox
             // 
@@ -448,14 +456,6 @@
             this.chooseMaterialButton.UseVisualStyleBackColor = true;
             this.chooseMaterialButton.Click += new System.EventHandler(this.chooseMaterialButton_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(28, 19);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 21);
-            this.comboBox1.TabIndex = 5;
-            // 
             // AddMaterialDatabaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -522,6 +522,6 @@
         private System.Windows.Forms.CheckBox vCheckBox;
         private System.Windows.Forms.Button deleteNormButton;
         private System.Windows.Forms.Button chooseMaterialButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox equivalentTypeComboBox;
     }
 }

@@ -36,6 +36,18 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView
             set { this.normComboBox.SelectedIndex = value; }
         }
 
+        public List<string> EquivalentsList
+        {
+            get { return equivalentTypeComboBox.DataSource as List<string>; }
+            set { equivalentTypeComboBox.DataSource = value; }
+        }
+        
+        public int SelectedEquivalent
+        {
+            get { return equivalentTypeComboBox.SelectedIndex; }
+            set { equivalentTypeComboBox.SelectedIndex = value; }
+        }
+
         #region Checkboxes
         public bool CcheckBox
         {

@@ -16,6 +16,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
         public override void Init()
         {
             LoadNormsComboBox();
+            LoadEquivalantsComboBox();
             MakeAllCheckBoxesChecked();
             BindDataSourceToDataGridView();
             SetDataGridViewColumnsWidthAndSetInitialVisibility();

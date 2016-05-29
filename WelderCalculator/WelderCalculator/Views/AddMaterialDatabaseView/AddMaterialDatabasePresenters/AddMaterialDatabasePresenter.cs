@@ -43,6 +43,16 @@ namespace WelderCalculator.Views.AddMaterialDatabaseView.AddMaterialDatabasePres
             _view.NormsList = _dataConnector.GetNamesOfAdditiveNorms();
         }
 
+        protected void LoadEquivalantsComboBox()
+        {
+            _view.EquivalentsList = new List<string>()
+            {
+                "Schaeffler",
+                "DeLong",
+                "WRC1992"
+            };
+        }
+
         protected void MakeAllCheckBoxesChecked()
         {
             _view.CcheckBox = true;
