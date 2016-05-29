@@ -11,7 +11,7 @@ namespace WelderCalculator.Views.SchaefflerMinimapView
         private readonly ISchaefflerMinimapView _view;
         private readonly DataConnector _dataConnector;
         private IChart _chart;
-
+        private readonly MinimapCombination _minimapCombination;
         private double _additionalMaterialQuantity;
 
         public SchaefflerMinimapPresenter(ISchaefflerMinimapView view, MinimapCombination minimapCombination, double additionalMaterialQuantity)
@@ -19,21 +19,22 @@ namespace WelderCalculator.Views.SchaefflerMinimapView
             _view = view;
             _view.Presenter = this;
             _dataConnector = new DataConnector();
+            _minimapCombination = minimapCombination;
             _additionalMaterialQuantity = additionalMaterialQuantity;
 
-            LoadChartData(minimapCombination);
+            LoadChartData();
             DrawLines();
         }
 
-        private void LoadChartData(MinimapCombination minimapCombination)
+        private void LoadChartData()
         {
-            if (minimapCombination == MinimapCombination.SchaefflerDeLong)
+            if (_minimapCombination == MinimapCombination.SchaefflerDeLong)
             {
                 _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
                     _dataConnector.GetSchaefflerDeLongMinimapImages(),
                     _dataConnector.GetSchaefflerDeLongMinimapSizingData());
             }
-            else if (minimapCombination == MinimapCombination.SchaefflerWRC1992)
+            else if (_minimapCombination == MinimapCombination.SchaefflerWRC1992)
             {
                 //_chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
                 //    _dataConnector.GetSchaefflerWRC1992MinimapImages(),
@@ -64,13 +65,25 @@ namespace WelderCalculator.Views.SchaefflerMinimapView
             }
 
             var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
-            PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEqSchaefflerAndDeLong, (float)firstMaterial.NiEqSchaeffler);
-
             var secondMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
-            PointF pointForSecondMaterial = new PointF((float)secondMaterial.CrEqSchaefflerAndDeLong, (float)secondMaterial.NiEqSchaeffler);
-
             var addMaterial = _dataConnector.GetAdditionalMaterialForSchaeffler();
-            PointF pointForAddMaterial = new PointF((float)addMaterial.CrEqSchaefflerAndDeLong, (float)addMaterial.NiEqSchaeffler);
+
+            PointF pointForFirstMaterial = new PointF();   
+            PointF pointForSecondMaterial = new PointF();  
+            PointF pointForAddMaterial = new PointF();
+
+            if (_minimapCombination == MinimapCombination.SchaefflerDeLong)
+            {
+                pointForFirstMaterial = new PointF((float)firstMaterial.CrEqSchaefflerAndDeLong, (float)firstMaterial.NiEqDeLong);
+                pointForSecondMaterial  = new PointF((float)secondMaterial.CrEqSchaefflerAndDeLong, (float)secondMaterial.NiEqDeLong);
+                pointForAddMaterial = new PointF((float)addMaterial.CrEqSchaefflerAndDeLong, (float)addMaterial.NiEqDeLong);
+            }
+            else if(_minimapCombination == MinimapCombination.SchaefflerWRC1992)
+            {
+                pointForFirstMaterial = new PointF((float)firstMaterial.CrEqWRC1992, (float)firstMaterial.NiEqWRC1992);
+                pointForSecondMaterial = new PointF((float)secondMaterial.CrEqWRC1992, (float)secondMaterial.NiEqWRC1992);
+                pointForAddMaterial = new PointF((float)addMaterial.CrEqWRC1992, (float)addMaterial.NiEqWRC1992);
+            }
 
             PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
 

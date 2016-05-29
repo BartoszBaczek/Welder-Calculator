@@ -129,13 +129,13 @@ namespace WelderCalculator.Views.DeLongChartView
             }
 
             var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
-            PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEqSchaefflerAndDeLong, (float)firstMaterial.NiEqSchaeffler);
+            PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEqSchaefflerAndDeLong, (float)firstMaterial.NiEqDeLong);
 
             var secondMaterial = _dataConnector.GetSecondBasisMarerialForSchaeffler();
-            PointF pointForSecondMaterial = new PointF((float)secondMaterial.CrEqSchaefflerAndDeLong, (float)secondMaterial.NiEqSchaeffler);
+            PointF pointForSecondMaterial = new PointF((float)secondMaterial.CrEqSchaefflerAndDeLong, (float)secondMaterial.NiEqDeLong);
 
             var addMaterial = _dataConnector.GetAdditionalMaterialForSchaeffler();
-            PointF pointForAddMaterial = new PointF((float)addMaterial.CrEqSchaefflerAndDeLong, (float)addMaterial.NiEqSchaeffler);
+            PointF pointForAddMaterial = new PointF((float)addMaterial.CrEqSchaefflerAndDeLong, (float)addMaterial.NiEqDeLong);
 
             PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
 
