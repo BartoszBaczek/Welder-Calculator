@@ -144,6 +144,7 @@
             // 
             // niTextBox
             // 
+            this.niTextBox.Enabled = false;
             this.niTextBox.Location = new System.Drawing.Point(28, 75);
             this.niTextBox.Name = "niTextBox";
             this.niTextBox.Size = new System.Drawing.Size(172, 20);
@@ -151,6 +152,7 @@
             // 
             // crTextBox
             // 
+            this.crTextBox.Enabled = false;
             this.crTextBox.Location = new System.Drawing.Point(28, 49);
             this.crTextBox.Name = "crTextBox";
             this.crTextBox.Size = new System.Drawing.Size(172, 20);
