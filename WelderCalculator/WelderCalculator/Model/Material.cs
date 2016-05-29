@@ -39,6 +39,22 @@ namespace WelderCalculator.Model
             {
                 double? niReal = GetElement(Category.OfElement.Ni).RealValue;
                 double? cReal = GetElement(Category.OfElement.C).RealValue;
+                double? mnReal = GetElement(Category.OfElement.Mn).RealValue;
+
+                double? nickielEquivalent = niReal +
+                                            (cReal * 30.0) +
+                                            (mnReal * 0.5);
+
+                return nickielEquivalent;
+            }
+        }
+
+        public double? NiEqDeLong
+        {
+            get
+            {
+                double? niReal = GetElement(Category.OfElement.Ni).RealValue;
+                double? cReal = GetElement(Category.OfElement.C).RealValue;
                 double? nReal = GetElement(Category.OfElement.N).RealValue;
                 double? mnReal = GetElement(Category.OfElement.Mn).RealValue;
 
@@ -50,7 +66,25 @@ namespace WelderCalculator.Model
             }
         }
 
-        public double? CrEqSchaeffler
+        public double? NiEqWRC1992
+        {
+            get
+            {
+                double? niReal = GetElement(Category.OfElement.Ni).RealValue;
+                double? cReal = GetElement(Category.OfElement.C).RealValue;
+                double? nReal = GetElement(Category.OfElement.N).RealValue;
+                double? cuReal = GetElement(Category.OfElement.Cu).RealValue;
+
+                double? nickielEquivalent = niReal +
+                                            (cReal * 35.0) +
+                                            (nReal * 20.0) +
+                                            (cuReal * 0.25);
+
+                return nickielEquivalent;
+            }
+        }
+
+        public double? CrEqSchaefflerAndDeLong
         {
             get
             {
@@ -58,18 +92,31 @@ namespace WelderCalculator.Model
                 double? moReal = GetElement(Category.OfElement.Mo).RealValue;
                 double? siReal = GetElement(Category.OfElement.Si).RealValue;
                 double? nbReal = GetElement(Category.OfElement.Nb).RealValue;
-                double? tiReal = GetElement(Category.OfElement.Ti).RealValue;
 
                 double? chromeEquivalent = crReal +
                                            moReal +
                                            siReal * 1.5 +
-                                           nbReal * 0.5 +
-                                           tiReal * 2;
+                                           nbReal * 0.5;
 
                 return chromeEquivalent;
             }
         }
 
+        public double? CrEqWRC1992
+        {
+            get
+            {
+                double? crReal = GetElement(Category.OfElement.Cr).RealValue;
+                double? moReal = GetElement(Category.OfElement.Mo).RealValue;
+                double? nbReal = GetElement(Category.OfElement.Nb).RealValue;
+
+                double? chromeEquivalent = crReal +
+                                           moReal +
+                                           nbReal * 0.7;
+
+                return chromeEquivalent;
+            }
+        }
 
         protected Material()
         {

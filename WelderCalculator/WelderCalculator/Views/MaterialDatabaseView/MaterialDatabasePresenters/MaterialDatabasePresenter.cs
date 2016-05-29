@@ -76,7 +76,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView.MaterialDatabasePresenters
             {
                 _view.CEquivalentTextBox = material.CEq;
                 _view.NiEquivalentTextBox = material.NiEqSchaeffler;
-                _view.CrEquivalentTextBox = material.CrEqSchaeffler;
+                _view.CrEquivalentTextBox = material.CrEqSchaefflerAndDeLong;
             }
         }
 
