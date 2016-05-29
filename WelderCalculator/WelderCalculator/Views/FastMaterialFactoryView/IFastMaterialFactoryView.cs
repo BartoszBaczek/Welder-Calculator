@@ -1,9 +1,22 @@
-﻿
+﻿using System.Collections.Generic;
+
 namespace WelderCalculator.Views.FastMaterialFactoryView
 {
     public interface IFastMaterialFactoryView
     {
         FastMaterialFactoryPresenter Presenter { set; }
+
+        //Equivalents
+        List<string> EquivalentsList { get; set; }
+        int SelectedEquivalent { get; set; }
+
+        double? CrEqBaseMaterial1TextBox { get; set; }
+        double? CrEqBaseMaterial2TextBox { get; set; }
+        double? CrEqAddMaterialTextBox { get; set; }
+        double? NiEqBaseMaterial1TextBox { get; set; }
+        double? NiEqBaseMaterial2TextBox { get; set; }
+        double? NiEqAddMaterialTextBox { get; set; }
+
         //baseMaterial1
         double? NiBaseMaterial1 { get; set; }
         double? CrBaseMaterial1 { get; set; }

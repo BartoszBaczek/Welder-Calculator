@@ -30,7 +30,11 @@
         {
             this.baseMaterial1GroupBox = new System.Windows.Forms.GroupBox();
             this.niLabel = new System.Windows.Forms.Label();
+            this.niEq1Label = new System.Windows.Forms.Label();
+            this.crEq1Label = new System.Windows.Forms.Label();
+            this.niEqBaseMaterial1TextBox = new System.Windows.Forms.TextBox();
             this.tiBaseMaterialTextBox = new System.Windows.Forms.TextBox();
+            this.crEqBaseMaterial1TextBox = new System.Windows.Forms.TextBox();
             this.nbBaseMaterialTextBox = new System.Windows.Forms.TextBox();
             this.siBaseMaterialTextBox = new System.Windows.Forms.TextBox();
             this.nBaseMaterialTextBox = new System.Windows.Forms.TextBox();
@@ -48,9 +52,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.baseMaterial2GroupBox = new System.Windows.Forms.GroupBox();
+            this.niEq2Label = new System.Windows.Forms.Label();
             this.tiBaseMaterial2TextBox = new System.Windows.Forms.TextBox();
+            this.crEq2Label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.niEqBaseMaterial2TextBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.crEqBaseMaterial2TextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -67,9 +75,13 @@
             this.crBaseMaterial2TextBox = new System.Windows.Forms.TextBox();
             this.niBaseMaterial2TextBox = new System.Windows.Forms.TextBox();
             this.addMaterialGroupBox = new System.Windows.Forms.GroupBox();
+            this.niEq3Label = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.crEq3Label = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.niEqAddMaterialTextBox = new System.Windows.Forms.TextBox();
             this.tiAddMaterialTextBox = new System.Windows.Forms.TextBox();
+            this.crEqAddMaterialTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.nbAddMaterialTextBox = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -90,15 +102,22 @@
             this.baseMaterial1ChangeCheckBox = new System.Windows.Forms.CheckBox();
             this.baseMaterial2ChangeCheckBox = new System.Windows.Forms.CheckBox();
             this.addMaterialChangeCheckBox = new System.Windows.Forms.CheckBox();
+            this.EqLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.equivalentTypeComboBox = new System.Windows.Forms.ComboBox();
             this.baseMaterial1GroupBox.SuspendLayout();
             this.baseMaterial2GroupBox.SuspendLayout();
             this.addMaterialGroupBox.SuspendLayout();
+            this.EqLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // baseMaterial1GroupBox
             // 
             this.baseMaterial1GroupBox.Controls.Add(this.niLabel);
+            this.baseMaterial1GroupBox.Controls.Add(this.niEq1Label);
+            this.baseMaterial1GroupBox.Controls.Add(this.crEq1Label);
+            this.baseMaterial1GroupBox.Controls.Add(this.niEqBaseMaterial1TextBox);
             this.baseMaterial1GroupBox.Controls.Add(this.tiBaseMaterialTextBox);
+            this.baseMaterial1GroupBox.Controls.Add(this.crEqBaseMaterial1TextBox);
             this.baseMaterial1GroupBox.Controls.Add(this.nbBaseMaterialTextBox);
             this.baseMaterial1GroupBox.Controls.Add(this.siBaseMaterialTextBox);
             this.baseMaterial1GroupBox.Controls.Add(this.nBaseMaterialTextBox);
@@ -117,7 +136,7 @@
             this.baseMaterial1GroupBox.Controls.Add(this.label1);
             this.baseMaterial1GroupBox.Location = new System.Drawing.Point(12, 13);
             this.baseMaterial1GroupBox.Name = "baseMaterial1GroupBox";
-            this.baseMaterial1GroupBox.Size = new System.Drawing.Size(89, 254);
+            this.baseMaterial1GroupBox.Size = new System.Drawing.Size(89, 305);
             this.baseMaterial1GroupBox.TabIndex = 0;
             this.baseMaterial1GroupBox.TabStop = false;
             this.baseMaterial1GroupBox.Text = "Mat. bazowy";
@@ -131,12 +150,46 @@
             this.niLabel.TabIndex = 17;
             this.niLabel.Text = "Ni:";
             // 
+            // niEq1Label
+            // 
+            this.niEq1Label.AutoSize = true;
+            this.niEq1Label.Location = new System.Drawing.Point(3, 280);
+            this.niEq1Label.Name = "niEq1Label";
+            this.niEq1Label.Size = new System.Drawing.Size(33, 13);
+            this.niEq1Label.TabIndex = 2;
+            this.niEq1Label.Text = "NiEq:";
+            // 
+            // crEq1Label
+            // 
+            this.crEq1Label.AutoSize = true;
+            this.crEq1Label.Location = new System.Drawing.Point(3, 254);
+            this.crEq1Label.Name = "crEq1Label";
+            this.crEq1Label.Size = new System.Drawing.Size(33, 13);
+            this.crEq1Label.TabIndex = 1;
+            this.crEq1Label.Text = "CrEq:";
+            // 
+            // niEqBaseMaterial1TextBox
+            // 
+            this.niEqBaseMaterial1TextBox.Enabled = false;
+            this.niEqBaseMaterial1TextBox.Location = new System.Drawing.Point(42, 277);
+            this.niEqBaseMaterial1TextBox.Name = "niEqBaseMaterial1TextBox";
+            this.niEqBaseMaterial1TextBox.Size = new System.Drawing.Size(34, 20);
+            this.niEqBaseMaterial1TextBox.TabIndex = 4;
+            // 
             // tiBaseMaterialTextBox
             // 
             this.tiBaseMaterialTextBox.Location = new System.Drawing.Point(29, 225);
             this.tiBaseMaterialTextBox.Name = "tiBaseMaterialTextBox";
             this.tiBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.tiBaseMaterialTextBox.TabIndex = 16;
+            // 
+            // crEqBaseMaterial1TextBox
+            // 
+            this.crEqBaseMaterial1TextBox.Enabled = false;
+            this.crEqBaseMaterial1TextBox.Location = new System.Drawing.Point(42, 251);
+            this.crEqBaseMaterial1TextBox.Name = "crEqBaseMaterial1TextBox";
+            this.crEqBaseMaterial1TextBox.Size = new System.Drawing.Size(34, 20);
+            this.crEqBaseMaterial1TextBox.TabIndex = 3;
             // 
             // nbBaseMaterialTextBox
             // 
@@ -268,9 +321,13 @@
             // 
             // baseMaterial2GroupBox
             // 
+            this.baseMaterial2GroupBox.Controls.Add(this.niEq2Label);
             this.baseMaterial2GroupBox.Controls.Add(this.tiBaseMaterial2TextBox);
+            this.baseMaterial2GroupBox.Controls.Add(this.crEq2Label);
             this.baseMaterial2GroupBox.Controls.Add(this.label9);
+            this.baseMaterial2GroupBox.Controls.Add(this.niEqBaseMaterial2TextBox);
             this.baseMaterial2GroupBox.Controls.Add(this.label10);
+            this.baseMaterial2GroupBox.Controls.Add(this.crEqBaseMaterial2TextBox);
             this.baseMaterial2GroupBox.Controls.Add(this.label11);
             this.baseMaterial2GroupBox.Controls.Add(this.label12);
             this.baseMaterial2GroupBox.Controls.Add(this.label13);
@@ -288,10 +345,19 @@
             this.baseMaterial2GroupBox.Controls.Add(this.niBaseMaterial2TextBox);
             this.baseMaterial2GroupBox.Location = new System.Drawing.Point(107, 13);
             this.baseMaterial2GroupBox.Name = "baseMaterial2GroupBox";
-            this.baseMaterial2GroupBox.Size = new System.Drawing.Size(91, 254);
+            this.baseMaterial2GroupBox.Size = new System.Drawing.Size(91, 305);
             this.baseMaterial2GroupBox.TabIndex = 1;
             this.baseMaterial2GroupBox.TabStop = false;
             this.baseMaterial2GroupBox.Text = "Mat. bazowy";
+            // 
+            // niEq2Label
+            // 
+            this.niEq2Label.AutoSize = true;
+            this.niEq2Label.Location = new System.Drawing.Point(4, 283);
+            this.niEq2Label.Name = "niEq2Label";
+            this.niEq2Label.Size = new System.Drawing.Size(33, 13);
+            this.niEq2Label.TabIndex = 19;
+            this.niEq2Label.Text = "NiEq:";
             // 
             // tiBaseMaterial2TextBox
             // 
@@ -299,6 +365,15 @@
             this.tiBaseMaterial2TextBox.Name = "tiBaseMaterial2TextBox";
             this.tiBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.tiBaseMaterial2TextBox.TabIndex = 62;
+            // 
+            // crEq2Label
+            // 
+            this.crEq2Label.AutoSize = true;
+            this.crEq2Label.Location = new System.Drawing.Point(4, 257);
+            this.crEq2Label.Name = "crEq2Label";
+            this.crEq2Label.Size = new System.Drawing.Size(33, 13);
+            this.crEq2Label.TabIndex = 18;
+            this.crEq2Label.Text = "CrEq:";
             // 
             // label9
             // 
@@ -309,6 +384,14 @@
             this.label9.TabIndex = 61;
             this.label9.Text = "Ni:";
             // 
+            // niEqBaseMaterial2TextBox
+            // 
+            this.niEqBaseMaterial2TextBox.Enabled = false;
+            this.niEqBaseMaterial2TextBox.Location = new System.Drawing.Point(43, 280);
+            this.niEqBaseMaterial2TextBox.Name = "niEqBaseMaterial2TextBox";
+            this.niEqBaseMaterial2TextBox.Size = new System.Drawing.Size(34, 20);
+            this.niEqBaseMaterial2TextBox.TabIndex = 21;
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -317,6 +400,14 @@
             this.label10.Size = new System.Drawing.Size(19, 13);
             this.label10.TabIndex = 60;
             this.label10.Text = "Ti:";
+            // 
+            // crEqBaseMaterial2TextBox
+            // 
+            this.crEqBaseMaterial2TextBox.Enabled = false;
+            this.crEqBaseMaterial2TextBox.Location = new System.Drawing.Point(43, 254);
+            this.crEqBaseMaterial2TextBox.Name = "crEqBaseMaterial2TextBox";
+            this.crEqBaseMaterial2TextBox.Size = new System.Drawing.Size(34, 20);
+            this.crEqBaseMaterial2TextBox.TabIndex = 20;
             // 
             // label11
             // 
@@ -439,9 +530,13 @@
             // 
             // addMaterialGroupBox
             // 
+            this.addMaterialGroupBox.Controls.Add(this.niEq3Label);
             this.addMaterialGroupBox.Controls.Add(this.label18);
+            this.addMaterialGroupBox.Controls.Add(this.crEq3Label);
             this.addMaterialGroupBox.Controls.Add(this.label19);
+            this.addMaterialGroupBox.Controls.Add(this.niEqAddMaterialTextBox);
             this.addMaterialGroupBox.Controls.Add(this.tiAddMaterialTextBox);
+            this.addMaterialGroupBox.Controls.Add(this.crEqAddMaterialTextBox);
             this.addMaterialGroupBox.Controls.Add(this.label20);
             this.addMaterialGroupBox.Controls.Add(this.nbAddMaterialTextBox);
             this.addMaterialGroupBox.Controls.Add(this.label21);
@@ -459,10 +554,19 @@
             this.addMaterialGroupBox.Controls.Add(this.niAddMaterialTextBox);
             this.addMaterialGroupBox.Location = new System.Drawing.Point(204, 12);
             this.addMaterialGroupBox.Name = "addMaterialGroupBox";
-            this.addMaterialGroupBox.Size = new System.Drawing.Size(98, 255);
+            this.addMaterialGroupBox.Size = new System.Drawing.Size(98, 306);
             this.addMaterialGroupBox.TabIndex = 2;
             this.addMaterialGroupBox.TabStop = false;
             this.addMaterialGroupBox.Text = "Mat. dodatkowy";
+            // 
+            // niEq3Label
+            // 
+            this.niEq3Label.AutoSize = true;
+            this.niEq3Label.Location = new System.Drawing.Point(4, 284);
+            this.niEq3Label.Name = "niEq3Label";
+            this.niEq3Label.Size = new System.Drawing.Size(33, 13);
+            this.niEq3Label.TabIndex = 64;
+            this.niEq3Label.Text = "NiEq:";
             // 
             // label18
             // 
@@ -473,6 +577,15 @@
             this.label18.TabIndex = 71;
             this.label18.Text = "Ni:";
             // 
+            // crEq3Label
+            // 
+            this.crEq3Label.AutoSize = true;
+            this.crEq3Label.Location = new System.Drawing.Point(4, 258);
+            this.crEq3Label.Name = "crEq3Label";
+            this.crEq3Label.Size = new System.Drawing.Size(33, 13);
+            this.crEq3Label.TabIndex = 63;
+            this.crEq3Label.Text = "CrEq:";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -482,12 +595,28 @@
             this.label19.TabIndex = 70;
             this.label19.Text = "Ti:";
             // 
+            // niEqAddMaterialTextBox
+            // 
+            this.niEqAddMaterialTextBox.Enabled = false;
+            this.niEqAddMaterialTextBox.Location = new System.Drawing.Point(43, 281);
+            this.niEqAddMaterialTextBox.Name = "niEqAddMaterialTextBox";
+            this.niEqAddMaterialTextBox.Size = new System.Drawing.Size(34, 20);
+            this.niEqAddMaterialTextBox.TabIndex = 66;
+            // 
             // tiAddMaterialTextBox
             // 
             this.tiAddMaterialTextBox.Location = new System.Drawing.Point(30, 226);
             this.tiAddMaterialTextBox.Name = "tiAddMaterialTextBox";
             this.tiAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.tiAddMaterialTextBox.TabIndex = 52;
+            // 
+            // crEqAddMaterialTextBox
+            // 
+            this.crEqAddMaterialTextBox.Enabled = false;
+            this.crEqAddMaterialTextBox.Location = new System.Drawing.Point(43, 255);
+            this.crEqAddMaterialTextBox.Name = "crEqAddMaterialTextBox";
+            this.crEqAddMaterialTextBox.Size = new System.Drawing.Size(34, 20);
+            this.crEqAddMaterialTextBox.TabIndex = 65;
             // 
             // label20
             // 
@@ -610,7 +739,7 @@
             // 
             // applyButton
             // 
-            this.applyButton.Location = new System.Drawing.Point(21, 296);
+            this.applyButton.Location = new System.Drawing.Point(12, 403);
             this.applyButton.Name = "applyButton";
             this.applyButton.Size = new System.Drawing.Size(75, 23);
             this.applyButton.TabIndex = 2;
@@ -620,7 +749,7 @@
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(213, 296);
+            this.cancelButton.Location = new System.Drawing.Point(211, 403);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(75, 23);
             this.cancelButton.TabIndex = 3;
@@ -631,7 +760,7 @@
             // baseMaterial1ChangeCheckBox
             // 
             this.baseMaterial1ChangeCheckBox.AutoSize = true;
-            this.baseMaterial1ChangeCheckBox.Location = new System.Drawing.Point(33, 273);
+            this.baseMaterial1ChangeCheckBox.Location = new System.Drawing.Point(18, 324);
             this.baseMaterial1ChangeCheckBox.Name = "baseMaterial1ChangeCheckBox";
             this.baseMaterial1ChangeCheckBox.Size = new System.Drawing.Size(55, 17);
             this.baseMaterial1ChangeCheckBox.TabIndex = 18;
@@ -642,7 +771,7 @@
             // baseMaterial2ChangeCheckBox
             // 
             this.baseMaterial2ChangeCheckBox.AutoSize = true;
-            this.baseMaterial2ChangeCheckBox.Location = new System.Drawing.Point(131, 273);
+            this.baseMaterial2ChangeCheckBox.Location = new System.Drawing.Point(114, 324);
             this.baseMaterial2ChangeCheckBox.Name = "baseMaterial2ChangeCheckBox";
             this.baseMaterial2ChangeCheckBox.Size = new System.Drawing.Size(55, 17);
             this.baseMaterial2ChangeCheckBox.TabIndex = 19;
@@ -653,7 +782,7 @@
             // addMaterialChangeCheckBox
             // 
             this.addMaterialChangeCheckBox.AutoSize = true;
-            this.addMaterialChangeCheckBox.Location = new System.Drawing.Point(226, 273);
+            this.addMaterialChangeCheckBox.Location = new System.Drawing.Point(211, 324);
             this.addMaterialChangeCheckBox.Name = "addMaterialChangeCheckBox";
             this.addMaterialChangeCheckBox.Size = new System.Drawing.Size(55, 17);
             this.addMaterialChangeCheckBox.TabIndex = 63;
@@ -661,11 +790,31 @@
             this.addMaterialChangeCheckBox.UseVisualStyleBackColor = true;
             this.addMaterialChangeCheckBox.CheckedChanged += new System.EventHandler(this.addMaterialChangeCheckBox_CheckedChanged);
             // 
+            // EqLayoutPanel
+            // 
+            this.EqLayoutPanel.Controls.Add(this.equivalentTypeComboBox);
+            this.EqLayoutPanel.Location = new System.Drawing.Point(12, 347);
+            this.EqLayoutPanel.Name = "EqLayoutPanel";
+            this.EqLayoutPanel.Size = new System.Drawing.Size(186, 50);
+            this.EqLayoutPanel.TabIndex = 64;
+            this.EqLayoutPanel.TabStop = false;
+            this.EqLayoutPanel.Text = "Równoważniki wg. wzoru:";
+            // 
+            // equivalentTypeComboBox
+            // 
+            this.equivalentTypeComboBox.FormattingEnabled = true;
+            this.equivalentTypeComboBox.Location = new System.Drawing.Point(6, 19);
+            this.equivalentTypeComboBox.Name = "equivalentTypeComboBox";
+            this.equivalentTypeComboBox.Size = new System.Drawing.Size(172, 21);
+            this.equivalentTypeComboBox.TabIndex = 5;
+            this.equivalentTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.equivalentTypeComboBox_SelectedIndexChanged);
+            // 
             // FastMaterialFactoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(309, 331);
+            this.ClientSize = new System.Drawing.Size(309, 429);
+            this.Controls.Add(this.EqLayoutPanel);
             this.Controls.Add(this.addMaterialChangeCheckBox);
             this.Controls.Add(this.baseMaterial2ChangeCheckBox);
             this.Controls.Add(this.baseMaterial1ChangeCheckBox);
@@ -684,6 +833,7 @@
             this.baseMaterial2GroupBox.PerformLayout();
             this.addMaterialGroupBox.ResumeLayout(false);
             this.addMaterialGroupBox.PerformLayout();
+            this.EqLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -753,5 +903,19 @@
         private System.Windows.Forms.CheckBox baseMaterial1ChangeCheckBox;
         private System.Windows.Forms.CheckBox baseMaterial2ChangeCheckBox;
         private System.Windows.Forms.CheckBox addMaterialChangeCheckBox;
+        private System.Windows.Forms.Label niEq1Label;
+        private System.Windows.Forms.Label crEq1Label;
+        private System.Windows.Forms.TextBox niEqBaseMaterial1TextBox;
+        private System.Windows.Forms.TextBox crEqBaseMaterial1TextBox;
+        private System.Windows.Forms.Label niEq2Label;
+        private System.Windows.Forms.Label crEq2Label;
+        private System.Windows.Forms.TextBox niEqBaseMaterial2TextBox;
+        private System.Windows.Forms.TextBox crEqBaseMaterial2TextBox;
+        private System.Windows.Forms.Label niEq3Label;
+        private System.Windows.Forms.Label crEq3Label;
+        private System.Windows.Forms.TextBox niEqAddMaterialTextBox;
+        private System.Windows.Forms.TextBox crEqAddMaterialTextBox;
+        private System.Windows.Forms.GroupBox EqLayoutPanel;
+        private System.Windows.Forms.ComboBox equivalentTypeComboBox;
     }
 }

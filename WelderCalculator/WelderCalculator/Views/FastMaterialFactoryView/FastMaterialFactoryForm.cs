@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace WelderCalculator.Views.FastMaterialFactoryView
@@ -37,7 +38,107 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
             textbox.Text = value.HasValue ? value.ToString() : string.Empty;
         }
 
-        #region textBoxes
+        #region Equivalents
+
+        public List<string> EquivalentsList
+        {
+            get { return equivalentTypeComboBox.DataSource as List<string>; }
+            set { equivalentTypeComboBox.DataSource = value; }
+        }
+
+        public int SelectedEquivalent
+        {
+            get { return equivalentTypeComboBox.SelectedIndex; }
+            set { equivalentTypeComboBox.SelectedIndex = value; }
+        }
+
+        public double? CrEqBaseMaterial1TextBox
+        {
+            get
+            {
+                string crEquivalentTextBox = this.crEqBaseMaterial1TextBox.Text;
+
+                if (string.IsNullOrEmpty(crEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(crEquivalentTextBox, typeof(double));
+            }
+            set { crEqBaseMaterial1TextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+
+        public double? CrEqBaseMaterial2TextBox
+        {
+            get
+            {
+                string crEquivalentTextBox = this.crEqBaseMaterial2TextBox.Text;
+
+                if (string.IsNullOrEmpty(crEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(crEquivalentTextBox, typeof(double));
+            }
+            set { crEqBaseMaterial2TextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+
+        public double? CrEqAddMaterialTextBox
+        {
+            get
+            {
+                string crEquivalentTextBox = this.crEqAddMaterialTextBox.Text;
+
+                if (string.IsNullOrEmpty(crEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(crEquivalentTextBox, typeof(double));
+            }
+            set { crEqAddMaterialTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+
+        public double? NiEqBaseMaterial1TextBox
+        {
+            get
+            {
+                string crEquivalentTextBox = this.niEqBaseMaterial1TextBox.Text;
+
+                if (string.IsNullOrEmpty(crEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(crEquivalentTextBox, typeof(double));
+            }
+            set { niEqBaseMaterial1TextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+
+        public double? NiEqBaseMaterial2TextBox
+        {
+            get
+            {
+                string crEquivalentTextBox = this.niEqBaseMaterial2TextBox.Text;
+
+                if (string.IsNullOrEmpty(crEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(crEquivalentTextBox, typeof(double));
+            }
+            set { niEqBaseMaterial2TextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+
+        public double? NiEqAddMaterialTextBox
+        {
+            get
+            {
+                string crEquivalentTextBox = this.niEqAddMaterialTextBox.Text;
+
+                if (string.IsNullOrEmpty(crEquivalentTextBox))
+                    return null;
+                return
+                    (double)Convert.ChangeType(crEquivalentTextBox, typeof(double));
+            }
+            set { niEqAddMaterialTextBox.Text = value.HasValue ? value.ToString() : "Brak danych"; }
+        }
+
+        #endregion
+
+        #region TextBoxes
         public double? NiBaseMaterial1
         {
             get
@@ -352,6 +453,11 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
         private void addMaterialChangeCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             addMaterialGroupBox.Enabled = ChangeAdditionalMaterialChecked;
+        }
+
+        private void equivalentTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Presenter.OnEquivalentSelectedIndexChanged();
         }
     }
 }
