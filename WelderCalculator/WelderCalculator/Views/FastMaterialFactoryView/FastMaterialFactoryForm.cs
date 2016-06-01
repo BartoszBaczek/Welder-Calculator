@@ -459,5 +459,140 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
         {
             Presenter.OnEquivalentSelectedIndexChanged();
         }
+
+        private void niBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("niBaseMaterial");
+        }
+
+        private void crBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("crBaseMaterial");
+        }
+
+        private void cBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("cBaseMaterial");
+        }
+
+        private void mnBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("mnBaseMaterial");
+        }
+
+        private void moBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("moBaseMaterial");
+        }
+
+        private void nBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("nBaseMaterial");
+        }
+
+        private void siBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("siBaseMaterial");
+        }
+
+        private void nbBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("nbBaseMaterial");
+        }
+
+        private void cuBaseMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("cuBaseMaterial");
+        }
+
+        private void niBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("niBaseMaterial2");
+        }
+
+        private void crBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("crBaseMaterial2");
+        }
+
+        private void cBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("cBaseMaterial2");
+        }
+
+        private void mnBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("mnBaseMaterial2");
+        }
+
+        private void moBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("moBaseMaterial2");
+        }
+
+        private void nBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("nBaseMaterial2");
+        }
+
+        private void siBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("siBaseMaterial2");
+        }
+
+        private void nbBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("nbBaseMaterial2");
+        }
+
+        private void cuBaseMaterial2TextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("cuBaseMaterial2");
+        }
+
+        private void niAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("niAddMaterial");
+        }
+
+        private void crAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("crAddMaterial");
+        }
+
+        private void cAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("cAddMaterial");
+        }
+
+        private void mnAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("mnAddMaterial");
+        }
+
+        private void moAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("moAddMaterial");
+        }
+
+        private void nAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("nAddMaterial");
+        }
+
+        private void siAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("siAddMaterial");
+        }
+
+        private void nbAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("nbAddMaterial");
+        }
+
+        private void cuAddMaterialTextBox_TextChanged(object sender, EventArgs e)
+        {
+            Presenter.OnElementTextBoxChanged("cuAddMaterial");
+        }
     }
 }

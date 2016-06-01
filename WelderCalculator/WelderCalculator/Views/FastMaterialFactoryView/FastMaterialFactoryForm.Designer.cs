@@ -182,6 +182,7 @@
             this.cuBaseMaterialTextBox.Name = "cuBaseMaterialTextBox";
             this.cuBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.cuBaseMaterialTextBox.TabIndex = 16;
+            this.cuBaseMaterialTextBox.TextChanged += new System.EventHandler(this.cuBaseMaterialTextBox_TextChanged);
             // 
             // crEqBaseMaterial1TextBox
             // 
@@ -197,6 +198,7 @@
             this.nbBaseMaterialTextBox.Name = "nbBaseMaterialTextBox";
             this.nbBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.nbBaseMaterialTextBox.TabIndex = 15;
+            this.nbBaseMaterialTextBox.TextChanged += new System.EventHandler(this.nbBaseMaterialTextBox_TextChanged);
             // 
             // siBaseMaterialTextBox
             // 
@@ -204,6 +206,7 @@
             this.siBaseMaterialTextBox.Name = "siBaseMaterialTextBox";
             this.siBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.siBaseMaterialTextBox.TabIndex = 14;
+            this.siBaseMaterialTextBox.TextChanged += new System.EventHandler(this.siBaseMaterialTextBox_TextChanged);
             // 
             // nBaseMaterialTextBox
             // 
@@ -211,6 +214,7 @@
             this.nBaseMaterialTextBox.Name = "nBaseMaterialTextBox";
             this.nBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.nBaseMaterialTextBox.TabIndex = 13;
+            this.nBaseMaterialTextBox.TextChanged += new System.EventHandler(this.nBaseMaterialTextBox_TextChanged);
             // 
             // moBaseMaterialTextBox
             // 
@@ -218,6 +222,7 @@
             this.moBaseMaterialTextBox.Name = "moBaseMaterialTextBox";
             this.moBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.moBaseMaterialTextBox.TabIndex = 12;
+            this.moBaseMaterialTextBox.TextChanged += new System.EventHandler(this.moBaseMaterialTextBox_TextChanged);
             // 
             // mnBaseMaterialTextBox
             // 
@@ -225,6 +230,7 @@
             this.mnBaseMaterialTextBox.Name = "mnBaseMaterialTextBox";
             this.mnBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.mnBaseMaterialTextBox.TabIndex = 11;
+            this.mnBaseMaterialTextBox.TextChanged += new System.EventHandler(this.mnBaseMaterialTextBox_TextChanged);
             // 
             // cBaseMaterialTextBox
             // 
@@ -232,6 +238,7 @@
             this.cBaseMaterialTextBox.Name = "cBaseMaterialTextBox";
             this.cBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.cBaseMaterialTextBox.TabIndex = 10;
+            this.cBaseMaterialTextBox.TextChanged += new System.EventHandler(this.cBaseMaterialTextBox_TextChanged);
             // 
             // crBaseMaterialTextBox
             // 
@@ -239,6 +246,7 @@
             this.crBaseMaterialTextBox.Name = "crBaseMaterialTextBox";
             this.crBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.crBaseMaterialTextBox.TabIndex = 9;
+            this.crBaseMaterialTextBox.TextChanged += new System.EventHandler(this.crBaseMaterialTextBox_TextChanged);
             // 
             // niBaseMaterialTextBox
             // 
@@ -246,6 +254,7 @@
             this.niBaseMaterialTextBox.Name = "niBaseMaterialTextBox";
             this.niBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.niBaseMaterialTextBox.TabIndex = 8;
+            this.niBaseMaterialTextBox.TextChanged += new System.EventHandler(this.niBaseMaterialTextBox_TextChanged);
             // 
             // label8
             // 
@@ -365,6 +374,7 @@
             this.cuBaseMaterial2TextBox.Name = "cuBaseMaterial2TextBox";
             this.cuBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.cuBaseMaterial2TextBox.TabIndex = 62;
+            this.cuBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.cuBaseMaterial2TextBox_TextChanged);
             // 
             // crEq2Label
             // 
@@ -478,6 +488,7 @@
             this.nbBaseMaterial2TextBox.Name = "nbBaseMaterial2TextBox";
             this.nbBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.nbBaseMaterial2TextBox.TabIndex = 33;
+            this.nbBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.nbBaseMaterial2TextBox_TextChanged);
             // 
             // siBaseMaterial2TextBox
             // 
@@ -485,6 +496,7 @@
             this.siBaseMaterial2TextBox.Name = "siBaseMaterial2TextBox";
             this.siBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.siBaseMaterial2TextBox.TabIndex = 32;
+            this.siBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.siBaseMaterial2TextBox_TextChanged);
             // 
             // nBaseMaterial2TextBox
             // 
@@ -492,6 +504,7 @@
             this.nBaseMaterial2TextBox.Name = "nBaseMaterial2TextBox";
             this.nBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.nBaseMaterial2TextBox.TabIndex = 31;
+            this.nBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.nBaseMaterial2TextBox_TextChanged);
             // 
             // moBaseMaterial2TextBox
             // 
@@ -499,6 +512,7 @@
             this.moBaseMaterial2TextBox.Name = "moBaseMaterial2TextBox";
             this.moBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.moBaseMaterial2TextBox.TabIndex = 30;
+            this.moBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.moBaseMaterial2TextBox_TextChanged);
             // 
             // mnBaseMaterial2TextBox
             // 
@@ -506,6 +520,7 @@
             this.mnBaseMaterial2TextBox.Name = "mnBaseMaterial2TextBox";
             this.mnBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.mnBaseMaterial2TextBox.TabIndex = 29;
+            this.mnBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.mnBaseMaterial2TextBox_TextChanged);
             // 
             // cBaseMaterial2TextBox
             // 
@@ -513,6 +528,7 @@
             this.cBaseMaterial2TextBox.Name = "cBaseMaterial2TextBox";
             this.cBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.cBaseMaterial2TextBox.TabIndex = 28;
+            this.cBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.cBaseMaterial2TextBox_TextChanged);
             // 
             // crBaseMaterial2TextBox
             // 
@@ -520,6 +536,7 @@
             this.crBaseMaterial2TextBox.Name = "crBaseMaterial2TextBox";
             this.crBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.crBaseMaterial2TextBox.TabIndex = 27;
+            this.crBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.crBaseMaterial2TextBox_TextChanged);
             // 
             // niBaseMaterial2TextBox
             // 
@@ -527,6 +544,7 @@
             this.niBaseMaterial2TextBox.Name = "niBaseMaterial2TextBox";
             this.niBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
             this.niBaseMaterial2TextBox.TabIndex = 26;
+            this.niBaseMaterial2TextBox.TextChanged += new System.EventHandler(this.niBaseMaterial2TextBox_TextChanged);
             // 
             // addMaterialGroupBox
             // 
@@ -609,6 +627,7 @@
             this.cuAddMaterialTextBox.Name = "cuAddMaterialTextBox";
             this.cuAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.cuAddMaterialTextBox.TabIndex = 52;
+            this.cuAddMaterialTextBox.TextChanged += new System.EventHandler(this.cuAddMaterialTextBox_TextChanged);
             // 
             // crEqAddMaterialTextBox
             // 
@@ -633,6 +652,7 @@
             this.nbAddMaterialTextBox.Name = "nbAddMaterialTextBox";
             this.nbAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.nbAddMaterialTextBox.TabIndex = 51;
+            this.nbAddMaterialTextBox.TextChanged += new System.EventHandler(this.nbAddMaterialTextBox_TextChanged);
             // 
             // label21
             // 
@@ -649,6 +669,7 @@
             this.siAddMaterialTextBox.Name = "siAddMaterialTextBox";
             this.siAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.siAddMaterialTextBox.TabIndex = 50;
+            this.siAddMaterialTextBox.TextChanged += new System.EventHandler(this.siAddMaterialTextBox_TextChanged);
             // 
             // label22
             // 
@@ -665,6 +686,7 @@
             this.nAddMaterialTextBox.Name = "nAddMaterialTextBox";
             this.nAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.nAddMaterialTextBox.TabIndex = 49;
+            this.nAddMaterialTextBox.TextChanged += new System.EventHandler(this.nAddMaterialTextBox_TextChanged);
             // 
             // label23
             // 
@@ -681,6 +703,7 @@
             this.moAddMaterialTextBox.Name = "moAddMaterialTextBox";
             this.moAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.moAddMaterialTextBox.TabIndex = 48;
+            this.moAddMaterialTextBox.TextChanged += new System.EventHandler(this.moAddMaterialTextBox_TextChanged);
             // 
             // label24
             // 
@@ -697,6 +720,7 @@
             this.mnAddMaterialTextBox.Name = "mnAddMaterialTextBox";
             this.mnAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.mnAddMaterialTextBox.TabIndex = 47;
+            this.mnAddMaterialTextBox.TextChanged += new System.EventHandler(this.mnAddMaterialTextBox_TextChanged);
             // 
             // label25
             // 
@@ -713,6 +737,7 @@
             this.cAddMaterialTextBox.Name = "cAddMaterialTextBox";
             this.cAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.cAddMaterialTextBox.TabIndex = 46;
+            this.cAddMaterialTextBox.TextChanged += new System.EventHandler(this.cAddMaterialTextBox_TextChanged);
             // 
             // label26
             // 
@@ -729,6 +754,7 @@
             this.crAddMaterialTextBox.Name = "crAddMaterialTextBox";
             this.crAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.crAddMaterialTextBox.TabIndex = 45;
+            this.crAddMaterialTextBox.TextChanged += new System.EventHandler(this.crAddMaterialTextBox_TextChanged);
             // 
             // niAddMaterialTextBox
             // 
@@ -736,6 +762,7 @@
             this.niAddMaterialTextBox.Name = "niAddMaterialTextBox";
             this.niAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
             this.niAddMaterialTextBox.TabIndex = 44;
+            this.niAddMaterialTextBox.TextChanged += new System.EventHandler(this.niAddMaterialTextBox_TextChanged);
             // 
             // applyButton
             // 
