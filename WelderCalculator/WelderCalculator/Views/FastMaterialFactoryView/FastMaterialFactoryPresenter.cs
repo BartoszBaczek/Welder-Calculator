@@ -43,7 +43,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
             _view.NBaseMaterial1 = _currentBaseMaterial1State.GetElement(Category.OfElement.N).RealValue;
             _view.SiBaseMaterial1 = _currentBaseMaterial1State.GetElement(Category.OfElement.Si).RealValue;
             _view.NbBaseMaterial1 = _currentBaseMaterial1State.GetElement(Category.OfElement.Nb).RealValue;
-            _view.TiBaseMaterial1 = _currentBaseMaterial1State.GetElement(Category.OfElement.Ti).RealValue;
+            _view.CuBaseMaterial1 = _currentBaseMaterial1State.GetElement(Category.OfElement.Cu).RealValue;
 
             // BaseMaterial2
             _view.NiBaseMaterial2 = _currentBaseMaterial2State.GetElement(Category.OfElement.Ni).RealValue;
@@ -54,7 +54,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
             _view.NBaseMaterial2 = _currentBaseMaterial2State.GetElement(Category.OfElement.N).RealValue;
             _view.SiBaseMaterial2 = _currentBaseMaterial2State.GetElement(Category.OfElement.Si).RealValue;
             _view.NbBaseMaterial2 = _currentBaseMaterial2State.GetElement(Category.OfElement.Nb).RealValue;
-            _view.TiBaseMaterial2 = _currentBaseMaterial2State.GetElement(Category.OfElement.Ti).RealValue;
+            _view.CuBaseMaterial2 = _currentBaseMaterial2State.GetElement(Category.OfElement.Cu).RealValue;
 
             // AddMaterial
             _view.NiAddMaterial = _currentAdditionalMaterial1State.GetElement(Category.OfElement.Ni).RealValue;
@@ -65,7 +65,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
             _view.NAddMaterial = _currentAdditionalMaterial1State.GetElement(Category.OfElement.N).RealValue;
             _view.SiAddMaterial = _currentAdditionalMaterial1State.GetElement(Category.OfElement.Si).RealValue;
             _view.NbAddMaterial = _currentAdditionalMaterial1State.GetElement(Category.OfElement.Nb).RealValue;
-            _view.TiAddMaterial = _currentAdditionalMaterial1State.GetElement(Category.OfElement.Ti).RealValue;
+            _view.CuAddMaterial = _currentAdditionalMaterial1State.GetElement(Category.OfElement.Cu).RealValue;
         }
 
         private void FillEquivalentsWithCurrentMaterialsState()
@@ -118,7 +118,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
                 firstBaseMaterial.GetElement(Category.OfElement.Mo).RealValue = _view.MoBaseMaterial1;
                 firstBaseMaterial.GetElement(Category.OfElement.Nb).RealValue = _view.NbBaseMaterial1;
                 firstBaseMaterial.GetElement(Category.OfElement.Ni).RealValue = _view.NiBaseMaterial1;
-                firstBaseMaterial.GetElement(Category.OfElement.Ti).RealValue = _view.TiBaseMaterial1;
+                firstBaseMaterial.GetElement(Category.OfElement.Cu).RealValue = _view.CuBaseMaterial1;
                 _dataConnector.SaveFirstBasisMarerialForSchaeffler(firstBaseMaterial);
             }
 
@@ -136,7 +136,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
                 secondBaseMaterial.GetElement(Category.OfElement.Mo).RealValue = _view.MoBaseMaterial2;
                 secondBaseMaterial.GetElement(Category.OfElement.Nb).RealValue = _view.NbBaseMaterial2;
                 secondBaseMaterial.GetElement(Category.OfElement.Ni).RealValue = _view.NiBaseMaterial2;
-                secondBaseMaterial.GetElement(Category.OfElement.Ti).RealValue = _view.TiBaseMaterial2;
+                secondBaseMaterial.GetElement(Category.OfElement.Cu).RealValue = _view.CuBaseMaterial2;
                 _dataConnector.SaveSecondBasisMarerialForSchaeffler(secondBaseMaterial);
             }
 
@@ -154,7 +154,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
                 addMaterial.GetElement(Category.OfElement.Mo).RealValue = _view.MoAddMaterial;
                 addMaterial.GetElement(Category.OfElement.Nb).RealValue = _view.NbAddMaterial;
                 addMaterial.GetElement(Category.OfElement.Ni).RealValue = _view.NiAddMaterial;
-                addMaterial.GetElement(Category.OfElement.Ti).RealValue = _view.TiAddMaterial;
+                addMaterial.GetElement(Category.OfElement.Cu).RealValue = _view.CuAddMaterial;
                 _dataConnector.SaveAdditionalMaterialForSchaeffler(addMaterial);
             }
         }

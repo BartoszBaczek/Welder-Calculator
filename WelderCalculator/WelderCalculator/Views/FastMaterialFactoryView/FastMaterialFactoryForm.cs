@@ -219,14 +219,14 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
             set { SetTextboxValue(ref nbBaseMaterialTextBox, value); }
         }
 
-        public double? TiBaseMaterial1
+        public double? CuBaseMaterial1
         {
             get
             {
-                double? textBoxValue = GetTextBoxValue(tiBaseMaterialTextBox);
+                double? textBoxValue = GetTextBoxValue(cuBaseMaterialTextBox);
                 return textBoxValue;
             }
-            set { SetTextboxValue(ref tiBaseMaterialTextBox, value); }
+            set { SetTextboxValue(ref cuBaseMaterialTextBox, value); }
         }
 
         public double? NiBaseMaterial2
@@ -309,14 +309,14 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
             set { SetTextboxValue(ref nbBaseMaterial2TextBox, value); }
         }
 
-        public double? TiBaseMaterial2
+        public double? CuBaseMaterial2
         {
             get
             {
-                double? textBoxValue = GetTextBoxValue(tiBaseMaterial2TextBox);
+                double? textBoxValue = GetTextBoxValue(cuBaseMaterial2TextBox);
                 return textBoxValue;
             }
-            set { SetTextboxValue(ref tiBaseMaterial2TextBox, value); }
+            set { SetTextboxValue(ref cuBaseMaterial2TextBox, value); }
         }
 
         public double? NiAddMaterial
@@ -399,14 +399,14 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
             set { SetTextboxValue(ref nbAddMaterialTextBox, value); }
         }
 
-        public double? TiAddMaterial
+        public double? CuAddMaterial
         {
             get
             {
-                double? textBoxValue = GetTextBoxValue(tiAddMaterialTextBox);
+                double? textBoxValue = GetTextBoxValue(cuAddMaterialTextBox);
                 return textBoxValue;
             }
-            set { SetTextboxValue(ref tiAddMaterialTextBox, value); }
+            set { SetTextboxValue(ref cuAddMaterialTextBox, value); }
         }
 
         public bool ChangeBaseMaterial1Checked

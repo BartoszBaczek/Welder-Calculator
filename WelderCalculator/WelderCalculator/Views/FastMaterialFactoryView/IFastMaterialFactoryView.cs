@@ -26,7 +26,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
         double? NBaseMaterial1 { get; set; }
         double? SiBaseMaterial1 { get; set; }
         double? NbBaseMaterial1 { get; set; }
-        double? TiBaseMaterial1 { get; set; }
+        double? CuBaseMaterial1 { get; set; }
         bool ChangeBaseMaterial1Checked { get; set; }
 
         //baseMaterial2
@@ -38,7 +38,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
         double? NBaseMaterial2 { get; set; }
         double? SiBaseMaterial2 { get; set; }
         double? NbBaseMaterial2 { get; set; }
-        double? TiBaseMaterial2 { get; set; }
+        double? CuBaseMaterial2 { get; set; }
         bool ChangeBaseMaterial2Checked { get; set; }
 
         //baseMaterial2
@@ -50,7 +50,7 @@ namespace WelderCalculator.Views.FastMaterialFactoryView
         double? NAddMaterial { get; set; }
         double? SiAddMaterial { get; set; }
         double? NbAddMaterial { get; set; }
-        double? TiAddMaterial { get; set; }
+        double? CuAddMaterial { get; set; }
         bool ChangeAdditionalMaterialChecked { get; set; }
     }
 }

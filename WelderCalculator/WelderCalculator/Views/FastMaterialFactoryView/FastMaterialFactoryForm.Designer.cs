@@ -33,7 +33,7 @@
             this.niEq1Label = new System.Windows.Forms.Label();
             this.crEq1Label = new System.Windows.Forms.Label();
             this.niEqBaseMaterial1TextBox = new System.Windows.Forms.TextBox();
-            this.tiBaseMaterialTextBox = new System.Windows.Forms.TextBox();
+            this.cuBaseMaterialTextBox = new System.Windows.Forms.TextBox();
             this.crEqBaseMaterial1TextBox = new System.Windows.Forms.TextBox();
             this.nbBaseMaterialTextBox = new System.Windows.Forms.TextBox();
             this.siBaseMaterialTextBox = new System.Windows.Forms.TextBox();
@@ -53,7 +53,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.baseMaterial2GroupBox = new System.Windows.Forms.GroupBox();
             this.niEq2Label = new System.Windows.Forms.Label();
-            this.tiBaseMaterial2TextBox = new System.Windows.Forms.TextBox();
+            this.cuBaseMaterial2TextBox = new System.Windows.Forms.TextBox();
             this.crEq2Label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.niEqBaseMaterial2TextBox = new System.Windows.Forms.TextBox();
@@ -80,7 +80,7 @@
             this.crEq3Label = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.niEqAddMaterialTextBox = new System.Windows.Forms.TextBox();
-            this.tiAddMaterialTextBox = new System.Windows.Forms.TextBox();
+            this.cuAddMaterialTextBox = new System.Windows.Forms.TextBox();
             this.crEqAddMaterialTextBox = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.nbAddMaterialTextBox = new System.Windows.Forms.TextBox();
@@ -116,7 +116,7 @@
             this.baseMaterial1GroupBox.Controls.Add(this.niEq1Label);
             this.baseMaterial1GroupBox.Controls.Add(this.crEq1Label);
             this.baseMaterial1GroupBox.Controls.Add(this.niEqBaseMaterial1TextBox);
-            this.baseMaterial1GroupBox.Controls.Add(this.tiBaseMaterialTextBox);
+            this.baseMaterial1GroupBox.Controls.Add(this.cuBaseMaterialTextBox);
             this.baseMaterial1GroupBox.Controls.Add(this.crEqBaseMaterial1TextBox);
             this.baseMaterial1GroupBox.Controls.Add(this.nbBaseMaterialTextBox);
             this.baseMaterial1GroupBox.Controls.Add(this.siBaseMaterialTextBox);
@@ -176,12 +176,12 @@
             this.niEqBaseMaterial1TextBox.Size = new System.Drawing.Size(34, 20);
             this.niEqBaseMaterial1TextBox.TabIndex = 4;
             // 
-            // tiBaseMaterialTextBox
+            // cuBaseMaterialTextBox
             // 
-            this.tiBaseMaterialTextBox.Location = new System.Drawing.Point(29, 225);
-            this.tiBaseMaterialTextBox.Name = "tiBaseMaterialTextBox";
-            this.tiBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
-            this.tiBaseMaterialTextBox.TabIndex = 16;
+            this.cuBaseMaterialTextBox.Location = new System.Drawing.Point(29, 225);
+            this.cuBaseMaterialTextBox.Name = "cuBaseMaterialTextBox";
+            this.cuBaseMaterialTextBox.Size = new System.Drawing.Size(47, 20);
+            this.cuBaseMaterialTextBox.TabIndex = 16;
             // 
             // crEqBaseMaterial1TextBox
             // 
@@ -252,9 +252,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(6, 228);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(19, 13);
+            this.label8.Size = new System.Drawing.Size(23, 13);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Ti:";
+            this.label8.Text = "Cu:";
             // 
             // label7
             // 
@@ -322,7 +322,7 @@
             // baseMaterial2GroupBox
             // 
             this.baseMaterial2GroupBox.Controls.Add(this.niEq2Label);
-            this.baseMaterial2GroupBox.Controls.Add(this.tiBaseMaterial2TextBox);
+            this.baseMaterial2GroupBox.Controls.Add(this.cuBaseMaterial2TextBox);
             this.baseMaterial2GroupBox.Controls.Add(this.crEq2Label);
             this.baseMaterial2GroupBox.Controls.Add(this.label9);
             this.baseMaterial2GroupBox.Controls.Add(this.niEqBaseMaterial2TextBox);
@@ -359,12 +359,12 @@
             this.niEq2Label.TabIndex = 19;
             this.niEq2Label.Text = "NiEq:";
             // 
-            // tiBaseMaterial2TextBox
+            // cuBaseMaterial2TextBox
             // 
-            this.tiBaseMaterial2TextBox.Location = new System.Drawing.Point(30, 225);
-            this.tiBaseMaterial2TextBox.Name = "tiBaseMaterial2TextBox";
-            this.tiBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
-            this.tiBaseMaterial2TextBox.TabIndex = 62;
+            this.cuBaseMaterial2TextBox.Location = new System.Drawing.Point(30, 225);
+            this.cuBaseMaterial2TextBox.Name = "cuBaseMaterial2TextBox";
+            this.cuBaseMaterial2TextBox.Size = new System.Drawing.Size(47, 20);
+            this.cuBaseMaterial2TextBox.TabIndex = 62;
             // 
             // crEq2Label
             // 
@@ -397,9 +397,9 @@
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(6, 228);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(19, 13);
+            this.label10.Size = new System.Drawing.Size(23, 13);
             this.label10.TabIndex = 60;
-            this.label10.Text = "Ti:";
+            this.label10.Text = "Cu:";
             // 
             // crEqBaseMaterial2TextBox
             // 
@@ -535,7 +535,7 @@
             this.addMaterialGroupBox.Controls.Add(this.crEq3Label);
             this.addMaterialGroupBox.Controls.Add(this.label19);
             this.addMaterialGroupBox.Controls.Add(this.niEqAddMaterialTextBox);
-            this.addMaterialGroupBox.Controls.Add(this.tiAddMaterialTextBox);
+            this.addMaterialGroupBox.Controls.Add(this.cuAddMaterialTextBox);
             this.addMaterialGroupBox.Controls.Add(this.crEqAddMaterialTextBox);
             this.addMaterialGroupBox.Controls.Add(this.label20);
             this.addMaterialGroupBox.Controls.Add(this.nbAddMaterialTextBox);
@@ -591,9 +591,9 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(6, 228);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(19, 13);
+            this.label19.Size = new System.Drawing.Size(23, 13);
             this.label19.TabIndex = 70;
-            this.label19.Text = "Ti:";
+            this.label19.Text = "Cu:";
             // 
             // niEqAddMaterialTextBox
             // 
@@ -603,12 +603,12 @@
             this.niEqAddMaterialTextBox.Size = new System.Drawing.Size(34, 20);
             this.niEqAddMaterialTextBox.TabIndex = 66;
             // 
-            // tiAddMaterialTextBox
+            // cuAddMaterialTextBox
             // 
-            this.tiAddMaterialTextBox.Location = new System.Drawing.Point(30, 226);
-            this.tiAddMaterialTextBox.Name = "tiAddMaterialTextBox";
-            this.tiAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
-            this.tiAddMaterialTextBox.TabIndex = 52;
+            this.cuAddMaterialTextBox.Location = new System.Drawing.Point(30, 226);
+            this.cuAddMaterialTextBox.Name = "cuAddMaterialTextBox";
+            this.cuAddMaterialTextBox.Size = new System.Drawing.Size(47, 20);
+            this.cuAddMaterialTextBox.TabIndex = 52;
             // 
             // crEqAddMaterialTextBox
             // 
@@ -845,7 +845,7 @@
         private System.Windows.Forms.GroupBox baseMaterial2GroupBox;
         private System.Windows.Forms.GroupBox addMaterialGroupBox;
         private System.Windows.Forms.Label niLabel;
-        private System.Windows.Forms.TextBox tiBaseMaterialTextBox;
+        private System.Windows.Forms.TextBox cuBaseMaterialTextBox;
         private System.Windows.Forms.TextBox nbBaseMaterialTextBox;
         private System.Windows.Forms.TextBox siBaseMaterialTextBox;
         private System.Windows.Forms.TextBox nBaseMaterialTextBox;
@@ -870,7 +870,7 @@
         private System.Windows.Forms.TextBox cBaseMaterial2TextBox;
         private System.Windows.Forms.TextBox crBaseMaterial2TextBox;
         private System.Windows.Forms.TextBox niBaseMaterial2TextBox;
-        private System.Windows.Forms.TextBox tiAddMaterialTextBox;
+        private System.Windows.Forms.TextBox cuAddMaterialTextBox;
         private System.Windows.Forms.TextBox nbAddMaterialTextBox;
         private System.Windows.Forms.TextBox siAddMaterialTextBox;
         private System.Windows.Forms.TextBox nAddMaterialTextBox;
@@ -881,7 +881,7 @@
         private System.Windows.Forms.TextBox niAddMaterialTextBox;
         private System.Windows.Forms.Button applyButton;
         private System.Windows.Forms.Button cancelButton;
-        private System.Windows.Forms.TextBox tiBaseMaterial2TextBox;
+        private System.Windows.Forms.TextBox cuBaseMaterial2TextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
