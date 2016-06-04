@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using WelderCalculator.PDFUtilities;
 using WelderCalculator.Repositories;
 
 namespace WelderCalculator.StartView
@@ -70,6 +71,11 @@ namespace WelderCalculator.StartView
         private void deLongCountingButton_Click(object sender, EventArgs e)
         {
             Presenter.OnDeLongCountingButtonClicked();
+        }
+
+        private void testButton_Click(object sender, EventArgs e)
+        {
+            PDFGenerator generator = new PDFGenerator();
         }
     }
 }

@@ -42,6 +42,7 @@
             this.addMaterialDatabaseButton = new System.Windows.Forms.Button();
             this.schaefflerCountingButton = new System.Windows.Forms.Button();
             this.deLongCountingButton = new System.Windows.Forms.Button();
+            this.testButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -163,11 +164,22 @@
             this.deLongCountingButton.UseVisualStyleBackColor = true;
             this.deLongCountingButton.Click += new System.EventHandler(this.deLongCountingButton_Click);
             // 
+            // testButton
+            // 
+            this.testButton.Location = new System.Drawing.Point(12, 205);
+            this.testButton.Name = "testButton";
+            this.testButton.Size = new System.Drawing.Size(165, 42);
+            this.testButton.TabIndex = 5;
+            this.testButton.Text = "TESTUJ !";
+            this.testButton.UseVisualStyleBackColor = true;
+            this.testButton.Click += new System.EventHandler(this.testButton_Click);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 254);
+            this.Controls.Add(this.testButton);
             this.Controls.Add(this.deLongCountingButton);
             this.Controls.Add(this.schaefflerCountingButton);
             this.Controls.Add(this.addMaterialDatabaseButton);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Button addMaterialDatabaseButton;
         private System.Windows.Forms.Button schaefflerCountingButton;
         private System.Windows.Forms.Button deLongCountingButton;
+        private System.Windows.Forms.Button testButton;
     }
 }
