@@ -17,15 +17,15 @@ namespace WelderCalculator.Model
             Elements.Add(new Element(Category.OfElement.Mn));
             Elements.Add(new Element(Category.OfElement.P));
             Elements.Add(new Element(Category.OfElement.S));
-            Elements.Add(new Element(Category.OfElement.N));
             Elements.Add(new Element(Category.OfElement.Cr));
-            Elements.Add(new Element(Category.OfElement.Mo));
-            Elements.Add(new Element(Category.OfElement.Nb));
             Elements.Add(new Element(Category.OfElement.Ni));
-            Elements.Add(new Element(Category.OfElement.Ti));
-            Elements.Add(new Element(Category.OfElement.Al));
-            Elements.Add(new Element(Category.OfElement.V));
+            Elements.Add(new Element(Category.OfElement.Mo));
+            Elements.Add(new Element(Category.OfElement.N));
             Elements.Add(new Element(Category.OfElement.Cu));
+            Elements.Add(new Element(Category.OfElement.Nb));
+            Elements.Add(new Element(Category.OfElement.Ti));
+            Elements.Add(new Element(Category.OfElement.V));
+            Elements.Add(new Element(Category.OfElement.Al));
         }
 
         public override bool Equals(Material material)
