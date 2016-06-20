@@ -185,6 +185,14 @@
       <DependentUpon>StartForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\StartView\StartFormPresenter.cs" />
+    <Compile Include="Views\WRCChartView\IWRCChartView.cs" />
+    <Compile Include="Views\WRCChartView\WRCChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\WRCChartView\WRCChartForm.Designer.cs">
+      <DependentUpon>WRCChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WRCChartView\WRCChartPresenter.cs" />
     <EmbeddedResource Include="Views\AddMaterialDatabaseView\AddMaterialDatabaseForm.resx">
       <DependentUpon>AddMaterialDatabaseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -225,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\StartView\StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WRCChartView\WRCChartForm.resx">
+      <DependentUpon>WRCChartForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

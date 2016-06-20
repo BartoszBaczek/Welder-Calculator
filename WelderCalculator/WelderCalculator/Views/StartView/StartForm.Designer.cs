@@ -42,6 +42,7 @@
             this.addMaterialDatabaseButton = new System.Windows.Forms.Button();
             this.schaefflerCountingButton = new System.Windows.Forms.Button();
             this.deLongCountingButton = new System.Windows.Forms.Button();
+            this.wrc1992CountingButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.helpStrip});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(284, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(382, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -145,9 +146,9 @@
             // 
             // schaefflerCountingButton
             // 
-            this.schaefflerCountingButton.Location = new System.Drawing.Point(183, 157);
+            this.schaefflerCountingButton.Location = new System.Drawing.Point(282, 27);
             this.schaefflerCountingButton.Name = "schaefflerCountingButton";
-            this.schaefflerCountingButton.Size = new System.Drawing.Size(93, 42);
+            this.schaefflerCountingButton.Size = new System.Drawing.Size(93, 57);
             this.schaefflerCountingButton.TabIndex = 3;
             this.schaefflerCountingButton.Text = "Obliczenia (Schaeffler)";
             this.schaefflerCountingButton.UseVisualStyleBackColor = true;
@@ -155,19 +156,30 @@
             // 
             // deLongCountingButton
             // 
-            this.deLongCountingButton.Location = new System.Drawing.Point(183, 205);
+            this.deLongCountingButton.Location = new System.Drawing.Point(282, 90);
             this.deLongCountingButton.Name = "deLongCountingButton";
-            this.deLongCountingButton.Size = new System.Drawing.Size(93, 42);
+            this.deLongCountingButton.Size = new System.Drawing.Size(93, 61);
             this.deLongCountingButton.TabIndex = 4;
             this.deLongCountingButton.Text = "Obliczenia (DeLong)";
             this.deLongCountingButton.UseVisualStyleBackColor = true;
             this.deLongCountingButton.Click += new System.EventHandler(this.deLongCountingButton_Click);
             // 
+            // wrc1992CountingButton
+            // 
+            this.wrc1992CountingButton.Location = new System.Drawing.Point(282, 157);
+            this.wrc1992CountingButton.Name = "wrc1992CountingButton";
+            this.wrc1992CountingButton.Size = new System.Drawing.Size(93, 61);
+            this.wrc1992CountingButton.TabIndex = 5;
+            this.wrc1992CountingButton.Text = "Obliczenia (WRC-1992)";
+            this.wrc1992CountingButton.UseVisualStyleBackColor = true;
+            this.wrc1992CountingButton.Click += new System.EventHandler(this.wrc1992CountingButton_Click);
+            // 
             // StartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 254);
+            this.ClientSize = new System.Drawing.Size(382, 222);
+            this.Controls.Add(this.wrc1992CountingButton);
             this.Controls.Add(this.deLongCountingButton);
             this.Controls.Add(this.schaefflerCountingButton);
             this.Controls.Add(this.addMaterialDatabaseButton);
@@ -202,5 +214,6 @@
         private System.Windows.Forms.Button addMaterialDatabaseButton;
         private System.Windows.Forms.Button schaefflerCountingButton;
         private System.Windows.Forms.Button deLongCountingButton;
+        private System.Windows.Forms.Button wrc1992CountingButton;
     }
 }

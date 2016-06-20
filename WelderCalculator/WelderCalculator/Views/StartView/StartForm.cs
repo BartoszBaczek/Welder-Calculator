@@ -72,5 +72,10 @@ namespace WelderCalculator.StartView
         {
             Presenter.OnDeLongCountingButtonClicked();
         }
+
+        private void wrc1992CountingButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnWRC1992CountingButtonClicked();
+        }
     }
 }

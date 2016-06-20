@@ -3,6 +3,7 @@ using WelderCalculator.Views.AddMaterialDatabaseView;
 using WelderCalculator.Views.DeLongChartView;
 using WelderCalculator.Views.MaterialDatabaseView;
 using WelderCalculator.Views.SchaefflerChartView;
+using WelderCalculator.Views.WRCChartView;
 
 namespace WelderCalculator.StartView
 {
@@ -61,7 +62,12 @@ namespace WelderCalculator.StartView
         {
             var deLongChartForm = new DeLongChartForm();
             deLongChartForm.ShowDialog();
+        }
 
+        public void OnWRC1992CountingButtonClicked()
+        {
+            var wrcChartForm = new WRCChartForm();
+            wrcChartForm.ShowDialog();
         }
     }
 }
