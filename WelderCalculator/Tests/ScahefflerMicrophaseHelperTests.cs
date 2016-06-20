@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using NUnit.Framework;
 using WelderCalculator.Helpers.SchaefflerHelpers;
+using WelderCalculator.PDFUtilities;
 
 namespace Tests
 {

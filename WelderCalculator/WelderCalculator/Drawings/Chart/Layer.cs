@@ -26,6 +26,15 @@ namespace WelderCalculator.Drawings.Chart
         public static readonly string ReccomendedFerriteContent = "deLongReccomendedFerriteContent";
     }
 
+    public class WRC1992LayerType
+    {
+        public static readonly string Background = "wrcBackground";
+        public static readonly string Axis = "wrcAxis";
+        public static readonly string Hash = "wrcHash";
+        public static readonly string Phase = "wrcPhase";
+        public static readonly string FnContent = "wrcFnContent";
+    }
+
     public class SchaefflerDeLongMinimapLayerType
     {
         public static readonly string Only = "schaefflerDeLongOnly";

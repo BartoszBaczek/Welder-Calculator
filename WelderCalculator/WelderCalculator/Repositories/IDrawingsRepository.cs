@@ -13,6 +13,9 @@ namespace WelderCalculator.Repositories
         List<Layer> GetDeLongChartImages();
         ChartSizing DeserializeDeLongChartSizing();
 
+        List<Layer> GetWRC1992ChartImages();
+        ChartSizing DeserializeWRC1992ChartSizing();
+
         Image GetKsLogoImage();
     }
 }

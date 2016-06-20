@@ -328,6 +328,33 @@ namespace WelderCalculator.Repositories
             return chartSizing;
         }
 
+        public List<Layer> GetWRC1992ChartImages()
+        {
+            string wrcCatalog = "WRC1992/";
+            var layers = new List<Layer>()
+            {
+                new Layer(Image.FromFile(_drawingsPath + wrcCatalog + "wrc_background.png"), WRC1992LayerType.Background),
+                new Layer(Image.FromFile(_drawingsPath + wrcCatalog + "wrc_phases.png"), WRC1992LayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + wrcCatalog + "wrc_axis.png"), WRC1992LayerType.Axis),
+                new Layer(Image.FromFile(_drawingsPath + wrcCatalog + "wrc_hash.png"), WRC1992LayerType.Hash),
+                new Layer(Image.FromFile(_drawingsPath + wrcCatalog + "wrc_FN.png"), WRC1992LayerType.FnContent),
+            };
+
+            return layers;
+        }
+
+        public ChartSizing DeserializeWRC1992ChartSizing()
+        {
+            string fileName = "WRC1992/chartSizing";
+
+            string pathToFile = _drawingsPath + fileName + ".json";
+            string jsonText = File.ReadAllText(pathToFile);
+
+            var chartSizing =
+                JsonConvert.DeserializeObject<ChartSizing>(jsonText);
+
+            return chartSizing;
+        }
 
         public Image GetKsLogoImage()
         {

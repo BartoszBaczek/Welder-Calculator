@@ -120,6 +120,12 @@ namespace WelderCalculator.Repositories
             return layers;
         }
 
+        public Layers GetWRC1992Images()
+        {
+            var layers = new Layers(_normRepo.GetWRC1992ChartImages());
+            return layers;
+        }
+
         public Layers GetSchaefflerDeLongMinimapImages()
         {
             var layers = new Layers(_normRepo.GetSchaefflerDeLongMinimapImages());
@@ -169,6 +175,11 @@ namespace WelderCalculator.Repositories
         public ChartSizing GetDeLongChartSizingData()
         {
             return _normRepo.DeserializeDeLongChartSizing();
+        }
+
+        public ChartSizing GetWRC1992ChartSizingData()
+        {
+            return _normRepo.DeserializeWRC1992ChartSizing();
         }
 
         public ChartSizing GetSchaefflerDeLongMinimapSizingData()
