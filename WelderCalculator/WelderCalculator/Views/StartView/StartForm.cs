@@ -72,10 +72,5 @@ namespace WelderCalculator.StartView
         {
             Presenter.OnDeLongCountingButtonClicked();
         }
-
-        private void testButton_Click(object sender, EventArgs e)
-        {
-            PDFGenerator generator = new PDFGenerator();
-        }
     }
 }
