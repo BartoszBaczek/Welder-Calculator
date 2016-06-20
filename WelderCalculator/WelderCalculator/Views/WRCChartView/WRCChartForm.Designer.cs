@@ -31,8 +31,8 @@
             this.drawPanel = new System.Windows.Forms.Panel();
             this.visibilityLayoutPanel = new System.Windows.Forms.GroupBox();
             this.ferriteNumberCheckBox = new System.Windows.Forms.CheckBox();
-            this.yAxisCheckBox = new System.Windows.Forms.CheckBox();
-            this.phaseTextCheckBox = new System.Windows.Forms.CheckBox();
+            this.axisCheckBox = new System.Windows.Forms.CheckBox();
+            this.phasesCheckBox = new System.Windows.Forms.CheckBox();
             this.hashCheckBox = new System.Windows.Forms.CheckBox();
             this.chooseMaterialsLayoutPanel = new System.Windows.Forms.GroupBox();
             this.fastMaterialButton = new System.Windows.Forms.Button();
@@ -63,13 +63,14 @@
             this.drawPanel.Name = "drawPanel";
             this.drawPanel.Size = new System.Drawing.Size(796, 512);
             this.drawPanel.TabIndex = 8;
+            this.drawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPanel_Paint);
             // 
             // visibilityLayoutPanel
             // 
             this.visibilityLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.visibilityLayoutPanel.Controls.Add(this.ferriteNumberCheckBox);
-            this.visibilityLayoutPanel.Controls.Add(this.yAxisCheckBox);
-            this.visibilityLayoutPanel.Controls.Add(this.phaseTextCheckBox);
+            this.visibilityLayoutPanel.Controls.Add(this.axisCheckBox);
+            this.visibilityLayoutPanel.Controls.Add(this.phasesCheckBox);
             this.visibilityLayoutPanel.Controls.Add(this.hashCheckBox);
             this.visibilityLayoutPanel.Location = new System.Drawing.Point(814, 13);
             this.visibilityLayoutPanel.Name = "visibilityLayoutPanel";
@@ -88,25 +89,25 @@
             this.ferriteNumberCheckBox.Text = "Liczba ferrytyczna";
             this.ferriteNumberCheckBox.UseVisualStyleBackColor = true;
             // 
-            // yAxisCheckBox
+            // axisCheckBox
             // 
-            this.yAxisCheckBox.AutoSize = true;
-            this.yAxisCheckBox.Location = new System.Drawing.Point(8, 42);
-            this.yAxisCheckBox.Name = "yAxisCheckBox";
-            this.yAxisCheckBox.Size = new System.Drawing.Size(49, 17);
-            this.yAxisCheckBox.TabIndex = 3;
-            this.yAxisCheckBox.Text = "Oś Y";
-            this.yAxisCheckBox.UseVisualStyleBackColor = true;
+            this.axisCheckBox.AutoSize = true;
+            this.axisCheckBox.Location = new System.Drawing.Point(8, 42);
+            this.axisCheckBox.Name = "axisCheckBox";
+            this.axisCheckBox.Size = new System.Drawing.Size(49, 17);
+            this.axisCheckBox.TabIndex = 3;
+            this.axisCheckBox.Text = "Oś Y";
+            this.axisCheckBox.UseVisualStyleBackColor = true;
             // 
-            // phaseTextCheckBox
+            // phasesCheckBox
             // 
-            this.phaseTextCheckBox.AutoSize = true;
-            this.phaseTextCheckBox.Location = new System.Drawing.Point(8, 88);
-            this.phaseTextCheckBox.Name = "phaseTextCheckBox";
-            this.phaseTextCheckBox.Size = new System.Drawing.Size(48, 17);
-            this.phaseTextCheckBox.TabIndex = 0;
-            this.phaseTextCheckBox.Text = "Fazy";
-            this.phaseTextCheckBox.UseVisualStyleBackColor = true;
+            this.phasesCheckBox.AutoSize = true;
+            this.phasesCheckBox.Location = new System.Drawing.Point(8, 88);
+            this.phasesCheckBox.Name = "phasesCheckBox";
+            this.phasesCheckBox.Size = new System.Drawing.Size(48, 17);
+            this.phasesCheckBox.TabIndex = 0;
+            this.phasesCheckBox.Text = "Fazy";
+            this.phasesCheckBox.UseVisualStyleBackColor = true;
             // 
             // hashCheckBox
             // 
@@ -146,6 +147,7 @@
             this.fastMaterialButton.TabIndex = 10;
             this.fastMaterialButton.Text = "Szybkie obliczenia";
             this.fastMaterialButton.UseVisualStyleBackColor = true;
+            this.fastMaterialButton.Click += new System.EventHandler(this.fastMaterialButton_Click);
             // 
             // countButton
             // 
@@ -155,6 +157,7 @@
             this.countButton.TabIndex = 7;
             this.countButton.Text = "Oblicz";
             this.countButton.UseVisualStyleBackColor = true;
+            this.countButton.Click += new System.EventHandler(this.countButton_Click);
             // 
             // additionalMaterialQuantityTextBox
             // 
@@ -180,6 +183,7 @@
             this.addititionalMaterialButton.TabIndex = 7;
             this.addititionalMaterialButton.Text = "Dodatkowy";
             this.addititionalMaterialButton.UseVisualStyleBackColor = true;
+            this.addititionalMaterialButton.Click += new System.EventHandler(this.addititionalMaterialButton_Click);
             // 
             // additionalMaterialTextBox
             // 
@@ -196,6 +200,7 @@
             this.firstBaseMaterialButton.TabIndex = 4;
             this.firstBaseMaterialButton.Text = "Podstawowy";
             this.firstBaseMaterialButton.UseVisualStyleBackColor = true;
+            this.firstBaseMaterialButton.Click += new System.EventHandler(this.firstBaseMaterialButton_Click);
             // 
             // secondBaseMaterialButton
             // 
@@ -205,6 +210,7 @@
             this.secondBaseMaterialButton.TabIndex = 5;
             this.secondBaseMaterialButton.Text = "Podstawowy";
             this.secondBaseMaterialButton.UseVisualStyleBackColor = true;
+            this.secondBaseMaterialButton.Click += new System.EventHandler(this.secondBaseMaterialButton_Click);
             // 
             // firstBaseMaterialTextBox
             // 
@@ -277,6 +283,7 @@
             this.showMinimapButton.TabIndex = 13;
             this.showMinimapButton.Text = "Pokaż minimapę";
             this.showMinimapButton.UseVisualStyleBackColor = true;
+            this.showMinimapButton.Click += new System.EventHandler(this.showMinimapButton_Click);
             // 
             // WRCChartForm
             // 
@@ -305,8 +312,8 @@
         private System.Windows.Forms.Panel drawPanel;
         private System.Windows.Forms.GroupBox visibilityLayoutPanel;
         private System.Windows.Forms.CheckBox ferriteNumberCheckBox;
-        private System.Windows.Forms.CheckBox yAxisCheckBox;
-        private System.Windows.Forms.CheckBox phaseTextCheckBox;
+        private System.Windows.Forms.CheckBox axisCheckBox;
+        private System.Windows.Forms.CheckBox phasesCheckBox;
         private System.Windows.Forms.CheckBox hashCheckBox;
         private System.Windows.Forms.GroupBox chooseMaterialsLayoutPanel;
         private System.Windows.Forms.Button fastMaterialButton;

@@ -8,5 +8,9 @@ namespace WelderCalculator.Views.WRCChartView
 {
     public class WRCChartPresenter
     {
+        public WRCChartPresenter(IWRCChartView view)
+        {
+
+        }
     }
 }
