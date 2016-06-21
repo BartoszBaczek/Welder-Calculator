@@ -57,9 +57,21 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.newMaterialFerriteQunatityLabel = new System.Windows.Forms.Label();
             this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
             this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
+            this.legendLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
+            this.legendLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // visibilityLayoutPanel
@@ -330,11 +342,121 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.newMaterialMicrophaseLabel.TabIndex = 8;
             this.newMaterialMicrophaseLabel.Text = "Faza";
             // 
+            // legendLayoutPanel
+            // 
+            this.legendLayoutPanel.Controls.Add(this.label10);
+            this.legendLayoutPanel.Controls.Add(this.label9);
+            this.legendLayoutPanel.Controls.Add(this.label8);
+            this.legendLayoutPanel.Controls.Add(this.label7);
+            this.legendLayoutPanel.Controls.Add(this.label6);
+            this.legendLayoutPanel.Controls.Add(this.label5);
+            this.legendLayoutPanel.Controls.Add(this.label4);
+            this.legendLayoutPanel.Controls.Add(this.label3);
+            this.legendLayoutPanel.Controls.Add(this.label2);
+            this.legendLayoutPanel.Controls.Add(this.label1);
+            this.legendLayoutPanel.Location = new System.Drawing.Point(952, 17);
+            this.legendLayoutPanel.Name = "legendLayoutPanel";
+            this.legendLayoutPanel.Size = new System.Drawing.Size(239, 144);
+            this.legendLayoutPanel.TabIndex = 13;
+            this.legendLayoutPanel.TabStop = false;
+            this.legendLayoutPanel.Text = "Legenda";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(120)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(7, 84);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Pomarańczowy";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(227)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.label2.Location = new System.Drawing.Point(7, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(32, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Żółty";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(227)))));
+            this.label1.Location = new System.Drawing.Point(7, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Niebieski";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(47)))));
+            this.label4.Location = new System.Drawing.Point(8, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Czerwony";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(92, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "- pękanie gorące";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(92, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "- pękanie zimne";
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(92, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 12);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "- kruchość";
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(92, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 12);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "(przemiana alfa -> delta)";
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(92, 106);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 12);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "- kruchość";
+            // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(92, 118);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(138, 18);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "(rozrost ziaren w fazie alfa)";
+            // 
             // SchaefflerChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 536);
+            this.Controls.Add(this.legendLayoutPanel);
             this.Controls.Add(this.newMaterialDataLayoutPanel);
             this.Controls.Add(this.drawPanel);
             this.Controls.Add(this.chooseMaterialsLayoutPanel);
@@ -351,6 +473,8 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.chooseMaterialsLayoutPanel.PerformLayout();
             this.newMaterialDataLayoutPanel.ResumeLayout(false);
             this.newMaterialDataLayoutPanel.PerformLayout();
+            this.legendLayoutPanel.ResumeLayout(false);
+            this.legendLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -383,5 +507,16 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private TextBox newMaterialMicrophaseTextBox;
         private Label newMaterialMicrophaseLabel;
         private CheckBox crackingVisibleCheckBox;
+        private GroupBox legendLayoutPanel;
+        private Label label4;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Label label10;
+        private Label label9;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Label label5;
     }
 }

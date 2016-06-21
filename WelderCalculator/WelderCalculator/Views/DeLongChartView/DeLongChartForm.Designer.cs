@@ -59,9 +59,18 @@ namespace WelderCalculator.Views.DeLongChartView
             this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
             this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
             this.showMinimapButton = new System.Windows.Forms.Button();
+            this.legendLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
+            this.legendLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // visibilityLayoutPanel
@@ -364,11 +373,81 @@ namespace WelderCalculator.Views.DeLongChartView
             this.showMinimapButton.UseVisualStyleBackColor = true;
             this.showMinimapButton.Click += new System.EventHandler(this.showMinimapButton_Click);
             // 
+            // legendLayoutPanel
+            // 
+            this.legendLayoutPanel.Controls.Add(this.label6);
+            this.legendLayoutPanel.Controls.Add(this.label5);
+            this.legendLayoutPanel.Controls.Add(this.label4);
+            this.legendLayoutPanel.Controls.Add(this.label3);
+            this.legendLayoutPanel.Controls.Add(this.label2);
+            this.legendLayoutPanel.Controls.Add(this.label1);
+            this.legendLayoutPanel.Location = new System.Drawing.Point(952, 17);
+            this.legendLayoutPanel.Name = "legendLayoutPanel";
+            this.legendLayoutPanel.Size = new System.Drawing.Size(239, 123);
+            this.legendLayoutPanel.TabIndex = 12;
+            this.legendLayoutPanel.TabStop = false;
+            this.legendLayoutPanel.Text = "Legenda";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(7)))));
+            this.label1.Location = new System.Drawing.Point(8, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Czerwony";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(66)))));
+            this.label2.Location = new System.Drawing.Point(8, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Żólty";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(116)))), ((int)(((byte)(240)))), ((int)(((byte)(0)))));
+            this.label3.Location = new System.Drawing.Point(6, 96);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Zielony";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(74, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 26);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "FN = 0 - 2, lub FN = 8 +";
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(74, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 30);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "FN = 2 - 3, lub FN = 7 - 8";
+            // 
+            // label6
+            // 
+            this.label6.Location = new System.Drawing.Point(74, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 19);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "FN = 3 - 7";
+            // 
             // DeLongChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 560);
+            this.Controls.Add(this.legendLayoutPanel);
             this.Controls.Add(this.showMinimapButton);
             this.Controls.Add(this.newMaterialDataLayoutPanel);
             this.Controls.Add(this.drawPanel);
@@ -386,6 +465,8 @@ namespace WelderCalculator.Views.DeLongChartView
             this.chooseMaterialsLayoutPanel.PerformLayout();
             this.newMaterialDataLayoutPanel.ResumeLayout(false);
             this.newMaterialDataLayoutPanel.PerformLayout();
+            this.legendLayoutPanel.ResumeLayout(false);
+            this.legendLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -421,5 +502,13 @@ namespace WelderCalculator.Views.DeLongChartView
         private CheckBox ferriteNumberCheckBox;
         private CheckBox reccomendedFerriteContentCheckBox;
         private Button showMinimapButton;
+        private GroupBox legendLayoutPanel;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Label label4;
+        private Label label6;
+        private Label label5;
     }
 }

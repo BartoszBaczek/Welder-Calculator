@@ -51,9 +51,19 @@
             this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
             this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
             this.showMinimapButton = new System.Windows.Forms.Button();
+            this.legendLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
+            this.legendLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // drawPanel
@@ -136,7 +146,7 @@
             this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialButton);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.firstBaseMaterialTextBox);
             this.chooseMaterialsLayoutPanel.Controls.Add(this.secondBaseMaterialTextBox);
-            this.chooseMaterialsLayoutPanel.Location = new System.Drawing.Point(815, 131);
+            this.chooseMaterialsLayoutPanel.Location = new System.Drawing.Point(816, 146);
             this.chooseMaterialsLayoutPanel.Name = "chooseMaterialsLayoutPanel";
             this.chooseMaterialsLayoutPanel.Size = new System.Drawing.Size(376, 142);
             this.chooseMaterialsLayoutPanel.TabIndex = 10;
@@ -238,7 +248,7 @@
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialFerriteNumberLabel);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialMicrophaseTextBox);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialMicrophaseLabel);
-            this.newMaterialDataLayoutPanel.Location = new System.Drawing.Point(815, 279);
+            this.newMaterialDataLayoutPanel.Location = new System.Drawing.Point(816, 309);
             this.newMaterialDataLayoutPanel.Name = "newMaterialDataLayoutPanel";
             this.newMaterialDataLayoutPanel.Size = new System.Drawing.Size(376, 80);
             this.newMaterialDataLayoutPanel.TabIndex = 12;
@@ -281,7 +291,7 @@
             // 
             // showMinimapButton
             // 
-            this.showMinimapButton.Location = new System.Drawing.Point(814, 365);
+            this.showMinimapButton.Location = new System.Drawing.Point(816, 411);
             this.showMinimapButton.Name = "showMinimapButton";
             this.showMinimapButton.Size = new System.Drawing.Size(376, 57);
             this.showMinimapButton.TabIndex = 13;
@@ -289,11 +299,105 @@
             this.showMinimapButton.UseVisualStyleBackColor = true;
             this.showMinimapButton.Click += new System.EventHandler(this.showMinimapButton_Click);
             // 
+            // legendLayoutPanel
+            // 
+            this.legendLayoutPanel.Controls.Add(this.label8);
+            this.legendLayoutPanel.Controls.Add(this.label6);
+            this.legendLayoutPanel.Controls.Add(this.label5);
+            this.legendLayoutPanel.Controls.Add(this.label7);
+            this.legendLayoutPanel.Controls.Add(this.label4);
+            this.legendLayoutPanel.Controls.Add(this.label3);
+            this.legendLayoutPanel.Controls.Add(this.label2);
+            this.legendLayoutPanel.Controls.Add(this.label1);
+            this.legendLayoutPanel.Location = new System.Drawing.Point(952, 13);
+            this.legendLayoutPanel.Name = "legendLayoutPanel";
+            this.legendLayoutPanel.Size = new System.Drawing.Size(239, 112);
+            this.legendLayoutPanel.TabIndex = 14;
+            this.legendLayoutPanel.TabStop = false;
+            this.legendLayoutPanel.Text = "Legenda";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(45)))), ((int)(((byte)(45)))));
+            this.label4.Location = new System.Drawing.Point(6, 92);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Czerwony";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(255)))), ((int)(((byte)(99)))));
+            this.label3.Location = new System.Drawing.Point(7, 69);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Żólty";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(224)))), ((int)(((byte)(252)))));
+            this.label2.Location = new System.Drawing.Point(7, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Niebieski";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(255)))), ((int)(((byte)(39)))));
+            this.label1.Location = new System.Drawing.Point(6, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Zielony";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(73, 20);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "- faza austenityczna";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(73, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(155, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "- faza austenityczno-ferrytyczna";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(73, 66);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(155, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "- faza ferrytyczno-austenityczna";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(73, 92);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(87, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "- faza ferrytyczna";
+            // 
             // WRCChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 532);
+            this.Controls.Add(this.legendLayoutPanel);
             this.Controls.Add(this.showMinimapButton);
             this.Controls.Add(this.newMaterialDataLayoutPanel);
             this.Controls.Add(this.chooseMaterialsLayoutPanel);
@@ -307,6 +411,8 @@
             this.chooseMaterialsLayoutPanel.PerformLayout();
             this.newMaterialDataLayoutPanel.ResumeLayout(false);
             this.newMaterialDataLayoutPanel.PerformLayout();
+            this.legendLayoutPanel.ResumeLayout(false);
+            this.legendLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -336,5 +442,14 @@
         private System.Windows.Forms.TextBox newMaterialMicrophaseTextBox;
         private System.Windows.Forms.Label newMaterialMicrophaseLabel;
         private System.Windows.Forms.Button showMinimapButton;
+        private System.Windows.Forms.GroupBox legendLayoutPanel;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
     }
 }
