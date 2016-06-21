@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WelderCalculator.Drawings.Chart;
 
 namespace WelderCalculator.Views.WRCChartView
 {
@@ -45,6 +46,31 @@ namespace WelderCalculator.Views.WRCChartView
         {
             get { return phasesCheckBox.Checked; }
             set { phasesCheckBox.Checked = value; }
+        }
+
+
+        private void hashCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(WRC1992LayerType.Hash, HashVisibleCheckBox);
+            drawPanel.Refresh();
+        }
+
+        private void axisCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(WRC1992LayerType.Axis, AxisVisibleCheckBox);
+            drawPanel.Refresh();
+        }
+
+        private void ferriteNumberCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(WRC1992LayerType.FnContent, FerriteNumberVisibleCheckBox);
+            drawPanel.Refresh();
+        }
+
+        private void phasesCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            Presenter.OnLayerVisibilityChanged(WRC1992LayerType.Phase, PhaseVisibleCheckBox);
+            drawPanel.Refresh();
         }
         #endregion
 

@@ -47,12 +47,12 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         private void SetVisibilityCheckBoxesToTrue()
         {
+            _view.CrackingVisibleCheckBox = true;
             _view.PhaseVisibleCheckBox = true;
             _view.HashVisibleCheckBox = true;
             _view.XAxisVisibleCheckBox = true;
             _view.YAxisVisibleCheckBox = true;
             _view.PhaseLinesVisibleCheckBox = true;
-            _view.CrackingVisibleCheckBox = true;
         }
 
         public void OnFastMaterialButtonClicked()

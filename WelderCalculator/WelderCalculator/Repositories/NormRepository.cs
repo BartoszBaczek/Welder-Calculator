@@ -261,12 +261,12 @@ namespace WelderCalculator.Repositories
             var layers = new List<Layer>()
             {
                 new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_background.png"), SchaefflerLayerType.Background),
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_cracking.png"), SchaefflerLayerType.Cracking),
                 new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_x.png"), SchaefflerLayerType.AxisX),
                 new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_y.png"), SchaefflerLayerType.AxisY),
                 new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_hash.png"), SchaefflerLayerType.Hash),
                 new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_phase.png"), SchaefflerLayerType.Phase),
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_haseText.png"), SchaefflerLayerType.PhaseText),
-                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_cracking.png"), SchaefflerLayerType.Cracking)
+                new Layer(Image.FromFile(_drawingsPath + schaeflerCatalog + "s_haseText.png"), SchaefflerLayerType.PhaseText)
             };
 
             return layers;
@@ -293,12 +293,12 @@ namespace WelderCalculator.Repositories
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_background.png"), DeLongLayerType.Background),
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_x.png"), DeLongLayerType.AxisX),
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_y.png"), DeLongLayerType.AxisY),
-                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_hash.png"), DeLongLayerType.Hash),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_recomendedFerriteQuantity.png"), DeLongLayerType.ReccomendedFerriteContent),
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_phase.png"), DeLongLayerType.Phase),
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_hash.png"), DeLongLayerType.Hash),
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_phaseText.png"), DeLongLayerType.PhaseText),
                 new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_ferriteNumber.png"), DeLongLayerType.FerriteNumber),
-                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_ferriteContent.png"), DeLongLayerType.FerriteContent),
-                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_recomendedFerriteQuantity.png"), DeLongLayerType.ReccomendedFerriteContent)
+                new Layer(Image.FromFile(_drawingsPath + deLongCatalog + "d_ferriteContent.png"), DeLongLayerType.FerriteContent)
             };
 
             return layers;

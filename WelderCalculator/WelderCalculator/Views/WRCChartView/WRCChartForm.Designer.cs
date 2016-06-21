@@ -88,6 +88,7 @@
             this.ferriteNumberCheckBox.TabIndex = 5;
             this.ferriteNumberCheckBox.Text = "Liczba ferrytyczna";
             this.ferriteNumberCheckBox.UseVisualStyleBackColor = true;
+            this.ferriteNumberCheckBox.CheckedChanged += new System.EventHandler(this.ferriteNumberCheckBox_CheckedChanged);
             // 
             // axisCheckBox
             // 
@@ -98,6 +99,7 @@
             this.axisCheckBox.TabIndex = 3;
             this.axisCheckBox.Text = "Oś Y";
             this.axisCheckBox.UseVisualStyleBackColor = true;
+            this.axisCheckBox.CheckedChanged += new System.EventHandler(this.axisCheckBox_CheckedChanged);
             // 
             // phasesCheckBox
             // 
@@ -108,6 +110,7 @@
             this.phasesCheckBox.TabIndex = 0;
             this.phasesCheckBox.Text = "Fazy";
             this.phasesCheckBox.UseVisualStyleBackColor = true;
+            this.phasesCheckBox.CheckedChanged += new System.EventHandler(this.phasesCheckBox_CheckedChanged);
             // 
             // hashCheckBox
             // 
@@ -118,6 +121,7 @@
             this.hashCheckBox.TabIndex = 1;
             this.hashCheckBox.Text = "Krata";
             this.hashCheckBox.UseVisualStyleBackColor = true;
+            this.hashCheckBox.CheckedChanged += new System.EventHandler(this.hashCheckBox_CheckedChanged);
             // 
             // chooseMaterialsLayoutPanel
             // 
