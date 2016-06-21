@@ -203,5 +203,10 @@ namespace WelderCalculator.Views.SchaefflerChartView
         {
             Presenter.OnFastMaterialButtonClicked();
         }
+
+        private void saveChartTestButton_Click(object sender, EventArgs e)
+        {
+            Presenter.SaveChartTestButton();
+        }
     }
 }

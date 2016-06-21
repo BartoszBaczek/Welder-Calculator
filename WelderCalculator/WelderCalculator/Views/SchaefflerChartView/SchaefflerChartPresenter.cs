@@ -9,6 +9,8 @@ using WelderCalculator.Views.AddMaterialDatabaseView;
 using WelderCalculator.Views.FastMaterialFactoryView;
 using WelderCalculator.Views.MaterialDatabaseView;
 using WelderCalculator.Helpers.SchaefflerHelpers;
+using System.IO;
+using System.Drawing.Imaging;
 
 namespace WelderCalculator.Views.SchaefflerChartView
 {
@@ -16,7 +18,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
     {
         private readonly ISchaefflerChartView _view;
         private readonly DataConnector _dataConnector;
-        private readonly IChart _chart;
+        private IChart _chart;
 
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
@@ -119,11 +121,11 @@ namespace WelderCalculator.Views.SchaefflerChartView
             PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
 
             PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
-            RedrawChart(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
+            DrawCountedPointsAndLines(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
             PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
         }
 
-        private void RedrawChart(PointF pointForFirstMaterial, PointF pointForSecondMaterial, PointF pointForAddMaterial, PointF pointInTheMiddleOfLine, PointF pointInTheMiddleOfLineWithTranslation)
+        private void DrawCountedPointsAndLines(PointF pointForFirstMaterial, PointF pointForSecondMaterial, PointF pointForAddMaterial, PointF pointInTheMiddleOfLine, PointF pointInTheMiddleOfLineWithTranslation)
         {
             _chart.Clean();
 
@@ -141,6 +143,29 @@ namespace WelderCalculator.Views.SchaefflerChartView
             _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Red);
 
             _chart.Draw();
+        }
+
+        public void SaveChartTestButton()
+        {
+            Bitmap bitmap = new Bitmap(_view.DrawPanelWidth, _view.DrawPanelHeight);
+
+            _chart = new Chart(Graphics.FromImage(bitmap),
+                _dataConnector.GetSchaefflerImages(),
+                _dataConnector.GetSchaefflerChartSizingData());
+            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.Draw();
+            OnCountButtonClicked();
+
+
+            bitmap.Save(@"D:\Projects\test.png", ImageFormat.Png);
+
+
+            _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
+                _dataConnector.GetSchaefflerImages(),
+                _dataConnector.GetSchaefflerChartSizingData());
+            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.Draw();
+            OnCountButtonClicked();
         }
 
         private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)

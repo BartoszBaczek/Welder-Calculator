@@ -58,16 +58,17 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
             this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
             this.legendLayoutPanel = new System.Windows.Forms.GroupBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.saveChartTestButton = new System.Windows.Forms.Button();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
@@ -361,6 +362,66 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.legendLayoutPanel.TabStop = false;
             this.legendLayoutPanel.Text = "Legenda";
             // 
+            // label10
+            // 
+            this.label10.Location = new System.Drawing.Point(92, 118);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(138, 18);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "(rozrost ziaren w fazie alfa)";
+            // 
+            // label9
+            // 
+            this.label9.Location = new System.Drawing.Point(92, 106);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(120, 12);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "- kruchość";
+            // 
+            // label8
+            // 
+            this.label8.Location = new System.Drawing.Point(92, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(120, 12);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "(przemiana alfa -> delta)";
+            // 
+            // label7
+            // 
+            this.label7.Location = new System.Drawing.Point(92, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(120, 12);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "- kruchość";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(92, 51);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "- pękanie zimne";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(92, 18);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "- pękanie gorące";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(47)))));
+            this.label4.Location = new System.Drawing.Point(8, 110);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(53, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Czerwony";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -391,71 +452,22 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.label1.TabIndex = 0;
             this.label1.Text = "Niebieski";
             // 
-            // label4
+            // saveChartTestButton
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(47)))));
-            this.label4.Location = new System.Drawing.Point(8, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(53, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Czerwony";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(92, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "- pękanie gorące";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(92, 51);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "- pękanie zimne";
-            // 
-            // label7
-            // 
-            this.label7.Location = new System.Drawing.Point(92, 76);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(120, 12);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "- kruchość";
-            // 
-            // label8
-            // 
-            this.label8.Location = new System.Drawing.Point(92, 88);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(120, 12);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "(przemiana alfa -> delta)";
-            // 
-            // label9
-            // 
-            this.label9.Location = new System.Drawing.Point(92, 106);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(120, 12);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "- kruchość";
-            // 
-            // label10
-            // 
-            this.label10.Location = new System.Drawing.Point(92, 118);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(138, 18);
-            this.label10.TabIndex = 10;
-            this.label10.Text = "(rozrost ziaren w fazie alfa)";
+            this.saveChartTestButton.Location = new System.Drawing.Point(825, 435);
+            this.saveChartTestButton.Name = "saveChartTestButton";
+            this.saveChartTestButton.Size = new System.Drawing.Size(366, 89);
+            this.saveChartTestButton.TabIndex = 14;
+            this.saveChartTestButton.Text = "ZapiszWykres (TESTOWE)";
+            this.saveChartTestButton.UseVisualStyleBackColor = true;
+            this.saveChartTestButton.Click += new System.EventHandler(this.saveChartTestButton_Click);
             // 
             // SchaefflerChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 536);
+            this.Controls.Add(this.saveChartTestButton);
             this.Controls.Add(this.legendLayoutPanel);
             this.Controls.Add(this.newMaterialDataLayoutPanel);
             this.Controls.Add(this.drawPanel);
@@ -518,5 +530,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private Label label7;
         private Label label6;
         private Label label5;
+        private Button saveChartTestButton;
     }
 }
