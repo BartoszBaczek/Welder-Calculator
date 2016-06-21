@@ -60,13 +60,14 @@ namespace WelderCalculator.Views.DeLongChartView
             this.newMaterialMicrophaseLabel = new System.Windows.Forms.Label();
             this.showMinimapButton = new System.Windows.Forms.Button();
             this.legendLayoutPanel = new System.Windows.Forms.GroupBox();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.exportToPDFButton = new System.Windows.Forms.Button();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
@@ -365,9 +366,9 @@ namespace WelderCalculator.Views.DeLongChartView
             // 
             // showMinimapButton
             // 
-            this.showMinimapButton.Location = new System.Drawing.Point(815, 487);
+            this.showMinimapButton.Location = new System.Drawing.Point(934, 487);
             this.showMinimapButton.Name = "showMinimapButton";
-            this.showMinimapButton.Size = new System.Drawing.Size(376, 57);
+            this.showMinimapButton.Size = new System.Drawing.Size(113, 25);
             this.showMinimapButton.TabIndex = 11;
             this.showMinimapButton.Text = "Pokaż minimapę";
             this.showMinimapButton.UseVisualStyleBackColor = true;
@@ -388,25 +389,29 @@ namespace WelderCalculator.Views.DeLongChartView
             this.legendLayoutPanel.TabStop = false;
             this.legendLayoutPanel.Text = "Legenda";
             // 
-            // label1
+            // label6
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(7)))));
-            this.label1.Location = new System.Drawing.Point(8, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Czerwony";
+            this.label6.Location = new System.Drawing.Point(74, 96);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 19);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "FN = 3 - 7";
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(66)))));
-            this.label2.Location = new System.Drawing.Point(8, 64);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Żólty";
+            this.label5.Location = new System.Drawing.Point(74, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(79, 30);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "FN = 2 - 3, lub FN = 7 - 8";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(74, 28);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 26);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "FN = 0 - 2, lub FN = 8 +";
             // 
             // label3
             // 
@@ -418,35 +423,41 @@ namespace WelderCalculator.Views.DeLongChartView
             this.label3.TabIndex = 2;
             this.label3.Text = "Zielony";
             // 
-            // label4
+            // label2
             // 
-            this.label4.Location = new System.Drawing.Point(74, 28);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 26);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "FN = 0 - 2, lub FN = 8 +";
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(248)))), ((int)(((byte)(66)))));
+            this.label2.Location = new System.Drawing.Point(8, 64);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Żólty";
             // 
-            // label5
+            // label1
             // 
-            this.label5.Location = new System.Drawing.Point(74, 60);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 30);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "FN = 2 - 3, lub FN = 7 - 8";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(7)))));
+            this.label1.Location = new System.Drawing.Point(8, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Czerwony";
             // 
-            // label6
+            // exportToPDFButton
             // 
-            this.label6.Location = new System.Drawing.Point(74, 96);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 19);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "FN = 3 - 7";
+            this.exportToPDFButton.Location = new System.Drawing.Point(815, 487);
+            this.exportToPDFButton.Name = "exportToPDFButton";
+            this.exportToPDFButton.Size = new System.Drawing.Size(111, 25);
+            this.exportToPDFButton.TabIndex = 15;
+            this.exportToPDFButton.Text = "Zapisz";
+            this.exportToPDFButton.UseVisualStyleBackColor = true;
             // 
             // DeLongChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 560);
+            this.Controls.Add(this.exportToPDFButton);
             this.Controls.Add(this.legendLayoutPanel);
             this.Controls.Add(this.showMinimapButton);
             this.Controls.Add(this.newMaterialDataLayoutPanel);
@@ -510,5 +521,6 @@ namespace WelderCalculator.Views.DeLongChartView
         private Label label4;
         private Label label6;
         private Label label5;
+        private Button exportToPDFButton;
     }
 }

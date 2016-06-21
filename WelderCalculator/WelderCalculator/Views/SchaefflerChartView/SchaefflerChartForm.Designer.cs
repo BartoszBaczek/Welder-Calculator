@@ -68,7 +68,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.saveChartTestButton = new System.Windows.Forms.Button();
+            this.exportToPDFButton = new System.Windows.Forms.Button();
             this.visibilityLayoutPanel.SuspendLayout();
             this.chooseMaterialsLayoutPanel.SuspendLayout();
             this.newMaterialDataLayoutPanel.SuspendLayout();
@@ -452,22 +452,22 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.label1.TabIndex = 0;
             this.label1.Text = "Niebieski";
             // 
-            // saveChartTestButton
+            // exportToPDFButton
             // 
-            this.saveChartTestButton.Location = new System.Drawing.Point(825, 435);
-            this.saveChartTestButton.Name = "saveChartTestButton";
-            this.saveChartTestButton.Size = new System.Drawing.Size(366, 89);
-            this.saveChartTestButton.TabIndex = 14;
-            this.saveChartTestButton.Text = "ZapiszWykres (TESTOWE)";
-            this.saveChartTestButton.UseVisualStyleBackColor = true;
-            this.saveChartTestButton.Click += new System.EventHandler(this.saveChartTestButton_Click);
+            this.exportToPDFButton.Location = new System.Drawing.Point(825, 435);
+            this.exportToPDFButton.Name = "exportToPDFButton";
+            this.exportToPDFButton.Size = new System.Drawing.Size(111, 25);
+            this.exportToPDFButton.TabIndex = 14;
+            this.exportToPDFButton.Text = "Zapisz";
+            this.exportToPDFButton.UseVisualStyleBackColor = true;
+            this.exportToPDFButton.Click += new System.EventHandler(this.exportToPDFButton_Click);
             // 
             // SchaefflerChartForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1203, 536);
-            this.Controls.Add(this.saveChartTestButton);
+            this.Controls.Add(this.exportToPDFButton);
             this.Controls.Add(this.legendLayoutPanel);
             this.Controls.Add(this.newMaterialDataLayoutPanel);
             this.Controls.Add(this.drawPanel);
@@ -530,6 +530,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private Label label7;
         private Label label6;
         private Label label5;
-        private Button saveChartTestButton;
+        private Button exportToPDFButton;
     }
 }

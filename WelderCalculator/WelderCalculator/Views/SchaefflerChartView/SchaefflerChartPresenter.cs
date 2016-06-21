@@ -19,6 +19,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private readonly ISchaefflerChartView _view;
         private readonly DataConnector _dataConnector;
         private IChart _chart;
+        private bool _someCountingsFinished = false;
 
         public SchaefflerChartPresenter(ISchaefflerChartView view)
         {
@@ -109,6 +110,15 @@ namespace WelderCalculator.Views.SchaefflerChartView
                 return;
             }
 
+            CountPointsAndLinesPositionAndDraw();
+
+            _someCountingsFinished = true;
+        }
+
+        private void CountPointsAndLinesPositionAndDraw()
+        {
+            double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
+
             var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
             PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEqSchaefflerAndDeLong, (float)firstMaterial.NiEqSchaeffler);
 
@@ -121,6 +131,9 @@ namespace WelderCalculator.Views.SchaefflerChartView
             PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
 
             PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
+            DrawCountedPointsAndLines(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
+            PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
+
             DrawCountedPointsAndLines(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
             PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
         }
@@ -145,8 +158,19 @@ namespace WelderCalculator.Views.SchaefflerChartView
             _chart.Draw();
         }
 
-        public void SaveChartTestButton()
+        public void OnSaveToPDFButtonClicked()
         {
+            double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
+            bool additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100 = (additionalMaterialQuantity > 0 &&
+                                                                                    additionalMaterialQuantity < 100);
+            if ((!(additionalMaterialQuantity.HasValue && additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100))
+                ||
+                !_someCountingsFinished)
+            {
+                MessageBox.Show("Ilość materiału dodatkowego nie jest liczba z zakresu od 0 od 100.\nUpewnij się że przeprowadzono obliczenia.");
+                return;
+            }
+
             Bitmap bitmap = new Bitmap(_view.DrawPanelWidth, _view.DrawPanelHeight);
 
             _chart = new Chart(Graphics.FromImage(bitmap),
@@ -154,7 +178,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
                 _dataConnector.GetSchaefflerChartSizingData());
             _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
             _chart.Draw();
-            OnCountButtonClicked();
+            CountPointsAndLinesPositionAndDraw();
 
 
             bitmap.Save(@"D:\Projects\test.png", ImageFormat.Png);
@@ -165,7 +189,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
                 _dataConnector.GetSchaefflerChartSizingData());
             _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
             _chart.Draw();
-            OnCountButtonClicked();
+            CountPointsAndLinesPositionAndDraw();
         }
 
         private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)
