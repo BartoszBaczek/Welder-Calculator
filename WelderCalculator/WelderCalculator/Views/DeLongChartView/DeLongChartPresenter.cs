@@ -10,6 +10,7 @@ using WelderCalculator.Views.FastMaterialFactoryView;
 using WelderCalculator.Views.MaterialDatabaseView;
 using WelderCalculator.Helpers.DeLongHelpers;
 using WelderCalculator.Views.SchaefflerMinimapView;
+using System.Drawing.Imaging;
 
 namespace WelderCalculator.Views.DeLongChartView
 {
@@ -17,7 +18,7 @@ namespace WelderCalculator.Views.DeLongChartView
     {
         private readonly IDeLongChartView _view;
         private readonly DataConnector _dataConnector;
-        private readonly IChart _chart;
+        private IChart _chart;
         private bool _someCountingsFinished = false;
 
         public DeLongChartPresenter(IDeLongChartView view)
@@ -128,6 +129,15 @@ namespace WelderCalculator.Views.DeLongChartView
                 return;
             }
 
+            CountPointsAndLinesPositionAndDraw();
+
+            _someCountingsFinished = true;
+        }
+
+        private void CountPointsAndLinesPositionAndDraw()
+        {
+            double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
+
             var firstMaterial = _dataConnector.GetFirstBasisMarerialForSchaeffler();
             PointF pointForFirstMaterial = new PointF((float)firstMaterial.CrEqSchaefflerAndDeLong, (float)firstMaterial.NiEqDeLong);
 
@@ -140,13 +150,11 @@ namespace WelderCalculator.Views.DeLongChartView
             PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
 
             PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
-            RedrawChart(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
+            DrawCountedPointsAndLines(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
             PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
-
-            _someCountingsFinished = true;
         }
 
-        private void RedrawChart(PointF pointForFirstMaterial, PointF pointForSecondMaterial, PointF pointForAddMaterial, PointF pointInTheMiddleOfLine, PointF pointInTheMiddleOfLineWithTranslation)
+        private void DrawCountedPointsAndLines(PointF pointForFirstMaterial, PointF pointForSecondMaterial, PointF pointForAddMaterial, PointF pointInTheMiddleOfLine, PointF pointInTheMiddleOfLineWithTranslation)
         {
             _chart.Clean();
 
@@ -164,6 +172,40 @@ namespace WelderCalculator.Views.DeLongChartView
             _chart.AddPoint(pointInTheMiddleOfLineWithTranslation, Color.Red);
 
             _chart.Draw();
+        }
+
+        public void OnSaveToPDFButtonClicked()
+        {
+            double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
+            bool additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100 = (additionalMaterialQuantity > 0 &&
+                                                                                    additionalMaterialQuantity < 100);
+            if ((!(additionalMaterialQuantity.HasValue && additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100))
+                ||
+                !_someCountingsFinished)
+            {
+                MessageBox.Show("Ilość materiału dodatkowego nie jest liczba z zakresu od 0 od 100.\nUpewnij się że przeprowadzono obliczenia.");
+                return;
+            }
+
+            Bitmap bitmap = new Bitmap(_view.DrawPanelWidth, _view.DrawPanelHeight);
+
+            _chart = new Chart(Graphics.FromImage(bitmap),
+                _dataConnector.GetDeLongImages(),
+                _dataConnector.GetDeLongChartSizingData());
+            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.Draw();
+            CountPointsAndLinesPositionAndDraw();
+
+
+            bitmap.Save(@"D:\Projects\test.png", ImageFormat.Png);
+
+
+            _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
+                _dataConnector.GetDeLongImages(),
+                _dataConnector.GetDeLongChartSizingData());
+            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.Draw();
+            CountPointsAndLinesPositionAndDraw();
         }
 
         private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)

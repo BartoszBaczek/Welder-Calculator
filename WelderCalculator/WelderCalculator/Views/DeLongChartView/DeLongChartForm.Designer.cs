@@ -451,6 +451,7 @@ namespace WelderCalculator.Views.DeLongChartView
             this.exportToPDFButton.TabIndex = 15;
             this.exportToPDFButton.Text = "Zapisz";
             this.exportToPDFButton.UseVisualStyleBackColor = true;
+            this.exportToPDFButton.Click += new System.EventHandler(this.exportToPDFButton_Click);
             // 
             // DeLongChartForm
             // 

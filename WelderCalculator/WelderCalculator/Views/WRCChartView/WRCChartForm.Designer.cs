@@ -401,6 +401,7 @@
             this.exportToPDFButton.TabIndex = 16;
             this.exportToPDFButton.Text = "Zapisz";
             this.exportToPDFButton.UseVisualStyleBackColor = true;
+            this.exportToPDFButton.Click += new System.EventHandler(this.exportToPDFButton_Click);
             // 
             // WRCChartForm
             // 

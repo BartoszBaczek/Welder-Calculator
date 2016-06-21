@@ -234,5 +234,10 @@ namespace WelderCalculator.Views.DeLongChartView
         {
             Presenter.OnShowMinimapButtonClicked();
         }
+
+        private void exportToPDFButton_Click(object sender, EventArgs e)
+        {
+            Presenter.OnSaveToPDFButtonClicked();
+        }
     }
 }
