@@ -39,13 +39,6 @@
       "RealValue": null
     },
     {
-      "Name": 5,
-      "FullName": "Azot",
-      "Min": null,
-      "Max": null,
-      "RealValue": 0.0
-    },
-    {
       "Name": 6,
       "FullName": "Chrom",
       "Min": null,
@@ -53,8 +46,29 @@
       "RealValue": 11.5
     },
     {
+      "Name": 9,
+      "FullName": "Nikiel",
+      "Min": null,
+      "Max": null,
+      "RealValue": 0.65
+    },
+    {
       "Name": 7,
       "FullName": "Molibden",
+      "Min": null,
+      "Max": null,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 5,
+      "FullName": "Azot",
+      "Min": null,
+      "Max": null,
+      "RealValue": 0.0
+    },
+    {
+      "Name": 13,
+      "FullName": "Cu",
       "Min": null,
       "Max": null,
       "RealValue": 0.0
@@ -67,22 +81,8 @@
       "RealValue": 0.0
     },
     {
-      "Name": 9,
-      "FullName": "Nikiel",
-      "Min": null,
-      "Max": null,
-      "RealValue": 0.65
-    },
-    {
       "Name": 10,
       "FullName": "Tytan",
-      "Min": null,
-      "Max": null,
-      "RealValue": 0.0
-    },
-    {
-      "Name": 11,
-      "FullName": "Aluminium",
       "Min": null,
       "Max": null,
       "RealValue": null
@@ -95,8 +95,8 @@
       "RealValue": null
     },
     {
-      "Name": 13,
-      "FullName": "Cu",
+      "Name": 11,
+      "FullName": "Aluminium",
       "Min": null,
       "Max": null,
       "RealValue": null
@@ -105,7 +105,7 @@
   "CEq": null,
   "NiEqSchaeffler": 0.65,
   "NiEqDeLong": 0.65,
-  "NiEqWRC1992": null,
+  "NiEqWRC1992": 0.65,
   "CrEqSchaefflerAndDeLong": 11.5,
   "CrEqWRC1992": 11.5
 }

@@ -1,6 +1,6 @@
 {
-  "Name": "25 22 2 N L",
-  "GuidNumber": "283b5c63-2d96-411a-8f9c-66a5c3819aad",
+  "Name": "Mat. dodatkowy",
+  "GuidNumber": "00000000-0000-0000-0000-000000000000",
   "Elements": [
     {
       "Name": 0,
@@ -19,82 +19,85 @@
     {
       "Name": 2,
       "FullName": "Mangan",
-      "Min": 1.0,
-      "Max": 5.0,
+      "Min": null,
+      "Max": null,
       "RealValue": 3.0
     },
     {
       "Name": 3,
       "FullName": "Potas",
-      "Min": 0.0,
-      "Max": 0.03,
-      "RealValue": 0.0
+      "Min": null,
+      "Max": null,
+      "RealValue": null
     },
     {
       "Name": 4,
       "FullName": "Siarka",
-      "Min": 0.0,
-      "Max": 0.025,
-      "RealValue": 0.0
+      "Min": null,
+      "Max": null,
+      "RealValue": null
     },
     {
       "Name": 6,
       "FullName": "Chrom",
-      "Min": 24.0,
-      "Max": 27.0,
+      "Min": null,
+      "Max": null,
       "RealValue": 25.5
     },
     {
       "Name": 9,
       "FullName": "Nikiel",
-      "Min": 20.0,
-      "Max": 23.0,
+      "Min": null,
+      "Max": null,
       "RealValue": 21.5
     },
     {
       "Name": 7,
       "FullName": "Molibden",
-      "Min": 2.0,
-      "Max": 3.0,
+      "Min": null,
+      "Max": null,
       "RealValue": 2.5
     },
     {
       "Name": 5,
       "FullName": "Azot",
-      "Min": 0.0,
-      "Max": 0.2,
+      "Min": null,
+      "Max": null,
       "RealValue": 0.0
     },
     {
       "Name": 13,
       "FullName": "Cu",
-      "Min": 0.0,
-      "Max": 0.0,
+      "Min": null,
+      "Max": null,
       "RealValue": 0.0
     },
     {
       "Name": 8,
       "FullName": "Nb",
-      "Min": 0.0,
-      "Max": 0.0,
+      "Min": null,
+      "Max": null,
       "RealValue": 0.0
     },
     {
       "Name": 10,
       "FullName": "Tytan",
-      "Min": 0.0,
-      "Max": 0.0,
-      "RealValue": 0.0
+      "Min": null,
+      "Max": null,
+      "RealValue": null
     },
     {
       "Name": 12,
       "FullName": "Wanad",
-      "Min": 0.0,
-      "Max": 0.0,
-      "RealValue": 0.0
+      "Min": null,
+      "Max": null,
+      "RealValue": null
     }
   ],
-  "CEq": 7.5733333333333333,
-  "NiEq": 24.2,
-  "CrEq": 29.8
+  "CEq": null,
+  "NiEqSchaeffler": 24.2,
+  "NiEqDeLong": 24.2,
+  "NiEqWRC1992": 22.9,
+  "CrEqSchaefflerAndDeLong": 29.8,
+  "CrEqWRC1992": 28.0
 }
