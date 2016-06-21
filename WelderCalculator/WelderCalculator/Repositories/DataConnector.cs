@@ -197,5 +197,10 @@ namespace WelderCalculator.Repositories
         {
             return _normRepo.GetKsLogoImage();
         }
+
+        public void SaveMainChartForPDF(Bitmap bitmap)
+        {
+            _normRepo.SerializeMainChartForPDF(bitmap);
+        }
     }
 }

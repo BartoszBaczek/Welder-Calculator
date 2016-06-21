@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using WelderCalculator.Model;
 using System.Drawing;
 using WelderCalculator.Drawings.Chart;
+using System.Drawing.Imaging;
 
 namespace WelderCalculator.Repositories
 {
@@ -373,5 +374,13 @@ namespace WelderCalculator.Repositories
         }
 
         #endregion
+
+        public void SerializeMainChartForPDF(Bitmap bitmap)
+        {
+            string chartImageCatalog = "PdfImages/";
+
+            string pathToFile = _drawingsPath + chartImageCatalog + "mainChart.png";
+            bitmap.Save(pathToFile, ImageFormat.Png);
+        }
     }
 }

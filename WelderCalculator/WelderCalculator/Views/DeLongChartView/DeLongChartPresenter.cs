@@ -197,7 +197,7 @@ namespace WelderCalculator.Views.DeLongChartView
             CountPointsAndLinesPositionAndDraw();
 
 
-            bitmap.Save(@"D:\Projects\test.png", ImageFormat.Png);
+            _dataConnector.SaveMainChartForPDF(bitmap);
 
 
             _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
