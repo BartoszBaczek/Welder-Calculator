@@ -12,6 +12,7 @@ using WelderCalculator.Repositories;
 using WelderCalculator.Views.AddMaterialDatabaseView;
 using WelderCalculator.Views.FastMaterialFactoryView;
 using WelderCalculator.Views.MaterialDatabaseView;
+using WelderCalculator.Views.SchaefflerMinimapView;
 
 namespace WelderCalculator.Views.WRCChartView
 {
@@ -100,7 +101,19 @@ namespace WelderCalculator.Views.WRCChartView
 
         public void OnShowMinimapButtonClicked()
         {
-            //TODO Implement
+            bool additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100 = (_view.AdditionalMaterialQuantity > 0 &&
+                                                                                    _view.AdditionalMaterialQuantity < 100);
+            if ((!(_view.AdditionalMaterialQuantity.HasValue &&
+                additionalMaterialQuantityIsGreaterThanZeroAndSmallerThanOne100))
+                                ||
+                !_someCountingsFinished)
+            {
+                MessageBox.Show("Ilość materiału dodatkowego nie jest liczba z zakresu od 0 od 100.\nUpewnij się że przeprowadzono obliczenia.");
+                return;
+            }
+
+            var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerWRC1992, _view.AdditionalMaterialQuantity.Value);
+            schaefflerDeLongMinimapForm.ShowDialog();
         }
 
         public void OnCountButtonClicked()

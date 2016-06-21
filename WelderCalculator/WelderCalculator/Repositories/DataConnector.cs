@@ -132,10 +132,11 @@ namespace WelderCalculator.Repositories
             return layers;
         }
 
-        //public Layers GetSchaefflerWRC1992MinimapImages()
-        //{
-
-        //}
+        public Layers GetSchaefflerWRC1992MinimapImages()
+        {
+            var layers = new Layers(_normRepo.GetSchaefflerWRC1992MinimapImages());
+            return layers;
+        }
 
         public void SaveFirstBasisMarerialForSchaeffler(BaseMaterial baseMaterial)
         {
@@ -187,10 +188,10 @@ namespace WelderCalculator.Repositories
             return _normRepo.DeserializeSchaefflerChartSizing();
         }
 
-        //public ChartSizing GetSchaefflerWRC1992MinimapSizingData()
-        //{
-
-        //}
+        public ChartSizing GetSchaefflerWRC1992MinimapSizingData()
+        {
+            return _normRepo.DeserializeSchaefflerChartSizing();
+        }
 
         public Image GetKsLogo()
         {

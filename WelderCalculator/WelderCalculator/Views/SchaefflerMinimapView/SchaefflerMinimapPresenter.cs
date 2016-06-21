@@ -36,9 +36,9 @@ namespace WelderCalculator.Views.SchaefflerMinimapView
             }
             else if (_minimapCombination == MinimapCombination.SchaefflerWRC1992)
             {
-                //_chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
-                //    _dataConnector.GetSchaefflerWRC1992MinimapImages(),
-                //    _dataConnector.GetSchaefflerWRC1992MinimapSizingData());
+                _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
+                    _dataConnector.GetSchaefflerWRC1992MinimapImages(),
+                    _dataConnector.GetSchaefflerWRC1992MinimapSizingData());
             }
         }
 

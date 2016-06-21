@@ -315,6 +315,17 @@ namespace WelderCalculator.Repositories
             return layers;
         }
 
+        public List<Layer> GetSchaefflerWRC1992MinimapImages()
+        {
+            string schaefflerWRC1992Catalog = "SchaefflerWRC1992Minimap/";
+            var layers = new List<Layer>()
+            {
+                new Layer(Image.FromFile(_drawingsPath + schaefflerWRC1992Catalog + "swrc_all.png"), SchaefflerWRC1992MinimapLayerType.Only)
+            };
+
+            return layers;
+        }
+
         public ChartSizing DeserializeDeLongChartSizing()
         {
             string fileName = "DeLong/chartSizing";

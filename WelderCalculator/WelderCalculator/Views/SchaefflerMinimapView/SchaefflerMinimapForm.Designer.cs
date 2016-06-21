@@ -38,13 +38,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.drawPanel.Location = new System.Drawing.Point(12, 9);
             this.drawPanel.Name = "drawPanel";
-            this.drawPanel.Size = new System.Drawing.Size(431, 246);
+            this.drawPanel.Size = new System.Drawing.Size(431, 331);
             this.drawPanel.TabIndex = 8;
             this.drawPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.drawPanel_Paint);
             // 
             // okButton
             // 
-            this.okButton.Location = new System.Drawing.Point(181, 261);
+            this.okButton.Location = new System.Drawing.Point(183, 346);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(75, 23);
             this.okButton.TabIndex = 9;
@@ -56,7 +56,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(455, 288);
+            this.ClientSize = new System.Drawing.Size(455, 381);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.drawPanel);
             this.MaximizeBox = false;

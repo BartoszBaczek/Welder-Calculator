@@ -40,6 +40,11 @@ namespace WelderCalculator.Drawings.Chart
         public static readonly string Only = "schaefflerDeLongOnly";
     }
 
+    public class SchaefflerWRC1992MinimapLayerType
+    {
+        public static readonly string Only = "schaefflerWRC1992Only";
+    }
+
     public class Layer
     {
         public Image Image;
