@@ -6,9 +6,17 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using WelderCalculator.Model;
+using WelderCalculator.Repositories;
 
 namespace WelderCalculator.PDFUtilities
 {
+    public enum PdfFor
+    {
+        Schaeffler,
+        DeLong,
+        WRC1992
+    }
+
     public class PDFGenerator
     {
         private Document _document;
@@ -16,9 +24,11 @@ namespace WelderCalculator.PDFUtilities
         private BaseMaterial _baseMaterial1;
         private BaseMaterial _baseMaterial2;
         private AdditiveMaterial _addMaterial;
+        private PdfFor _pdfFor;
 
-        public PDFGenerator(BaseMaterial baseMaterial, BaseMaterial baseMaterial2, AdditiveMaterial addMaterial)
+        public PDFGenerator(PdfFor pdfFor, BaseMaterial baseMaterial, BaseMaterial baseMaterial2, AdditiveMaterial addMaterial, double addMaterialQuantity, float newMaterialCrEq, float newMaterialNiEq)
         {
+            _pdfFor = pdfFor;
             _baseMaterial1 = baseMaterial;
             _baseMaterial2 = baseMaterial2;
             _addMaterial = addMaterial;
@@ -27,8 +37,33 @@ namespace WelderCalculator.PDFUtilities
             Section section = _document.AddSection();
 
             AddHeader(section);
-            AddTable(section);
 
+            AddInputDataSection(section, "Dane wejsciowe");
+            AddEmptySpace(section, 0.1);
+
+            AddElementsTable(section);
+            AddEmptySpace(section, 0.1);
+
+            AddEquivalentsTable(section, addMaterialQuantity);
+            AddEmptySpace(section, 0.5);
+
+            AddInputDataSection(section, "Dane wyjściowe");
+            AddEmptySpace(section, 0.5);
+
+            AddMainChartImage(section);
+            if (pdfFor == PdfFor.Schaeffler)
+            {
+                AddSchaefflerLegendImage(section);
+                AddEmptySpace(section, 0.5);
+            }
+            else
+            {
+                AddMinimapChartImage(section);
+                AddEmptySpace(section, 0.5);
+            }
+            
+
+            // AddFinalMaterialData
             _document.UseCmykColor = true;
             const bool unicode = false;
             const PdfFontEmbedding embedding = PdfFontEmbedding.Always;
@@ -44,19 +79,47 @@ namespace WelderCalculator.PDFUtilities
         {
             Paragraph headerParagraph = section.Headers.Primary.AddParagraph();
 
-            headerParagraph.AddText("WelderCalc\n");
-            headerParagraph.Format.Font.Size = 14;
+            headerParagraph.AddText("WelderCalc - Raport\n");
+            headerParagraph.Format.Font.Size = 10;
             headerParagraph.Format.Alignment = ParagraphAlignment.Right;
 
             headerParagraph.Format.Borders.Bottom.Visible = true;
             headerParagraph.Format.Borders.Bottom.Color = Colors.Aqua;
             headerParagraph.Format.Borders.Bottom.Width = 3;
+
         }
 
-        private void AddTable(Section section)
+        private void AddInputDataSection(Section section, string text)
         {
             Table table = section.AddTable();
             table.Style = "Table";
+            table.Format.Font.Size = 8;
+
+            table.Borders.Color = Colors.Black;
+            table.Borders.Width = 0;
+            table.Borders.Top.Visible = false;
+            table.Borders.Left.Visible = false;
+            table.Borders.Right.Visible = false;
+
+            table.Borders.Bottom.Color = Colors.Black;
+            table.Borders.Bottom.Width = 0.25;
+            table.Borders.Bottom.Visible = true;
+
+            Column column = table.AddColumn("16cm");
+            column.Format.Alignment = ParagraphAlignment.Left;
+
+            Row row = table.AddRow();
+            row.Format.Alignment = ParagraphAlignment.Left;
+            row.Cells[0].AddParagraph(text);
+
+            table.SetEdge(0, 0, table.Columns.Count, table.Rows.Count, Edge.Box, BorderStyle.DashSmallGap, 0.25, Color.Empty);
+        }
+
+        private void AddElementsTable(Section section)
+        {
+            Table table = section.AddTable();
+            table.Style = "Table";
+            table.Format.Font.Size = 8;
 
             table.Borders.Color = Colors.Black;
             table.Borders.Width = 0.25;
@@ -177,8 +240,126 @@ namespace WelderCalculator.PDFUtilities
             for (int i = 0; i < 15; i++)
                 row_addMaterial.Cells[i].Shading.Color = Colors.LightPink;
 
+            table.SetEdge(0, 0, table.Columns.Count, table.Rows.Count, Edge.Box, BorderStyle.Single, 2, Color.Empty);
+        }
+
+        private void AddEmptySpace(Section section, double height)
+        {
+            Table table = section.AddTable();
+            table.Style = "Table";
+
+            table.Borders.Color = Color.Empty;
+            table.Borders.Width = 0;
+            table.Borders.Left.Width = 0;
+            table.Borders.Right.Width = 0;
+            table.Rows.LeftIndent = 0;
+            table.Borders.Color = Color.Empty;
+            // Before you can add a row, you must define the columns
+            Column column = table.AddColumn("16cm");
+            column.Format.Alignment = ParagraphAlignment.Center;
+
+            // Create the header of the table
+            Row row_1 = table.AddRow();
+            row_1.Format.Alignment = ParagraphAlignment.Center;
+            
+            row_1.Cells[0].Format.Alignment = ParagraphAlignment.Center;
+            row_1.Cells[0].VerticalAlignment = VerticalAlignment.Center;
+            row_1.Height = new Unit(height, UnitType.Centimeter);
+            table.SetEdge(0, 0, table.Columns.Count, table.Rows.Count, Edge.Box, BorderStyle.Single, 0, Color.Empty);
+        }
+
+        private void AddEquivalentsTable(Section section, double addMaterialQuantity)
+        {
+            Table table = section.AddTable();
+            table.Style = "Table";
+            table.Format.Font.Size = 8;
+
+            table.Borders.Color = Colors.Black;
+            table.Borders.Width = 0.25;
+            table.Borders.Left.Width = 0.5;
+            table.Borders.Right.Width = 0.5;
+            table.Rows.LeftIndent = 0;
+
+            Column column = table.AddColumn("5cm");
+            for (int i = 0; i < 2; i++)
+            {
+                column = table.AddColumn("3cm");
+                column.Format.Alignment = ParagraphAlignment.Center;
+            }
+
+            Row tableHeaderRow = table.AddRow();
+            tableHeaderRow.HeadingFormat = true;
+            tableHeaderRow.Format.Alignment = ParagraphAlignment.Center;
+            tableHeaderRow.Format.Font.Bold = true;
+
+            tableHeaderRow.Cells[0].AddParagraph("Material");
+
+            tableHeaderRow.Cells[0].Format.Font.Bold = true;
+            tableHeaderRow.Cells[1].AddParagraph("CrEq");
+            tableHeaderRow.Cells[1].Format.Font.Bold = true;
+            tableHeaderRow.Cells[2].AddParagraph("NiEq");
+            tableHeaderRow.Cells[2].Format.Font.Bold = true;
+
+            // TODO TYLKO DLA WRC1992
+            Row baseMaterial1Row = table.AddRow();
+            baseMaterial1Row.HeadingFormat = true;
+            baseMaterial1Row.Format.Alignment = ParagraphAlignment.Center;
+            baseMaterial1Row.Shading.Color = Colors.Aquamarine;
+            baseMaterial1Row.Cells[0].AddParagraph(_baseMaterial1.Name);
+            baseMaterial1Row.Cells[1].AddParagraph(_baseMaterial1.CrEqWRC1992.ToString());
+            baseMaterial1Row.Cells[2].AddParagraph(_baseMaterial1.CrEqWRC1992.ToString());
+
+
+            Row baseMaterial2Row = table.AddRow();
+            baseMaterial2Row.HeadingFormat = true;
+            baseMaterial2Row.Format.Alignment = ParagraphAlignment.Center;
+            baseMaterial2Row.Shading.Color = Colors.YellowGreen;
+            baseMaterial2Row.Cells[0].AddParagraph(_baseMaterial2.Name);
+            baseMaterial2Row.Cells[1].AddParagraph(_baseMaterial2.CrEqWRC1992.ToString());
+            baseMaterial2Row.Cells[2].AddParagraph(_baseMaterial2.CrEqWRC1992.ToString());
+
+            Row addMaterialRow = table.AddRow();
+            addMaterialRow.HeadingFormat = true;
+            addMaterialRow.Format.Alignment = ParagraphAlignment.Center;
+            addMaterialRow.Shading.Color = Colors.LightPink;
+            addMaterialRow.Cells[0].AddParagraph(_addMaterial.Name);
+            addMaterialRow.Cells[1].AddParagraph(_addMaterial.CrEqWRC1992.ToString());
+            addMaterialRow.Cells[2].AddParagraph(_addMaterial.CrEqWRC1992.ToString());
+
+            Row addMaterialQuantityRow = table.AddRow();
+            addMaterialQuantityRow.HeadingFormat = true;
+            addMaterialQuantityRow.Format.Alignment = ParagraphAlignment.Center;
+            addMaterialQuantityRow.Cells[0].MergeRight = 1;
+            addMaterialQuantityRow.Cells[0].AddParagraph("% materialu dodatkowego");
+            addMaterialQuantityRow.Cells[0].Format.Font.Bold = true;
+            addMaterialQuantityRow.Cells[2].AddParagraph(addMaterialQuantity.ToString());
+            addMaterialQuantityRow.Cells[2].Format.Font.Bold = true;
 
             table.SetEdge(0, 0, table.Columns.Count, table.Rows.Count, Edge.Box, BorderStyle.Single, 2, Color.Empty);
+        }
+            
+        private void AddMainChartImage(Section section)
+        {
+            DataConnector dataConnector = new DataConnector("asd");
+            section.AddImage(dataConnector.PathToMainChartImage());
+        }
+
+        private void AddMinimapChartImage(Section section)
+        {
+            DataConnector dataConnector = new DataConnector("asdad");
+            section.AddImage(dataConnector.PathToMinimapChartImage());
+        }
+
+        private void AddSchaefflerLegendImage(Section section)
+        {
+            DataConnector dataConnector = new DataConnector("asd");
+            section.AddImage(dataConnector.PathToSchaefflerDiagramLegendImage());
+        }
+
+        private void AddOutputData(Section section, float CrEq, float NiEq)
+        {
+            Table table = section.AddTable();
+            table.Style = "Table";
         }
 
         private string RandomString()

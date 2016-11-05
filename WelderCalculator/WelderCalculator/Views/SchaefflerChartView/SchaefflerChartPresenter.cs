@@ -168,12 +168,15 @@ namespace WelderCalculator.Views.SchaefflerChartView
                 return;
             }
 
-            Bitmap bitmap = new Bitmap(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            int widthForA4 = (int)((float)_view.DrawPanelWidth * 0.6);
+            int heightForA4 = (int)((float)_view.DrawPanelHeight * 0.6);
+
+            Bitmap bitmap = new Bitmap(widthForA4, heightForA4);
 
             _chart = new Chart(Graphics.FromImage(bitmap),
                 _dataConnector.GetSchaefflerImages(),
                 _dataConnector.GetSchaefflerChartSizingData());
-            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.ResizeTo(widthForA4, heightForA4);
             _chart.Draw();
             CountPointsAndLinesPositionAndDraw();
 

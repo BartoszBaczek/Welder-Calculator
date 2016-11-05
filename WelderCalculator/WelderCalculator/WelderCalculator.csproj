@@ -82,6 +82,8 @@
     <Compile Include="Helpers\DeLongHelpers\DeLongMicrophaseHelper.cs" />
     <Compile Include="Helpers\GeometryHelper.cs" />
     <Compile Include="Helpers\SchaefflerHelpers\SchaefflerMicrophaseHelper.cs" />
+    <Compile Include="Helpers\WRCHelper\WrcMicrophaseBorders.cs" />
+    <Compile Include="Helpers\WRCHelper\WrcChartHelper.cs" />
     <Compile Include="Model\ChartSizing.cs" />
     <Compile Include="PDFUtilities\PDFGenerator.cs" />
     <Compile Include="Repositories\IDrawingsRepository.cs" />

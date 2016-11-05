@@ -202,5 +202,25 @@ namespace WelderCalculator.Repositories
         {
             _normRepo.SerializeMainChartForPDF(bitmap);
         }
+
+        public void SaveMinimapForPDF(Bitmap bitmap)
+        {
+            _normRepo.SerializeMinimapForPDF(bitmap);
+        }
+
+        public string PathToMainChartImage()
+        {
+            return _normRepo.PathToMainChartImage();
+        }
+
+        public string PathToMinimapChartImage()
+        {
+            return _normRepo.PathToMinimapChartImage();
+        }
+
+        public string PathToSchaefflerDiagramLegendImage()
+        {
+            return _normRepo.PathToSchaefflerDiagramLegendImage();
+        }
     }
 }

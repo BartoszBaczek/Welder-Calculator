@@ -14,10 +14,13 @@ namespace WelderCalculator.Views.SchaefflerMinimapView
         public int DrawPanelHeight { get { return drawPanel.Height; } }
 
 
-        public SchaefflerMinimapForm(MinimapCombination minimapCombination, double additionalMaterialQuantity)
+        public SchaefflerMinimapForm(MinimapCombination minimapCombination, double additionalMaterialQuantity, bool instantClose)
         {
             InitializeComponent();
             new SchaefflerMinimapPresenter(this, minimapCombination, additionalMaterialQuantity);
+
+            if (instantClose)
+                this.Close();
         }
 
         public void CancelDialog()

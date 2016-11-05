@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WelderCalculator.Drawings.Chart;
 using WelderCalculator.Helpers;
+using WelderCalculator.Helpers.WRCHelper;
 using WelderCalculator.Model;
 using WelderCalculator.Repositories;
 using WelderCalculator.Views.AddMaterialDatabaseView;
@@ -113,7 +114,7 @@ namespace WelderCalculator.Views.WRCChartView
                 return;
             }
 
-            var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerWRC1992, _view.AdditionalMaterialQuantity.Value);
+            var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerWRC1992, _view.AdditionalMaterialQuantity.Value, false);
             schaefflerDeLongMinimapForm.ShowDialog();
         }
 
@@ -150,7 +151,7 @@ namespace WelderCalculator.Views.WRCChartView
 
             PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
             DrawCountedPointsAndLines(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
-            // PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
+            PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
         }
 
         private void DrawCountedPointsAndLines(PointF pointForFirstMaterial, PointF pointForSecondMaterial, PointF pointForAddMaterial, PointF pointInTheMiddleOfLine, PointF pointInTheMiddleOfLineWithTranslation)
@@ -173,6 +174,92 @@ namespace WelderCalculator.Views.WRCChartView
             _chart.Draw();
         }
 
+        private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)
+        {
+            var wrcChartHelper = new WrcChartHelper();
+            //      var schaefflerMicrophaseHelper = new SchaefflerMicrophaseHelper();
+            //      SchaefflerMicrophase newMaterialMicrophase = schaefflerMicrophaseHelper.GetMicrophaseForPoint(newMaterialPoint);
+            // 
+            //      switch (newMaterialMicrophase)
+            //      {
+            //          case SchaefflerMicrophase.FM:
+            //              _view.NewMaterialMicrophaseTextBox = "Ferrytyczno - martenzytyczna";
+            //              break;
+            //          case SchaefflerMicrophase.M:
+            //              _view.NewMaterialMicrophaseTextBox = "Martenzytyczna";
+            //              break;
+            //          case SchaefflerMicrophase.AM:
+            //              _view.NewMaterialMicrophaseTextBox = "Austenityczno - martenzytyczna";
+            //              break;
+            //          case SchaefflerMicrophase.A:
+            //              _view.NewMaterialMicrophaseTextBox = "Austenityczna";
+            //              break;
+            //          case SchaefflerMicrophase.MF:
+            //              _view.NewMaterialMicrophaseTextBox = "Martenzytyczno - ferrytyczna";
+            //              break;
+            //          case SchaefflerMicrophase.AMF:
+            //              _view.NewMaterialMicrophaseTextBox = "Austeniticzno - martenzytyczno - ferrytyczna";
+            //              break;
+            //          case SchaefflerMicrophase.AF:
+            //              _view.NewMaterialMicrophaseTextBox = "Austenityczno - ferrytyczna";
+            //              break;
+            //          case SchaefflerMicrophase.F:
+            //              _view.NewMaterialMicrophaseTextBox = "Ferrytyczna";
+            //              break;
+            //          case SchaefflerMicrophase.Unknown:
+            //              _view.NewMaterialMicrophaseTextBox = "Poza wykresem";
+            //              break;
+            //      }
+
+            WrcFerriteQuantity newMaterialFerriteQuantity = wrcChartHelper.GetWrcFerriteQuantityForPoint(newMaterialPoint);
+       
+            if (newMaterialFerriteQuantity == WrcFerriteQuantity.Unknown)
+                _view.NewMaterialFerriteNumberTextBox = "Nieznana";
+            else
+            {
+                switch (newMaterialFerriteQuantity)
+                {
+                    case WrcFerriteQuantity._0to4:
+                        _view.NewMaterialFerriteNumberTextBox= "0 - 4";
+                        break;
+                    case WrcFerriteQuantity._4to8:
+                        _view.NewMaterialFerriteNumberTextBox = "4 - 8";
+                        break;
+                    case WrcFerriteQuantity._8to12:
+                        _view.NewMaterialFerriteNumberTextBox = "8 - 12";
+                        break;
+                    case WrcFerriteQuantity._12to16:
+                        _view.NewMaterialFerriteNumberTextBox = "12 - 16";
+                        break;
+                    case WrcFerriteQuantity._16to20:
+                        _view.NewMaterialFerriteNumberTextBox = "16 - 20";
+                        break;
+                    case WrcFerriteQuantity._20to24:
+                        _view.NewMaterialFerriteNumberTextBox = "20 - 24";
+                        break;
+                    case WrcFerriteQuantity._24to28:
+                        _view.NewMaterialFerriteNumberTextBox = "24 - 28";
+                        break;
+                    case WrcFerriteQuantity._28to35:
+                        _view.NewMaterialFerriteNumberTextBox = "28 - 35";
+                        break;
+                    case WrcFerriteQuantity._35to55:
+                        _view.NewMaterialFerriteNumberTextBox = "35 - 55";
+                        break;
+                    case WrcFerriteQuantity._55to75:
+                        _view.NewMaterialFerriteNumberTextBox = "55 - 75";
+                        break;
+                    case WrcFerriteQuantity._75to95:
+                        _view.NewMaterialFerriteNumberTextBox = "75 - 95";
+                        break;
+                    case WrcFerriteQuantity._95to100:
+                        _view.NewMaterialFerriteNumberTextBox = "95 - 100";
+                        break;
+                }
+       
+            }
+        }
+
         public void OnSaveToPDFButtonClicked()
         {
             double? additionalMaterialQuantity = _view.AdditionalMaterialQuantity;
@@ -186,12 +273,15 @@ namespace WelderCalculator.Views.WRCChartView
                 return;
             }
 
-            Bitmap bitmap = new Bitmap(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            int widthForA4 = (int)((float)_view.DrawPanelWidth * 0.6);
+            int heightForA4 = (int)((float)_view.DrawPanelHeight * 0.6);
+
+            Bitmap bitmap = new Bitmap(widthForA4, heightForA4);
 
             _chart = new Chart(Graphics.FromImage(bitmap),
                 _dataConnector.GetWRC1992Images(),
                 _dataConnector.GetWRC1992ChartSizingData());
-            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.ResizeTo(widthForA4, heightForA4);
             _chart.Draw();
             CountPointsAndLinesPositionAndDraw();
 
@@ -205,6 +295,8 @@ namespace WelderCalculator.Views.WRCChartView
             _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
             _chart.Draw();
             CountPointsAndLinesPositionAndDraw();
+
+            var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerWRC1992, _view.AdditionalMaterialQuantity.Value, true);
         }
     }
 }

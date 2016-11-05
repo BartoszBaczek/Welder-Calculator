@@ -24,6 +24,54 @@ namespace WelderCalculator.Views.SchaefflerMinimapView
 
             LoadChartData();
             DrawLines();
+
+            SaveMinimap();
+        }
+
+
+        public void SaveMinimap()
+        {
+            int widthForA4 = (int)((float)_view.DrawPanelWidth * 0.8);
+            int heightForA4 = (int)((float)_view.DrawPanelHeight * 0.8);
+
+            Bitmap bitmap = new Bitmap(widthForA4, heightForA4);
+
+            if (_minimapCombination == MinimapCombination.SchaefflerDeLong)
+            {
+                _chart = new Chart(Graphics.FromImage(bitmap),
+                _dataConnector.GetSchaefflerDeLongMinimapImages(),
+                _dataConnector.GetSchaefflerDeLongMinimapSizingData());
+            }
+            else if (_minimapCombination == MinimapCombination.SchaefflerWRC1992)
+            {
+                _chart = new Chart(Graphics.FromImage(bitmap),
+                    _dataConnector.GetSchaefflerWRC1992MinimapImages(),
+                    _dataConnector.GetSchaefflerWRC1992MinimapSizingData());
+            }
+
+            _chart.ResizeTo(widthForA4, heightForA4);
+            _chart.Draw();
+            DrawLines();
+
+            _dataConnector.SaveMinimapForPDF(bitmap);
+
+
+
+            if (_minimapCombination == MinimapCombination.SchaefflerDeLong)
+            {
+                _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
+                _dataConnector.GetSchaefflerDeLongMinimapImages(),
+                _dataConnector.GetSchaefflerDeLongMinimapSizingData());
+            }
+            else if (_minimapCombination == MinimapCombination.SchaefflerWRC1992)
+            {
+                _chart = new Chart(Graphics.FromHwnd(_view.DrawPanelCanvas),
+                    _dataConnector.GetSchaefflerWRC1992MinimapImages(),
+                    _dataConnector.GetSchaefflerWRC1992MinimapSizingData());
+            }
+            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.Draw();
+            DrawLines();
         }
 
         private void LoadChartData()

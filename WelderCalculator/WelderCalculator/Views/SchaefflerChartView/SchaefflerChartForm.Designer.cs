@@ -290,7 +290,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.newMaterialDataLayoutPanel.Size = new System.Drawing.Size(376, 107);
             this.newMaterialDataLayoutPanel.TabIndex = 11;
             this.newMaterialDataLayoutPanel.TabStop = false;
-            this.newMaterialDataLayoutPanel.Text = "Dobór materiału";
+            this.newMaterialDataLayoutPanel.Text = "Wyniki";
             // 
             // newMaterialBrittlenessTextbox
             // 

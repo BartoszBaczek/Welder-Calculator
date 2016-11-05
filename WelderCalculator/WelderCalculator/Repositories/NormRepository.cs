@@ -382,5 +382,31 @@ namespace WelderCalculator.Repositories
             string pathToFile = _drawingsPath + chartImageCatalog + "mainChart.png";
             bitmap.Save(pathToFile, ImageFormat.Png);
         }
+
+        public void SerializeMinimapForPDF(Bitmap bitmap)
+        {
+            string chartImageCatalog = "PdfImages/";
+
+            string pathToFile = _drawingsPath + chartImageCatalog + "miniMap.png";
+            bitmap.Save(pathToFile, ImageFormat.Png);
+        }
+
+        public string PathToMainChartImage()
+        {
+            string chartImageCatalog = "PdfImages/";
+
+            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\mainChart.png";
+        }
+        public string PathToMinimapChartImage()
+        {
+            string chartImageCatalog = "PdfImages/";
+
+            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\miniMap.png";
+        }
+
+        public string PathToSchaefflerDiagramLegendImage()
+        {
+            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\schaefflerLegend.png";
+        }
     }
 }

@@ -105,8 +105,11 @@
         }
       ],
       "CEq": 2.3433333333333333,
-      "NiEq": 0.65,
-      "CrEq": 11.5
+      "NiEqSchaeffler": 0.65,
+      "NiEqDeLong": 0.65,
+      "NiEqWRC1992": 0.65,
+      "CrEqSchaefflerAndDeLong": 11.5,
+      "CrEqWRC1992": 11.5
     },
     {
       "Number": "1.4512",
@@ -213,8 +216,11 @@
         }
       ],
       "CEq": 2.3,
-      "NiEq": 0.0,
-      "CrEq": 12.92
+      "NiEqSchaeffler": 0.0,
+      "NiEqDeLong": 0.0,
+      "NiEqWRC1992": 0.0,
+      "CrEqSchaefflerAndDeLong": 11.5,
+      "CrEqWRC1992": 11.5
     },
     {
       "Number": "1.4000",
@@ -321,8 +327,11 @@
         }
       ],
       "CEq": 2.7233333333333336,
-      "NiEq": 1.45,
-      "CrEq": 13.75
+      "NiEqSchaeffler": 1.45,
+      "NiEqDeLong": 1.45,
+      "NiEqWRC1992": 1.4000000000000001,
+      "CrEqSchaefflerAndDeLong": 13.75,
+      "CrEqWRC1992": 13.0
     },
     {
       "Number": "1.4002",
@@ -429,8 +438,11 @@
         }
       ],
       "CEq": 2.7233333333333336,
-      "NiEq": 1.45,
-      "CrEq": 13.75
+      "NiEqSchaeffler": 1.45,
+      "NiEqDeLong": 1.45,
+      "NiEqWRC1992": 1.4000000000000001,
+      "CrEqSchaefflerAndDeLong": 13.75,
+      "CrEqWRC1992": 13.0
     },
     {
       "Number": "1.4516",
@@ -537,8 +549,11 @@
         }
       ],
       "CEq": 2.5316666666666667,
-      "NiEq": 2.575,
-      "CrEq": 12.425
+      "NiEqSchaeffler": 2.575,
+      "NiEqDeLong": 2.575,
+      "NiEqWRC1992": 2.4000000000000004,
+      "CrEqSchaefflerAndDeLong": 12.025,
+      "CrEqWRC1992": 11.5
     },
     {
       "Number": "1.4520",
@@ -645,8 +660,11 @@
         }
       ],
       "CEq": 3.4541666666666666,
-      "NiEq": 0.725,
-      "CrEq": 18.275
+      "NiEqSchaeffler": 0.5,
+      "NiEqDeLong": 0.725,
+      "NiEqWRC1992": 0.5875,
+      "CrEqSchaefflerAndDeLong": 17.375,
+      "CrEqWRC1992": 17.0
     },
     {
       "Number": "1.4016",
@@ -753,8 +771,11 @@
         }
       ],
       "CEq": 3.5233333333333334,
-      "NiEq": 1.45,
-      "CrEq": 17.75
+      "NiEqSchaeffler": 1.45,
+      "NiEqDeLong": 1.45,
+      "NiEqWRC1992": 1.4000000000000001,
+      "CrEqSchaefflerAndDeLong": 17.75,
+      "CrEqWRC1992": 17.0
     },
     {
       "Number": "1.4510",
@@ -861,8 +882,11 @@
         }
       ],
       "CEq": 3.5083333333333333,
-      "NiEq": 1.0,
-      "CrEq": 18.75
+      "NiEqSchaeffler": 1.0,
+      "NiEqDeLong": 1.0,
+      "NiEqWRC1992": 0.875,
+      "CrEqSchaefflerAndDeLong": 17.75,
+      "CrEqWRC1992": 17.0
     },
     {
       "Number": "1.4585",
@@ -969,8 +993,11 @@
         }
       ],
       "CEq": 3.12,
-      "NiEq": 0.95,
-      "CrEq": 15.75
+      "NiEqSchaeffler": 0.95,
+      "NiEqDeLong": 0.95,
+      "NiEqWRC1992": 0.75,
+      "CrEqSchaefflerAndDeLong": 15.75,
+      "CrEqWRC1992": 15.0
     },
     {
       "Number": "1.4511",
@@ -1077,8 +1104,11 @@
         }
       ],
       "CEq": 3.5083333333333333,
-      "NiEq": 1.0,
-      "CrEq": 18.15
+      "NiEqSchaeffler": 1.0,
+      "NiEqDeLong": 1.0,
+      "NiEqWRC1992": 0.875,
+      "CrEqSchaefflerAndDeLong": 18.15,
+      "CrEqWRC1992": 17.56
     },
     {
       "Number": "1.4113",
@@ -1185,8 +1215,11 @@
         }
       ],
       "CEq": 3.7533333333333334,
-      "NiEq": 1.45,
-      "CrEq": 18.9
+      "NiEqSchaeffler": 1.45,
+      "NiEqDeLong": 1.45,
+      "NiEqWRC1992": 1.4000000000000001,
+      "CrEqSchaefflerAndDeLong": 18.9,
+      "CrEqWRC1992": 18.15
     },
     {
       "Number": "1.4105",
@@ -1293,8 +1326,11 @@
         }
       ],
       "CEq": 3.6449999999999996,
-      "NiEq": 1.575,
-      "CrEq": 18.525
+      "NiEqSchaeffler": 1.575,
+      "NiEqDeLong": 1.575,
+      "NiEqWRC1992": 1.4000000000000001,
+      "CrEqSchaefflerAndDeLong": 18.525,
+      "CrEqWRC1992": 17.4
     },
     {
       "Number": "1.4513",
@@ -1401,8 +1437,11 @@
         }
       ],
       "CEq": 3.7158333333333333,
-      "NiEq": 0.625,
-      "CrEq": 19.75
+      "NiEqSchaeffler": 0.625,
+      "NiEqDeLong": 0.625,
+      "NiEqWRC1992": 0.4375,
+      "CrEqSchaefflerAndDeLong": 18.85,
+      "CrEqWRC1992": 18.1
     },
     {
       "Number": "1.4521",
@@ -1509,8 +1548,11 @@
         }
       ],
       "CEq": 4.2258333333333331,
-      "NiEq": 1.075,
-      "CrEq": 22.349999999999998
+      "NiEqSchaeffler": 0.625,
+      "NiEqDeLong": 1.075,
+      "NiEqWRC1992": 0.7375,
+      "CrEqSchaefflerAndDeLong": 21.4,
+      "CrEqWRC1992": 20.65
     },
     {
       "Number": "1.4523",
@@ -1617,8 +1659,11 @@
         }
       ],
       "CEq": 4.1566666666666663,
-      "NiEq": 0.575,
-      "CrEq": 22.35
+      "NiEqSchaeffler": 0.575,
+      "NiEqDeLong": 0.575,
+      "NiEqWRC1992": 0.525,
+      "CrEqSchaefflerAndDeLong": 21.25,
+      "CrEqWRC1992": 20.5
     },
     {
       "Number": "1.4017",
@@ -1725,8 +1770,11 @@
         }
       ],
       "CEq": 3.6166666666666667,
-      "NiEq": 2.8499999999999996,
-      "CrEq": 17.75
+      "NiEqSchaeffler": 2.8499999999999996,
+      "NiEqDeLong": 2.8499999999999996,
+      "NiEqWRC1992": 2.8,
+      "CrEqSchaefflerAndDeLong": 17.75,
+      "CrEqWRC1992": 17.0
     },
     {
       "Number": "1.4589",
@@ -1833,8 +1881,11 @@
         }
       ],
       "CEq": 3.2800000000000002,
-      "NiEq": 3.2,
-      "CrEq": 16.75
+      "NiEqSchaeffler": 3.2,
+      "NiEqDeLong": 3.2,
+      "NiEqWRC1992": 3.1500000000000004,
+      "CrEqSchaefflerAndDeLong": 15.95,
+      "CrEqWRC1992": 15.2
     },
     {
       "Number": "1.4526",
@@ -1941,8 +1992,11 @@
         }
       ],
       "CEq": 3.7433333333333336,
-      "NiEq": 2.05,
-      "CrEq": 19.130000000000003
+      "NiEqSchaeffler": 1.45,
+      "NiEqDeLong": 2.05,
+      "NiEqWRC1992": 1.8000000000000003,
+      "CrEqSchaefflerAndDeLong": 19.130000000000003,
+      "CrEqWRC1992": 18.492
     },
     {
       "Number": "1.4590",
@@ -2049,8 +2103,11 @@
         }
       ],
       "CEq": 3.4483333333333333,
-      "NiEq": 0.7,
-      "CrEq": 17.725
+      "NiEqSchaeffler": 0.7,
+      "NiEqDeLong": 0.7,
+      "NiEqWRC1992": 0.525,
+      "CrEqSchaefflerAndDeLong": 17.725,
+      "CrEqWRC1992": 17.065
     },
     {
       "Number": "1.4509",
@@ -2157,8 +2214,11 @@
         }
       ],
       "CEq": 3.6983333333333333,
-      "NiEq": 0.7,
-      "CrEq": 19.8
+      "NiEqSchaeffler": 0.7,
+      "NiEqDeLong": 0.7,
+      "NiEqWRC1992": 0.525,
+      "CrEqSchaefflerAndDeLong": 19.1,
+      "CrEqWRC1992": 18.49
     },
     {
       "Number": "1.4592",
@@ -2265,8 +2325,11 @@
         }
       ],
       "CEq": 6.6958333333333329,
-      "NiEq": 1.3,
-      "CrEq": 34.95
+      "NiEqSchaeffler": 0.625,
+      "NiEqDeLong": 1.3,
+      "NiEqWRC1992": 0.8875,
+      "CrEqSchaefflerAndDeLong": 33.75,
+      "CrEqWRC1992": 33.0
     }
   ],
   "Name": "PN-EN 10088-1",

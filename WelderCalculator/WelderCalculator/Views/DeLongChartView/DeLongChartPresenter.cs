@@ -20,6 +20,8 @@ namespace WelderCalculator.Views.DeLongChartView
         private readonly DataConnector _dataConnector;
         private IChart _chart;
         private bool _someCountingsFinished = false;
+        private float _newMaterialCrEq;
+        private float _newMaterialNiEq;
 
         public DeLongChartPresenter(IDeLongChartView view)
         {
@@ -114,7 +116,7 @@ namespace WelderCalculator.Views.DeLongChartView
                 return;
             }
 
-            var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerDeLong, _view.AdditionalMaterialQuantity.Value);
+            var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerDeLong, _view.AdditionalMaterialQuantity.Value, false);
             schaefflerDeLongMinimapForm.ShowDialog();
         }
 
@@ -150,6 +152,8 @@ namespace WelderCalculator.Views.DeLongChartView
             PointF pointInTheMiddleOfLine = GeometryHelper.GetPointInTheMiddle(pointForFirstMaterial, pointForSecondMaterial);
 
             PointF pointInTheMiddleOfLineWithTranslation = GeometryHelper.GetPointInTheMiddleWithTranslation((double)additionalMaterialQuantity / 100.0d, pointInTheMiddleOfLine, pointForAddMaterial);
+            _newMaterialCrEq = pointInTheMiddleOfLineWithTranslation.X;
+            _newMaterialNiEq = pointInTheMiddleOfLineWithTranslation.Y;
             DrawCountedPointsAndLines(pointForFirstMaterial, pointForSecondMaterial, pointForAddMaterial, pointInTheMiddleOfLine, pointInTheMiddleOfLineWithTranslation);
             PrintNewMaterialDataForPoint(pointInTheMiddleOfLineWithTranslation);
         }
@@ -187,12 +191,15 @@ namespace WelderCalculator.Views.DeLongChartView
                 return;
             }
 
-            Bitmap bitmap = new Bitmap(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            int widthForA4 = (int)((float)_view.DrawPanelWidth * 0.6);
+            int heightForA4 = (int)((float)_view.DrawPanelHeight * 0.6);
+
+            Bitmap bitmap = new Bitmap(widthForA4, heightForA4);
 
             _chart = new Chart(Graphics.FromImage(bitmap),
                 _dataConnector.GetDeLongImages(),
                 _dataConnector.GetDeLongChartSizingData());
-            _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
+            _chart.ResizeTo(widthForA4, heightForA4);
             _chart.Draw();
             CountPointsAndLinesPositionAndDraw();
 
@@ -206,6 +213,8 @@ namespace WelderCalculator.Views.DeLongChartView
             _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
             _chart.Draw();
             CountPointsAndLinesPositionAndDraw();
+
+            var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerDeLong, _view.AdditionalMaterialQuantity.Value, true);
         }
 
         private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)

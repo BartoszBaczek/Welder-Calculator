@@ -254,7 +254,7 @@
             this.newMaterialDataLayoutPanel.Size = new System.Drawing.Size(376, 80);
             this.newMaterialDataLayoutPanel.TabIndex = 12;
             this.newMaterialDataLayoutPanel.TabStop = false;
-            this.newMaterialDataLayoutPanel.Text = "Dobór materiału";
+            this.newMaterialDataLayoutPanel.Text = "Wyniki";
             // 
             // newMaterialFerriteNumberTextBox
             // 

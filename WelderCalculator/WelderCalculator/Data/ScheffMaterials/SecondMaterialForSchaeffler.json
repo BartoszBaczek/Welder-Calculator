@@ -8,21 +8,21 @@
       "FullName": "Węgiel",
       "Min": null,
       "Max": null,
-      "RealValue": 0.04
+      "RealValue": 0.015
     },
     {
       "Name": 1,
       "FullName": "Krzem",
       "Min": null,
       "Max": null,
-      "RealValue": 0.75
+      "RealValue": 0.5
     },
     {
       "Name": 2,
       "FullName": "Mangan",
       "Min": null,
       "Max": null,
-      "RealValue": 0.75
+      "RealValue": 0.5
     },
     {
       "Name": 3,
@@ -43,7 +43,7 @@
       "FullName": "Chrom",
       "Min": null,
       "Max": null,
-      "RealValue": 17.0
+      "RealValue": 16.75
     },
     {
       "Name": 9,
@@ -57,7 +57,7 @@
       "FullName": "Molibden",
       "Min": null,
       "Max": null,
-      "RealValue": 0.4
+      "RealValue": 0.0
     },
     {
       "Name": 5,
@@ -78,7 +78,7 @@
       "FullName": "Nb",
       "Min": null,
       "Max": null,
-      "RealValue": 0.0
+      "RealValue": 0.45
     },
     {
       "Name": 10,
@@ -103,9 +103,9 @@
     }
   ],
   "CEq": null,
-  "NiEqSchaeffler": 1.575,
-  "NiEqDeLong": 1.575,
-  "NiEqWRC1992": 1.4000000000000001,
-  "CrEqSchaefflerAndDeLong": 18.525,
-  "CrEqWRC1992": 17.4
+  "NiEqSchaeffler": 0.7,
+  "NiEqDeLong": 0.7,
+  "NiEqWRC1992": 0.525,
+  "CrEqSchaefflerAndDeLong": 17.725,
+  "CrEqWRC1992": 17.065
 }
