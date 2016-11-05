@@ -42,7 +42,16 @@ namespace WelderCalculator.Helpers.WRCHelper
 
         public WrcPhase GetWrcPhaseForForPoint(PointF point)
         {
-            return WrcPhase.A;
+            if (aContains(point))
+                return WrcPhase.A;
+            if (afContains(point))
+                return WrcPhase.AF;
+            if (faContains(point))
+                return WrcPhase.FA;
+            if (fContains(point))
+                return WrcPhase.F;
+
+            return WrcPhase.Unknown;
         }
 
         public WrcFerriteQuantity GetWrcFerriteQuantityForPoint(PointF point)
@@ -71,8 +80,8 @@ namespace WelderCalculator.Helpers.WRCHelper
                 return WrcFerriteQuantity._75to95;
             if (F95to100Contains(point))
                 return WrcFerriteQuantity._95to100;
-            else
-                return WrcFerriteQuantity.Unknown;
+
+            return WrcFerriteQuantity.Unknown;
         }
 
         public bool F0to4Contains(PointF point)
@@ -162,6 +171,32 @@ namespace WelderCalculator.Helpers.WRCHelper
         private bool basicContstrains(PointF point)
         {
             return point.X > 17 && point.Y > 9 && point.X < 31 && point.Y < 18;
+        }
+
+        public bool aContains(PointF point)
+        {
+            return basicContstrains(point) &&
+                point.Y > _borders.aAndAfBorder(point.X);
+        }
+
+        public bool afContains(PointF point)
+        {
+            return basicContstrains(point) &&
+                point.Y < _borders.aAndAfBorder(point.X) &&
+                point.Y > _borders.afAndFaBorder(point.X);
+        }
+
+        public bool faContains(PointF point)
+        {
+            return basicContstrains(point) &&
+                point.Y < _borders.afAndFaBorder(point.X) &&
+                point.Y > _borders.faAndfBorder(point.X);
+        }
+
+        public bool fContains(PointF point)
+        {
+            return basicContstrains(point) &&
+                point.Y < _borders.faAndfBorder(point.X);
         }
     }
 }

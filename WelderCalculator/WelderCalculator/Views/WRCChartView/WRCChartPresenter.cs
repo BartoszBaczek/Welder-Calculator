@@ -177,39 +177,26 @@ namespace WelderCalculator.Views.WRCChartView
         private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)
         {
             var wrcChartHelper = new WrcChartHelper();
-            //      var schaefflerMicrophaseHelper = new SchaefflerMicrophaseHelper();
-            //      SchaefflerMicrophase newMaterialMicrophase = schaefflerMicrophaseHelper.GetMicrophaseForPoint(newMaterialPoint);
-            // 
-            //      switch (newMaterialMicrophase)
-            //      {
-            //          case SchaefflerMicrophase.FM:
-            //              _view.NewMaterialMicrophaseTextBox = "Ferrytyczno - martenzytyczna";
-            //              break;
-            //          case SchaefflerMicrophase.M:
-            //              _view.NewMaterialMicrophaseTextBox = "Martenzytyczna";
-            //              break;
-            //          case SchaefflerMicrophase.AM:
-            //              _view.NewMaterialMicrophaseTextBox = "Austenityczno - martenzytyczna";
-            //              break;
-            //          case SchaefflerMicrophase.A:
-            //              _view.NewMaterialMicrophaseTextBox = "Austenityczna";
-            //              break;
-            //          case SchaefflerMicrophase.MF:
-            //              _view.NewMaterialMicrophaseTextBox = "Martenzytyczno - ferrytyczna";
-            //              break;
-            //          case SchaefflerMicrophase.AMF:
-            //              _view.NewMaterialMicrophaseTextBox = "Austeniticzno - martenzytyczno - ferrytyczna";
-            //              break;
-            //          case SchaefflerMicrophase.AF:
-            //              _view.NewMaterialMicrophaseTextBox = "Austenityczno - ferrytyczna";
-            //              break;
-            //          case SchaefflerMicrophase.F:
-            //              _view.NewMaterialMicrophaseTextBox = "Ferrytyczna";
-            //              break;
-            //          case SchaefflerMicrophase.Unknown:
-            //              _view.NewMaterialMicrophaseTextBox = "Poza wykresem";
-            //              break;
-            //      }
+            WrcPhase newMaterialMicrophase = wrcChartHelper.GetWrcPhaseForForPoint(newMaterialPoint);
+            
+             switch (newMaterialMicrophase)
+             {
+                 case WrcPhase.A:
+                     _view.NewMaterialMicrophaseTextBox = "Austenityczna";
+                     break;
+                 case WrcPhase.AF:
+                     _view.NewMaterialMicrophaseTextBox = "Austenityczno - ferrytyczna";
+                     break;
+                 case WrcPhase.FA:
+                     _view.NewMaterialMicrophaseTextBox = "Ferrytyczno-Austenityczna";
+                     break;
+                 case WrcPhase.F:
+                     _view.NewMaterialMicrophaseTextBox = "Ferrytyczna";
+                     break;
+                 case WrcPhase.Unknown:
+                     _view.NewMaterialMicrophaseTextBox = "Poza wykresem";
+                     break;
+            }
 
             WrcFerriteQuantity newMaterialFerriteQuantity = wrcChartHelper.GetWrcFerriteQuantityForPoint(newMaterialPoint);
        
