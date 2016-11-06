@@ -51,8 +51,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.additionalMaterialTextBox = new System.Windows.Forms.TextBox();
             this.drawPanel = new System.Windows.Forms.Panel();
             this.newMaterialDataLayoutPanel = new System.Windows.Forms.GroupBox();
-            this.newMaterialBrittlenessTextbox = new System.Windows.Forms.TextBox();
-            this.newMaterialBrittlenessLabel = new System.Windows.Forms.Label();
             this.newMaterialFerriteQuantityTextbox = new System.Windows.Forms.TextBox();
             this.newMaterialFerriteQunatityLabel = new System.Windows.Forms.Label();
             this.newMaterialMicrophaseTextBox = new System.Windows.Forms.TextBox();
@@ -279,35 +277,16 @@ namespace WelderCalculator.Views.SchaefflerChartView
             // newMaterialDataLayoutPanel
             // 
             this.newMaterialDataLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialBrittlenessTextbox);
-            this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialBrittlenessLabel);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialFerriteQuantityTextbox);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialFerriteQunatityLabel);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialMicrophaseTextBox);
             this.newMaterialDataLayoutPanel.Controls.Add(this.newMaterialMicrophaseLabel);
             this.newMaterialDataLayoutPanel.Location = new System.Drawing.Point(815, 321);
             this.newMaterialDataLayoutPanel.Name = "newMaterialDataLayoutPanel";
-            this.newMaterialDataLayoutPanel.Size = new System.Drawing.Size(376, 107);
+            this.newMaterialDataLayoutPanel.Size = new System.Drawing.Size(376, 78);
             this.newMaterialDataLayoutPanel.TabIndex = 11;
             this.newMaterialDataLayoutPanel.TabStop = false;
             this.newMaterialDataLayoutPanel.Text = "Wyniki";
-            // 
-            // newMaterialBrittlenessTextbox
-            // 
-            this.newMaterialBrittlenessTextbox.Location = new System.Drawing.Point(127, 79);
-            this.newMaterialBrittlenessTextbox.Name = "newMaterialBrittlenessTextbox";
-            this.newMaterialBrittlenessTextbox.ReadOnly = true;
-            this.newMaterialBrittlenessTextbox.Size = new System.Drawing.Size(243, 20);
-            this.newMaterialBrittlenessTextbox.TabIndex = 13;
-            // 
-            // newMaterialBrittlenessLabel
-            // 
-            this.newMaterialBrittlenessLabel.AutoSize = true;
-            this.newMaterialBrittlenessLabel.Location = new System.Drawing.Point(7, 82);
-            this.newMaterialBrittlenessLabel.Name = "newMaterialBrittlenessLabel";
-            this.newMaterialBrittlenessLabel.Size = new System.Drawing.Size(60, 13);
-            this.newMaterialBrittlenessLabel.TabIndex = 12;
-            this.newMaterialBrittlenessLabel.Text = "Zagrożenia";
             // 
             // newMaterialFerriteQuantityTextbox
             // 
@@ -454,7 +433,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
             // 
             // exportToPDFButton
             // 
-            this.exportToPDFButton.Location = new System.Drawing.Point(825, 435);
+            this.exportToPDFButton.Location = new System.Drawing.Point(825, 419);
             this.exportToPDFButton.Name = "exportToPDFButton";
             this.exportToPDFButton.Size = new System.Drawing.Size(111, 25);
             this.exportToPDFButton.TabIndex = 14;
@@ -512,8 +491,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
         private Panel drawPanel;
         private Button fastMaterialButton;
         private GroupBox newMaterialDataLayoutPanel;
-        private TextBox newMaterialBrittlenessTextbox;
-        private Label newMaterialBrittlenessLabel;
         private TextBox newMaterialFerriteQuantityTextbox;
         private Label newMaterialFerriteQunatityLabel;
         private TextBox newMaterialMicrophaseTextBox;

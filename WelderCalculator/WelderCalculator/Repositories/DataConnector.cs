@@ -222,5 +222,15 @@ namespace WelderCalculator.Repositories
         {
             return _normRepo.PathToSchaefflerDiagramLegendImage();
         }
+
+        public string PathToDeLongDiagramLegendImage()
+        {
+            return _normRepo.PathToDeLongDiagramLegendImage();
+        }
+
+        public string PathToWrcDiagramLegendImage()
+        {
+            return _normRepo.PathToWrcDiagramLegendImage();
+        }
     }
 }

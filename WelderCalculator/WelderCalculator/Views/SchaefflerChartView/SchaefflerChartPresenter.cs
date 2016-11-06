@@ -11,6 +11,7 @@ using WelderCalculator.Views.MaterialDatabaseView;
 using WelderCalculator.Helpers.SchaefflerHelpers;
 using System.IO;
 using System.Drawing.Imaging;
+using WelderCalculator.PDFUtilities;
 
 namespace WelderCalculator.Views.SchaefflerChartView
 {
@@ -189,6 +190,19 @@ namespace WelderCalculator.Views.SchaefflerChartView
             _chart.ResizeTo(_view.DrawPanelWidth, _view.DrawPanelHeight);
             _chart.Draw();
             CountPointsAndLinesPositionAndDraw();
+
+            PDFGenerator pdf = new PDFGenerator(PdfFor.Schaeffler, 
+                _dataConnector.GetFirstBasisMarerialForSchaeffler(), 
+                _dataConnector.GetSecondBasisMarerialForSchaeffler(), 
+                _dataConnector.GetAdditionalMaterialForSchaeffler(), 
+                (double)_view.AdditionalMaterialQuantity,
+                _view.NewMaterialFerriteQuantityTextBox,
+                _view.NewMaterialMicrophaseTextBox,
+                "null",                        // very very very very stupid!!!
+                "null",                        // very very very very stupid!!!
+                "null",                        // very very very very stupid!!!
+                "null",                        // very very very very stupid!!!
+                "null");                       // very very very very stupid!!!
         }
 
         private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)

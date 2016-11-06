@@ -11,6 +11,7 @@ using WelderCalculator.Views.MaterialDatabaseView;
 using WelderCalculator.Helpers.DeLongHelpers;
 using WelderCalculator.Views.SchaefflerMinimapView;
 using System.Drawing.Imaging;
+using WelderCalculator.PDFUtilities;
 
 namespace WelderCalculator.Views.DeLongChartView
 {
@@ -22,6 +23,8 @@ namespace WelderCalculator.Views.DeLongChartView
         private bool _someCountingsFinished = false;
         private float _newMaterialCrEq;
         private float _newMaterialNiEq;
+
+        public object PdfGenerator { get; private set; }
 
         public DeLongChartPresenter(IDeLongChartView view)
         {
@@ -215,6 +218,8 @@ namespace WelderCalculator.Views.DeLongChartView
             CountPointsAndLinesPositionAndDraw();
 
             var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerDeLong, _view.AdditionalMaterialQuantity.Value, true);
+
+            PdfGenerator = new PDFGenerator(PdfFor.DeLong, _dataConnector.GetFirstBasisMarerialForSchaeffler(), _dataConnector.GetSecondBasisMarerialForSchaeffler(), _dataConnector.GetAdditionalMaterialForSchaeffler(), (double)_view.AdditionalMaterialQuantity, "null", "null",_view.NewMaterialMicrophaseTextBox, _view.NewMaterialFerriteQuantityTextBox, _view.NewMaterialFerriteNumberTextBox, "null", "null");
         }
 
         private void PrintNewMaterialDataForPoint(PointF newMaterialPoint)

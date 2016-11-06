@@ -31,8 +31,8 @@ namespace Tests
         [Test]
         public void ShouldGeneratePDF()
         {
-            PDFGenerator pdf = new PDFGenerator(PdfFor.Schaeffler, _baseMaterial1, _baseMaterial2, _addMaterial, 25, 12, 45);
-            Assert.IsTrue(true);
+            PDFGenerator pdf = new PDFGenerator(PdfFor.Schaeffler, _baseMaterial1, _baseMaterial2, _addMaterial, 25, "BARDZO DUZO");
+            Assert.IsTrue(false);
         }
     }
 }

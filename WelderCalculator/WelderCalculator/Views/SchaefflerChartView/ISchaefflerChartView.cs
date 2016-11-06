@@ -24,6 +24,5 @@ namespace WelderCalculator.Views.SchaefflerChartView
 
         string NewMaterialMicrophaseTextBox { get; set; }
         string NewMaterialFerriteQuantityTextBox { get; set; }
-        string NewMaterialDangerousnessTextBox { get; set; }
     }
 }

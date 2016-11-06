@@ -408,5 +408,15 @@ namespace WelderCalculator.Repositories
         {
             return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\schaefflerLegend.png";
         }
+
+        public string PathToDeLongDiagramLegendImage()
+        {
+            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\deLongLegend.png";
+        }
+
+        public string PathToWrcDiagramLegendImage()
+        {
+            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\wrcLegend.png";
+        }
     }
 }

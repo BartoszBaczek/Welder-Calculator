@@ -171,12 +171,6 @@ namespace WelderCalculator.Views.SchaefflerChartView
             set { newMaterialFerriteQuantityTextbox.Text = value; }
         }
 
-        public string NewMaterialDangerousnessTextBox
-        {
-            get { return newMaterialBrittlenessTextbox.Text; }
-            set { newMaterialBrittlenessTextbox.Text = value; }
-        }
-
         #endregion
 
         private void firstBaseMaterialButton_Click(object sender, EventArgs e)

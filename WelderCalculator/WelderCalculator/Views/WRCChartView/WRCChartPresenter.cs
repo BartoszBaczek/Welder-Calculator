@@ -10,6 +10,7 @@ using WelderCalculator.Drawings.Chart;
 using WelderCalculator.Helpers;
 using WelderCalculator.Helpers.WRCHelper;
 using WelderCalculator.Model;
+using WelderCalculator.PDFUtilities;
 using WelderCalculator.Repositories;
 using WelderCalculator.Views.AddMaterialDatabaseView;
 using WelderCalculator.Views.FastMaterialFactoryView;
@@ -284,6 +285,19 @@ namespace WelderCalculator.Views.WRCChartView
             CountPointsAndLinesPositionAndDraw();
 
             var schaefflerDeLongMinimapForm = new SchaefflerMinimapForm(MinimapCombination.SchaefflerWRC1992, _view.AdditionalMaterialQuantity.Value, true);
+
+            PDFGenerator pdfGenerator = new PDFGenerator(PdfFor.WRC1992, 
+                _dataConnector.GetFirstBasisMarerialForSchaeffler(),
+                _dataConnector.GetSecondBasisMarerialForSchaeffler(),
+                _dataConnector.GetAdditionalMaterialForSchaeffler(),
+                (double)_view.AdditionalMaterialQuantity,
+                "null",
+                "null",
+                "null",
+                "null",
+                "null",
+                _view.NewMaterialMicrophaseTextBox,
+                _view.NewMaterialFerriteNumberTextBox);
         }
     }
 }

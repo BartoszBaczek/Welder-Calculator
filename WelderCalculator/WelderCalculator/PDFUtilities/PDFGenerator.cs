@@ -24,14 +24,43 @@ namespace WelderCalculator.PDFUtilities
         private BaseMaterial _baseMaterial1;
         private BaseMaterial _baseMaterial2;
         private AdditiveMaterial _addMaterial;
+
+        private string _schaefflerFerriteQuantity;
+        private string _schaefflerPhase;
+
+        private string _deLongPhase;
+        private string _deLongFerriteContent;
+        private string _deLongFerriticeNumber;
+
+        private string _wrcPhase;
+        private string _wrcFerriticNumber;
+
         private PdfFor _pdfFor;
 
-        public PDFGenerator(PdfFor pdfFor, BaseMaterial baseMaterial, BaseMaterial baseMaterial2, AdditiveMaterial addMaterial, double addMaterialQuantity, float newMaterialCrEq, float newMaterialNiEq)
+        public PDFGenerator(PdfFor pdfFor, 
+            BaseMaterial baseMaterial, 
+            BaseMaterial baseMaterial2, 
+            AdditiveMaterial addMaterial, 
+            double addMaterialQuantity, 
+            string schaefferFerriteQuantity,
+            string schaefflerPhase,
+            string deLongPhase,
+            string deLongFerriteContent,
+            string deLongFerriticNumber,
+            string wrcPhase,
+            string wrcFerriticNumber)
         {
             _pdfFor = pdfFor;
             _baseMaterial1 = baseMaterial;
             _baseMaterial2 = baseMaterial2;
             _addMaterial = addMaterial;
+            _schaefflerPhase = schaefflerPhase;
+            _schaefflerFerriteQuantity = schaefferFerriteQuantity;
+            _deLongPhase = deLongPhase;
+            _deLongFerriteContent = deLongFerriteContent;
+            _deLongFerriticeNumber = deLongFerriticNumber;
+            _wrcPhase = wrcPhase;
+            _wrcFerriticNumber = wrcFerriticNumber;
 
             _document = new Document();
             Section section = _document.AddSection();
@@ -55,14 +84,24 @@ namespace WelderCalculator.PDFUtilities
             {
                 AddSchaefflerLegendImage(section);
                 AddEmptySpace(section, 0.5);
+
+                addSchaefflerOutputData(section);
             }
-            else
+            else if (pdfFor == PdfFor.DeLong)
             {
-                AddMinimapChartImage(section);
+                AddDeLongLegendImage(section);
                 AddEmptySpace(section, 0.5);
+                addDeLongOutputData(section);
+                AddMinimapChartImage(section);
+            }
+            else if (pdfFor == PdfFor.WRC1992)
+            {
+                AddWrcLegendImage(section);
+                AddEmptySpace(section, 0.5);
+                AddWrcOutputData(section);
+                AddMinimapChartImage(section);
             }
             
-
             // AddFinalMaterialData
             _document.UseCmykColor = true;
             const bool unicode = false;
@@ -356,6 +395,18 @@ namespace WelderCalculator.PDFUtilities
             section.AddImage(dataConnector.PathToSchaefflerDiagramLegendImage());
         }
 
+        private void AddDeLongLegendImage(Section section)
+        {
+            DataConnector dataConnector = new DataConnector("asd");
+            section.AddImage(dataConnector.PathToDeLongDiagramLegendImage());
+        }
+
+        private void AddWrcLegendImage(Section section)
+        {
+            DataConnector dataConnector = new DataConnector("asd");
+            section.AddImage(dataConnector.PathToWrcDiagramLegendImage());
+        }
+
         private void AddOutputData(Section section, float CrEq, float NiEq)
         {
             Table table = section.AddTable();
@@ -368,6 +419,164 @@ namespace WelderCalculator.PDFUtilities
             var random = new Random();
             return new string(Enumerable.Repeat(chars, 6)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
+
+        }
+
+        private void addSchaefflerOutputData(Section section)
+        {
+            Table table = section.AddTable();
+            table.Style = "Table";
+            table.Format.Font.Size = 8;
+
+            table.Borders.Color = Colors.Black;
+            table.Borders.Width = 0.25;
+            table.Borders.Left.Width = 0.5;
+            table.Borders.Right.Width = 0.5;
+            table.Rows.LeftIndent = 0;
+
+            // Before you can add a row, you must define the columns
+            Column column = table.AddColumn("6cm");
+            column.Format.Alignment = ParagraphAlignment.Center;
+
+            for (int i = 0; i < 1; i++)
+            {
+                column = table.AddColumn("6cm");
+                column.Format.Alignment = ParagraphAlignment.Center;
+            }
+
+            // Create the header of the table
+            Row row_1 = table.AddRow();
+            row_1.HeadingFormat = true;
+            row_1.Format.Alignment = ParagraphAlignment.Center;
+            row_1.Format.Font.Bold = true;
+
+            row_1.Cells[0].AddParagraph("Faza");
+            row_1.Cells[1].AddParagraph(_schaefflerPhase);
+
+            Row row_2 = table.AddRow();
+            row_2.HeadingFormat = true;
+            row_2.Format.Alignment = ParagraphAlignment.Center;
+            row_2.Format.Font.Bold = true;
+
+            row_2.Cells[0].AddParagraph("Zawartość ferrytu");
+            row_2.Cells[1].AddParagraph(_schaefflerFerriteQuantity);
+
+            for (int i = 0; i < 1; i++)
+            {
+                row_2.Cells[i].Format.Alignment = ParagraphAlignment.Center;
+                row_2.Cells[i].VerticalAlignment = VerticalAlignment.Center;
+            }
+            table.SetEdge(0, 0, table.Columns.Count, table.Rows.Count, Edge.Box, BorderStyle.Single, 2, Color.Empty);
+        }
+
+        private void addDeLongOutputData(Section section)
+        {
+            Table table = section.AddTable();
+            table.Style = "Table";
+            table.Format.Font.Size = 8;
+
+            table.Borders.Color = Colors.Black;
+            table.Borders.Width = 0.25;
+            table.Borders.Left.Width = 0.5;
+            table.Borders.Right.Width = 0.5;
+            table.Rows.LeftIndent = 0;
+
+            // Before you can add a row, you must define the columns
+            Column column = table.AddColumn("6cm");
+            column.Format.Alignment = ParagraphAlignment.Center;
+
+            for (int i = 0; i < 1; i++)
+            {
+                column = table.AddColumn("6cm");
+                column.Format.Alignment = ParagraphAlignment.Center;
+            }
+
+            // Create the header of the table
+            Row row_1 = table.AddRow();
+            row_1.HeadingFormat = true;
+            row_1.Format.Alignment = ParagraphAlignment.Center;
+            row_1.Format.Font.Bold = true;
+
+            row_1.Cells[0].AddParagraph("Faza");
+            row_1.Cells[0].Format.Font.Bold = true;
+            row_1.Cells[1].AddParagraph(_deLongPhase);
+
+
+            Row row_2 = table.AddRow();
+            row_2.HeadingFormat = true;
+            row_2.Format.Alignment = ParagraphAlignment.Center;
+            row_2.Format.Font.Bold = true;
+
+            row_2.Cells[0].AddParagraph("Zawartość ferrytu");
+            row_2.Cells[0].Format.Font.Bold = true;
+            row_2.Cells[1].AddParagraph(_deLongFerriteContent);
+
+
+            Row row_3 = table.AddRow();
+            row_3.HeadingFormat = true;
+            row_3.Format.Alignment = ParagraphAlignment.Center;
+            row_3.Format.Font.Bold = true;
+
+            row_3.Cells[0].AddParagraph("Liczba ferrytyczna");
+            row_3.Cells[0].Format.Font.Bold = true;
+            row_3.Cells[1].AddParagraph(_deLongFerriticeNumber);
+
+            for (int i = 0; i < 1; i++)
+            {
+                row_1.Cells[i].Format.Alignment = ParagraphAlignment.Center;
+                row_1.Cells[i].VerticalAlignment = VerticalAlignment.Center;
+            }
+            table.SetEdge(0, 0, table.Columns.Count, table.Rows.Count, Edge.Box, BorderStyle.Single, 2, Color.Empty);
+        }
+
+        private void AddWrcOutputData(Section section)
+        {
+            Table table = section.AddTable();
+            table.Style = "Table";
+            table.Format.Font.Size = 8;
+
+            table.Borders.Color = Colors.Black;
+            table.Borders.Width = 0.25;
+            table.Borders.Left.Width = 0.5;
+            table.Borders.Right.Width = 0.5;
+            table.Rows.LeftIndent = 0;
+
+            // Before you can add a row, you must define the columns
+            Column column = table.AddColumn("6cm");
+            column.Format.Alignment = ParagraphAlignment.Center;
+
+            for (int i = 0; i < 1; i++)
+            {
+                column = table.AddColumn("6cm");
+                column.Format.Alignment = ParagraphAlignment.Center;
+            }
+
+            // Create the header of the table
+            Row row_1 = table.AddRow();
+            row_1.HeadingFormat = true;
+            row_1.Format.Alignment = ParagraphAlignment.Center;
+            row_1.Format.Font.Bold = true;
+
+            row_1.Cells[0].AddParagraph("Faza");
+            row_1.Cells[0].Format.Font.Bold = true;
+            row_1.Cells[1].AddParagraph(_wrcPhase);
+
+
+            Row row_2 = table.AddRow();
+            row_2.HeadingFormat = true;
+            row_2.Format.Alignment = ParagraphAlignment.Center;
+            row_2.Format.Font.Bold = true;
+
+            row_2.Cells[0].AddParagraph("Liczba ferrytyczna");
+            row_2.Cells[0].Format.Font.Bold = true;
+            row_2.Cells[1].AddParagraph(_wrcFerriticNumber);
+
+            for (int i = 0; i < 1; i++)
+            {
+                row_1.Cells[i].Format.Alignment = ParagraphAlignment.Center;
+                row_1.Cells[i].VerticalAlignment = VerticalAlignment.Center;
+            }
+            table.SetEdge(0, 0, table.Columns.Count, table.Rows.Count, Edge.Box, BorderStyle.Single, 2, Color.Empty);
         }
     }
 }
