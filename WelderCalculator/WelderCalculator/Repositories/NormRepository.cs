@@ -17,6 +17,7 @@ namespace WelderCalculator.Repositories
         private readonly string _additiveNormsPath;
         private readonly string _propertiesPath;
         private readonly string _drawingsPath;
+        private readonly string _pdfPath;
         private readonly string _schaefflersMaterialsRepository;
 
         public NormRepository()
@@ -26,6 +27,7 @@ namespace WelderCalculator.Repositories
             _additiveNormsPath =                _binPath + @"\.." + @"\Data\AdditiveNorms\";
             _propertiesPath =                   _binPath + @"\.." + @"\Data\Properties\";
             _drawingsPath =                     _binPath + @"\.." + @"\Data\I\";
+            _pdfPath = _binPath + @"\.." + @"\Data\I\PdfImages\";
             _schaefflersMaterialsRepository = _binPath + @"\.." + @"\Data\ScheffMaterials\";
         }
 
@@ -37,6 +39,7 @@ namespace WelderCalculator.Repositories
             _additiveNormsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\AdditiveNorms\";
             _propertiesPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\Properties\";
             _drawingsPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\I\";
+            _pdfPath = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\I\PdfImages\";
             _schaefflersMaterialsRepository = @"C:\Users\Bartek\Documents\Moje dokumenty\Project\wCalc\wCalc\WelderCalculator\WelderCalculator\Data\ScheffMaterials\";
         }
 
@@ -393,30 +396,27 @@ namespace WelderCalculator.Repositories
 
         public string PathToMainChartImage()
         {
-            string chartImageCatalog = "PdfImages/";
-
-            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\mainChart.png";
+            return _pdfPath + "mainChart.png";
         }
+
         public string PathToMinimapChartImage()
         {
-            string chartImageCatalog = "PdfImages/";
-
-            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\miniMap.png";
+            return _pdfPath + "miniMap.png";
         }
 
         public string PathToSchaefflerDiagramLegendImage()
         {
-            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\schaefflerLegend.png";
+            return _pdfPath + "schaefflerLegend.png";
         }
 
         public string PathToDeLongDiagramLegendImage()
         {
-            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\deLongLegend.png";
+            return _pdfPath + "deLongLegend.png";
         }
 
         public string PathToWrcDiagramLegendImage()
         {
-            return @"D:\Projects\Welder-Calculator\WelderCalculator\WelderCalculator\Data\I\PdfImages\wrcLegend.png";
+            return _pdfPath + "wrcLegend.png";
         }
     }
 }

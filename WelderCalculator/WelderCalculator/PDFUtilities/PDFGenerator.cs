@@ -379,31 +379,31 @@ namespace WelderCalculator.PDFUtilities
             
         private void AddMainChartImage(Section section)
         {
-            DataConnector dataConnector = new DataConnector("asd");
+            DataConnector dataConnector = new DataConnector();
             section.AddImage(dataConnector.PathToMainChartImage());
         }
 
         private void AddMinimapChartImage(Section section)
         {
-            DataConnector dataConnector = new DataConnector("asdad");
+            DataConnector dataConnector = new DataConnector();
             section.AddImage(dataConnector.PathToMinimapChartImage());
         }
 
         private void AddSchaefflerLegendImage(Section section)
         {
-            DataConnector dataConnector = new DataConnector("asd");
+            DataConnector dataConnector = new DataConnector();
             section.AddImage(dataConnector.PathToSchaefflerDiagramLegendImage());
         }
 
         private void AddDeLongLegendImage(Section section)
         {
-            DataConnector dataConnector = new DataConnector("asd");
+            DataConnector dataConnector = new DataConnector();
             section.AddImage(dataConnector.PathToDeLongDiagramLegendImage());
         }
 
         private void AddWrcLegendImage(Section section)
         {
-            DataConnector dataConnector = new DataConnector("asd");
+            DataConnector dataConnector = new DataConnector();
             section.AddImage(dataConnector.PathToWrcDiagramLegendImage());
         }
 
