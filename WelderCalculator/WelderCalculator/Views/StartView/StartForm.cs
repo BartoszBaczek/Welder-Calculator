@@ -77,5 +77,15 @@ namespace WelderCalculator.StartView
         {
             Presenter.OnWRC1992CountingButtonClicked();
         }
+
+        private void wykresDeLongaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presenter.OnDeLongCountingButtonClicked();
+        }
+
+        private void wykresWRC1992ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Presenter.OnWRC1992CountingButtonClicked();
+        }
     }
 }
