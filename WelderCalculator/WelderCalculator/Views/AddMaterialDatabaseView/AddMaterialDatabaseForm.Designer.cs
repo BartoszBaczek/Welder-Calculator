@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddMaterialDatabaseForm));
             this.normComboBox = new System.Windows.Forms.ComboBox();
             this.normNameLabel = new System.Windows.Forms.Label();
             this.modifyMaterialControlPanel = new System.Windows.Forms.GroupBox();
@@ -472,6 +473,7 @@
             this.Controls.Add(this.modifyMaterialControlPanel);
             this.Controls.Add(this.normNameLabel);
             this.Controls.Add(this.normComboBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddMaterialDatabaseForm";
             this.Text = "Materiał dodatkowy";
             this.modifyMaterialControlPanel.ResumeLayout(false);

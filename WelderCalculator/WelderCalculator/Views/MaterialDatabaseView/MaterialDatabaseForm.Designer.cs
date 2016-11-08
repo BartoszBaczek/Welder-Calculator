@@ -30,6 +30,7 @@ namespace WelderCalculator.Views.MaterialDatabaseView
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialDatabaseForm));
             this.ViewLayoutPanel = new System.Windows.Forms.GroupBox();
             this.orderElementsButton = new System.Windows.Forms.Button();
             this.cuCheckBox = new System.Windows.Forms.CheckBox();
@@ -500,8 +501,9 @@ namespace WelderCalculator.Views.MaterialDatabaseView
             this.Controls.Add(this.normComboBox);
             this.Controls.Add(this.EqLayoutPanel);
             this.Controls.Add(this.DataModifLayoutPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaterialDatabaseForm";
-            this.Text = "MaterialDatabaseForm";
+            this.Text = "Baza danych";
             this.ViewLayoutPanel.ResumeLayout(false);
             this.ViewLayoutPanel.PerformLayout();
             this.DataModifLayoutPanel.ResumeLayout(false);

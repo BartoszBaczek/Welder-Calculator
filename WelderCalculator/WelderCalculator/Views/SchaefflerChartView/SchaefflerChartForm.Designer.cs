@@ -31,6 +31,7 @@ namespace WelderCalculator.Views.SchaefflerChartView
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SchaefflerChartForm));
             this.visibilityLayoutPanel = new System.Windows.Forms.GroupBox();
             this.crackingVisibleCheckBox = new System.Windows.Forms.CheckBox();
             this.phaseCheckBox = new System.Windows.Forms.CheckBox();
@@ -455,9 +456,10 @@ namespace WelderCalculator.Views.SchaefflerChartView
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SchaefflerChartForm";
-            this.Text = "SchaefflerChartForm";
+            this.Text = "Obliczenia Schaeffler";
             this.visibilityLayoutPanel.ResumeLayout(false);
             this.visibilityLayoutPanel.PerformLayout();
             this.chooseMaterialsLayoutPanel.ResumeLayout(false);

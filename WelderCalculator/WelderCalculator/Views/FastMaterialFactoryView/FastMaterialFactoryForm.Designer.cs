@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FastMaterialFactoryForm));
             this.baseMaterial1GroupBox = new System.Windows.Forms.GroupBox();
             this.niLabel = new System.Windows.Forms.Label();
             this.niEq1Label = new System.Windows.Forms.Label();
@@ -851,9 +852,10 @@
             this.Controls.Add(this.baseMaterial2GroupBox);
             this.Controls.Add(this.baseMaterial1GroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FastMaterialFactoryForm";
-            this.Text = "FastMaterialFactoryForm";
+            this.Text = "Szybkie obliczenia";
             this.baseMaterial1GroupBox.ResumeLayout(false);
             this.baseMaterial1GroupBox.PerformLayout();
             this.baseMaterial2GroupBox.ResumeLayout(false);

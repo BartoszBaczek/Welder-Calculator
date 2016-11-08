@@ -30,6 +30,7 @@ namespace WelderCalculator.Views.DeLongChartView
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeLongChartForm));
             this.visibilityLayoutPanel = new System.Windows.Forms.GroupBox();
             this.reccomendedFerriteContentCheckBox = new System.Windows.Forms.CheckBox();
             this.ferriteContentCheckBox = new System.Windows.Forms.CheckBox();
@@ -468,9 +469,10 @@ namespace WelderCalculator.Views.DeLongChartView
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "DeLongChartForm";
-            this.Text = "SchaefflerChartForm";
+            this.Text = "Obliczenia (DeLong)";
             this.visibilityLayoutPanel.ResumeLayout(false);
             this.visibilityLayoutPanel.PerformLayout();
             this.chooseMaterialsLayoutPanel.ResumeLayout(false);

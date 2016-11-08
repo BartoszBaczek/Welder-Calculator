@@ -30,6 +30,7 @@ namespace WelderCalculator.Views.General.MaterialModificationView
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MaterialModificationForm));
             this.elementsLayoutPanel = new System.Windows.Forms.GroupBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.vLayoutPanel = new System.Windows.Forms.GroupBox();
@@ -1167,8 +1168,9 @@ namespace WelderCalculator.Views.General.MaterialModificationView
             this.Controls.Add(this.autoRefreshButton);
             this.Controls.Add(this.basicsLayoutPanel);
             this.Controls.Add(this.elementsLayoutPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MaterialModificationForm";
-            this.Text = "MaterialModificationForm";
+            this.Text = "Modyfikacja Materiału";
             this.elementsLayoutPanel.ResumeLayout(false);
             this.vLayoutPanel.ResumeLayout(false);
             this.vLayoutPanel.PerformLayout();

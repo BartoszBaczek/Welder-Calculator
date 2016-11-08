@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.openStrip = new System.Windows.Forms.ToolStripMenuItem();
@@ -186,10 +187,11 @@
             this.Controls.Add(this.baseMaterialsDatabaseButton);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "StartForm";
-            this.Text = "StartForm";
+            this.Text = "Okno startowe";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.paintEvent);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

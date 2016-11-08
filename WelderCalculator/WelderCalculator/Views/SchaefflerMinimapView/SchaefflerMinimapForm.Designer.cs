@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SchaefflerMinimapForm));
             this.drawPanel = new System.Windows.Forms.Panel();
             this.okButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -59,9 +60,10 @@
             this.ClientSize = new System.Drawing.Size(455, 381);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.drawPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "SchaefflerMinimapForm";
-            this.Text = "SchaefflerMiniMapView";
+            this.Text = "Minimapa";
             this.Load += new System.EventHandler(this.SchaefflerMinimapForm_Load);
             this.ResumeLayout(false);
 

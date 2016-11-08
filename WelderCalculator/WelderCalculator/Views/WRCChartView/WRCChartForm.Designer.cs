@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WRCChartForm));
             this.drawPanel = new System.Windows.Forms.Panel();
             this.visibilityLayoutPanel = new System.Windows.Forms.GroupBox();
             this.ferriteNumberCheckBox = new System.Windows.Forms.CheckBox();
@@ -415,8 +416,9 @@
             this.Controls.Add(this.chooseMaterialsLayoutPanel);
             this.Controls.Add(this.visibilityLayoutPanel);
             this.Controls.Add(this.drawPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WRCChartForm";
-            this.Text = "WRCChartForm";
+            this.Text = "Obliczenia (WRC-1992)";
             this.visibilityLayoutPanel.ResumeLayout(false);
             this.visibilityLayoutPanel.PerformLayout();
             this.chooseMaterialsLayoutPanel.ResumeLayout(false);
